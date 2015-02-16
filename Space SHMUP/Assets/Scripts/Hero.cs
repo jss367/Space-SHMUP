@@ -54,4 +54,19 @@ public class Hero : MonoBehaviour {
 		
 		}
 
+	void OnTriggerEnter(Collider other){
+		//Find the tag of other.gameObject or its parent GameObjects
+		GameObject go = Utils.FindTaggedParent (other.gameObject);
+		//If there is a parent with a tag
+		if (go != null) {
+			//Announce it
+			print ("Triggered: " + go.name);
+			//Make sure it's not the same triggering go as last time
+		}else {
+			//Otherwise announce the original gameObject
+			print ("Triggered: " + other.gameObject.name);
+		}
+	}
+
+
 }
