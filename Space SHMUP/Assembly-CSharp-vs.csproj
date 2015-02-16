@@ -46,11 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Asteroid.cs" />
      <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Enemy_1.cs" />
      <Compile Include="Assets\Scripts\Enemy_2.cs" />
      <Compile Include="Assets\Scripts\Enemy_3.cs" />
      <Compile Include="Assets\Scripts\Enemy_4.cs" />
+     <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\Hero.cs" />
      <Compile Include="Assets\Scripts\Main.cs" />
      <Compile Include="Assets\Scripts\PowerUp.cs" />
@@ -58,9 +60,42 @@
      <Compile Include="Assets\Scripts\Shield.cs" />
      <Compile Include="Assets\Scripts\Utils.cs" />
      <Compile Include="Assets\Scripts\Weapon.cs" />
+     <Compile Include="Assets\VisualizerStudio\Example Level\FrameRateLimiter.cs" />
+     <Compile Include="Assets\VisualizerStudio\Example Level\KillTimer.cs" />
+     <Compile Include="Assets\VisualizerStudio\Example Level\TestBallSpawnScalar.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Base\VisBasePropertyModifier.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Base\VisBasePropertyTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Controllers\VisFrequencyController.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Controllers\VisRandomController.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Controllers\VisSineWaveController.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Modifiers\VisAnimationStatePropertyModifier.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Modifiers\VisEmitterPropertyModifier.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Modifiers\VisGameObjectPropertyModifier.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Modifiers\VisLightPropertyModifier.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Modifiers\VisMaterialLerpModifier.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Modifiers\VisMaterialPropertyModifier.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Modifiers\VisTargetModifier.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisAddForceTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisAnimationStatePropertyTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisEmitParticlesTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisEmitterPropertyTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisGameObjectPropertyTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisLightPropertyTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisMaterialLerpTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisMaterialPropertyTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisMessageTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisSpawnPrefabTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisTargetTrigger.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Utility\VisMicrophone.cs" />
+     <Compile Include="Assets\VisualizerStudio\Scripts\Utility\VisPropertyHelper.cs" />
+     <None Include="Assets\VisualizerStudio\Editor\VisualizerStudioEditor.xml" />
+     <None Include="Assets\VisualizerStudio\Scripts\VisualizerStudio.xml" />
      <None Include="Assets\_Materials\UnlitAlpha.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="VisualizerStudio">
+ <HintPath>C:/Users/HMGSYS/Documents/GitHub/Unity/Space-SHMUP/Space SHMUP/Assets/VisualizerStudio/Scripts/VisualizerStudio.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

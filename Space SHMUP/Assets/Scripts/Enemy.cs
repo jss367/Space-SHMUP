@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour {
 	public int			score = 100; //Points earned for destroying this
 
 	public int			showDamageForFrames = 2; // # of frames to show damage
-	public float		powerUpDropChance = 1f; // CHance to drop a power-up
+	public float		powerUpDropChance = 1f; // Chance to drop a power-up
 	public bool _________________;
 
 	public Color[]		originalColors;
@@ -102,7 +102,31 @@ public class Enemy : MonoBehaviour {
 			}
 			Destroy (other);
 			break;
+		case "Asteroid":
+			// Enemies don't take damage unless they're onscreen
+			// This stops the player from shooting them before they are visible
+			bounds.center = transform.position + boundsCenterOffset;
+			if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) {
+				Destroy (other);
+				break;
+			}
+			// Hurt this Enemy
+			ShowDamage();
+			// Get the damage amount from the Projectile.type & Main.W_DEFS
+			health -= 10; // Asteroids do 10 worth of damage
+			if (health <= 0) {
+				// Tell the Main singleton that this ship has been destroyed
+				Main.S.ShipDestroyed(this);
+				// Destroy this Enemy
+				Destroy (this.gameObject);
+			}
+			Destroy (other);
+			break;
+
+
+
 		}
+
 	}
 
 	void ShowDamage() {
