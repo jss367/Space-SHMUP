@@ -62,13 +62,12 @@ public class Hero : MonoBehaviour {
 		//Then ensure that fireDelegate isn't null to avoid an error
 		if (Input.GetAxis ("Jump") == 1 && fireDelegate != null) {
 			fireDelegate ();
-			Debug.Log("Delegate has been fired");
 		}
 
 		}
 
 	//This variable holds a reference to the last triggering GameObject
-	public GameObject lastTriggeerGo = null;
+	public GameObject lastTriggerGo = null;
 
 	void OnTriggerEnter(Collider other){
 		//Find the tag of other.gameObject or its parent GameObjects
@@ -76,10 +75,10 @@ public class Hero : MonoBehaviour {
 		//If there is a parent with a tag
 		if (go != null) {
 			//Make sure it's not the same triggering go as last time
-			if (go ==lastTriggeerGo){
+			if (go ==lastTriggerGo){
 				return;
 			}
-			lastTriggeerGo = go;
+			lastTriggerGo = go;
 			
 			if(go.tag == "Enemy"){
 				//If the shield was triggered by an enemy decrease the level of the shield by 1
