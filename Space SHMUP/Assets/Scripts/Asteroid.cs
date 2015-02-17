@@ -2,7 +2,7 @@
 using System.Collections;
 
 // Enemy_1 extends the Enemy class
-public class Asteroid : Enemy {
+public class Asteroid : MonoBehaviour {
 
 	public float		speed = 10f; //The speed in m/s
 	public float		health = 1;
@@ -114,7 +114,7 @@ public class Asteroid : Enemy {
 			health -= Main.W_DEFS [p.type].damageOnHit;
 			if (health <= 0) {
 				// Tell the Main singleton that this ship has been destroyed
-				Main.S.ShipDestroyed(this);
+				//Main.S.ShipDestroyed(this);
 				// Destroy this Asteroid
 				Destroy (this.gameObject);
 			}

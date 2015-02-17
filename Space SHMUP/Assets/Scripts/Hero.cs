@@ -94,6 +94,11 @@ public class Hero : MonoBehaviour {
 				shieldLevel--;
 				//Destroy the enemy
 				Destroy(go);
+			}else if (go.tag == "Asteroid") {
+				//If the shield was triggered by an asteroid decrease the level of the shield by 1
+				shieldLevel--;
+				//Destroy the asteroid
+				Destroy(go);
 			}else if (go.tag == "PowerUp") {
 				// If the sheild was triggered by a PowerUp
 				AbsorbPowerUp(go);
