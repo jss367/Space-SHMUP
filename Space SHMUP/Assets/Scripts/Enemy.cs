@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 	
-	public float		speed = 10f; //The speed in m/s
+	public float		speed = 20f; //The speed in m/s
 	public float		fireRate = 0.3f; // Seconds per shot (Unused)
 	public float		health = 10;
 	public int			score = 100; //Points earned for destroying this
