@@ -20,6 +20,9 @@ public class Enemy : MonoBehaviour {
 
 	public Bounds bounds; //The Bounds of this and its children
 	public Vector3 boundsCenterOffset; //Distance of bounds.center from position
+
+	private float tMultiplier;
+	private GameController gameController;
 	
 	void Awake() {
 		materials = Utils.GetAllMaterials (gameObject);
@@ -29,9 +32,27 @@ public class Enemy : MonoBehaviour {
 		}
 		InvokeRepeating ("CheckOffscreen", 0f, 2f);
 	}
-	
+
+	void Start() {
+		//gameController = GameObject.Find("GameController").GetComponent<GameController>();
+		GameObject gameControllerObject = GameObject.Find("GameController");
+	//	Debug.Log("gameControllerObject is: " + gameControllerObject);
+		if (gameControllerObject != null) {
+			gameController = gameControllerObject.GetComponent<GameController> ();
+		}
+	//	Debug.Log("gameController is: " + gameController);
+	}
+
 	//Update is called once per frame
 	void Update(){
+		if (gameController != null) {
+		//	Debug.Log("gameController does exist");
+			tMultiplier = gameController.timeMultiplier;
+			//Debug.Log (tMultiplier);
+		}
+		if (gameController == null) {
+			Debug.Log ("Cannot find 'gameController'");
+		}
 		Move();
 		if (remainingDamageFrames > 0) {
 			remainingDamageFrames--;
@@ -44,7 +65,7 @@ public class Enemy : MonoBehaviour {
 	
 	public virtual void Move(){
 		Vector3 tempPos = pos;
-		tempPos.y -= speed * Time.deltaTime;
+		tempPos.y -= (tMultiplier + speed) * Time.deltaTime;
 		pos = tempPos;
 	}
 	
@@ -118,7 +139,7 @@ public class Enemy : MonoBehaviour {
 			// Hurt this Enemy
 			ShowDamage();
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
-			health -= 10; // Asteroids do 10 worth of damage
+			health -= 1; // Asteroids do 10 worth of damage
 			if (health <= 0) {
 				// Tell the Main singleton that this ship has been destroyed
 			//	Main.S.ShipDestroyed(this);

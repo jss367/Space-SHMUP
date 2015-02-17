@@ -1,9 +1,10 @@
 ﻿//this is not currently attached to anything
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
-[RequireComponent(typeof(AudioSource))]
+//[RequireComponent(typeof(AudioSource))]
 public class GameController : MonoBehaviour
 {
 	public GameObject hazard;
@@ -13,35 +14,33 @@ public class GameController : MonoBehaviour
 	public float startWait;
 	public float waveWait;
 	
-	public GUIText scoreText;
-	public GUIText restartText;
+	public Text scoreText;
+	public GUIText restartText;  //change these to Text
 	public GUIText gameOverText;
 	
 	private bool gameOver;
 	private bool restart;
 	private int score;
-	
-	private bool itsOver;
-	
+
 	public float gameRestartDelay = 2f;
+
+	public float timeMultiplier;
 	
 		
 	void Start ()
 	{
 		gameOver = false;
 		restart = false;
-		restartText.text = "";
-		gameOverText.text = "";
+//		restartText.text = "";
+//		gameOverText.text = "";
 		score = 0;
 		UpdateScore ();
-		
-		Debug.Log (itsOver + "itsOver");
 
 	}
 
 	void Update ()
 	{
-		Debug.Log (itsOver + "itsOver");
+		 timeMultiplier = Time.time / 4;  // Subtract the time of the most recent death
 
 		if (restart) {
 			Debug.Log ("You are in restart mode");
@@ -61,7 +60,7 @@ public class GameController : MonoBehaviour
 	
 	void UpdateScore ()
 	{
-		scoreText.text = "Score: " + score;
+		scoreText.text = "Score: " + score;  // should this be score.ToString()?
 	}
 	
 

@@ -55,10 +55,13 @@ public class SU_Asteroid : MonoBehaviour {
 	// Vector3 axis to rotate around
 	public Vector3 rotationalAxis = Vector3.up;	
 	// Drift/movement speed
-	public float driftSpeed = -4.0f;
+	public float driftSpeed = -20.0f;
 	// Vector3 direction for drift/movement
 	public Vector3 driftAxis = Vector3.up;
-	
+
+	private float tMultiplier;
+	private GameController gameController;
+
 	// Private variables
 	private Transform _cacheTransform;
 	
@@ -67,15 +70,25 @@ public class SU_Asteroid : MonoBehaviour {
 		_cacheTransform = transform;
 		// Set the mesh based on poly count (quality)
 		SetPolyCount(polyCount);
+
+		//gameController = GameObject.Find("GameController").GetComponent<GameController>();
+		GameObject gameControllerObject = GameObject.Find("GameController");
+		//	Debug.Log("gameControllerObject is: " + gameControllerObject);
+
+		gameController = gameControllerObject.GetComponent<GameController>();
+		//	Debug.Log("gameController is: " + gameController);
 	}
 	
-	void Update () {						
+	void Update () {
+		tMultiplier = gameController.timeMultiplier;
+
 		if (_cacheTransform != null) {
 			// Rotate around own axis
-			_cacheTransform.Rotate(rotationalAxis * rotationSpeed * Time.deltaTime);
+			_cacheTransform.Rotate(rotationalAxis * (rotationSpeed + tMultiplier) * Time.deltaTime);
 			// Move in world space according to drift speed
-			_cacheTransform.Translate(driftAxis * driftSpeed * Time.deltaTime, Space.World);
+			_cacheTransform.Translate(driftAxis * (driftSpeed - tMultiplier) * Time.deltaTime, Space.World);
 		}
+
 	}
 
 	void OnCollisionEnter (Collision coll) {
@@ -124,7 +137,7 @@ public class SU_Asteroid : MonoBehaviour {
 				//Destroy the asteroid
 				Destroy(this.gameObject);
 				// Destroy the enemy
-				Destroy(go);
+				//Destroy(go);
 				Instantiate(explosion, transform.position, transform.rotation);
 			}else if (go.tag == "Asteroid") {
 				//Destroy the asteroid
