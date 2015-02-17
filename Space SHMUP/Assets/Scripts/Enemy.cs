@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour {
 	public float		powerUpDropChance = 1f; // Chance to drop a power-up
 	public bool _________________;
 
+	public GameObject	impact;
+
 	public Color[]		originalColors;
 	public Material[]	materials; //All the Materials of this & its children
 	public int			remainingDamageFrames = 0; // Damage frames left
@@ -86,7 +88,6 @@ public class Enemy : MonoBehaviour {
 			// Enemies don't take damage unless they're onscreen
 			// This stops the player from shooting them before they are visible
 			bounds.center = transform.position + boundsCenterOffset;
-			Debug.Log (bounds.extents);
 			if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) {
 
 				Destroy (other);
@@ -94,6 +95,7 @@ public class Enemy : MonoBehaviour {
 			}
 			// Hurt this Enemy
 			ShowDamage();
+			Instantiate(impact, transform.position, transform.rotation);
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
 			health -= Main.W_DEFS [p.type].damageOnHit;
 			if (health <= 0) {
@@ -105,10 +107,11 @@ public class Enemy : MonoBehaviour {
 			Destroy (other);
 			break;
 		case "Asteroid":
+			Debug.Log("Hit an asteroid");
 			// Enemies don't take damage unless they're onscreen
 			// This stops the player from shooting them before they are visible
 			bounds.center = transform.position + boundsCenterOffset;
-			if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) {
+			if (Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) { // removed "bounds.extents == Vector3.zero || "
 				Destroy (other);
 				break;
 			}

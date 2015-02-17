@@ -79,17 +79,14 @@ public class SU_Asteroid : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision coll) {
-		Debug.Log ("Collision");
 		GameObject other = coll.gameObject;
 		switch (other.tag) {
 		case "ProjectileHero":
-			Debug.Log ("Projectile");
 			Projectile p = other.GetComponent<Projectile> ();
 			// Asteroids don't take damage unless they're onscreen
 			// This stops the player from shooting them before they are visible
 			bounds.center = transform.position + boundsCenterOffset;
 			if (Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) { //removed "bounds.extents == Vector3.zero ||" ... be careful
-				Debug.Log (bounds.extents);
 				Destroy (other);
 				break;
 			}
@@ -97,18 +94,56 @@ public class SU_Asteroid : MonoBehaviour {
 			ShowDamage();
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
 			health -= Main.W_DEFS [p.type].damageOnHit;
-			Debug.Log(health);
 			if (health <= 0) {
 				// Tell the Main singleton that this ship has been destroyed
 				//Main.S.ShipDestroyed(this);
 				// Destroy this Asteroid
 				Destroy (this.gameObject);
+				Instantiate(explosion, transform.position, transform.rotation);
 			}
 			Destroy (other);
 			break;
 		}
 	}
-	
+
+	//This variable holds a reference to the last triggering GameObject
+	public GameObject lastTriggerGo = null;
+
+	void OnTriggerEnter(Collider other){
+		//Find the tag of other.gameObject or its parent GameObjects
+		GameObject go = Utils.FindTaggedParent (other.gameObject);
+		//If there is a parent with a tag
+		if (go != null) {
+			//Make sure it's not the same triggering go as last time
+			if (go ==lastTriggerGo){
+				return;
+			}
+			lastTriggerGo = go;
+			
+			if(go.tag == "Enemy"){
+				//Destroy the asteroid
+				Destroy(this.gameObject);
+				// Destroy the enemy
+				Destroy(go);
+				Instantiate(explosion, transform.position, transform.rotation);
+			}else if (go.tag == "Asteroid") {
+				//Destroy the asteroid
+				Destroy(this.gameObject);
+				Instantiate(explosion, transform.position, transform.rotation);
+			}else if (go.tag == "ProjectileHero") {
+				Destroy(this.gameObject);
+				Instantiate(explosion, transform.position, transform.rotation);
+			}else{
+				//Announce it
+				print ("Triggered: " + go.name);
+				//Make sure it's not the same triggering go as last time
+			}
+		}else {
+			//Otherwise announce the original gameObject
+			print ("Triggered: " + other.gameObject.name);
+		}
+	}
+
 	
 	void ShowDamage() {
 		foreach (Material m in materials) {
