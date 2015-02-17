@@ -110,7 +110,6 @@ public class Weapon : MonoBehaviour {
 			p.rigidbody.velocity = new Vector3 (-.2f, 0.9f, 0) * def.velocity;
 			p = MakeProjectile ();
 			p.rigidbody.velocity = new Vector3 (.2f, 0.9f, 0) * def.velocity;
-			p = MakeProjectile ();
 			break;
 		}
 	}

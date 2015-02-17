@@ -86,7 +86,9 @@ public class Enemy : MonoBehaviour {
 			// Enemies don't take damage unless they're onscreen
 			// This stops the player from shooting them before they are visible
 			bounds.center = transform.position + boundsCenterOffset;
+			Debug.Log (bounds.extents);
 			if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) {
+
 				Destroy (other);
 				break;
 			}

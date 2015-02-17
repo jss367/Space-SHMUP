@@ -34,12 +34,28 @@ public class SU_Asteroid : MonoBehaviour {
 	public Transform meshMediumPoly;
 	public Transform meshHighPoly;
 
+	public float		health = 1;
+	public int			score = 100; //Points earned for destroying this
+
+	public int			showDamageForFrames = 0; // # of frames to show damage
+	public float		powerUpDropChance = 0f; // Chance to drop a power-up
+
+	public Color[]		originalColors;
+	public Material[]	materials; //All the Materials of this & its children
+	public int			remainingDamageFrames = 0; // Damage frames left
+	
+	public Bounds bounds; //The Bounds of this and its children
+	public Vector3 boundsCenterOffset; //Distance of bounds.center from position
+	
+	
+	public GameObject explosion;
+
 	// Rotation speed
-	public float rotationSpeed = 0.0f;
+	public float rotationSpeed = 200.0f;
 	// Vector3 axis to rotate around
 	public Vector3 rotationalAxis = Vector3.up;	
 	// Drift/movement speed
-	public float driftSpeed = 0.0f;
+	public float driftSpeed = -4.0f;
 	// Vector3 direction for drift/movement
 	public Vector3 driftAxis = Vector3.up;
 	
@@ -61,6 +77,51 @@ public class SU_Asteroid : MonoBehaviour {
 			_cacheTransform.Translate(driftAxis * driftSpeed * Time.deltaTime, Space.World);
 		}
 	}
+
+	void OnCollisionEnter (Collision coll) {
+		Debug.Log ("Collision");
+		GameObject other = coll.gameObject;
+		switch (other.tag) {
+		case "ProjectileHero":
+			Debug.Log ("Projectile");
+			Projectile p = other.GetComponent<Projectile> ();
+			// Asteroids don't take damage unless they're onscreen
+			// This stops the player from shooting them before they are visible
+			bounds.center = transform.position + boundsCenterOffset;
+			if (Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) { //removed "bounds.extents == Vector3.zero ||" ... be careful
+				Debug.Log (bounds.extents);
+				Destroy (other);
+				break;
+			}
+			// Hurt this Asteroid
+			ShowDamage();
+			// Get the damage amount from the Projectile.type & Main.W_DEFS
+			health -= Main.W_DEFS [p.type].damageOnHit;
+			Debug.Log(health);
+			if (health <= 0) {
+				// Tell the Main singleton that this ship has been destroyed
+				//Main.S.ShipDestroyed(this);
+				// Destroy this Asteroid
+				Destroy (this.gameObject);
+			}
+			Destroy (other);
+			break;
+		}
+	}
+	
+	
+	void ShowDamage() {
+		foreach (Material m in materials) {
+			m.color = Color.red;
+		}
+		remainingDamageFrames = showDamageForFrames;
+	}
+	void UnShowDamage() {
+		for (int i = 0; i < materials.Length; i++) {
+			materials[i].color = originalColors[i];
+		}
+	}
+
 	
 	// Set the mesh based on the poly count (quality)
 	public void SetPolyCount(PolyCount _newPolyCount) { SetPolyCount(_newPolyCount, false); }
