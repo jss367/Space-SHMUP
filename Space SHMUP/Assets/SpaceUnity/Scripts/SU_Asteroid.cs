@@ -35,7 +35,7 @@ public class SU_Asteroid : MonoBehaviour {
 	public Transform meshHighPoly;
 
 	public float		health = 1;
-	public int			score = 100; //Points earned for destroying this
+	public int			score = 10; //Points earned for destroying this
 
 	public int			showDamageForFrames = 0; // # of frames to show damage
 	public float		powerUpDropChance = 0f; // Chance to drop a power-up
@@ -142,9 +142,11 @@ public class SU_Asteroid : MonoBehaviour {
 			}else if (go.tag == "Asteroid") {
 				//Destroy the asteroid
 				Destroy(this.gameObject);
+
 				Instantiate(explosion, transform.position, transform.rotation);
 			}else if (go.tag == "ProjectileHero") {
 				Destroy(this.gameObject);
+				Main.S.AsteroidDestroyed(this);
 				Instantiate(explosion, transform.position, transform.rotation);
 			}else{
 				//Announce it

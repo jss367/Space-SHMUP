@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic; //Required to use Lists or Dictionaries
 
@@ -17,10 +18,20 @@ public class Main : MonoBehaviour {
 		WeaponType.shield
 	}; //Two blasters because it is twice as likely to appear in a powerup
 
+	public Text scoreText;
+	public GUIText restartText;  //change these to Text
+	public GUIText gameOverText;
+
+
 	public bool ______________;
 	
 	public WeaponType[]			activeWeaponTypes;
 	public float				enemySpawnRate; //Display between enemy spawns
+	
+	private int score;
+	public float timeAlive;
+	public float timeMultiplier;
+	private float timeLastReset;
 	
 	void Awake(){
 		S = this;
@@ -56,9 +67,20 @@ public class Main : MonoBehaviour {
 		for (int i = 0; i < weaponDefinitions.Length; i++) {
 			activeWeaponTypes [i] = weaponDefinitions [i].type;
 		}
+
+		score = 0;
+		UpdateScore ();
 	}
 
-	
+
+	void Update() {
+		//TimeAlive is the time since the last reset
+		timeAlive = Time.time - timeLastReset;
+		//Debug.Log (timeAlive);
+		timeMultiplier = timeAlive / 4;  // Subtract the time of the most recent death
+		//Debug.Log ("The time since the last reset is " + timeLastReset);
+	}
+
 	public void SpawnEnemy(){
 		//Pick a random Enemy prefab to instantiate
 		int ndx = Random.Range (0, prefabEnemies.Length);
@@ -80,8 +102,12 @@ public class Main : MonoBehaviour {
 	}
 	public void Restart(){
 		
-		//Reload _Scene_0 to restart the game
+		//Reload scene Main to restart the game
 		Application.LoadLevel ("Main");
+		//Set the time of the last reset
+		timeLastReset = Time.time;
+		Debug.Log ("timeLastReset is set to " + timeLastReset);
+
 	}
 
 	public void ShipDestroyed( Enemy e) {
@@ -104,7 +130,24 @@ public class Main : MonoBehaviour {
 			
 			// Set it to the position of the destroyed ship
 			pu.transform.position = e.transform.position;
+
+			AddScore(e.score);
 		}
+	}
+
+	public void AsteroidDestroyed(SU_Asteroid a) {
+		AddScore (a.score);
+	}
+	
+	public void AddScore (int newScoreValue)
+	{
+		score += newScoreValue;
+		UpdateScore ();
+	}
+	
+	void UpdateScore ()
+	{
+		scoreText.text = "Score: " + score;  // should this be score.ToString()?
 	}
 
 }

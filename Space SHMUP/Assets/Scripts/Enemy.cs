@@ -23,6 +23,7 @@ public class Enemy : MonoBehaviour {
 
 	private float tMultiplier;
 	private GameController gameController;
+	private Main main;
 	
 	void Awake() {
 		materials = Utils.GetAllMaterials (gameObject);
@@ -41,6 +42,13 @@ public class Enemy : MonoBehaviour {
 			gameController = gameControllerObject.GetComponent<GameController> ();
 		}
 	//	Debug.Log("gameController is: " + gameController);
+
+		GameObject mainObject = GameObject.FindWithTag("MainCamera");
+		if (mainObject != null) {
+			main = mainObject.GetComponent<Main> ();
+		}
+		 
+
 	}
 
 	//Update is called once per frame
@@ -51,8 +59,18 @@ public class Enemy : MonoBehaviour {
 			//Debug.Log (tMultiplier);
 		}
 		if (gameController == null) {
-			Debug.Log ("Cannot find 'gameController'");
+			//Debug.Log ("Cannot find 'gameController'");
 		}
+
+		if (main != null) {
+			//	Debug.Log("gameController does exist");
+			tMultiplier = main.timeMultiplier;
+			//Debug.Log (tMultiplier);
+		}
+		if (main == null) {
+			//Debug.Log ("Cannot find 'main'");
+		}
+
 		Move();
 		if (remainingDamageFrames > 0) {
 			remainingDamageFrames--;
