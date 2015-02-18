@@ -1,26 +1,14 @@
-
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class SU_Asteroid : MonoBehaviour {
-	// Enum to present choise of high, medium, or low quality mesh
-	public enum PolyCount { HIGH, MEDIUM, LOW }
-	// Variable to set the poly count (quality) of the asteroid, defualt is High quality
-	public PolyCount polyCount = PolyCount.HIGH;
-	// Variable to set the poly count for the collider (MUCH faster to use the low poly version)
-	public PolyCount polyCountCollider = PolyCount.LOW;
-	
-	// Link prefabs to the different quality meshes
-	public Transform meshLowPoly;
-	public Transform meshMediumPoly;
-	public Transform meshHighPoly;
+public class AsteroidAngle : MonoBehaviour {
 
 	public float		health = 1;
 	public int			score = 10; //Points earned for destroying this
-
+	
 	public int			showDamageForFrames = 0; // # of frames to show damage
 	public float		powerUpDropChance = 0f; // Chance to drop a power-up
-
+	
 	public Color[]		originalColors;
 	public Material[]	materials; //All the Materials of this & its children
 	public int			remainingDamageFrames = 0; // Damage frames left
@@ -30,7 +18,7 @@ public class SU_Asteroid : MonoBehaviour {
 	
 	
 	public GameObject explosion;
-
+	
 	// Rotation speed
 	public float rotationSpeed = 200.0f;
 	// Vector3 axis to rotate around
@@ -39,39 +27,47 @@ public class SU_Asteroid : MonoBehaviour {
 	public float driftSpeed = -20.0f;
 	// Vector3 direction for drift/movement
 	public Vector3 driftAxis = Vector3.up;
+	public Vector3 orthogAxis;
+	public float orthogSpeed = 10.0f;
 
 	private float tMultiplier;
 	private GameController gameController;
-
+	
 	// Private variables
 	private Transform _cacheTransform;
 	
 	void Start () {
 		// Cache transforms to increase performance
 		_cacheTransform = transform;
-		// Set the mesh based on poly count (quality)
-		SetPolyCount(polyCount);
+
+		if (transform.position.x > 0) {
+			orthogAxis = Vector3.left;
+		} else {
+			orthogAxis = Vector3.right;
+		}
+
 
 		//gameController = GameObject.Find("GameController").GetComponent<GameController>();
 		GameObject gameControllerObject = GameObject.Find("GameController");
 		//	Debug.Log("gameControllerObject is: " + gameControllerObject);
-
+		
 		gameController = gameControllerObject.GetComponent<GameController>();
 		//	Debug.Log("gameController is: " + gameController);
 	}
 	
 	void Update () {
 		tMultiplier = gameController.timeMultiplier;
-
+		
 		if (_cacheTransform != null) {
 			// Rotate around own axis
 			_cacheTransform.Rotate(rotationalAxis * (rotationSpeed + tMultiplier) * Time.deltaTime);
 			// Move in world space according to drift speed
 			_cacheTransform.Translate(driftAxis * (driftSpeed - tMultiplier) * Time.deltaTime, Space.World);
+			_cacheTransform.Translate(orthogAxis * (orthogSpeed) * Time.deltaTime, Space.World);
 		}
-
+		
 	}
-
+	
 	void OnCollisionEnter (Collision coll) {
 		GameObject other = coll.gameObject;
 		switch (other.tag) {
@@ -99,10 +95,10 @@ public class SU_Asteroid : MonoBehaviour {
 			break;
 		}
 	}
-
+	
 	//This variable holds a reference to the last triggering GameObject
 	public GameObject lastTriggerGo = null;
-
+	
 	void OnTriggerEnter(Collider other){
 		//Find the tag of other.gameObject or its parent GameObjects
 		GameObject go = Utils.FindTaggedParent (other.gameObject);
@@ -123,11 +119,11 @@ public class SU_Asteroid : MonoBehaviour {
 			}else if (go.tag == "Asteroid") {
 				//Destroy the asteroid
 				Destroy(this.gameObject);
-
+				
 				Instantiate(explosion, transform.position, transform.rotation);
 			}else if (go.tag == "ProjectileHero") {
 				Destroy(this.gameObject);
-				Main.S.AsteroidDestroyed(this);
+				//Main.S.AsteroidDestroyed(this);
 				Instantiate(explosion, transform.position, transform.rotation);
 			}else{
 				//Announce it
@@ -139,7 +135,7 @@ public class SU_Asteroid : MonoBehaviour {
 			print ("Triggered: " + other.gameObject.name);
 		}
 	}
-
+	
 	
 	void ShowDamage() {
 		foreach (Material m in materials) {
@@ -154,45 +150,4 @@ public class SU_Asteroid : MonoBehaviour {
 	}
 
 	
-	// Set the mesh based on the poly count (quality)
-	public void SetPolyCount(PolyCount _newPolyCount) { SetPolyCount(_newPolyCount, false); }
-	public void SetPolyCount(PolyCount _newPolyCount, bool _collider) {
-		// If this is not the collider...
-		if (!_collider) {
-			// This is the actual asteroid mesh.. so specify which poly count we want
-			polyCount = _newPolyCount;
-			switch (_newPolyCount) {
-			case PolyCount.LOW:
-				// access the MeshFilter component and change the sharedMesh to the low poly version
-				transform.GetComponent<MeshFilter>().sharedMesh = meshLowPoly.GetComponent<MeshFilter>().sharedMesh;				
-				break;
-			case PolyCount.MEDIUM:
-				// access the MeshFilter component and change the sharedMesh to the medium poly version
-				transform.GetComponent<MeshFilter>().sharedMesh = meshMediumPoly.GetComponent<MeshFilter>().sharedMesh;
-				break;
-			case PolyCount.HIGH:
-				// access the MeshFilter component and change the sharedMesh to the high poly version
-				transform.GetComponent<MeshFilter>().sharedMesh = meshHighPoly.GetComponent<MeshFilter>().sharedMesh;			
-				break;
-			}
-		} else {
-			// This is the collider mesh we set this time
-			polyCountCollider = _newPolyCount;
-			switch (_newPolyCount) {
-			case PolyCount.LOW:
-				// access the MeshFilter component and change the sharedMesh to the low poly version
-				transform.GetComponent<MeshCollider>().sharedMesh = meshLowPoly.GetComponent<MeshFilter>().sharedMesh;				
-				break;
-			case PolyCount.MEDIUM:
-				// access the MeshFilter component and change the sharedMesh to the medium poly version
-				transform.GetComponent<MeshCollider>().sharedMesh = meshMediumPoly.GetComponent<MeshFilter>().sharedMesh;
-				break;
-			case PolyCount.HIGH:
-				// access the MeshFilter component and change the sharedMesh to the high poly version
-				transform.GetComponent<MeshCollider>().sharedMesh = meshHighPoly.GetComponent<MeshFilter>().sharedMesh;			
-				break;
-			}			
-		}
-	}
-			
 }
