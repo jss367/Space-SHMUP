@@ -11,7 +11,8 @@ public enum WeaponType {
 	phaser, //Shots that move in waves [NI]
 	missile, //Homing missiles [NI]
 	laser, //Damage over time [NI]
-	shield //Raise sheidLevel
+	shield, //Raise sheidLevel
+	ball
 }
 
 //The WeaponDefinition class allows you to set the properties
@@ -106,6 +107,13 @@ public class Weapon : MonoBehaviour {
 		case WeaponType.spread:
 			p = MakeProjectile ();
 			p.rigidbody.velocity = Vector3.up * def.velocity;
+			p = MakeProjectile ();
+			p.rigidbody.velocity = new Vector3 (-.2f, 0.9f, 0) * def.velocity;
+			p = MakeProjectile ();
+			p.rigidbody.velocity = new Vector3 (.2f, 0.9f, 0) * def.velocity;
+			break;
+
+		case WeaponType.ball:
 			p = MakeProjectile ();
 			p.rigidbody.velocity = new Vector3 (-.2f, 0.9f, 0) * def.velocity;
 			p = MakeProjectile ();

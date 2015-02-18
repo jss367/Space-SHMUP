@@ -12,7 +12,7 @@ public class Main : MonoBehaviour {
 	public WeaponDefinition[]	weaponDefinitions;
 	public GameObject			prefabPowerUp;
 	public WeaponType[]			powerUpFrequency = new WeaponType[] {
-		WeaponType.blaster,
+		WeaponType.ball,
 		WeaponType.blaster,
 		WeaponType.spread,
 		WeaponType.shield
@@ -20,7 +20,7 @@ public class Main : MonoBehaviour {
 
 	public Text scoreText;
 	public GUIText restartText;  //change these to Text
-	public GUIText gameOverText;
+	public Text gameOverText;
 
 
 	public bool ______________;
