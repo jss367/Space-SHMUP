@@ -36,7 +36,7 @@ public class WeaponDefinition {
 	
 }
 
-//Note: Weapon prefabs, colors, and so on arer set in the class Main.
+//Note: Weapon prefabs, colors, and so on are set in the class Main.
 
 
 

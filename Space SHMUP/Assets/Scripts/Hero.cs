@@ -23,6 +23,12 @@ public class Hero : MonoBehaviour {
 	public bool _____________;
 
 	public Bounds				bounds;
+	private int					weaponCount;
+
+	//private int					recall;
+	private int					blasterRecall;
+	private int					spreadRecall;
+	private int					ballRecall;
 	
 	//Declare a new delegate type WeaponFireDelegate
 	public delegate void WeaponFireDelegate();
@@ -142,10 +148,22 @@ public class Hero : MonoBehaviour {
 						// Set it to pu.type
 						w.SetType(pu.type);
 					}
+				SaveWeaponCount(pu.type);
 				} else {
 					// If this is a different weapon
+				int recall = RecallWeaponCount(pu.type);
+				GetEmptyWeaponSlot();
 					ClearWeapons();
 					weapons[0].SetType(pu.type);
+				// Fill up slots for all the old power ups you had
+				for (int i = 0; i < recall; i++) {
+					Weapon w = GetEmptyWeaponSlot(); // Find an available weapon
+					if (w != null) {
+						// Set it to pu.type
+						w.SetType(pu.type);
+					}
+				}
+				//SaveWeaponCount(pu.type);
 				}
 				break;
 			}
@@ -155,6 +173,7 @@ public class Hero : MonoBehaviour {
 		Weapon GetEmptyWeaponSlot() {
 			for (int i = 0; i < weapons.Length; i++) {
 				if (weapons[i].type == WeaponType.none) {
+				//Debug.Log(i);
 					return(weapons[i]);
 				}
 			}
@@ -163,10 +182,58 @@ public class Hero : MonoBehaviour {
 		
 		void ClearWeapons() {
 			foreach (Weapon w in weapons) {
+			weaponCount++;
+
 				w.SetType(WeaponType.none);
 			}
 		}
 
-	
+
+	void SaveWeaponCount(WeaponType wtype){
+
+			//Debug.Log("Looking into your history of " + wtype);
+			for (int i = 0; i < weapons.Length; i++) {
+				if (weapons[i].type == WeaponType.none) {
+					//Debug.Log("The previous weapon had " + i + " instance(s)");
+					//Debug.Log("weapons[i].type is " + weapons[i].type);
+					switch(wtype.ToString()){
+					case("blaster"):
+						//Debug.Log("The weapon was a blaster");
+						blasterRecall = i;
+						Debug.Log("Save blasterRecall as " + blasterRecall);
+						return;
+					case("spread"):
+						spreadRecall = i;
+						Debug.Log("Save spreadRecall as " + spreadRecall);
+						return;
+					}
+
+				}
+			}
+	}
+
+		int RecallWeaponCount(WeaponType wtype){
+		//Debug.Log("Looking into your history of " + wtype);
+		for (int i = 0; i < weapons.Length; i++) {
+			if (weapons[i].type == WeaponType.none) {
+				//Debug.Log("The previous weapon had " + i + " instance(s)");
+				//Debug.Log("weapons[i].type is " + weapons[i].type);
+			switch(wtype.ToString()){
+				case("blaster"):
+					//Debug.Log("The weapon was a blaster");
+					Debug.Log("Recall blasterRecall as " + blasterRecall);
+					return(blasterRecall);
+				case("spread"):
+					Debug.Log("Recall spreadRecall as " + spreadRecall);
+					return(spreadRecall);
+				}
+				return(i);
+
+			}
+		}
+		//return(null);
+		return(0);
+	}
+
 
 }

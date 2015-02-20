@@ -14,6 +14,11 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject AsteroidSpawn2;
 	public GameObject AsteroidSpawn3;
 
+	public GameObject EnemySpawn1;
+	public GameObject EnemySpawn2;
+	public GameObject EnemySpawn3;
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -28,15 +33,19 @@ public class SpawnManager : MonoBehaviour {
 	void Update () {
 	if (main.timeAlive < firstBreak) {
 			level = 1;
-			Debug.Log("The time alive is " + main.timeAlive);
-			Debug.Log("The first break is " + firstBreak);
+		//	Debug.Log("The time alive is " + main.timeAlive);
+		//	Debug.Log("The first break is " + firstBreak);
 		} else if (main.timeAlive >= firstBreak && main.timeAlive < secondBreak) {
 			level = 2;
-//			AsteroidSpawn1.SetActive = false;
+			AsteroidSpawn1.SetActive(false);
+			AsteroidSpawn2.SetActive(true);
+			EnemySpawn1.SetActive(false);
+			EnemySpawn2.SetActive(true);
 		} else {
 			level = 3;
-//			AsteroidSpawn1.SetActive = true;
+			AsteroidSpawn2.SetActive(false);
+			AsteroidSpawn3.SetActive(true);
 		}
-		Debug.Log ("The player is on level " + level.ToString());
+		//Debug.Log ("The player is on level " + level.ToString());
 	}
 }

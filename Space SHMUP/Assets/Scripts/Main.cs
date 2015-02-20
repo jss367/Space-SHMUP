@@ -106,7 +106,7 @@ public class Main : MonoBehaviour {
 		Application.LoadLevel ("Main");
 		//Set the time of the last reset
 		timeLastReset = Time.time;
-		Debug.Log ("timeLastReset is set to " + timeLastReset);
+		//Debug.Log ("timeLastReset is set to " + timeLastReset);
 
 	}
 
