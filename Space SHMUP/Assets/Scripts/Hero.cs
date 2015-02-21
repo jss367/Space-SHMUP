@@ -200,11 +200,11 @@ public class Hero : MonoBehaviour {
 					case("blaster"):
 						//Debug.Log("The weapon was a blaster");
 						blasterRecall = i;
-						Debug.Log("Save blasterRecall as " + blasterRecall);
+						//Debug.Log("Save blasterRecall as " + blasterRecall);
 						return;
 					case("spread"):
 						spreadRecall = i;
-						Debug.Log("Save spreadRecall as " + spreadRecall);
+						//Debug.Log("Save spreadRecall as " + spreadRecall);
 						return;
 					}
 
@@ -221,10 +221,10 @@ public class Hero : MonoBehaviour {
 			switch(wtype.ToString()){
 				case("blaster"):
 					//Debug.Log("The weapon was a blaster");
-					Debug.Log("Recall blasterRecall as " + blasterRecall);
+					//Debug.Log("Recall blasterRecall as " + blasterRecall);
 					return(blasterRecall);
 				case("spread"):
-					Debug.Log("Recall spreadRecall as " + spreadRecall);
+					//Debug.Log("Recall spreadRecall as " + spreadRecall);
 					return(spreadRecall);
 				}
 				return(i);

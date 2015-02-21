@@ -17,35 +17,39 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject EnemySpawn1;
 	public GameObject EnemySpawn2;
 	public GameObject EnemySpawn3;
-
-
+	
 	// Use this for initialization
 	void Start () {
-	
 		GameObject mainObject = GameObject.FindWithTag("MainCamera");
 		if (mainObject != null) {
 			main = mainObject.GetComponent<Main> ();
 		}
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	if (main.timeAlive < firstBreak) {
+		float timer = Time.timeSinceLevelLoad;
+	if (timer < firstBreak) {
 			level = 1;
 		//	Debug.Log("The time alive is " + main.timeAlive);
 		//	Debug.Log("The first break is " + firstBreak);
-		} else if (main.timeAlive >= firstBreak && main.timeAlive < secondBreak) {
+		} else if (timer >= firstBreak && timer < secondBreak) {
 			level = 2;
 			AsteroidSpawn1.SetActive(false);
 			AsteroidSpawn2.SetActive(true);
 			EnemySpawn1.SetActive(false);
 			EnemySpawn2.SetActive(true);
-		} else {
+		} else if (timer >= secondBreak && timer < thirdBreak) {
 			level = 3;
 			AsteroidSpawn2.SetActive(false);
 			AsteroidSpawn3.SetActive(true);
-		}
+			EnemySpawn2.SetActive(false);
+			EnemySpawn3.SetActive(true);
+		} else {
+			level = 4;
+			AsteroidSpawn2.SetActive(true);
+			EnemySpawn2.SetActive(true);
+			}
 		//Debug.Log ("The player is on level " + level.ToString());
 	}
 }

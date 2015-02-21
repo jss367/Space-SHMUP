@@ -16,7 +16,7 @@ public class Main : MonoBehaviour {
 		WeaponType.blaster,
 		WeaponType.spread,
 		WeaponType.shield
-	}; //Two blasters because it is twice as likely to appear in a powerup
+	};
 
 	public Text scoreText;
 	public GUIText restartText;  //change these to Text
@@ -72,13 +72,8 @@ public class Main : MonoBehaviour {
 		UpdateScore ();
 	}
 
-
 	void Update() {
-		//TimeAlive is the time since the last reset
-		timeAlive = Time.time - timeLastReset;
-		//Debug.Log (timeAlive);
-		timeMultiplier = timeAlive / 4;  // Subtract the time of the most recent death
-		//Debug.Log ("The time since the last reset is " + timeLastReset);
+		//timeMultiplier = Time.timeSinceLevelLoad / 4;
 	}
 
 	public void SpawnEnemy(){
@@ -104,10 +99,6 @@ public class Main : MonoBehaviour {
 		
 		//Reload scene Main to restart the game
 		Application.LoadLevel ("Main");
-		//Set the time of the last reset
-		timeLastReset = Time.time;
-		//Debug.Log ("timeLastReset is set to " + timeLastReset);
-
 	}
 
 	public void ShipDestroyed( Enemy e) {
@@ -134,6 +125,7 @@ public class Main : MonoBehaviour {
 			AddScore(e.score);
 		}
 	}
+
 
 	public void AsteroidDestroyed(SU_Asteroid a) {
 		AddScore (a.score);
