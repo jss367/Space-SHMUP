@@ -83,6 +83,12 @@
  <Reference Include="UnityEditor.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.2/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
+ <Reference Include="Prime31MenuItem">
+ <HintPath>C:/Users/HMGSYS/Documents/GitHub/Unity/Space-SHMUP/Space SHMUP/Assets/Editor/Prime31/Prime31MenuItem.dll</HintPath>
+ </Reference>
+ <Reference Include="P31RestKit">
+ <HintPath>C:/Users/HMGSYS/Documents/GitHub/Unity/Space-SHMUP/Space SHMUP/Assets/Plugins/P31RestKit.dll</HintPath>
+ </Reference>
  <Reference Include="VisualizerStudioEditor">
  <HintPath>C:/Users/HMGSYS/Documents/GitHub/Unity/Space-SHMUP/Space SHMUP/Assets/VisualizerStudio/Editor/VisualizerStudioEditor.dll</HintPath>
  </Reference>
@@ -92,14 +98,10 @@
  <Reference Include="UnityEditor.Graphs">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
- <Reference Include="P31RestKit">
- <HintPath>C:/Users/HMGSYS/Documents/GitHub/Unity/Space-SHMUP/Space SHMUP/Assets/Plugins/P31RestKit.dll</HintPath>
- </Reference>
- <Reference Include="Prime31MenuItem">
- <HintPath>C:/Users/HMGSYS/Documents/GitHub/Unity/Space-SHMUP/Space SHMUP/Assets/Editor/Prime31/Prime31MenuItem.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{284E65FF-D304-CE62-0D14-24E3DF9A7934}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{1469F59A-5304-0073-4348-D4FFA1680080}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
