@@ -46,6 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\5MinuteGUI\Editor\Data\FMGData.cs" />
+     <Compile Include="Assets\5MinuteGUI\Editor\EditorWindows\BaseEditorWindow.cs" />
+     <Compile Include="Assets\5MinuteGUI\Editor\EditorWindows\FMGEditorWindow.cs" />
+     <Compile Include="Assets\5MinuteGUI\Editor\MiscFuncs\EditorMisc.cs" />
      <Compile Include="Assets\SpaceUnity\Editor\SU_AsteroidFieldEditor.cs" />
      <Compile Include="Assets\SpaceUnity\Editor\SU_SpaceParticlesEditor.cs" />
      <Compile Include="Assets\SpaceUnity\Editor\SU_SpaceSceneConstructionKitEditor.cs" />
@@ -73,8 +77,11 @@
      <Compile Include="Assets\VisualizerStudio\Editor\Triggers\VisSpawnPrefabTriggerEditor.cs" />
      <Compile Include="Assets\VisualizerStudio\Editor\Triggers\VisTargetTriggerEditor.cs" />
      <Compile Include="Assets\VisualizerStudio\Editor\Utility\VisMicrophoneEditor.cs" />
+     <None Include="Assets\5MinuteGUI\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
+     <None Include="Assets\5MinuteGUI\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
      <None Include="Assets\Space Shooter\Info.txt" />
      <None Include="Assets\VisualizerStudio\Editor\VisualizerStudioEditor.xml" />
+     <None Include="Assets\5MinuteGUI\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
      <None Include="Assets\VisualizerStudio\Scripts\VisualizerStudio.xml" />
      <None Include="Assets\_Materials\UnlitAlpha.shader" />
  <Reference Include="UnityEngine.UI">

@@ -46,6 +46,26 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\5MinuteGUI\Scripts\Audio\AudioVolume.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Audio\ClickEvent.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Audio\ClickEvents.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Audio\Music.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Menu\ButtonToggle.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Menu\GameMenu.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Menu\LevelButton.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Menu\LevelSelect.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Menu\MainMenu.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Menu\OptionsMenu.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Misc\Constants.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Misc\DisableIfNoNextLevel.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Misc\LevelUnlocker.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Misc\Rotator.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Splash\BaseImage.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Splash\FadeScript.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Splash\SplashImage.cs" />
+     <Compile Include="Assets\5MinuteGUI\Scripts\Splash\SplashImages.cs" />
+     <Compile Include="Assets\5MinuteGUI\Standard Assets\Image Effects (Pro Only)\GlowEffect.cs" />
+     <Compile Include="Assets\ClickSelect.cs" />
      <Compile Include="Assets\DestroyByTime.cs" />
      <Compile Include="Assets\HighScore.cs" />
      <Compile Include="Assets\Scripts\Asteroid.cs" />
@@ -110,8 +130,11 @@
      <Compile Include="Assets\VisualizerStudio\Scripts\Triggers\VisTargetTrigger.cs" />
      <Compile Include="Assets\VisualizerStudio\Scripts\Utility\VisMicrophone.cs" />
      <Compile Include="Assets\VisualizerStudio\Scripts\Utility\VisPropertyHelper.cs" />
+     <None Include="Assets\5MinuteGUI\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
+     <None Include="Assets\5MinuteGUI\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
      <None Include="Assets\Space Shooter\Info.txt" />
      <None Include="Assets\VisualizerStudio\Editor\VisualizerStudioEditor.xml" />
+     <None Include="Assets\5MinuteGUI\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
      <None Include="Assets\VisualizerStudio\Scripts\VisualizerStudio.xml" />
      <None Include="Assets\_Materials\UnlitAlpha.shader" />
  <Reference Include="UnityEngine.UI">
