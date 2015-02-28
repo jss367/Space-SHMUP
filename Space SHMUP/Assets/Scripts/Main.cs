@@ -34,6 +34,14 @@ public class Main : MonoBehaviour {
 	private float timeLastReset;
 	
 	void Awake(){
+
+		//Start the song playing
+		//if (MediaPlayerBinding.getCurrentTrack != null) {
+			MediaPlayerBinding.play ();
+		//}
+
+
+
 		S = this;
 		//Set Utils.camBounds
 		Utils.SetCameraBounds (this.camera);
