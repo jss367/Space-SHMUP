@@ -108,7 +108,7 @@ public class Enemy_4 : Enemy {
 			}
 			// Check whether this part is still protected
 			if (prtHit.protectedBy != null) {
-				Debug.Log ("The part hit was " + prtHit);
+				//Debug.Log ("The part hit was " + prtHit);
 				foreach(string s in prtHit.protectedBy) {
 					// If one of the protecting parts hasn't been destroyed...
 					if (!Destroyed(s)) {
@@ -118,7 +118,7 @@ public class Enemy_4 : Enemy {
 					}
 				}
 			}
-			// It's not protected, so mkae it take damage
+			// It's not protected, so make it take damage
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
 			prtHit.health -= Main.W_DEFS[p.type].damageOnHit;
 			// Show damage on the part
