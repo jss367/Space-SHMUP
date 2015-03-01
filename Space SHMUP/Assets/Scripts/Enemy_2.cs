@@ -16,19 +16,23 @@ public class Enemy_2 : Enemy {
 		
 		// Find Utils.camBounds
 		Vector3 cbMin = Utils.camBounds.min;
+		Debug.Log ("The min bound is at " + cbMin);
 		Vector3 cbMax = Utils.camBounds.max;
-		
+		Debug.Log ("The max bound is at " + cbMax);
+
 		Vector3 v = Vector3.zero;
 		// Pick any point on the left side of the screen
 		v.x = cbMin.x - Main.S.enemySpawnPadding;
 		v.y = Random.Range( cbMin.y, cbMax.y);
 		points[0] = v;
+		Debug.Log ("The left point is at " + points[0]);
 		
 		// Pick any point on the right side of the screen
 		v = Vector3.zero;
 		v.x = cbMax.x + Main.S.enemySpawnPadding;
 		v.y = Random.Range(cbMin.y, cbMax.y);
 		points[1] = v;
+		Debug.Log ("The right point is at " + points[1]);
 		
 		// Possibly swap sides
 		if (Random.value < 0.5f) {

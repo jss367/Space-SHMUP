@@ -108,6 +108,7 @@ public class Enemy_4 : Enemy {
 			}
 			// Check whether this part is still protected
 			if (prtHit.protectedBy != null) {
+				Debug.Log ("The part hit was " + prtHit);
 				foreach(string s in prtHit.protectedBy) {
 					// If one of the protecting parts hasn't been destroyed...
 					if (!Destroyed(s)) {
