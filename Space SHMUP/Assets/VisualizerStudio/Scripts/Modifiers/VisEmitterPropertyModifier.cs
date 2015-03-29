@@ -70,7 +70,7 @@ public class VisEmitterPropertyModifier : VisBasePropertyModifier
     /// <param name="propertyValue">The new value to set the property to.</param>
     public override void SetProperty(float propertyValue)
     {
-		VisPropertyHelper.SetEmitterProperty(particleEmitter, targetProperty, propertyValue);
+		VisPropertyHelper.SetEmitterProperty(GetComponent<ParticleEmitter>(), targetProperty, propertyValue);
     }
 
     #endregion

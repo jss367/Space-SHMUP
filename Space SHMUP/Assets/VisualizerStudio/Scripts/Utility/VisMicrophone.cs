@@ -14,7 +14,7 @@ public class VisMicrophone : MonoBehaviour
     void Start()
     {
         //make sure it's okay to start the microphone
-        if (audio && Microphone.devices != null && Microphone.devices.Length > 0)
+        if (GetComponent<AudioSource>() && Microphone.devices != null && Microphone.devices.Length > 0)
         {
             //get index
             int index = 0;
@@ -28,16 +28,16 @@ public class VisMicrophone : MonoBehaviour
             }
 
             //assign and start microphone and then mute the audio source
-            audio.clip = Microphone.Start(Microphone.devices[index], true, 999, AudioSettings.outputSampleRate);
-            audio.mute = true;
+            GetComponent<AudioSource>().clip = Microphone.Start(Microphone.devices[index], true, 999, AudioSettings.outputSampleRate);
+            GetComponent<AudioSource>().mute = true;
 
             //Wait for microphone to be ready
             while (!(Microphone.GetPosition(Microphone.devices[index]) > 0)) { }
 
             //start the audio source
-            audio.Play();
+            GetComponent<AudioSource>().Play();
         }
-        else if (audio)
+        else if (GetComponent<AudioSource>())
             Debug.LogWarning("No audio source was found, can't start microphone! You must attach thise script to the same Game Object as an Audio Source.");
         else if (Microphone.devices == null || Microphone.devices.Length <= 0)
             Debug.LogWarning("No microphone devices were found, can't start microphone!");

@@ -71,7 +71,7 @@ public class VisLightPropertyTrigger : VisBasePropertyTrigger
     /// <param name="propertyValue">The new value to set the property to.</param>
     public override void SetProperty(float propertyValue)
     {
-        VisPropertyHelper.SetLightProperty(light, targetProperty, propertyValue);
+        VisPropertyHelper.SetLightProperty(GetComponent<Light>(), targetProperty, propertyValue);
     }
 
     #endregion

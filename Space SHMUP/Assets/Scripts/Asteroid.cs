@@ -44,7 +44,7 @@ public class Asteroid : MonoBehaviour {
 		
 		birthTime = Time.time;
 
-		rigidbody.angularVelocity = Random.insideUnitSphere * tumble;
+		GetComponent<Rigidbody>().angularVelocity = Random.insideUnitSphere * tumble;
 	}
 
 	void Update(){

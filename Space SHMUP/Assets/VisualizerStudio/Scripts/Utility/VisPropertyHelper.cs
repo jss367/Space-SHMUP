@@ -189,49 +189,49 @@ public static class VisPropertyHelper
 							                                                 	 propertyValue));
                 break;
             case GameObjectProperty.XVelocity:
-                if (gameObject.rigidbody != null)
-                    gameObject.rigidbody.velocity = new Vector3(propertyValue, 
-							                                 	gameObject.rigidbody.velocity.y, 
-							                                 	gameObject.rigidbody.velocity.z);
+                if (gameObject.GetComponent<Rigidbody>() != null)
+                    gameObject.GetComponent<Rigidbody>().velocity = new Vector3(propertyValue, 
+							                                 	gameObject.GetComponent<Rigidbody>().velocity.y, 
+							                                 	gameObject.GetComponent<Rigidbody>().velocity.z);
 				else if (gameObject.transform !=  null)
 					gameObject.transform.Translate(propertyValue * Time.deltaTime, 0.0f, 0.0f);
                 break;
             case GameObjectProperty.YVelocity:
-                if (gameObject.rigidbody != null)
-                    gameObject.rigidbody.velocity = new Vector3(gameObject.rigidbody.velocity.x, 
+                if (gameObject.GetComponent<Rigidbody>() != null)
+                    gameObject.GetComponent<Rigidbody>().velocity = new Vector3(gameObject.GetComponent<Rigidbody>().velocity.x, 
 							                                 	propertyValue, 
-							                                 	gameObject.rigidbody.velocity.z);
+							                                 	gameObject.GetComponent<Rigidbody>().velocity.z);
 				else if (gameObject.transform !=  null)
 					gameObject.transform.Translate(0.0f, propertyValue * Time.deltaTime, 0.0f);
                 break;
             case GameObjectProperty.ZVelocity:
-                if (gameObject.rigidbody != null)
-                    gameObject.rigidbody.velocity = new Vector3(gameObject.rigidbody.velocity.x, 
-							                                 	gameObject.rigidbody.velocity.y, 
+                if (gameObject.GetComponent<Rigidbody>() != null)
+                    gameObject.GetComponent<Rigidbody>().velocity = new Vector3(gameObject.GetComponent<Rigidbody>().velocity.x, 
+							                                 	gameObject.GetComponent<Rigidbody>().velocity.y, 
 							                                 	propertyValue);
 				else if (gameObject.transform !=  null)
 					gameObject.transform.Translate(0.0f, 0.0f, propertyValue * Time.deltaTime);
                 break;
             case GameObjectProperty.XAngularVelocity:
-                if (gameObject.rigidbody != null)
-                    gameObject.rigidbody.angularVelocity = new Vector3(propertyValue, 
-							                                           gameObject.rigidbody.angularVelocity.y, 
-							                                           gameObject.rigidbody.angularVelocity.z);
+                if (gameObject.GetComponent<Rigidbody>() != null)
+                    gameObject.GetComponent<Rigidbody>().angularVelocity = new Vector3(propertyValue, 
+							                                           gameObject.GetComponent<Rigidbody>().angularVelocity.y, 
+							                                           gameObject.GetComponent<Rigidbody>().angularVelocity.z);
 				else if (gameObject.transform != null)
 					gameObject.transform.Rotate(propertyValue * Time.deltaTime, 0.0f, 0.0f);
                 break;
             case GameObjectProperty.YAngularVelocity:
-                if (gameObject.rigidbody != null)
-                    gameObject.rigidbody.angularVelocity = new Vector3(gameObject.rigidbody.angularVelocity.x, 
+                if (gameObject.GetComponent<Rigidbody>() != null)
+                    gameObject.GetComponent<Rigidbody>().angularVelocity = new Vector3(gameObject.GetComponent<Rigidbody>().angularVelocity.x, 
 							                                        	propertyValue, 
-							                                        	gameObject.rigidbody.angularVelocity.z);
+							                                        	gameObject.GetComponent<Rigidbody>().angularVelocity.z);
 				else if (gameObject.transform != null)
 					gameObject.transform.Rotate(0.0f, propertyValue * Time.deltaTime, 0.0f);
                 break;
             case GameObjectProperty.ZAngularVelocity:
-                if (gameObject.rigidbody != null)
-                    gameObject.rigidbody.angularVelocity = new Vector3(gameObject.rigidbody.angularVelocity.x, 
-							                                           gameObject.rigidbody.angularVelocity.y, 
+                if (gameObject.GetComponent<Rigidbody>() != null)
+                    gameObject.GetComponent<Rigidbody>().angularVelocity = new Vector3(gameObject.GetComponent<Rigidbody>().angularVelocity.x, 
+							                                           gameObject.GetComponent<Rigidbody>().angularVelocity.y, 
 							                                           propertyValue);
 				else if (gameObject.transform != null)
 					gameObject.transform.Rotate(0.0f, 0.0f, propertyValue * Time.deltaTime);

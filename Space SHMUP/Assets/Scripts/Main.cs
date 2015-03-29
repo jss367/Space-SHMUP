@@ -37,7 +37,7 @@ public class Main : MonoBehaviour {
 
 		S = this;
 		//Set Utils.camBounds
-		Utils.SetCameraBounds (this.camera);
+		Utils.SetCameraBounds (this.GetComponent<Camera>());
 		//  0.5 enemies/second = enemySpawnRate of 2
 		enemySpawnRate = 1f / enemySpawnPerSecond;
 		//Invoke call SpawnEnemy() once after a 2 second delay

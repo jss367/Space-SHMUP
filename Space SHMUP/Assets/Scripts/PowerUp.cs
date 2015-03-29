@@ -29,7 +29,7 @@ public class PowerUp : MonoBehaviour {
 		// Normalizing a Vector3 makes it length 1m
 		vel *= Random.Range(driftMinMax.x, driftMinMax.y);
 		// Above sets the velocity length to something between the x and y values of driftMinMax
-		rigidbody.velocity = vel;
+		GetComponent<Rigidbody>().velocity = vel;
 		
 		// Set the rotation of this GameObject to R:[0,0,0]
 		transform.rotation = Quaternion.identity;
@@ -60,9 +60,9 @@ public class PowerUp : MonoBehaviour {
 		}
 		// Use u to determine the alpha value of the Cube & Letter
 		if (u > 0) {
-			Color c = cube.renderer.material.color;
+			Color c = cube.GetComponent<Renderer>().material.color;
 			c.a = 1f - u;
-			cube.renderer.material.color = c;
+			cube.GetComponent<Renderer>().material.color = c;
 			// Fade the Letter too, just not as much
 			c = letter.color;
 			c.a = 1f - (u*0.5f);
@@ -75,7 +75,7 @@ public class PowerUp : MonoBehaviour {
 		// Grab the WeaponDefinition from Main
 		WeaponDefinition def = Main.GetWeaponDefinition(wt);
 		// Set the color of the Cube child
-		cube.renderer.material.color = def.color;
+		cube.GetComponent<Renderer>().material.color = def.color;
 		letter.color = def.color;  //This is commented out in the text but I'm assuming that's a typo. We could colorize the letter too
 		letter.text = def.letter; // Set the letter that is shown
 		type = wt; // Finally actually set the type
@@ -89,7 +89,7 @@ public class PowerUp : MonoBehaviour {
 	
 	void CheckOffscreen() {
 		// If the PowerUp has drifted entirely off screen...
-		if (Utils.ScreenBoundsCheck (cube.collider.bounds, BoundsTest.offScreen) != Vector3.zero) {
+		if (Utils.ScreenBoundsCheck (cube.GetComponent<Collider>().bounds, BoundsTest.offScreen) != Vector3.zero) {
 			//... then destroy this gameObject
 			Destroy(this.gameObject);
 		}

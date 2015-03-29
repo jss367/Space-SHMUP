@@ -68,9 +68,9 @@ public class VisEmitParticlesTrigger : VisBaseTrigger
     /// </param>
     public override void OnTriggered(float current, float previous, float difference, float adjustedDifference)
     {
-        if (particleEmitter != null)
+        if (GetComponent<ParticleEmitter>() != null)
         {
-			particleEmitter.Emit();
+			GetComponent<ParticleEmitter>().Emit();
         }
     }
 

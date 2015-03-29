@@ -136,13 +136,13 @@ public class VisMaterialPropertyTrigger : VisBasePropertyTrigger
         //get the target material
         if (setAsProceduralMaterial &&
             applyToMaterialIndex &&
-            renderer != null &&
+            GetComponent<Renderer>() != null &&
             materialIndex >= 0 &&
-            materialIndex < renderer.sharedMaterials.Length &&
+            materialIndex < GetComponent<Renderer>().sharedMaterials.Length &&
 #if (!UNITY_3_3 && !UNITY_3_2 && !UNITY_3_1 && !UNITY_3_0_0 && !UNITY_3_0 && !UNITY_2_6_1 && !UNITY_2_6) && (UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_EDITOR)
- renderer.sharedMaterials[materialIndex] as ProceduralMaterial)
+ GetComponent<Renderer>().sharedMaterials[materialIndex] as ProceduralMaterial)
         {//get indexed material as procedural material
-            targetMaterial = renderer.sharedMaterials[materialIndex];
+            targetMaterial = GetComponent<Renderer>().sharedMaterials[materialIndex];
         }
 #else
             true)
@@ -151,12 +151,12 @@ public class VisMaterialPropertyTrigger : VisBasePropertyTrigger
         }
 #endif
         else if (setAsProceduralMaterial &&
-                 renderer != null &&
-                 renderer.sharedMaterial != null &&
+                 GetComponent<Renderer>() != null &&
+                 GetComponent<Renderer>().sharedMaterial != null &&
 #if (!UNITY_3_3 && !UNITY_3_2 && !UNITY_3_1 && !UNITY_3_0_0 && !UNITY_3_0 && !UNITY_2_6_1 && !UNITY_2_6) && (UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER || UNITY_EDITOR)
- renderer.sharedMaterial as ProceduralMaterial)
+ GetComponent<Renderer>().sharedMaterial as ProceduralMaterial)
         {//get main material as procedural material
-            targetMaterial = renderer.sharedMaterial;
+            targetMaterial = GetComponent<Renderer>().sharedMaterial;
         }
 #else
                  true)
@@ -165,16 +165,16 @@ public class VisMaterialPropertyTrigger : VisBasePropertyTrigger
         }
 #endif
         else if (applyToMaterialIndex &&
-            renderer != null &&
+            GetComponent<Renderer>() != null &&
             materialIndex >= 0 &&
-            materialIndex < renderer.materials.Length)
+            materialIndex < GetComponent<Renderer>().materials.Length)
         {//get indexed material as normal material
-            targetMaterial = renderer.materials[materialIndex];
+            targetMaterial = GetComponent<Renderer>().materials[materialIndex];
         }
-        else if (renderer != null &&
-                 renderer.material != null)
+        else if (GetComponent<Renderer>() != null &&
+                 GetComponent<Renderer>().material != null)
         {//get main material as procedural material
-            targetMaterial = renderer.material;
+            targetMaterial = GetComponent<Renderer>().material;
         }
 
         //make sure a target material was found

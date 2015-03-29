@@ -139,7 +139,7 @@ public class VisAddForceTrigger : VisBaseTrigger
     /// </param>
 	public override void OnTriggered (float current, float previous, float difference, float adjustedDifference)
 	{
-        if (rigidbody != null)
+        if (GetComponent<Rigidbody>() != null)
         {
             //get normalized direction
             Vector3 normalDir = forceDirection.normalized;
@@ -160,7 +160,7 @@ public class VisAddForceTrigger : VisBaseTrigger
                                                               invertValue);
 
             //add force
-            rigidbody.AddForce(normalDir * forceValue, forceMode);
+            GetComponent<Rigidbody>().AddForce(normalDir * forceValue, forceMode);
         }
 	}
 	

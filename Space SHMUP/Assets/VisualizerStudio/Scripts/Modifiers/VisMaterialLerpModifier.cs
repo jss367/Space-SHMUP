@@ -64,12 +64,12 @@ public class VisMaterialLerpModifier : VisBasePropertyModifier
     /// <param name="propertyValue">The new value to set the property to.</param>
     public override void SetProperty(float propertyValue)
     {
-		if (renderer != null &&
-		    renderer.material != null &&
+		if (GetComponent<Renderer>() != null &&
+		    GetComponent<Renderer>().material != null &&
 		    lerpFromMaterial != null &&
 		    lerpToMaterial != null)
 		{
-			renderer.material.Lerp(lerpFromMaterial, lerpToMaterial, Mathf.Clamp(propertyValue, 0.0f, 1.0f));
+			GetComponent<Renderer>().material.Lerp(lerpFromMaterial, lerpToMaterial, Mathf.Clamp(propertyValue, 0.0f, 1.0f));
 		}
     }
 

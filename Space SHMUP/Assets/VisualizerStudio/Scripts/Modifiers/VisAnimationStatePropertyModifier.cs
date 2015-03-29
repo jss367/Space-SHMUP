@@ -79,9 +79,9 @@ public class VisAnimationStatePropertyModifier : VisBasePropertyModifier
     /// <param name="propertyValue">The new value to set the property to.</param>
     public override void SetProperty(float propertyValue)
     {
-		if (animation != null && animation.IsPlaying(targetAnimation))
+		if (GetComponent<Animation>() != null && GetComponent<Animation>().IsPlaying(targetAnimation))
 		{
-			VisPropertyHelper.SetAnimationStateProperty(animation[targetAnimation], targetProperty, propertyValue);
+			VisPropertyHelper.SetAnimationStateProperty(GetComponent<Animation>()[targetAnimation], targetProperty, propertyValue);
 		}
     }
 
