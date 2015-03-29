@@ -224,7 +224,7 @@ public class AudioManager : MonoBehaviour {
 			}
 			
 			if ((clipEnd > 0f) && (Time.time > clipEnd)) {
-				Stop();
+				break;
 			}
 			
 			
