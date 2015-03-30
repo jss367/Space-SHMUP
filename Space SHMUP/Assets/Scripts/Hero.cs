@@ -129,8 +129,8 @@ public class Hero : MonoBehaviour {
 		pos.y += GetComponent<Rigidbody>().velocity.y * speed * Time.deltaTime;
 		transform.position = pos;
 
-
-
+		//Rotate the ship to make it feel more dynamic
+		GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
 
 
 //		//Change trainsform.position based on the axes
@@ -149,7 +149,7 @@ public class Hero : MonoBehaviour {
 		}
 		
 		//Rotate the ship to make it feel more dynamic
-		transform.rotation = Quaternion.Euler (yAxis * pitchMult, xAxis * rollMult, 0);
+//		transform.rotation = Quaternion.Euler (yAxis * pitchMult, xAxis * rollMult, 0);
 
 		//Use the fireDelegate to fire Weapons
 		//First, make sure the Axis("Jump") button is pressed
