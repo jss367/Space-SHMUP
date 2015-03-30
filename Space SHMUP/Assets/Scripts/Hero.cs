@@ -9,16 +9,16 @@ public class Hero : MonoBehaviour {
 	public float gameRestartDelay = 2f;
 	
 	//These fields control the movement of the ship
-	public float speed = 30;
-	public float rollMult = -45;
-	public float pitchMult = 30;
+	public float				speed = 30;
+	public float				rollMult = -45;
+	public float				pitchMult = 30;
 	
 	//Ship status information
 	[SerializeField]
-	private float _shieldLevel = 1;
+	private float 				_shieldLevel = 1;
 
 	// Weapon fields
-	public Weapon[]			weapons;
+	public Weapon[]				weapons;
 
 	public bool _____________;
 
@@ -41,6 +41,12 @@ public class Hero : MonoBehaviour {
 	public float velocityLag = .3f;
 	public float dampingRadius = 2.5f;
 	//Above is from Space Shooter
+
+	//Below from adding touchpad
+	public SimpleTouchPad touchPad;
+	public SimpleTouchAreaButton areaButton;
+	private Quaternion calibrationQuaternion;
+	//Above from adding touchpad
 
 
 	void Awake(){
@@ -92,18 +98,37 @@ public class Hero : MonoBehaviour {
 		}
 		float dampening = magnitude / dampingRadius;
 		
-		Vector3 desiredVelocity = offset.normalized * speed * dampening/30;
-		Debug.Log ("The desiredVelocity is " + desiredVelocity);
-		GetComponent<Rigidbody>().velocity += (desiredVelocity - GetComponent<Rigidbody>().velocity) * velocityLag;
+		Vector3 desiredVelocity = offset.normalized * speed * dampening; // commented to try touchpad
+
+
+
+
+
+//		Debug.Log ("The desiredVelocity is " + desiredVelocity);
+//		GetComponent<Rigidbody>().velocity += (desiredVelocity - GetComponent<Rigidbody>().velocity) * velocityLag;
 		
-		Debug.Log ("The velocity is " + GetComponent<Rigidbody> ().velocity);
+
+
 		
-		//Change trainsform.position based on the axes
+		//Trying touchpad below
+		Vector2 direction = touchPad.GetDirection ();
+//		Debug.Log ("The direction in Hero is " + direction);
+//		Debug.Log ("The x direction in Hero is " + direction.x);
+		Vector3 movement = new Vector3 (direction.x, direction.y, 0.0f);
+//		Debug.Log ("The movement in Hero is " + movement);
+		GetComponent<Rigidbody>().velocity = movement * speed / 30;
+		//Trying touchpad above
+
+//		Debug.Log ("The velocity is " + GetComponent<Rigidbody> ().velocity);
+
+
+		
+		//Change transform.position based on the axes
 		Vector3 pos = transform.position;
 		pos.x += GetComponent<Rigidbody>().velocity.x * speed * Time.deltaTime;
 		pos.y += GetComponent<Rigidbody>().velocity.y * speed * Time.deltaTime;
 		transform.position = pos;
-//
+
 
 
 
@@ -129,7 +154,9 @@ public class Hero : MonoBehaviour {
 		//Use the fireDelegate to fire Weapons
 		//First, make sure the Axis("Jump") button is pressed
 		//Then ensure that fireDelegate isn't null to avoid an error
-		if (Input.GetAxis ("Jump") == 1 && fireDelegate != null) {
+		Debug.Log ("CanFire is set to " + areaButton.CanFire ());
+//		if (Input.GetAxis ("Jump") == 1 && fireDelegate != null ) {
+		if (areaButton.CanFire() && fireDelegate != null ) {
 			fireDelegate ();
 		}
 		/*
@@ -365,8 +392,18 @@ public class Hero : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-	}
+		//
+		//Vector2 direction = touchPad.GetDirection ();
+		
+		//		Vector3 accelerationRaw = Input.acceleration;
+		
+		//		Vector3 acceleration = FixAcceleration (accelerationRaw);
+		//		Debug.Log ("Your acceleration is " + acceleration);
+//		Vector2 direction = touchPad.GetDirection ();
+//		Vector3 movement = new Vector3 (direction.x, 0.0f, direction.y);
+//		GetComponent<Rigidbody>().velocity = movement * speed;
 
+	}
 
 
 
