@@ -35,6 +35,14 @@ public class Hero : MonoBehaviour {
 	// Create a WeaponFireDelegate field named fireDelegate.
 	public WeaponFireDelegate fireDelegate;
 
+	//Below is from Space Shooter
+	public Vector3 target;
+	public float tilt;
+	public float velocityLag = 1.0f;
+	public float dampingRadius = 1.0f;
+	//Above is from Space Shooter
+
+
 	void Awake(){
 		S = this; //Set the singleton
 		bounds = Utils.CombineBoundsOfChildren (this.gameObject);
@@ -51,7 +59,7 @@ public class Hero : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Pull in information from the Input class
-		float xAxis = Input.GetAxis ("Horizontal");
+/*		float xAxis = Input.GetAxis ("Horizontal");
 		float yAxis = Input.GetAxis ("Vertical");
 		
 		//Change trainsform.position based on the axes
@@ -61,7 +69,7 @@ public class Hero : MonoBehaviour {
 		transform.position = pos;
 
 		bounds.center = transform.position;
-		
+
 		//Keep the ship constrained to the screen bounds
 		Vector3 off = Utils.ScreenBoundsCheck (bounds, BoundsTest.onScreen);
 		if (off != Vector3.zero) {
@@ -71,7 +79,7 @@ public class Hero : MonoBehaviour {
 		
 		//Rotate the ship to make it feel more dynamic
 		transform.rotation = Quaternion.Euler (yAxis * pitchMult, xAxis * rollMult, 0);
-
+*/
 		//Use the fireDelegate to fire Weapons
 		//First, make sure the Axis("Jump") button is pressed
 		//Then ensure that fireDelegate isn't null to avoid an error
@@ -234,6 +242,66 @@ public class Hero : MonoBehaviour {
 		//return(null);
 		return(0);
 	}
+
+
+
+	//Adding from Space Shooter to get touch screen!
+
+
+	void FixedUpdate ()
+	{
+		
+		
+		//Find whether the mouse button 0 was pressed or released this frame
+		//		bool b0Down = Input.GetMouseButtonDown (0);
+		
+		Vector3? touchPos = null;
+		//Return whether the given mouse button is held down.
+		//button values are 0 for left button, 1 for right button, 2 for the middle button.
+		if (Input.mousePresent && Input.GetMouseButton (0)) 
+		{
+			touchPos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0.0f);
+		} 
+		else if (Input.touchCount > 0)  //should i add an if to see if the phase is stationary?
+		{
+			touchPos = new Vector3 (Input.touches [0].position.x, Input.touches [0].position.y, 0.0f);
+		}
+		
+		
+		if (touchPos != null)
+		{
+			target = Camera.main.ScreenToWorldPoint(touchPos.Value);
+			target.y = GetComponent<Rigidbody>().position.y;
+		}
+		
+		Vector3 offset = target - GetComponent<Rigidbody>().position;
+		
+		float magnitude = offset.magnitude;
+		if(magnitude > dampingRadius)
+		{
+			magnitude = dampingRadius;
+		}
+		float dampening = magnitude / dampingRadius;
+		
+		Vector3 desiredVelocity = offset.normalized * speed * dampening;
+		
+		GetComponent<Rigidbody>().velocity += (desiredVelocity - GetComponent<Rigidbody>().velocity) * velocityLag;
+		
+		
+		/*	rigidbody.position = new Vector3
+		(
+			Mathf.Clamp (rigidbody.position.x, boundary.xMin, boundary.xMax), 
+		    0.0f, 
+			Mathf.Clamp (rigidbody.position.z, boundary.zMin, boundary.zMax)
+		);
+*/
+		GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
+	}
+
+
+
+
+
 
 
 }
