@@ -38,8 +38,8 @@ public class Hero : MonoBehaviour {
 	//Below is from Space Shooter
 	public Vector3 target;
 	public float tilt;
-	public float velocityLag = 1.0f;
-	public float dampingRadius = 1.0f;
+	public float velocityLag = .3f;
+	public float dampingRadius = 2.5f;
 	//Above is from Space Shooter
 
 
@@ -59,14 +59,60 @@ public class Hero : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Pull in information from the Input class
-/*		float xAxis = Input.GetAxis ("Horizontal");
+		float xAxis = Input.GetAxis ("Horizontal");
 		float yAxis = Input.GetAxis ("Vertical");
+
+		Vector3? touchPos = null;
+
+		if (Input.mousePresent && Input.GetMouseButton (0)) 
+		{
+			touchPos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0.0f);
+		} 
+		else if (Input.touchCount > 0)  //should i add an if to see if the phase is stationary?
+		{
+			touchPos = new Vector3 (Input.touches [0].position.x, Input.touches [0].position.y, 0.0f);
+		}
+//		Debug.Log ("The touchPos is " + touchPos);
+
+		if (touchPos != null)
+		{
+			target = Camera.main.ScreenToWorldPoint(touchPos.Value);
+			target.z = GetComponent<Rigidbody>().position.z;
+		}
+		
+		Vector3 offset = target - GetComponent<Rigidbody>().position;
+
+//		Debug.Log ("The offset is " + offset);
+
+
+		float magnitude = offset.magnitude;
+		if(magnitude > dampingRadius)
+		{
+			magnitude = dampingRadius;
+		}
+		float dampening = magnitude / dampingRadius;
+		
+		Vector3 desiredVelocity = offset.normalized * speed * dampening/30;
+		Debug.Log ("The desiredVelocity is " + desiredVelocity);
+		GetComponent<Rigidbody>().velocity += (desiredVelocity - GetComponent<Rigidbody>().velocity) * velocityLag;
+		
+		Debug.Log ("The velocity is " + GetComponent<Rigidbody> ().velocity);
 		
 		//Change trainsform.position based on the axes
 		Vector3 pos = transform.position;
-		pos.x += xAxis * speed * Time.deltaTime;
-		pos.y += yAxis * speed * Time.deltaTime;
+		pos.x += GetComponent<Rigidbody>().velocity.x * speed * Time.deltaTime;
+		pos.y += GetComponent<Rigidbody>().velocity.y * speed * Time.deltaTime;
 		transform.position = pos;
+//
+
+
+
+
+//		//Change trainsform.position based on the axes
+//		Vector3 pos = transform.position;
+//		pos.x += xAxis * speed * Time.deltaTime;
+//		pos.y += yAxis * speed * Time.deltaTime;
+//		transform.position = pos;
 
 		bounds.center = transform.position;
 
@@ -79,13 +125,82 @@ public class Hero : MonoBehaviour {
 		
 		//Rotate the ship to make it feel more dynamic
 		transform.rotation = Quaternion.Euler (yAxis * pitchMult, xAxis * rollMult, 0);
-*/
+
 		//Use the fireDelegate to fire Weapons
 		//First, make sure the Axis("Jump") button is pressed
 		//Then ensure that fireDelegate isn't null to avoid an error
 		if (Input.GetAxis ("Jump") == 1 && fireDelegate != null) {
 			fireDelegate ();
 		}
+		/*
+		//The below is from Space Shooter to incorporate mobile control
+		bool triggered = false;
+		if (Input.mousePresent && Input.GetMouseButton (0)) {
+			triggered = true;
+		} else if (Input.touchCount > 0) {
+			triggered = true;
+		}
+		//The above is from Space Shooter to incorporate mobile control
+
+
+
+
+		//The below is from Space Shooter to incorporate mobile control
+		//		Debug.Log ("The touchCount is " + Input.touchCount);
+		
+		//Find whether the mouse button 0 was pressed or released this frame
+		//		bool b0Down = Input.GetMouseButtonDown (0);
+		
+		Vector3? touchPos = null;
+		//Return whether the given mouse button is held down.
+		//button values are 0 for left button, 1 for right button, 2 for the middle button.
+		if (Input.mousePresent && Input.GetMouseButton (0)) 
+		{
+			touchPos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0.0f);
+		} 
+		else if (Input.touchCount > 0)  //should i add an if to see if the phase is stationary?
+		{
+			touchPos = new Vector3 (Input.touches [0].position.x, Input.touches [0].position.y, 0.0f);
+		}
+		//		Debug.Log ("The touchPos is " + touchPos);
+		
+		if (touchPos != null)
+		{
+			target = Camera.main.ScreenToWorldPoint(touchPos.Value);
+			target.y = GetComponent<Rigidbody>().position.y;
+		}
+		
+		Vector3 offset = target - GetComponent<Rigidbody>().position;
+		
+		float magnitude = offset.magnitude;
+		if(magnitude > dampingRadius)
+		{
+			magnitude = dampingRadius;
+		}
+		float dampening = magnitude / dampingRadius;
+		
+		Vector3 desiredVelocity = offset.normalized * speed * dampening;
+		Debug.Log ("The desiredVelocity is " + desiredVelocity);
+		GetComponent<Rigidbody>().velocity += (desiredVelocity - GetComponent<Rigidbody>().velocity) * velocityLag;
+		
+		Debug.Log ("The velocity is " + GetComponent<Rigidbody> ().velocity);
+		
+		//Change trainsform.position based on the axes
+		Vector3 pos = transform.position;
+		pos.x += GetComponent<Rigidbody>().velocity.x * speed * Time.deltaTime;
+		pos.y += GetComponent<Rigidbody>().velocity.y * speed * Time.deltaTime;
+		transform.position = pos;
+*/		
+		/*		GetComponent<Rigidbody>().position = new Vector3
+		(
+				Mathf.Clamp (GetComponent<Rigidbody>().position.x, bounds.xMin, boundary.xMax), 
+		    0.0f, 
+				Mathf.Clamp (GetComponent<Rigidbody>().position.z, boundary.zMin, boundary.zMax)
+		);
+*/
+//		GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
+		//The above is from Space Shooter to incorporate mobile control
+
 
 		}
 
@@ -250,52 +365,6 @@ public class Hero : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-		
-		
-		//Find whether the mouse button 0 was pressed or released this frame
-		//		bool b0Down = Input.GetMouseButtonDown (0);
-		
-		Vector3? touchPos = null;
-		//Return whether the given mouse button is held down.
-		//button values are 0 for left button, 1 for right button, 2 for the middle button.
-		if (Input.mousePresent && Input.GetMouseButton (0)) 
-		{
-			touchPos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0.0f);
-		} 
-		else if (Input.touchCount > 0)  //should i add an if to see if the phase is stationary?
-		{
-			touchPos = new Vector3 (Input.touches [0].position.x, Input.touches [0].position.y, 0.0f);
-		}
-		
-		
-		if (touchPos != null)
-		{
-			target = Camera.main.ScreenToWorldPoint(touchPos.Value);
-			target.y = GetComponent<Rigidbody>().position.y;
-		}
-		
-		Vector3 offset = target - GetComponent<Rigidbody>().position;
-		
-		float magnitude = offset.magnitude;
-		if(magnitude > dampingRadius)
-		{
-			magnitude = dampingRadius;
-		}
-		float dampening = magnitude / dampingRadius;
-		
-		Vector3 desiredVelocity = offset.normalized * speed * dampening;
-		
-		GetComponent<Rigidbody>().velocity += (desiredVelocity - GetComponent<Rigidbody>().velocity) * velocityLag;
-		
-		
-		/*	rigidbody.position = new Vector3
-		(
-			Mathf.Clamp (rigidbody.position.x, boundary.xMin, boundary.xMax), 
-		    0.0f, 
-			Mathf.Clamp (rigidbody.position.z, boundary.zMin, boundary.zMax)
-		);
-*/
-		GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
 	}
 
 
