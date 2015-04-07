@@ -19,7 +19,7 @@ public class Main : MonoBehaviour {
 	};
 
 	public Text scoreText;
-	public GUIText restartText;  //change these to Text
+	public GameObject restartButton;
 	public Text gameOverText;
 
 
@@ -32,7 +32,7 @@ public class Main : MonoBehaviour {
 	public float timeAlive;
 	public float timeMultiplier;
 	private float timeLastReset;
-	
+
 	void Awake(){
 
 		S = this;
@@ -68,13 +68,13 @@ public class Main : MonoBehaviour {
 		for (int i = 0; i < weaponDefinitions.Length; i++) {
 			activeWeaponTypes [i] = weaponDefinitions [i].type;
 		}
-
+		restartButton.SetActive (false);
 		score = 0;
 		UpdateScore ();
 	}
 
 	void Update() {
-		//timeMultiplier = Time.timeSinceLevelLoad / 4;
+		timeMultiplier = Time.timeSinceLevelLoad / 4;
 	}
 
 	public void SpawnEnemy(){
@@ -98,8 +98,14 @@ public class Main : MonoBehaviour {
 	}
 	public void Restart(){
 		
-		//Reload scene Main to restart the game
-		Application.LoadLevel ("Main");
+		//Reload scene to restart the game
+		//Application.LoadLevel (Application.loadedLevel);
+		restartButton.SetActive(true);
+	}
+
+	public void RestartGame()
+	{
+		Application.LoadLevel (Application.loadedLevel);
 	}
 
 	public void ShipDestroyed( Enemy e) {

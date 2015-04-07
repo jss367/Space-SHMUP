@@ -1,4 +1,9 @@
-﻿//this is not currently attached to anything
+﻿
+//this is not currently attached to anything
+//this is not currently attached to anything
+//this is not currently attached to anything
+//this is not currently attached to anything
+//this is not currently attached to anything
 
 using UnityEngine;
 using UnityEngine.UI;
@@ -62,7 +67,15 @@ public class GameController : MonoBehaviour
 	{
 		scoreText.text = "Score: " + score;  // should this be score.ToString()?
 	}
-	
 
+	public void GameOver ()
+	{
+		gameOver = true;
+	}
+	
+	public void RestartGame()
+	{
+		Application.LoadLevel (Application.loadedLevel);
+	}
 	
 }

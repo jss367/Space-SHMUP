@@ -31,7 +31,7 @@ public class AsteroidAngle : MonoBehaviour {
 	public float orthogSpeed = 10.0f;
 
 	private float tMultiplier;
-	private GameController gameController;
+	private Main main;
 	
 	// Private variables
 	private Transform _cacheTransform;
@@ -46,17 +46,20 @@ public class AsteroidAngle : MonoBehaviour {
 			orthogAxis = Vector3.right;
 		}
 
-
+/*
 		//gameController = GameObject.Find("GameController").GetComponent<GameController>();
 		GameObject gameControllerObject = GameObject.Find("GameController");
 		//	Debug.Log("gameControllerObject is: " + gameControllerObject);
 		
 		gameController = gameControllerObject.GetComponent<GameController>();
 		//	Debug.Log("gameController is: " + gameController);
+*/
+		GameObject mainObject = GameObject.Find ("Main Camera");
+		main = mainObject.GetComponent<Main> ();
 	}
 	
 	void Update () {
-		tMultiplier = gameController.timeMultiplier;
+		tMultiplier = main.timeMultiplier;
 		
 		if (_cacheTransform != null) {
 			// Rotate around own axis
