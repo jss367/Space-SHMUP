@@ -42,12 +42,8 @@ public class Hero : MonoBehaviour {
 	public float dampingRadius = 2.5f;
 	//Above is from Space Shooter
 
-	//Below from adding touchpad
 	public SimpleTouchPad touchPad;
 	public SimpleTouchAreaButton areaButton;
-//	private Quaternion calibrationQuaternion;
-	//Above from adding touchpad
-
 
 	void Awake(){
 		S = this; //Set the singleton
@@ -100,16 +96,6 @@ public class Hero : MonoBehaviour {
 		
 		Vector3 desiredVelocity = offset.normalized * speed * dampening; // commented to try touchpad
 
-
-
-
-
-//		Debug.Log ("The desiredVelocity is " + desiredVelocity);
-//		GetComponent<Rigidbody>().velocity += (desiredVelocity - GetComponent<Rigidbody>().velocity) * velocityLag;
-		
-
-
-		
 		//Trying touchpad below
 		Vector2 direction = touchPad.GetDirection ();
 //		Debug.Log ("The direction in Hero is " + direction);
