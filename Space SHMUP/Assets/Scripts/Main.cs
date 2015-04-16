@@ -20,6 +20,7 @@ public class Main : MonoBehaviour {
 
 	public Text scoreText;
 	public GameObject restartButton;
+	public GameObject mainMenuButton;
 	public Text gameOverText;
 
 
@@ -133,6 +134,13 @@ public class Main : MonoBehaviour {
 		}
 	}
 
+	public void GameOver() {
+		mainMenuButton.SetActive (true);
+	}
+
+	public void MainMenu() {
+		Application.LoadLevel ("LevelManager");
+	}
 
 	public void AsteroidDestroyed(SU_Asteroid a) {
 		AddScore (a.score);
