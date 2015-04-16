@@ -70,12 +70,17 @@ public class Main : MonoBehaviour {
 			activeWeaponTypes [i] = weaponDefinitions [i].type;
 		}
 		restartButton.SetActive (false);
+		mainMenuButton.SetActive (false);
 		score = 0;
 		UpdateScore ();
 	}
 
 	void Update() {
+		float timer = Time.timeSinceLevelLoad;
 		timeMultiplier = Time.timeSinceLevelLoad / 4;
+		if (timer > 60){
+			GameOver();
+		}
 	}
 
 	public void SpawnEnemy(){
