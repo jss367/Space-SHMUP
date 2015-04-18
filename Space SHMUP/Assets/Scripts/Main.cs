@@ -22,6 +22,7 @@ public class Main : MonoBehaviour {
 	public GameObject restartButton;
 	public GameObject mainMenuButton;
 	public Text gameOverText;
+	public Text highScoreText;
 
 
 	public bool ______________;
@@ -33,6 +34,7 @@ public class Main : MonoBehaviour {
 	public float timeAlive;
 	public float timeMultiplier;
 	private float timeLastReset;
+	public float timeLimit = 213;
 
 	void Awake(){
 
@@ -49,6 +51,15 @@ public class Main : MonoBehaviour {
 		foreach (WeaponDefinition def in weaponDefinitions) {
 			W_DEFS [def.type] = def;
 		}
+
+
+		// If the HighScore already exists, read it
+		if (PlayerPrefs.HasKey ("SpaceSHMUPHighScore")) {
+			score = PlayerPrefs.GetInt ("SpaceSHMUPHighScore");
+		}
+		//Assign the high score to SpaceSHMUPHighScore
+		PlayerPrefs.SetInt ("SpaceSHMUPHighScore", score);
+
 	}
 
 	static public WeaponDefinition GetWeaponDefinition (WeaponType wt) {
@@ -78,8 +89,17 @@ public class Main : MonoBehaviour {
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
 		timeMultiplier = Time.timeSinceLevelLoad / 4;
-		if (timer > 60){
+		if (timer > timeLimit){
 			GameOver();
+		}
+
+
+		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("Highscore", 0);
+//		Debug.Log ("The score is " + score);
+		// Update the high score if PlayerPrefs if necessary
+		if (score > PlayerPrefs.GetInt ("SpaceSHMUPHighScore")) {
+			Debug.Log("Setting new high score");
+			PlayerPrefs.SetInt ("SpaceSHMUPHighScore", score);
 		}
 	}
 
@@ -107,6 +127,7 @@ public class Main : MonoBehaviour {
 		//Reload scene to restart the game
 		//Application.LoadLevel (Application.loadedLevel);
 		restartButton.SetActive(true);
+		StoreHighScore (score);
 	}
 
 	public void RestartGame()
@@ -141,6 +162,7 @@ public class Main : MonoBehaviour {
 
 	public void GameOver() {
 		mainMenuButton.SetActive (true);
+		StoreHighScore (score);
 	}
 
 	public void MainMenu() {
@@ -150,16 +172,29 @@ public class Main : MonoBehaviour {
 	public void AsteroidDestroyed(SU_Asteroid a) {
 		AddScore (a.score);
 	}
-	
+
+	void StoreHighScore(int newHighScore){
+//		Debug.Log ("StoreHighScore has been called");
+		int oldHighScore = PlayerPrefs.GetInt ("Highscore", 0);
+		if (newHighScore > oldHighScore) {
+			PlayerPrefs.SetInt ("Highscore", newHighScore);
+		}
+	}
+
 	public void AddScore (int newScoreValue)
 	{
 		score += newScoreValue;
-		UpdateScore ();
+		//Track the high score
+//		if (score > HighScore.score) {
+//			HighScore.score = score;
+//		}
+		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
+		//UpdateScore ();
 	}
 	
 	void UpdateScore ()
 	{
-		scoreText.text = "Score: " + score;  // should this be score.ToString()?
+		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
 
 }

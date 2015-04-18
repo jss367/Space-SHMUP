@@ -1084,7 +1084,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 45786974
+  m_Text: Exit
 --- !u!222 &685779114
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1616,8 +1616,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1810964814}
-        m_MethodName: 6f6e436f6d6d616e64
+      - m_Target: {fileID: 1810964813}
+        m_MethodName: 
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2353,6 +2353,22 @@ Prefab:
     - target: {fileID: 400000, guid: ed8e07b6446a7495da4704fcca4f5ebe, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: ed8e07b6446a7495da4704fcca4f5ebe, type: 2}
+      propertyPath: m_HorizontalAxis
+      value: Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: ed8e07b6446a7495da4704fcca4f5ebe, type: 2}
+      propertyPath: m_VerticalAxis
+      value: Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: ed8e07b6446a7495da4704fcca4f5ebe, type: 2}
+      propertyPath: m_SubmitButton
+      value: Submit
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: ed8e07b6446a7495da4704fcca4f5ebe, type: 2}
+      propertyPath: m_CancelButton
+      value: Cancel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ed8e07b6446a7495da4704fcca4f5ebe, type: 2}
@@ -3492,7 +3508,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4f7074696f6e73
+  m_Text: Options
 --- !u!222 &1757334080
 CanvasRenderer:
   m_ObjectHideFlags: 0

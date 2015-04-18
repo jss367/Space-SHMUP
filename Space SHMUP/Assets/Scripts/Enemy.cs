@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour {
 	public Vector3 boundsCenterOffset; //Distance of bounds.center from position
 
 	private float tMultiplier;
-	private GameController gameController;
+//	private GameController gameController;
 	private Main main;
 	
 	void Awake() {
@@ -38,9 +38,9 @@ public class Enemy : MonoBehaviour {
 		//gameController = GameObject.Find("GameController").GetComponent<GameController>();
 		GameObject gameControllerObject = GameObject.Find("GameController");
 	//	Debug.Log("gameControllerObject is: " + gameControllerObject);
-		if (gameControllerObject != null) {
-			gameController = gameControllerObject.GetComponent<GameController> ();
-		}
+//		if (gameControllerObject != null) {
+//			gameController = gameControllerObject.GetComponent<GameController> ();
+//		}
 	//	Debug.Log("gameController is: " + gameController);
 
 		GameObject mainObject = GameObject.FindWithTag("MainCamera");
@@ -53,14 +53,14 @@ public class Enemy : MonoBehaviour {
 
 	//Update is called once per frame
 	void Update(){
-		if (gameController != null) {
-		//	Debug.Log("gameController does exist");
-			tMultiplier = gameController.timeMultiplier;
-			//Debug.Log (tMultiplier);
-		}
-		if (gameController == null) {
-			//Debug.Log ("Cannot find 'gameController'");
-		}
+//		if (gameController != null) {
+//		//	Debug.Log("gameController does exist");
+//			tMultiplier = gameController.timeMultiplier;
+//			//Debug.Log (tMultiplier);
+//		}
+//		if (gameController == null) {
+//			//Debug.Log ("Cannot find 'gameController'");
+//		}
 
 		if (main != null) {
 			//	Debug.Log("gameController does exist");

@@ -30,12 +30,15 @@ namespace FMG
 			if(str.Equals("LevelSelect"))
 			{
 				Debug.Log ("LevelSelect");
+				Application.LoadLevel("LevelManager");
+				/*
 				if(useLevelSelect)
 				{
 					Constants.fadeInFadeOut(levelSelectMenu,mainMenu);
 				}else{
 					Application.LoadLevel(1);
 				}
+				*/
 			}
 
 			if(str.Equals("LevelSelectBack"))

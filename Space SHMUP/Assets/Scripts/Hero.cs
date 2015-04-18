@@ -37,7 +37,7 @@ public class Hero : MonoBehaviour {
 
 	//Below is from Space Shooter
 	public Vector3 target;
-	public float tilt;
+	public float tilt = 5;
 	public float velocityLag = .3f;
 	public float dampingRadius = 2.5f;
 	//Above is from Space Shooter
@@ -116,7 +116,7 @@ public class Hero : MonoBehaviour {
 		transform.position = pos;
 
 		//Rotate the ship to make it feel more dynamic
-		GetComponent<Rigidbody>().rotation = Quaternion.Euler(0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
+		GetComponent<Rigidbody>().rotation = Quaternion.Euler(GetComponent<Rigidbody>().velocity.y * +tilt, GetComponent<Rigidbody>().velocity.x * -tilt, 0.0f );
 
 		bounds.center = transform.position;
 

@@ -51,6 +51,7 @@ public class AudioManager : MonoBehaviour {
 	
 	
 	void Awake() {
+//		Debug.Log ("AudioManager.cs has awakened");
 		// check, if there are two AudioSources
 		AudioSource[] a = gameObject.GetComponents<AudioSource>();
 		if ((a == null) || (a.Length < 2)) {
@@ -84,8 +85,10 @@ public class AudioManager : MonoBehaviour {
 		
 		// playback of the first AudioClip
 		clipIndex = -1;
-		if (playOnAwake)
-			Play();
+		if (playOnAwake) { 
+			Play ();
+//			Debug.Log("AudioManager.cs is starting the audioClip");
+		}
 	}
 	
 	
