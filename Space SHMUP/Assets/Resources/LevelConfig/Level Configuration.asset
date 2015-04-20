@@ -14,12 +14,24 @@ MonoBehaviour:
   creationDate: 1427764222
   _active: 1
   levels:
+  - _sceneObject: {fileID: 102900000, guid: 25830a6b18044c64da0dfd1b83e1a742, type: 3}
+    _scenePath: Assets/MainMenu.unity
+    _sceneName: MainMenu
+    scene: 
+    parent: {fileID: 11400000}
+    order: 0
+    name: Main Menu
+    type: 0
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 897b9404b2934cc4096bef2de916cdbd, type: 3}
     _scenePath: Assets/LevelManager.unity
     _sceneName: LevelManager
     scene: 
     parent: {fileID: 11400000}
-    order: 0
+    order: 10
     name: Level Select
     type: 0
     arguments: 
@@ -31,7 +43,7 @@ MonoBehaviour:
     _sceneName: Level1
     scene: 
     parent: {fileID: 11400000}
-    order: 10
+    order: 20
     name: Level Select (1)
     type: 1
     arguments: 
@@ -43,7 +55,7 @@ MonoBehaviour:
     _sceneName: Level2
     scene: 
     parent: {fileID: 11400000}
-    order: 20
+    order: 30
     name: Level Select (2)
     type: 1
     arguments: 
@@ -55,7 +67,7 @@ MonoBehaviour:
     _sceneName: Level3
     scene: 
     parent: {fileID: 11400000}
-    order: 30
+    order: 40
     name: Level Select (3)
     type: 1
     arguments: 
@@ -67,7 +79,7 @@ MonoBehaviour:
     _sceneName: Level6
     scene: 
     parent: {fileID: 11400000}
-    order: 40
+    order: 50
     name: Level Select (4)
     type: 1
     arguments: 
