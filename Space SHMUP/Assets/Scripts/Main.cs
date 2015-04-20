@@ -82,6 +82,7 @@ public class Main : MonoBehaviour {
 		}
 		restartButton.SetActive (false);
 		mainMenuButton.SetActive (false);
+		highScoreText.enabled = false;
 		score = 0;
 		UpdateScore ();
 	}
@@ -163,6 +164,7 @@ public class Main : MonoBehaviour {
 	public void GameOver() {
 		mainMenuButton.SetActive (true);
 		StoreHighScore (score);
+		highScoreText.enabled = true;
 	}
 
 	public void MainMenu() {
