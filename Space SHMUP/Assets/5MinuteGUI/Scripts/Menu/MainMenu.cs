@@ -41,6 +41,20 @@ namespace FMG
 				*/
 			}
 
+
+			if(str.Equals("Store"))
+			{
+				Application.LoadLevel("StoreScene");
+				/*
+				if(useLevelSelect)
+				{
+					Constants.fadeInFadeOut(levelSelectMenu,mainMenu);
+				}else{
+					Application.LoadLevel(1);
+				}
+				*/
+			}
+
 			if(str.Equals("LevelSelectBack"))
 			{
 				Constants.fadeInFadeOut(mainMenu,levelSelectMenu);
