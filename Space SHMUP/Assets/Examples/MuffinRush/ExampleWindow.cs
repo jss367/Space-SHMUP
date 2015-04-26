@@ -102,7 +102,7 @@ namespace Soomla.Store.Example {
 			tGetMore = (Texture2D)Resources.Load("SoomlaStore/images/GetMore");
 			tTitle = (Font)Resources.Load("SoomlaStore/Title" + fontSuffix);
 
-			SoomlaStore.Initialize(new MuffinRushAssets());
+			SoomlaStore.Initialize(new GalacticBeatsAssets());
 		}
 
 		public void onSoomlaStoreInitialized() {

@@ -27,7 +27,7 @@ namespace Soomla.Store.Example {
 		
 		private static Store instance = null;
 		
-		private GUIState guiState = GUIState.WELCOME;
+		private GUIState guiState = GUIState.GOODS;
 		private Vector2 goodsScrollPosition = Vector2.zero;
 		private Vector2 productScrollPosition = Vector2.zero;
 		private bool isDragging = false;
@@ -38,7 +38,6 @@ namespace Soomla.Store.Example {
 		public string fontSuffix = "";
 		
 		private enum GUIState{
-			WELCOME,
 			PRODUCTS,
 			GOODS
 		}
@@ -102,7 +101,7 @@ namespace Soomla.Store.Example {
 			tGetMore = (Texture2D)Resources.Load("SoomlaStore/images/GetMore");
 			tTitle = (Font)Resources.Load("SoomlaStore/Title" + fontSuffix);
 			
-			SoomlaStore.Initialize(new MuffinRushAssets());
+			SoomlaStore.Initialize(new GalacticBeatsAssets());
 
 
 		}
@@ -157,7 +156,7 @@ namespace Soomla.Store.Example {
 		/// Sets the window to open, and sets the GUI state to welcome.
 		/// </summary>
 		public static void OpenWindow(){
-			instance.guiState = GUIState.PRODUCTS;
+			instance.guiState = GUIState.GOODS;
 			isVisible = true;
 		}
 		
@@ -220,9 +219,7 @@ namespace Soomla.Store.Example {
 			GUI.skin.verticalScrollbar = GUIStyle.none;
 			
 			//disabling warnings because we use GUIStyle.none which result in warnings
-			if(guiState == GUIState.WELCOME){
-				welcomeScreen();
-			}else if(guiState == GUIState.GOODS){
+			if(guiState == GUIState.GOODS){
 				goodsScreen();
 			}else if(guiState == GUIState.PRODUCTS){
 				currencyScreen();
@@ -232,7 +229,7 @@ namespace Soomla.Store.Example {
 		/// <summary>
 		/// Displays the welcome screen of the game.
 		/// </summary>
-		void welcomeScreen()
+/*		void welcomeScreen()
 		{
 			//drawing background, just using a white pixel here
 			GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),tImgDirect);
@@ -248,7 +245,7 @@ namespace Soomla.Store.Example {
 			GUI.Label(new Rect(Screen.width/8,Screen.height*7f/8f,Screen.width*6f/8f,Screen.height/8f),"Press the SOOMLA-bot to open store");
 			//set font back to original
 			GUI.skin.label.font = backupFont;
-			GUI.Label(new Rect(Screen.width*0.25f,Screen.height/2-50,Screen.width*0.5f,100),"Gleexa Store");
+			GUI.Label(new Rect(Screen.width*0.25f,Screen.height/2-50,Screen.width*0.5f,100),"Gleeza Store");
 			//drawing button and testing if it has been clicked
 			if(GUI.Button(new Rect(Screen.width*2/6,Screen.height*5f/8f,Screen.width*2/6,Screen.width*2/6),tLogoNew)){
 				guiState = GUIState.GOODS;
@@ -259,7 +256,7 @@ namespace Soomla.Store.Example {
 			//set alignment to backup
 			GUI.skin.label.alignment = backupAlignment;
 		}
-		
+		*/
 		/// <summary>
 		/// Display the goods screen of the game's store.
 		/// </summary>
@@ -360,12 +357,6 @@ namespace Soomla.Store.Example {
 			float borderSize = height/8f;
 			float buttonHeight = height-2*borderSize;
 			float width = buttonHeight*180/95;
-			if(GUI.Button(new Rect(Screen.width*2f/7f-width/2f,Screen.height*7f/8f+borderSize,width,buttonHeight), "back")){
-				guiState = GUIState.WELCOME;
-				#if UNITY_ANDROID && !UNITY_EDITOR
-				SoomlaStore.StopIabServiceInBg();
-				#endif
-			}
 			GUI.DrawTexture(new Rect(Screen.width*2f/7f-width/2f,Screen.height*7f/8f+borderSize,width,buttonHeight),tBack);
 			width = buttonHeight*227/94;
 			if(GUI.Button(new Rect(Screen.width*5f/7f-width/2f,Screen.height*7f/8f+borderSize,width,buttonHeight), "back")){
