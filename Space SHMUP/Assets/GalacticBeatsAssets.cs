@@ -61,8 +61,10 @@ namespace Soomla.Store.Example {
 		
 		/** Static Final Members **/
 		
-		public const string MUFFIN_CURRENCY_ITEM_ID      = "currency_muffin";
-		
+		public const string GALACTIC_CURRENCY_ITEM_ID      = "galactic_currency";
+
+		public const string BLASTER_GUN_ITEM_ID = "blaster_gun";
+
 		public const string TENMUFF_PACK_PRODUCT_ID      = "android.test.refunded";
 		
 		public const string FIFTYMUFF_PACK_PRODUCT_ID    = "android.test.canceled";
@@ -85,9 +87,9 @@ namespace Soomla.Store.Example {
 		/** Virtual Currencies **/
 		
 		public static VirtualCurrency GALACTIC_CURRENCY = new VirtualCurrency(
-			"Muffins",										// name
-			"",												// description
-			MUFFIN_CURRENCY_ITEM_ID							// item id
+			"Milky Bucks",										// name
+			"Currency in the Milky Way galaxy",					// description
+			GALACTIC_CURRENCY_ITEM_ID							// item id
 			);
 		
 		
@@ -98,7 +100,7 @@ namespace Soomla.Store.Example {
 			"Test refund of an item",                       // description
 			"muffins_10",                                   // item id
 			10,												// number of currencies in the pack
-			MUFFIN_CURRENCY_ITEM_ID,                        // the currency associated with this pack
+			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
 			new PurchaseWithMarket(TENMUFF_PACK_PRODUCT_ID, 0.99)
 			);
 		
@@ -107,7 +109,7 @@ namespace Soomla.Store.Example {
 			"Test cancellation of an item",                 // description
 			"muffins_50",                                   // item id
 			50,                                             // number of currencies in the pack
-			MUFFIN_CURRENCY_ITEM_ID,                        // the currency associated with this pack
+			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
 			new PurchaseWithMarket(FIFTYMUFF_PACK_PRODUCT_ID, 1.99)
 			);
 		
@@ -116,7 +118,7 @@ namespace Soomla.Store.Example {
 			"Test purchase of an item",                 	// description
 			"muffins_400",                                  // item id
 			400,                                            // number of currencies in the pack
-			MUFFIN_CURRENCY_ITEM_ID,                        // the currency associated with this pack
+			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
 			new PurchaseWithMarket(FOURHUNDMUFF_PACK_PRODUCT_ID, 4.99)
 			);
 		
@@ -125,7 +127,7 @@ namespace Soomla.Store.Example {
 			"Test item unavailable",                 		// description
 			"muffins_1000",                                 // item id
 			1000,                                           // number of currencies in the pack
-			MUFFIN_CURRENCY_ITEM_ID,                        // the currency associated with this pack
+			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
 			new PurchaseWithMarket(THOUSANDMUFF_PACK_PRODUCT_ID, 8.99)
 			);
 		
@@ -135,26 +137,26 @@ namespace Soomla.Store.Example {
 			"Blaster Gun",                                       		// name
 			"A more powerful weapon to fend off aliens", // description
 			"blaster_gun",                                       		// item id
-			new PurchaseWithVirtualItem(MUFFIN_CURRENCY_ITEM_ID, 225)); // the way this virtual good is purchased
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 225)); // the way this virtual good is purchased
 		
 		public static VirtualGood PAVLOVA_GOOD = new SingleUseVG(
 			"Pavlova",                                         			// name
 			"Gives customers a sugar rush and they call their friends", // description
 			"pavlova",                                          		// item id
-			new PurchaseWithVirtualItem(MUFFIN_CURRENCY_ITEM_ID, 175)); // the way this virtual good is purchased
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 175)); // the way this virtual good is purchased
 		
 		public static VirtualGood CHOCLATECAKE_GOOD = new SingleUseVG(
 			"Chocolate Cake",                                   		// name
 			"A classic cake to maximize customer satisfaction",	 		// description
 			"chocolate_cake",                                   		// item id
-			new PurchaseWithVirtualItem(MUFFIN_CURRENCY_ITEM_ID, 250)); // the way this virtual good is purchased
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 250)); // the way this virtual good is purchased
 		
 		
 		public static VirtualGood CREAMCUP_GOOD = new SingleUseVG(
 			"Cream Cup",                                        		// name
 			"Increase bakery reputation with this original pastry",   	// description
 			"cream_cup",                                        		// item id
-			new PurchaseWithVirtualItem(MUFFIN_CURRENCY_ITEM_ID, 50));  // the way this virtual good is purchased
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 50));  // the way this virtual good is purchased
 		
 		
 		/** Virtual Categories **/
@@ -171,6 +173,14 @@ namespace Soomla.Store.Example {
 			"No More Ads!",				 									// description
 			"no_ads",														// item id
 			new PurchaseWithMarket(NO_ADS_LIFETIME_PRODUCT_ID, 0.99));	// the way this virtual good is purchased
+	
+		public static VirtualGood WEAPON_BLASTER = new LifetimeVG(
+			"Blaster", 														// name
+			"A more powerful weapon to fend off aliens",				 	// description
+			BLASTER_GUN_ITEM_ID,											// item id
+			new PurchaseWithMarket(BLASTER_GUN_ITEM_ID, 0.99));	// the way this virtual good is purchased
+
+	
 	}
 	
 }
