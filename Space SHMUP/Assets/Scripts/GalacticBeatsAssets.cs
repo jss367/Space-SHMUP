@@ -42,7 +42,7 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualGood[] GetGoods() {
-			return new VirtualGood[] {BLASTER_GUN, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG};
+			return new VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG};
 		}
 		
 		/// <summary>
@@ -132,13 +132,13 @@ namespace Soomla.Store.Example {
 			);
 		
 		/** Virtual Goods **/
-		
-		public static VirtualGood BLASTER_GUN = new SingleUseVG(
-			"Blaster Gun",                                       		// name
-			"A more powerful weapon to fend off aliens", // description
-			"blaster_gun",                                       		// item id
-			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 225)); // the way this virtual good is purchased
-		
+
+//		public static VirtualGood BLASTER_GUN = new SingleUseVG(
+//			"Blaster Gun",                                       		// name
+//			"A more powerful weapon to fend off aliens", // description
+//			"blaster_gun",                                       		// item id
+//			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 225)); // the way this virtual good is purchased
+
 		public static VirtualGood PAVLOVA_GOOD = new SingleUseVG(
 			"Pavlova",                                         			// name
 			"Gives customers a sugar rush and they call their friends", // description
