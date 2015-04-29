@@ -15,7 +15,7 @@ MonoBehaviour:
   _active: 1
   levels:
   - _sceneObject: {fileID: 102900000, guid: 25830a6b18044c64da0dfd1b83e1a742, type: 3}
-    _scenePath: Assets/MainMenu.unity
+    _scenePath: Assets/Scenes/MainMenu.unity
     _sceneName: MainMenu
     scene: 
     parent: {fileID: 11400000}
@@ -27,7 +27,7 @@ MonoBehaviour:
     extensionGUID: 
     lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 897b9404b2934cc4096bef2de916cdbd, type: 3}
-    _scenePath: Assets/LevelManager.unity
+    _scenePath: Assets/Scenes/LevelManager.unity
     _sceneName: LevelManager
     scene: 
     parent: {fileID: 11400000}
@@ -39,7 +39,7 @@ MonoBehaviour:
     extensionGUID: 
     lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 084ae867ee618c644b119170d55485a6, type: 3}
-    _scenePath: Assets/Level1.unity
+    _scenePath: Assets/Scenes/Level1.unity
     _sceneName: Level1
     scene: 
     parent: {fileID: 11400000}
@@ -51,7 +51,7 @@ MonoBehaviour:
     extensionGUID: 
     lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 48db3a81bfa17794f9ccd662fbc8f8dd, type: 3}
-    _scenePath: Assets/Level2.unity
+    _scenePath: Assets/Scenes/Level2.unity
     _sceneName: Level2
     scene: 
     parent: {fileID: 11400000}
@@ -63,7 +63,7 @@ MonoBehaviour:
     extensionGUID: 
     lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 29baf3412d9a0d644a86f23d33a3e449, type: 3}
-    _scenePath: Assets/Level3.unity
+    _scenePath: Assets/Scenes/Level3.unity
     _sceneName: Level3
     scene: 
     parent: {fileID: 11400000}
@@ -75,7 +75,7 @@ MonoBehaviour:
     extensionGUID: 
     lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 418d4599415ef244298b00bf01045fc9, type: 3}
-    _scenePath: Assets/Level6.unity
+    _scenePath: Assets/Scenes/Level6.unity
     _sceneName: Level6
     scene: 
     parent: {fileID: 11400000}
@@ -86,6 +86,18 @@ MonoBehaviour:
     groupId: 0
     extensionGUID: 
     lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 9211d69a296a2fd44a87b99d7bd50a5f, type: 3}
+    _scenePath: Assets/Scenes/StoreScene.unity
+    _sceneName: StoreScene
+    scene: 
+    parent: {fileID: 11400000}
+    order: 60
+    name: Store
+    type: 0
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 1
   groups: []
   extensions: []
   version: 1
