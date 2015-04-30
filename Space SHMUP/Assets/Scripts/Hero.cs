@@ -187,9 +187,7 @@ public class Hero : MonoBehaviour {
 			_shieldLevel = Mathf.Min (value, 4);
 			//If the shield is going to be set to less than zero
 			if (value < 0) {
-				Destroy (this.gameObject);
-				//Tell Main.S to restart the game after a delay
-				Main.S.DelayedRestart (gameRestartDelay);
+				DestroyHero();
 			}
 		}
 	}
@@ -298,9 +296,13 @@ public class Hero : MonoBehaviour {
 
 
 
-//	void DestroyHero(){
-//
-//	}
+	void DestroyHero(){
+		Destroy (this.gameObject);
+		//Tell Main.S to restart the game after a delay
+		Main.S.DelayedRestart (gameRestartDelay);
+		//Create an explosion
+		Instantiate(explosion, transform.position, transform.rotation);
+	}
 
 
 

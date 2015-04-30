@@ -63,7 +63,7 @@ public class SU_Asteroid : MonoBehaviour {
 		GameObject mainObject = GameObject.Find ("Main Camera");
 		main = mainObject.GetComponent<Main> ();
 
-		Debug.Log ("SU_Asteroid.cs is being used");
+//		Debug.Log ("SU_Asteroid.cs is being used");
 
 	}
 	
