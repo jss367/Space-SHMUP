@@ -45,6 +45,8 @@ public class Hero : MonoBehaviour {
 	public SimpleTouchPad touchPad;
 	public SimpleTouchAreaButton areaButton;
 
+	public GameObject explosion;
+
 	void Awake(){
 		S = this; //Set the singleton
 		bounds = Utils.CombineBoundsOfChildren (this.gameObject);
@@ -296,7 +298,9 @@ public class Hero : MonoBehaviour {
 
 
 
-
+//	void DestroyHero(){
+//
+//	}
 
 
 

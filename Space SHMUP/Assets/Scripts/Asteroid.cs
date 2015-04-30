@@ -43,7 +43,7 @@ public class Asteroid : MonoBehaviour {
 		x0 = pos.x;
 		
 		birthTime = Time.time;
-		Debug.Log ("I am being used");
+		Debug.Log ("Asteroid.cs is being used");
 		GetComponent<Rigidbody>().angularVelocity = Random.insideUnitSphere * tumble;
 	}
 
