@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour {
 	private float tMultiplier;
 //	private GameController gameController;
 	private Main main;
+
+	public GameObject explosion;
 	
 	void Awake() {
 		materials = Utils.GetAllMaterials (gameObject);
@@ -142,6 +144,7 @@ public class Enemy : MonoBehaviour {
 				Main.S.ShipDestroyed(this);
 				// Destroy this Enemy
 				Destroy (this.gameObject);
+				Instantiate(explosion, transform.position, transform.rotation);
 			}
 			Destroy (other);
 			break;

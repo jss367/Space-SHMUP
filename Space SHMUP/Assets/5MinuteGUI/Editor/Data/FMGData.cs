@@ -95,32 +95,32 @@ public class FMGData : ScriptableObject
 		}
 
 	}
-	void handleLevelSelect(FMG.LevelSelect ls)
-	{
-		if(ls)
-		{
-			Debug.Log ("found levelselect");
-			GameObject objectToReplace = ls.levelButton;
-			UnityEngine.UI.Image img = objectToReplace.GetComponent<UnityEngine.UI.Image>();
-			if(img)
-			{
-				img.sprite = buttonSprite;
-				Debug.Log ("found image");
-				
-			}
-			UnityEngine.UI.Text text = objectToReplace.GetComponentInChildren<UnityEngine.UI.Text>();
-			if(text)
-			{
-				text.font = font;
-				text.color = fontColor;
-
-				Debug.Log ("found text");
-				
-				
-			}
-			//PrefabUtility.ReplacePrefab(objectToReplace, objectToReplace, ReplacePrefabOptions.ConnectToPrefab);
-		}
-	}
+//	void handleLevelSelect(FMG.LevelSelect ls)
+//	{
+//		if(ls)
+//		{
+//			Debug.Log ("found levelselect");
+//			GameObject objectToReplace = ls.levelButton;
+//			UnityEngine.UI.Image img = objectToReplace.GetComponent<UnityEngine.UI.Image>();
+//			if(img)
+//			{
+//				img.sprite = buttonSprite;
+//				Debug.Log ("found image");
+//				
+//			}
+//			UnityEngine.UI.Text text = objectToReplace.GetComponentInChildren<UnityEngine.UI.Text>();
+//			if(text)
+//			{
+//				text.font = font;
+//				text.color = fontColor;
+//
+//				Debug.Log ("found text");
+//				
+//				
+//			}
+//			//PrefabUtility.ReplacePrefab(objectToReplace, objectToReplace, ReplacePrefabOptions.ConnectToPrefab);
+//		}
+//	}
 	public void apply(int index)
 	{
 		EditorApplication.SaveScene( EditorApplication.currentScene);
@@ -131,60 +131,60 @@ public class FMGData : ScriptableObject
 		Debug.Log ("HUH");
 
 
-		for(int i=0; i<go.Length; i++)
-		{	
-			FMG.LevelSelect ls = go[i].GetComponent<FMG.LevelSelect>();
-			if(ls)
-			{
-				handleLevelSelect(ls);
-			}
-			ButtonToggle buttonToggle = go[i].GetComponent<ButtonToggle>();
-			if(buttonToggle)
-			{
-				buttonToggle.useButtonToggle = useToggableMenu;
-			}
-			FMG.LevelSelect levelsel = go[i].GetComponent<FMG.LevelSelect>();
-			if(levelsel)
-			{
-				levelsel.useLockedButtons = useLockedLevels;
-			}
-
-			UnityEngine.UI.Text text = go[i].GetComponent<UnityEngine.UI.Text>();
-			if(text)
-			{
-				text.font = font;
-				text.color = fontColor;
-			}
-
-			if(go[i].name.Contains("Button"))
-			{
-				UnityEngine.UI.Image img1 = go[i].GetComponent<UnityEngine.UI.Image>();
-				if(img1)
-				{
-					img1.sprite = buttonSprite;
-				}
-			}
-			if(go[i].name.Contains("Panel"))
-			{
-				UnityEngine.UI.Image img1 = go[i].GetComponent<UnityEngine.UI.Image>();
-				if(img1)
-				{
-					img1.sprite = panelSprite;
-					img1.color = panelColor;
-				}
-			}
-			if(go[i].name.Equals("Background"))
-			{
-				UnityEngine.UI.RawImage img1 = go[i].GetComponent<UnityEngine.UI.RawImage>();
-				if(img1)
-				{
-					img1.color = backgroundColor;
-					img1.texture = backgroundTexture;
-				}
-			}
-		
-
-		}
+//		for(int i=0; i<go.Length; i++)
+//		{	
+//			FMG.LevelSelect ls = go[i].GetComponent<FMG.LevelSelect>();
+//			if(ls)
+//			{
+//				handleLevelSelect(ls);
+//			}
+//			ButtonToggle buttonToggle = go[i].GetComponent<ButtonToggle>();
+//			if(buttonToggle)
+//			{
+//				buttonToggle.useButtonToggle = useToggableMenu;
+//			}
+//			FMG.LevelSelect levelsel = go[i].GetComponent<FMG.LevelSelect>();
+//			if(levelsel)
+//			{
+//				levelsel.useLockedButtons = useLockedLevels;
+//			}
+//
+//			UnityEngine.UI.Text text = go[i].GetComponent<UnityEngine.UI.Text>();
+//			if(text)
+//			{
+//				text.font = font;
+//				text.color = fontColor;
+//			}
+//
+//			if(go[i].name.Contains("Button"))
+//			{
+//				UnityEngine.UI.Image img1 = go[i].GetComponent<UnityEngine.UI.Image>();
+//				if(img1)
+//				{
+//					img1.sprite = buttonSprite;
+//				}
+//			}
+//			if(go[i].name.Contains("Panel"))
+//			{
+//				UnityEngine.UI.Image img1 = go[i].GetComponent<UnityEngine.UI.Image>();
+//				if(img1)
+//				{
+//					img1.sprite = panelSprite;
+//					img1.color = panelColor;
+//				}
+//			}
+//			if(go[i].name.Equals("Background"))
+//			{
+//				UnityEngine.UI.RawImage img1 = go[i].GetComponent<UnityEngine.UI.RawImage>();
+//				if(img1)
+//				{
+//					img1.color = backgroundColor;
+//					img1.texture = backgroundTexture;
+//				}
+//			}
+//		
+//
+//		}
 			
 		UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
 		EditorApplication.SaveScene( UnityEditor.EditorBuildSettings.scenes[index].path);

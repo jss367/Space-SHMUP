@@ -160,7 +160,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5c3f072ec1a001541b7d1814571547ee, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .377999991
+  m_Volume: .151999995
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4e88f0cf3426e4fb9ab780459b2922, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyAfterSeconds: 8
+  destroyAfterSeconds: 2
 --- !u!198 &19860148
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1340,7 +1340,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 5
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1355,7 +1355,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .400000006
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1363,7 +1363,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 3
     startSpeed:
-      scalar: 70
+      scalar: 50
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1378,7 +1378,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .428571433
+          value: .600000024
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1480,7 +1480,7 @@ ParticleSystem:
         rgba: 4285706751
       minMaxState: 2
     startSize:
-      scalar: 20
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1495,7 +1495,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .200000003
+          value: .400000006
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1537,7 +1537,7 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
   ShapeModule:
     serializedVersion: 2
     enabled: 1
@@ -2560,7 +2560,7 @@ ParticleSystem:
       minMaxState: 3
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
   ShapeModule:
     serializedVersion: 2
     enabled: 1

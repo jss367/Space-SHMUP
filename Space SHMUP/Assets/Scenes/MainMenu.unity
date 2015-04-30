@@ -354,7 +354,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4261636b
+  m_Text: Back
 --- !u!222 &42560151
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ MonoBehaviour:
             Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: LevelSelect
+          m_StringArgument: Credits
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -551,7 +551,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3c3c
+  m_Text: Prev
 --- !u!222 &49470639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1835,14 +1835,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1810964814}
-        m_MethodName: 6f6e436f6d6d616e64
+        m_MethodName: onCommand
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 556e697479456e67696e652e4f626a6563742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 437265646974734261636b
+          m_StringArgument: CreditsBack
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1950,14 +1951,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1810964814}
-        m_MethodName: 6f6e436f6d6d616e64
+        m_MethodName: onCommand
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 556e697479456e67696e652e4f626a6563742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 4f7074696f6e73
+          m_StringArgument: Options
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2055,16 +2057,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1357d19c0a9564e278746a036fdc6bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 1855290208}
-  - {fileID: 1624255082}
-  - {fileID: 1265035944}
-  - {fileID: 1696957221}
-  - {fileID: 988361584}
-  selectedButton: {fileID: 0}
-  unselectedColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0, g: 1, b: 0, a: 1}
-  useButtonToggle: 1
 --- !u!95 &620144709
 Animator:
   serializedVersion: 3
@@ -2462,7 +2454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 43726564697473
+  m_Text: Credits
 --- !u!222 &799724246
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2532,12 +2524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1357d19c0a9564e278746a036fdc6bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 323720992}
-  selectedButton: {fileID: 0}
-  unselectedColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0, g: 1, b: 0, a: 1}
-  useButtonToggle: 1
 --- !u!95 &823561979
 Animator:
   serializedVersion: 3
@@ -2784,7 +2770,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 50726f6772616d6d696e673a204a757374696e0a4172743a204976616e
+  m_Text: Music by Glenn Simonelli
 --- !u!222 &882032245
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2962,14 +2948,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1810964814}
-        m_MethodName: 6f6e436f6d6d616e64
+        m_MethodName: onCommand
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 556e697479456e67696e652e4f626a6563742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 4f7074696f6e734261636b
+          m_StringArgument: OptionsBack
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3075,7 +3062,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4261636b
+  m_Text: Back
 --- !u!222 &1053231532
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3330,7 +3317,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!1 &1193379670
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,7 +3569,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1224299764
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3744,13 +3731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b3a23d9a10b495b998c17b509c3bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelButton: {fileID: 100002, guid: 4ef3b8b53f9204ad4906a54a87246f90, type: 2}
-  startPos: {x: -300, y: 120, z: 0}
-  offset: {x: 160, y: -90, z: 0}
-  nomPerRow: 2
-  nomPerCol: 3
-  levelIndex: 0
-  useLockedButtons: 1
 --- !u!114 &1263947317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3774,14 +3754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1357d19c0a9564e278746a036fdc6bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 1411210053}
-  - {fileID: 1196147843}
-  - {fileID: 1814546413}
-  selectedButton: {fileID: 0}
-  unselectedColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0, g: 1, b: 0, a: 1}
-  useButtonToggle: 1
 --- !u!95 &1263947319
 Animator:
   serializedVersion: 3
@@ -4015,7 +3987,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3e3e
+  m_Text: Next
 --- !u!222 &1295384255
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4098,14 +4070,15 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1810964814}
-        m_MethodName: 6f6e436f6d6d616e64
+        m_MethodName: onCommand
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 556e697479456e67696e652e4f626a6563742c20556e697479456e67696e652c2056657273696f6e3d302e302e302e302c2043756c747572653d6e65757472616c2c205075626c69634b6579546f6b656e3d6e756c6c
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 45786974
+          m_StringArgument: Exit
           m_BoolArgument: 0
         m_CallState: 1
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -4278,7 +4251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 417564696f3a206f6e
+  m_Text: Audio
 --- !u!114 &1397247818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4636,15 +4609,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1357d19c0a9564e278746a036fdc6bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons:
-  - {fileID: 841661487}
-  - {fileID: 548789735}
-  - {fileID: 44294370}
-  - {fileID: 1297602165}
-  selectedButton: {fileID: 0}
-  unselectedColor: {r: 1, g: 1, b: 1, a: 1}
-  selectedColor: {r: 0, g: 1, b: 0, a: 1}
-  useButtonToggle: 1
 --- !u!95 &1655645320
 Animator:
   serializedVersion: 3
@@ -5106,7 +5070,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 47726170686963733a2068696768657374
+  m_Text: Graphics
 --- !u!114 &1824858197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5316,7 +5280,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 44656c6574652044617461
+  m_Text: Options
 --- !u!222 &1932418013
 CanvasRenderer:
   m_ObjectHideFlags: 0
