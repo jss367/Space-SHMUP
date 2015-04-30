@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-// Enemy_1 extends the Enemy class
+
 public class Asteroid : MonoBehaviour {
 
 	public float		speed = 10f; //The speed in m/s
@@ -43,7 +43,7 @@ public class Asteroid : MonoBehaviour {
 		x0 = pos.x;
 		
 		birthTime = Time.time;
-
+		Debug.Log ("I am being used");
 		GetComponent<Rigidbody>().angularVelocity = Random.insideUnitSphere * tumble;
 	}
 
