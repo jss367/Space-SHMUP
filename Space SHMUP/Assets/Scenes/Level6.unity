@@ -3020,6 +3020,7 @@ GameObject:
   - 4: {fileID: 602568936}
   - 114: {fileID: 602568938}
   - 114: {fileID: 602568937}
+  - 114: {fileID: 602568939}
   m_Layer: 0
   m_Name: EnemySpawn1
   m_TagString: Untagged
@@ -3080,6 +3081,27 @@ MonoBehaviour:
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &602568939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 602568935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 4
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .25
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 188536, guid: cd17ed3004777414cb95709f16052d08, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &611673458
 GameObject:
