@@ -15,7 +15,7 @@ MonoBehaviour:
   _active: 1
   levels:
   - _sceneObject: {fileID: 102900000, guid: 25830a6b18044c64da0dfd1b83e1a742, type: 3}
-    _scenePath: Assets/Scenes/MainMenu.unity
+    _scenePath: Assets/_Scenes/MainMenu.unity
     _sceneName: MainMenu
     scene: 
     parent: {fileID: 11400000}
@@ -27,7 +27,7 @@ MonoBehaviour:
     extensionGUID: 
     lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 897b9404b2934cc4096bef2de916cdbd, type: 3}
-    _scenePath: Assets/Scenes/LevelManager.unity
+    _scenePath: Assets/_Scenes/LevelManager.unity
     _sceneName: LevelManager
     scene: 
     parent: {fileID: 11400000}
@@ -39,7 +39,7 @@ MonoBehaviour:
     extensionGUID: 
     lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 418d4599415ef244298b00bf01045fc9, type: 3}
-    _scenePath: Assets/Scenes/Level6.unity
+    _scenePath: Assets/_Scenes/Level6.unity
     _sceneName: Level6
     scene: 
     parent: {fileID: 11400000}
@@ -50,18 +50,42 @@ MonoBehaviour:
     groupId: 0
     extensionGUID: 
     lockedByDefault: 0
-  - _sceneObject: {fileID: 102900000, guid: 9211d69a296a2fd44a87b99d7bd50a5f, type: 3}
-    _scenePath: Assets/Scenes/StoreScene.unity
-    _sceneName: StoreScene
+  - _sceneObject: {fileID: 102900000, guid: e10ee788d9610a741962d6f69cd39b96, type: 3}
+    _scenePath: Assets/_Scenes/Level7.unity
+    _sceneName: Level7
     scene: 
     parent: {fileID: 11400000}
     order: 30
+    name: Level 2
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 9211d69a296a2fd44a87b99d7bd50a5f, type: 3}
+    _scenePath: Assets/_Scenes/StoreScene.unity
+    _sceneName: StoreScene
+    scene: 
+    parent: {fileID: 11400000}
+    order: 40
     name: Store
     type: 0
     arguments: 
     groupId: 0
     extensionGUID: 
     lockedByDefault: 1
+  - _sceneObject: {fileID: 102900000, guid: 0c79402931ab54143969691b7fbf4821, type: 3}
+    _scenePath: Assets/_Scenes/Level8.unity
+    _sceneName: Level8
+    scene: 
+    parent: {fileID: 11400000}
+    order: 50
+    name: Store (1)
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 0
   groups: []
   extensions: []
   version: 1
