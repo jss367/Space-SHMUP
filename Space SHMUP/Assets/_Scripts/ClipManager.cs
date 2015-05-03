@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 // by BitsAlive
 [AddComponentMenu("BitsAlive/Audio/AudioManager")]
 [RequireComponent(typeof(AudioSource))]
-public class AudioManager : MonoBehaviour {
+public class ClipManager : MonoBehaviour {
 	
 	public enum SoundType {
 		ambient,
@@ -48,11 +48,10 @@ public class AudioManager : MonoBehaviour {
 	private bool firstSound = true;
 	private bool stop = false;
 	private Color gizmoColor = new Color(0x75/255f, 0xa7/255f, 0xc3/255f);
-
-	public float timeLimit;
+	
 	
 	void Awake() {
-//		Debug.Log ("AudioManager.cs has awakened");
+				Debug.Log ("AudioManager.cs has awakened");
 		// check, if there are two AudioSources
 		AudioSource[] a = gameObject.GetComponents<AudioSource>();
 		if ((a == null) || (a.Length < 2)) {
@@ -74,8 +73,7 @@ public class AudioManager : MonoBehaviour {
 			Debug.LogError("AudioManager (" + gameObject.name + "): audioClip[" + i + "] is not defined!");
 			return;
 		}
-
-
+		
 		// check of the settings
 		CheckSettings();
 		
@@ -89,22 +87,20 @@ public class AudioManager : MonoBehaviour {
 		clipIndex = -1;
 		if (playOnAwake) { 
 			Play ();
-//			Debug.Log("AudioManager.cs is starting the audioClip");
+						Debug.Log("AudioManager.cs is starting the audioClip");
 		}
-		timeLimit = audioClip [0].length;
-//		Debug.Log ("The song length is " + timeLimit);
+
+		Debug.Log ("The song length is " + audioClip [0].length);
 	}
-
-
+	
+	
 	void OnDrawGizmosSelected() {
 		// if the current GameObject is selected: display a blue gizmo for the range of the random positions (Scale of the GameObject)
 		if (randomPosition) {
 			Gizmos.color = gizmoColor;
 			Gizmos.DrawWireCube(transform.position, transform.localScale);
 		}
-
 	}
-
 	
 	
 	/// <summary>
