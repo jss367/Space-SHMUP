@@ -36,10 +36,6 @@ public class Main : MonoBehaviour {
 	private float timeLastReset;
 	public float timeLimit;
 
-//	public GameObject audioManager;
-//
-//	public AudioManager audioManagerz;
-
 	void Awake(){
 
 		S = this;
@@ -90,7 +86,7 @@ public class Main : MonoBehaviour {
 		score = 0;
 		UpdateScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		Debug.Log ("The song length is " + timeLimit);
+//		Debug.Log ("The song length is " + timeLimit);
 	}
 
 	void Update() {

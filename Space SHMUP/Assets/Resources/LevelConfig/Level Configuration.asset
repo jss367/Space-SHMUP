@@ -26,7 +26,7 @@ MonoBehaviour:
     groupId: 0
     extensionGUID: 
     lockedByDefault: 0
-  - _sceneObject: {fileID: 102900000, guid: 897b9404b2934cc4096bef2de916cdbd, type: 3}
+  - _sceneObject: {fileID: 102900000, guid: 3aca135e3fe36ca4b969b592250304ab, type: 3}
     _scenePath: Assets/_Scenes/LevelManager.unity
     _sceneName: LevelManager
     scene: 
@@ -62,30 +62,42 @@ MonoBehaviour:
     groupId: 0
     extensionGUID: 
     lockedByDefault: 0
-  - _sceneObject: {fileID: 102900000, guid: 9211d69a296a2fd44a87b99d7bd50a5f, type: 3}
-    _scenePath: Assets/_Scenes/StoreScene.unity
-    _sceneName: StoreScene
+  - _sceneObject: {fileID: 102900000, guid: dd4d8c84396b9ff4982cfaabe7cfca28, type: 3}
+    _scenePath: Assets/_Scenes/LevelHerMajesty.unity
+    _sceneName: LevelHerMajesty
     scene: 
     parent: {fileID: 11400000}
     order: 40
-    name: Store
-    type: 0
+    name: Level 2 (1)
+    type: 1
     arguments: 
     groupId: 0
     extensionGUID: 
-    lockedByDefault: 1
+    lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 0c79402931ab54143969691b7fbf4821, type: 3}
     _scenePath: Assets/_Scenes/Level8.unity
     _sceneName: Level8
     scene: 
     parent: {fileID: 11400000}
     order: 50
-    name: Store (1)
+    name: Level
     type: 1
     arguments: 
     groupId: 0
     extensionGUID: 
     lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 9211d69a296a2fd44a87b99d7bd50a5f, type: 3}
+    _scenePath: Assets/_Scenes/StoreScene.unity
+    _sceneName: StoreScene
+    scene: 
+    parent: {fileID: 11400000}
+    order: 60
+    name: Store
+    type: 0
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 1
   groups: []
   extensions: []
   version: 1
