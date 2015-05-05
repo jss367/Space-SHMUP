@@ -63,7 +63,7 @@ namespace Soomla.Store.Example {
 		
 		public const string GALACTIC_CURRENCY_ITEM_ID      = "galactic_currency";
 
-		public const string BLASTER_GUN_ITEM_ID = "blaster_gun";
+		public const string BLASTER_GUN_ITEM_ID = "weapon_blaster";
 
 		public const string TENMUFF_PACK_PRODUCT_ID      = "android.test.refunded";
 		

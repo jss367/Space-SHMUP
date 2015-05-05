@@ -92,7 +92,7 @@ public class Main : MonoBehaviour {
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
 		timeMultiplier = Time.timeSinceLevelLoad / 4;
-		if (timer > timeLimit){
+		if (timer > timeLimit + 5){
 			GameOver();
 		}
 
