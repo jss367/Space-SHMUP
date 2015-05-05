@@ -33,7 +33,7 @@ public class Main : MonoBehaviour {
 	private int score;
 	public float timeAlive;
 	public float timeMultiplier;
-	private float timeLastReset;
+//	private float timeLastReset;
 	public float timeLimit;
 
 	void Awake(){

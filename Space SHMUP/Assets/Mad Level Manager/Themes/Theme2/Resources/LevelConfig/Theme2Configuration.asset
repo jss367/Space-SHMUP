@@ -14,12 +14,24 @@ MonoBehaviour:
   creationDate: 0
   _active: 1
   levels:
+  - _sceneObject: {fileID: 102900000, guid: 25830a6b18044c64da0dfd1b83e1a742, type: 3}
+    _scenePath: Assets/_Scenes/MainMenu.unity
+    _sceneName: MainMenu
+    scene: 
+    parent: {fileID: 11400000}
+    order: 0
+    name: Level 14
+    type: 0
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 1
   - _sceneObject: {fileID: 102900000, guid: 3aca135e3fe36ca4b969b592250304ab, type: 3}
     _scenePath: Assets/_Scenes/LevelManager.unity
     _sceneName: LevelManager
     scene: 
     parent: {fileID: 11400000}
-    order: 0
+    order: 10
     name: Level Select
     type: 0
     arguments: 
@@ -27,11 +39,11 @@ MonoBehaviour:
     extensionGUID: 
     lockedByDefault: 1
   - _sceneObject: {fileID: 102900000, guid: dd4d8c84396b9ff4982cfaabe7cfca28, type: 3}
-    _scenePath: Assets/_Scenes/LevelHerMajesty.unity
-    _sceneName: LevelHerMajesty
+    _scenePath: Assets/_Scenes/Level9.unity
+    _sceneName: Level9
     scene: 
     parent: {fileID: 11400000}
-    order: 10
+    order: 20
     name: Level 1
     type: 1
     arguments: 
@@ -43,31 +55,31 @@ MonoBehaviour:
     _sceneName: Level7
     scene: 
     parent: {fileID: 11400000}
-    order: 20
+    order: 30
     name: Level 2
     type: 1
     arguments: 
     groupId: 0
     extensionGUID: 
-    lockedByDefault: 1
+    lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 0c79402931ab54143969691b7fbf4821, type: 3}
     _scenePath: Assets/_Scenes/Level8.unity
     _sceneName: Level8
     scene: 
     parent: {fileID: 11400000}
-    order: 30
+    order: 40
     name: Level 3
     type: 1
     arguments: 
     groupId: 0
     extensionGUID: 
-    lockedByDefault: 1
+    lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
     _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
     _sceneName: MadLevelTester
     scene: 
     parent: {fileID: 11400000}
-    order: 40
+    order: 50
     name: Level 4
     type: 1
     arguments: 
@@ -79,7 +91,7 @@ MonoBehaviour:
     _sceneName: MadLevelTester
     scene: 
     parent: {fileID: 11400000}
-    order: 50
+    order: 60
     name: Level 5
     type: 1
     arguments: 
@@ -91,7 +103,7 @@ MonoBehaviour:
     _sceneName: MadLevelTester
     scene: 
     parent: {fileID: 11400000}
-    order: 60
+    order: 70
     name: Level 6
     type: 1
     arguments: 
@@ -103,7 +115,7 @@ MonoBehaviour:
     _sceneName: MadLevelTester
     scene: 
     parent: {fileID: 11400000}
-    order: 70
+    order: 80
     name: Level 7
     type: 1
     arguments: 
@@ -115,7 +127,7 @@ MonoBehaviour:
     _sceneName: MadLevelTester
     scene: 
     parent: {fileID: 11400000}
-    order: 80
+    order: 90
     name: Level 8
     type: 1
     arguments: 
@@ -127,7 +139,7 @@ MonoBehaviour:
     _sceneName: MadLevelTester
     scene: 
     parent: {fileID: 11400000}
-    order: 90
+    order: 100
     name: Level 9
     type: 1
     arguments: 
@@ -139,7 +151,7 @@ MonoBehaviour:
     _sceneName: MadLevelTester
     scene: 
     parent: {fileID: 11400000}
-    order: 100
+    order: 110
     name: Level 10
     type: 1
     arguments: 
@@ -151,165 +163,21 @@ MonoBehaviour:
     _sceneName: MadLevelTester
     scene: 
     parent: {fileID: 11400000}
-    order: 110
+    order: 120
     name: Level 11
     type: 1
     arguments: 
     groupId: 0
     extensionGUID: 
     lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 120
-    name: Level 12
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
+  - _sceneObject: {fileID: 102900000, guid: 9211d69a296a2fd44a87b99d7bd50a5f, type: 3}
+    _scenePath: Assets/_Scenes/StoreScene.unity
+    _sceneName: StoreScene
     scene: 
     parent: {fileID: 11400000}
     order: 130
     name: Level 13
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 140
-    name: Level 14
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 150
-    name: Level 15
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 160
-    name: Level 16
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 170
-    name: Level 17
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 180
-    name: Level 18
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 190
-    name: Level 19
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 200
-    name: Level 20
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 210
-    name: Level 21
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 220
-    name: Level 22
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 230
-    name: Level 23
-    type: 1
-    arguments: 
-    groupId: 0
-    extensionGUID: 
-    lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
-    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
-    _sceneName: MadLevelTester
-    scene: 
-    parent: {fileID: 11400000}
-    order: 240
-    name: Level 24
-    type: 1
+    type: 0
     arguments: 
     groupId: 0
     extensionGUID: 

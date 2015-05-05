@@ -6,9 +6,10 @@ public class SpawnManager : MonoBehaviour {
 	private Main main;
 
 	public int level;
-	public float firstBreak = 5;
-	public float secondBreak = 10;
-	public float thirdBreak = 15;
+	public float firstBreak;
+	public float secondBreak;
+	public float thirdBreak;
+	public float timeLimit;
 
 	public GameObject AsteroidSpawn1;
 	public GameObject AsteroidSpawn2;
@@ -24,6 +25,10 @@ public class SpawnManager : MonoBehaviour {
 		if (mainObject != null) {
 			main = mainObject.GetComponent<Main> ();
 		}
+		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+		firstBreak = timeLimit / 4;
+		secondBreak = timeLimit / 2;
+		thirdBreak = 3 * timeLimit / 4;
 	}
 	
 	// Update is called once per frame
