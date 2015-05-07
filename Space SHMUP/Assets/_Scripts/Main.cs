@@ -43,6 +43,8 @@ public class Main : MonoBehaviour {
 	public float account;
 	public float coinsGained;
 
+	public bool gameHasEnded;
+
 	void Awake(){
 
 		S = this;
@@ -96,13 +98,15 @@ public class Main : MonoBehaviour {
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 //		Debug.Log ("The song length is " + timeLimit);
 		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticBeatsAssets());
+		gameHasEnded = false;
 	}
 
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
 		timeMultiplier = Time.timeSinceLevelLoad / 4;
-		if (timer > timeLimit + 5){
+		if (!gameHasEnded && (timer > timeLimit + 5)){
 			GameOver();
+			gameHasEnded = true;
 		}
 
 
@@ -182,13 +186,19 @@ public class Main : MonoBehaviour {
 	public void GivePoints(){
 //		try {
 		account = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
-//		coinsGained = Soomla.Store.StoreInventory.GiveItem("galactic_currency", 10); // fix this
-		accountText.text = "You now have: " + account;
+//		coinsGained = Soomla.Store.StoreInventory.GiveItem ("galactic_currency", 10);
+		Soomla.Store.StoreInventory.GiveItem("galactic_currency", 10); // fix this
+		accountText.text = "Your final score is: " + score + "\nYou now have: " + account;
 		accountText.enabled = true;
-
+		RewardPlayer ();
 //		} catch (Exception e) {
 //			Debug.LogError ("SOOMLA/UNITY " + e.Message);
 //		}
+	}
+
+	public void RewardPlayer(){
+//		Soomla.Store.StoreInventory.GiveItem ("galactic_currency", 10);
+
 	}
 
 //	public VirtualCurrencyPack[] GetCurrencyPacks() {
