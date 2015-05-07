@@ -2,6 +2,9 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic; //Required to use Lists or Dictionaries
+using Soomla;
+
+//namespace Soomla.Store.Example {
 
 public class Main : MonoBehaviour {
 	static public Main			S;
@@ -23,6 +26,7 @@ public class Main : MonoBehaviour {
 	public GameObject mainMenuButton;
 	public Text gameOverText;
 	public Text highScoreText;
+	public Text accountText;
 
 
 	public bool ______________;
@@ -35,6 +39,9 @@ public class Main : MonoBehaviour {
 	public float timeMultiplier;
 //	private float timeLastReset;
 	public float timeLimit;
+
+	public float account;
+	public float coinsGained;
 
 	void Awake(){
 
@@ -83,10 +90,12 @@ public class Main : MonoBehaviour {
 		restartButton.SetActive (false);
 		mainMenuButton.SetActive (false);
 		highScoreText.enabled = false;
+		accountText.enabled = false;
 		score = 0;
 		UpdateScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 //		Debug.Log ("The song length is " + timeLimit);
+		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticBeatsAssets());
 	}
 
 	void Update() {
@@ -167,7 +176,33 @@ public class Main : MonoBehaviour {
 		mainMenuButton.SetActive (true);
 		StoreHighScore (score);
 		highScoreText.enabled = true;
+		GivePoints ();
 	}
+
+	public void GivePoints(){
+//		try {
+		account = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
+//		coinsGained = Soomla.Store.StoreInventory.GiveItem("galactic_currency", 10); // fix this
+		accountText.text = "You now have: " + account;
+		accountText.enabled = true;
+
+//		} catch (Exception e) {
+//			Debug.LogError ("SOOMLA/UNITY " + e.Message);
+//		}
+	}
+
+//	public VirtualCurrencyPack[] GetCurrencyPacks() {
+////		return new VirtualCurrencyPack[] {TENMUFF_PACK, FIFTYMUFF_PACK, FOURHUNDMUFF_PACK, THOUSANDMUFF_PACK};
+//	}
+//
+//	public static VirtualCurrencyPack THOUSANDMUFF_PACK = new VirtualCurrencyPack(
+//		"1000 Muffins",                                 // name
+//		"Test item unavailable",                 		// description
+//		"muffins_1000",                                 // item id
+//		1000,                                           // number of currencies in the pack
+//		GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
+//		new PurchaseWithMarket(THOUSANDMUFF_PACK_PRODUCT_ID, 8.99)
+//		);
 
 	public void MainMenu() {
 		Application.LoadLevel ("LevelManager");
@@ -202,3 +237,7 @@ public class Main : MonoBehaviour {
 	}
 
 }
+
+
+
+//}

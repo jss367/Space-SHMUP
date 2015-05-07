@@ -144,6 +144,7 @@ namespace Soomla.Store.Example {
 			"Gives customers a sugar rush and they call their friends", // description
 			"pavlova",                                          		// item id
 			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 175)); // the way this virtual good is purchased
+
 		
 		public static VirtualGood CHOCLATECAKE_GOOD = new SingleUseVG(
 			"Chocolate Cake",                                   		// name
