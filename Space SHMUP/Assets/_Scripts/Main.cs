@@ -153,7 +153,8 @@ public class Main : MonoBehaviour {
 
 	public void RestartGame()
 	{
-		Application.LoadLevel (Application.loadedLevel);
+//		Application.LoadLevel (Application.loadedLevel);
+		MadLevel.LoadLevelByName (currentLevel);
 	}
 
 	public void ShipDestroyed( Enemy e) {
@@ -202,7 +203,9 @@ public class Main : MonoBehaviour {
 
 		// Update Level Manager
 		MadLevelProfile.SetCompleted (currentLevel, true);
-		MadLevelProfile.SetPropertyEnabled (currentLevel, "star", true);
+//		MadLevelProfile.SetPropertyEnabled (currentLevel, "star", true);
+		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
 		MadLevelProfile.Save ();
 
 
@@ -227,7 +230,8 @@ public class Main : MonoBehaviour {
 //		);
 
 	public void MainMenu() {
-		Application.LoadLevel ("LevelManager");
+//		Application.LoadLevel ("LevelManager");
+		MadLevel.LoadLevelByName ("Level Select");
 	}
 
 	public void AsteroidDestroyed(SU_Asteroid a) {
