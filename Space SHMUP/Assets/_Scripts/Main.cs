@@ -48,6 +48,8 @@ public class Main : MonoBehaviour {
 
 	public string currentLevel;
 
+	public float endGameDelay = 2.5f;
+
 	void Awake(){
 
 		S = this;
@@ -56,7 +58,7 @@ public class Main : MonoBehaviour {
 		//  0.5 enemies/second = enemySpawnRate of 2
 		enemySpawnRate = 1f / enemySpawnPerSecond;
 		//Invoke call SpawnEnemy() once after a 2 second delay
-		Invoke ("SpawnEnemy", enemySpawnRate);
+//		Invoke ("SpawnEnemy", enemySpawnRate);
 		
 		//A generic Dictionary with WeaponType as the key
 		W_DEFS = new Dictionary<WeaponType, WeaponDefinition> ();
@@ -66,11 +68,11 @@ public class Main : MonoBehaviour {
 
 
 		// If the HighScore already exists, read it
-		if (PlayerPrefs.HasKey ("SpaceSHMUPHighScore")) {
-			score = PlayerPrefs.GetInt ("SpaceSHMUPHighScore");
+		if (PlayerPrefs.HasKey ("GalacticHighScore")) {
+			score = PlayerPrefs.GetInt ("GalacticHighScore");
 		}
-		//Assign the high score to SpaceSHMUPHighScore
-		PlayerPrefs.SetInt ("SpaceSHMUPHighScore", score);
+		//Assign the high score to GalacticHighScore
+		PlayerPrefs.SetInt ("GalacticHighScore", score);
 
 	}
 
@@ -109,7 +111,7 @@ public class Main : MonoBehaviour {
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
 		timeMultiplier = Time.timeSinceLevelLoad / 4;
-		if (!gameHasEnded && (timer > timeLimit + 5)){
+		if (!gameHasEnded && (timer > timeLimit + endGameDelay)){
 			GameOver();
 			gameHasEnded = true;
 		}
@@ -118,26 +120,26 @@ public class Main : MonoBehaviour {
 		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("Highscore", 0);
 //		Debug.Log ("The score is " + score);
 		// Update the high score if PlayerPrefs if necessary
-		if (score > PlayerPrefs.GetInt ("SpaceSHMUPHighScore")) {
+		if (score > PlayerPrefs.GetInt ("GalacticHighScore")) {
 			Debug.Log("Setting new high score");
-			PlayerPrefs.SetInt ("SpaceSHMUPHighScore", score);
+			PlayerPrefs.SetInt ("GalacticHighScore", score);
 		}
 	}
 
-	public void SpawnEnemy(){
-		//Pick a random Enemy prefab to instantiate
-		int ndx = Random.Range (0, prefabEnemies.Length);
-		GameObject go = Instantiate (prefabEnemies [ndx]) as GameObject;
-		//Position the Enemy above the screen with a random x position
-		Vector3 pos = Vector3.zero;
-		float xMin = Utils.camBounds.min.x + enemySpawnPadding;
-		float xMax = Utils.camBounds.max.x - enemySpawnPadding;
-		pos.x = Random.Range (xMin, xMax);
-		pos.y = Utils.camBounds.max.y + enemySpawnPadding;
-		go.transform.position = pos;
-		//Call SpawnEnemy() again in a couple of seconds
-		Invoke ("SpawnEnemy", enemySpawnRate);
-	}
+//	public void SpawnEnemy(){
+//		//Pick a random Enemy prefab to instantiate
+//		int ndx = Random.Range (0, prefabEnemies.Length);
+//		GameObject go = Instantiate (prefabEnemies [ndx]) as GameObject;
+//		//Position the Enemy above the screen with a random x position
+//		Vector3 pos = Vector3.zero;
+//		float xMin = Utils.camBounds.min.x + enemySpawnPadding;
+//		float xMax = Utils.camBounds.max.x - enemySpawnPadding;
+//		pos.x = Random.Range (xMin, xMax);
+//		pos.y = Utils.camBounds.max.y + enemySpawnPadding;
+//		go.transform.position = pos;
+//		//Call SpawnEnemy() again in a couple of seconds
+//		Invoke ("SpawnEnemy", enemySpawnRate);
+//	}
 
 	public void DelayedRestart(float delay) {
 		//Invoke the Restart() method in delay seconds

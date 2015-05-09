@@ -73,7 +73,7 @@ namespace Soomla.Store.Example {
 		
 		public const string THOUSANDMUFF_PACK_PRODUCT_ID = "2500_pack";
 		
-		public const string MUFFINCAKE_ITEM_ID   = "blaster_gun";
+//		public const string MUFFINCAKE_ITEM_ID   = "blaster_gun";
 		
 		public const string PAVLOVA_ITEM_ID   = "pavlova";
 		
@@ -163,7 +163,7 @@ namespace Soomla.Store.Example {
 		/** Virtual Categories **/
 		// The muffin rush theme doesn't support categories, so we just put everything under a general category.
 		public static VirtualCategory GENERAL_CATEGORY = new VirtualCategory(
-			"General", new List<string>(new string[] { MUFFINCAKE_ITEM_ID, PAVLOVA_ITEM_ID, CHOCLATECAKE_ITEM_ID, CREAMCUP_ITEM_ID })
+			"General", new List<string>(new string[] {PAVLOVA_ITEM_ID, CHOCLATECAKE_ITEM_ID, CREAMCUP_ITEM_ID })
 			);
 		
 		
@@ -179,7 +179,7 @@ namespace Soomla.Store.Example {
 			"Blaster", 														// name
 			"A more powerful weapon to fend off aliens",				 	// description
 			BLASTER_GUN_ITEM_ID,											// item id
-			new PurchaseWithMarket(BLASTER_GUN_ITEM_ID, 0.99));	// the way this virtual good is purchased
+			new PurchaseWithVirtualItem(BLASTER_GUN_ITEM_ID, 100));	// the way this virtual good is purchased
 
 	
 	}

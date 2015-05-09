@@ -77,8 +77,7 @@ namespace Soomla.Store.Example {
 		private Font tTitle;
 		private Dictionary<string, Texture2D> itemsTextures;
 		private Dictionary<string, bool> itemsAffordability;
-		
-		
+
 		/// <summary>
 		/// Starts this instance.
 		/// Use this for initialization.
@@ -378,7 +377,7 @@ namespace Soomla.Store.Example {
 			
 			GUI.color = Color.red;
 			GUI.skin.label.alignment = TextAnchor.UpperLeft;
-			GUI.Label(new Rect(10,10,Screen.width-10,Screen.height-10),"SOOMLA Example Store");
+			GUI.Label(new Rect(10,10,Screen.width-10,Screen.height-10),"Galactic Store");
 			GUI.color = Color.black;
 			GUI.skin.label.alignment = TextAnchor.UpperRight;
 			string cItemId = StoreInfo.Currencies[0].ItemId;

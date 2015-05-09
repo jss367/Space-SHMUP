@@ -2960,7 +2960,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
       propertyPath: audioClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: e99e8b1cb48b34e45919b1cba7ef43bc, type: 3}
+      objectReference: {fileID: 8300000, guid: e58d579b4be715342b4bd712b3f96bff, type: 3}
     - target: {fileID: 11400000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
       propertyPath: loop
       value: 0
@@ -3020,6 +3020,8 @@ GameObject:
   - 4: {fileID: 602568936}
   - 114: {fileID: 602568938}
   - 114: {fileID: 602568937}
+  - 114: {fileID: 602568939}
+  - 114: {fileID: 602568940}
   m_Layer: 0
   m_Name: EnemySpawn1
   m_TagString: Untagged
@@ -3052,11 +3054,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
   triggerType: 2
-  triggerThreshold: .5
-  triggerReactivateDelay: .25
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .699999988
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
@@ -3077,9 +3079,51 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .25
-  triggerReactivateDelay: .25
+  triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &602568939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 602568935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .699999988
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &602568940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 602568935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .200000003
+  triggerReactivateDelay: 2
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &611673458
 GameObject:
@@ -3174,8 +3218,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 622078983}
-  - {fileID: 1035768876}
-  - {fileID: 1835454296}
+  - {fileID: 1551408570}
+  - {fileID: 874615157}
   - {fileID: 602568936}
   - {fileID: 1129948433}
   - {fileID: 1807911355}
@@ -3198,8 +3242,8 @@ MonoBehaviour:
   thirdBreak: 90
   timeLimit: 0
   AsteroidSpawn1: {fileID: 622078982}
-  AsteroidSpawn2: {fileID: 1035768875}
-  AsteroidSpawn3: {fileID: 1835454295}
+  AsteroidSpawn2: {fileID: 1551408569}
+  AsteroidSpawn3: {fileID: 874615156}
   EnemySpawn1: {fileID: 602568935}
   EnemySpawn2: {fileID: 1129948432}
   EnemySpawn3: {fileID: 1807911351}
@@ -3213,6 +3257,9 @@ GameObject:
   - 4: {fileID: 622078983}
   - 114: {fileID: 622078985}
   - 114: {fileID: 622078986}
+  - 114: {fileID: 622078984}
+  - 114: {fileID: 622078987}
+  - 114: {fileID: 622078988}
   m_Layer: 0
   m_Name: AsteroidSpawn1
   m_TagString: Untagged
@@ -3232,6 +3279,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 618003409}
   m_RootOrder: 0
+--- !u!114 &622078984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 622078982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .5
+  triggerReactivateDelay: .25
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &622078985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3247,9 +3315,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .5
-  triggerReactivateDelay: .00999999978
+  triggerType: 2
+  triggerThreshold: .449999988
+  triggerReactivateDelay: .100000001
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
@@ -3266,11 +3334,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 4
-  triggerThreshold: .5
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .400000006
   triggerReactivateDelay: .25
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &622078987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 622078982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 1
+  triggerThreshold: .25
+  triggerReactivateDelay: 2
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &622078988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 622078982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 1
+  triggerThreshold: .25
+  triggerReactivateDelay: 3.5
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
@@ -3992,6 +4102,165 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 873712458}
+--- !u!1 &874615156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 874615157}
+  - 114: {fileID: 874615163}
+  - 114: {fileID: 874615162}
+  - 114: {fileID: 874615161}
+  - 114: {fileID: 874615160}
+  - 114: {fileID: 874615159}
+  - 114: {fileID: 874615158}
+  m_Layer: 0
+  m_Name: AsteroidSpawn3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &874615157
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874615156}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 618003409}
+  m_RootOrder: 2
+--- !u!114 &874615158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874615156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: .25
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: c7bdaf40d34037c49a95e4496f2e86a7, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &874615159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874615156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 1
+  triggerThreshold: .25
+  triggerReactivateDelay: 3.5
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &874615160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874615156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 1
+  triggerThreshold: .25
+  triggerReactivateDelay: 2
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &874615161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874615156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .5
+  triggerReactivateDelay: .25
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100556, guid: e335aa12f01876a42901b9b6445c0c2b, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &874615162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874615156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: .25
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100556, guid: b3df312ed698b4a4ca4055a3772db5ca, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &874615163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874615156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .449999988
+  triggerReactivateDelay: .100000001
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: d30b3d4de13266940b5ace5d18204983, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &900737693
 GameObject:
   m_ObjectHideFlags: 0
@@ -4330,99 +4599,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1010680349}
---- !u!1 &1035768875
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1035768876}
-  - 114: {fileID: 1035768879}
-  - 114: {fileID: 1035768878}
-  - 114: {fileID: 1035768877}
-  m_Layer: 0
-  m_Name: AsteroidSpawn2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1035768876
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1035768875}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 618003409}
-  m_RootOrder: 1
---- !u!114 &1035768877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1035768875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 4
-  triggerThreshold: .5
-  triggerReactivateDelay: .00999999978
-  triggerRandomReactivateDelay: 0
-  prefab: {fileID: 100000, guid: 58c75e3f67b33e541a4a1265707ee9c5, type: 2}
-  randomOffset: {x: 45, y: 0, z: 0}
---- !u!114 &1035768878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1035768875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 4
-  triggerThreshold: .5
-  triggerReactivateDelay: .349999994
-  triggerRandomReactivateDelay: 0
-  prefab: {fileID: 100556, guid: b3df312ed698b4a4ca4055a3772db5ca, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
---- !u!114 &1035768879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1035768875}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 4
-  triggerThreshold: .25
-  triggerReactivateDelay: .00999999978
-  triggerRandomReactivateDelay: 0
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &1041835291
 GameObject:
   m_ObjectHideFlags: 0
@@ -4743,6 +4919,8 @@ GameObject:
   - 4: {fileID: 1129948433}
   - 114: {fileID: 1129948436}
   - 114: {fileID: 1129948435}
+  - 114: {fileID: 1129948437}
+  - 114: {fileID: 1129948438}
   - 114: {fileID: 1129948434}
   m_Layer: 0
   m_Name: EnemySpawn2
@@ -4778,9 +4956,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .699999988
-  triggerReactivateDelay: .25
+  triggerType: 2
+  triggerThreshold: .349999994
+  triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
@@ -4799,9 +4977,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
+  triggerType: 2
   triggerThreshold: .300000012
-  triggerReactivateDelay: .25
+  triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
@@ -4820,11 +4998,53 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .5
-  triggerReactivateDelay: .25
+  triggerType: 2
+  triggerThreshold: .25
+  triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1129948437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129948432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .300000012
+  triggerReactivateDelay: .5
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1129948438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129948432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .300000012
+  triggerReactivateDelay: .5
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &1157425230
 GameObject:
@@ -5192,8 +5412,8 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .100000001
+  triggerType: 2
+  triggerThreshold: .200000003
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 118438, guid: e03542d716aa9494a8fd8fbf82a9ff4c, type: 2}
@@ -5213,8 +5433,8 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .100000001
+  triggerType: 2
+  triggerThreshold: .200000003
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 100000, guid: 0e6a8aaf08efb7d4c87fa7b0127ae518, type: 2}
@@ -5234,8 +5454,8 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .100000001
+  triggerType: 2
+  triggerThreshold: .200000003
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 100000, guid: 8573911c03412f840ac06077f36f838e, type: 2}
@@ -6003,6 +6223,143 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1522393920}
+--- !u!1 &1551408569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1551408570}
+  - 114: {fileID: 1551408575}
+  - 114: {fileID: 1551408574}
+  - 114: {fileID: 1551408573}
+  - 114: {fileID: 1551408572}
+  - 114: {fileID: 1551408571}
+  m_Layer: 0
+  m_Name: AsteroidSpawn2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1551408570
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551408569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 618003409}
+  m_RootOrder: 1
+--- !u!114 &1551408571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551408569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 1
+  triggerThreshold: .25
+  triggerReactivateDelay: 3.5
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1551408572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551408569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 1
+  triggerThreshold: .25
+  triggerReactivateDelay: 2
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1551408573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551408569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .5
+  triggerReactivateDelay: .25
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: 58c75e3f67b33e541a4a1265707ee9c5, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1551408574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551408569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: .25
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100556, guid: b3df312ed698b4a4ca4055a3772db5ca, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1551408575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1551408569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .449999988
+  triggerReactivateDelay: .100000001
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &1601000345
 GameObject:
   m_ObjectHideFlags: 0
@@ -6118,6 +6475,7 @@ MonoBehaviour:
   coinsGained: 0
   gameHasEnded: 0
   currentLevel: 
+  endGameDelay: 2.5
 --- !u!124 &1601000349
 Behaviour:
   m_ObjectHideFlags: 0
@@ -6208,7 +6566,7 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642642}
   m_szLastControllerName: High
-  triggerType: 4
+  triggerType: 2
   triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
@@ -6229,7 +6587,7 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642642}
   m_szLastControllerName: High
-  triggerType: 4
+  triggerType: 2
   triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
@@ -6555,7 +6913,7 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 4
+  triggerType: 2
   triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
@@ -6690,8 +7048,8 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .5
+  triggerType: 2
+  triggerThreshold: .300000012
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
@@ -6711,8 +7069,8 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .5
+  triggerType: 2
+  triggerThreshold: .25
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -6730,10 +7088,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .370000005
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .300000012
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
@@ -6867,121 +7225,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 991564944e0915648b7ecf0f9cbb13f5, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1835454295
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1835454296}
-  - 114: {fileID: 1835454300}
-  - 114: {fileID: 1835454299}
-  - 114: {fileID: 1835454298}
-  - 114: {fileID: 1835454297}
-  m_Layer: 0
-  m_Name: AsteroidSpawn3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1835454296
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1835454295}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 618003409}
-  m_RootOrder: 2
---- !u!114 &1835454297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1835454295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .200000003
-  triggerReactivateDelay: .00999999978
-  triggerRandomReactivateDelay: 0
-  prefab: {fileID: 100000, guid: d30b3d4de13266940b5ace5d18204983, type: 2}
-  randomOffset: {x: 45, y: 0, z: 0}
---- !u!114 &1835454298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1835454295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .200000003
-  triggerReactivateDelay: .25
-  triggerRandomReactivateDelay: 0
-  prefab: {fileID: 100556, guid: b3df312ed698b4a4ca4055a3772db5ca, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
---- !u!114 &1835454299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1835454295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .150000006
-  triggerReactivateDelay: .00999999978
-  triggerRandomReactivateDelay: 0
-  prefab: {fileID: 100000, guid: c7bdaf40d34037c49a95e4496f2e86a7, type: 2}
-  randomOffset: {x: 45, y: 0, z: 0}
---- !u!114 &1835454300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1835454295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .100000001
-  triggerReactivateDelay: .00999999978
-  triggerRandomReactivateDelay: 0
-  prefab: {fileID: 100556, guid: e335aa12f01876a42901b9b6445c0c2b, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &1838704992
 GameObject:
   m_ObjectHideFlags: 0
@@ -7334,7 +7577,7 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
+  triggerType: 2
   triggerThreshold: .200000003
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
@@ -7355,7 +7598,7 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
+  triggerType: 2
   triggerThreshold: .200000003
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
@@ -7376,7 +7619,7 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
-  triggerType: 4
+  triggerType: 2
   triggerThreshold: .200000003
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
