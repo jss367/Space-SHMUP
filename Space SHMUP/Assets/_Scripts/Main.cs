@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic; //Required to use Lists or Dictionaries
 using Soomla;
+using MadLevelManager;
 
 //namespace Soomla.Store.Example {
 
@@ -44,6 +45,8 @@ public class Main : MonoBehaviour {
 	public float coinsGained;
 
 	public bool gameHasEnded;
+
+	public string currentLevel;
 
 	void Awake(){
 
@@ -99,6 +102,8 @@ public class Main : MonoBehaviour {
 //		Debug.Log ("The song length is " + timeLimit);
 		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticBeatsAssets());
 		gameHasEnded = false;
+
+		currentLevel = MadLevel.currentLevelName;
 	}
 
 	void Update() {
@@ -194,6 +199,13 @@ public class Main : MonoBehaviour {
 //		} catch (Exception e) {
 //			Debug.LogError ("SOOMLA/UNITY " + e.Message);
 //		}
+
+		// Update Level Manager
+		MadLevelProfile.SetCompleted (currentLevel, true);
+		MadLevelProfile.SetPropertyEnabled (currentLevel, "star", true);
+		MadLevelProfile.Save ();
+
+
 	}
 
 	public void RewardPlayer(){
