@@ -5,3 +5,4 @@ Update trigger levels for asteroids and enemies
 some enemies not included at all
 no explosion on collision with shield
 fix bounds
+asteroid doesn't destroy projectile
