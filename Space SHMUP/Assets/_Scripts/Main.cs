@@ -150,6 +150,7 @@ public class Main : MonoBehaviour {
 		//Reload scene to restart the game
 		//Application.LoadLevel (Application.loadedLevel);
 		restartButton.SetActive(true);
+		mainMenuButton.SetActive (true);
 		StoreHighScore (score);
 	}
 
