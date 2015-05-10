@@ -83,7 +83,7 @@ namespace Soomla.Store
 			// On Android we refresh market items and restore transactions
 			instance._refreshInventory();
 #endif
-//			instance._refreshInventory();
+
 			Initialized = true;
 			StoreEvents.Instance.onSoomlaStoreInitialized("", true);
 
