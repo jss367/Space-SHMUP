@@ -83,33 +83,34 @@ public class SU_Asteroid : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter (Collision coll) {
-		GameObject other = coll.gameObject;
-		switch (other.tag) {
-		case "ProjectileHero":
-			Projectile p = other.GetComponent<Projectile> ();
-			// Asteroids don't take damage unless they're onscreen
-			// This stops the player from shooting them before they are visible
-			bounds.center = transform.position + boundsCenterOffset;
-			if (Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) { //removed "bounds.extents == Vector3.zero ||" ... be careful
-				Destroy (other);
-				break;
-			}
-			// Hurt this Asteroid
-			ShowDamage();
-			// Get the damage amount from the Projectile.type & Main.W_DEFS
-			health -= Main.W_DEFS [p.type].damageOnHit;
-			if (health <= 0) {
-				// Tell the Main singleton that this ship has been destroyed
-				//Main.S.ShipDestroyed(this);
-				// Destroy this Asteroid
-				Destroy (this.gameObject);
-				Instantiate(explosion, transform.position, transform.rotation);
-			}
-			Destroy (other);
-			break;
-		}
-	}
+//	void OnCollisionEnter (Collision coll) {
+//		GameObject other = coll.gameObject;
+//		switch (other.tag) {
+//		case "ProjectileHero":
+//			Debug.Log("Asteroid has collided with hero projectile");
+//			Projectile p = other.GetComponent<Projectile> ();
+//			// Asteroids don't take damage unless they're onscreen
+//			// This stops the player from shooting them before they are visible
+//			bounds.center = transform.position + boundsCenterOffset;
+//			if (Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) { //removed "bounds.extents == Vector3.zero ||" ... be careful
+//				Destroy (other);
+//				break;
+//			}
+//			// Hurt this Asteroid
+//			ShowDamage();
+//			// Get the damage amount from the Projectile.type & Main.W_DEFS
+//			health -= Main.W_DEFS [p.type].damageOnHit;
+//			if (health <= 0) {
+//				// Tell the Main singleton that this ship has been destroyed
+//				//Main.S.ShipDestroyed(this);
+//				// Destroy this Asteroid
+//				Destroy (this.gameObject);
+//				Instantiate(explosion, transform.position, transform.rotation);
+//			}
+//			Destroy (other);
+//			break;
+//		}
+//	}
 
 	//This variable holds a reference to the last triggering GameObject
 	public GameObject lastTriggerGo = null;
@@ -136,8 +137,14 @@ public class SU_Asteroid : MonoBehaviour {
 				Destroy(this.gameObject);
 
 				Instantiate(explosion, transform.position, transform.rotation);
+			}else if (go.tag == "Hero") {
+				//Destroy the asteroid
+//				Destroy(this.gameObject); Destroyed in other script
+				
+				Instantiate(explosion, transform.position, transform.rotation);
 			}else if (go.tag == "ProjectileHero") {
 				Destroy(this.gameObject);
+				Destroy(go);
 				Main.S.AsteroidDestroyed(this);
 				Instantiate(explosion, transform.position, transform.rotation);
 			}else{
