@@ -41,10 +41,16 @@ namespace Soomla.Store
 			SoomlaEditorScript.addSettings(instance);
 		}
 
-		bool showAndroidSettings = (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android);
-		bool showIOSSettings = (EditorUserBuildSettings.activeBuildTarget == BuildTarget.iOS);
+	    private bool showAndroidSettings = EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android;
 
-		GUIContent noneBPLabel = new GUIContent("You have your own Billing Service");
+	    private bool showIOSSettings = EditorUserBuildSettings.activeBuildTarget ==
+#if UNITY_5
+	        BuildTarget.iOS; 
+#else
+		    BuildTarget.iPhone;
+#endif
+
+        GUIContent noneBPLabel = new GUIContent("You have your own Billing Service");
 		GUIContent playLabel = new GUIContent("Google Play");
 		GUIContent amazonLabel = new GUIContent("Amazon");
 		GUIContent publicKeyLabel = new GUIContent("API Key [?]:", "The API key from Google Play dev console (just in case you're using Google Play as billing provider).");
@@ -68,7 +74,7 @@ namespace Soomla.Store
 		}
 
 		public void OnInfoGUI() {
-			SoomlaEditorScript.SelectableLabelField(frameworkVersion, "1.7.15");
+			SoomlaEditorScript.SelectableLabelField(frameworkVersion, "1.7.14");
 			SoomlaEditorScript.SelectableLabelField(buildVersion, "1");
 			EditorGUILayout.Space();
 		}
@@ -181,7 +187,7 @@ namespace Soomla.Store
 		}
 
 		private Dictionary<string, bool> bpUpdate = new Dictionary<string, bool>();
-		private static string bpRootPath = Application.dataPath + "/WebPlayerTemplates/SoomlaConfig/android/android-billing-services/";
+		private static string bpRootPath = Application.dataPath + "/Soomla/compilations/android/android-billing-services/";
 
 		public static void handlePlayBPJars(bool remove) {
 			try {

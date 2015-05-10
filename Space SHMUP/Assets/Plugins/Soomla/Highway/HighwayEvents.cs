@@ -5,7 +5,6 @@ using Soomla;
 using System;
 using Soomla.Sync;
 using Soomla.Gifting;
-using Soomla.Query;
 using System.Runtime.InteropServices;
 
 namespace Soomla.Highway {
@@ -228,102 +227,6 @@ namespace Soomla.Highway {
 			
 			HighwayEvents.OnGiftHandOutFailed(gift, errorMessage);
 		}
-		
-		public void onQueryFriendsStatesStarted(string message) {
-			SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onQueryFriendsStatesStarted: " + message);
-
-			JSONObject eventJSON = new JSONObject(message);
-			int providerId = (int)eventJSON["providerId"].n;
-
-			HighwayEvents.OnQueryFriendsStatesStarted(providerId);
-		}
-		
-		public void onQueryFriendsStatesFinished(string message) {
-			SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onFetchSocialLeaderboardFinished: " + message);
-			
-			JSONObject eventJSON = new JSONObject(message);
-
-			int providerId = (int)eventJSON["providerId"].n;
-
-			List<JSONObject> friendsStatesJSON = eventJSON["friendsStates"].list;
-			List<FriendState> friendsStates = new List<FriendState>();
-			foreach (var friendStateJSON in friendsStatesJSON) {
-				friendsStates.Add(new FriendState(friendStateJSON));
-			}
-			
-			HighwayEvents.OnQueryFriendsStatesFinished(providerId, friendsStates);
-		}
-		
-		public void onQueryFriendsStatesFailed(string message) {
-			SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onFetchSocialLeaderboardFailed:" + message);
-			
-			JSONObject eventJSON = new JSONObject(message);
-			int providerId = (int)eventJSON["providerId"].n;
-			string errorMessage = eventJSON["errorMessage"].str;
-			
-			HighwayEvents.OnQueryFriendsStatesFailed(providerId, errorMessage);
-		}
-
-		public void onSoomlaDLCInitialized() {
-			SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onSoomlaDLCInitialized");
-
-			HighwayEvents.OnSoomlaDLCInitialized();
-		}
-
-		public void onDLCPackagesStatusUpdate(string message) {
-			SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onDLCPackagesStatusUpdate: " + message);
-			
-			JSONObject eventJSON = new JSONObject(message);
-
-			bool hasChanges = eventJSON["hasChanges"].b;
-
-			List<string> packagesToSync = new List<string>();
-			List<JSONObject> packagesToSyncJSON = eventJSON["packagesToSync"].list;
-			if (packagesToSyncJSON != null) {
-				foreach (var packageToSyncJSON in packagesToSyncJSON) {
-					packagesToSync.Add(packageToSyncJSON.str);
-				}
-			}
-
-			List<string> packagesDeleted = new List<string>();
-			List<JSONObject> packagesDeletedJSON = eventJSON["packagesDeleted"].list;
-			if (packagesDeletedJSON != null) {
-				foreach (var packageDeletedJSON in packagesDeletedJSON) {
-					packagesDeleted.Add(packageDeletedJSON.str);
-				}
-			}
-			
-			HighwayEvents.OnDLCPackagesStatusUpdate(hasChanges, packagesToSync, packagesDeleted);
-		}
-		
-		public void onDLCPackageSyncStarted(string message) {
-			SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onDLCPackageSyncStarted: " + message);
-			
-			JSONObject eventJSON = new JSONObject(message);
-			string packageId = eventJSON["packageId"].str;
-			
-			HighwayEvents.OnDLCPackageSyncStarted(packageId);
-		}
-		
-		public void onDLCPackageSyncFinished(string message) {
-			SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onDLCPackageSyncFinished:" + message);
-			
-			JSONObject eventJSON = new JSONObject(message);
-			string packageId = eventJSON["packageId"].str;
-			
-			HighwayEvents.OnDLCPackageSyncFinished(packageId);
-		}
-
-		public void onDLCPackageSyncFailed(string message) {
-			SoomlaUtils.LogDebug(TAG, "SOOMLA/UNITY onDLCPackageSyncFailed:" + message);
-			
-			JSONObject eventJSON = new JSONObject(message);
-			string packageId = eventJSON["packageId"].str;
-			int errorCode = (int)eventJSON["errorCode"].n;
-			string errorMessage = eventJSON["errorMessage"].str;
-			
-			HighwayEvents.OnDLCPackageSyncFailed(packageId, (DLCSyncErrorCode)errorCode, errorMessage);
-		}
 
 		/// <summary>
 		/// Fired when Soomla Sync is intialized.
@@ -419,56 +322,6 @@ namespace Soomla.Highway {
 		/// </summary>
 		public static Action<Gift, string> OnGiftHandOutFailed = delegate {};
 
-		/// <summary>
-		/// Fired when soomla query starts querying friends' states for a
-		/// specific social provider.
-		/// Provides the social provider ID for which the query operation started
-		/// </summary>
-		public static Action<int> OnQueryFriendsStatesStarted = delegate {};
-		/// <summary>
-		/// Fired when soomla query fails to query friends' states for a
-		/// specific social provider.
-		/// Provides the social provider ID for which the query operation failed
-		/// and an error message which is the reason for the failure
-		/// </summary>
-		public static Action<int, string> OnQueryFriendsStatesFailed = delegate {};
-		/// <summary>
-		/// Fired when soomla query finished querying friends' states for a
-		/// specific social provider.
-		/// Provides the social provider ID for which the query operation finished
-		/// Provides a list of <c>FriendState</c>s with the friends' states in the.
-		/// </summary>
-		public static Action<int, IList<FriendState>> OnQueryFriendsStatesFinished = delegate {};
-
-		/// <summary>
-		/// Fired when the DLC client is initialized.
-		/// </summary>
-		public static Action OnSoomlaDLCInitialized = delegate {};
-		/// <summary>
-		/// Fired when a package/s update status check has returned from the server.
-		/// Provides a bool to signify if there are changes in any of the requested packages.
-		/// Provides all packages which were updated on the server and need to be synced
-		/// on the device.
-		/// Provides All packages which were deleted from the device as a result of their
-		/// deletion from the server
-		/// </summary>
-		public static Action<bool, IList<string>, IList<string>> OnDLCPackagesStatusUpdate = delegate {};
-		/// <summary>
-		/// This event is fired when the package starts the syncing process.
-		/// Provides the package ID which the DLC sync will start for.
-		/// </summary>
-		public static Action<string> OnDLCPackageSyncStarted = delegate {};
-		/// <summary>
-		/// This event is fired when the package finishes the syncing process.
-		/// Provides the package ID which the DLC sync has finished for.
-		/// </summary>
-		public static Action<string> OnDLCPackageSyncFinished = delegate {};
-		/// <summary>
-		/// This event is fired when the package failed the syncing process.
-		/// Provides the package ID which the DLC sync failed for, an error code for reason,
-		/// and the error message.
-		/// </summary>
-		public static Action<string, DLCSyncErrorCode, string> OnDLCPackageSyncFailed = delegate {};
 
 		/* Internal SOOMLA events ... Not meant for public use */
 
@@ -524,27 +377,5 @@ namespace Soomla.Highway {
 		/// The state was not able to update
 		/// </summary>
 		UpdateStateError = 2
-	}
-
-	/// <summary>
-	/// Available error codes for DLC Sync operation
-	/// </summary>
-	public enum DLCSyncErrorCode {
-		/// <summary>
-		/// General error has occured
-		/// </summary>
-		GeneralError = 0,
-		/// <summary>
-		/// There was an error while downloading the DLC
-		/// </summary>
-		DownloadError = 1,
-		/// <summary>
-		/// There was an error while deleting local DLC packages
-		/// </summary>
-		DeleteError = 2,
-		/// <summary>
-		/// There was an error while communicating with the server
-		/// </summary>
-		ServerError = 3
 	}
 }

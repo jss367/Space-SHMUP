@@ -5,14 +5,14 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   AndroidProfiler: 0
-  defaultScreenOrientation: 3
+  defaultScreenOrientation: 4
   targetDevice: 2
-  targetGlesGraphics: 1
+  targetGlesGraphics: -1
   targetIOSGraphics: -1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: Gleeza
-  productName: Galactic Beats
+  companyName: Spartonix
+  productName: Soomla Template
   cloudProjectId: 
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -29,7 +29,7 @@ PlayerSettings:
   m_UseDX11: 1
   m_Stereoscopic3D: 0
   iosShowActivityIndicatorOnLoading: -1
-  androidShowActivityIndicatorOnLoading: -1
+  androidShowActivityIndicatorOnLoading: 2
   iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 1
   allowedAutorotateToPortrait: 0
@@ -37,15 +37,15 @@ PlayerSettings:
   allowedAutorotateToLandscapeRight: 1
   allowedAutorotateToLandscapeLeft: 1
   useOSAutorotation: 1
-  use32BitDisplayBuffer: 1
+  use32BitDisplayBuffer: 0
   disableDepthAndStencilBuffers: 0
   defaultIsFullScreen: 1
   defaultIsNativeResolution: 1
-  runInBackground: 0
+  runInBackground: 1
   captureSingleScreen: 0
   Override IPod Music: 0
   Prepare IOS For Recording: 0
-  submitAnalytics: 1
+  submitAnalytics: 0
   usePlayerLog: 1
   bakeCollisionMeshes: 0
   forceSingleInstance: 0
@@ -75,26 +75,26 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleIdentifier: com.Gleeza.GalacticBeats
-  bundleVersion: 1.03
+  bundleIdentifier: com.spartonix.soomla
+  bundleVersion: 1.0.3
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
-  productGUID: 4be23964a9e23e8449e57266dbeb6654
+  productGUID: 7deddccf7f23ed747b3293f34b6b7cab
   AndroidBundleVersionCode: 4
   AndroidMinSdkVersion: 9
-  AndroidPreferredInstallLocation: 1
+  AndroidPreferredInstallLocation: 0
   aotOptions: 
   apiCompatibilityLevel: 2
-  iPhoneStrippingLevel: 0
+  iPhoneStrippingLevel: 3
   iPhoneScriptCallOptimization: 0
-  ForceInternetPermission: 0
+  ForceInternetPermission: 1
   ForceSDCardPermission: 0
   CreateWallpaper: 0
   APKExpansionFiles: 0
   preloadShaders: 0
-  StripUnusedMeshComponents: 0
+  StripUnusedMeshComponents: 1
   iPhoneSdkVersion: 988
   iPhoneTargetOSVersion: 22
   uIPrerenderedIcon: 0
@@ -102,7 +102,7 @@ PlayerSettings:
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
   uIStatusBarStyle: 0
-  iPhoneSplashScreen: {fileID: 0}
+  iPhoneSplashScreen: {fileID: 2800000, guid: 6914a3ab7c13fe24bbc5e17e754a3f88, type: 3}
   iPhoneHighResSplashScreen: {fileID: 0}
   iPhoneTallHighResSplashScreen: {fileID: 0}
   iPhone47inSplashScreen: {fileID: 0}
@@ -122,9 +122,9 @@ PlayerSettings:
   iOSLaunchScreenSize: 100
   iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0
-  AndroidSplashScreenScale: 0
-  AndroidKeystoreName: C:/Users/HMGSYS/Documents/user.keystore
-  AndroidKeyaliasName: unguessable
+  AndroidSplashScreenScale: 1
+  AndroidKeystoreName: D:\Desktop\RR Repos\soomla-template\soomla.keystore
+  AndroidKeyaliasName: soomla
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
@@ -137,7 +137,7 @@ PlayerSettings:
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
-    - m_Icon: {fileID: 0}
+    - m_Icon: {fileID: 2800000, guid: 250a8cdbb14809840b04745ee52132f5, type: 3}
       m_Size: 128
   m_BuildTargetBatching:
   - m_BuildTarget: Android
@@ -257,8 +257,12 @@ PlayerSettings:
   psp2InfoBarColor: 0
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
-  scriptingDefineSymbols: {}
-  metroPackageName: Space SHMUP
+  scriptingDefineSymbols:
+    1: SOOMLA_FACEBOOK;SOOMLA_TWITTER;SOOMLA_GOOGLE
+    2: SOOMLA_FACEBOOK;SOOMLA_TWITTER;SOOMLA_GOOGLE
+    4: SOOMLA_FACEBOOK;SOOMLA_TWITTER;SOOMLA_GOOGLE
+    7: SOOMLA_FACEBOOK;SOOMLA_TWITTER;SOOMLA_GOOGLE
+  metroPackageName: soomla-template
   metroPackageLogo: 
   metroPackageLogo140: 
   metroPackageLogo180: 
@@ -269,7 +273,7 @@ PlayerSettings:
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: Space SHMUP
+  metroApplicationDescription: soomla-template
   metroStoreTileLogo80: 
   metroStoreTileLogo: 
   metroStoreTileLogo140: 

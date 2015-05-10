@@ -42,8 +42,15 @@ namespace Soomla.Profile
 			SoomlaEditorScript.addSettings(instance);
 		}
 
-		BuildTargetGroup[] supportedPlatforms = { BuildTargetGroup.Android, BuildTargetGroup.iOS,
-			BuildTargetGroup.WebPlayer, BuildTargetGroup.Standalone};
+	    readonly BuildTargetGroup[] supportedPlatforms = {
+            BuildTargetGroup.Android,
+#if UNITY_5
+            BuildTargetGroup.iOS,
+#else
+            BuildTargetGroup.iPhone,
+#endif
+            BuildTargetGroup.WebPlayer,
+            BuildTargetGroup.Standalone};
 
 //		bool showAndroidSettings = (EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android);
 //		bool showIOSSettings = (EditorUserBuildSettings.activeBuildTarget == BuildTarget.iPhone);
@@ -124,7 +131,7 @@ namespace Soomla.Profile
 		}
 
 		public void OnInfoGUI() {
-			SoomlaEditorScript.SelectableLabelField(profileVersion, "2.0.8");
+			SoomlaEditorScript.SelectableLabelField(profileVersion, "2.0.7");
 			SoomlaEditorScript.SelectableLabelField(profileBuildVersion, "1");
 			EditorGUILayout.Space();
 		}
@@ -210,7 +217,7 @@ namespace Soomla.Profile
 			}
 		}
 
-		private string compilationsRootPath = Application.dataPath + "/WebPlayerTemplates/SoomlaConfig";
+		private string compilationsRootPath = Application.dataPath + "/Soomla/compilations";
 		private string pluginsRootPath = Application.dataPath + "/Plugins";
 
 		void ApplyIntegretionLibraries (string socialPlatform, bool remove)

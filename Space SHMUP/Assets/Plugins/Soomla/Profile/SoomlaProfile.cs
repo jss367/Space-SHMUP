@@ -62,10 +62,10 @@ namespace Soomla.Profile
 		public static void Initialize() {
 			instance._initialize(GetCustomParamsJson()); //add parameters
 
-#if SOOMLA_FACEBOOK
-			unreadyProviders++;
-			providers.Add(Provider.FACEBOOK, new FBSocialProvider());
-#endif
+//#if SOOMLA_FACEBOOK
+//			unreadyProviders++;
+//			providers.Add(Provider.FACEBOOK, new FBSocialProvider());
+//#endif
 #if SOOMLA_GOOGLE
 			unreadyProviders++;
 			providers.Add(Provider.GOOGLE, new GPSocialProvider());

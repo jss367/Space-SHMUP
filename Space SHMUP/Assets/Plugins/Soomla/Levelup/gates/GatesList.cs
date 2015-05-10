@@ -58,11 +58,7 @@ namespace Soomla.Levelup
 		public GatesList(string id, List<Gate> gates)
 			: base(id)
 		{
-			// Iterate over gates in given list and add them to Gates making a 
-			// copy and attaching listeners
-			foreach (Gate gate in gates) {
-				Gates.Add(gate);
-			}
+			Gates = gates;
 		}
 		
 		/// <summary>

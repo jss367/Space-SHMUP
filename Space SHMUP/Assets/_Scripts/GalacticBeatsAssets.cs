@@ -49,7 +49,7 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualCurrencyPack[] GetCurrencyPacks() {
-			return new VirtualCurrencyPack[] {TENMUFF_PACK, FIFTYMUFF_PACK, FOURHUNDMUFF_PACK, THOUSANDMUFF_PACK};
+			return new VirtualCurrencyPack[] {TEN_COIN_PACK, FIFTY_COIN_PACK, FIVEHUND_COIN_PACK};
 		}
 		
 		/// <summary>
@@ -95,8 +95,8 @@ namespace Soomla.Store.Example {
 		
 		/** Virtual Currency Packs **/
 		
-		public static VirtualCurrencyPack TENMUFF_PACK = new VirtualCurrencyPack(
-			"10 Muffins",                                   // name
+		public static VirtualCurrencyPack TEN_COIN_PACK = new VirtualCurrencyPack(
+			"10 Milky Bucks",                                   // name
 			"Test refund of an item",                       // description
 			"muffins_10",                                   // item id
 			10,												// number of currencies in the pack
@@ -104,8 +104,8 @@ namespace Soomla.Store.Example {
 			new PurchaseWithMarket(TENMUFF_PACK_PRODUCT_ID, 0.99)
 			);
 		
-		public static VirtualCurrencyPack FIFTYMUFF_PACK = new VirtualCurrencyPack(
-			"50 Muffins",                                   // name
+		public static VirtualCurrencyPack FIFTY_COIN_PACK = new VirtualCurrencyPack(
+			"50 Milky Bucks",                                   // name
 			"Test cancellation of an item",                 // description
 			"muffins_50",                                   // item id
 			50,                                             // number of currencies in the pack
@@ -113,24 +113,16 @@ namespace Soomla.Store.Example {
 			new PurchaseWithMarket(FIFTYMUFF_PACK_PRODUCT_ID, 1.99)
 			);
 		
-		public static VirtualCurrencyPack FOURHUNDMUFF_PACK = new VirtualCurrencyPack(
-			"400 Muffins",                                  // name
+		public static VirtualCurrencyPack FIVEHUND_COIN_PACK = new VirtualCurrencyPack(
+			"500 Milky Bucks",                                  // name
 			"Test purchase of an item",                 	// description
 			"muffins_400",                                  // item id
-			400,                                            // number of currencies in the pack
+			500,                                            // number of currencies in the pack
 			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
 			new PurchaseWithMarket(FOURHUNDMUFF_PACK_PRODUCT_ID, 4.99)
 			);
 		
-		public static VirtualCurrencyPack THOUSANDMUFF_PACK = new VirtualCurrencyPack(
-			"1000 Muffins",                                 // name
-			"Test item unavailable",                 		// description
-			"muffins_1000",                                 // item id
-			1000,                                           // number of currencies in the pack
-			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
-			new PurchaseWithMarket(THOUSANDMUFF_PACK_PRODUCT_ID, 8.99)
-			);
-		
+
 		/** Virtual Goods **/
 
 //		public static VirtualGood BLASTER_GUN = new SingleUseVG(

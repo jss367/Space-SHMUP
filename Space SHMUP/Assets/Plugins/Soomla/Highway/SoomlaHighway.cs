@@ -10,9 +10,7 @@ namespace Soomla.Highway
 		[DllImport ("__Internal")]
 		private static extern int soomlaHighway_initialize(string gameKey, string envKey);
 		[DllImport ("__Internal")]
-		private static extern int soomlaHighway_setHighwayUrl(string url);
-		[DllImport ("__Internal")]
-		private static extern int soomlaHighway_setServicesUrl(string url);
+		private static extern int soomlaHighway_setUrl(string url);
 		[DllImport ("__Internal")]
 		private static extern int soomlaHighway_start();
 #endif
@@ -29,7 +27,7 @@ namespace Soomla.Highway
 				// Uncomment this and change the URL for testing
 //				using(AndroidJavaClass jniConfigClass = new AndroidJavaClass("com.soomla.highway.HighwayConfig")) {
 //					AndroidJavaObject jniConfigObject = jniConfigClass.CallStatic<AndroidJavaObject>("getInstance");
-//					jniConfigObject.Call("setUrls", "http://example.com", "http://example.com");
+//					jniConfigObject.Call("setUrl", "http://example.com");
 //				}
 
 				jniSoomlaHighwayInstance.Call("start");
@@ -39,8 +37,7 @@ namespace Soomla.Highway
 			soomlaHighway_initialize(HighwaySettings.HighwayGameKey, HighwaySettings.HighwayEnvKey);
 
 			// Uncomment this and change the URL for testing
-//			soomlaHighway_setHighwayUrl("http://example.com");
-//			soomlaHighway_setServicesUrl("http://example.com");
+//			soomlaHighway_setUrl("http://example.com");
 
 			soomlaHighway_start();
 #else
