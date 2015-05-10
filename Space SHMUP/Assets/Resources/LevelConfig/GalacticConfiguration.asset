@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8ca0aa9835c2f8f4a9b2b5ff51784391, type: 3}
-  m_Name: Theme2Configuration
+  m_Name: GalacticConfiguration
   m_EditorClassIdentifier: 
   creationDate: 0
   _active: 1
@@ -38,7 +38,7 @@ MonoBehaviour:
     groupId: 0
     extensionGUID: 
     lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 4caec22fc6d602346a5cdc17e01970aa, type: 3}
+  - _sceneObject: {fileID: 102900000, guid: 25ac8b7e7fc615f4eba94ed657b94fcd, type: 3}
     _scenePath: Assets/_Scenes/Level1.unity
     _sceneName: Level1
     scene: 
@@ -48,9 +48,9 @@ MonoBehaviour:
     type: 1
     arguments: 
     groupId: 0
-    extensionGUID: 
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
     lockedByDefault: 0
-  - _sceneObject: {fileID: 102900000, guid: 4a449ab81729eea4fa5e85a258e74dec, type: 3}
+  - _sceneObject: {fileID: 102900000, guid: b40e575d9cccdd84cad123f82dc10692, type: 3}
     _scenePath: Assets/_Scenes/Level2.unity
     _sceneName: Level2
     scene: 
@@ -60,7 +60,7 @@ MonoBehaviour:
     type: 1
     arguments: 
     groupId: 0
-    extensionGUID: 
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
     lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 2d989348ad93116499a970a55d875794, type: 3}
     _scenePath: Assets/_Scenes/Level3.unity
@@ -72,9 +72,9 @@ MonoBehaviour:
     type: 1
     arguments: 
     groupId: 0
-    extensionGUID: 
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
     lockedByDefault: 0
-  - _sceneObject: {fileID: 102900000, guid: 82ef4220d2a4bbb40ac0c5a4da1b76d5, type: 3}
+  - _sceneObject: {fileID: 102900000, guid: e5d62d4f82e5f4c4787132f9808b3ca9, type: 3}
     _scenePath: Assets/_Scenes/Level4.unity
     _sceneName: Level4
     scene: 
@@ -84,9 +84,9 @@ MonoBehaviour:
     type: 1
     arguments: 
     groupId: 0
-    extensionGUID: 
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
     lockedByDefault: 0
-  - _sceneObject: {fileID: 102900000, guid: fb2dac3975c36c94f8abb19feb1463ff, type: 3}
+  - _sceneObject: {fileID: 102900000, guid: c72ca4168e3be8e44a4da48009fbe3c8, type: 3}
     _scenePath: Assets/_Scenes/Level5.unity
     _sceneName: Level5
     scene: 
@@ -96,9 +96,9 @@ MonoBehaviour:
     type: 1
     arguments: 
     groupId: 0
-    extensionGUID: 
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
     lockedByDefault: 0
-  - _sceneObject: {fileID: 102900000, guid: ada62843799fec54d949611e85b1ab78, type: 3}
+  - _sceneObject: {fileID: 102900000, guid: ec6c06f3c56d48d45ad9b61a4545ae5f, type: 3}
     _scenePath: Assets/_Scenes/Level6.unity
     _sceneName: Level6
     scene: 
@@ -108,7 +108,7 @@ MonoBehaviour:
     type: 1
     arguments: 
     groupId: 0
-    extensionGUID: 
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
     lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
     _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
@@ -183,5 +183,17 @@ MonoBehaviour:
     extensionGUID: 
     lockedByDefault: 1
   groups: []
-  extensions: []
+  extensions:
+  - name: Loading Screen
+    guid: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    scenesBefore:
+    - _sceneObject: {fileID: 102900000, guid: 52fabab80b8a7b843bd420f130abed5d, type: 3}
+      _scenePath: Assets/Mad Level Manager/Examples/Scenes/LoadingScene.unity
+      _sceneName: LoadingScene
+      scene: 
+    scenesAfter:
+    - _sceneObject: {fileID: 102900000, guid: dd727c45846f84a43a2d83fd77ef0545, type: 3}
+      _scenePath: Assets/Mad Level Manager/Examples/Scenes/MedalsScene.unity
+      _sceneName: MedalsScene
+      scene: 
   version: 1
