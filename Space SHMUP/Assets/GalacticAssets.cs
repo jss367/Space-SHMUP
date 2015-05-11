@@ -42,7 +42,8 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualGood[] GetGoods() {
-			return new VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG};
+//			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, ShieldUpgrade1, Shield};
+			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, Shield};
 		}
 		
 		/// <summary>
@@ -58,6 +59,43 @@ namespace Soomla.Store.Example {
 		public VirtualCategory[] GetCategories() {
 			return new VirtualCategory[]{GENERAL_CATEGORY};
 		}
+
+		#region Public Functions
+
+		//		
+		//		public VirtualGood[] GetGoods()
+		//		{
+		//			return new[]
+		//			{
+		//				Shield,
+		//				ShieldPack5,
+		//				NoAds,
+		//				Sword,
+		//				PlasmaGun,
+		//				SoomlaBotSidekick,
+		//				Armor,
+		//				SoomlaShirt,
+		//				SpartonixShirt,
+		//				Character1,
+		//				Character2,
+		//				ShieldDurability1,
+		//				ShieldDurability2,
+		//				ShieldDurability3,
+		//				ShieldDurability4,
+		//				ShieldDurability5
+		//			};
+		//		}
+		
+		//		public VirtualCurrencyPack[] GetCurrencyPacks()
+		//		{
+		//			return new[] { CoinPack3, CoinPack5, CoinPack10 };
+		//		}
+		//		
+		//		public VirtualCategory[] GetCategories()
+		//		{
+		//			return new[] { WearableGearCategory };
+		//		}
+		#endregion
 		
 		/** Static Final Members **/
 		
@@ -82,12 +120,19 @@ namespace Soomla.Store.Example {
 		public const string CREAMCUP_ITEM_ID   = "cream_cup";
 		
 		public const string NO_ADS_LIFETIME_PRODUCT_ID = "no_ads";
+
+		public const string SHIELD_UPGRADE_1 = "shield_1";
+		public const string SHIELD_DURABILITY_PRODUCT_ID = "shield_dur_";
+		public const string SHIELD_DURABILITY_NAME = "Durability ";
+		public const string SHIELD_DURABILITY_DESC = "Increases shield durability to ";
+		public const string SHIELD_PRODUCT_ID = "hero_shield";
+
 		
 		
 		/** Virtual Currencies **/
 		
 		public static VirtualCurrency GALACTIC_CURRENCY = new VirtualCurrency(
-			"Milky Bucks",										// name
+			"Milky Buck",										// name
 			"Currency in the Milky Way galaxy",					// description
 			GALACTIC_CURRENCY_ITEM_ID							// item id
 			);
@@ -143,6 +188,8 @@ namespace Soomla.Store.Example {
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            7));                            // Payment amount
+
+
 		
 		/// <summary>
 		/// An equipable weapon that can be purchased for 7 coins.
@@ -217,18 +264,19 @@ namespace Soomla.Store.Example {
 		                            1000));                         // Payment amount 
 		#endregion
 
-//		#region Upgrades
-//		/// <summary>
-//		/// Upgrade shield durability level 1
-//		/// </summary>
-//		public static VirtualGood ShieldDurability1 = CreateUpgrade(
+		#region Upgrades
+		/// <summary>
+		/// Upgrade shield durability level 1
+		/// </summary>
+//		public static VirtualGood ShieldUpgrade1 = CreateUpgrade(
 //			Shield,                         // Upgraded Item
 //			SHIELD_DURABILITY_PRODUCT_ID,   // Item ID
 //			SHIELD_DURABILITY_NAME + 3,     // Name
 //			SHIELD_DURABILITY_DESC,         // Decription
 //			1,                              // Level
 //			0);                             // Price (Costs 0 so it can be set as default)
-//		
+
+
 //		/// <summary>
 //		/// Upgrade shield durability level 2
 //		/// </summary>
@@ -273,7 +321,7 @@ namespace Soomla.Store.Example {
 //			5,                              // Level
 //			200,                            // Price
 //			true);                          // Last 
-//		#endregion
+		#endregion
 
 		#region Private Functions
 		private static VirtualGood CreateUpgrade(VirtualItem upgradedGood, string upgradeItemId, string upgradeName, string upgradeDescription, int level, int price, bool isLast = false)
@@ -295,50 +343,7 @@ namespace Soomla.Store.Example {
 		}
 		#endregion
 		
-		#region Public Functions
-//		public int GetVersion()
-//		{
-//			return 1;
-//		}
-		
-//		public VirtualCurrency[] GetCurrencies()
-//		{
-//			return new[] { Coin };
-//		}
-//		
-//		public VirtualGood[] GetGoods()
-//		{
-//			return new[]
-//			{
-//				Shield,
-//				ShieldPack5,
-//				NoAds,
-//				Sword,
-//				PlasmaGun,
-//				SoomlaBotSidekick,
-//				Armor,
-//				SoomlaShirt,
-//				SpartonixShirt,
-//				Character1,
-//				Character2,
-//				ShieldDurability1,
-//				ShieldDurability2,
-//				ShieldDurability3,
-//				ShieldDurability4,
-//				ShieldDurability5
-//			};
-//		}
-		
-//		public VirtualCurrencyPack[] GetCurrencyPacks()
-//		{
-//			return new[] { CoinPack3, CoinPack5, CoinPack10 };
-//		}
-//		
-//		public VirtualCategory[] GetCategories()
-//		{
-//			return new[] { WearableGearCategory };
-//		}
-		#endregion
+
 		
 		/** Virtual Goods **/
 		
@@ -388,7 +393,16 @@ namespace Soomla.Store.Example {
 			"Blaster", 														// name
 			"A more powerful weapon to fend off aliens",				 	// description
 			BLASTER_GUN_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem(BLASTER_GUN_ITEM_ID, 100));	// the way this virtual good is purchased
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 100));	// the way this virtual good is purchased
+
+		public static VirtualGood Shield = new LifetimeVG(
+			"Shield",                           // Name
+			"Shields you from aliens",        // Description
+			SHIELD_PRODUCT_ID,                  // Item ID
+			new PurchaseWithVirtualItem(        // Purchase type
+		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+		                            150)                            // Payment amount
+			);
 		
 		
 	}

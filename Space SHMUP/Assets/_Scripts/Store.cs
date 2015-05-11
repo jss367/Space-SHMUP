@@ -100,7 +100,7 @@ namespace Soomla.Store.Example {
 			tGetMore = (Texture2D)Resources.Load("SoomlaStore/images/GetMore");
 			tTitle = (Font)Resources.Load("SoomlaStore/Title" + fontSuffix);
 			
-			SoomlaStore.Initialize(new GalacticBeatsAssets());
+			SoomlaStore.Initialize(new GalacticAssets());
 
 
 		}

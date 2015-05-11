@@ -158,17 +158,17 @@ public class Hero : MonoBehaviour {
 			
 			if(go.tag == "Enemy"){
 				//If the shield was triggered by an enemy decrease the level of the shield by 1
-				shieldLevel--;
+				ReduceShield();
 				//Destroy the enemy
 				Destroy(go);
 			}else if (go.tag == "Asteroid") {
 				//If the shield was triggered by an asteroid decrease the level of the shield by 1
-				shieldLevel--;
+				ReduceShield();
 				//Destroy the asteroid
 				Destroy(go);
 			}else if (go.tag == "ProjectileEnemy") {
 				//If the shield was triggered by an enemy projectile decrease the level of the shield by 1
-				shieldLevel--;
+				ReduceShield();
 				//Destroy the enemy projectile
 				Destroy(go);
 			}else if (go.tag == "PowerUp") {
@@ -196,6 +196,11 @@ public class Hero : MonoBehaviour {
 			}
 		}
 	}
+
+	public void ReduceShield(){
+		shieldLevel--;
+	}
+
 		public void AbsorbPowerUp(GameObject go) {
 			PowerUp pu = go.GetComponent<PowerUp>();
 			switch (pu.type) {

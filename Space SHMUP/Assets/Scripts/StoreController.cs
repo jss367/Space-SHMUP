@@ -25,7 +25,7 @@ public class StoreController : BaseController
         MenuView.SetLoadingOverlayVisiblity(true);
 
 //		SoomlaStore.Initialize(new ExampleAssets());
-		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticBeatsAssets());
+		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
     }
 
     protected override void RegisterEvents()
@@ -79,7 +79,7 @@ public class StoreController : BaseController
 
         var balance = newBalance.HasValue ? newBalance.Value : currency.GetBalance();
 
-        BalanceLabel.text = balance + " " + currency.Name + "s";
+		BalanceLabel.text = balance + " " + currency.Name + "s";
     }
 
     private void OnUnexpectedErrorInStore(string error)
@@ -108,17 +108,17 @@ public class StoreController : BaseController
 
         InitStoreItems();
 
-        GiveStarterItems();
+//        GiveStarterItems();
     }
 
-    private void GiveStarterItems()
-    {
-        // Give the player the 1st character
-        if (StoreInventory.GetItemBalance(ExampleAssets.Character1.ItemId) == 0)
-        {
-            StoreInventory.GiveItem(ExampleAssets.Character1.ItemId, 1);
-        }
-    }
+//    private void GiveStarterItems()
+//    {
+//        // Give the player the 1st character
+//        if (StoreInventory.GetItemBalance(ExampleAssets.Character1.ItemId) == 0)
+//        {
+//            StoreInventory.GiveItem(ExampleAssets.Character1.ItemId, 1);
+//        }
+//    }
 
     private void InitStoreItems()
     {
