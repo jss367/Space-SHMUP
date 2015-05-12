@@ -42,8 +42,8 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualGood[] GetGoods() {
-//			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, ShieldUpgrade1, Shield};
-			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, Shield};
+			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, ShieldUpgrade1, Shield};
+//			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, Shield};
 		}
 		
 		/// <summary>
@@ -62,11 +62,11 @@ namespace Soomla.Store.Example {
 
 		#region Public Functions
 
-		//		
-		//		public VirtualGood[] GetGoods()
-		//		{
-		//			return new[]
-		//			{
+//				
+//				public VirtualGood[] GetGoods()
+//				{
+//					return new[]
+//					{
 		//				Shield,
 		//				ShieldPack5,
 		//				NoAds,
@@ -82,9 +82,9 @@ namespace Soomla.Store.Example {
 		//				ShieldDurability2,
 		//				ShieldDurability3,
 		//				ShieldDurability4,
-		//				ShieldDurability5
-		//			};
-		//		}
+//		//				ShieldDurability5
+//					};
+//				}
 		
 		//		public VirtualCurrencyPack[] GetCurrencyPacks()
 		//		{
@@ -122,6 +122,7 @@ namespace Soomla.Store.Example {
 		public const string NO_ADS_LIFETIME_PRODUCT_ID = "no_ads";
 
 		public const string SHIELD_UPGRADE_1 = "shield_1";
+		public const string SHIELD_UPGRADE_2 = "shield_2";
 		public const string SHIELD_DURABILITY_PRODUCT_ID = "shield_dur_";
 		public const string SHIELD_DURABILITY_NAME = "Durability ";
 		public const string SHIELD_DURABILITY_DESC = "Increases shield durability to ";
@@ -269,12 +270,54 @@ namespace Soomla.Store.Example {
 		/// Upgrade shield durability level 1
 		/// </summary>
 //		public static VirtualGood ShieldUpgrade1 = CreateUpgrade(
-//			Shield,                         // Upgraded Item
+		//	SHIELD_DURABILITY_NAME,                         // Upgraded Item
 //			SHIELD_DURABILITY_PRODUCT_ID,   // Item ID
 //			SHIELD_DURABILITY_NAME + 3,     // Name
 //			SHIELD_DURABILITY_DESC,         // Decription
 //			1,                              // Level
 //			0);                             // Price (Costs 0 so it can be set as default)
+
+
+		public static VirtualGood ShieldUpgrade1 = new UpgradeVG(
+			SHIELD_PRODUCT_ID,
+			SHIELD_UPGRADE_2,
+			null,
+			SHIELD_DURABILITY_NAME,
+			SHIELD_DURABILITY_DESC,
+			SHIELD_UPGRADE_1,
+			new PurchaseWithVirtualItem(        // Purchase type
+		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+		                            10));
+
+// dup for looking
+//		#region Private Functions
+//		private static VirtualGood CreateUpgrade(VirtualItem upgradedGood, string upgradeItemId, string upgradeName, string upgradeDescription, int level, int price, bool isLast = false)
+//		{
+//			var prevItemId = level > 1 ? upgradeItemId + (level - 1) : null;
+//			var nextItemId = isLast ? null : upgradeItemId + (level + 1);
+//			
+//			return new UpgradeVG(
+//				upgradedGood.ItemId,            // Good Item ID
+//				nextItemId,                     // Next Upgrade Item ID
+//				prevItemId,                     // Previous Upgrade Item ID
+//				upgradeName,                    // Name
+//				upgradeDescription + level,     // Description
+//				upgradeItemId + level,          // Item ID
+//				new PurchaseWithVirtualItem(    // Purchase type
+//			                            GALACTIC_CURRENCY.ItemId,                // Virtual item to pay with
+//			                            price)                      // Payment amount
+//				);
+//		}
+//		#endregion
+
+
+		/*public UpgradeVG(string goodItemId, string nextItemId, string prevItemId, string name, string description, string itemId, PurchaseType purchaseType)
+			: base(name, description, itemId, purchaseType)
+		{
+			this.GoodItemId = goodItemId;
+			this.PrevItemId = prevItemId;
+			this.NextItemId = nextItemId;
+		}*/
 
 
 //		/// <summary>
