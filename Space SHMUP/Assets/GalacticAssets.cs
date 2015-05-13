@@ -42,7 +42,8 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualGood[] GetGoods() {
-			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, ShieldUpgrade1, Shield};
+			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, 
+				ShieldUpgrade1, ShieldUpgrade2, Shield, Sword};
 //			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, Shield};
 		}
 		
@@ -289,6 +290,19 @@ namespace Soomla.Store.Example {
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            10));
 
+
+		public static VirtualGood ShieldUpgrade2 = new UpgradeVG(
+			SHIELD_PRODUCT_ID,
+			null,
+			SHIELD_UPGRADE_1,
+			SHIELD_DURABILITY_NAME,
+			SHIELD_DURABILITY_DESC,
+			SHIELD_UPGRADE_2,
+			new PurchaseWithVirtualItem(        // Purchase type
+		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+		                            10));
+
+
 // dup for looking
 //		#region Private Functions
 //		private static VirtualGood CreateUpgrade(VirtualItem upgradedGood, string upgradeItemId, string upgradeName, string upgradeDescription, int level, int price, bool isLast = false)
@@ -319,10 +333,10 @@ namespace Soomla.Store.Example {
 			this.NextItemId = nextItemId;
 		}*/
 
-
-//		/// <summary>
-//		/// Upgrade shield durability level 2
-//		/// </summary>
+//
+////		/// <summary>
+////		/// Upgrade shield durability level 2
+////		/// </summary>
 //		public static VirtualGood ShieldDurability2 = CreateUpgrade(
 //			Shield,                         // Upgraded Item
 //			SHIELD_DURABILITY_PRODUCT_ID,   // Item ID
