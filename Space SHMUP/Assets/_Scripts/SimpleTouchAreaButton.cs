@@ -18,6 +18,7 @@ public class SimpleTouchAreaButton : MonoBehaviour, IPointerDownHandler, IPointe
 			touched = true;
 			pointerID = data.pointerId;
 			canFire = true;
+			Debug.Log("You have permission to fire");
 		}
 	}
 	

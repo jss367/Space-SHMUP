@@ -201,8 +201,10 @@ public class Hero : MonoBehaviour {
 
 	public void ReduceShield(){
 		//if they have the shield upgrade:
-		if (shieldCounter = true) {
+		if (shieldCounter == true) {
+			Debug.Log("Shield absorped the hit");
 			shieldCounter = false;
+			Debug.Log("The shield counter is now " + shieldCounter);
 		} else {
 			Debug.Log("Decreasing shield level");
 			shieldLevel--;
