@@ -100,7 +100,8 @@ namespace Soomla.Store.Example {
 		
 		/** Static Final Members **/
 		
-		public const string GALACTIC_CURRENCY_ITEM_ID      = "galactic_currency";
+		public const string GALACTIC_CURRENCY_ITEM_ID      = "galactic_currency"; //add the reverse domain?
+		// com.gleeza.galacticbeats.galactic_currency?
 		
 		public const string BLASTER_GUN_ITEM_ID = "weapon_blaster";
 		

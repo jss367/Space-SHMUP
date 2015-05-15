@@ -74,6 +74,8 @@ public class MenuView : MonoBehaviour
         {
             NavigateToMainMenu();
         }
+		Debug.Log ("You have purchased:");
+		Debug.Log(Soomla.Store.StoreInventory.GetItemBalance("weapon_blaster"));
     }
 
     public void NavigateToProfile()

@@ -29,6 +29,8 @@ public class Hero : MonoBehaviour {
 	private int					blasterRecall;
 	private int					spreadRecall;
 	private int					ballRecall;
+
+	private bool				shieldCounter = true;
 	
 	//Declare a new delegate type WeaponFireDelegate
 	public delegate void WeaponFireDelegate();
@@ -198,7 +200,14 @@ public class Hero : MonoBehaviour {
 	}
 
 	public void ReduceShield(){
-		shieldLevel--;
+		//if they have the shield upgrade:
+		if (shieldCounter = true) {
+			shieldCounter = false;
+		} else {
+			Debug.Log("Decreasing shield level");
+			shieldLevel--;
+			shieldCounter = true;
+		}
 	}
 
 		public void AbsorbPowerUp(GameObject go) {

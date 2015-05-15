@@ -36,6 +36,15 @@ namespace Soomla.Store.Example {
 		private bool checkAffordable = false;
 		
 		public string fontSuffix = "";
+
+		//public Transform cube;
+		public float secTime	= 2.0f;
+		public float totTime	= 0.0f;
+		public bool greenCubeIAPOwned = false;
+
+
+
+
 		
 		private enum GUIState{
 			PRODUCTS,
@@ -150,6 +159,14 @@ namespace Soomla.Store.Example {
 					itemsAffordability[key] = StoreInventory.CanAfford(key);
 			}
 		}
+
+		void CheckIAP_PurchaseStatus(){
+			Debug.Log (StoreInventory.GetItemBalance ("weapon_blaster"));
+			if ((StoreInventory.GetItemBalance("weapon_blaster") >= 1))
+			    {
+				greenCubeIAPOwned = true;
+			}
+			}
 		
 		/// <summary>
 		/// Sets the window to open, and sets the GUI state to welcome.
@@ -201,6 +218,12 @@ namespace Soomla.Store.Example {
 					return;
 				}
 			}
+
+				if (Time.timeSinceLevelLoad > totTime)
+				{
+					CheckIAP_PurchaseStatus ();                                                                                                                             //Check status of in app purchase (true/false if player has purchased it)
+					totTime = Time.timeSinceLevelLoad + secTime;
+				}
 		}
 		
 		/// <summary>

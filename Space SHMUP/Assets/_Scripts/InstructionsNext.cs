@@ -12,9 +12,9 @@ public class InstructionsNext : MonoBehaviour {
 	
 	// Update is called once per frame
 	IEnumerator DeleteText () {
-		Debug.Log ("DeleteText has been called");
+//		Debug.Log ("DeleteText has been called");
 		yield return new WaitForSeconds (introTime);
-		Debug.Log ("DeleteText has waited");
+//		Debug.Log ("DeleteText has waited");
 		GameObject.Destroy (gameObject);
 //		this.enabled = false;
 //		this.isActiveAndEnabled = false;
