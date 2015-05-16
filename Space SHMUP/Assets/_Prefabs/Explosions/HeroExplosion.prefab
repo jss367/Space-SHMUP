@@ -33,7 +33,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &101830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,8 +1314,8 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101828}
-  lengthInSec: 5
-  startDelay: 1
+  lengthInSec: 10
+  startDelay: .5
   speed: 1
   randomSeed: 0
   looping: 0
@@ -1325,7 +1325,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 7
+      scalar: 8
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1340,7 +1340,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .285714298
+          value: .25
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1475,7 +1475,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 200
+      scalar: 400
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1490,7 +1490,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: .200000003
+          value: .100000001
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -1527,7 +1527,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 0
-    radius: 5
+    radius: 10
     angle: 25
     length: 5
     boxX: 1
@@ -1578,10 +1578,10 @@ ParticleSystem:
     cnt2: 30
     cnt3: 30
     time0: 0
-    time1: 0
+    time1: 3
     time2: 0
     time3: 0
-    m_BurstCount: 1
+    m_BurstCount: 2
   SizeModule:
     enabled: 1
     curve:

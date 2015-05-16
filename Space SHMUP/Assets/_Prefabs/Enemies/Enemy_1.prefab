@@ -26,6 +26,7 @@ GameObject:
   - 54: {fileID: 5427918}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11489068}
+  - 135: {fileID: 13561270}
   m_Layer: 9
   m_Name: Enemy_1
   m_TagString: Enemy
@@ -42,7 +43,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 427916}
   - 33: {fileID: 3327916}
-  - 135: {fileID: 13527916}
   - 23: {fileID: 2327916}
   m_Layer: 9
   m_Name: Cockpit
@@ -60,7 +60,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 427918}
   - 33: {fileID: 3327918}
-  - 135: {fileID: 13527918}
   - 23: {fileID: 2327918}
   m_Layer: 9
   m_Name: Wing
@@ -76,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127914}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.4399996, z: 0}
+  m_LocalPosition: {x: 0, y: 25.3500004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 427916}
@@ -223,7 +222,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   boundsCenterOffset: {x: 0, y: 0, z: 0}
-  explosion: {fileID: 165916, guid: 0e130b4fe3635444a87acb5d8aae0fdb, type: 2}
+  enemyExplosion: {fileID: 172662, guid: 0b461f2f00c26474db70e48f1893c723, type: 2}
 --- !u!114 &11489068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,29 +238,17 @@ MonoBehaviour:
   shotSpawn: {fileID: 477458}
   fireRate: 1.5
   delay: .5
---- !u!135 &13527916
+--- !u!135 &13561270
 SphereCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127916}
+  m_GameObject: {fileID: 127914}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &13527918
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127918}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
+  m_Radius: 2.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:

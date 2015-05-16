@@ -25,7 +25,8 @@ public class Enemy : MonoBehaviour {
 //	private GameController gameController;
 	private Main main;
 
-	public GameObject explosion;
+//	public GameObject explosion;
+	public GameObject enemyExplosion;
 	
 	void Awake() {
 		materials = Utils.GetAllMaterials (gameObject);
@@ -49,7 +50,6 @@ public class Enemy : MonoBehaviour {
 		if (mainObject != null) {
 			main = mainObject.GetComponent<Main> ();
 		}
-		 
 
 	}
 
@@ -123,8 +123,10 @@ public class Enemy : MonoBehaviour {
 
 	void OnCollisionEnter (Collision coll) {
 		GameObject other = coll.gameObject;
+		Debug.Log ("Enemy hit a " + other.tag);
 		switch (other.tag) {
 		case "ProjectileHero":
+//			Debug.Log ("Projectile has hit enemy");
 			Projectile p = other.GetComponent<Projectile> ();
 			// Enemies don't take damage unless they're onscreen
 			// This stops the player from shooting them before they are visible
@@ -144,7 +146,7 @@ public class Enemy : MonoBehaviour {
 				Main.S.ShipDestroyed(this);
 				// Destroy this Enemy
 				Destroy (this.gameObject);
-				Instantiate(explosion, transform.position, transform.rotation);
+				Instantiate(enemyExplosion, transform.position, transform.rotation);
 			}
 			Destroy (other);
 			break;
@@ -170,11 +172,102 @@ public class Enemy : MonoBehaviour {
 			Destroy (other);
 			break;
 
-
+		case "Hero":
+			Instantiate(enemyExplosion, transform.position, transform.rotation);
+			//Destroyed in the hero script
+			break;
 
 		}
 
 	}
+
+	void OnTriggerEnter (Collider coll){
+		GameObject other = coll.gameObject;
+		Debug.Log ("Enemy hit a " + other.tag);
+		switch (other.tag) {
+		case "Hero":
+			//			Debug.Log ("Projectile has hit enemy");
+			Projectile p = other.GetComponent<Projectile> ();
+			// Enemies don't take damage unless they're onscreen
+			// This stops the player from shooting them before they are visible
+			bounds.center = transform.position + boundsCenterOffset;
+			if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) {
+
+				break;
+			}
+			// Destroy this Enemy
+			Destroy(this.gameObject);
+			
+			Instantiate(enemyExplosion, transform.position, transform.rotation);
+			break;
+	}
+	}
+	//This variable holds a reference to the last triggering GameObject
+//	public GameObject lastTriggerGo = null;
+
+
+//	void OnTriggerEnter(Collider other){
+//		//Find the tag of other.gameObject or its parent GameObjects
+//		GameObject go = Utils.FindTaggedParent (other.gameObject);
+//		//If there is a parent with a tag
+//		if (go != null) {
+//			//Make sure it's not the same triggering go as last time
+//			if (go ==lastTriggerGo){
+//				return;
+//			}
+//			lastTriggerGo = go;
+//			
+//			if(go.tag == "Enemy"){
+//				//Destroy the asteroid
+//				// Destroy the enemy
+//				//Destroy(go);
+////				Instantiate(enemyExplosion, transform.position, transform.rotation);
+//			}else if (go.tag == "Asteroid") {
+//				//Destroy the asteroid
+////				Destroy(this.gameObject);
+//				
+//				Instantiate(enemyExplosion, transform.position, transform.rotation);
+//			}else if (go.tag == "Hero") {
+//				//Destroy the asteroid
+//								Destroy(this.gameObject);// Destroyed in other script
+//				
+//				Instantiate(enemyExplosion, transform.position, transform.rotation);
+//			}else if (go.tag == "ProjectileHero") {
+//				//			Debug.Log ("Projectile has hit enemy");
+//				Projectile p = other.GetComponent<Projectile> ();
+//				// Enemies don't take damage unless they're onscreen
+//				// This stops the player from shooting them before they are visible
+//				bounds.center = transform.position + boundsCenterOffset;
+//				if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) {
+//					Destroy (other);
+//				}
+//				if (bounds.extents != Vector3.zero && Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) == Vector3.zero) {
+//		
+//				
+//				// Hurt this Enemy
+//				ShowDamage();
+//				Instantiate(impact, transform.position, transform.rotation);
+//				// Get the damage amount from the Projectile.type & Main.W_DEFS
+//				health -= Main.W_DEFS [p.type].damageOnHit;
+//				if (health <= 0) {
+//					// Tell the Main singleton that this ship has been destroyed
+//					Main.S.ShipDestroyed(this);
+//					// Destroy this Enemy
+//					Destroy (this.gameObject);
+//					Instantiate(enemyExplosion, transform.position, transform.rotation);
+//				}
+//				Destroy (other);
+//				}
+//			}else{
+//				//Announce it
+//				//				print ("Triggered: " + go.name);
+//				//Make sure it's not the same triggering go as last time
+//			}
+//		}else {
+//			//Otherwise announce the original gameObject
+//			//			print ("Triggered: " + other.gameObject.name);
+//		}
+//	}
 
 	void ShowDamage() {
 		foreach (Material m in materials) {

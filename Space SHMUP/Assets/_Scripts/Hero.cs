@@ -48,6 +48,7 @@ public class Hero : MonoBehaviour {
 	public SimpleTouchAreaButton areaButton;
 
 	public GameObject explosion;
+	public GameObject enemyExplosion;
 
 	void Awake(){
 		S = this; //Set the singleton
@@ -162,7 +163,9 @@ public class Hero : MonoBehaviour {
 				//If the shield was triggered by an enemy decrease the level of the shield by 1
 				ReduceShield();
 				//Destroy the enemy
-				Destroy(go);
+//				Destroy(go);
+//				Instantiate(enemyExplosion, transform.position, transform.rotation);
+//				Enemy will do its own explosion
 			}else if (go.tag == "Asteroid") {
 				//If the shield was triggered by an asteroid decrease the level of the shield by 1
 				ReduceShield();
