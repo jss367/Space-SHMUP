@@ -2960,7 +2960,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
       propertyPath: audioClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 527e768916d3e354db90528854168e6b, type: 3}
+      objectReference: {fileID: 8300000, guid: bc95a633c7418204ea86dfc68533d91b, type: 3}
     - target: {fileID: 11400000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
       propertyPath: loop
       value: 0
@@ -5838,6 +5838,7 @@ MonoBehaviour:
   touchPad: {fileID: 1076551430}
   areaButton: {fileID: 1894540696}
   explosion: {fileID: 101830, guid: 636d59c9aae3df748bf707e341f61d09, type: 2}
+  enemyExplosion: {fileID: 0}
   lastTriggerGo: {fileID: 0}
 --- !u!82 &1330483907 stripped
 AudioSource:
@@ -6445,9 +6446,12 @@ MonoBehaviour:
   scoreText: {fileID: 538530828}
   restartButton: {fileID: 1665153584}
   mainMenuButton: {fileID: 873712458}
-  gameOverText: {fileID: 0}
   highScoreText: {fileID: 1522393922}
   accountText: {fileID: 1279128667}
+  victoryText: {fileID: 0}
+  finalScoreText: {fileID: 0}
+  spawnManager: {fileID: 0}
+  fireworks: {fileID: 0}
   ______________: 0
   activeWeaponTypes: 
   enemySpawnRate: 0
@@ -6457,7 +6461,9 @@ MonoBehaviour:
   account: 0
   coinsGained: 0
   gameHasEnded: 0
+  playerWins: 0
   currentLevel: 
+  victoryBonus: 2500
   endGameDelay: 2.5
 --- !u!124 &1601000349
 Behaviour:
