@@ -200,13 +200,14 @@ public class Hero : MonoBehaviour {
 	}
 
 	public void ReduceShield(){
+//		Debug.Log ("The shield level is " + shieldLevel);
 		//if they have the shield upgrade:
-		if (shieldCounter == true) {
-			Debug.Log("Shield absorped the hit");
+		if ((shieldCounter == true) && (shieldLevel != 0)) {
+//			Debug.Log("Shield absorped the hit");
 			shieldCounter = false;
-			Debug.Log("The shield counter is now " + shieldCounter);
+//			Debug.Log("The shield counter is now " + shieldCounter);
 		} else {
-			Debug.Log("Decreasing shield level");
+//			Debug.Log("Decreasing shield level");
 			shieldLevel--;
 			shieldCounter = true;
 		}
@@ -320,7 +321,8 @@ public class Hero : MonoBehaviour {
 	void DestroyHero(){
 		Destroy (this.gameObject);
 		//Tell Main.S to restart the game after a delay
-		Main.S.DelayedRestart (gameRestartDelay);
+//		Main.S.DelayedRestart (gameRestartDelay);
+		Main.S.PlayerLoss ();
 		//Create an explosion
 		Instantiate(explosion, transform.position, transform.rotation);
 	}

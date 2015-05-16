@@ -28,6 +28,8 @@ public class Main : MonoBehaviour {
 	public Text gameOverText;
 	public Text highScoreText;
 	public Text accountText;
+	public Text wonText;
+	public GameObject spawnManager;
 
 
 	public bool ______________;
@@ -45,6 +47,8 @@ public class Main : MonoBehaviour {
 	public float coinsGained;
 
 	public bool gameHasEnded;
+	public bool playerWins = false;
+
 
 	public string currentLevel;
 
@@ -98,6 +102,7 @@ public class Main : MonoBehaviour {
 		mainMenuButton.SetActive (false);
 		highScoreText.enabled = false;
 		accountText.enabled = false;
+		wonText.enabled = false;
 		score = 0;
 		UpdateScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
@@ -145,6 +150,27 @@ public class Main : MonoBehaviour {
 		//Invoke the Restart() method in delay seconds
 		Invoke ("Restart", delay);
 	}
+
+
+	public void PlayerLoss()
+	{
+		Debug.Log("Player lost the level!");
+		GivePoints ();
+		Destroy (spawnManager, 10.0f);
+
+
+	}
+
+
+	public void PlayerWon()
+	{
+		Debug.Log("Player beat the level!");
+		wonText.enabled = true;
+		playerWins = true;
+		GivePoints ();
+		Destroy (spawnManager);
+	}
+
 	public void Restart(){
 		
 		//Reload scene to restart the game
@@ -154,7 +180,7 @@ public class Main : MonoBehaviour {
 		StoreHighScore (score);
 	}
 
-	public void RestartGame()
+	public void RestartLevel()
 	{
 //		Application.LoadLevel (Application.loadedLevel);
 		MadLevel.LoadLevelByName (currentLevel);
@@ -190,10 +216,12 @@ public class Main : MonoBehaviour {
 		StoreHighScore (score);
 		highScoreText.enabled = true;
 		GivePoints ();
+		Destroy (spawnManager);
 	}
 
 	public void GivePoints(){
 //		try {
+
 		account = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
 //		coinsGained = Soomla.Store.StoreInventory.GiveItem ("galactic_currency", 10);
 		Soomla.Store.StoreInventory.GiveItem("galactic_currency", 10); // fix this
@@ -210,6 +238,10 @@ public class Main : MonoBehaviour {
 		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
 		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
 		MadLevelProfile.Save ();
+
+		if (playerWins) {
+
+		}
 
 
 	}
