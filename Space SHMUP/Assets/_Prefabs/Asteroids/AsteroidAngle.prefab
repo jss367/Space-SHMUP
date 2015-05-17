@@ -104,10 +104,13 @@ MonoBehaviour:
   rotationSpeed: 200
   rotationalAxis: {x: 0, y: 1, z: 0}
   driftSpeed: -20
+  speedVariation: 0
   driftAxis: {x: 0, y: 1, z: 0}
+  tMultiplier: 0
+  main: {fileID: 0}
+  lastTriggerGo: {fileID: 0}
   orthogAxis: {x: 0, y: 0, z: 0}
   orthogSpeed: 20
-  lastTriggerGo: {fileID: 0}
 --- !u!135 &13524192
 SphereCollider:
   m_ObjectHideFlags: 1

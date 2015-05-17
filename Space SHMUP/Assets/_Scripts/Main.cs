@@ -53,6 +53,7 @@ public class Main : MonoBehaviour {
 	public bool gameHasEnded;
 	public bool playerWins = false;
 	public bool playerDead = false;
+	private int prevBalance;
 
 	public string currentLevel;
 	public int victoryBonus;
@@ -208,8 +209,8 @@ public class Main : MonoBehaviour {
 
 	public void GameOver() {
 		scoreText.enabled = false;
-		float prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
-
+		prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
+		restartButton.SetActive(true);
 		mainMenuButton.SetActive (true);
 		StoreHighScore (score);
 		highScoreText.enabled = true;
@@ -230,9 +231,7 @@ public class Main : MonoBehaviour {
 			}
 
 		Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
-		float newBalance = Soomla.Store.StoreInventory.GetItemBalance("galactic_currency");
-
-		currentAccountText.text = "New Balance: " + newBalance + " Coins";
+		currentAccountText.text = "New Balance: " + (prevBalance + score) + " Coins";
 		currentAccountText.enabled = true;
 //		} catch (Exception e) {
 //			Debug.LogError ("SOOMLA/UNITY " + e.Message);
@@ -295,7 +294,11 @@ public class Main : MonoBehaviour {
 		MadLevel.LoadLevelByName ("Level Select");
 	}
 
-	public void AsteroidDestroyed(SU_Asteroid a) {
+//	public void AsteroidDestroyed(SU_Asteroid a) {
+//		AddScore (a.score);
+//	}
+
+	public void AsteroidDestroyed2(Asteroid a) {
 		AddScore (a.score);
 	}
 
@@ -323,14 +326,12 @@ public class Main : MonoBehaviour {
 		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
 
-	public void Restart(){
-		
-		//Reload scene to restart the game
-		//Application.LoadLevel (Application.loadedLevel);
-		restartButton.SetActive(true);
-		mainMenuButton.SetActive (true);
-		StoreHighScore (score);
-	}
+//	public void Restart(){
+//		
+//		//Reload scene to restart the game
+//		//Application.LoadLevel (Application.loadedLevel);
+//
+//	}
 	
 	public void RestartLevel()
 	{

@@ -35,8 +35,7 @@ amount of points needed to get stars
 				//	Debug.Log("The time alive is " + main.timeAlive);
 				//	Debug.Log("The first break is " + firstBreak);
 				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
-				//			AsteroidSpawn0.SetActive(true);
-				SpawnManager.instance.AsteroidSpawn1.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
 			
 			} else if (timer >= firstBreak && timer < secondBreak) {

@@ -115,7 +115,7 @@ public class Enemy : MonoBehaviour {
 
 	void OnCollisionEnter (Collision coll) {
 		GameObject other = coll.gameObject;
-		Debug.Log ("Enemy hit a " + other.tag);
+//		Debug.Log ("Enemy hit a " + other.tag);
 		switch (other.tag) {
 		case "ProjectileHero":
 //			Debug.Log ("Projectile has hit enemy");
@@ -143,7 +143,7 @@ public class Enemy : MonoBehaviour {
 			Destroy (other);
 			break;
 		case "Asteroid":
-			Debug.Log("Hit an asteroid");
+//			Debug.Log("Hit an asteroid");
 			// Enemies don't take damage unless they're onscreen
 			// This stops the player from shooting them before they are visible
 			bounds.center = transform.position + boundsCenterOffset;
@@ -175,7 +175,7 @@ public class Enemy : MonoBehaviour {
 
 	void OnTriggerEnter (Collider coll){
 		GameObject other = coll.gameObject;
-		Debug.Log ("Enemy hit a " + other.tag);
+//		Debug.Log ("Enemy hit a " + other.tag);
 		switch (other.tag) {
 		case "Hero":
 			//			Debug.Log ("Projectile has hit enemy");

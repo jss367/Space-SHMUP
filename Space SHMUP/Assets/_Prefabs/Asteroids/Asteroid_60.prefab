@@ -10,9 +10,9 @@ GameObject:
   - 4: {fileID: 400556}
   - 33: {fileID: 3300556}
   - 23: {fileID: 2300556}
-  - 114: {fileID: 11400556}
   - 54: {fileID: 5400556}
   - 135: {fileID: 13500556}
+  - 114: {fileID: 11497282}
   m_Layer: 9
   m_Name: Asteroid_60
   m_TagString: Asteroid
@@ -78,7 +78,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11400556
+--- !u!114 &11497282
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -86,16 +86,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 100556}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e39d3efc43fa722439f605c7a16258c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 449fff2faa459394a8e094b244381129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  polyCount: 0
-  polyCountCollider: 2
-  meshLowPoly: {fileID: 400000, guid: b27b5d116dd538e42bf6866db49d7e14, type: 3}
-  meshMediumPoly: {fileID: 400000, guid: 2f51652ba34c20f4a8e8fa346a336e62, type: 3}
-  meshHighPoly: {fileID: 400000, guid: 0fb465f747765ab459c534ddb9212636, type: 3}
-  health: 2
-  score: 40
+  health: 1
+  score: 10
   showDamageForFrames: 0
   powerUpDropChance: 0
   originalColors: []
@@ -109,7 +104,10 @@ MonoBehaviour:
   rotationSpeed: 200
   rotationalAxis: {x: 0, y: 1, z: 0}
   driftSpeed: -60
+  speedVariation: 0
   driftAxis: {x: 0, y: 1, z: 0}
+  tMultiplier: 0
+  main: {fileID: 0}
   lastTriggerGo: {fileID: 0}
 --- !u!135 &13500556
 SphereCollider:
