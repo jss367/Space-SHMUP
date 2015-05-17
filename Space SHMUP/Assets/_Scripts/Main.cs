@@ -180,6 +180,8 @@ public class Main : MonoBehaviour {
 		}
 	}
 
+
+
 	public void DelayedRestart(float delay) {
 		//Invoke the Restart() method in delay seconds
 		Invoke ("Restart", delay);
