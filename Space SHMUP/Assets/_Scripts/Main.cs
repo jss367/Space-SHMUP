@@ -189,8 +189,8 @@ public class Main : MonoBehaviour {
 	{
 		playerDead = true;
 		Debug.Log("Player lost the level!");
-		Destroy (spawnManager, 5.0f);
-		Destroy (fireworks, 5.0f);
+//		Destroy (spawnManager, 5.0f);
+//		Destroy (fireworks, 5.0f);
 		GameOver ();
 	}
 	
@@ -199,8 +199,8 @@ public class Main : MonoBehaviour {
 		Debug.Log("Player beat the level!");
 		victoryText.enabled = true;
 		playerWins = true;
-		Destroy (spawnManager);
-		Destroy (fireworks);
+//		Destroy (spawnManager);
+//		Destroy (fireworks);
 		GiveStars ();
 		victoryBonusText.enabled = true;
 		GameOver ();
@@ -232,7 +232,7 @@ public class Main : MonoBehaviour {
 		Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
 		float newBalance = Soomla.Store.StoreInventory.GetItemBalance("galactic_currency");
 
-		currentAccountText.text = "New Balance: " + newBalance + " coins";
+		currentAccountText.text = "New Balance: " + newBalance + " Coins";
 		currentAccountText.enabled = true;
 //		} catch (Exception e) {
 //			Debug.LogError ("SOOMLA/UNITY " + e.Message);

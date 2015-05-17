@@ -37,6 +37,7 @@ public class SU_Asteroid : MonoBehaviour {
 	public Vector3 rotationalAxis = Vector3.up;	
 	// Drift/movement speed
 	public float driftSpeed = -20.0f;
+	public float speedVariation;
 	// Vector3 direction for drift/movement
 	public Vector3 driftAxis = Vector3.up;
 
@@ -63,7 +64,7 @@ public class SU_Asteroid : MonoBehaviour {
 		gameController = gameControllerObject.GetComponent<GameController>();
 */		//	Debug.Log("gameController is: " + gameController);
 
-
+		speedVariation = Random.Range(0.5f, 2.0f);
 		GameObject mainObject = GameObject.Find ("Main Camera");
 		main = mainObject.GetComponent<Main> ();
 
@@ -78,7 +79,7 @@ public class SU_Asteroid : MonoBehaviour {
 			// Rotate around own axis
 			_cacheTransform.Rotate(rotationalAxis * (rotationSpeed + tMultiplier) * Time.deltaTime);
 			// Move in world space according to drift speed
-			_cacheTransform.Translate(driftAxis * (driftSpeed - tMultiplier) * Time.deltaTime, Space.World);
+			_cacheTransform.Translate(driftAxis * (speedVariation * driftSpeed - tMultiplier) * Time.deltaTime, Space.World);
 		}
 
 	}

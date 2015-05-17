@@ -113,7 +113,7 @@ public class AsteroidAngle : MonoBehaviour {
 			}
 			lastTriggerGo = go;
 			
-			if(go.tag == "Enemy"){
+			if(go.tag == "ProjectileHero"){
 				//Destroy the asteroid
 				Destroy(this.gameObject);
 				// Destroy the enemy
@@ -124,9 +124,14 @@ public class AsteroidAngle : MonoBehaviour {
 				Destroy(this.gameObject);
 				
 				Instantiate(explosion, transform.position, transform.rotation);
-			}else if (go.tag == "ProjectileHero") {
+			}else if (go.tag == "Enemy") {
 				Destroy(this.gameObject);
 				//Main.S.AsteroidDestroyed(this);
+				Instantiate(explosion, transform.position, transform.rotation);
+			}else if (go.tag == "Hero") {
+				//Destroy the asteroid
+				//				Destroy(this.gameObject); Destroyed in other script
+				
 				Instantiate(explosion, transform.position, transform.rotation);
 			}else{
 				//Announce it
