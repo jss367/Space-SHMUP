@@ -22,14 +22,16 @@ public class Main : MonoBehaviour {
 		WeaponType.shield
 	};
 
-	public Text			scoreText;
+
 	public GameObject 	restartButton;
 	public GameObject 	mainMenuButton;
-//	public Text 		gameOverText;
+	public Text			scoreText;
 	public Text 		highScoreText;
-	public Text accountText;
-	public Text victoryText;
+	public Text			victoryText;
+	public Text currentAccountText;
+	public Text victoryBonusText;
 	public Text finalScoreText;
+	public Text prevBalanceText;
 	public GameObject spawnManager;
 	public GameObject fireworks;
 
@@ -50,10 +52,10 @@ public class Main : MonoBehaviour {
 
 	public bool gameHasEnded;
 	public bool playerWins = false;
-
+	public bool playerDead = false;
 
 	public string currentLevel;
-	public int victoryBonus = 2500;
+	public int victoryBonus;
 	public float endGameDelay = 2.5f;
 
 	void Awake(){
@@ -103,9 +105,12 @@ public class Main : MonoBehaviour {
 		restartButton.SetActive (false);
 		mainMenuButton.SetActive (false);
 		highScoreText.enabled = false;
-		accountText.enabled = false;
-		victoryText.enabled = false;
+		currentAccountText.enabled = false;
+		victoryBonusText.enabled = false;
 		finalScoreText.enabled = false;
+		prevBalanceText.enabled = false;
+		victoryText.enabled = false;
+
 		score = 0;
 		UpdateScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
@@ -119,11 +124,11 @@ public class Main : MonoBehaviour {
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
 		timeMultiplier = Time.timeSinceLevelLoad / 4;
-		if (!gameHasEnded && (timer > timeLimit + endGameDelay)){
-			GameOver();
+		if (!playerDead && !gameHasEnded && (timer > timeLimit + endGameDelay)){
+			PlayerWon();
 			gameHasEnded = true;
-		}
 
+		}
 
 		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("Highscore", 0);
 //		Debug.Log ("The score is " + score);
@@ -182,55 +187,86 @@ public class Main : MonoBehaviour {
 
 	public void PlayerLoss()
 	{
+		playerDead = true;
 		Debug.Log("Player lost the level!");
-		GivePoints ();
 		Destroy (spawnManager, 5.0f);
 		Destroy (fireworks, 5.0f);
-
+		GameOver ();
 	}
 	
 	public void PlayerWon()
 	{
 		Debug.Log("Player beat the level!");
-
+		victoryText.enabled = true;
 		playerWins = true;
 		Destroy (spawnManager);
 		Destroy (fireworks);
-		GivePoints ();
 		GiveStars ();
-		victoryText.enabled = true;
+		victoryBonusText.enabled = true;
+		GameOver ();
 	}
 
 	public void GameOver() {
+		scoreText.enabled = false;
+		float prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
+
 		mainMenuButton.SetActive (true);
 		StoreHighScore (score);
 		highScoreText.enabled = true;
+		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";
+		prevBalanceText.enabled = true;
 		GivePoints ();
-		Destroy (spawnManager);
 	}
 
 	public void GivePoints(){
 //		try {
 
-		finalScoreText.text = "Your score is: " + score;
+		finalScoreText.text = "Game Score: " + score;
 		if (playerWins) {
 			GiveStars();
+			GiveVictoryBonus();
 			score += victoryBonus;
-			victoryText.text = "+ " + victoryBonus + " for completing the level";
-		}
+			victoryBonusText.text = "Level Completion Bonus: " + victoryBonus;
+			}
 
-		Soomla.Store.StoreInventory.GiveItem("galactic_currency", score); // fix this
+		Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
+		float newBalance = Soomla.Store.StoreInventory.GetItemBalance("galactic_currency");
 
-		account = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
-//		coinsGained = Soomla.Store.StoreInventory.GiveItem ("galactic_currency", 10);
-		accountText.text = "You now have: " + account + " Milky Bucks";
-		accountText.enabled = true;
+		currentAccountText.text = "New Balance: " + newBalance + " coins";
+		currentAccountText.enabled = true;
 //		} catch (Exception e) {
 //			Debug.LogError ("SOOMLA/UNITY " + e.Message);
 //		}
 
 
 		finalScoreText.enabled = true;
+	}
+
+	public void GiveVictoryBonus (){
+		Debug.Log("You are currently on this level: " + currentLevel);
+
+		switch (currentLevel) {
+		case "Level 1":
+			victoryBonus = 200;
+			break;
+		case "Level 2":
+			victoryBonus = 400;
+			break;
+		case "Level 3":
+			victoryBonus = 600;
+			break;
+		case "Level 4":
+			victoryBonus = 800;
+			break;
+		case "Level 5":
+			victoryBonus = 1000;
+			break;
+		case "Level 6":
+			victoryBonus = 1200;
+			break;
+		
+		}
+
 	}
 
 	public void GiveStars(){

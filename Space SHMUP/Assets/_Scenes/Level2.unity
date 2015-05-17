@@ -1620,6 +1620,99 @@ MonoBehaviour:
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
+--- !u!1 &195413496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 195413497}
+  - 114: {fileID: 195413500}
+  - 114: {fileID: 195413499}
+  - 114: {fileID: 195413498}
+  m_Layer: 0
+  m_Name: EnemySpawn5-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &195413497
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 195413496}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -579.783386, y: -557.713196, z: 0}
+  m_LocalScale: {x: 1.00502515, y: 1.00502515, z: 1.00502515}
+  m_Children: []
+  m_Father: {fileID: 1945890358}
+  m_RootOrder: 8
+--- !u!114 &195413498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 195413496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .449999988
+  triggerReactivateDelay: 3
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &195413499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 195413496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .5
+  triggerReactivateDelay: 2
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &195413500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 195413496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .449999988
+  triggerReactivateDelay: 2
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &287205650
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,7 +1920,7 @@ GameObject:
   - 222: {fileID: 399248328}
   - 114: {fileID: 399248327}
   m_Layer: 5
-  m_Name: FinalScoreText
+  m_Name: GameScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1844,11 +1937,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1767835998}
-  m_RootOrder: 9
+  m_RootOrder: 3
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 238.779999}
-  m_SizeDelta: {x: 213.199997, y: 30}
+  m_AnchoredPosition: {x: -150, y: 164.800003}
+  m_SizeDelta: {x: 500, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &399248327
 MonoBehaviour:
@@ -1870,12 +1963,12 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 5
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Final Score
+  m_Text: Game Score
 --- !u!222 &399248328
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3122,6 +3215,72 @@ MonoBehaviour:
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 0}
   randomOffset: {x: 0, y: 0, z: 0}
+--- !u!1 &437795087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 437795088}
+  - 222: {fileID: 437795090}
+  - 114: {fileID: 437795089}
+  m_Layer: 5
+  m_Name: PrevBalanceText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &437795088
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 437795087}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1767835998}
+  m_RootOrder: 5
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: -150, y: 67.8000031}
+  m_SizeDelta: {x: 500, y: 30}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &437795089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 437795087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 5
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Previous Balance
+--- !u!222 &437795090
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 437795087}
 --- !u!1 &538530826
 GameObject:
   m_ObjectHideFlags: 0
@@ -3150,7 +3309,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1767835998}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3708,14 +3867,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 618003409}
-  - 114: {fileID: 618003410}
   m_Layer: 0
   m_Name: AsteroidManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &618003409
 Transform:
   m_ObjectHideFlags: 0
@@ -3738,37 +3896,99 @@ Transform:
   - {fileID: 1211555147}
   m_Father: {fileID: 1750600499}
   m_RootOrder: 0
---- !u!114 &618003410
+--- !u!1 &618258549
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 618258550}
+  - 114: {fileID: 618258553}
+  - 114: {fileID: 618258552}
+  - 114: {fileID: 618258551}
+  m_Layer: 0
+  m_Name: EnemySpawn4-3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &618258550
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 618258549}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -579.783386, y: -557.713196, z: 0}
+  m_LocalScale: {x: 1.00502515, y: 1.00502515, z: 1.00502515}
+  m_Children: []
+  m_Father: {fileID: 1945890358}
+  m_RootOrder: 7
+--- !u!114 &618258551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 618003408}
-  m_Enabled: 0
+  m_GameObject: {fileID: 618258549}
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b31b733d736577344a981b977e69d6ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  firstBreak: 30
-  secondBreak: 60
-  thirdBreak: 90
-  timeLimit: 0
-  spawn1: {fileID: 0}
-  AsteroidSpawn0: {fileID: 622078982}
-  AsteroidSpawn1: {fileID: 622078982}
-  AsteroidSpawn2: {fileID: 1947368558}
-  AsteroidSpawn3: {fileID: 0}
-  AsteroidSpawn4: {fileID: 0}
-  AsteroidSpawn5: {fileID: 81409985}
-  AsteroidSpawn6: {fileID: 0}
-  AsteroidSpawn7: {fileID: 832199941}
-  AsteroidSpawn8: {fileID: 0}
-  AsteroidSpawn9: {fileID: 0}
-  EnemySpawn1d2: {fileID: 0}
-  EnemySpawn1d3: {fileID: 0}
-  EnemySpawn2d1: {fileID: 0}
-  EnemySpawn3d2: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .200000003
+  triggerReactivateDelay: 3
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &618258552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 618258549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .200000003
+  triggerReactivateDelay: 2
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &618258553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 618258549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .200000003
+  triggerReactivateDelay: 2
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &622078982
 GameObject:
   m_ObjectHideFlags: 0
@@ -4100,7 +4320,7 @@ GameObject:
   - 222: {fileID: 747386742}
   - 114: {fileID: 747386741}
   m_Layer: 5
-  m_Name: VictoryText
+  m_Name: VictoryBonusText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4117,11 +4337,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1767835998}
-  m_RootOrder: 10
+  m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 72.9199982}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -150, y: 116.900002}
+  m_SizeDelta: {x: 500, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &747386741
 MonoBehaviour:
@@ -4139,16 +4359,16 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 24
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 5
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Victory!!
+  m_Text: Victory Bonus
 --- !u!222 &747386742
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4603,7 +4823,7 @@ RectTransform:
   m_Children:
   - {fileID: 611673459}
   m_Father: {fileID: 1767835998}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: -50}
@@ -5351,6 +5571,99 @@ EllipsoidParticleEmitter:
   m_OneShot: 0
   m_Ellipsoid: {x: 0, y: 0, z: 0}
   m_MinEmitterRange: 0
+--- !u!1 &1075449969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1075449970}
+  - 114: {fileID: 1075449973}
+  - 114: {fileID: 1075449972}
+  - 114: {fileID: 1075449971}
+  m_Layer: 0
+  m_Name: EnemySpawn3-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1075449970
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075449969}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -579.783386, y: -557.713196, z: 0}
+  m_LocalScale: {x: 1.00502515, y: 1.00502515, z: 1.00502515}
+  m_Children: []
+  m_Father: {fileID: 1945890358}
+  m_RootOrder: 5
+--- !u!114 &1075449971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075449969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .5
+  triggerReactivateDelay: 1
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1075449972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075449969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .5
+  triggerReactivateDelay: 1
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1075449973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1075449969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: .5
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &1076551428
 GameObject:
   m_ObjectHideFlags: 0
@@ -5381,7 +5694,7 @@ RectTransform:
   m_Children:
   - {fileID: 624416503}
   m_Father: {fileID: 1767835998}
-  m_RootOrder: 2
+  m_RootOrder: 10
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -6156,7 +6469,7 @@ GameObject:
   - 222: {fileID: 1279128668}
   - 114: {fileID: 1279128667}
   m_Layer: 5
-  m_Name: AccountText
+  m_Name: CurrentAccountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6176,8 +6489,8 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 125.199997}
-  m_SizeDelta: {x: 523.419983, y: 30}
+  m_AnchoredPosition: {x: -150, y: 20.6599998}
+  m_SizeDelta: {x: 500, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1279128667
 MonoBehaviour:
@@ -6199,7 +6512,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 5
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
@@ -6703,7 +7016,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1767835998}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -6861,7 +7174,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1767835998}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -100, y: 0}
@@ -6998,13 +7311,15 @@ MonoBehaviour:
     velocity: 0
   prefabPowerUp: {fileID: 194146, guid: be4cd12336d948f49914c26cde4c2bf0, type: 2}
   powerUpFrequency: 01000000010000000200000006000000
-  scoreText: {fileID: 538530828}
   restartButton: {fileID: 1665153584}
   mainMenuButton: {fileID: 873712458}
+  scoreText: {fileID: 538530828}
   highScoreText: {fileID: 1522393922}
-  accountText: {fileID: 1279128667}
-  victoryText: {fileID: 747386741}
+  victoryText: {fileID: 1717561307}
+  currentAccountText: {fileID: 1279128667}
+  victoryBonusText: {fileID: 747386741}
   finalScoreText: {fileID: 399248327}
+  prevBalanceText: {fileID: 437795089}
   spawnManager: {fileID: 618003408}
   fireworks: {fileID: 1245744467}
   ______________: 0
@@ -7017,6 +7332,7 @@ MonoBehaviour:
   coinsGained: 0
   gameHasEnded: 0
   playerWins: 0
+  playerDead: 0
   currentLevel: 
   victoryBonus: 2500
   endGameDelay: 2.5
@@ -7305,7 +7621,7 @@ RectTransform:
   m_Children:
   - {fileID: 1010680350}
   m_Father: {fileID: 1767835998}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 20}
@@ -7474,12 +7790,12 @@ GameObject:
   - 222: {fileID: 1717561308}
   - 114: {fileID: 1717561307}
   m_Layer: 5
-  m_Name: WonText
+  m_Name: VictoryText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1717561306
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7491,11 +7807,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1767835998}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 208.020004}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 222.110001}
+  m_SizeDelta: {x: 499.200012, y: 70}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1717561307
 MonoBehaviour:
@@ -7509,10 +7825,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_FontSize: 44
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -7522,7 +7838,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You Win!
+  m_Text: Victory!
 --- !u!222 &1717561308
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7537,8 +7853,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 1750600499}
-  - 114: {fileID: 1750600498}
   - 114: {fileID: 1750600500}
+  - 114: {fileID: 1750600498}
   m_Layer: 5
   m_Name: LevelManager
   m_TagString: Untagged
@@ -7552,22 +7868,16 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1750600497}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b1a04aa4eae3e54aa22c2231717f1d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6278ea4a57491f244b8b44a0e2eab412, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnManager: {fileID: 618003408}
-  AsteroidSpawn1: {fileID: 1947368558}
-  AsteroidSpawn2: {fileID: 81409985}
-  AsteroidSpawn3: {fileID: 832199941}
-  EnemySpawn1: {fileID: 602568935}
-  EnemySpawn2: {fileID: 2010416242}
-  EnemySpawn3: {fileID: 1767663932}
-  timeLimit: 0
+  level: 0
   firstBreak: 0
   secondBreak: 0
   thirdBreak: 0
+  timeLimit: 0
 --- !u!224 &1750600499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7596,29 +7906,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1750600497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6278ea4a57491f244b8b44a0e2eab412, type: 3}
+  m_Script: {fileID: 11500000, guid: b31b733d736577344a981b977e69d6ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
-  firstBreak: 0
-  secondBreak: 0
-  thirdBreak: 0
   timeLimit: 0
-  spawn1: {fileID: 0}
   AsteroidSpawn0: {fileID: 622078982}
-  AsteroidSpawn1: {fileID: 0}
+  AsteroidSpawn1: {fileID: 1029704286}
   AsteroidSpawn2: {fileID: 1947368558}
-  AsteroidSpawn3: {fileID: 0}
-  AsteroidSpawn4: {fileID: 0}
+  AsteroidSpawn3: {fileID: 591627912}
+  AsteroidSpawn4: {fileID: 591627912}
   AsteroidSpawn5: {fileID: 81409985}
-  AsteroidSpawn6: {fileID: 0}
+  AsteroidSpawn6: {fileID: 287205650}
   AsteroidSpawn7: {fileID: 832199941}
-  AsteroidSpawn8: {fileID: 0}
-  AsteroidSpawn9: {fileID: 1767663932}
+  AsteroidSpawn8: {fileID: 1884711946}
+  AsteroidSpawn9: {fileID: 1211555146}
   EnemySpawn1d2: {fileID: 2010416242}
   EnemySpawn1d3: {fileID: 1767663932}
   EnemySpawn2d1: {fileID: 293926108}
+  EnemySpawn3d1: {fileID: 1075449969}
   EnemySpawn3d2: {fileID: 1813423194}
+  EnemySpawn4d3: {fileID: 618258549}
+  EnemySpawn5d1: {fileID: 195413496}
 --- !u!1 &1767663932
 GameObject:
   m_ObjectHideFlags: 0
@@ -7740,17 +8048,18 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1894540695}
   - {fileID: 538530827}
-  - {fileID: 1076551429}
-  - {fileID: 1665153588}
-  - {fileID: 873712459}
   - {fileID: 1522393921}
-  - {fileID: 1279128666}
   - {fileID: 1717561306}
-  - {fileID: 1472638019}
   - {fileID: 399248326}
   - {fileID: 747386740}
+  - {fileID: 437795088}
+  - {fileID: 1279128666}
+  - {fileID: 1665153588}
+  - {fileID: 873712459}
+  - {fileID: 1472638019}
+  - {fileID: 1076551429}
+  - {fileID: 1894540695}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 0}
@@ -7841,7 +8150,7 @@ Transform:
   m_LocalScale: {x: 1.00502515, y: 1.00502515, z: 1.00502515}
   m_Children: []
   m_Father: {fileID: 1945890358}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!114 &1813423196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8307,7 +8616,7 @@ RectTransform:
   m_Children:
   - {fileID: 1350260319}
   m_Father: {fileID: 1767835998}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -8381,7 +8690,10 @@ RectTransform:
   - {fileID: 1767663933}
   - {fileID: 293926109}
   - {fileID: 957893914}
+  - {fileID: 1075449970}
   - {fileID: 1813423195}
+  - {fileID: 618258550}
+  - {fileID: 195413497}
   m_Father: {fileID: 1750600499}
   m_RootOrder: 2
   m_AnchorMin: {x: .5, y: .5}
@@ -8436,7 +8748,7 @@ MonoBehaviour:
   m_szLastControllerName: High
   triggerType: 2
   triggerThreshold: .25
-  triggerReactivateDelay: .25
+  triggerReactivateDelay: .400000006
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
@@ -8456,8 +8768,8 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
-  triggerThreshold: .25
-  triggerReactivateDelay: .25
+  triggerThreshold: .340000004
+  triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
@@ -8478,7 +8790,7 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .300000012
-  triggerReactivateDelay: .100000001
+  triggerReactivateDelay: .400000006
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
