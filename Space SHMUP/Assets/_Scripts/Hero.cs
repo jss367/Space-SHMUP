@@ -24,7 +24,10 @@ public class Hero : MonoBehaviour {
 
 	public Bounds				bounds;
 	private int					weaponCount;
-
+//	public int			showDamageForFrames = 2; // # of frames to show damage
+//	public int			remainingDamageFrames = 0; // Damage frames left
+//	public Color[]		originalColors;
+//	public Material[]	materials; //All the Materials of this & its children
 	//private int					recall;
 	private int					blasterRecall;
 	private int					spreadRecall;
@@ -143,6 +146,13 @@ public class Hero : MonoBehaviour {
 			fireDelegate ();
 		}
 	
+//		if (remainingDamageFrames > 0) {
+//			remainingDamageFrames--;
+//			if (remainingDamageFrames == 0) {
+//				UnShowDamage ();
+//			}
+//		}
+
 		}
 
 	//This variable holds a reference to the last triggering GameObject
@@ -203,6 +213,10 @@ public class Hero : MonoBehaviour {
 	}
 
 	public void ReduceShield(){
+//		foreach (Material m in materials) {
+//			m.color = Color.red;
+//		}
+//		remainingDamageFrames = showDamageForFrames;
 //		Debug.Log ("The shield level is " + shieldLevel);
 		//if they have the shield upgrade:
 		if ((shieldCounter == true) && (shieldLevel != 0)) {
@@ -215,6 +229,18 @@ public class Hero : MonoBehaviour {
 			shieldCounter = true;
 		}
 	}
+
+//	void ShowDamage() {
+//		foreach (Material m in materials) {
+//			m.color = Color.red;
+//		}
+//		remainingDamageFrames = showDamageForFrames;
+//	}
+//	void UnShowDamage() {
+//		for (int i = 0; i < materials.Length; i++) {
+//			materials[i].color = originalColors[i];
+//		}
+//	}
 
 		public void AbsorbPowerUp(GameObject go) {
 			PowerUp pu = go.GetComponent<PowerUp>();
