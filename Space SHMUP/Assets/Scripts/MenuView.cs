@@ -14,7 +14,7 @@ public class MenuView : MonoBehaviour
     #endregion
 
     #region Private Variables
-    private MenuState currentMenuState = MenuState.MainMenu;
+    private MenuState currentMenuState = MenuState.Store;
     #endregion
     
     #region Editor Properties
