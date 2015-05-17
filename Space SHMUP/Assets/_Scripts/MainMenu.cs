@@ -44,7 +44,7 @@ namespace FMG
 
 			if(str.Equals("Store"))
 			{
-				Application.LoadLevel("StoreScene");
+				Application.LoadLevel("Store");
 				/*
 				if(useLevelSelect)
 				{

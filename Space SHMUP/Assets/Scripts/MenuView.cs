@@ -66,6 +66,8 @@ public class MenuView : MonoBehaviour
         instance = this;
 
         SetLoadingOverlayVisiblity(neededBeforeInit.HasValue && neededBeforeInit.Value);
+
+//		NavigateToStore ();
     }
 
     protected void Update()
@@ -74,8 +76,8 @@ public class MenuView : MonoBehaviour
         {
             NavigateToMainMenu();
         }
-		Debug.Log ("You have purchased:");
-		Debug.Log(Soomla.Store.StoreInventory.GetItemBalance("weapon_blaster"));
+//		Debug.Log ("You have purchased:");
+//		Debug.Log(Soomla.Store.StoreInventory.GetItemBalance("weapon_blaster"));
     }
 
     public void NavigateToProfile()
