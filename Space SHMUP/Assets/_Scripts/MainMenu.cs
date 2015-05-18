@@ -85,6 +85,11 @@ namespace FMG
 				Constants.fadeInFadeOut(optionsMenu,mainMenu);
 			}
 
+			if(str.Equals("MainMenu"))
+			{
+				Application.LoadLevel("MainMenu");
+			}
+
 
 		}
 	}

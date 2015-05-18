@@ -311,7 +311,10 @@ public class Main : MonoBehaviour {
 		case "Level 6":
 			victoryBonus = 1200;
 			break;
-		
+		case "Level 7":
+			victoryBonus = 1400;
+			break;
+
 		}
 
 	}

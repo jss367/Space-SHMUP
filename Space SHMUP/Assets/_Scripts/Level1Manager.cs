@@ -17,11 +17,12 @@ amount of points needed to get stars
 
 	//
 	void Start(){
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
+
+
+
+
 	}
+		
 	
 	
 	// Update is called once per frame

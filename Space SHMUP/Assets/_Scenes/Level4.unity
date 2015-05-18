@@ -1759,10 +1759,10 @@ MonoBehaviour:
   controller: {fileID: 2032642642}
   m_szLastControllerName: High
   triggerType: 2
-  triggerThreshold: .5
+  triggerThreshold: .300000012
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  prefab: {fileID: 100000, guid: 58c75e3f67b33e541a4a1265707ee9c5, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &287205653
 MonoBehaviour:
@@ -1780,10 +1780,10 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
-  triggerThreshold: .409999996
+  triggerThreshold: .349999994
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  prefab: {fileID: 100000, guid: c7bdaf40d34037c49a95e4496f2e86a7, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &287205654
 MonoBehaviour:
@@ -1802,9 +1802,9 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .400000006
-  triggerReactivateDelay: .100000001
+  triggerReactivateDelay: .200000003
   triggerRandomReactivateDelay: 0
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  prefab: {fileID: 100000, guid: 58c75e3f67b33e541a4a1265707ee9c5, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &293926108
 GameObject:
@@ -4826,8 +4826,8 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -138.660004}
+  m_SizeDelta: {x: 200, y: 75}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &873712460
 MonoBehaviour:
@@ -6736,6 +6736,7 @@ MonoBehaviour:
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  shieldUpgradeOwned: 0
   target: {x: 0, y: 0, z: 0}
   tilt: 35
   velocityLag: 1
@@ -7323,6 +7324,8 @@ MonoBehaviour:
   spawnManager: {fileID: 618003408}
   fireworks: {fileID: 1245744467}
   ______________: 0
+  blasterOwned: 0
+  weaponrySet: 0
   activeWeaponTypes: 
   enemySpawnRate: 0
   timeAlive: 0
@@ -7624,8 +7627,8 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -46.5999985}
+  m_SizeDelta: {x: 200, y: 75}
   m_Pivot: {x: .5, y: .5}
 --- !u!115 &1668740135
 MonoScript:
@@ -7920,7 +7923,8 @@ MonoBehaviour:
   AsteroidSpawn7: {fileID: 832199941}
   AsteroidSpawn8: {fileID: 1884711946}
   AsteroidSpawn9: {fileID: 1211555146}
-  EnemySpawn1d1: {fileID: 0}
+  EnemySpawn0d1: {fileID: 0}
+  EnemySpawn1d1: {fileID: 602568935}
   EnemySpawn1d2: {fileID: 2010416242}
   EnemySpawn1d3: {fileID: 1767663932}
   EnemySpawn2d1: {fileID: 293926108}
@@ -8922,7 +8926,7 @@ MonoBehaviour:
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
   triggerType: 2
-  triggerThreshold: .150000006
+  triggerThreshold: .349999994
   triggerReactivateDelay: 2
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
@@ -8943,7 +8947,7 @@ MonoBehaviour:
   controller: {fileID: 2032642637}
   m_szLastControllerName: Mid
   triggerType: 2
-  triggerThreshold: .150000006
+  triggerThreshold: .300000012
   triggerReactivateDelay: .699999988
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
@@ -8964,8 +8968,8 @@ MonoBehaviour:
   controller: {fileID: 2032642642}
   m_szLastControllerName: High
   triggerType: 2
-  triggerThreshold: .200000003
-  triggerReactivateDelay: .5
+  triggerThreshold: .25
+  triggerReactivateDelay: 1
   triggerRandomReactivateDelay: 0
   prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}

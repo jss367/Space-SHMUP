@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using MadLevelManager;
 
 // AudioManager gives you various options for audio playback.
 // by BitsAlive
@@ -49,6 +50,8 @@ public class AudioManager : MonoBehaviour {
 	private bool stop = false;
 	private Color gizmoColor = new Color(0x75/255f, 0xa7/255f, 0xc3/255f);
 
+	public string currentLevel;
+
 	public float timeLimit;
 	
 	void Awake() {
@@ -63,6 +66,33 @@ public class AudioManager : MonoBehaviour {
 		audio2 = a[1];
 		audio1.loop = false;
 		audio2.loop = false;
+
+		currentLevel = MadLevel.currentLevelName;
+
+		switch (currentLevel) {
+		case "Level 1":
+			audioClip [0] = Resources.Load ("Music/1Mix") as AudioClip;
+			break;
+		case "Level 2":
+			audioClip [0] = Resources.Load ("Music/2-90-12M") as AudioClip;
+			break;
+		case "Level 3":
+			audioClip [0] = Resources.Load ("Music/3-120M") as AudioClip;
+			break;
+		case "Level 4":
+			audioClip [0] = Resources.Load ("Music/4-Sci-Fi") as AudioClip;
+			break;
+		case "Level 5":
+			audioClip [0] = Resources.Load ("Music/5Don't Stop") as AudioClip;
+			break;
+		case "Level 6":
+			audioClip [0] = Resources.Load ("Music/6Thumpette") as AudioClip;
+			break;
+		case "Level 7":
+			audioClip [0] = Resources.Load ("Music/7FunkyJunky") as AudioClip;
+			break;
+		}
+
 		
 		// check, the clips are assigned
 		if ((audioClip != null) && (audioClip.Count == 0)) {
