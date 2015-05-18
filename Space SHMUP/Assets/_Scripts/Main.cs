@@ -16,8 +16,8 @@ public class Main : MonoBehaviour {
 	public WeaponDefinition[]	weaponDefinitions;
 	public GameObject			prefabPowerUp;
 	public WeaponType[]			powerUpFrequency = new WeaponType[] {
-		WeaponType.ball,
 		WeaponType.blaster,
+		WeaponType.spread,
 		WeaponType.spread,
 		WeaponType.shield
 	};
@@ -37,6 +37,8 @@ public class Main : MonoBehaviour {
 
 
 	public bool ______________;
+
+	public bool blasterOwned = false;
 	
 	public WeaponType[]			activeWeaponTypes;
 	public float				enemySpawnRate; //Display between enemy spawns
@@ -120,8 +122,37 @@ public class Main : MonoBehaviour {
 		gameHasEnded = false;
 
 		currentLevel = MadLevel.currentLevelName;
+
+		CheckInventory ();
+		SetWeaponry ();
+		}
+
+	void CheckInventory(){
+		if ((Soomla.Store.StoreInventory.GetItemBalance("weapon_blaster") >= 1))
+		{
+			bool blasterOwned = true;
+			Debug.Log("Player owns a blaster");
+		}
 	}
 
+	void SetWeaponry() {
+		if (blasterOwned) {
+			powerUpFrequency = new WeaponType[] {
+//			WeaponType.spread,
+//			WeaponType.spread,
+			WeaponType.spread,
+			WeaponType.shield
+		};
+		} else {
+			powerUpFrequency = new WeaponType[] {
+				//			WeaponType.spread,
+				//			WeaponType.spread,
+				WeaponType.blaster,
+				WeaponType.shield
+
+			};
+	}
+	}
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
 		timeMultiplier = Time.timeSinceLevelLoad / 4;
