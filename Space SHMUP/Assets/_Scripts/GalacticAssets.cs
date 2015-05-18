@@ -61,42 +61,7 @@ namespace Soomla.Store.Example {
 			return new VirtualCategory[]{GENERAL_CATEGORY};
 		}
 
-		#region Public Functions
 
-//				
-//				public VirtualGood[] GetGoods()
-//				{
-//					return new[]
-//					{
-		//				Shield,
-		//				ShieldPack5,
-		//				NoAds,
-		//				Sword,
-		//				PlasmaGun,
-		//				SoomlaBotSidekick,
-		//				Armor,
-		//				SoomlaShirt,
-		//				SpartonixShirt,
-		//				Character1,
-		//				Character2,
-		//				ShieldDurability1,
-		//				ShieldDurability2,
-		//				ShieldDurability3,
-		//				ShieldDurability4,
-//		//				ShieldDurability5
-//					};
-//				}
-		
-		//		public VirtualCurrencyPack[] GetCurrencyPacks()
-		//		{
-		//			return new[] { CoinPack3, CoinPack5, CoinPack10 };
-		//		}
-		//		
-		//		public VirtualCategory[] GetCategories()
-		//		{
-		//			return new[] { WearableGearCategory };
-		//		}
-		#endregion
 		
 		/** Static Final Members **/
 		
@@ -217,31 +182,7 @@ namespace Soomla.Store.Example {
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            7));                           // Payment amount
-		
-//		/// <summary>
-//		/// An equipable armor that can be purchased for 7 coins.
-//		/// </summary>
-//		public static VirtualGood Armor = new EquippableVG(
-//			EquippableVG.EquippingModel.CATEGORY,   // Equipping Model
-//			"Armor",                                // Name
-//			"Increases you defense",                // Description
-//			ARMOR_PRODUCT_ID,                       // Item ID
-//			new PurchaseWithVirtualItem(            // Purchase type
-//		                            GALACTIC_CURRENCY.ItemId,                        // Virtual item to pay with
-//		                            7));                                // Payment amount
-//		
-//		/// <summary>
-//		/// An equipable shirt that can be purchased for 17 coins.
-//		/// </summary>
-//		public static VirtualGood SoomlaShirt = new EquippableVG(
-//			EquippableVG.EquippingModel.CATEGORY,   // Equipping Model
-//			"Soomla Shirt",                         // Name
-//			"Spread the word - Soomla's great!",    // Description
-//			SOOMLA_SHIRT_PRODUCT_ID,                // Item ID
-//			new PurchaseWithVirtualItem(            // Purchase type
-//		                            GALACTIC_CURRENCY.ItemId,                        // Virtual item to pay with
-//		                            17));                               // Payment amount
-		
+
 		/// <summary>
 		/// A playable character that can be purchased for 27 coins.
 		/// </summary>
@@ -268,16 +209,6 @@ namespace Soomla.Store.Example {
 		#endregion
 
 		#region Upgrades
-		/// <summary>
-		/// Upgrade shield durability level 1
-		/// </summary>
-//		public static VirtualGood ShieldUpgrade1 = CreateUpgrade(
-		//	SHIELD_DURABILITY_NAME,                         // Upgraded Item
-//			SHIELD_DURABILITY_PRODUCT_ID,   // Item ID
-//			SHIELD_DURABILITY_NAME + 3,     // Name
-//			SHIELD_DURABILITY_DESC,         // Decription
-//			1,                              // Level
-//			0);                             // Price (Costs 0 so it can be set as default)
 
 
 		public static VirtualGood ShieldUpgrade1 = new UpgradeVG(
@@ -304,81 +235,7 @@ namespace Soomla.Store.Example {
 		                            10));
 
 
-// dup for looking
-//		#region Private Functions
-//		private static VirtualGood CreateUpgrade(VirtualItem upgradedGood, string upgradeItemId, string upgradeName, string upgradeDescription, int level, int price, bool isLast = false)
-//		{
-//			var prevItemId = level > 1 ? upgradeItemId + (level - 1) : null;
-//			var nextItemId = isLast ? null : upgradeItemId + (level + 1);
-//			
-//			return new UpgradeVG(
-//				upgradedGood.ItemId,            // Good Item ID
-//				nextItemId,                     // Next Upgrade Item ID
-//				prevItemId,                     // Previous Upgrade Item ID
-//				upgradeName,                    // Name
-//				upgradeDescription + level,     // Description
-//				upgradeItemId + level,          // Item ID
-//				new PurchaseWithVirtualItem(    // Purchase type
-//			                            GALACTIC_CURRENCY.ItemId,                // Virtual item to pay with
-//			                            price)                      // Payment amount
-//				);
-//		}
-//		#endregion
 
-
-		/*public UpgradeVG(string goodItemId, string nextItemId, string prevItemId, string name, string description, string itemId, PurchaseType purchaseType)
-			: base(name, description, itemId, purchaseType)
-		{
-			this.GoodItemId = goodItemId;
-			this.PrevItemId = prevItemId;
-			this.NextItemId = nextItemId;
-		}*/
-
-//
-////		/// <summary>
-////		/// Upgrade shield durability level 2
-////		/// </summary>
-//		public static VirtualGood ShieldDurability2 = CreateUpgrade(
-//			Shield,                         // Upgraded Item
-//			SHIELD_DURABILITY_PRODUCT_ID,   // Item ID
-//			SHIELD_DURABILITY_NAME + 7,     // Name
-//			SHIELD_DURABILITY_DESC,         // Decription
-//			2,                              // Level
-//			12);                            // Price
-//		
-//		/// <summary>
-//		/// Upgrade shield durability level 3
-//		/// </summary>
-//		public static VirtualGood ShieldDurability3 = CreateUpgrade(
-//			Shield,                         // Upgraded Item
-//			SHIELD_DURABILITY_PRODUCT_ID,   // Item ID
-//			SHIELD_DURABILITY_NAME + 15,    // Name
-//			SHIELD_DURABILITY_DESC,         // Decription
-//			3,                              // Level
-//			30);                            // Price
-//		
-//		/// <summary>
-//		/// Upgrade shield durability level 4
-//		/// </summary>
-//		public static VirtualGood ShieldDurability4 = CreateUpgrade(
-//			Shield,                         // Upgraded Item
-//			SHIELD_DURABILITY_PRODUCT_ID,   // Item ID
-//			SHIELD_DURABILITY_NAME + 32,    // Name
-//			SHIELD_DURABILITY_DESC,         // Decription
-//			4,                              // Level
-//			80);                            // Price
-//		
-//		/// <summary>
-//		/// Upgrade shield durability level 5
-//		/// </summary>
-//		public static VirtualGood ShieldDurability5 = CreateUpgrade(
-//			Shield,                         // Upgraded Item
-//			SHIELD_DURABILITY_PRODUCT_ID,   // Item ID
-//			SHIELD_DURABILITY_NAME + 100,   // Name
-//			SHIELD_DURABILITY_DESC,         // Decription
-//			5,                              // Level
-//			200,                            // Price
-//			true);                          // Last 
 		#endregion
 
 		#region Private Functions
@@ -402,36 +259,6 @@ namespace Soomla.Store.Example {
 		#endregion
 		
 
-		
-		/** Virtual Goods **/
-		
-		//		public static VirtualGood BLASTER_GUN = new SingleUseVG(
-		//			"Blaster Gun",                                       		// name
-		//			"A more powerful weapon to fend off aliens", // description
-		//			"blaster_gun",                                       		// item id
-		//			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 225)); // the way this virtual good is purchased
-		
-		public static VirtualGood PAVLOVA_GOOD = new SingleUseVG(
-			"Pavlova",                                         			// name
-			"Gives customers a sugar rush and they call their friends", // description
-			"pavlova",                                          		// item id
-			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 175)); // the way this virtual good is purchased
-		
-		
-		public static VirtualGood CHOCLATECAKE_GOOD = new SingleUseVG(
-			"Chocolate Cake",                                   		// name
-			"A classic cake to maximize customer satisfaction",	 		// description
-			"chocolate_cake",                                   		// item id
-			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 250)); // the way this virtual good is purchased
-		
-		
-		public static VirtualGood CREAMCUP_GOOD = new SingleUseVG(
-			"Cream Cup",                                        		// name
-			"Increase bakery reputation with this original pastry",   	// description
-			"cream_cup",                                        		// item id
-			new PurchaseWithVirtualItem(GALACTIC_CURRENCY_ITEM_ID, 50));  // the way this virtual good is purchased
-		
-		
 		/** Virtual Categories **/
 		// The muffin rush theme doesn't support categories, so we just put everything under a general category.
 		public static VirtualCategory GENERAL_CATEGORY = new VirtualCategory(
