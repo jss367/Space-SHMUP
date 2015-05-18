@@ -39,6 +39,7 @@ public class Main : MonoBehaviour {
 	public bool ______________;
 
 	public bool blasterOwned = false;
+	public bool weaponrySet = false;
 	
 	public WeaponType[]			activeWeaponTypes;
 	public float				enemySpawnRate; //Display between enemy spawns
@@ -84,6 +85,7 @@ public class Main : MonoBehaviour {
 		}
 		//Assign the high score to GalacticHighScore
 		PlayerPrefs.SetInt ("GalacticHighScore", score);
+	
 
 	}
 
@@ -97,9 +99,10 @@ public class Main : MonoBehaviour {
 		//This will return a definition for WeaponType.none, which
 		// means it has failed to find the WeaponDefinition
 		return(new WeaponDefinition ());
-		
-	}
 	
+	}
+
+
 	void Start() {
 		activeWeaponTypes = new WeaponType[weaponDefinitions.Length];
 		for (int i = 0; i < weaponDefinitions.Length; i++) {
@@ -124,19 +127,24 @@ public class Main : MonoBehaviour {
 		currentLevel = MadLevel.currentLevelName;
 
 		CheckInventory ();
-		SetWeaponry ();
+
 		}
 
 	void CheckInventory(){
-		if ((Soomla.Store.StoreInventory.GetItemBalance("weapon_blaster") >= 1))
+//		Debug.Log ("At CheckInventory, blasterOwned is " + blasterOwned);
+		int spreads = Soomla.Store.StoreInventory.GetItemBalance ("weapon_blaster");
+		Debug.Log ("Number of spreads: " + spreads);
+		if ((spreads >= 1))
 		{
-			bool blasterOwned = true;
-			Debug.Log("Player owns a blaster");
+			blasterOwned = true;
+			Debug.Log("Player owns a spread");
 		}
 	}
 
 	void SetWeaponry() {
+		Debug.Log ("At SetWeaponry, blasterOwned is " + blasterOwned);
 		if (blasterOwned) {
+			Debug.Log("Setting weapon to spread");
 			powerUpFrequency = new WeaponType[] {
 //			WeaponType.spread,
 //			WeaponType.spread,
@@ -144,14 +152,17 @@ public class Main : MonoBehaviour {
 			WeaponType.shield
 		};
 		} else {
+			Debug.Log("Setting weapon to white");
 			powerUpFrequency = new WeaponType[] {
 				//			WeaponType.spread,
 				//			WeaponType.spread,
+
 				WeaponType.blaster,
 				WeaponType.shield
 
 			};
 	}
+		weaponrySet = true;
 	}
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
@@ -169,6 +180,10 @@ public class Main : MonoBehaviour {
 			Debug.Log("Setting new high score");
 			PlayerPrefs.SetInt ("GalacticHighScore", score);
 		}
+
+		if (!weaponrySet) {
+			SetWeaponry ();
+					}
 	}
 
 //	public void SpawnEnemy(){

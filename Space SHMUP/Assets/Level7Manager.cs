@@ -26,7 +26,7 @@ amount of points needed to get stars
 	
 	// Update is called once per frame
 	void Update () {
-		float timer = Time.timeSinceLevelLoad;
+//		float timer = Time.timeSinceLevelLoad;
 
 
 			//	Debug.Log("The time alive is " + main.timeAlive);

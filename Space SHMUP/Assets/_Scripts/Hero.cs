@@ -34,6 +34,7 @@ public class Hero : MonoBehaviour {
 	private int					ballRecall;
 
 	private bool				shieldCounter = true;
+	public bool					shieldUpgradeOwned = false;
 	
 	//Declare a new delegate type WeaponFireDelegate
 	public delegate void WeaponFireDelegate();
@@ -62,6 +63,7 @@ public class Hero : MonoBehaviour {
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
 		weapons [0].SetType (WeaponType.blaster);
+		CheckInventory ();
 	}
 
 	
@@ -69,8 +71,8 @@ public class Hero : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Pull in information from the Input class
-		float xAxis = Input.GetAxis ("Horizontal");
-		float yAxis = Input.GetAxis ("Vertical");
+//		float xAxis = Input.GetAxis ("Horizontal");
+//		float yAxis = Input.GetAxis ("Vertical");
 
 		Vector3? touchPos = null;
 
@@ -155,6 +157,15 @@ public class Hero : MonoBehaviour {
 
 		}
 
+	void CheckInventory(){
+		int shieldUpgrade = Soomla.Store.StoreInventory.GetItemBalance ("shield_1");
+		Debug.Log ("Shield upgrade: " + shieldUpgrade);
+		if ((shieldUpgrade >= 1))	{
+			shieldUpgradeOwned = true;
+			Debug.Log("Player owns shield upgrade");
+		}
+	}
+
 	//This variable holds a reference to the last triggering GameObject
 	public GameObject lastTriggerGo = null;
 
@@ -218,15 +229,18 @@ public class Hero : MonoBehaviour {
 //		}
 //		remainingDamageFrames = showDamageForFrames;
 //		Debug.Log ("The shield level is " + shieldLevel);
-		//if they have the shield upgrade:
-		if ((shieldCounter == true) && (shieldLevel != 0)) {
+		if (shieldUpgradeOwned) {
+			if ((shieldCounter == true) && (shieldLevel != 0)) {
 //			Debug.Log("Shield absorped the hit");
-			shieldCounter = false;
+				shieldCounter = false;
 //			Debug.Log("The shield counter is now " + shieldCounter);
-		} else {
+			} else {
 //			Debug.Log("Decreasing shield level");
+				shieldLevel--;
+				shieldCounter = true;
+			}
+		} else {  //If they don't have the shield upgrade
 			shieldLevel--;
-			shieldCounter = true;
 		}
 	}
 
