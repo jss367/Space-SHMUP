@@ -30,7 +30,7 @@ namespace Soomla {
 		public static void LogDebug(string tag, string message)
 		{
 			if (Debug.isDebugBuild && CoreSettings.DebugUnityMessages) {
-				Debug.Log(string.Format("{0} {1}", tag, message));
+//				Debug.Log(string.Format("{0} {1}", tag, message));
 			}
 		}
 

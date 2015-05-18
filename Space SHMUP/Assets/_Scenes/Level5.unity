@@ -3557,7 +3557,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
       propertyPath: audioClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: ed417737bac389341816b48d77f90ebd, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
       propertyPath: loop
       value: 0
@@ -3574,6 +3574,18 @@ Prefab:
       propertyPath: audioClip.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 351cd31d496460442b51cece243a4164, type: 3}
+    - target: {fileID: 8200000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: .150999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
+      propertyPath: playbackVolume
+      value: .526000023
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200002, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
   m_IsPrefabParent: 0
@@ -3852,7 +3864,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: Change Level
 --- !u!222 &611673461
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6736,6 +6748,7 @@ MonoBehaviour:
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  shieldUpgradeOwned: 0
   target: {x: 0, y: 0, z: 0}
   tilt: 35
   velocityLag: 1
@@ -7323,6 +7336,8 @@ MonoBehaviour:
   spawnManager: {fileID: 618003408}
   fireworks: {fileID: 1245744467}
   ______________: 0
+  blasterOwned: 0
+  weaponrySet: 0
   activeWeaponTypes: 
   enemySpawnRate: 0
   timeAlive: 0
@@ -7870,7 +7885,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1750600497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a353afd9ff46574596fc33857829b7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 67fc0c76fb4e0c34d92488d64cc77a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
@@ -7878,6 +7893,8 @@ MonoBehaviour:
   secondBreak: 0
   thirdBreak: 0
   timeLimit: 0
+  currentLevel: 
+  timer: 0
 --- !u!224 &1750600499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7920,6 +7937,7 @@ MonoBehaviour:
   AsteroidSpawn7: {fileID: 832199941}
   AsteroidSpawn8: {fileID: 1884711946}
   AsteroidSpawn9: {fileID: 1211555146}
+  EnemySpawn0d1: {fileID: 0}
   EnemySpawn1d1: {fileID: 602568935}
   EnemySpawn1d2: {fileID: 2010416242}
   EnemySpawn1d3: {fileID: 1767663932}

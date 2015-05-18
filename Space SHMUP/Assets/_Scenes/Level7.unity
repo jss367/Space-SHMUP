@@ -3557,7 +3557,7 @@ Prefab:
     - target: {fileID: 11400000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
       propertyPath: audioClip.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: bc95a633c7418204ea86dfc68533d91b, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
       propertyPath: loop
       value: 0
@@ -3574,6 +3574,18 @@ Prefab:
       propertyPath: audioClip.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 351cd31d496460442b51cece243a4164, type: 3}
+    - target: {fileID: 8200000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
+      propertyPath: reverbZoneMixCustomCurve.m_Curve.Array.data[0].value
+      value: .150999993
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
+      propertyPath: playbackVolume
+      value: .526000023
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200002, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2e38ecc4faf7b48bfad67afcc796160f, type: 2}
   m_IsPrefabParent: 0
@@ -3852,7 +3864,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: Change Level
 --- !u!222 &611673461
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6736,6 +6748,7 @@ MonoBehaviour:
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
+  shieldUpgradeOwned: 0
   target: {x: 0, y: 0, z: 0}
   tilt: 35
   velocityLag: 1
@@ -7107,6 +7120,99 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1518601334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1518601335}
+  - 114: {fileID: 1518601338}
+  - 114: {fileID: 1518601337}
+  - 114: {fileID: 1518601336}
+  m_Layer: 0
+  m_Name: EnemySpawn0-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1518601335
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518601334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -579.783386, y: -557.713196, z: 0}
+  m_LocalScale: {x: 1.00502515, y: 1.00502515, z: 1.00502515}
+  m_Children: []
+  m_Father: {fileID: 1945890358}
+  m_RootOrder: 0
+--- !u!114 &1518601336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518601334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .699999988
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1518601337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518601334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642637}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .699999988
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1518601338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1518601334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642642}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .5
+  triggerRandomReactivateDelay: 0
+  prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &1519938632
 GameObject:
   m_ObjectHideFlags: 0
@@ -7212,99 +7318,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1522393920}
---- !u!1 &1546842003
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1546842004}
-  - 114: {fileID: 1546842006}
-  - 114: {fileID: 1546842005}
-  - 114: {fileID: 1546842007}
-  m_Layer: 0
-  m_Name: EnemySpawn0-1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1546842004
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1546842003}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -579.783386, y: -557.713196, z: 0}
-  m_LocalScale: {x: 1.00502515, y: 1.00502515, z: 1.00502515}
-  m_Children: []
-  m_Father: {fileID: 1945890358}
-  m_RootOrder: 0
---- !u!114 &1546842005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1546842003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .100000001
-  triggerReactivateDelay: .5
-  triggerRandomReactivateDelay: 0
-  prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
---- !u!114 &1546842006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1546842003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .100000001
-  triggerReactivateDelay: .300000012
-  triggerRandomReactivateDelay: 0
-  prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
---- !u!114 &1546842007
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1546842003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .100000001
-  triggerReactivateDelay: .699999988
-  triggerRandomReactivateDelay: 0
-  prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &1601000345
 GameObject:
   m_ObjectHideFlags: 0
@@ -7417,6 +7430,7 @@ MonoBehaviour:
   fireworks: {fileID: 1245744467}
   ______________: 0
   blasterOwned: 0
+  weaponrySet: 0
   activeWeaponTypes: 
   enemySpawnRate: 0
   timeAlive: 0
@@ -7964,7 +7978,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1750600497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077e2c2346197e0499d10bbb7e277bb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 67fc0c76fb4e0c34d92488d64cc77a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
@@ -7972,6 +7986,8 @@ MonoBehaviour:
   secondBreak: 0
   thirdBreak: 0
   timeLimit: 0
+  currentLevel: 
+  timer: 0
 --- !u!224 &1750600499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8014,7 +8030,7 @@ MonoBehaviour:
   AsteroidSpawn7: {fileID: 832199941}
   AsteroidSpawn8: {fileID: 1884711946}
   AsteroidSpawn9: {fileID: 1211555146}
-  EnemySpawn0d1: {fileID: 1546842003}
+  EnemySpawn0d1: {fileID: 1518601334}
   EnemySpawn1d1: {fileID: 602568935}
   EnemySpawn1d2: {fileID: 2010416242}
   EnemySpawn1d3: {fileID: 1767663932}
@@ -8781,7 +8797,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1546842004}
+  - {fileID: 1518601335}
   - {fileID: 602568936}
   - {fileID: 2010416246}
   - {fileID: 1767663933}
