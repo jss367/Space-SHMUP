@@ -35,6 +35,8 @@ public class Hero : MonoBehaviour {
 
 	private bool				shieldCounter = true;
 	public bool					shieldUpgradeOwned = false;
+	public const string SHIELD_UPGRADE_1 = "shield_1";
+
 	
 	//Declare a new delegate type WeaponFireDelegate
 	public delegate void WeaponFireDelegate();
@@ -158,7 +160,8 @@ public class Hero : MonoBehaviour {
 		}
 
 	void CheckInventory(){
-		int shieldUpgrade = Soomla.Store.StoreInventory.GetItemBalance ("shield_1");
+		Debug.Log ("Checking inventory");
+		int shieldUpgrade = Soomla.Store.StoreInventory.GetItemBalance (SHIELD_UPGRADE_1);
 		Debug.Log ("Shield upgrade: " + shieldUpgrade);
 		if ((shieldUpgrade >= 1))	{
 			shieldUpgradeOwned = true;

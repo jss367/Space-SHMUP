@@ -42,9 +42,9 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualGood[] GetGoods() {
-			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, 
-				ShieldUpgrade1, ShieldUpgrade2, Shield, Sword};
-//			return new  VirtualGood[] {WEAPON_BLASTER, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, Shield};
+//			return new  VirtualGood[] {WEAPON_SPREAD, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, 
+//				ShieldUpgrade1, ShieldUpgrade2, Shield, Sword};
+			return new  VirtualGood[] {WEAPON_SPREAD, ShieldUpgrade, NO_ADS_LTVG};
 		}
 		
 		/// <summary>
@@ -103,7 +103,7 @@ namespace Soomla.Store.Example {
 		public const string GALACTIC_CURRENCY_ITEM_ID      = "galactic_currency"; //add the reverse domain?
 		// com.gleeza.galacticbeats.galactic_currency?
 		
-		public const string BLASTER_GUN_ITEM_ID = "weapon_blaster";
+		public const string SPREAD_GUN_ITEM_ID = "weapon_spread";
 		
 		public const string TENMUFF_PACK_PRODUCT_ID      = "android.test.refunded";
 		
@@ -447,16 +447,16 @@ namespace Soomla.Store.Example {
 			"no_ads",														// item id
 			new PurchaseWithMarket(NO_ADS_LIFETIME_PRODUCT_ID, 0.99));	// the way this virtual good is purchased
 		
-		public static VirtualGood WEAPON_BLASTER = new LifetimeVG(
-			"Blaster", 														// name
+		public static VirtualGood WEAPON_SPREAD = new LifetimeVG(
+			"Spreading Weapon", 														// name
 			"A more powerful weapon to fend off aliens",				 	// description
-			BLASTER_GUN_ITEM_ID,											// item id
+			SPREAD_GUN_ITEM_ID,											// item id
 			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 100));	// the way this virtual good is purchased
 
-		public static VirtualGood Shield = new LifetimeVG(
-			"Shield",                           // Name
+		public static VirtualGood ShieldUpgrade = new LifetimeVG(
+			"Shield Upgrade",                           // Name
 			"Shields you from aliens",        // Description
-			SHIELD_PRODUCT_ID,                  // Item ID
+			SHIELD_UPGRADE_1,                  // Item ID
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            150)                            // Payment amount

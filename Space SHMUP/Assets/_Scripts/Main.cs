@@ -34,11 +34,12 @@ public class Main : MonoBehaviour {
 	public Text prevBalanceText;
 	public GameObject spawnManager;
 	public GameObject fireworks;
+	public const string SPREAD_GUN_ITEM_ID = "weapon_spread";
 
 
 	public bool ______________;
 
-	public bool blasterOwned = false;
+	public bool spreadOwned = false;
 	public bool weaponrySet = false;
 	
 	public WeaponType[]			activeWeaponTypes;
@@ -131,20 +132,20 @@ public class Main : MonoBehaviour {
 		}
 
 	void CheckInventory(){
-//		Debug.Log ("At CheckInventory, blasterOwned is " + blasterOwned);
-		int spreads = Soomla.Store.StoreInventory.GetItemBalance ("weapon_blaster");
-		Debug.Log ("Number of spreads: " + spreads);
+		//		Debug.Log ("At CheckInventory, spreadOwned is " + spreadOwned);
+		int spreads = Soomla.Store.StoreInventory.GetItemBalance (SPREAD_GUN_ITEM_ID);
+//		Debug.Log ("Number of spreads: " + spreads);
 		if ((spreads >= 1))
 		{
-			blasterOwned = true;
-			Debug.Log("Player owns a spread");
+			spreadOwned = true;
+//			Debug.Log("Player owns a spread");
 		}
 	}
 
 	void SetWeaponry() {
-		Debug.Log ("At SetWeaponry, blasterOwned is " + blasterOwned);
-		if (blasterOwned) {
-			Debug.Log("Setting weapon to spread");
+		//		Debug.Log ("At SetWeaponry, spreadOwned is " + spreadOwned);
+		if (spreadOwned) {
+//			Debug.Log("Setting weapon to spread");
 			powerUpFrequency = new WeaponType[] {
 //			WeaponType.spread,
 //			WeaponType.spread,
@@ -152,7 +153,7 @@ public class Main : MonoBehaviour {
 			WeaponType.shield
 		};
 		} else {
-			Debug.Log("Setting weapon to white");
+//			Debug.Log("Setting weapon to white");
 			powerUpFrequency = new WeaponType[] {
 				//			WeaponType.spread,
 				//			WeaponType.spread,

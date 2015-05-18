@@ -42,7 +42,7 @@ namespace Soomla.Store.Example {
 		public float totTime	= 0.0f;
 		public bool greenCubeIAPOwned = false;
 
-
+		public const string SPREAD_GUN_ITEM_ID = "weapon_spread";
 
 
 		
@@ -161,8 +161,8 @@ namespace Soomla.Store.Example {
 		}
 
 		void CheckIAP_PurchaseStatus(){
-			Debug.Log (StoreInventory.GetItemBalance ("weapon_blaster"));
-			if ((StoreInventory.GetItemBalance("weapon_blaster") >= 1))
+			Debug.Log (StoreInventory.GetItemBalance (SPREAD_GUN_ITEM_ID));
+			if ((StoreInventory.GetItemBalance(SPREAD_GUN_ITEM_ID) >= 1))
 			    {
 				greenCubeIAPOwned = true;
 			}

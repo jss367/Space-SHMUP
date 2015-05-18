@@ -147,44 +147,73 @@ amount of points needed to get stars
 
 	void Update()
 	{
+//		Debug.Log("LevelManager thinks playerDead is " + Main.S.playerDead);
 		if (!Main.S.playerDead) {
-		timer = Time.timeSinceLevelLoad;
 
-		switch (currentLevel) {
-		case "Level 1":
-			Level1Update ();
-			break;
-		case "Level 2":
-			Level2Update ();
-			break;
-		case "Level 3":
-			Level3Update ();
-			break;
-		case "Level 4":
-			Level4Update ();
-			break;
-		case "Level 5":
-			Level5Update ();
-			break;
-		case "Level 6":
-			Level6Update ();
-			break;
-		case "Level 7":
-			Level7Update ();
-			break;
-		case "Level 8":
-			Level8Update ();
-			break;
-		case "Level 9":
-			Level9Update ();
-			break;
-		case "Level 10":
-			Level10Update ();
-			break;
+			timer = Time.timeSinceLevelLoad;
+
+			switch (currentLevel) {
+			case "Level 1":
+				Level1Update ();
+				break;
+			case "Level 2":
+				Level2Update ();
+				break;
+			case "Level 3":
+				Level3Update ();
+				break;
+			case "Level 4":
+				Level4Update ();
+				break;
+			case "Level 5":
+				Level5Update ();
+				break;
+			case "Level 6":
+				Level6Update ();
+				break;
+			case "Level 7":
+				Level7Update ();
+				break;
+			case "Level 8":
+				Level8Update ();
+				break;
+			case "Level 9":
+				Level9Update ();
+				break;
+			case "Level 10":
+				Level10Update ();
+				break;
 
 			}
+		} else {
+			StopSpawn();
 		}
 		}
+
+	void StopSpawn(){
+
+		SpawnManager.instance.AsteroidSpawn0.SetActive (false);
+		SpawnManager.instance.AsteroidSpawn1.SetActive (false);
+		SpawnManager.instance.AsteroidSpawn2.SetActive (false);
+		SpawnManager.instance.AsteroidSpawn3.SetActive (false);
+		SpawnManager.instance.AsteroidSpawn4.SetActive (false);
+		SpawnManager.instance.AsteroidSpawn5.SetActive (false);
+		SpawnManager.instance.AsteroidSpawn6.SetActive (false);
+		SpawnManager.instance.AsteroidSpawn7.SetActive (false);
+		SpawnManager.instance.AsteroidSpawn8.SetActive (false);
+		SpawnManager.instance.AsteroidSpawn9.SetActive (false);
+		SpawnManager.instance.EnemySpawn0d1.SetActive (false);
+		SpawnManager.instance.EnemySpawn1d1.SetActive (false);
+		SpawnManager.instance.EnemySpawn1d2.SetActive (false);
+		SpawnManager.instance.EnemySpawn1d3.SetActive (false);
+		SpawnManager.instance.EnemySpawn2d1.SetActive (false);
+		SpawnManager.instance.EnemySpawn3d1.SetActive (false);
+		SpawnManager.instance.EnemySpawn3d2.SetActive (false);
+		SpawnManager.instance.EnemySpawn4d3.SetActive (false);
+		SpawnManager.instance.EnemySpawn5d1.SetActive (false);
+
+
+	}
 
 	// Update is called once per frame
 	void Level1Update () {
