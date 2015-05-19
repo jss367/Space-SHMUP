@@ -202,7 +202,7 @@ public class Main : MonoBehaviour {
 //		Invoke ("SpawnEnemy", enemySpawnRate);
 //	}
 
-	public void ShipDestroyed( Enemy e) {
+	public void EnemyDestroyed( Enemy e) {
 		// Potentially generate a PowerUp
 		if (Random.value <= e.powerUpDropChance) {
 			//Random.value generates a value between 0 & 1 (through never == 1)
@@ -222,9 +222,9 @@ public class Main : MonoBehaviour {
 			
 			// Set it to the position of the destroyed ship
 			pu.transform.position = e.transform.position;
-			
-			AddScore(e.score);
 		}
+			AddScore(e.score);
+		
 	}
 
 
@@ -358,6 +358,7 @@ public class Main : MonoBehaviour {
 
 	public void AddScore (int newScoreValue)
 	{
+		Debug.Log ("Score has been updated");
 		score += newScoreValue;
 		//Track the high score
 //		if (score > HighScore.score) {
@@ -369,6 +370,7 @@ public class Main : MonoBehaviour {
 	
 	void UpdateScore ()
 	{
+//		Debug.Log ("Score has been updated");
 		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
 

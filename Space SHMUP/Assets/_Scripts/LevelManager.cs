@@ -148,7 +148,7 @@ amount of points needed to get stars
 	void Update()
 	{
 //		Debug.Log("LevelManager thinks playerDead is " + Main.S.playerDead);
-		if (!Main.S.playerDead) {
+		if (!Main.S.playerDead && !Main.S.playerWins) {
 
 			timer = Time.timeSinceLevelLoad;
 
@@ -191,7 +191,7 @@ amount of points needed to get stars
 		}
 
 	void StopSpawn(){
-
+		Debug.Log ("Spawning has stopped");
 		SpawnManager.instance.AsteroidSpawn0.SetActive (false);
 		SpawnManager.instance.AsteroidSpawn1.SetActive (false);
 		SpawnManager.instance.AsteroidSpawn2.SetActive (false);

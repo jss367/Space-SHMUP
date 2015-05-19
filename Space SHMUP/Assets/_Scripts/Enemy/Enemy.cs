@@ -135,7 +135,7 @@ public class Enemy : MonoBehaviour {
 			health -= Main.W_DEFS [p.type].damageOnHit;
 			if (health <= 0) {
 				// Tell the Main singleton that this ship has been destroyed
-				Main.S.ShipDestroyed(this);
+				Main.S.EnemyDestroyed(this);
 				// Destroy this Enemy
 				Destroy (this.gameObject);
 				Instantiate(enemyExplosion, transform.position, transform.rotation);
@@ -157,7 +157,7 @@ public class Enemy : MonoBehaviour {
 			health -= 1; // Asteroids do 10 worth of damage
 			if (health <= 0) {
 				// Tell the Main singleton that this ship has been destroyed
-			//	Main.S.ShipDestroyed(this);
+				//	Main.S.EnemyDestroyed(this);
 				// Destroy this Enemy
 				Destroy (this.gameObject);
 			}

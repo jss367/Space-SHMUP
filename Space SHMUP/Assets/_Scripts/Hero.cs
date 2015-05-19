@@ -160,12 +160,12 @@ public class Hero : MonoBehaviour {
 		}
 
 	void CheckInventory(){
-		Debug.Log ("Checking inventory");
+//		Debug.Log ("Checking inventory");
 //		int shieldUpgrade = Soomla.Store.StoreInventory.GetItemBalance (SHIELD_UPGRADE_1);
 //		Debug.Log ("Shield upgrade: " + shieldUpgrade);
 //		if ((shieldUpgrade >= 1))	{
 			shieldUpgradeOwned = true;
-			Debug.Log("Player owns shield upgrade");
+//			Debug.Log("Player owns shield upgrade");
 //		}
 	}
 
