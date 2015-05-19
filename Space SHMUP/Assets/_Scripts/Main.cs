@@ -28,13 +28,14 @@ public class Main : MonoBehaviour {
 	public Text			scoreText;
 	public Text 		highScoreText;
 	public Text			victoryText;
-	public Text currentAccountText;
-	public Text victoryBonusText;
-	public Text finalScoreText;
-	public Text prevBalanceText;
-	public GameObject spawnManager;
-	public GameObject fireworks;
-	public const string SPREAD_GUN_ITEM_ID = "weapon_spread";
+	public Text			currentAccountText;
+	public Text			victoryBonusText;
+	public Text			finalScoreText;
+	public Text			prevBalanceText;
+	public Text			popText;
+	public GameObject	spawnManager;
+	public GameObject	fireworks;
+	public const string	SPREAD_GUN_ITEM_ID = "weapon_spread";
 
 
 	public bool ______________;
@@ -117,6 +118,7 @@ public class Main : MonoBehaviour {
 		finalScoreText.enabled = false;
 		prevBalanceText.enabled = false;
 		victoryText.enabled = false;
+		popText.enabled = false;
 
 		score = 0;
 		UpdateScore ();
@@ -358,14 +360,21 @@ public class Main : MonoBehaviour {
 
 	public void AddScore (int newScoreValue)
 	{
-		Debug.Log ("Score has been updated");
+		StartCoroutine(PopText(newScoreValue.ToString(), 0.2f));
+//		Debug.Log ("Score has been updated");
 		score += newScoreValue;
 		//Track the high score
 //		if (score > HighScore.score) {
 //			HighScore.score = score;
 //		}
 		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
-		//UpdateScore ();
+	}
+
+	IEnumerator PopText(string message, float time){
+			popText.text = "+ " + message;
+			popText.enabled = true;
+			yield return new WaitForSeconds (time);
+			popText.enabled = false;
 	}
 	
 	void UpdateScore ()

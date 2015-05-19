@@ -191,7 +191,7 @@ amount of points needed to get stars
 		}
 
 	void StopSpawn(){
-		Debug.Log ("Spawning has stopped");
+//		Debug.Log ("Spawning has stopped");
 		SpawnManager.instance.AsteroidSpawn0.SetActive (false);
 		SpawnManager.instance.AsteroidSpawn1.SetActive (false);
 		SpawnManager.instance.AsteroidSpawn2.SetActive (false);
