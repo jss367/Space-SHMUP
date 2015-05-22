@@ -22,11 +22,10 @@ public class Enemy : MonoBehaviour {
 	public Vector3 boundsCenterOffset; //Distance of bounds.center from position
 
 	private float tMultiplier;
-//	private GameController gameController;
 	private Main main;
 
-//	public GameObject explosion;
 	public GameObject enemyExplosion;
+	public GameObject popText;
 	
 	void Awake() {
 		materials = Utils.GetAllMaterials (gameObject);
@@ -38,14 +37,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void Start() {
-		//gameController = GameObject.Find("GameController").GetComponent<GameController>();
 		GameObject gameControllerObject = GameObject.Find("GameController");
-	//	Debug.Log("gameControllerObject is: " + gameControllerObject);
-//		if (gameControllerObject != null) {
-//			gameController = gameControllerObject.GetComponent<GameController> ();
-//		}
-	//	Debug.Log("gameController is: " + gameController);
-
 		GameObject mainObject = GameObject.FindWithTag("MainCamera");
 		if (mainObject != null) {
 			main = mainObject.GetComponent<Main> ();
@@ -139,6 +131,7 @@ public class Enemy : MonoBehaviour {
 				// Destroy this Enemy
 				Destroy (this.gameObject);
 				Instantiate(enemyExplosion, transform.position, transform.rotation);
+				Instantiate(popText, transform.position, Quaternion.identity);
 			}
 			Destroy (other);
 			break;
@@ -195,6 +188,12 @@ public class Enemy : MonoBehaviour {
 	}
 	}
 
+//	void PopText(){
+//		Vector3 pos = Camera.main.WorldToScreenPoint (transform.position);
+//		pos.x = pos.x;
+//		pos.y = pos.y;
+//		Instantiate(popText, pos, Quaternion.identity);
+//	}
 
 	void ShowDamage() {
 		foreach (Material m in materials) {

@@ -342,11 +342,9 @@ public class Main : MonoBehaviour {
 		MadLevel.LoadLevelByName ("Level Select");
 	}
 
-//	public void AsteroidDestroyed(SU_Asteroid a) {
-//		AddScore (a.score);
-//	}
 
-	public void AsteroidDestroyed2(Asteroid a) {
+
+	public void AsteroidDestroyed(Asteroid a) {
 		AddScore (a.score);
 	}
 
@@ -375,6 +373,8 @@ public class Main : MonoBehaviour {
 			popText.enabled = true;
 			yield return new WaitForSeconds (time);
 			popText.enabled = false;
+//			Vector3 scre
+//		popText.transform.position
 	}
 	
 	void UpdateScore ()

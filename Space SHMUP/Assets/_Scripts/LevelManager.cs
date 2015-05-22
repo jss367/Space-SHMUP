@@ -11,6 +11,7 @@ public class LevelManager : MonoBehaviour {
 	public float timeLimit;
 	public string currentLevel;
 	public float timer;
+	public bool spawningStoppedToggle = false;
 	/*
 variables that should be changed by level:
 spawn breaks
@@ -148,7 +149,7 @@ amount of points needed to get stars
 	void Update()
 	{
 //		Debug.Log("LevelManager thinks playerDead is " + Main.S.playerDead);
-		if (!Main.S.playerDead && !Main.S.playerWins) {
+		if (!Main.S.playerDead && !Main.S.playerWins &&!spawningStoppedToggle) {
 
 			timer = Time.timeSinceLevelLoad;
 
@@ -191,6 +192,7 @@ amount of points needed to get stars
 		}
 
 	void StopSpawn(){
+		spawningStoppedToggle = true;
 //		Debug.Log ("Spawning has stopped");
 		SpawnManager.instance.AsteroidSpawn0.SetActive (false);
 		SpawnManager.instance.AsteroidSpawn1.SetActive (false);
@@ -422,8 +424,8 @@ amount of points needed to get stars
 		
 		//	Debug.Log("The time alive is " + main.timeAlive);
 		//	Debug.Log("The first break is " + firstBreak);
-		SpawnManager.instance.EnemySpawn0d1.SetActive(true);
-		
+//		SpawnManager.instance.EnemySpawn0d1.SetActive(true);
+		SpawnManager.instance.AsteroidSpawn0.SetActive(true);
 		
 		//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
 	}

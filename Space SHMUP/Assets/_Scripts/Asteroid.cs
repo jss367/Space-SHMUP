@@ -20,6 +20,8 @@ public class Asteroid : MonoBehaviour {
 	
 	
 	public GameObject explosion;
+	public GameObject popText;
+
 	
 	// Rotation speed
 	public float rotationSpeed = 200.0f;
@@ -100,8 +102,9 @@ public class Asteroid : MonoBehaviour {
 			}else if (go.tag == "ProjectileHero") {
 				Destroy(this.gameObject);
 				Destroy(go);
-				Main.S.AsteroidDestroyed2(this);
+				Main.S.AsteroidDestroyed(this);
 				Instantiate(explosion, transform.position, transform.rotation);
+				Instantiate(popText, transform.position, Quaternion.identity);
 			}else{
 				//Announce it
 				//				print ("Triggered: " + go.name);
@@ -134,6 +137,13 @@ public class Asteroid : MonoBehaviour {
 			}
 		}
 	}
+
+//	void PopText(){
+//		Vector3 pos = Camera.main.WorldToScreenPoint (transform.position);
+//		pos.x = pos.x;
+//		pos.y = pos.y;
+//		Instantiate(popText, pos, Quaternion.identity);
+//	}
 	
 	void ShowDamage() {
 		foreach (Material m in materials) {
