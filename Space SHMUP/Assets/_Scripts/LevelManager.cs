@@ -424,8 +424,8 @@ amount of points needed to get stars
 		
 		//	Debug.Log("The time alive is " + main.timeAlive);
 		//	Debug.Log("The first break is " + firstBreak);
-//		SpawnManager.instance.EnemySpawn0d1.SetActive(true);
-		SpawnManager.instance.AsteroidSpawn0.SetActive(true);
+		SpawnManager.instance.EnemySpawn0d1.SetActive(true);
+//		SpawnManager.instance.AsteroidSpawn0.SetActive(true);
 		
 		//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
 	}

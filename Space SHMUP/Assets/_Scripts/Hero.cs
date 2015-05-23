@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Soomla;
 
 public class Hero : MonoBehaviour {
 
@@ -21,6 +22,9 @@ public class Hero : MonoBehaviour {
 	public Weapon[]				weapons;
 
 	public bool _____________;
+
+	public const string	SPREAD_GUN_ITEM_ID = "weapon_spread";
+		public bool spreadOwned = false;
 
 	public Bounds				bounds;
 	private int					weaponCount;
@@ -62,11 +66,19 @@ public class Hero : MonoBehaviour {
 	}
 
 	void Start() {
+		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
+
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
-		weapons [0].SetType (WeaponType.blaster);
 		CheckInventory ();
-	}
+
+		if (spreadOwned == true) {
+			weapons [0].SetType (WeaponType.spread);
+		} else {
+
+			weapons [0].SetType (WeaponType.blaster);
+		}
+			}
 
 	
 
@@ -167,6 +179,15 @@ public class Hero : MonoBehaviour {
 			shieldUpgradeOwned = true;
 //			Debug.Log("Player owns shield upgrade");
 //		}
+//		//		Debug.Log ("At CheckInventory, spreadOwned is " + spreadOwned);
+		int spreads = Soomla.Store.StoreInventory.GetItemBalance (SPREAD_GUN_ITEM_ID);
+				Debug.Log ("Number of spreads: " + spreads);
+		if ((spreads >= 1))
+		{
+			spreadOwned = true;
+//			//			Debug.Log("Player owns a spread");
+		}
+
 	}
 
 	//This variable holds a reference to the last triggering GameObject

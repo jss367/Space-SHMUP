@@ -124,7 +124,7 @@ public class Main : MonoBehaviour {
 		UpdateScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 //		Debug.Log ("The song length is " + timeLimit);
-		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
+		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
 		gameHasEnded = false;
 
 		currentLevel = MadLevel.currentLevelName;
