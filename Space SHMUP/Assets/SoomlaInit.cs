@@ -21,16 +21,16 @@ public class SoomlaInit : MonoBehaviour {
 	void Start () {
 //			StoreEvents.
 
-			StoreEvents.OnSoomlaStoreInitialized += onSoomlaInitialized;
+//			StoreEvents.OnSoomlaStoreInitialized += onSoomlaInitialized;
 
 //			if (!StoreEvents.OnSoomlaStoreInitialized) {
-				SoomlaStore.Initialize (new Example.GalacticAssets ());
+//				SoomlaStore.Initialize (new Example.GalacticAssets ());
 			}
 //		}
 
-		void onSoomlaInitialized() {
-
-		}
+//		void onSoomlaInitialized() {
+//
+//		}
 
 }
 }

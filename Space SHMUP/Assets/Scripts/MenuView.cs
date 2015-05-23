@@ -61,7 +61,7 @@ public class MenuView : MonoBehaviour
     {
         ToggleMenuGameObjects();
 
-        BackButton.onClick.AddListener(NavigateToMainMenu);
+//        BackButton.onClick.AddListener(NavigateToMainMenu);
 
         instance = this;
 
