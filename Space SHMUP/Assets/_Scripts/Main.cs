@@ -57,7 +57,7 @@ public class Main : MonoBehaviour {
 	public float account;
 	public float coinsGained;
 
-	public bool gameHasEnded;
+	public bool gameHasEnded = false;
 	public bool playerWins = false;
 	public bool playerDead = false;
 	private int prevBalance;
@@ -83,13 +83,7 @@ public class Main : MonoBehaviour {
 		}
 
 
-//		// If the HighScore already exists, read it
-//		if (PlayerPrefs.HasKey ("GalacticHighScore")) {
-//			score = PlayerPrefs.GetInt ("GalacticHighScore");
-//		}
-//		//Assign the high score to GalacticHighScore
-//		PlayerPrefs.SetInt ("GalacticHighScore", score);
-	
+
 
 	}
 
@@ -127,17 +121,11 @@ public class Main : MonoBehaviour {
 		ResetScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 //		Debug.Log ("The song length is " + timeLimit);
-//		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
+		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
 		gameHasEnded = false;
 
 		currentLevel = MadLevel.currentLevelName;
 
-//		// If the HighScore already exists, read it
-//		if (PlayerPrefs.HasKey ("GalacticHighScore" + currentLevel)) {
-//			score = PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel);
-//		}
-//		//Assign the high score to GalacticHighScore
-//		PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
 
 		CheckInventory ();
 
@@ -182,17 +170,11 @@ public class Main : MonoBehaviour {
 		timeMultiplier = Time.timeSinceLevelLoad / 4;
 		if (!playerDead && !gameHasEnded && (timer > timeLimit + endGameDelay)){
 			PlayerWon();
-			gameHasEnded = true;
+
 
 		}
 
-//		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0);
-////		Debug.Log ("The score is " + score);
-//		// Update the high score if PlayerPrefs if necessary
-//		if (score > PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel)) {
-//			Debug.Log("Setting new high score");
-//			PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
-//		}
+
 
 		if (!weaponrySet) {
 			SetWeaponry ();
@@ -251,6 +233,7 @@ public class Main : MonoBehaviour {
 	}
 
 	public void GameOver() {
+		gameHasEnded = true;
 		Debug.Log("Game has ended");
 //		scoreText.enabled = false;
 		prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
@@ -405,11 +388,10 @@ public class Main : MonoBehaviour {
 	{
 		StartCoroutine(PopText(newScoreValue.ToString(), 0.2f));
 //		Debug.Log ("Score has been updated");
-		score += newScoreValue;
-		//Track the high score
-//		if (score > HighScore.score) {
-//			HighScore.score = score;
-//		}
+		if (!gameHasEnded) {
+			score += newScoreValue;
+		}
+
 		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
 
@@ -428,13 +410,7 @@ public class Main : MonoBehaviour {
 		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
 
-//	public void Restart(){
-//		
-//		//Reload scene to restart the game
-//		//Application.LoadLevel (Application.loadedLevel);
-//
-//	}
-	
+
 	public void RestartLevel()
 	{
 		//		Application.LoadLevel (Application.loadedLevel);
