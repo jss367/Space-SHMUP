@@ -6,16 +6,17 @@ fire rate in enemy and enemy weapon
 
 
 med:
-add toggles to all level manager updates
+
 set highscore by level
 angle asteroids ignoring shield, hitting player
 ship speed power ups
 boss scene in level 10?
-destory all game objects on end
+destroy all game objects on end
 fix shield upgrade problem
 go from store to main menu - remove profile option screen
 add settings with volume
 remove core and store prefabs from scenes
+asteroids blowing up off screen
 
 long:
 
@@ -44,3 +45,7 @@ new ship
 faster ship
 side shots
 more new weapons
+
+
+build process:
+comment out store init in main and hero

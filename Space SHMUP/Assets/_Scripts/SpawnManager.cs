@@ -32,6 +32,10 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject EnemySpawn3d2;
 	public GameObject EnemySpawn4d3;
 	public GameObject EnemySpawn5d1;
+	public GameObject Mid1;
+	public GameObject Mid2;
+	public GameObject Bass1;
+	public GameObject High1;
 
 	void Awake()
 	{

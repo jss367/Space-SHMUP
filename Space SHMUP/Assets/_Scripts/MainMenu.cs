@@ -75,6 +75,11 @@ namespace FMG
 				Constants.fadeInFadeOut(mainMenu,creditsMenu);
 			}
 
+			if(str.Equals("StoreBack"))
+			{
+				Constants.fadeInFadeOut(mainMenu,storeMenu);
+				
+			}
 			
 			if(str.Equals("OptionsBack"))
 			{

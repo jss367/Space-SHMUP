@@ -27,6 +27,7 @@ public class Main : MonoBehaviour {
 	public GameObject 	mainMenuButton;
 	public Text			scoreText;
 	public Text 		highScoreText;
+	public Text			newHighScoreText;
 	public Text			victoryText;
 	public Text			currentAccountText;
 	public Text			victoryBonusText;
@@ -81,12 +82,12 @@ public class Main : MonoBehaviour {
 		}
 
 
-		// If the HighScore already exists, read it
-		if (PlayerPrefs.HasKey ("GalacticHighScore")) {
-			score = PlayerPrefs.GetInt ("GalacticHighScore");
-		}
-		//Assign the high score to GalacticHighScore
-		PlayerPrefs.SetInt ("GalacticHighScore", score);
+//		// If the HighScore already exists, read it
+//		if (PlayerPrefs.HasKey ("GalacticHighScore")) {
+//			score = PlayerPrefs.GetInt ("GalacticHighScore");
+//		}
+//		//Assign the high score to GalacticHighScore
+//		PlayerPrefs.SetInt ("GalacticHighScore", score);
 	
 
 	}
@@ -119,6 +120,7 @@ public class Main : MonoBehaviour {
 		prevBalanceText.enabled = false;
 		victoryText.enabled = false;
 		popText.enabled = false;
+		newHighScoreText.enabled = false;
 
 		score = 0;
 		UpdateScore ();
@@ -128,6 +130,13 @@ public class Main : MonoBehaviour {
 		gameHasEnded = false;
 
 		currentLevel = MadLevel.currentLevelName;
+
+		// If the HighScore already exists, read it
+		if (PlayerPrefs.HasKey ("GalacticHighScore" + currentLevel)) {
+			score = PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel);
+		}
+		//Assign the high score to GalacticHighScore
+		PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
 
 		CheckInventory ();
 
@@ -176,12 +185,12 @@ public class Main : MonoBehaviour {
 
 		}
 
-		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("Highscore", 0);
+		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0);
 //		Debug.Log ("The score is " + score);
 		// Update the high score if PlayerPrefs if necessary
-		if (score > PlayerPrefs.GetInt ("GalacticHighScore")) {
+		if (score > PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel)) {
 			Debug.Log("Setting new high score");
-			PlayerPrefs.SetInt ("GalacticHighScore", score);
+			PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
 		}
 
 		if (!weaponrySet) {
@@ -350,9 +359,10 @@ public class Main : MonoBehaviour {
 
 	void StoreHighScore(int newHighScore){
 //		Debug.Log ("StoreHighScore has been called");
-		int oldHighScore = PlayerPrefs.GetInt ("Highscore", 0);
+		int oldHighScore = PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0);
 		if (newHighScore > oldHighScore) {
-			PlayerPrefs.SetInt ("Highscore", newHighScore);
+			PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, newHighScore);
+			newHighScoreText.enabled = true;
 		}
 	}
 
