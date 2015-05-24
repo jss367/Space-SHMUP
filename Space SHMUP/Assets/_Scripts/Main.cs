@@ -123,7 +123,7 @@ public class Main : MonoBehaviour {
 		newHighScoreText.enabled = false;
 
 		score = 0;
-		UpdateScore ();
+		ResetScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 //		Debug.Log ("The song length is " + timeLimit);
 		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
@@ -131,12 +131,12 @@ public class Main : MonoBehaviour {
 
 		currentLevel = MadLevel.currentLevelName;
 
-		// If the HighScore already exists, read it
-		if (PlayerPrefs.HasKey ("GalacticHighScore" + currentLevel)) {
-			score = PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel);
-		}
-		//Assign the high score to GalacticHighScore
-		PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
+//		// If the HighScore already exists, read it
+//		if (PlayerPrefs.HasKey ("GalacticHighScore" + currentLevel)) {
+//			score = PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel);
+//		}
+//		//Assign the high score to GalacticHighScore
+//		PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
 
 		CheckInventory ();
 
@@ -185,33 +185,19 @@ public class Main : MonoBehaviour {
 
 		}
 
-		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0);
-//		Debug.Log ("The score is " + score);
-		// Update the high score if PlayerPrefs if necessary
-		if (score > PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel)) {
-			Debug.Log("Setting new high score");
-			PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
-		}
+//		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0);
+////		Debug.Log ("The score is " + score);
+//		// Update the high score if PlayerPrefs if necessary
+//		if (score > PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel)) {
+//			Debug.Log("Setting new high score");
+//			PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
+//		}
 
 		if (!weaponrySet) {
 			SetWeaponry ();
 					}
 	}
 
-//	public void SpawnEnemy(){
-//		//Pick a random Enemy prefab to instantiate
-//		int ndx = Random.Range (0, prefabEnemies.Length);
-//		GameObject go = Instantiate (prefabEnemies [ndx]) as GameObject;
-//		//Position the Enemy above the screen with a random x position
-//		Vector3 pos = Vector3.zero;
-//		float xMin = Utils.camBounds.min.x + enemySpawnPadding;
-//		float xMax = Utils.camBounds.max.x - enemySpawnPadding;
-//		pos.x = Random.Range (xMin, xMax);
-//		pos.y = Utils.camBounds.max.y + enemySpawnPadding;
-//		go.transform.position = pos;
-//		//Call SpawnEnemy() again in a couple of seconds
-//		Invoke ("SpawnEnemy", enemySpawnRate);
-//	}
 
 	public void EnemyDestroyed( Enemy e) {
 		// Potentially generate a PowerUp
@@ -273,7 +259,7 @@ public class Main : MonoBehaviour {
 		restartButton.SetActive(true);
 		mainMenuButton.SetActive (true);
 		StoreHighScore (score);
-		highScoreText.enabled = true;
+
 		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";
 		prevBalanceText.enabled = true;
 		GivePoints ();
@@ -359,11 +345,16 @@ public class Main : MonoBehaviour {
 
 	void StoreHighScore(int newHighScore){
 //		Debug.Log ("StoreHighScore has been called");
-		int oldHighScore = PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0);
-		if (newHighScore > oldHighScore) {
-			PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, newHighScore);
+	
+		//		Debug.Log ("The score is " + score);
+		// Update the high score if PlayerPrefs if necessary
+		if (score > PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0)) {
+			Debug.Log("Setting new high score");
+			PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
 			newHighScoreText.enabled = true;
 		}
+		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0);
+		highScoreText.enabled = true;
 	}
 
 	public void AddScore (int newScoreValue)
@@ -387,7 +378,7 @@ public class Main : MonoBehaviour {
 //		popText.transform.position
 	}
 	
-	void UpdateScore ()
+	void ResetScore ()
 	{
 //		Debug.Log ("Score has been updated");
 		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
