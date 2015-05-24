@@ -43,6 +43,7 @@ public class Main : MonoBehaviour {
 
 	public bool spreadOwned = false;
 	public bool weaponrySet = false;
+	public bool pointsGiven = false;
 	
 	public WeaponType[]			activeWeaponTypes;
 	public float				enemySpawnRate; //Display between enemy spawns
@@ -126,7 +127,7 @@ public class Main : MonoBehaviour {
 		ResetScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 //		Debug.Log ("The song length is " + timeLimit);
-		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
+//		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
 		gameHasEnded = false;
 
 		currentLevel = MadLevel.currentLevelName;
@@ -236,8 +237,6 @@ public class Main : MonoBehaviour {
 	{
 		playerDead = true;
 		Debug.Log("Player lost the level!");
-//		Destroy (spawnManager, 5.0f);
-//		Destroy (fireworks, 5.0f);
 		GameOver ();
 	}
 	
@@ -246,44 +245,44 @@ public class Main : MonoBehaviour {
 		Debug.Log("Player beat the level!");
 		victoryText.enabled = true;
 		playerWins = true;
-//		Destroy (spawnManager);
-//		Destroy (fireworks);
-		GiveStars ();
+//		GiveStars ();
 		victoryBonusText.enabled = true;
 		GameOver ();
 	}
 
 	public void GameOver() {
-		scoreText.enabled = false;
+		Debug.Log("Game has ended");
+//		scoreText.enabled = false;
 		prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
-		restartButton.SetActive(true);
-		mainMenuButton.SetActive (true);
-		StoreHighScore (score);
-
 		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";
 		prevBalanceText.enabled = true;
+		restartButton.SetActive(true);
+		mainMenuButton.SetActive (true);
 		GivePoints ();
 	}
 
 	public void GivePoints(){
 //		try {
 
-		finalScoreText.text = "Game Score: " + score;
 		if (playerWins) {
-			GiveStars();
+//			GiveStars();
 			GiveVictoryBonus();
 			score += victoryBonus;
 			victoryBonusText.text = "Level Completion Bonus: " + victoryBonus;
 			}
-
-		Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
+		finalScoreText.text = "Final Score: " + score;
+		StoreHighScore (score);
+		if (!pointsGiven) {
+			Debug.Log("pointsGiven is " + pointsGiven);
+			Debug.Log("Rewarding points");
+//			Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
+			pointsGiven = true;
+		}
 		currentAccountText.text = "New Balance: " + (prevBalance + score) + " Coins";
 		currentAccountText.enabled = true;
 //		} catch (Exception e) {
 //			Debug.LogError ("SOOMLA/UNITY " + e.Message);
 //		}
-
-
 		finalScoreText.enabled = true;
 	}
 
@@ -293,31 +292,76 @@ public class Main : MonoBehaviour {
 		switch (currentLevel) {
 		case "Level 1":
 			victoryBonus = 200;
+			if (score > 100){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+			}
+			if (score > 500){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+			}
+			if (score > 1000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+			}
 			break;
 		case "Level 2":
 			victoryBonus = 400;
+			if (score > 100){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+			}
+			if (score > 500){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+			}
+			if (score > 1000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+			}
 			break;
 		case "Level 3":
 			victoryBonus = 600;
+			if (score > 100){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+			}
+			if (score > 500){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+			}
+			if (score > 1000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+			}
 			break;
 		case "Level 4":
 			victoryBonus = 800;
+			if (score > 100){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+			}
+			if (score > 500){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+			}
+			if (score > 1000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+			}
 			break;
 		default:
 			victoryBonus = 1000;
+			if (score > 100){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+			}
+			if (score > 500){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+			}
+			if (score > 1000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+			}
 			break;
 
 		}
-
-	}
-
-	public void GiveStars(){
-		//				MadLevelProfile.SetCompleted (currentLevel, true);
-		//		MadLevelProfile.SetPropertyEnabled (currentLevel, "star", true);
-		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
 		MadLevelProfile.Save ();
 	}
+
+//	public void GiveStars(){
+//		//				MadLevelProfile.SetCompleted (currentLevel, true);
+//		//		MadLevelProfile.SetPropertyEnabled (currentLevel, "star", true);
+//		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+//		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+//		MadLevelProfile.Save ();
+//	}
 
 //	public VirtualCurrencyPack[] GetCurrencyPacks() {
 ////		return new VirtualCurrencyPack[] {TENMUFF_PACK, FIFTYMUFF_PACK, FOURHUNDMUFF_PACK, THOUSANDMUFF_PACK};

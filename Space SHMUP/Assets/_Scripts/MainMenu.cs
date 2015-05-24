@@ -28,9 +28,10 @@ namespace FMG
 
 		public void onCommand(string str)
 		{
-			if(str.Equals("LevelSelect"))
+			if(str.Equals("Start"))
 			{
-				Debug.Log ("LevelSelect");
+				Debug.Log ("Start");
+				Constants.fadeInFadeOut(storeMenu,mainMenu);
 				Application.LoadLevel("LevelManager");
 				/*
 				if(useLevelSelect)
@@ -78,6 +79,7 @@ namespace FMG
 			if(str.Equals("StoreBack"))
 			{
 				Constants.fadeInFadeOut(mainMenu,storeMenu);
+				storeMenu.SetActive (false);
 				
 			}
 			

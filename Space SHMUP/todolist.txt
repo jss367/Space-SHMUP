@@ -1,23 +1,22 @@
 easy:
 
-fix credits - add models, code etc.
 high score includes finishing level bonus
 fire rate in enemy and enemy weapon
-
+remove store scene
 
 med:
 
-set highscore by level
+FIX SHIELD UPGRADE
+
 angle asteroids ignoring shield, hitting player
 ship speed power ups
 boss scene in level 10?
 destroy all game objects on end
 fix shield upgrade problem
-go from store to main menu - remove profile option screen
 add settings with volume
-remove core and store prefabs from scenes
 asteroids blowing up off screen
 make the obstacles appear based on the width of the screen, not fixed (30)
+when you lose you only see prev balance?
 
 long:
 
@@ -32,13 +31,7 @@ not yet:
 remove all instances of pavloa
 check boarders - check hero movement, camera visibility, asteroid.enemy spawning
 add new background
-
-
-
-soomla store initialized again when i restart level - is it needed in levels?
-stop spawns after game ends
-in level managers - no need to set something active every update
-
+fix credits - add models, code etc.
 
 
 upgrade - stronger shields, require two hits to destroy
@@ -50,3 +43,4 @@ more new weapons
 
 build process:
 comment out store init in main and hero
+remove core and store events in levels
