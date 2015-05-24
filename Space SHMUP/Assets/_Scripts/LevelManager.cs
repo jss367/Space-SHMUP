@@ -14,12 +14,7 @@ public class LevelManager : MonoBehaviour {
 	public bool spawningStoppedToggle = false;
 	public float startRepeating = 0.0f;
 	public float repeatFreq = 4.0f;
-	/*
-variables that should be changed by level:
-spawn breaks
-victorypoints
-amount of points needed to get stars
-*/
+
 	
 	//
 	void Start(){
