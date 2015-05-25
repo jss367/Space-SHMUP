@@ -9,6 +9,7 @@ public class BackgroundManager : MonoBehaviour {
 	public GameObject Level2Background;
 	public GameObject Level3Background;
 	public GameObject Level4Background;
+	public GameObject Level5Background;
 
 	void Start(){
 		
@@ -30,7 +31,7 @@ public class BackgroundManager : MonoBehaviour {
 			Level4Background.SetActive (true);
 			break;
 		case "Level 5":
-			Level2Background.SetActive (true);
+			Level5Background.SetActive (true);
 			break;
 		case "Level 6":
 			Level2Background.SetActive (true);

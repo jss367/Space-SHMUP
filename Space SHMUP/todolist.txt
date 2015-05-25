@@ -1,8 +1,5 @@
 easy:
 
-high score includes finishing level bonus
-fire rate in enemy and enemy weapon
-remove store scene
 
 med:
 
@@ -14,13 +11,12 @@ boss scene in level 10?
 destroy all game objects on end
 fix shield upgrade problem
 add settings with volume
-asteroids blowing up off screen
 make the obstacles appear based on the width of the screen, not fixed (30)
 using too many resources
-too much happening off screen
 fix image on google play
 make hero shots cooler
 enemy prefabs dont match script numbers
+fire rate in enemy and enemy weapon
 
 long:
 
@@ -30,13 +26,30 @@ MLM needs many clicks
 make player blink when hit
 
 
+start user with some coins:
+		public void onSoomlaStoreInitialized() {
+			
+			// some usage examples for add/remove currency
+            // some examples
+            if (StoreInfo.Currencies.Count>0) {
+                try {
+					StoreInventory.GiveItem(StoreInfo.Currencies[0].ItemId,4000);
+					SoomlaUtils.LogDebug("SOOMLA ExampleEventHandler", "Currency balance:" + StoreInventory.GetItemBalance(StoreInfo.Currencies[0].ItemId));
+                } catch (VirtualItemNotFoundException ex){
+                    SoomlaUtils.LogError("SOOMLA ExampleEventHandler", ex.Message);
+                }
+            }
+
+			ExampleWindow.GetInstance().setupItemsTextures();
+		}
+
 
 not yet:
 remove all instances of pavloa
 check boarders - check hero movement, camera visibility, asteroid.enemy spawning
 add new background
 fix credits - add models, code etc.
-
+remove store scene
 
 upgrade - stronger shields, require two hits to destroy
 new ship

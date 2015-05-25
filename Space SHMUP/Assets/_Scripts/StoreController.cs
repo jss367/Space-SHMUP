@@ -25,7 +25,7 @@ public class StoreController : BaseController
         MenuView.SetLoadingOverlayVisiblity(true);
 
 //		SoomlaStore.Initialize(new ExampleAssets());
-		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
+//		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
     }
 
     protected override void RegisterEvents()

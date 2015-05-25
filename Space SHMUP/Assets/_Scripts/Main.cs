@@ -82,10 +82,7 @@ public class Main : MonoBehaviour {
 			W_DEFS [def.type] = def;
 		}
 
-
-
-
-	}
+		}
 
 	static public WeaponDefinition GetWeaponDefinition (WeaponType wt) {
 		//Check to make sure that the key exists in the Dictionary
@@ -121,7 +118,7 @@ public class Main : MonoBehaviour {
 		ResetScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 //		Debug.Log ("The song length is " + timeLimit);
-		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
+//		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
 		gameHasEnded = false;
 
 		currentLevel = MadLevel.currentLevelName;
