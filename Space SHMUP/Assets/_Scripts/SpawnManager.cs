@@ -3,7 +3,9 @@ using System.Collections;
 
 public class SpawnManager : MonoBehaviour {
 
-	public static SpawnManager instance { get; private set; }
+		public static SpawnManager instance { get; private set; }
+	public float		spawnPadding = 1.5f;
+	public GameObject	LevelManager;
 
 	private Main main;
 
@@ -49,7 +51,9 @@ public class SpawnManager : MonoBehaviour {
 		if (mainObject != null) {
 			main = mainObject.GetComponent<Main> ();
 		}
-
+		Vector3 pos = Vector3.zero;
+		pos.y = Utils.camBounds.max.y + spawnPadding;
+		LevelManager.transform.position = pos;
 	
 	}
 

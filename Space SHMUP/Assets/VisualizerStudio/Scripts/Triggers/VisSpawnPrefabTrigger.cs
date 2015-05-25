@@ -8,6 +8,9 @@ using System.Collections;
 [AddComponentMenu("Visualizer Studio/Triggers/Spawn Prefab Trigger")]
 public class VisSpawnPrefabTrigger : VisBaseTrigger 
 {
+
+	public float spawnPadding = 1.5f;
+
     #region Defaults Static Class
 
     /// <summary>
@@ -88,6 +91,12 @@ public class VisSpawnPrefabTrigger : VisBaseTrigger
             Vector3 offset = new Vector3(UnityEngine.Random.Range(-randomOffset.x, randomOffset.x),
                                          UnityEngine.Random.Range(-randomOffset.y, randomOffset.y),
                                          UnityEngine.Random.Range(-randomOffset.z, randomOffset.z));
+
+
+			//Added the below
+			offset.x = UnityEngine.Random.Range(Utils.camBounds.min.x + spawnPadding, Utils.camBounds.max.x - spawnPadding);
+			//Added the above
+
 
             //spawn the new object
             Object newObj = Instantiate(prefab, transform.position + offset, transform.rotation);

@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3338916}
   - 23: {fileID: 2395208}
   - 111: {fileID: 11120040}
+  - 114: {fileID: 11459286}
   m_Layer: 20
   m_Name: Green Nebula
   m_TagString: SpaceScene_Nebula
@@ -86,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100440}
   m_LocalRotation: {x: .0783268884, y: -.0968602747, z: .626894653, w: .769081354}
-  m_LocalPosition: {x: 29.1454964, y: 173.850006, z: -924.393494}
+  m_LocalPosition: {x: -26.8999996, y: 210.300003, z: -924.393494}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 492176}
@@ -97,8 +98,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127148}
-  m_LocalRotation: {x: .0783268884, y: -.0968602747, z: .626894653, w: .769081354}
-  m_LocalPosition: {x: 63, y: 77, z: -960.200012}
+  m_LocalRotation: {x: -.0454106256, y: .136977911, z: -.63013494, w: -.76295805}
+  m_LocalPosition: {x: 321.600006, y: 528.799988, z: -725.200012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 492176}
@@ -240,6 +241,22 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &11459286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a17b0046114924e9ee6170313cde76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 200
+  rotationalAxis: {x: 0, y: 1, z: 0}
+  driftSpeed: -20
+  speedVariation: 0
+  driftAxis: {x: 0, y: 1, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
