@@ -255,7 +255,7 @@ public class Main : MonoBehaviour {
 		if (!pointsGiven) {
 			Debug.Log("pointsGiven is " + pointsGiven);
 			Debug.Log("Rewarding points");
-//			Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
+			Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
 			pointsGiven = true;
 		}
 		currentAccountText.text = "New Balance: " + (prevBalance + score) + " Coins";

@@ -79,7 +79,9 @@ public class StoreController : BaseController
 
         var balance = newBalance.HasValue ? newBalance.Value : currency.GetBalance();
 
-		BalanceLabel.text = balance + " " + currency.Name + "s";
+		if (BalanceLabel != null) {
+			BalanceLabel.text = balance + " " + currency.Name + "s";
+		}
     }
 
     private void OnUnexpectedErrorInStore(string error)
