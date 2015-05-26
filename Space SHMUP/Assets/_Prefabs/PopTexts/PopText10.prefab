@@ -26,7 +26,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 445110}
-  - 114: {fileID: 11494020}
+  - 114: {fileID: 11435696}
   m_Layer: 0
   m_Name: PopText10
   m_TagString: Untagged
@@ -85,6 +85,19 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &11435696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aae527fce964540b7eb2861574444c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popText: {fileID: 186940}
+  lifetime: .5
 --- !u!114 &11437780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,18 +140,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: +10
---- !u!114 &11494020
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73863fb8863b934438a9530210c45ba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: .25
 --- !u!222 &22294892
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -71,7 +71,7 @@ public class AudioManager : MonoBehaviour {
 
 		switch (currentLevel) {
 		case "Level 1":
-			audioClip [0] = Resources.Load ("Music/1Mix") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/60fullLt-fullRt-Mono-Stereo") as AudioClip;
 			break;
 		case "Level 2":
 			audioClip [0] = Resources.Load ("Music/2-90-12M") as AudioClip;

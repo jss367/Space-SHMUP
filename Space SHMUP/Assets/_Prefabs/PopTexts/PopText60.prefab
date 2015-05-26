@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 485268}
-  - 114: {fileID: 11442336}
+  - 114: {fileID: 11449968}
   m_Layer: 0
   m_Name: PopText60
   m_TagString: Untagged
@@ -64,18 +64,6 @@ Transform:
   - {fileID: 22464682}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11442336
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73863fb8863b934438a9530210c45ba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: .25
 --- !u!114 &11443462
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -102,6 +90,19 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: +60
+--- !u!114 &11449968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aae527fce964540b7eb2861574444c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popText: {fileID: 186920}
+  lifetime: .5
 --- !u!114 &11458500
 MonoBehaviour:
   m_ObjectHideFlags: 1

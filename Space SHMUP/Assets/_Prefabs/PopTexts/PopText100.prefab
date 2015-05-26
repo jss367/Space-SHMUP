@@ -43,7 +43,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 489756}
-  - 114: {fileID: 11404098}
+  - 114: {fileID: 11472346}
   m_Layer: 0
   m_Name: PopText100
   m_TagString: Untagged
@@ -64,18 +64,6 @@ Transform:
   - {fileID: 22473888}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!114 &11404098
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 198134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73863fb8863b934438a9530210c45ba3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifetime: .25
 --- !u!114 &11442890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,6 +127,19 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: +100
+--- !u!114 &11472346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aae527fce964540b7eb2861574444c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  popText: {fileID: 198134}
+  lifetime: .5
 --- !u!222 &22279796
 CanvasRenderer:
   m_ObjectHideFlags: 1
