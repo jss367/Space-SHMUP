@@ -43,14 +43,21 @@ public class SpawnManager : MonoBehaviour {
 	void Awake()
 	{
 		instance = this;
-		LevelManager = GameObject.Find ("LevelManager");
-		AsteroidSpawn0 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn0");
+//		LevelManager = GameObject.Find ("LevelManager");
+//		AsteroidSpawn0 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn0");
 		AsteroidSpawn1 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn1");
 		AsteroidSpawn2 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn2");
 		AsteroidSpawn3 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn3");
-		EnemySpawn0d1 = GameObject.Find ("LevelManager/AsteroidManager/EnemySpawn0d1");
-		EnemySpawn1d3 = GameObject.Find ("LevelManager/AsteroidManager/EnemySpawn1d3");
-
+		AsteroidSpawn4 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn4");
+		AsteroidSpawn5 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn5");
+		AsteroidSpawn6 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn6");
+		AsteroidSpawn7 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn7");
+		EnemySpawn0d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn0-1");
+		Debug.Log("AsteroidSpawn0 is " + AsteroidSpawn0);
+		EnemySpawn1d3 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn1-3");
+		EnemySpawn2d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn2-1");
+		EnemySpawn3d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn3-1");
+		Debug.Log("EnemySpawn1d3 is " + EnemySpawn1d3);
 
 	}
 
@@ -64,6 +71,9 @@ public class SpawnManager : MonoBehaviour {
 		pos.y = Utils.camBounds.max.y + spawnPadding;
 		LevelManager.transform.position = pos;
 	
+		Debug.Log("EnemySpawn0d1 is " + EnemySpawn0d1);
+		Debug.Log("EnemySpawn1d3 is " + EnemySpawn1d3);
+
 	}
 
 }

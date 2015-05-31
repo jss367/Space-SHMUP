@@ -53,7 +53,7 @@ public class Weapon : MonoBehaviour {
 
 	void Awake() {
 		collar = transform.Find ("Collar").gameObject;
-
+//		projectilePrefab = GameObject.Find
 	}
 
 	void Start() {
