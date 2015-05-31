@@ -82,6 +82,10 @@ public class Main : MonoBehaviour {
 			W_DEFS [def.type] = def;
 		}
 
+//		PopText = GameObject.Find ("Canvas/PopText");
+//		popText = GetComponent<
+//		popText = gameObject.GetComponent<popText> ();
+
 		}
 
 	static public WeaponDefinition GetWeaponDefinition (WeaponType wt) {

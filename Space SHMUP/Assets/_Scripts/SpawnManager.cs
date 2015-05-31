@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpawnManager : MonoBehaviour {
 
-		public static SpawnManager instance { get; private set; }
+	public static SpawnManager instance { get; private set; }
 	public float		spawnPadding = 1.5f;
 	public GameObject	LevelManager;
 
@@ -43,6 +43,15 @@ public class SpawnManager : MonoBehaviour {
 	void Awake()
 	{
 		instance = this;
+		LevelManager = GameObject.Find ("LevelManager");
+		AsteroidSpawn0 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn0");
+		AsteroidSpawn1 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn1");
+		AsteroidSpawn2 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn2");
+		AsteroidSpawn3 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn3");
+		EnemySpawn0d1 = GameObject.Find ("LevelManager/AsteroidManager/EnemySpawn0d1");
+		EnemySpawn1d3 = GameObject.Find ("LevelManager/AsteroidManager/EnemySpawn1d3");
+
+
 	}
 
 	// Use this for initialization

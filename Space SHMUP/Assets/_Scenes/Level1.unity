@@ -91,12 +91,6 @@ NavMeshSettings:
 Transform:
   m_PrefabParentObject: {fileID: 468872, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
   m_PrefabInternal: {fileID: 1475963407}
---- !u!114 &17727135 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20,
-    type: 2}
-  m_PrefabInternal: {fileID: 1475963407}
-  m_Script: {fileID: 11500000, guid: 8c1ee253300ca944b8980fcbad0d5ea0, type: 3}
 --- !u!1 &81409985
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,17 +120,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .300000012
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 162572dc07fb89342ab415798d5b98ac, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &81409989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,17 +142,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .300000012
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: eca46db2981c38648ab499b5cb1bb4dd, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &81409990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,17 +164,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .300000012
-  triggerReactivateDelay: .100000001
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 9d907913246f2be4fbdfae99a69c39cb, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &81409991
 Transform:
   m_ObjectHideFlags: 0
@@ -271,17 +265,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 9d907913246f2be4fbdfae99a69c39cb, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &134832546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,17 +287,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .409999996
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 162572dc07fb89342ab415798d5b98ac, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &134832547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,17 +309,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .100000001
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &195413496
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,17 +361,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .449999988
-  triggerReactivateDelay: 3
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &195413499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,17 +383,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .5
-  triggerReactivateDelay: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &195413500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,17 +405,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .449999988
-  triggerReactivateDelay: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &287205650
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,17 +457,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .300000012
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 1321e4e575bbc59468921a5e14be7167, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &287205653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -485,17 +479,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .349999994
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 9d907913246f2be4fbdfae99a69c39cb, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &287205654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,17 +501,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .200000003
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: eca46db2981c38648ab499b5cb1bb4dd, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &293926108
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,17 +553,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .300000012
-  triggerReactivateDelay: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &293926111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,17 +575,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .150000006
-  triggerReactivateDelay: .699999988
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &293926112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,17 +597,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &294710932
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,8 +637,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentLevel: 
   Level1Background: {fileID: 1225849019}
-  Level2Background: {fileID: 1018128617}
-  Level3Background: {fileID: 2050972926}
+  Level2Background: {fileID: 0}
+  Level3Background: {fileID: 0}
   Level4Background: {fileID: 0}
   Level5Background: {fileID: 0}
 --- !u!4 &294710934
@@ -666,12 +660,6 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 468872, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
   m_PrefabInternal: {fileID: 950137778}
---- !u!114 &339684828 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20,
-    type: 2}
-  m_PrefabInternal: {fileID: 950137778}
-  m_Script: {fileID: 11500000, guid: 8c1ee253300ca944b8980fcbad0d5ea0, type: 3}
 --- !u!1 &399248325
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,18 +706,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Final Score
 --- !u!222 &399248328
@@ -778,7 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundVolume: .5
-  ambientVolume: 2
+  ambientVolume: .5
   musicVolume: .5
 --- !u!1001 &434978735
 Prefab:
@@ -884,18 +872,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Previous Balance
 --- !u!222 &437795090
@@ -950,20 +938,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 2
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Score
+  m_Text: ScoreText
 --- !u!222 &538530829
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1155,17 +1143,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 9d907913246f2be4fbdfae99a69c39cb, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &591627915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,17 +1165,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .200000003
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &591627916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1199,17 +1187,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .150000006
-  triggerReactivateDelay: .100000001
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &602568935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1251,17 +1239,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .699999988
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &602568938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,17 +1261,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &602568939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1295,17 +1283,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .449999988
-  triggerReactivateDelay: .699999988
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &611673458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,20 +1340,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_Font: {fileID: 0}
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Change Level
+  m_Text: 
 --- !u!222 &611673461
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1450,17 +1438,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .200000003
-  triggerReactivateDelay: 3
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &618258552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1472,17 +1460,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .200000003
-  triggerReactivateDelay: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &618258553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,17 +1482,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .200000003
-  triggerReactivateDelay: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &622078982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,17 +1533,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 1
-  triggerThreshold: .150000006
-  triggerReactivateDelay: 2.0999999
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &622078988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1567,17 +1555,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 1
-  triggerThreshold: .150000006
-  triggerReactivateDelay: 3.5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &624416502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1625,20 +1613,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Touch to Move
+  m_Text: 
 --- !u!222 &624416505
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1661,12 +1649,6 @@ MonoBehaviour:
 Transform:
   m_PrefabParentObject: {fileID: 468872, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
   m_PrefabInternal: {fileID: 1634894339}
---- !u!114 &728624475 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20,
-    type: 2}
-  m_PrefabInternal: {fileID: 1634894339}
-  m_Script: {fileID: 11500000, guid: 8c1ee253300ca944b8980fcbad0d5ea0, type: 3}
 --- !u!1 &747386739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,18 +1695,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Victory Bonus
 --- !u!222 &747386742
@@ -1733,10 +1715,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747386739}
---- !u!1 &779440440 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 188048, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
-  m_PrefabInternal: {fileID: 1656032695}
 --- !u!115 &787962525
 MonoScript:
   m_ObjectHideFlags: 0
@@ -1793,17 +1771,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 1321e4e575bbc59468921a5e14be7167, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &832199946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1815,17 +1793,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .409999996
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: ca7dfded6c6c4de4890747790f072c4f, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &832199947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,17 +1815,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .300000012
-  triggerReactivateDelay: .100000001
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: eca46db2981c38648ab499b5cb1bb4dd, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!115 &867557817
 MonoScript:
   m_ObjectHideFlags: 0
@@ -1937,19 +1915,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 873712461}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1601000348}
-        m_MethodName: MainMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &873712461
@@ -1965,7 +1931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a32a6cc2cb803443983d45d4a513506, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2120,17 +2086,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
   triggerThreshold: .100000001
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &957893916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2142,17 +2108,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
   triggerThreshold: .100000001
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &957893917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2164,27 +2130,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
   triggerThreshold: .100000001
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &999635004 stripped
 Transform:
   m_PrefabParentObject: {fileID: 468872, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
   m_PrefabInternal: {fileID: 434978735}
---- !u!114 &999635005 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20,
-    type: 2}
-  m_PrefabInternal: {fileID: 434978735}
-  m_Script: {fileID: 11500000, guid: 8c1ee253300ca944b8980fcbad0d5ea0, type: 3}
 --- !u!115 &1000346433
 MonoScript:
   m_ObjectHideFlags: 0
@@ -2204,12 +2164,6 @@ MonoScript:
 Transform:
   m_PrefabParentObject: {fileID: 468872, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
   m_PrefabInternal: {fileID: 1303776319}
---- !u!114 &1001370970 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20,
-    type: 2}
-  m_PrefabInternal: {fileID: 1303776319}
-  m_Script: {fileID: 11500000, guid: 8c1ee253300ca944b8980fcbad0d5ea0, type: 3}
 --- !u!115 &1003831147
 MonoScript:
   m_ObjectHideFlags: 0
@@ -2271,20 +2225,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
+    m_Font: {fileID: 0}
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play Again
+  m_Text: 
 --- !u!222 &1010680352
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2341,10 +2295,6 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 492176, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
   m_PrefabInternal: {fileID: 1018128615}
---- !u!1 &1018128617 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 158442, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
-  m_PrefabInternal: {fileID: 1018128615}
 --- !u!1 &1029704286
 GameObject:
   m_ObjectHideFlags: 0
@@ -2385,17 +2335,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 1
-  triggerThreshold: .400000006
-  triggerReactivateDelay: 3.5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1029704289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2407,17 +2357,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 1
-  triggerThreshold: .349999994
-  triggerReactivateDelay: 2.0999999
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1075449969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,17 +2409,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .5
-  triggerReactivateDelay: 1
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1075449972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2481,17 +2431,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .5
-  triggerReactivateDelay: 1
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1075449973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2503,17 +2453,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1076551428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,7 +2511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a576eaaaa66ab6240878d59693e36e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothing: .25
+  smoothing: 0
 --- !u!114 &1076551431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2617,16 +2567,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
   triggerType: 4
-  triggerThreshold: .0299999993
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 141524, guid: 39e40a662b5c1654e945c40b44de2dec, type: 2}
+  prefab: {fileID: 0}
   randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1077611864
 MonoBehaviour:
@@ -2639,16 +2589,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
   triggerType: 4
-  triggerThreshold: .0299999993
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 103322, guid: ed76f9415963f8145899cdc01b3e4cc0, type: 2}
+  prefab: {fileID: 0}
   randomOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &1077611865
 Transform:
@@ -2705,7 +2655,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0613de7c68f248b7f48303e431342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyBoss: {fileID: 100008, guid: 6df519f47d09d7847b252086d10ccd6c, type: 2}
+  EnemyBoss: {fileID: 0}
 --- !u!1 &1203217074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,17 +2697,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .25
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 118438, guid: e03542d716aa9494a8fd8fbf82a9ff4c, type: 2}
-  randomOffset: {x: 40, y: 20, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1203217077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2769,17 +2719,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .25
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 0e6a8aaf08efb7d4c87fa7b0127ae518, type: 2}
-  randomOffset: {x: 40, y: 20, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1203217078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2791,17 +2741,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .25
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 8573911c03412f840ac06077f36f838e, type: 2}
-  randomOffset: {x: 40, y: 20, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1211555146
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,17 +2794,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .400000006
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 1321e4e575bbc59468921a5e14be7167, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1211555151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2866,17 +2816,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 1321e4e575bbc59468921a5e14be7167, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1211555152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2888,17 +2838,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .400000006
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: ca7dfded6c6c4de4890747790f072c4f, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1211555153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2910,17 +2860,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .449999988
-  triggerReactivateDelay: .100000001
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: ca7dfded6c6c4de4890747790f072c4f, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1225849019 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 127410, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
@@ -3006,20 +2956,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 5
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Value of your account
+  m_Text: New Balance
 --- !u!222 &1279128668
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3113,7 +3063,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1321484644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.2399998, y: -18, z: 0}
+  m_LocalPosition: {x: 0, y: -18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 573083516}
@@ -3145,7 +3095,7 @@ MonoBehaviour:
   minControllerValue: 0
   maxControllerValue: 1
   minPropertyValue: 1
-  maxPropertyValue: 2
+  maxPropertyValue: 3
   invertValue: 0
   targetProperty: 12
 --- !u!54 &1321484647
@@ -3175,16 +3125,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameRestartDelay: 2
-  speed: 25
+  speed: 30
   rollMult: -45
   pitchMult: 30
   _shieldLevel: 1
-  weapons:
-  - {fileID: 1001370970}
-  - {fileID: 339684828}
-  - {fileID: 999635005}
-  - {fileID: 17727135}
-  - {fileID: 728624475}
+  weapons: []
   _____________: 0
   spreadOwned: 0
   bounds:
@@ -3192,9 +3137,9 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   shieldUpgradeOwned: 0
   target: {x: 0, y: 0, z: 0}
-  tilt: 35
-  velocityLag: 1
-  dampingRadius: 1
+  tilt: 5
+  velocityLag: .300000012
+  dampingRadius: 2.5
   touchPad: {fileID: 1076551430}
   areaButton: {fileID: 1894540696}
   explosion: {fileID: 101830, guid: 636d59c9aae3df748bf707e341f61d09, type: 2}
@@ -3264,20 +3209,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 1
+    m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tap to Fire
+  m_Text: 
 --- !u!222 &1350260322
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3451,10 +3396,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d99d2a7afd4a4856b8b091c814944c3, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1466006539 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 138950, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
-  m_PrefabInternal: {fileID: 1656032695}
 --- !u!1 &1472638018
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,9 +3442,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: .39199999}
-  m_Sprite: {fileID: 21300000, guid: 6858abb4516aae344881bf286b3aac33, type: 3}
-  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3615,17 +3556,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .150000006
-  triggerReactivateDelay: .699999988
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
-  randomOffset: {x: 40, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1518601337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3637,17 +3578,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .150000006
-  triggerReactivateDelay: .699999988
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
-  randomOffset: {x: 40, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1518601338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3659,17 +3600,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .150000006
-  triggerReactivateDelay: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
-  randomOffset: {x: 40, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1522393920
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,20 +3657,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: High Score:10000
+  m_Text: Highscore
 --- !u!222 &1522393923
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3780,32 +3721,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPadding: 1.5
-  LevelManager: {fileID: 1563146444}
+  LevelManager: {fileID: 0}
   timeLimit: 0
-  AsteroidSpawn0: {fileID: 622078982}
-  AsteroidSpawn1: {fileID: 1029704286}
-  AsteroidSpawn2: {fileID: 1947368558}
-  AsteroidSpawn3: {fileID: 591627912}
-  AsteroidSpawn4: {fileID: 134832543}
-  AsteroidSpawn5: {fileID: 81409985}
-  AsteroidSpawn6: {fileID: 287205650}
-  AsteroidSpawn7: {fileID: 832199941}
-  AsteroidSpawn8: {fileID: 1884711946}
-  AsteroidSpawn9: {fileID: 1211555146}
-  EnemySpawn0d1: {fileID: 1518601334}
-  EnemySpawn1d1: {fileID: 602568935}
-  EnemySpawn1d2: {fileID: 2010416242}
-  EnemySpawn1d3: {fileID: 1767663932}
-  EnemySpawn2d1: {fileID: 293926108}
-  EnemySpawn3d1: {fileID: 1075449969}
-  EnemySpawn3d2: {fileID: 1813423194}
-  EnemySpawn4d3: {fileID: 618258549}
-  EnemySpawn5d1: {fileID: 195413496}
-  EnemySpawn10d1: {fileID: 1181907458}
-  Mid1: {fileID: 1203217074}
-  Mid2: {fileID: 2004367535}
-  Bass1: {fileID: 1711845062}
-  High1: {fileID: 1629855652}
+  AsteroidSpawn0: {fileID: 0}
+  AsteroidSpawn1: {fileID: 0}
+  AsteroidSpawn2: {fileID: 0}
+  AsteroidSpawn3: {fileID: 0}
+  AsteroidSpawn4: {fileID: 0}
+  AsteroidSpawn5: {fileID: 0}
+  AsteroidSpawn6: {fileID: 0}
+  AsteroidSpawn7: {fileID: 0}
+  AsteroidSpawn8: {fileID: 0}
+  AsteroidSpawn9: {fileID: 0}
+  EnemySpawn0d1: {fileID: 0}
+  EnemySpawn1d1: {fileID: 0}
+  EnemySpawn1d2: {fileID: 0}
+  EnemySpawn1d3: {fileID: 0}
+  EnemySpawn2d1: {fileID: 0}
+  EnemySpawn3d1: {fileID: 0}
+  EnemySpawn3d2: {fileID: 0}
+  EnemySpawn4d3: {fileID: 0}
+  EnemySpawn5d1: {fileID: 0}
+  EnemySpawn10d1: {fileID: 0}
+  Mid1: {fileID: 0}
+  Mid2: {fileID: 0}
+  Bass1: {fileID: 0}
+  High1: {fileID: 0}
 --- !u!114 &1563146447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3871,10 +3812,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f7c2249c750b24b84d0320a50611a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poi: {fileID: 1321484644}
-  panels:
-  - {fileID: 1466006539}
-  - {fileID: 779440440}
+  poi: {fileID: 0}
+  panels: []
   scrollSpeed: -30
   motionMult: .25
 --- !u!114 &1601000348
@@ -3888,44 +3827,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15097d9e30c0a9e4c92a7e020176405d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabEnemies:
-  - {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
-  - {fileID: 0}
-  - {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
-  - {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
-  - {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
-  enemySpawnPerSecond: 0
+  prefabEnemies: []
+  enemySpawnPerSecond: .5
   enemySpawnPadding: 1.5
-  weaponDefinitions:
-  - type: 1
-    letter: B
-    color: {r: .875, g: .875, b: .875, a: 1}
-    projectilePrefab: {fileID: 102180, guid: 45961147d3315c34fb868a414bf32755, type: 2}
-    projectileColor: {r: 1, g: 1, b: 1, a: 1}
-    damageOnHit: 1
-    continuousDamage: 0
-    delayBetweenShots: .200000003
-    velocity: 50
-  - type: 2
-    letter: S
-    color: {r: 0, g: .607843161, b: 1, a: 1}
-    projectilePrefab: {fileID: 102180, guid: 45961147d3315c34fb868a414bf32755, type: 2}
-    projectileColor: {r: 0, g: .635294139, b: 1, a: 1}
-    damageOnHit: 1
-    continuousDamage: 0
-    delayBetweenShots: .400000006
-    velocity: 50
-  - type: 6
-    letter: O
-    color: {r: 0, g: .838235259, b: 0, a: 1}
-    projectilePrefab: {fileID: 0}
-    projectileColor: {r: 1, g: 1, b: 1, a: 1}
-    damageOnHit: 0
-    continuousDamage: 0
-    delayBetweenShots: 0
-    velocity: 0
-  prefabPowerUp: {fileID: 194146, guid: be4cd12336d948f49914c26cde4c2bf0, type: 2}
-  powerUpFrequency: 01000000010000000200000006000000
+  weaponDefinitions: []
+  prefabPowerUp: {fileID: 0}
+  powerUpFrequency: 01000000020000000200000006000000
   restartButton: {fileID: 1665153584}
   mainMenuButton: {fileID: 873712458}
   scoreText: {fileID: 538530828}
@@ -3937,8 +3844,8 @@ MonoBehaviour:
   finalScoreText: {fileID: 399248327}
   prevBalanceText: {fileID: 437795089}
   popText: {fileID: 1615321328}
-  spawnManager: {fileID: 618003408}
-  fireworks: {fileID: 1245744467}
+  spawnManager: {fileID: 0}
+  fireworks: {fileID: 0}
   ______________: 0
   spreadOwned: 0
   weaponrySet: 0
@@ -3947,14 +3854,14 @@ MonoBehaviour:
   enemySpawnRate: 0
   timeAlive: 0
   timeMultiplier: 0
-  timeLimit: 213
+  timeLimit: 0
   account: 0
   coinsGained: 0
   gameHasEnded: 0
   playerWins: 0
   playerDead: 0
   currentLevel: 
-  victoryBonus: 2500
+  victoryBonus: 0
   endGameDelay: 2.5
 --- !u!124 &1601000349
 Behaviour:
@@ -4048,11 +3955,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 1
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
@@ -4061,7 +3968,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: + PopText
+  m_Text: 
 --- !u!222 &1615321329
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4108,17 +4015,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .200000003
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 7654002db07fbe24eb767d3d522b9ebf, type: 2}
-  randomOffset: {x: 40, y: 10, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1629855655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4130,17 +4037,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .200000003
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 58372289ffdfc644ab926d0fb3b03037, type: 2}
-  randomOffset: {x: 40, y: 5, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1634894339
 Prefab:
   m_ObjectHideFlags: 0
@@ -4329,7 +4236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a32a6cc2cb803443983d45d4a513506, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4503,17 +4410,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .200000003
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5fd02c4bd69bb92419e8afcd1317a5ff, type: 2}
-  randomOffset: {x: 40, y: 10, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1717561305
 GameObject:
   m_ObjectHideFlags: 0
@@ -4560,15 +4467,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 44
-    m_FontStyle: 3
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -4621,17 +4528,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
   triggerThreshold: .100000001
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1767663935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4643,17 +4550,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
   triggerThreshold: .100000001
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1767663937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4665,17 +4572,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
   triggerThreshold: .100000001
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1767835997
 GameObject:
   m_ObjectHideFlags: 0
@@ -4820,17 +4727,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .300000012
-  triggerReactivateDelay: 1
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1813423197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4842,17 +4749,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .400000006
-  triggerReactivateDelay: 1
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1813423198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4864,17 +4771,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .349999994
-  triggerReactivateDelay: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1001 &1828303490
 Prefab:
   m_ObjectHideFlags: 0
@@ -4962,17 +4869,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .449999988
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 1321e4e575bbc59468921a5e14be7167, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1884711949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4984,17 +4891,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 1321e4e575bbc59468921a5e14be7167, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1884711950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5006,17 +4913,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: ca7dfded6c6c4de4890747790f072c4f, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1894540694
 GameObject:
   m_ObjectHideFlags: 0
@@ -5137,20 +5044,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .6965518, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 44
-    m_FontStyle: 3
+    m_Font: {fileID: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New High Score!
+  m_Text: 
 --- !u!222 &1925373197
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5198,17 +5105,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .25
-  triggerReactivateDelay: .400000006
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1947368563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5220,17 +5127,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642640}
-  m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .340000004
-  triggerReactivateDelay: .5
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1947368564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5242,17 +5149,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .300000012
-  triggerReactivateDelay: .400000006
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2004367535
 GameObject:
   m_ObjectHideFlags: 0
@@ -5294,17 +5201,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .600000024
-  triggerReactivateDelay: 1
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 118438, guid: 9b1593601b6495e43a1448e574bcb312, type: 2}
-  randomOffset: {x: 40, y: 20, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &2004367538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5316,17 +5223,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .600000024
-  triggerReactivateDelay: 1
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: c8616d75b8669b04f9f04de26a3ae76c, type: 2}
-  randomOffset: {x: 40, y: 20, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &2004367539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5338,17 +5245,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .600000024
-  triggerReactivateDelay: 1
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: bfad28183774bce44a3bb082816fd37f, type: 2}
-  randomOffset: {x: 40, y: 20, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &2010416242
 GameObject:
   m_ObjectHideFlags: 0
@@ -5378,17 +5285,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .349999994
-  triggerReactivateDelay: 2
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &2010416244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5400,17 +5307,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642637}
-  m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .300000012
-  triggerReactivateDelay: .699999988
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &2010416245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5422,17 +5329,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 2032642639}
-  m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 2032642642}
-  m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .25
-  triggerReactivateDelay: 1
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: 
+  controller: {fileID: 0}
+  m_szLastControllerName: 
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 127914, guid: d2669c5b0251fb94d96e5c4aeb569cf2, type: 2}
-  randomOffset: {x: 30, y: 0, z: 0}
+  prefab: {fileID: 0}
+  randomOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &2010416246
 Transform:
   m_ObjectHideFlags: 0
@@ -5445,12 +5352,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 906798591}
   m_RootOrder: 2
---- !u!114 &2032642637 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11400010, guid: 991564944e0915648b7ecf0f9cbb13f5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1828303490}
-  m_Script: {fileID: 11500000, guid: 420914e93707e014ab7e9ce5fb41c4d3, type: 3}
 --- !u!114 &2032642639 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400006, guid: 991564944e0915648b7ecf0f9cbb13f5,
@@ -5460,12 +5361,6 @@ MonoBehaviour:
 --- !u!114 &2032642640 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400008, guid: 991564944e0915648b7ecf0f9cbb13f5,
-    type: 2}
-  m_PrefabInternal: {fileID: 1828303490}
-  m_Script: {fileID: 11500000, guid: 420914e93707e014ab7e9ce5fb41c4d3, type: 3}
---- !u!114 &2032642642 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11400014, guid: 991564944e0915648b7ecf0f9cbb13f5,
     type: 2}
   m_PrefabInternal: {fileID: 1828303490}
   m_Script: {fileID: 11500000, guid: 420914e93707e014ab7e9ce5fb41c4d3, type: 3}
@@ -5518,10 +5413,6 @@ Prefab:
 --- !u!4 &2050972925 stripped
 Transform:
   m_PrefabParentObject: {fileID: 402812, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
-  m_PrefabInternal: {fileID: 2050972924}
---- !u!1 &2050972926 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 128612, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
   m_PrefabInternal: {fileID: 2050972924}
 --- !u!1 &2087747234
 GameObject:

@@ -4,6 +4,8 @@ using MadLevelManager;
 
 public class BackgroundManager : MonoBehaviour {
 
+//	public static BackgroundManager instance { get; private set; }
+
 	public string currentLevel;
 	public GameObject Level1Background;
 	public GameObject Level2Background;
@@ -11,8 +13,16 @@ public class BackgroundManager : MonoBehaviour {
 	public GameObject Level4Background;
 	public GameObject Level5Background;
 
+	void Awake(){
+//		instance = this;
+//		Level1Background = GameObject.Find("BackgroundManager/Level1Background");	
+//		Level1Background = GameObject.Find("Level1Background");
+		Level3Background = GameObject.Find("Level3Background");
+	}
+
 	void Start(){
-		
+		Debug.Log ("Level1Background is " + Level1Background);
+
 		currentLevel = MadLevel.currentLevelName;
 
 		
