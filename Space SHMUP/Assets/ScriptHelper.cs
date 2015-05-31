@@ -19,6 +19,8 @@ public class ScriptHelper : MonoBehaviour {
 		ScoreText.color = Color.green;
 		ScoreText.fontSize = 24;
 		ScoreText.verticalOverflow = VerticalWrapMode.Overflow;
+		ScoreText.rectTransform.anchoredPosition = Vector2.zero;
+//		ScoreText.rectTransform.localPosition = Vector2(0,0);
 //		ScoreText.font = Font;
 	}
 	
