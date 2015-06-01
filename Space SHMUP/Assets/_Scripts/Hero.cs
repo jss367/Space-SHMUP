@@ -55,7 +55,7 @@ public class Hero : MonoBehaviour {
 	//Above is from Space Shooter
 
 	public SimpleTouchPad touchPad;
-	public SimpleTouchAreaButton areaButton;
+	public SimpleTouchAreaButton fireButton;
 
 	public GameObject explosion;
 	public GameObject enemyExplosion;
@@ -157,8 +157,8 @@ public class Hero : MonoBehaviour {
 		//Use the fireDelegate to fire Weapons
 		//First, make sure the Axis("Jump") button is pressed
 		//Then ensure that fireDelegate isn't null to avoid an error
-//		Debug.Log ("CanFire is set to " + areaButton.CanFire ());
-		if (areaButton.CanFire() && fireDelegate != null ) {
+//		Debug.Log ("CanFire is set to " + fireButton.CanFire ());
+		if (fireButton.CanFire() && fireDelegate != null ) {
 			fireDelegate ();
 		}
 	

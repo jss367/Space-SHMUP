@@ -680,6 +680,7 @@ GameObject:
   - 224: {fileID: 399248326}
   - 222: {fileID: 399248328}
   - 114: {fileID: 399248327}
+  - 114: {fileID: 399248329}
   m_Layer: 5
   m_Name: FinalScoreText
   m_TagString: Untagged
@@ -736,6 +737,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 399248325}
+--- !u!114 &399248329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399248325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e743ead5bce9d419eafed3ebca7a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 0}
+  FinalScoreText: {fileID: 0}
 --- !u!1 &431887221
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +938,6 @@ GameObject:
   - 224: {fileID: 538530827}
   - 222: {fileID: 538530829}
   - 114: {fileID: 538530828}
-  - 114: {fileID: 538530830}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -981,18 +994,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 538530826}
---- !u!114 &538530830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 538530826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50e743ead5bce9d419eafed3ebca7a06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScoreText: {fileID: 538530828}
 --- !u!1 &573083515
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,16 +1569,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
-  m_szLastVisManagerName: 
-  controller: {fileID: 0}
-  m_szLastControllerName: 
-  triggerType: 4
-  triggerThreshold: .100000001
-  triggerReactivateDelay: .25
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1732368107}
+  m_szLastControllerName: Mid
+  triggerType: 3
+  triggerThreshold: .25
+  triggerReactivateDelay: 2
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
   randomOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &622078988
 MonoBehaviour:
@@ -1590,16 +1591,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
-  m_szLastVisManagerName: 
-  controller: {fileID: 0}
-  m_szLastControllerName: 
-  triggerType: 4
-  triggerThreshold: .100000001
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1732368107}
+  m_szLastControllerName: Mid
+  triggerType: 3
+  triggerThreshold: 2.4000001
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
   randomOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &624416502
 GameObject:
@@ -1656,7 +1657,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -3199,7 +3200,7 @@ MonoBehaviour:
   velocityLag: .300000012
   dampingRadius: 2.5
   touchPad: {fileID: 1076551430}
-  areaButton: {fileID: 1894540696}
+  fireButton: {fileID: 1894540696}
   explosion: {fileID: 101830, guid: 636d59c9aae3df748bf707e341f61d09, type: 2}
   enemyExplosion: {fileID: 172662, guid: 0b461f2f00c26474db70e48f1893c723, type: 2}
   lastTriggerGo: {fileID: 0}
@@ -3269,7 +3270,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 0}
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -3280,7 +3281,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Tap to Fire
 --- !u!222 &1350260322
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4631,6 +4632,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1717561305}
+--- !u!114 &1732368107 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11400010, guid: 991564944e0915648b7ecf0f9cbb13f5,
+    type: 2}
+  m_PrefabInternal: {fileID: 1828303490}
+  m_Script: {fileID: 11500000, guid: 420914e93707e014ab7e9ce5fb41c4d3, type: 3}
 --- !u!1 &1767663932
 GameObject:
   m_ObjectHideFlags: 0
@@ -4738,6 +4745,7 @@ GameObject:
   - 223: {fileID: 1767836001}
   - 114: {fileID: 1767836000}
   - 114: {fileID: 1767835999}
+  - 114: {fileID: 1767836002}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4831,6 +4839,19 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+--- !u!114 &1767836002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1767835997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e743ead5bce9d419eafed3ebca7a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 538530828}
+  FinalScoreText: {fileID: 399248327}
 --- !u!1 &1813423194
 GameObject:
   m_ObjectHideFlags: 0
