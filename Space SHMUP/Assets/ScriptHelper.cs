@@ -27,6 +27,8 @@ public class ScriptHelper : MonoBehaviour {
 
 		FinalScoreText.verticalOverflow = VerticalWrapMode.Overflow;
 		ScoreText.verticalOverflow = VerticalWrapMode.Overflow;
+
+
 		ScoreText.rectTransform.anchoredPosition = Vector2.zero;
 
 //		ScoreText.rectTransform.localPosition = Vector2(0,0);

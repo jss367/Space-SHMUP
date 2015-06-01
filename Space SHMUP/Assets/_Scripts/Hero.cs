@@ -55,7 +55,7 @@ public class Hero : MonoBehaviour {
 	//Above is from Space Shooter
 
 	public SimpleTouchPad touchPad;
-	public SimpleTouchAreaButton fireButton;
+	public FireButton fireButton;
 
 	public GameObject explosion;
 	public GameObject enemyExplosion;
@@ -85,8 +85,8 @@ public class Hero : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Pull in information from the Input class
-//		float xAxis = Input.GetAxis ("Horizontal");
-//		float yAxis = Input.GetAxis ("Vertical");
+		float xAxis = Input.GetAxis ("Horizontal");
+		float yAxis = Input.GetAxis ("Vertical");
 
 		Vector3? touchPos = null;
 
@@ -286,7 +286,11 @@ public class Hero : MonoBehaviour {
 			case WeaponType.shield: // If it's the shield
 				shieldLevel++;
 				break;
-				
+
+			case WeaponType.speed:
+			speed += 5;
+			break;
+
 			default: // If it's any Weapon PowerUp
 				// Check the current weapon type
 				if (pu.type == weapons[0].type) {

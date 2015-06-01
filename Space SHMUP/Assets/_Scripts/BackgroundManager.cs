@@ -21,7 +21,7 @@ public class BackgroundManager : MonoBehaviour {
 	}
 
 	void Start(){
-		Debug.Log ("Level1Background is " + Level1Background);
+//		Debug.Log ("Level1Background is " + Level1Background);
 
 		currentLevel = MadLevel.currentLevelName;
 

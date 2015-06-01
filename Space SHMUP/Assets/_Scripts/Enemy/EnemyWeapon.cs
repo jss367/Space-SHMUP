@@ -16,7 +16,7 @@ public class EnemyWeapon : MonoBehaviour
 	void Fire ()
 	{
 		Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-//		Debug.Log ("Enemy ship has fired");
+		Debug.Log ("Enemy ship has fired");
 //		GetComponent<AudioSource>().Play();
 	}
 }

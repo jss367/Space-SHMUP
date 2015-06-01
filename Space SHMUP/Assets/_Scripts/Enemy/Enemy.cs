@@ -69,7 +69,8 @@ public class Enemy : MonoBehaviour {
 	
 	public virtual void Move(){
 		Vector3 tempPos = pos;
-		tempPos.y -= (tMultiplier + speed) * Time.deltaTime;
+//		float mod = Mathf.Sqrt
+		tempPos.y -= (tMultiplier + (speed*Mathf.Sqrt(.5f+(float)health))) * Time.deltaTime;
 		pos = tempPos;
 	}
 	

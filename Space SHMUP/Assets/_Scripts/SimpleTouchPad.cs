@@ -5,7 +5,7 @@ using System.Collections;
 
 public class SimpleTouchPad : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler {
 	
-	public float smoothing;
+	public float smoothing = 0.1f; 
 	
 	private Vector2 origin;
 	private Vector2 direction;
@@ -20,6 +20,7 @@ public class SimpleTouchPad : MonoBehaviour, IPointerDownHandler, IDragHandler, 
 	
 	public void OnPointerDown(PointerEventData data){
 		if (!touched) {
+//			Debug.Log("The touchpad has been touched");
 			// set our start point
 			origin = data.position;
 			pointerID = data.pointerId;
