@@ -183,7 +183,7 @@ public class Main : MonoBehaviour {
 	}
 
 
-	public void EnemyDestroyed( Enemy e) {
+	public void EnemyDestroyed( Enemy e, bool combo) {
 		// Potentially generate a PowerUp
 		if (Random.value <= e.powerUpDropChance) {
 			//Random.value generates a value between 0 & 1 (through never == 1)
@@ -204,8 +204,12 @@ public class Main : MonoBehaviour {
 			// Set it to the position of the destroyed ship
 			pu.transform.position = e.transform.position;
 		}
-			AddScore(e.score);
-		
+
+		if (combo) {
+			AddScore (e.score * 2);
+		} else {
+			AddScore (e.score);
+		}
 	}
 
 

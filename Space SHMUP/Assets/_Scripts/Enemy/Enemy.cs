@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour {
 	public int			showDamageForFrames = 2; // # of frames to show damage
 	public float		powerUpDropChance = 1f; // Chance to drop a power-up
 	public bool _________________;
+	private float lastTimeDestroyed = 0.0f;
+	public float comboTime = 1.0f;
 
 	public GameObject	impact;
 
@@ -26,6 +28,7 @@ public class Enemy : MonoBehaviour {
 
 	public GameObject enemyExplosion;
 	public GameObject popText;
+	public GameObject comboPopText;
 	
 	void Awake() {
 		materials = Utils.GetAllMaterials (gameObject);
@@ -127,12 +130,23 @@ public class Enemy : MonoBehaviour {
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
 			health -= Main.W_DEFS [p.type].damageOnHit;
 			if (health <= 0) {
-				// Tell the Main singleton that this ship has been destroyed
-				Main.S.EnemyDestroyed(this);
 				// Destroy this Enemy
 				Destroy (this.gameObject);
+				if (Time.time - lastTimeDestroyed < comboTime)
+				{
+					// Tell the Main singleton that this ship has been destroyed
+					Main.S.EnemyDestroyed(this, true);
+					Instantiate(comboPopText, transform.position, Quaternion.identity);
+				}
+				else {
+					// Tell the Main singleton that this ship has been destroyed
+					Main.S.EnemyDestroyed(this, false);
+					Instantiate(popText, transform.position, Quaternion.identity);
+				}
+				lastTimeDestroyed = Time.time;
+				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
 				Instantiate(enemyExplosion, transform.position, transform.rotation);
-				Instantiate(popText, transform.position, Quaternion.identity);
+			
 			}
 			Destroy (other);
 			break;
