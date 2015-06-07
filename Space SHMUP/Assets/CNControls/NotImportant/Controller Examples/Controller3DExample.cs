@@ -35,8 +35,9 @@ public class Controller3DExample : MonoBehaviour
     {
         var movement = new Vector3(
             MovementJoystick.GetAxis("Horizontal"),
-            0f,
-            MovementJoystick.GetAxis("Vertical"));
+        
+            MovementJoystick.GetAxis("Vertical")
+			, 0.0f);
 
         CommonMovementMethod(movement);
     }
@@ -45,8 +46,9 @@ public class Controller3DExample : MonoBehaviour
     {
         var movement = new Vector3(
             inputMovement.x,
-            0f,
-            inputMovement.y);
+          
+            inputMovement.y,
+            0.0f );
 
         CommonMovementMethod(movement);
     }
@@ -54,8 +56,8 @@ public class Controller3DExample : MonoBehaviour
     private void CommonMovementMethod(Vector3 movement)
     {
         movement = _mainCameraTransform.TransformDirection(movement);
-        movement.y = 0f;
-        movement.Normalize();
+        movement.z = 0f;
+//        movement.Normalize();
 
         FaceDirection(movement);
         _characterController.Move(movement * movementSpeed * Time.deltaTime);
@@ -74,10 +76,16 @@ public class Controller3DExample : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         do
         {
-            _playerTransform.rotation = Quaternion.Lerp(_playerTransform.rotation, lookRotation, Time.deltaTime * ROTATE_SPEED);
+//            _playerTransform.rotation = Quaternion.Lerp(_playerTransform.rotation, lookRotation, Time.deltaTime * ROTATE_SPEED);
             yield return null;
         }
         while ((direction - _playerTransform.forward).sqrMagnitude > 0.2f);
     }
+
+//	public Vector2 GetDirection() {
+//		smoothDirection = Vector2.MoveTowards (smoothDirection, direction, smoothing);
+//		//		Debug.Log ("The smoothDirection in SimpleTouchPad is " + smoothDirection);
+//		return smoothDirection;
+//	}
 
 }
