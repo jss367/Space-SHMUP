@@ -121,12 +121,12 @@ public class Hero : MonoBehaviour {
 		Vector3 desiredVelocity = offset.normalized * speed * dampening; // commented to try touchpad
 
 		//Trying touchpad below
-		Vector2 direction = touchPad.GetDirection ();
+//		Vector2 direction = touchPad.GetDirection ();
 //		Debug.Log ("The direction in Hero is " + direction);
 //		Debug.Log ("The x direction in Hero is " + direction.x);
-		Vector3 movement = new Vector3 (direction.x, direction.y, 0.0f);
+//		Vector3 movement = new Vector3 (direction.x, direction.y, 0.0f);
 //		Debug.Log ("The movement in Hero is " + movement);
-		GetComponent<Rigidbody>().velocity = movement * speed / 30;
+//		GetComponent<Rigidbody>().velocity = movement * speed / 30;
 		//Trying touchpad above
 
 //		Debug.Log ("The velocity is " + GetComponent<Rigidbody> ().velocity);
