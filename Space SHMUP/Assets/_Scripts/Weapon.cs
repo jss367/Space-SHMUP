@@ -99,12 +99,12 @@ public class Weapon : MonoBehaviour {
 			return;
 		}
 		Projectile p;
-		Debug.Log("Weapon is of type " + type);
+//		Debug.Log("Weapon is of type " + type);
 		switch (type) {
 			case WeaponType.blaster:
 			p = MakeProjectile ();
 			p.GetComponent<Rigidbody>().velocity = Vector3.up * def.velocity;
-			Debug.Log("Weapon was created with velocity " + def.velocity);
+//			Debug.Log("Weapon was created with velocity " + def.velocity);
 			break;
 			
 		case WeaponType.spread:
@@ -125,24 +125,24 @@ public class Weapon : MonoBehaviour {
 		}
 	}
 	public Projectile MakeProjectile() {
-		Debug.Log ("Making projectile for " + transform.parent.gameObject.tag);
+//		Debug.Log ("Making projectile for " + transform.parent.gameObject.tag);
 		GameObject go = Instantiate (def.projectilePrefab) as GameObject;
 		if (transform.parent.gameObject.tag == "Hero") {
 			go.tag = "ProjectileHero";
-			Debug.Log("go.tag is " + go.tag);
+//			Debug.Log("go.tag is " + go.tag);
 			go.layer = LayerMask.NameToLayer ("ProjectileHero");
-			Debug.Log("go.layer is " + go.layer);
+//			Debug.Log("go.layer is " + go.layer);
 		} else {
 			go.tag = "ProjectileEnemy";
 			go.layer = LayerMask.NameToLayer ("ProjectileEnemy");
 		}
 		go.transform.position = collar.transform.position;
-		Debug.Log ("go.transform.position is " + go.transform.position);
+//		Debug.Log ("go.transform.position is " + go.transform.position);
 		go.transform.parent = PROJECTILE_ANCHOR;
 		Projectile p = go.GetComponent<Projectile> ();
 		p.type = type;
 		lastShot = Time.time;
-		Debug.Log ("Last shot was at " + lastShot);
+//		Debug.Log ("Last shot was at " + lastShot);
 		return (p);
 	}
 }

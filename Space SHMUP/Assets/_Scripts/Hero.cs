@@ -157,10 +157,10 @@ public class Hero : MonoBehaviour {
 		//Use the fireDelegate to fire Weapons
 		//First, make sure the Axis("Jump") button is pressed
 		//Then ensure that fireDelegate isn't null to avoid an error
-		Debug.Log ("CanFire is set to " + fireButton.CanFire ());
+//		Debug.Log ("CanFire is set to " + fireButton.CanFire ());
 		if (fireButton.CanFire() && fireDelegate != null ) {
 			fireDelegate ();
-			Debug.Log("fireDelegate has been called");
+//			Debug.Log("fireDelegate has been called");
 		}
 	
 //		if (remainingDamageFrames > 0) {
@@ -182,7 +182,7 @@ public class Hero : MonoBehaviour {
 //		}
 //		//		Debug.Log ("At CheckInventory, spreadOwned is " + spreadOwned);
 		int spreads = Soomla.Store.StoreInventory.GetItemBalance (SPREAD_GUN_ITEM_ID);
-				Debug.Log ("Number of spreads: " + spreads);
+//				Debug.Log ("Number of spreads: " + spreads);
 		if ((spreads >= 1))
 		{
 			spreadOwned = true;
