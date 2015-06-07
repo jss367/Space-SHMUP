@@ -34,8 +34,8 @@ public class Main : MonoBehaviour {
 	public Text			finalScoreText;
 	public Text			prevBalanceText;
 	public Text			popText;
-	public GameObject	spawnManager;
-	public GameObject	fireworks;
+//	public GameObject	spawnManager;
+//	public GameObject	fireworks;
 	public const string	SPREAD_GUN_ITEM_ID = "weapon_spread";
 
 

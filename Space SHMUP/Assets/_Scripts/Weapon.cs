@@ -99,11 +99,12 @@ public class Weapon : MonoBehaviour {
 			return;
 		}
 		Projectile p;
-//		Debug.Log("Weapon is of type " + type);
+		Debug.Log("Weapon is of type " + type);
 		switch (type) {
 			case WeaponType.blaster:
 			p = MakeProjectile ();
 			p.GetComponent<Rigidbody>().velocity = Vector3.up * def.velocity;
+			Debug.Log("Weapon was created with velocity " + def.velocity);
 			break;
 			
 		case WeaponType.spread:

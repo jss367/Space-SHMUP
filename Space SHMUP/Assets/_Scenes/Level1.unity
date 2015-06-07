@@ -762,7 +762,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 308293535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.33685255, y: -2.5, z: 0}
+  m_LocalPosition: {x: -4.51631451, y: -2.5, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 396900309}
@@ -1824,10 +1824,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introTime: 5
---- !u!1 &683139932 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 168868, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
-  m_PrefabInternal: {fileID: 1303776319}
 --- !u!4 &728624474 stripped
 Transform:
   m_PrefabParentObject: {fileID: 468872, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
@@ -3227,11 +3223,11 @@ Prefab:
     - target: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
       propertyPath: collar
       value: 
-      objectReference: {fileID: 683139932}
+      objectReference: {fileID: 0}
     - target: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
       propertyPath: def.projectilePrefab
       value: 
-      objectReference: {fileID: 102180, guid: 45961147d3315c34fb868a414bf32755, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
   m_IsPrefabParent: 0
@@ -4036,19 +4032,28 @@ MonoBehaviour:
   enemySpawnPadding: 1.5
   weaponDefinitions:
   - type: 1
-    letter: 
-    color: {r: 0, g: 0, b: 0, a: 0}
+    letter: B
+    color: {r: .889705896, g: .889705896, b: .889705896, a: 1}
     projectilePrefab: {fileID: 102180, guid: 45961147d3315c34fb868a414bf32755, type: 2}
-    projectileColor: {r: 0, g: 0, b: 0, a: 0}
-    damageOnHit: 0
+    projectileColor: {r: 1, g: 1, b: 1, a: 1}
+    damageOnHit: 1
     continuousDamage: 0
-    delayBetweenShots: 0
-    velocity: 0
+    delayBetweenShots: .200000003
+    velocity: 50
   - type: 2
     letter: 
-    color: {r: 0, g: 0, b: 0, a: 0}
+    color: {r: 0, g: .607843161, b: 1, a: 1}
     projectilePrefab: {fileID: 100000, guid: 631e35e51d32cdf42be80b1f40be5d21, type: 2}
-    projectileColor: {r: 0, g: 0, b: 0, a: 0}
+    projectileColor: {r: 0, g: .607843161, b: 1, a: 1}
+    damageOnHit: 1
+    continuousDamage: 0
+    delayBetweenShots: .400000006
+    velocity: 50
+  - type: 6
+    letter: O
+    color: {r: 0, g: 1, b: 0, a: 1}
+    projectilePrefab: {fileID: 0}
+    projectileColor: {r: 1, g: 1, b: 1, a: 1}
     damageOnHit: 0
     continuousDamage: 0
     delayBetweenShots: 0
@@ -4066,8 +4071,6 @@ MonoBehaviour:
   finalScoreText: {fileID: 399248327}
   prevBalanceText: {fileID: 437795089}
   popText: {fileID: 1615321328}
-  spawnManager: {fileID: 0}
-  fireworks: {fileID: 0}
   ______________: 0
   spreadOwned: 0
   weaponrySet: 0

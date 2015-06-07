@@ -1824,10 +1824,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   introTime: 5
---- !u!1 &683139932 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 168868, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
-  m_PrefabInternal: {fileID: 1303776319}
 --- !u!4 &728624474 stripped
 Transform:
   m_PrefabParentObject: {fileID: 468872, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
@@ -3227,11 +3223,11 @@ Prefab:
     - target: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
       propertyPath: collar
       value: 
-      objectReference: {fileID: 683139932}
+      objectReference: {fileID: 0}
     - target: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
       propertyPath: def.projectilePrefab
       value: 
-      objectReference: {fileID: 102180, guid: 45961147d3315c34fb868a414bf32755, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
   m_IsPrefabParent: 0
