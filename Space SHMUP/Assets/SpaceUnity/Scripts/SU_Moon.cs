@@ -46,7 +46,7 @@ public class SU_Moon : MonoBehaviour {
 	void Update () {		
 		// Orbit around the planet at orbitSpeed
 		if (_cacheTransform != null) {
-			_cacheTransform.Rotate(Vector3.up * orbitSpeed * Time.deltaTime);
+			_cacheTransform.Rotate(Vector3.forward * orbitSpeed * Time.deltaTime);
 		}
 		
 		// Rotate around own axis

@@ -97,9 +97,9 @@ public class AudioManager : MonoBehaviour {
 		case "Level 9":
 			audioClip [0] = Resources.Load ("Music/9Roboskater_48") as AudioClip;
 			break;
-//		case "Level 10":
-//			audioClip [0] = Resources.Load ("Music/10ChecksForFree") as AudioClip;
-//			break;
+		case "Level 10":
+			audioClip [0] = Resources.Load ("Music/10Cresc_48") as AudioClip;
+			break;
 		}
 
 		
