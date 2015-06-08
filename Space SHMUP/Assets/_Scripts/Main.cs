@@ -103,6 +103,7 @@ public class Main : MonoBehaviour {
 
 
 	void Start() {
+		spreadOwned = true;
 		activeWeaponTypes = new WeaponType[weaponDefinitions.Length];
 		for (int i = 0; i < weaponDefinitions.Length; i++) {
 			activeWeaponTypes [i] = weaponDefinitions [i].type;
