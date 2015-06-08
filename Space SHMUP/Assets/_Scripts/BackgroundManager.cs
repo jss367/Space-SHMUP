@@ -17,7 +17,7 @@ public class BackgroundManager : MonoBehaviour {
 //		instance = this;
 //		Level1Background = GameObject.Find("BackgroundManager/Level1Background");	
 //		Level1Background = GameObject.Find("Level1Background");
-		Level3Background = GameObject.Find("Level3Background");
+//		Level3Background = GameObject.Find("Level3Background");
 	}
 
 	void Start(){

@@ -20,15 +20,29 @@
 using UnityEngine;
 using System.Collections;
 
+
+
 public class SU_Planet : MonoBehaviour {
 	// Planet rotation vector specifying axis and rotational speed
 	public Vector3 planetRotation;
 	// Private variables
 	private Transform _cacheTransform;
+	private bool isTimer = true;
+	private float timeLimit;
+	private float speed;
 	
 	void Start () {
 		// Cache reference to transform to improve performance
 		_cacheTransform = transform;	
+
+		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+
+		if (isTimer) {
+			Vector3 pos = transform.position;
+			pos.y = 30.0f;
+			transform.position = pos;
+			speed = 65.0f/timeLimit;
+		}
 	}
 	
 	void Update () {
@@ -36,6 +50,20 @@ public class SU_Planet : MonoBehaviour {
 		if (_cacheTransform != null) {			
 			_cacheTransform.Rotate(planetRotation * Time.deltaTime);
 		}
+
+
+	}
+
+	void FixedUpdate(){
+		if (isTimer) {
+
+			Vector3 pos = transform.position;
+			pos.y -= speed * .02f;
+			transform.position = pos;
+		}
+
+
+
 	}
 
 }

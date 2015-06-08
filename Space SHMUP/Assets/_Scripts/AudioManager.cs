@@ -71,31 +71,31 @@ public class AudioManager : MonoBehaviour {
 
 		switch (currentLevel) {
 		case "Level 1":
-			audioClip [0] = Resources.Load ("Music/60fullLt-fullRt-Mono-Stereo") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/1Mix_48") as AudioClip;
 			break;
 		case "Level 2":
-			audioClip [0] = Resources.Load ("Music/2-90-12M") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/2_90-12Remix_48") as AudioClip;
 			break;
 		case "Level 3":
-			audioClip [0] = Resources.Load ("Music/3ChecksForFree") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/3ChecksForFree_48") as AudioClip;
 			break;
 		case "Level 4":
-			audioClip [0] = Resources.Load ("Music/4Sci-Fi") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/4Sci-Fi_48") as AudioClip;
 			break;
 		case "Level 5":
-			audioClip [0] = Resources.Load ("Music/5Ectoplasm") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/5Ectoplasm_48") as AudioClip;
 			break;
 		case "Level 6":
-			audioClip [0] = Resources.Load ("Music/6Thumpette") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/6Thumpette_48") as AudioClip;
 			break;
 		case "Level 7":
-			audioClip [0] = Resources.Load ("Music/7FunkyJunky") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/7FunkyJunky_48") as AudioClip;
 			break;
 		case "Level 8":
-			audioClip [0] = Resources.Load ("Music/8-120M") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/8_120_48") as AudioClip;
 			break;
 		case "Level 9":
-			audioClip [0] = Resources.Load ("Music/9Roboskater") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/9Roboskater_48") as AudioClip;
 			break;
 //		case "Level 10":
 //			audioClip [0] = Resources.Load ("Music/10ChecksForFree") as AudioClip;
