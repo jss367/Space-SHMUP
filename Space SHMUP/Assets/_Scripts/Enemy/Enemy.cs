@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour {
 	public Bounds bounds; //The Bounds of this and its children
 	public Vector3 boundsCenterOffset; //Distance of bounds.center from position
 
-	private float tMultiplier;
+//	private float tMultiplier;
 	private Main main;
 
 	public GameObject enemyExplosion;
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour {
 
 		if (main != null) {
 			//	Debug.Log("gameController does exist");
-			tMultiplier = main.timeMultiplier;
+//			tMultiplier = main.timeMultiplier;
 			//Debug.Log (tMultiplier);
 		}
 		if (main == null) {
@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour {
 	public virtual void Move(){
 		Vector3 tempPos = pos;
 //		float mod = Mathf.Sqrt
-		tempPos.y -= (tMultiplier + (speed*Mathf.Sqrt(.5f+(float)health))) * Time.deltaTime;
+		tempPos.y -= (speed/5*2*Mathf.Sqrt(.5f+(float)health)) * Time.deltaTime;
 		pos = tempPos;
 	}
 	

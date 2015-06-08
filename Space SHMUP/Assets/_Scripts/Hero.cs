@@ -66,8 +66,8 @@ public class Hero : MonoBehaviour {
 	}
 
 	void Start() {
-		spreadOwned = true; //TEMP
-		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
+		//		spreadOwned = true; // comment out for builds
+//		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
 
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();

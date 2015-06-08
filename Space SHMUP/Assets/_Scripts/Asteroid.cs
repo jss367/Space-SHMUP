@@ -57,8 +57,7 @@ public class Asteroid : MonoBehaviour {
 	}
 	
 	void Update () {
-		//		tMultiplier = main.timeMultiplier;
-		
+
 		if (transform != null) {
 			// Rotate around own axis
 			transform.Rotate(rotationalAxis * (rotationSpeed) * Time.deltaTime);

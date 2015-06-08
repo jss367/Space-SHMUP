@@ -154,7 +154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &173484
 GameObject:
   m_ObjectHideFlags: 1
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6614fa1f3aaba446b4fa9e61b1c615d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbitSpeed: 20
+  orbitSpeed: 25
   rotationSpeed: 0
 --- !u!114 &11426048
 MonoBehaviour:
@@ -2807,7 +2807,7 @@ ParticleSystem:
         rgba: 4294967295
       minMaxState: 0
     startSize:
-      scalar: 37.5
+      scalar: 25
       maxCurve:
         serializedVersion: 2
         m_Curve:

@@ -205,7 +205,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 294710934}
   - 114: {fileID: 294710933}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: BackgroundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,7 +288,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 308293535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.625, y: -2.5, z: 0}
+  m_LocalPosition: {x: -6.89833069, y: -2.5, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 396900309}
@@ -429,7 +429,7 @@ GameObject:
   - 4: {fileID: 411605840}
   - 33: {fileID: 411605842}
   - 23: {fileID: 411605841}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: MoonObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1249,7 +1249,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 920586089}
   - 114: {fileID: 920586090}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: MoonLowPoly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1291,7 +1291,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 949606412}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: Galaxy
   m_TagString: SpaceScene_Galaxy
   m_Icon: {fileID: 0}
@@ -1386,7 +1386,7 @@ GameObject:
   - 111: {fileID: 953512281}
   - 114: {fileID: 953512280}
   - 135: {fileID: 953512279}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: PlanetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1627,6 +1627,30 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 127148, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 100440, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 120508, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 145820, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 189154, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 158442, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
   m_IsPrefabParent: 0
@@ -1815,7 +1839,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1167166507}
   - 114: {fileID: 1167166508}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PlanetLowPoly
   m_TagString: SpaceScene_Planet
   m_Icon: {fileID: 0}
@@ -1889,17 +1913,49 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 480028, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1
+    - target: {fileID: 173484, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 480028, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 110950, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 19879992, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
-      propertyPath: InitialModule.startSize.scalar
-      value: 25
+    - target: {fileID: 116798, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 102014, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 162180, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 136620, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 162464, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 119192, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 139262, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 182424, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 168828, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 168828, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
       propertyPath: m_IsActive
@@ -1924,7 +1980,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1260927806}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: Level4Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2094,7 +2150,7 @@ GameObject:
   - 33: {fileID: 1316515216}
   - 23: {fileID: 1316515215}
   - 111: {fileID: 1316515214}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: GalaxyObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2441,11 +2497,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ba3e663b077e7401a83d69fff7548944, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ba3e663b077e7401a83d69fff7548944, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba3e663b077e7401a83d69fff7548944, type: 2}
@@ -2889,11 +2945,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5d99d2a7afd4a4856b8b091c814944c3, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5d99d2a7afd4a4856b8b091c814944c3, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d99d2a7afd4a4856b8b091c814944c3, type: 2}
@@ -3028,7 +3084,7 @@ GameObject:
   - 33: {fileID: 1512903554}
   - 23: {fileID: 1512903553}
   - 111: {fileID: 1512903552}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: Nebula
   m_TagString: SpaceScene_Nebula
   m_Icon: {fileID: 0}
@@ -3255,6 +3311,7 @@ MonoBehaviour:
     velocity: 0
   prefabPowerUp: {fileID: 194146, guid: be4cd12336d948f49914c26cde4c2bf0, type: 2}
   powerUpFrequency: 01000000020000000200000006000000
+  earthReward: {fileID: 100000, guid: 8addb9b9f5f7348a4b04d27d952efd21, type: 2}
   restartButton: {fileID: 1665153584}
   mainMenuButton: {fileID: 873712458}
   scoreText: {fileID: 538530828}
@@ -3273,7 +3330,6 @@ MonoBehaviour:
   activeWeaponTypes: 
   enemySpawnRate: 0
   timeAlive: 0
-  timeMultiplier: 0
   timeLimit: 0
   account: 0
   coinsGained: 0
@@ -3406,7 +3462,7 @@ GameObject:
   - 33: {fileID: 1619792764}
   - 23: {fileID: 1619792763}
   - 111: {fileID: 1619792762}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: GalaxyObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3573,6 +3629,26 @@ Prefab:
     - target: {fileID: 127410, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 165874, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 124322, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 188048, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 127410, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 138950, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
@@ -4016,7 +4092,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 991564944e0915648b7ecf0f9cbb13f5, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 991564944e0915648b7ecf0f9cbb13f5, type: 2}
       propertyPath: audioSource
@@ -4244,7 +4320,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2026482461}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: Galaxy
   m_TagString: SpaceScene_Galaxy
   m_Icon: {fileID: 0}
@@ -4342,6 +4418,50 @@ Prefab:
     - target: {fileID: 11495734, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
       propertyPath: planetRotation.x
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 133760, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 123722, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 156452, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 161972, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 120060, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 120858, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 136668, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 180324, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 182862, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 185242, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 128612, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
