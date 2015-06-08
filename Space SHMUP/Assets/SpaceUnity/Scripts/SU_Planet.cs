@@ -27,7 +27,7 @@ public class SU_Planet : MonoBehaviour {
 	public Vector3 planetRotation;
 	// Private variables
 	private Transform _cacheTransform;
-	private bool isTimer = true;
+	public bool isTimer = true;
 	private float timeLimit;
 	private float speed;
 	
