@@ -40,6 +40,7 @@ public class Hero : MonoBehaviour {
 	private bool				shieldCounter = true;
 	public bool					shieldUpgradeOwned = false;
 	public const string SHIELD_UPGRADE_1 = "shield_1";
+	public bool isInvincible;
 
 	
 	//Declare a new delegate type WeaponFireDelegate
@@ -67,7 +68,7 @@ public class Hero : MonoBehaviour {
 
 	void Start() {
 		//		spreadOwned = true; // comment out for builds
-//		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
+		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
 
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
@@ -243,7 +244,7 @@ public class Hero : MonoBehaviour {
 		set {
 			_shieldLevel = Mathf.Min (value, 4);
 			//If the shield is going to be set to less than zero
-			if (value < 0) {
+			if (!isInvincible && value < 0) {
 				DestroyHero();
 			}
 		}
