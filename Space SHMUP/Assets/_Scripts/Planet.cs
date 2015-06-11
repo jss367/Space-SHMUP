@@ -36,9 +36,8 @@ public class Planet : MonoBehaviour {
 		// Cache reference to transform to improve performance
 		_cacheTransform = transform;	
 
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-
 		if (isTimer) {
+			timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 			Vector3 pos = transform.position;
 			pos.y = 30.0f;
 			transform.position = pos;

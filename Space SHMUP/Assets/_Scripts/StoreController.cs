@@ -104,6 +104,7 @@ public class StoreController : BaseController
 
     private void OnSoomlaStoreInitialized()
     {
+		Debug.Log ("Soomla has been initialized");
         IsStatusOK = true;
 
         UpdateCoinBalanceLabel();
