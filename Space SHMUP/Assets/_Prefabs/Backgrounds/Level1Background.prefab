@@ -13,7 +13,7 @@ GameObject:
   - 111: {fileID: 11108842}
   - 114: {fileID: 11483406}
   - 135: {fileID: 13514332}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PlanetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439190}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Level1Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,13 +46,13 @@ GameObject:
   - 33: {fileID: 3377240}
   - 64: {fileID: 6476530}
   - 23: {fileID: 2326460}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: StarfieldBG_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &165874
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,7 +64,7 @@ GameObject:
   - 33: {fileID: 3362096}
   - 23: {fileID: 2313816}
   - 111: {fileID: 11104940}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: Galaxy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,13 +82,13 @@ GameObject:
   - 33: {fileID: 3336426}
   - 64: {fileID: 6404178}
   - 23: {fileID: 2379634}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: StarfieldBG_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &414534
 Transform:
   m_ObjectHideFlags: 1
@@ -342,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetRotation: {x: 0, y: 0, z: 0}
   isTimer: 1
+  velocity: {x: 0, y: 0}
 --- !u!135 &13514332
 SphereCollider:
   m_ObjectHideFlags: 1

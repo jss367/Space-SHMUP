@@ -1,14 +1,11 @@
 Before Deploy:
-The variable popText of AsteroidAngle has not been assigned.
-Fix store
-finish backgrounds
 remove all instances of pavloa
 FIX SHIELD UPGRADE
-angle asteroids ignoring shield, hitting player
 destroy all game objects on end
 don't declare victory until all game objects gone
 update values for beating levels
 update costs in store
+
 
 After
 make a tutorial
@@ -31,7 +28,7 @@ a couple spread shots got stuck
 weapon that doesn't move, like a mine
 
 
-
+make moons blow up and drop something?
 long:
 
 object pooling
@@ -77,3 +74,4 @@ build process:
 comment out store init in main and hero - just hero now?
 remove core and store events in levels
 comment out spread owned in hero and main
+turn off invincible

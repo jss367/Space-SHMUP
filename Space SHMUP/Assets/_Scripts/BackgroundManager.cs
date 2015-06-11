@@ -33,8 +33,7 @@ public class BackgroundManager : MonoBehaviour {
 		
 		switch (currentLevel) {
 		case "Level 1":
-//			Level1Background.SetActive (true);
-
+			Level1Background.SetActive (true);
 			break;
 		case "Level 2":
 			Level2Background.SetActive (true);
@@ -49,19 +48,19 @@ public class BackgroundManager : MonoBehaviour {
 			Level5Background.SetActive (true);
 			break;
 		case "Level 6":
-			Level2Background.SetActive (true);
+			Level6Background.SetActive (true);
 			break;
 		case "Level 7":
-			Level2Background.SetActive (true);
+			Level7Background.SetActive (true);
 			break;
 		case "Level 8":
-			Level2Background.SetActive (true);
+			Level8Background.SetActive (true);
 			break;
 		case "Level 9":
-			Level2Background.SetActive (true);
+			Level9Background.SetActive (true);
 			break;
 		case "Level 10":
-			Level2Background.SetActive (true);
+			Level10Background.SetActive (true);
 			break;
 			
 		}
