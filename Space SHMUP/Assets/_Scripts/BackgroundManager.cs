@@ -33,7 +33,7 @@ public class BackgroundManager : MonoBehaviour {
 		
 		switch (currentLevel) {
 		case "Level 1":
-//			Level1Background.SetActive (true);
+			Level1Background.SetActive (true);
 			break;
 		case "Level 2":
 			Level2Background.SetActive (true);

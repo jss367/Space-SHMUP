@@ -70,7 +70,7 @@ public class Hero : MonoBehaviour {
 
 	void Start() {
 		//		spreadOwned = true; // comment out for builds
-		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
+//		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
 
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
@@ -187,17 +187,21 @@ public class Hero : MonoBehaviour {
 
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
 					Debug.Log("Blaster is equipped");
+//			spreadOwned = false;
 				}
-
-//		//		Debug.Log ("At CheckInventory, spreadOwned is " + spreadOwned);
-		int spreads = Soomla.Store.StoreInventory.GetItemBalance (Constants.SPREAD_WEAPON_ITEM_ID);
-//				Debug.Log ("Number of spreads: " + spreads);
-		if ((spreads >= 1))
-		{
+		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
+			Debug.Log("Spread is equipped");
 			spreadOwned = true;
-//			//			Debug.Log("Player owns a spread");
 		}
-
+		//		//		Debug.Log ("At CheckInventory, spreadOwned is " + spreadOwned);
+//		int spreads = Soomla.Store.StoreInventory.GetItemBalance (Constants.SPREAD_WEAPON_ITEM_ID);
+////				Debug.Log ("Number of spreads: " + spreads);
+//		if ((spreads >= 1))
+//		{
+//
+////			//			Debug.Log("Player owns a spread");
+//		}
+//
 	}
 
 	//This variable holds a reference to the last triggering GameObject

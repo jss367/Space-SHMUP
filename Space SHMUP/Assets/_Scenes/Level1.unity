@@ -2222,7 +2222,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   shieldUpgradeOwned: 0
-  isInvincible: 1
+  isInvincible: 0
   target: {x: 0, y: 0, z: 0}
   tilt: 5
   velocityLag: .300000012
@@ -2402,7 +2402,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ba3e663b077e7401a83d69fff7548944, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba3e663b077e7401a83d69fff7548944, type: 2}
@@ -2974,7 +2974,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 5d99d2a7afd4a4856b8b091c814944c3, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d99d2a7afd4a4856b8b091c814944c3, type: 2}
@@ -3280,12 +3280,13 @@ MonoBehaviour:
   timeLimit: 0
   account: 0
   coinsGained: 0
+  stopSpawning: 0
   gameHasEnded: 0
   playerWins: 0
   playerDead: 0
   currentLevel: 
   victoryBonus: 0
-  endGameDelay: 2.5
+  endGameDelay: .200000003
 --- !u!124 &1601000349
 Behaviour:
   m_ObjectHideFlags: 0

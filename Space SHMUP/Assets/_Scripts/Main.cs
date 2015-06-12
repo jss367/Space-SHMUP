@@ -58,6 +58,7 @@ public class Main : MonoBehaviour {
 	public float account;
 	public float coinsGained;
 
+	public bool stopSpawning = false;
 	public bool gameHasEnded = false;
 	public bool playerWins = false;
 	public bool playerDead = false;
@@ -65,7 +66,7 @@ public class Main : MonoBehaviour {
 
 	public string currentLevel;
 	public int victoryBonus;
-	public float endGameDelay = 2.5f;
+	public float endGameDelay = .2f;
 
 	void Awake(){
 
@@ -135,13 +136,13 @@ public class Main : MonoBehaviour {
 		}
 
 	void CheckInventory(){
-		//		Debug.Log ("At CheckInventory, spreadOwned is " + spreadOwned);
-		int spreads = Soomla.Store.StoreInventory.GetItemBalance (Constants.SPREAD_WEAPON_ITEM_ID);
-//		Debug.Log ("Number of spreads: " + spreads);
-		if ((spreads >= 1))
-		{
+		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
+			Debug.Log("Blaster is equipped");
+			//			spreadOwned = false;
+		}
+		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
+			Debug.Log("Spread is equipped");
 			spreadOwned = true;
-//			Debug.Log("Player owns a spread");
 		}
 	}
 
@@ -170,20 +171,30 @@ public class Main : MonoBehaviour {
 	}
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
-//		timeMultiplier = Time.timeSinceLevelLoad / 4;
+
 		if (!playerDead && !gameHasEnded && (timer > timeLimit + endGameDelay)){
-			PlayerWon();
-
-
+			WaitUntilLevelEmpties();
 		}
-
-
 
 		if (!weaponrySet) {
 			SetWeaponry ();
 					}
 	}
 
+	public void WaitUntilLevelEmpties(){
+
+		stopSpawning = true;
+		GameObject[] AsteroidsRemaining = GameObject.FindGameObjectsWithTag ("Asteroid");
+//		Debug.Log (AsteroidsRemaining.Length);
+		GameObject[] EnemiesRemaining = GameObject.FindGameObjectsWithTag ("Enemy");
+//		Debug.Log (EnemiesRemaining.Length);
+		if (EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0){
+			PlayerWon();
+			}
+
+	
+
+	}
 
 	public void EnemyDestroyed( Enemy e, bool combo) {
 		// Potentially generate a PowerUp
@@ -289,62 +300,74 @@ public class Main : MonoBehaviour {
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
 				Instantiate(earthReward, pos1, Quaternion.identity);
 			}
-			if (score > 500){
+			if (score > 300){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
 				Instantiate(earthReward, pos2, Quaternion.identity);
 			}
-			if (score > 1000){
+			if (score > 500){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
 				Instantiate(earthReward, pos3, Quaternion.identity);
 			}
 			break;
-//		case "Level 2":
-//			victoryBonus = 400;
-//			if (score > 100){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//			}
-//			if (score > 500){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//			}
-//			if (score > 1000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//			}
-//			break;
-//		case "Level 3":
-//			victoryBonus = 600;
-//			if (score > 100){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//			}
-//			if (score > 500){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//			}
-//			if (score > 1000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//			}
-//			break;
-//		case "Level 4":
-//			victoryBonus = 800;
-//			if (score > 100){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//			}
-//			if (score > 500){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//			}
-//			if (score > 1000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//			}
-//			break;
+		case "Level 2":
+			victoryBonus = 400;
+			if (score > 1000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+			}
+			if (score > 1500){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+			}
+			if (score > 2500){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+			}
+			break;
+		case "Level 3":
+			victoryBonus = 600;
+			if (score > 10000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+			}
+			if (score > 15000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+			}
+			if (score > 20000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+			}
+			break;
+		case "Level 4":
+			victoryBonus = 800;
+			if (score > 30000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+			}
+			if (score > 40000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+			}
+			if (score > 50000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+			}
+			break;
+		case "Level 8":
+			victoryBonus = 800;
+			if (score > 30000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+			}
+			if (score > 40000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+			}
+			if (score > 50000){
+				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+			}
+			break;
 		default:
 			victoryBonus = 1000;
-			if (score > 100){
+			if (score > 4000){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
 				Instantiate(earthReward, pos1, Quaternion.identity);
 			}
-			if (score > 500){
+			if (score > 7000){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
 				Instantiate(earthReward, pos2, Quaternion.identity);
 			}
-			if (score > 1000){
+			if (score > 10000){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
 				Instantiate(earthReward, pos3, Quaternion.identity);
 			}

@@ -70,7 +70,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &133760
 GameObject:
   m_ObjectHideFlags: 1
@@ -654,6 +654,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetRotation: {x: 0, y: 0, z: 0}
+  isTimer: 1
+  velocity: {x: 0, y: 0}
 --- !u!114 &11497020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -666,6 +668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetRotation: {x: 0, y: 0, z: 0}
+  isTimer: 1
+  velocity: {x: 0, y: 0}
 --- !u!135 &13537952
 SphereCollider:
   m_ObjectHideFlags: 1

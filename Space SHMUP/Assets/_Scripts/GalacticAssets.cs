@@ -84,7 +84,7 @@ namespace Soomla.Store.Example {
 		
 		public const string NO_ADS_LIFETIME_PRODUCT_ID = "no_ads";
 
-		public const string SHIELD_UPGRADE_1 = "shield_1";
+
 //		public const string SHIELD_UPGRADE_2 = "shield_2";
 //		public const string SHIELD_DURABILITY_PRODUCT_ID = "shield_dur_";
 //		public const string SHIELD_DURABILITY_NAME = "Durability ";
@@ -221,26 +221,26 @@ namespace Soomla.Store.Example {
 
 		public static VirtualGood ShieldUpgrade1 = new UpgradeVG(
 			Constants.SHIELD_ITEM_ID,
-			null,//SHIELD_UPGRADE_2,
+			null, //Constants.SHIELD_UPGRADE_2,
 			null,
 			"Shield Upgrade",
 			"SHield takes two hits",
-			SHIELD_UPGRADE_1,
+			Constants.SHIELD_UPGRADE_1,
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            10));
+		                            500));
 
 
 //		public static VirtualGood ShieldUpgrade2 = new UpgradeVG(
-//			SHIELD_PRODUCT_ID,
+//			Constants.SHIELD_ITEM_ID,
 //			null,
-//			SHIELD_UPGRADE_1,
-//			SHIELD_DURABILITY_NAME,
-//			SHIELD_DURABILITY_DESC,
-//			SHIELD_UPGRADE_2,
+//			Constants.SHIELD_UPGRADE_1,
+//			"Shield Upgrade 2",
+//			"Upgrade does nothing",
+//			Constants.SHIELD_UPGRADE_2,
 //			new PurchaseWithVirtualItem(        // Purchase type
 //		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-//		                            10));
+//		                            10000));
 
 
 

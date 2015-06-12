@@ -199,6 +199,16 @@ public class StoreController : BaseController
         SoomlaStore.RefreshInventory();
     }
 
+	public void ResetInventory()
+	{
+		Debug.Log("ResetInventory");
+		StoreInventory.TakeItem (Constants.BLASTER_WEAPON_ITEM_ID, 1);
+		StoreInventory.TakeItem (Constants.SPREAD_WEAPON_ITEM_ID, 1);
+//		StoreInventory.TakeItem (Constants.SHIELD_ITEM_ID);
+		StoreInventory.TakeItem (Constants.SHIELD_UPGRADE_1, 1);
+
+	}
+
     public void RestoreTransactions()
     {
         Debug.Log("RestoreTransactions");

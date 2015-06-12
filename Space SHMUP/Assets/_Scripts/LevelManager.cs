@@ -236,7 +236,12 @@ public class LevelManager : MonoBehaviour {
 //		}
 
 	void StopSpawn(){
-		if ((Main.S.playerDead || Main.S.playerWins) && !spawningStoppedToggle) {
+//		Debug.Log ("Main.S.playerDead " + Main.S.playerDead);
+//		Debug.Log ("Main.S.playerWins " + Main.S.playerWins);
+//		Debug.Log ("spawningStoppedToggle " + spawningStoppedToggle);
+
+//		if ((Main.S.playerDead || Main.S.playerWins) && !spawningStoppedToggle) {
+		if (Main.S.stopSpawning && !spawningStoppedToggle){
 		spawningStoppedToggle = true;
 //		Debug.Log ("Spawning has stopped");
 		SpawnManager.instance.AsteroidSpawn0.SetActive (false);
@@ -259,10 +264,10 @@ public class LevelManager : MonoBehaviour {
 		SpawnManager.instance.EnemySpawn3d2.SetActive (false);
 		SpawnManager.instance.EnemySpawn4d3.SetActive (false);
 		SpawnManager.instance.EnemySpawn5d1.SetActive (false);
-		SpawnManager.instance.Mid1.SetActive (false);
-		SpawnManager.instance.Mid2.SetActive (false);
-		SpawnManager.instance.Bass1.SetActive (false);
-		SpawnManager.instance.High1.SetActive (false);
+//		SpawnManager.instance.Mid1.SetActive (false);
+//		SpawnManager.instance.Mid2.SetActive (false);
+//		SpawnManager.instance.Bass1.SetActive (false);
+//		SpawnManager.instance.High1.SetActive (false);
 		}
 
 	}
