@@ -36,7 +36,8 @@ public class Main : MonoBehaviour {
 	public Text			popText;
 //	public GameObject	spawnManager;
 //	public GameObject	fireworks;
-	public const string	SPREAD_GUN_ITEM_ID = "weapon_spread";
+//	public const string BLASTER_WEAPON_ITEM_ID = "weapon_blaster";
+//	public const string SPREAD_WEAPON_ITEM_ID = "weapon_spread";
 
 
 	public bool ______________;
@@ -135,7 +136,7 @@ public class Main : MonoBehaviour {
 
 	void CheckInventory(){
 		//		Debug.Log ("At CheckInventory, spreadOwned is " + spreadOwned);
-		int spreads = Soomla.Store.StoreInventory.GetItemBalance (SPREAD_GUN_ITEM_ID);
+		int spreads = Soomla.Store.StoreInventory.GetItemBalance (Constants.SPREAD_WEAPON_ITEM_ID);
 //		Debug.Log ("Number of spreads: " + spreads);
 		if ((spreads >= 1))
 		{

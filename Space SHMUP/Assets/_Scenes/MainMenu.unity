@@ -1813,7 +1813,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 300976572}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 65ef3dca6192bfd42ac6c13f3b980a2b, type: 3}
   m_Name: 
@@ -3429,7 +3429,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &886258152
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3708,7 +3708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &960545276
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6214,6 +6214,18 @@ Prefab:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11436668, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436668, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436668, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
   m_IsPrefabParent: 0
@@ -6369,10 +6381,10 @@ RectTransform:
   - {fileID: 1213516335}
   m_Father: {fileID: 1007708513}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 183.450012, y: 95.1506348}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1542803870
 MonoBehaviour:
@@ -6836,7 +6848,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1655645317
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6978,7 +6990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1668947801
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7374,6 +7386,18 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11411362, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436668, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436668, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436668, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
@@ -7949,10 +7973,10 @@ RectTransform:
   - {fileID: 1701170883}
   m_Father: {fileID: 1007708513}
   m_RootOrder: 1
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100.150635}
-  m_SizeDelta: {x: 183.450012, y: 95.1506348}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1919604336
 MonoBehaviour:
@@ -8935,6 +8959,18 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11411362, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436668, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436668, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11436668, guid: 331d39e7c26376f4285ed67ecedc60c4, type: 2}
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}

@@ -22,8 +22,10 @@ public class Hero : MonoBehaviour {
 	public Weapon[]				weapons;
 
 	public bool _____________;
+//
+//	public const string BLASTER_WEAPON_ITEM_ID = "weapon_blaster";
+//	public const string SPREAD_WEAPON_ITEM_ID = "weapon_spread";
 
-	public const string	SPREAD_GUN_ITEM_ID = "weapon_spread";
 		public bool spreadOwned = false;
 
 	public Bounds				bounds;
@@ -39,7 +41,7 @@ public class Hero : MonoBehaviour {
 
 	private bool				shieldCounter = true;
 	public bool					shieldUpgradeOwned = false;
-	public const string SHIELD_UPGRADE_1 = "shield_1";
+//	public const string SHIELD_UPGRADE_1 = "shield_1";
 	public bool isInvincible;
 
 	
@@ -68,7 +70,7 @@ public class Hero : MonoBehaviour {
 
 	void Start() {
 		//		spreadOwned = true; // comment out for builds
-//		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
+		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
 
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
@@ -176,14 +178,19 @@ public class Hero : MonoBehaviour {
 
 	void CheckInventory(){
 //		Debug.Log ("Checking inventory");
-//		int shieldUpgrade = Soomla.Store.StoreInventory.GetItemBalance (SHIELD_UPGRADE_1);
+		int shieldUpgrade = Soomla.Store.StoreInventory.GetItemBalance (Constants.SHIELD_ITEM_ID);
 //		Debug.Log ("Shield upgrade: " + shieldUpgrade);
-//		if ((shieldUpgrade >= 1))	{
+		if ((shieldUpgrade >= 1))	{
 			shieldUpgradeOwned = true;
-//			Debug.Log("Player owns shield upgrade");
-//		}
+			Debug.Log("Player owns shield upgrade");
+		}
+
+		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
+					Debug.Log("Blaster is equipped");
+				}
+
 //		//		Debug.Log ("At CheckInventory, spreadOwned is " + spreadOwned);
-		int spreads = Soomla.Store.StoreInventory.GetItemBalance (SPREAD_GUN_ITEM_ID);
+		int spreads = Soomla.Store.StoreInventory.GetItemBalance (Constants.SPREAD_WEAPON_ITEM_ID);
 //				Debug.Log ("Number of spreads: " + spreads);
 		if ((spreads >= 1))
 		{

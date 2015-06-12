@@ -44,7 +44,7 @@ namespace Soomla.Store.Example {
 		public VirtualGood[] GetGoods() {
 //			return new  VirtualGood[] {WEAPON_SPREAD, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, 
 //				ShieldUpgrade1, ShieldUpgrade2, Shield, Sword};
-			return new  VirtualGood[] {WEAPON_SPREAD, ShieldUpgrade, NO_ADS_LTVG};
+			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, Shield, ShieldUpgrade1};//, NO_ADS_LTVG};
 		}
 		
 		/// <summary>
@@ -58,7 +58,7 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualCategory[] GetCategories() {
-			return new VirtualCategory[]{GENERAL_CATEGORY};
+			return new VirtualCategory[]{GENERAL_CATEGORY, WEAPON_CATEGORY};
 		}
 
 
@@ -68,8 +68,6 @@ namespace Soomla.Store.Example {
 		public const string GALACTIC_CURRENCY_ITEM_ID      = "galactic_currency"; //add the reverse domain?
 		// com.gleeza.galacticbeats.galactic_currency?
 		
-		public const string SPREAD_GUN_ITEM_ID = "weapon_spread";
-		
 		public const string TENMUFF_PACK_PRODUCT_ID      = "android.test.refunded";
 		
 		public const string FIFTYMUFF_PACK_PRODUCT_ID    = "android.test.canceled";
@@ -77,9 +75,7 @@ namespace Soomla.Store.Example {
 		public const string FOURHUNDMUFF_PACK_PRODUCT_ID = "android.test.purchased";
 		
 		public const string THOUSANDMUFF_PACK_PRODUCT_ID = "2500_pack";
-		
-		//		public const string MUFFINCAKE_ITEM_ID   = "blaster_gun";
-		
+				
 		public const string PAVLOVA_ITEM_ID   = "pavlova";
 		
 		public const string CHOCLATECAKE_ITEM_ID   = "chocolate_cake";
@@ -89,11 +85,11 @@ namespace Soomla.Store.Example {
 		public const string NO_ADS_LIFETIME_PRODUCT_ID = "no_ads";
 
 		public const string SHIELD_UPGRADE_1 = "shield_1";
-		public const string SHIELD_UPGRADE_2 = "shield_2";
-		public const string SHIELD_DURABILITY_PRODUCT_ID = "shield_dur_";
-		public const string SHIELD_DURABILITY_NAME = "Durability ";
-		public const string SHIELD_DURABILITY_DESC = "Increases shield durability to ";
-		public const string SHIELD_PRODUCT_ID = "hero_shield";
+//		public const string SHIELD_UPGRADE_2 = "shield_2";
+//		public const string SHIELD_DURABILITY_PRODUCT_ID = "shield_dur_";
+//		public const string SHIELD_DURABILITY_NAME = "Durability ";
+//		public const string SHIELD_DURABILITY_DESC = "Increases shield durability to ";
+//		public const string SHIELD_PRODUCT_ID = "hero_shield";
 
 		
 		
@@ -102,14 +98,14 @@ namespace Soomla.Store.Example {
 		public static VirtualCurrency GALACTIC_CURRENCY = new VirtualCurrency(
 			"Milky Buck",										// name
 			"Currency in the Milky Way galaxy",					// description
-			GALACTIC_CURRENCY_ITEM_ID							// item id
+			Constants.GALACTIC_CURRENCY_ITEM_ID							// item id
 			);
 		
 		
 		/** Virtual Currency Packs **/
 		
 		public static VirtualCurrencyPack TEN_COIN_PACK = new VirtualCurrencyPack(
-			"10 Milky Bucks",                                   // name
+			"10 Coins",                                   // name
 			"Test refund of an item",                       // description
 			"muffins_10",                                   // item id
 			10,												// number of currencies in the pack
@@ -118,7 +114,7 @@ namespace Soomla.Store.Example {
 			);
 		
 		public static VirtualCurrencyPack FIFTY_COIN_PACK = new VirtualCurrencyPack(
-			"50 Milky Bucks",                                   // name
+			"50 Coins",                                   // name
 			"Test cancellation of an item",                 // description
 			"muffins_50",                                   // item id
 			50,                                             // number of currencies in the pack
@@ -127,7 +123,7 @@ namespace Soomla.Store.Example {
 			);
 		
 		public static VirtualCurrencyPack FIVEHUND_COIN_PACK = new VirtualCurrencyPack(
-			"500 Milky Bucks",                                  // name
+			"500 Coins",              	 		            // name
 			"Test purchase of an item",                 	// description
 			"muffins_400",                                  // item id
 			500,                                            // number of currencies in the pack
@@ -157,8 +153,20 @@ namespace Soomla.Store.Example {
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            7));                            // Payment amount
 
+		public static VirtualGood WEAPON_SPREAD = new EquippableVG(
+			EquippableVG.EquippingModel.CATEGORY,
+			"Spreading Weapon", 														// name
+			"A more powerful weapon to fend off aliens",				 	// description
+			Constants.SPREAD_WEAPON_ITEM_ID,											// item id
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 1000));
 
-		
+		public static VirtualGood WEAPON_BLASTER = new EquippableVG(
+			EquippableVG.EquippingModel.CATEGORY,
+			"First Weapon", 														// name
+			"The basic weapon",				 	// description
+			Constants.BLASTER_WEAPON_ITEM_ID,											// item id
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 0));
+
 		/// <summary>
 		/// An equipable weapon that can be purchased for 7 coins.
 		/// </summary>
@@ -212,27 +220,27 @@ namespace Soomla.Store.Example {
 
 
 		public static VirtualGood ShieldUpgrade1 = new UpgradeVG(
-			SHIELD_PRODUCT_ID,
-			SHIELD_UPGRADE_2,
+			Constants.SHIELD_ITEM_ID,
+			null,//SHIELD_UPGRADE_2,
 			null,
-			SHIELD_DURABILITY_NAME,
-			SHIELD_DURABILITY_DESC,
+			"Shield Upgrade",
+			"SHield takes two hits",
 			SHIELD_UPGRADE_1,
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            10));
 
 
-		public static VirtualGood ShieldUpgrade2 = new UpgradeVG(
-			SHIELD_PRODUCT_ID,
-			null,
-			SHIELD_UPGRADE_1,
-			SHIELD_DURABILITY_NAME,
-			SHIELD_DURABILITY_DESC,
-			SHIELD_UPGRADE_2,
-			new PurchaseWithVirtualItem(        // Purchase type
-		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            10));
+//		public static VirtualGood ShieldUpgrade2 = new UpgradeVG(
+//			SHIELD_PRODUCT_ID,
+//			null,
+//			SHIELD_UPGRADE_1,
+//			SHIELD_DURABILITY_NAME,
+//			SHIELD_DURABILITY_DESC,
+//			SHIELD_UPGRADE_2,
+//			new PurchaseWithVirtualItem(        // Purchase type
+//		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+//		                            10));
 
 
 
@@ -264,6 +272,10 @@ namespace Soomla.Store.Example {
 		public static VirtualCategory GENERAL_CATEGORY = new VirtualCategory(
 			"General", new List<string>(new string[] {PAVLOVA_ITEM_ID, CHOCLATECAKE_ITEM_ID, CREAMCUP_ITEM_ID })
 			);
+
+		public static VirtualCategory WEAPON_CATEGORY = new VirtualCategory(
+			"Weapons", new List<string>(new string[] {Constants.BLASTER_WEAPON_ITEM_ID, Constants.SPREAD_WEAPON_ITEM_ID })
+			);
 		
 		
 		/** LifeTimeVGs **/
@@ -274,19 +286,19 @@ namespace Soomla.Store.Example {
 			"no_ads",														// item id
 			new PurchaseWithMarket(NO_ADS_LIFETIME_PRODUCT_ID, 0.99));	// the way this virtual good is purchased
 		
-		public static VirtualGood WEAPON_SPREAD = new LifetimeVG(
-			"Spreading Weapon", 														// name
-			"A more powerful weapon to fend off aliens",				 	// description
-			SPREAD_GUN_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 100));	// the way this virtual good is purchased
+//		public static VirtualGood WEAPON_SPREAD = new LifetimeVG(
+//			"Spreading Weapon", 														// name
+//			"A more powerful weapon to fend off aliens",				 	// description
+		//			SPREAD_WEAPON_ITEM_ID,											// item id
+//			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 100));	// the way this virtual good is purchased
 
-		public static VirtualGood ShieldUpgrade = new LifetimeVG(
-			"Shield Upgrade",                           // Name
-			"Shields you from aliens",        // Description
-			SHIELD_UPGRADE_1,                  // Item ID
+		public static VirtualGood Shield = new LifetimeVG(
+			"Shield",                           // Name
+			"Shields you from aliens and asteroids",        // Description
+			Constants.SHIELD_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            150)                            // Payment amount
+		                            0)                            // Payment amount
 			);
 		
 		

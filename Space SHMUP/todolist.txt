@@ -5,13 +5,17 @@ destroy all game objects on end
 don't declare victory until all game objects gone
 update values for beating levels
 update costs in store
-
+make sure asteroids aren't too loud
+game doesn't stop after you die
+octopus enemy doesn't explode
+level3 planet needs to be hotter
+level 3 crescendo
 
 After
 make a tutorial
 fix image on google play
 
-cool alien ships?
+cool alien ships? - make more ships fire, make them cooler looking
 add rocket fire
 pause button with count down to re-enter
 set up combo!
@@ -75,3 +79,4 @@ comment out store init in main and hero - just hero now?
 remove core and store events in levels
 comment out spread owned in hero and main
 turn off invincible
+Level1Background.SetActive (true);
