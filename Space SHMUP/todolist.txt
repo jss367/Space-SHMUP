@@ -37,25 +37,6 @@ object pooling
 Multipliers for combos, do in different color
 make player blink when hit
 
-
-start user with some coins:
-		public void onSoomlaStoreInitialized() {
-			
-			// some usage examples for add/remove currency
-            // some examples
-            if (StoreInfo.Currencies.Count>0) {
-                try {
-					StoreInventory.GiveItem(StoreInfo.Currencies[0].ItemId,4000);
-					SoomlaUtils.LogDebug("SOOMLA ExampleEventHandler", "Currency balance:" + StoreInventory.GetItemBalance(StoreInfo.Currencies[0].ItemId));
-                } catch (VirtualItemNotFoundException ex){
-                    SoomlaUtils.LogError("SOOMLA ExampleEventHandler", ex.Message);
-                }
-            }
-
-			ExampleWindow.GetInstance().setupItemsTextures();
-		}
-
-
 not yet:
 
 check boarders - check hero movement, camera visibility, asteroid.enemy spawning

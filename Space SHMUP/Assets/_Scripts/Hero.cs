@@ -178,30 +178,24 @@ public class Hero : MonoBehaviour {
 
 	void CheckInventory(){
 //		Debug.Log ("Checking inventory");
-		int shieldUpgrade = Soomla.Store.StoreInventory.GetItemBalance (Constants.SHIELD_ITEM_ID);
-//		Debug.Log ("Shield upgrade: " + shieldUpgrade);
-		if ((shieldUpgrade >= 1))	{
+//		int shieldUpgrade = Soomla.Store.StoreInventory.GetItemBalance (Constants.SHIELD_ITEM_ID);
+////		Debug.Log ("Shield upgrade: " + shieldUpgrade);
+//		if ((shieldUpgrade >= 1))	{
 			shieldUpgradeOwned = true;
-			Debug.Log("Player owns shield upgrade");
-		}
-
-		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
-					Debug.Log("Blaster is equipped");
-//			spreadOwned = false;
-				}
-		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
-			Debug.Log("Spread is equipped");
-			spreadOwned = true;
-		}
-		//		//		Debug.Log ("At CheckInventory, spreadOwned is " + spreadOwned);
-//		int spreads = Soomla.Store.StoreInventory.GetItemBalance (Constants.SPREAD_WEAPON_ITEM_ID);
-////				Debug.Log ("Number of spreads: " + spreads);
-//		if ((spreads >= 1))
-//		{
-//
-////			//			Debug.Log("Player owns a spread");
+//			Debug.Log("Player owns shield upgrade");
 //		}
 //
+//		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
+//					Debug.Log("Blaster is equipped");
+////			spreadOwned = false;
+//				}
+//		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
+//			Debug.Log("Spread is equipped");
+//			spreadOwned = true;
+//		}
+
+//		}
+		spreadOwned = true;
 	}
 
 	//This variable holds a reference to the last triggering GameObject

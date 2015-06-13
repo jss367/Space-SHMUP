@@ -33,10 +33,13 @@ public class SoomlaInit : MonoBehaviour {
 
 		int blasters = StoreInventory.GetItemBalance (Constants.BLASTER_WEAPON_ITEM_ID);
 		if (blasters == 0) {
+			try{
+			
 			StoreInventory.GiveItem(Constants.BLASTER_WEAPON_ITEM_ID, 1);
 			StoreInventory.GiveItem(Constants.GALACTIC_CURRENCY_ITEM_ID, 1000);
 			StoreInventory.GiveItem(Constants.SHIELD_ITEM_ID, 1);
-
+			} catch (VirtualItemNotFoundException ex){
+				SoomlaUtils.LogError("SOOMLA ExampleEventHandler", ex.Message);
 		}
 
 
