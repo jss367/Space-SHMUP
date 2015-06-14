@@ -55,7 +55,8 @@ public class SoomlaInit : MonoBehaviour {
 
 	void Update(){
 
-
+		MadLevel.LoadLevelByName ("MainMenu");
+		Application.LoadLevel ("MainMenu");
 
 //		if(StoreInventory.IsVirtualGoodEquipped (BLASTER_WEAPON_ITEM_ID)){
 //			Debug.Log("Blaster is equipped");
