@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+//using System.Strin
 using System.Collections;
 using Soomla;
 
@@ -7,6 +9,7 @@ public class Hero : MonoBehaviour {
 	static public Hero S; //S for singleton
 
 
+	
 	public float gameRestartDelay = 2f;
 	
 	//These fields control the movement of the ship
@@ -59,6 +62,8 @@ public class Hero : MonoBehaviour {
 
 	public SimpleTouchPad touchPad;
 	public FireButton fireButton;
+
+	public string testString;
 
 	public GameObject explosion;
 	public GameObject enemyExplosion;
@@ -176,7 +181,13 @@ public class Hero : MonoBehaviour {
 
 		}
 
+
+	[SerializeField]
+	Text txtBtn;
+	
 	void CheckInventory(){
+
+//		string testString;
 //		Debug.Log ("Checking inventory");
 //		int shieldUpgrade = Soomla.Store.StoreInventory.GetItemBalance (Constants.SHIELD_ITEM_ID);
 ////		Debug.Log ("Shield upgrade: " + shieldUpgrade);
@@ -185,14 +196,22 @@ public class Hero : MonoBehaviour {
 //			Debug.Log("Player owns shield upgrade");
 //		}
 //
+//		String.format testString;
+//		string.Format testString;
+//		System.String.Format testString;
+
+
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
 					Debug.Log("Blaster is equipped");
+			testString = "Blaster is equipped";
 				}
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 			Debug.Log("Spread is equipped");
+			testString = "Spread is equipped";
 			spreadOwned = true;
 		}
 
+		txtBtn.text = "" + testString;
 //		}
 //		spreadOwned = true;
 	}

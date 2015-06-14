@@ -146,7 +146,7 @@ public class Main : MonoBehaviour {
 //		}
 //
 //		spreadOwned = true;
-		spreadOwned = SoomlaHelper.S.spreadOwned;
+//		spreadOwned = SoomlaHelper.S.spreadOwned;
 	
 
 	}

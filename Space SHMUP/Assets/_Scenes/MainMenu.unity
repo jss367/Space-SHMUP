@@ -1818,8 +1818,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ef3dca6192bfd42ac6c13f3b980a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: {x: 5, y: 5, z: 5}
-  velocity: {x: 0, y: 0, z: 0}
+  c0: {fileID: 0}
+  c1: {fileID: 0}
+  c2: {fileID: 0}
+  c3: {fileID: 0}
+  timeDuration: 15
+  checkToCalculate: 0
+  camera: {fileID: 0}
+  ______________: 0
+  u: 0
+  p0123: {x: 0, y: 0, z: 0}
+  moving: 0
+  timeStart: 0
+  planets: []
+  stars: []
+  moons: []
+  celestialBodies: []
+  closestObject: {fileID: 0}
 --- !u!81 &300976574
 AudioListener:
   m_ObjectHideFlags: 0

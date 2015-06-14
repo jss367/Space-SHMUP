@@ -41,7 +41,7 @@ public class StoreController : BaseController
         StoreEvents.OnCurrencyBalanceChanged += (currency, newBalance, amountAdded) => UpdateCoinBalanceLabel(currency, newBalance);
         StoreEvents.OnUnexpectedErrorInStore += OnUnexpectedErrorInStore;
         StoreEvents.OnGoodBalanceChanged += (item, newBalance, amountAdded) => UpdateItemView(item);
-        StoreEvents.OnSoomlaStoreInitialized += OnSoomlaStoreInitialized;
+//        StoreEvents.OnSoomlaStoreInitialized += OnSoomlaStoreInitialized;
         StoreEvents.OnGoodEquipped += UpdateItemView;
         StoreEvents.OnGoodUnEquipped += UpdateItemView;
         StoreEvents.OnGoodUpgrade += (item, upgrade) => UpdateItemView(item);
@@ -102,19 +102,31 @@ public class StoreController : BaseController
         }
     }
 
-    private void OnSoomlaStoreInitialized()
-    {
+//    private void OnSoomlaStoreInitialized()
+//    {
+//		Debug.Log ("Soomla has been initialized");
+//        IsStatusOK = true;
+//
+//        UpdateCoinBalanceLabel();
+//
+//        InitStoreItems();
+//
+////        GiveStarterItems();
+//    }
+
+	private void Start()
+	{
 		Debug.Log ("Soomla has been initialized");
-        IsStatusOK = true;
-
-        UpdateCoinBalanceLabel();
-
-        InitStoreItems();
-
-//        GiveStarterItems();
-    }
-
-//    private void GiveStarterItems()
+		IsStatusOK = true;
+		
+		UpdateCoinBalanceLabel();
+		
+		InitStoreItems();
+		
+		//        GiveStarterItems();
+	}
+	
+	//    private void GiveStarterItems()
 //    {
 //        // Give the player the 1st character
 //        if (StoreInventory.GetItemBalance(ExampleAssets.Character1.ItemId) == 0)
