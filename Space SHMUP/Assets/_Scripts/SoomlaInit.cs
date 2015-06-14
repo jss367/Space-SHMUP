@@ -8,9 +8,7 @@ using MadLevelManager;
 public class SoomlaInit : MonoBehaviour {
 
 	private static SoomlaInit instance = null;
-
-
-
+	
 	void Awake(){
 
 		if(instance == null){ 	//making sure we only initialize one instance.
@@ -24,12 +22,12 @@ public class SoomlaInit : MonoBehaviour {
 
 	void Start () {
 
-//		StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;	
+		StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;	
 		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
 		Debug.Log ("Soomla has been initialized");
 
-		MadLevel.LoadLevelByName ("MainMenu");
-		Application.LoadLevel ("MainMenu");
+//		MadLevel.LoadLevelByName ("MainMenu");
+//		Application.LoadLevel ("MainMenu");
 	}
 
 	public void onSoomlaStoreInitialized() {
@@ -48,21 +46,9 @@ public class SoomlaInit : MonoBehaviour {
 		}
 
 		MadLevel.LoadLevelByName ("MainMenu");
-		Application.LoadLevel ("MainMenu");
-		Debug.Log ("Loaded the main menu");
+//		Application.LoadLevel ("MainMenu");
+//		Debug.Log ("Loaded the main menu");
 
 	}
 
-	void Update(){
-
-
-
-//		if(StoreInventory.IsVirtualGoodEquipped (BLASTER_WEAPON_ITEM_ID)){
-//			Debug.Log("Blaster is equipped");
-//		}
-		
-//		if(StoreInventory.IsVirtualGoodEquipped (SPREAD_WEAPON_ITEM_ID)){
-//			Debug.Log("Spread is equipped");
-//		}
-}
 }
