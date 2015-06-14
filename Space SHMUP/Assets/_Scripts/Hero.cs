@@ -185,17 +185,16 @@ public class Hero : MonoBehaviour {
 //			Debug.Log("Player owns shield upgrade");
 //		}
 //
-//		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
-//					Debug.Log("Blaster is equipped");
-////			spreadOwned = false;
-//				}
-//		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
-//			Debug.Log("Spread is equipped");
-//			spreadOwned = true;
-//		}
+		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
+					Debug.Log("Blaster is equipped");
+				}
+		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
+			Debug.Log("Spread is equipped");
+			spreadOwned = true;
+		}
 
 //		}
-		spreadOwned = true;
+//		spreadOwned = true;
 	}
 
 	//This variable holds a reference to the last triggering GameObject

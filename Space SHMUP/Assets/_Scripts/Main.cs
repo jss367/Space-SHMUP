@@ -144,8 +144,10 @@ public class Main : MonoBehaviour {
 //			Debug.Log("Spread is equipped");
 //			spreadOwned = true;
 //		}
-
-		spreadOwned = true;
+//
+//		spreadOwned = true;
+		spreadOwned = SoomlaHelper.S.spreadOwned;
+	
 
 	}
 

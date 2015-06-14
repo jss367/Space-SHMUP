@@ -4,7 +4,6 @@ using Soomla;
 using Soomla.Store;
 
 
-
 public class SoomlaInit : MonoBehaviour {
 
 	private static SoomlaInit instance = null;
@@ -12,6 +11,8 @@ public class SoomlaInit : MonoBehaviour {
 
 
 	void Awake(){
+		Debug.Log ("Awake on MainMenu scene");
+
 		if(instance == null){ 	//making sure we only initialize one instance.
 			instance = this;
 			GameObject.DontDestroyOnLoad(this.gameObject);
@@ -23,27 +24,27 @@ public class SoomlaInit : MonoBehaviour {
 
 	void Start () {
 
-		StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;	
+//		StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;	
 		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
-		Debug.Log ("I have init'ed Soomla");
+		Debug.Log ("Soomla has been initialized");
 			}
 
-	public void onSoomlaStoreInitialized() {
-		Debug.Log ("Confirmed that store is init");
-
-		int blasters = StoreInventory.GetItemBalance (Constants.BLASTER_WEAPON_ITEM_ID);
-		if (blasters == 0) {
-			try{
-			
-			StoreInventory.GiveItem(Constants.BLASTER_WEAPON_ITEM_ID, 1);
-			StoreInventory.GiveItem(Constants.GALACTIC_CURRENCY_ITEM_ID, 1000);
-			StoreInventory.GiveItem(Constants.SHIELD_ITEM_ID, 1);
-			} catch (VirtualItemNotFoundException ex){
-				SoomlaUtils.LogError("SOOMLA ExampleEventHandler", ex.Message);
-		}
-
-
-	}
+//	public void onSoomlaStoreInitialized() {
+//		Debug.Log ("Confirmed that store is initialized");
+//
+//		int blasters = StoreInventory.GetItemBalance (Constants.BLASTER_WEAPON_ITEM_ID);
+//		if (blasters == 0) {
+//			try {
+//			
+//				StoreInventory.GiveItem (Constants.BLASTER_WEAPON_ITEM_ID, 1);
+//				StoreInventory.GiveItem (Constants.GALACTIC_CURRENCY_ITEM_ID, 1000);
+//				StoreInventory.GiveItem (Constants.SHIELD_ITEM_ID, 1);
+//			} catch (VirtualItemNotFoundException ex) {
+//				SoomlaUtils.LogError ("SOOMLA ExampleEventHandler", ex.Message);
+//			}
+//		}
+//
+//	}
 
 	void Update(){
 
