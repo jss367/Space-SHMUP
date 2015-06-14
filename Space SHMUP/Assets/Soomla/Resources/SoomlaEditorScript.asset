@@ -14,20 +14,26 @@ MonoBehaviour:
   SoomlaSettings:
     values:
     - name: SoomlaSecret
-      value: SET ONLY ONCE
+      value: soomla
+    - name: HighwayGameKey
+      value: a5c8844d-9bf7-4ff5-ad3b-7f2e276bed72
+    - name: HighwayEnvKey
+      value: d9ae62cb-9823-4d98-ae2b-1b3d126c205b
+    - name: TwitterConsumerKey
+      value: nDy4CroqC3OYF3F5A1LJfl0yM
+    - name: TwitterConsumerSecret
+      value: ls3bJCr85CWdrwAKln2Ywx5pe3rUAxGzfccWWOIp5bJ1B05gUz
+    - name: GPClientId
+      value: 306497272614-5r5ktm6jvnn16bltvmveodmq0qfrll0f.apps.googleusercontent.com
     - name: DebugUnityMessages
       value: True
-    - name: HighwayGameKey
-      value: '[YOUR GAME KEY]'
-    - name: HighwayEnvKey
-      value: '[YOUR ENV KEY]'
-    - name: FBPermissions
-      value: email,publish_action,user_birthday,user_photos,user_friends,read_stream
-    - name: TwitterConsumerKey
-      value: YOUR TWITTER CONSUMER KEY
-    - name: TwitterConsumerSecret
-      value: YOUR TWITTER CONSUMER SECRET
-    - name: GPClientId
-      value: YOUR GOOGLE+ CLIENT ID
+    - name: GPlayBP
+      value: True
+    - name: AndroidPublicKey
+      value: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhuXu1ZpbAmoFd9tJuFdf9dZTywPOyL6r7TKVewl0mevHldJExVVu9dd0SbhIvJERujuZoPKOOtmwk0Q8J6GFsBqtOGluthMMzx94u1U+vrBPHOCwET4ooyqZMbIVhG406fLJ7gvA3cEJfsbIDotB8BgYkj0e4/V2Iy+brQhIf26ogzrvSODaHXLE/m/frUV6XKnw+iiuYAtPYPFExPqLyOAdANWJiqDda4itZvqR/4hHsVKFe7SkvZ9rRmDKigP8cQnV2a8uVPWaFAHu4UmJePhjci1unzYhTHj03KOeVHFRSfjBlSYcicdfwSMowOoDhZj+2MHcC5eGiW2bLt2G+wIDAQAB
+    - name: DebugMessages
+      value: True
     - name: SocialIntegration
-      value: facebook,1
+      value: twitter,1;google,1
+    - name: AndroidTestPurchases
+      value: True
