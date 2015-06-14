@@ -14,12 +14,24 @@ MonoBehaviour:
   creationDate: 0
   _active: 1
   levels:
+  - _sceneObject: {fileID: 102900000, guid: fc2330cff3767854081984853d0e2305, type: 3}
+    _scenePath: Assets/_Scenes/SoomlaSplash.unity
+    _sceneName: SoomlaSplash
+    scene: 
+    parent: {fileID: 11400000}
+    order: 0
+    name: Splash
+    type: 0
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 0
   - _sceneObject: {fileID: 102900000, guid: 25830a6b18044c64da0dfd1b83e1a742, type: 3}
     _scenePath: Assets/_Scenes/MainMenu.unity
     _sceneName: MainMenu
     scene: 
     parent: {fileID: 11400000}
-    order: 0
+    order: 10
     name: MainMenu
     type: 0
     arguments: 
@@ -31,7 +43,7 @@ MonoBehaviour:
     _sceneName: LevelManager
     scene: 
     parent: {fileID: 11400000}
-    order: 10
+    order: 20
     name: Level Select
     type: 0
     arguments: 
@@ -43,7 +55,7 @@ MonoBehaviour:
     _sceneName: Level1
     scene: 
     parent: {fileID: 11400000}
-    order: 20
+    order: 30
     name: Level 1
     type: 1
     arguments: 
@@ -55,7 +67,7 @@ MonoBehaviour:
     _sceneName: Level2
     scene: 
     parent: {fileID: 11400000}
-    order: 30
+    order: 40
     name: Level 2
     type: 1
     arguments: 
@@ -67,7 +79,7 @@ MonoBehaviour:
     _sceneName: Level3
     scene: 
     parent: {fileID: 11400000}
-    order: 40
+    order: 50
     name: Level 3
     type: 1
     arguments: 
@@ -79,7 +91,7 @@ MonoBehaviour:
     _sceneName: Level4
     scene: 
     parent: {fileID: 11400000}
-    order: 50
+    order: 60
     name: Level 4
     type: 1
     arguments: 
@@ -91,7 +103,7 @@ MonoBehaviour:
     _sceneName: Level5
     scene: 
     parent: {fileID: 11400000}
-    order: 60
+    order: 70
     name: Level 5
     type: 1
     arguments: 
@@ -103,7 +115,7 @@ MonoBehaviour:
     _sceneName: Level6
     scene: 
     parent: {fileID: 11400000}
-    order: 70
+    order: 80
     name: Level 6
     type: 1
     arguments: 
@@ -115,7 +127,7 @@ MonoBehaviour:
     _sceneName: Level7
     scene: 
     parent: {fileID: 11400000}
-    order: 80
+    order: 90
     name: Level 7
     type: 1
     arguments: 
@@ -127,7 +139,7 @@ MonoBehaviour:
     _sceneName: Level8
     scene: 
     parent: {fileID: 11400000}
-    order: 90
+    order: 100
     name: Level 8
     type: 1
     arguments: 
@@ -139,7 +151,7 @@ MonoBehaviour:
     _sceneName: Level9
     scene: 
     parent: {fileID: 11400000}
-    order: 100
+    order: 110
     name: Level 9
     type: 1
     arguments: 
@@ -151,24 +163,12 @@ MonoBehaviour:
     _sceneName: Level10
     scene: 
     parent: {fileID: 11400000}
-    order: 110
+    order: 120
     name: Level 10
     type: 1
     arguments: 
     groupId: 0
     extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
-    lockedByDefault: 0
-  - _sceneObject: {fileID: 102900000, guid: fc2330cff3767854081984853d0e2305, type: 3}
-    _scenePath: Assets/_Scenes/SoomlaSplash.unity
-    _sceneName: SoomlaSplash
-    scene: 
-    parent: {fileID: 11400000}
-    order: 120
-    name: Splash
-    type: 0
-    arguments: 
-    groupId: 0
-    extensionGUID: 
     lockedByDefault: 0
   groups: []
   extensions:
