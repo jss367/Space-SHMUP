@@ -7,6 +7,7 @@ level 3 crescendo
 unequip items in reset button
 fix main menu background
 fix shield upgrade
+one of the moons is f'ed
 
 After
 dontdestory command on the soomla instance
@@ -29,7 +30,7 @@ reveal globes one at a time
 a couple spread shots got stuck
 weapon that doesn't move, like a mine
 don't allow weapon to be held down
-
+ship stopped tilting
 make moons blow up and drop something?
 long:
 
@@ -52,6 +53,8 @@ more new weapons, rockets go to nearest enemy and make big explosion
 -double tap for rocket
 faster shots, less delay between shots, more damage
 
+cd C:\Users\HMGSYS\Documents\GitHub\Unity\Space-SHMUP\Space SHMUP
+adb install -r GalacticBeatsdb.apk
 
 build process:
 comment out store init in main and hero - just hero now?
@@ -60,3 +63,4 @@ remove core and store events in levels
 turn off invincible
 Level1Background.SetActive (true);
 disable reset button
+uncheck soomla init from MainMenu/Soomla

@@ -51,7 +51,7 @@ public class MenuView : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not yet...");
+//            Debug.Log("Not yet...");
 
             neededBeforeInit = state;
         }

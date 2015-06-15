@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
 
 public class MainCamera : MonoBehaviour {
 
@@ -20,6 +21,7 @@ public class MainCamera : MonoBehaviour {
 	public GameObject[]		moons;
 	public GameObject[]		celestialBodies;
 	public GameObject		closestObject;
+	public Vector3[]		planetPositions;
 
 		
 //	private Vector3 randrotSpeed;
@@ -39,9 +41,15 @@ public class MainCamera : MonoBehaviour {
 		moons = GameObject.FindGameObjectsWithTag ("Moon");
 		Debug.Log (moons.Length);
 
-		celestialBodies = new GameObject[planets.Length + stars.Length + moons.Length];
-		closestObject = celestialBodies [0];
-		Debug.Log(celestialBodies.Length);
+//		celestialBodies[] = new GameObject[planets.Length + stars.Length + moons.Length];
+//		celestialBodies[] = planets.Concat(stars).ToArray;
+		closestObject = planets [0];
+//		Debug.Log(celestialBodies.Length);
+
+		Vector3 bodss = moons [1].transform.position;
+		Debug.Log (bodss);
+//		Vector3 bods = celestialBodies[2].transform.position;
+//		Debug.Log(bods);
 	}
 
 		
@@ -58,6 +66,8 @@ public class MainCamera : MonoBehaviour {
 			moving = false;
 		}
 
+//		planetPositions = GameObject.FindGameObjectsWithTag ("Planet").transform.position;
+
 		// 4-point Bezier curve calculation
 		Vector3 p01, p12, p23, p012, p123;
 
@@ -73,24 +83,29 @@ public class MainCamera : MonoBehaviour {
 		transform.position = p0123;
 
 		GetClosestObject ();
+
+		transform.LookAt (closestObject.transform);
 		}
 
 	void GetClosestObject(){
 
-//		Vector3 cams = new Vector3 (camera.transform.position);
-//		Vector3 bods = new Vector3 (celestialBodies [i].transform.position);
 
-		for (int i = 0; i < celestialBodies.Length; i++) {
-//			if (Vector3.Distance(
-//				camera.transform.position, 
-//			                     celestialBodies [i].transform.position) < 
-//			    Vector3.Distance(camera.transform.position, 
-//			                 closestObject.transform.position)){
-//			    closestObject = celestialBodies[i];
-//			    }
+		Vector3 cams = Camera.main.gameObject.transform.position;
+//		Vector3 bods = (celestialBodies [i].transform.position);
+
+		for (int i = 0; i < planets.Length; i++) {
+//			Vector3 bods = celestialBodies[2].transform.position;
+//			Debug.Log(bods);
+			if (Vector3.Distance(
+							Camera.main.gameObject.transform.position, 
+			                     planets [i].transform.position) < 
+						    Vector3.Distance(Camera.main.gameObject.transform.position, 
+			                 closestObject.transform.position)){
+			    closestObject = planets[i];
+			    }
 			    // might compare old value of closest body!
 			}
-		Debug.Log("Closest obejct is " + closestObject);
+//		Debug.Log("Closest obejct is " + closestObject);
 
 	}
 

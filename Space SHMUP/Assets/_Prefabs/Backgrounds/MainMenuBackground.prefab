@@ -111,7 +111,7 @@ GameObject:
   - 23: {fileID: 2387802}
   m_Layer: 0
   m_Name: MoonObject
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -267,7 +267,7 @@ GameObject:
   - 23: {fileID: 2332684}
   m_Layer: 0
   m_Name: MoonObject
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,7 +287,7 @@ GameObject:
   - 135: {fileID: 13541090}
   m_Layer: 20
   m_Name: PlanetObject
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +322,7 @@ GameObject:
   - 23: {fileID: 2393166}
   m_Layer: 0
   m_Name: MoonObject
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,7 +355,7 @@ GameObject:
   - 23: {fileID: 2327120}
   m_Layer: 0
   m_Name: MoonObject
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,7 +390,7 @@ GameObject:
   - 23: {fileID: 2325962}
   m_Layer: 0
   m_Name: MoonObject
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -407,7 +407,7 @@ GameObject:
   - 23: {fileID: 2394036}
   m_Layer: 0
   m_Name: MoonObject
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -497,7 +497,7 @@ GameObject:
   - 135: {fileID: 13527790}
   m_Layer: 20
   m_Name: PlanetObject
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -529,6 +529,21 @@ GameObject:
   - 114: {fileID: 11421014}
   m_Layer: 0
   m_Name: MoonLowPoly
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &161206
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 424330}
+  m_Layer: 20
+  m_Name: PlanetLowPoly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -581,7 +596,7 @@ GameObject:
   - 135: {fileID: 13553604}
   m_Layer: 20
   m_Name: PlanetObject
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,7 +653,7 @@ GameObject:
   - 135: {fileID: 13540564}
   m_Layer: 20
   m_Name: PlanetObject
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -672,7 +687,7 @@ GameObject:
   - 114: {fileID: 11490370}
   m_Layer: 20
   m_Name: StarComponents
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -692,8 +707,8 @@ GameObject:
   - 135: {fileID: 13551334}
   - 114: {fileID: 11415124}
   m_Layer: 20
-  m_Name: Planet
-  m_TagString: Untagged
+  m_Name: PlanetObject
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -773,7 +788,7 @@ GameObject:
   - 4: {fileID: 495674}
   m_Layer: 20
   m_Name: StarComponents
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -871,7 +886,7 @@ GameObject:
   - 23: {fileID: 2304286}
   m_Layer: 0
   m_Name: MoonObject
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -888,7 +903,7 @@ GameObject:
   - 23: {fileID: 2356798}
   m_Layer: 0
   m_Name: MoonObject
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -991,7 +1006,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141468}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 208.851837, y: 0, z: 0}
+  m_LocalPosition: {x: 37.9300003, y: 0, z: 0}
   m_LocalScale: {x: .267988652, y: .267988652, z: .267988652}
   m_Children: []
   m_Father: {fileID: 421286}
@@ -1043,7 +1058,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 135.35434, y: 0, z: 0}
+  m_LocalPosition: {x: 44.5999985, y: 0, z: 0}
   m_LocalScale: {x: .142884582, y: .142884582, z: .142884582}
   m_Children: []
   m_Father: {fileID: 426564}
@@ -1092,7 +1107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 213.904953, y: 0, z: 0}
+  m_LocalPosition: {x: -39.2000008, y: 0, z: 0}
   m_LocalScale: {x: .128829405, y: .128829405, z: .128829405}
   m_Children: []
   m_Father: {fileID: 408810}
@@ -1117,11 +1132,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 80, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 479874}
-  m_RootOrder: 2
+  m_Father: {fileID: 424330}
+  m_RootOrder: 1
 --- !u!4 &423046
 Transform:
   m_ObjectHideFlags: 1
@@ -1134,6 +1149,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 433238}
   m_RootOrder: 1
+--- !u!4 &424330
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 479874}
+  - {fileID: 422780}
+  - {fileID: 444550}
+  - {fileID: 428114}
+  m_Father: {fileID: 483256}
+  m_RootOrder: 3
 --- !u!4 &425732
 Transform:
   m_ObjectHideFlags: 1
@@ -1194,8 +1225,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 455696}
-  m_Father: {fileID: 479874}
-  m_RootOrder: 0
+  m_Father: {fileID: 424330}
+  m_RootOrder: 3
 --- !u!4 &428520
 Transform:
   m_ObjectHideFlags: 1
@@ -1244,7 +1275,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 106.603363, y: 0, z: 0}
+  m_LocalPosition: {x: 47.5999985, y: -31.5, z: 0}
   m_LocalScale: {x: .21260424, y: .21260424, z: .21260424}
   m_Children: []
   m_Father: {fileID: 444550}
@@ -1319,13 +1350,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104548}
-  m_LocalRotation: {x: -.178734615, y: -.901531637, z: -.37346378, w: -.125775918}
-  m_LocalPosition: {x: 80.1999969, y: -20.6000004, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 436286}
-  m_Father: {fileID: 479874}
-  m_RootOrder: 1
+  m_Father: {fileID: 424330}
+  m_RootOrder: 2
 --- !u!4 &446706
 Transform:
   m_ObjectHideFlags: 1
@@ -1345,7 +1376,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 121908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -166.397705, y: 27.8505135, z: 0}
+  m_LocalPosition: {x: -81.9000015, y: 27.8505135, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 428520}
@@ -1373,7 +1404,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 129938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 626.690674, y: 0, z: 0}
+  m_LocalPosition: {x: 30, y: 0, z: 0}
   m_LocalScale: {x: .288678497, y: .288678497, z: .288678497}
   m_Children: []
   m_Father: {fileID: 428114}
@@ -1409,7 +1440,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188972}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 185.757904, y: 0, z: 0}
+  m_LocalPosition: {x: 22.7999992, y: 0, z: 0}
   m_LocalScale: {x: .245635107, y: .245635107, z: .245635107}
   m_Children: []
   m_Father: {fileID: 485282}
@@ -1488,12 +1519,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 80, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 428114}
-  - {fileID: 444550}
-  - {fileID: 422780}
-  m_Father: {fileID: 483256}
-  m_RootOrder: 3
+  m_Children: []
+  m_Father: {fileID: 424330}
+  m_RootOrder: 0
 --- !u!4 &483256
 Transform:
   m_ObjectHideFlags: 1
@@ -1507,7 +1535,7 @@ Transform:
   - {fileID: 433238}
   - {fileID: 478006}
   - {fileID: 444084}
-  - {fileID: 479874}
+  - {fileID: 424330}
   m_Father: {fileID: 493872}
   m_RootOrder: 0
 --- !u!4 &484580
