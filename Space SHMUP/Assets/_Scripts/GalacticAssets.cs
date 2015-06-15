@@ -96,8 +96,8 @@ namespace Soomla.Store.Example {
 		/** Virtual Currencies **/
 		
 		public static VirtualCurrency GALACTIC_CURRENCY = new VirtualCurrency(
-			"Milky Buck",										// name
-			"Currency in the Milky Way galaxy",					// description
+			"Cosmic Coin",										// name
+			"Currency in the Cosmos",						// description
 			Constants.GALACTIC_CURRENCY_ITEM_ID							// item id
 			);
 		
@@ -224,7 +224,7 @@ namespace Soomla.Store.Example {
 			null, //Constants.SHIELD_UPGRADE_2,
 			null,
 			"Shield Upgrade",
-			"SHield takes two hits",
+			"Shield takes two hits",
 			Constants.SHIELD_UPGRADE_1,
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with

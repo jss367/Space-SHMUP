@@ -60,7 +60,7 @@ public class Hero : MonoBehaviour {
 	public float dampingRadius = 2.5f;
 	//Above is from Space Shooter
 
-	public SimpleTouchPad touchPad;
+//	public SimpleTouchPad touchPad;
 	public FireButton fireButton;
 
 	public GameObject explosion;

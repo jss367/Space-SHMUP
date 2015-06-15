@@ -178,7 +178,7 @@ public class Main : MonoBehaviour {
 		float timer = Time.timeSinceLevelLoad;
 
 		if (!playerDead && !gameHasEnded && (timer > timeLimit + endGameDelay)){
-			WaitUntilLevelEmpties();
+			InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 		}
 
 		if (!weaponrySet) {
@@ -187,16 +187,19 @@ public class Main : MonoBehaviour {
 	}
 
 	public void WaitUntilLevelEmpties(){
-
+//		Debug.Log ("Waiting until level empties");
 		stopSpawning = true;
 		GameObject[] AsteroidsRemaining = GameObject.FindGameObjectsWithTag ("Asteroid");
-//		Debug.Log (AsteroidsRemaining.Length);
+//		Debug.Log ("Asteroids remaining: " + AsteroidsRemaining.Length);
 		GameObject[] EnemiesRemaining = GameObject.FindGameObjectsWithTag ("Enemy");
-//		Debug.Log (EnemiesRemaining.Length);
-		if (EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0){
-			PlayerWon();
+//		Debug.Log ("Enemies remaining: " + EnemiesRemaining.Length);
+		if (EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) {
+			if (playerDead) {
+				GameOver ();
+			} else {
+				PlayerWon ();
 			}
-
+		}
 	
 
 	}
@@ -241,13 +244,14 @@ public class Main : MonoBehaviour {
 	public void PlayerLoss()
 	{
 		playerDead = true;
-		Debug.Log("Player lost the level!");
-		GameOver ();
+//		Debug.Log("Player lost the level!");
+//		GameOver ();
+		InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 	}
 	
 	public void PlayerWon()
 	{
-		Debug.Log("Player beat the level!");
+//		Debug.Log("Player beat the level!");
 		victoryText.enabled = true;
 		playerWins = true;
 //		GiveStars ();
@@ -257,7 +261,7 @@ public class Main : MonoBehaviour {
 
 	public void GameOver() {
 		gameHasEnded = true;
-		Debug.Log("Game has ended");
+//		Debug.Log("Game has ended");
 //		scoreText.enabled = false;
 		prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
 		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";

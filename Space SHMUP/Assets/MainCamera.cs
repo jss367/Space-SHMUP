@@ -39,7 +39,7 @@ public class MainCamera : MonoBehaviour {
 		planets = GameObject.FindGameObjectsWithTag ("Planet");
 		stars = GameObject.FindGameObjectsWithTag ("Star");
 		moons = GameObject.FindGameObjectsWithTag ("Moon");
-		Debug.Log (moons.Length);
+//		Debug.Log ("Number of moons: " + moons.Length);
 
 //		celestialBodies[] = new GameObject[planets.Length + stars.Length + moons.Length];
 //		celestialBodies[] = planets.Concat(stars).ToArray;
@@ -47,7 +47,7 @@ public class MainCamera : MonoBehaviour {
 //		Debug.Log(celestialBodies.Length);
 
 		Vector3 bodss = moons [1].transform.position;
-		Debug.Log (bodss);
+//		Debug.Log (bodss);
 //		Vector3 bods = celestialBodies[2].transform.position;
 //		Debug.Log(bods);
 	}
