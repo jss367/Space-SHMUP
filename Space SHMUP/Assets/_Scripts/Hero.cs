@@ -63,8 +63,6 @@ public class Hero : MonoBehaviour {
 	public SimpleTouchPad touchPad;
 	public FireButton fireButton;
 
-	public string testString;
-
 	public GameObject explosion;
 	public GameObject enemyExplosion;
 
@@ -182,8 +180,6 @@ public class Hero : MonoBehaviour {
 		}
 
 
-	[SerializeField]
-	Text txtBtn;
 	
 	void CheckInventory(){
 
@@ -203,15 +199,15 @@ public class Hero : MonoBehaviour {
 
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
 					Debug.Log("Blaster is equipped");
-			testString = "Blaster is equipped";
+
 				}
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 			Debug.Log("Spread is equipped");
-			testString = "Spread is equipped";
+
 			spreadOwned = true;
 		}
 
-		txtBtn.text = "" + testString;
+
 //		}
 //		spreadOwned = true;
 	}
