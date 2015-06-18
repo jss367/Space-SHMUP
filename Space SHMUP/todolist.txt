@@ -1,5 +1,6 @@
 Before Deploy:
 
+ENEMY 5 never leaves the screen!
 update costs in store
 make sure asteroids aren't too loud
 octopus enemy doesn't explode
@@ -54,7 +55,7 @@ more new weapons, rockets go to nearest enemy and make big explosion
 faster shots, less delay between shots, more damage
 
 cd C:\Users\HMGSYS\Documents\GitHub\Unity\Space-SHMUP\Space SHMUP
-adb install -r GalacticBeatsdb.apk
+adb install -r GalacticBeats.apk
 
 build process:
 comment out store init in main and hero - just hero now?

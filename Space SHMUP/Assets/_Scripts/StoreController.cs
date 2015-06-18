@@ -216,10 +216,10 @@ public class StoreController : BaseController
 		Debug.Log("ResetInventory");
 		StoreInventory.UnEquipVirtualGood (Constants.BLASTER_WEAPON_ITEM_ID);
 		StoreInventory.UnEquipVirtualGood (Constants.SPREAD_WEAPON_ITEM_ID);
-		StoreInventory.RemoveGoodUpgrades (Constants.SHIELD_ITEM_ID);
+//		StoreInventory.RemoveGoodUpgrades (Constants.SHIELD_ITEM_ID);
 //		StoreInventory.RemoveGoodUpgrades (Constants.SPREAD_WEAPON_ITEM_ID);
-		StoreInventory.RemoveGoodUpgrades (Constants.SHIELD_UPGRADE_1);
-		StoreInventory.RemoveGoodUpgrades (Constants.BLASTER_WEAPON_ITEM_ID);
+//		StoreInventory.RemoveGoodUpgrades (Constants.SHIELD_UPGRADE_1);
+//		StoreInventory.RemoveGoodUpgrades (Constants.BLASTER_WEAPON_ITEM_ID);
 //		Debug.Log(StoreInventory.GetItemBalance (Constants.SHIELD_UPGRADE_1));
 
 	}
