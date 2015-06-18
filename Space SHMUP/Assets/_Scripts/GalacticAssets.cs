@@ -222,7 +222,7 @@ namespace Soomla.Store.Example {
 		public static VirtualGood ShieldUpgrade1 = new UpgradeVG(
 			Constants.SHIELD_ITEM_ID,
 			null, //Constants.SHIELD_UPGRADE_2,
-			null,
+			Constants.SHIELD_ITEM_ID,
 			"Shield Upgrade",
 			"Shield takes two hits",
 			Constants.SHIELD_UPGRADE_1,
