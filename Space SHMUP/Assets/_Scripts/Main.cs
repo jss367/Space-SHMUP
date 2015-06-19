@@ -136,14 +136,14 @@ public class Main : MonoBehaviour {
 		}
 
 	void CheckInventory(){
-//		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
+		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
 //			Debug.Log("Blaster is equipped");
-//			//			spreadOwned = false;
-//		}
-//		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
+			//			spreadOwned = false;
+		}
+		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 //			Debug.Log("Spread is equipped");
-//			spreadOwned = true;
-//		}
+			spreadOwned = true;
+		}
 //
 //		spreadOwned = true;
 //		spreadOwned = SoomlaHelper.S.spreadOwned;
@@ -187,20 +187,22 @@ public class Main : MonoBehaviour {
 	}
 
 	public void WaitUntilLevelEmpties(){
-//		Debug.Log ("Waiting until level empties");
-		stopSpawning = true;
-		GameObject[] AsteroidsRemaining = GameObject.FindGameObjectsWithTag ("Asteroid");
+	
+//			Debug.Log ("Waiting until level empties");
+			stopSpawning = true;
+			GameObject[] AsteroidsRemaining = GameObject.FindGameObjectsWithTag ("Asteroid");
 //		Debug.Log ("Asteroids remaining: " + AsteroidsRemaining.Length);
-		GameObject[] EnemiesRemaining = GameObject.FindGameObjectsWithTag ("Enemy");
+			GameObject[] EnemiesRemaining = GameObject.FindGameObjectsWithTag ("Enemy");
 //		Debug.Log ("Enemies remaining: " + EnemiesRemaining.Length);
-		if (EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) {
-			if (playerDead) {
-				GameOver ();
-			} else {
-				PlayerWon ();
+			if (EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) {
+//			Debug.Log("gameHasEnded: " + gameHasEnded);
+				if (playerDead && !gameHasEnded) {
+					GameOver ();
+				} else if (!playerWins) {
+					PlayerWon ();
+
 			}
 		}
-	
 
 	}
 
@@ -283,8 +285,8 @@ public class Main : MonoBehaviour {
 		finalScoreText.text = "Final Score: " + score;
 		StoreHighScore (score);
 		if (!pointsGiven) {
-			Debug.Log("pointsGiven is " + pointsGiven);
-			Debug.Log("Rewarding points");
+//			Debug.Log("pointsGiven is " + pointsGiven);
+//			Debug.Log("Rewarding points");
 			Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
 			pointsGiven = true;
 		}
