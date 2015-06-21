@@ -413,6 +413,7 @@ public class Hero : MonoBehaviour {
 
 	void DestroyHero(){
 		Destroy (this.gameObject);
+		Debug.Log ("Hero has been destroyed");
 		//Tell Main.S to restart the game after a delay
 //		Main.S.DelayedRestart (gameRestartDelay);
 		Main.S.PlayerLoss ();

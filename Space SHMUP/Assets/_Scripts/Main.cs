@@ -45,6 +45,7 @@ public class Main : MonoBehaviour {
 	public bool spreadOwned = false;
 	public bool weaponrySet = false;
 	public bool pointsGiven = false;
+	private float timeOfDeath;
 	
 	public WeaponType[]			activeWeaponTypes;
 	public float				enemySpawnRate; //Display between enemy spawns
@@ -176,7 +177,7 @@ public class Main : MonoBehaviour {
 	}
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
-
+		Debug.Log (playerWins);
 		if (!playerDead && !gameHasEnded && (timer > timeLimit + endGameDelay)){
 			InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 		}
@@ -194,11 +195,11 @@ public class Main : MonoBehaviour {
 //		Debug.Log ("Asteroids remaining: " + AsteroidsRemaining.Length);
 			GameObject[] EnemiesRemaining = GameObject.FindGameObjectsWithTag ("Enemy");
 //		Debug.Log ("Enemies remaining: " + EnemiesRemaining.Length);
-			if (EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) {
+			if ((EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) || (Time.time - timeOfDeath > 5.0f)) {
 //			Debug.Log("gameHasEnded: " + gameHasEnded);
 				if (playerDead && !gameHasEnded) {
 					GameOver ();
-				} else if (!playerWins) {
+				} else if (!playerWins && !playerDead) {
 					PlayerWon ();
 
 			}
@@ -246,14 +247,15 @@ public class Main : MonoBehaviour {
 	public void PlayerLoss()
 	{
 		playerDead = true;
-//		Debug.Log("Player lost the level!");
+		timeOfDeath = Time.time;
+		Debug.Log("Player lost the level!");
 //		GameOver ();
 		InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 	}
 	
 	public void PlayerWon()
 	{
-//		Debug.Log("Player beat the level!");
+		Debug.Log("Player beat the level!");
 		victoryText.enabled = true;
 		playerWins = true;
 //		GiveStars ();
@@ -263,7 +265,7 @@ public class Main : MonoBehaviour {
 
 	public void GameOver() {
 		gameHasEnded = true;
-//		Debug.Log("Game has ended");
+		Debug.Log("Game has ended");
 //		scoreText.enabled = false;
 		prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
 		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";
@@ -456,7 +458,7 @@ public class Main : MonoBehaviour {
 	
 	void ResetScore ()
 	{
-//		Debug.Log ("Score has been updated");
+		Debug.Log ("Score has been updated");
 		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
 

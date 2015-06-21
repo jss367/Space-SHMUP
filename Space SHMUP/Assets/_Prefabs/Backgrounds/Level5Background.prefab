@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11426048}
   - 135: {fileID: 13567614}
   - 114: {fileID: 11474478}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: PlanetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +30,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 420706}
   - 114: {fileID: 11498454}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PlanetLowPoly
   m_TagString: SpaceScene_Planet
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - 114: {fileID: 11434446}
   - 135: {fileID: 13517160}
   - 114: {fileID: 11429786}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: PlanetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,13 +67,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 470462}
   - 108: {fileID: 10830400}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Directional light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &136620
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,7 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 427596}
   - 114: {fileID: 11479830}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: LocalStarChild
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - 4: {fileID: 404062}
   - 198: {fileID: 19872648}
   - 199: {fileID: 19965646}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: ParticleSystem-Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - 4: {fileID: 480028}
   - 198: {fileID: 19879992}
   - 199: {fileID: 19908350}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: ParticleSystem-Disc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 488062}
   - 108: {fileID: 10830878}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: Point light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,13 +148,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 409436}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: Level5Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &173484
 GameObject:
   m_ObjectHideFlags: 1
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 458140}
   - 114: {fileID: 11405104}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PlanetLowPoly
   m_TagString: SpaceScene_Planet
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - 4: {fileID: 400534}
   - 198: {fileID: 19808654}
   - 199: {fileID: 19957566}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: ParticleSystem-Prominence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 424904}
@@ -268,7 +268,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136620}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
   m_LocalPosition: {x: 18.5497074, y: 28.8605576, z: 98.1978836}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -288,7 +288,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 421052}
@@ -434,7 +434,7 @@ Light:
   serializedVersion: 6
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .5
+  m_Intensity: 1.83000004
   m_Range: 20000
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -450,7 +450,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1048576
+    m_Bits: 16384
   m_Lightmapping: 1
   m_BounceIntensity: 1
   m_ShadowRadius: 0
@@ -510,6 +510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetRotation: {x: 0, y: 0, z: .5}
   isTimer: 0
+  velocity: {x: 0, y: 0}
 --- !u!114 &11429786
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -536,6 +537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetRotation: {x: 0, y: 0, z: 0}
   isTimer: 0
+  velocity: {x: 0, y: 0}
 --- !u!114 &11474478
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -562,6 +564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   planetRotation: {x: 0, y: 0, z: 0}
   isTimer: 1
+  velocity: {x: 0, y: 0}
 --- !u!114 &11498454
 MonoBehaviour:
   m_ObjectHideFlags: 1
