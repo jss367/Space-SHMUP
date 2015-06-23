@@ -7,8 +7,6 @@ using Soomla;
 public class Hero : MonoBehaviour {
 
 	static public Hero S; //S for singleton
-
-
 	
 	public float gameRestartDelay = 2f;
 	

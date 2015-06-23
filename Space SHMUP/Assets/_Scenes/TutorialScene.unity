@@ -1060,6 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50315566f9b1d1d448801b6a6d737486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  S: {fileID: 0}
   Sphere: {fileID: 2075330331}
   Joystick: {fileID: 1838322966}
   FirePad: {fileID: 1894540694}
@@ -3536,10 +3537,10 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Nice job!
 
@@ -4016,6 +4017,7 @@ GameObject:
   - 33: {fileID: 2075330335}
   - 135: {fileID: 2075330334}
   - 23: {fileID: 2075330333}
+  - 114: {fileID: 2075330336}
   m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
@@ -4078,6 +4080,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2075330331}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2075330336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2075330331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4b15a0eaaa2534bb612de3d1cbfbea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Step1: {fileID: 2035881956}
+  Step2: {fileID: 1789479582}
+  FirePad: {fileID: 1894540694}
 --- !u!1 &2087747234
 GameObject:
   m_ObjectHideFlags: 0

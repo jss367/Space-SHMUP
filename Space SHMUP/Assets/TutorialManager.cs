@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour {
 
+	public TutorialManager		S;
 	public GameObject Sphere;
 	public GameObject Joystick;
 	public GameObject FirePad;
@@ -16,6 +17,11 @@ public class TutorialManager : MonoBehaviour {
 	public Text Step5;
 	private bool onStep1;
 
+	void Awake(){
+		
+		S = this;
+
+	}
 
 	// Use this for initialization
 	void Start () {
@@ -35,14 +41,7 @@ public class TutorialManager : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other){
-		Debug.Log (onStep1);
-		// If other is hero
-//		if (onStep1) {
-		Step1.enabled = false;
-		Step2.enabled = true;
-		FirePad.SetActive (true);	
-//		}
-		// Is other is projectile
+
 	}
 
 	public void onCommand(string str)
@@ -66,9 +65,16 @@ public class TutorialManager : MonoBehaviour {
 		
 	}
 
-	public void Next(){
+	public void SphereTrigger(){
 
-
+		Debug.Log (onStep1);
+		// If other is hero
+		//		if (onStep1) {
+		Step1.enabled = false;
+		Step2.enabled = true;
+		//		FirePad.SetActive (true);	
+		//		}
+		// Is other is projectile
 
 	}
 }
