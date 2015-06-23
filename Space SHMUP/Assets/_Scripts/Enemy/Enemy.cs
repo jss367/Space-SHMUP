@@ -40,7 +40,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void Start() {
-		GameObject gameControllerObject = GameObject.Find("GameController");
+//		GameObject gameControllerObject = GameObject.Find("GameController");
 		GameObject mainObject = GameObject.FindWithTag("MainCamera");
 		if (mainObject != null) {
 			main = mainObject.GetComponent<Main> ();

@@ -177,7 +177,7 @@ public class Main : MonoBehaviour {
 	}
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
-		Debug.Log (playerWins);
+//		Debug.Log (playerWins);
 		if (!playerDead && !gameHasEnded && (timer > timeLimit + endGameDelay)){
 			InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 		}

@@ -46,7 +46,7 @@ public class MainCamera : MonoBehaviour {
 		closestObject = planets [0];
 //		Debug.Log(celestialBodies.Length);
 
-		Vector3 bodss = moons [1].transform.position;
+//		Vector3 bodss = moons [1].transform.position;
 //		Debug.Log (bodss);
 //		Vector3 bods = celestialBodies[2].transform.position;
 //		Debug.Log(bods);
@@ -90,7 +90,7 @@ public class MainCamera : MonoBehaviour {
 	void GetClosestObject(){
 
 
-		Vector3 cams = Camera.main.gameObject.transform.position;
+//		Vector3 cams = Camera.main.gameObject.transform.position;
 //		Vector3 bods = (celestialBodies [i].transform.position);
 
 		for (int i = 0; i < planets.Length; i++) {
