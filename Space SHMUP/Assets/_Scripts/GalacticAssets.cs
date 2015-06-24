@@ -76,8 +76,6 @@ namespace Soomla.Store.Example {
 		
 		public const string THOUSANDMUFF_PACK_PRODUCT_ID = "2500_pack";
 				
-		public const string PAVLOVA_ITEM_ID   = "pavlova";
-		
 		public const string CHOCLATECAKE_ITEM_ID   = "chocolate_cake";
 		
 		public const string CREAMCUP_ITEM_ID   = "cream_cup";
@@ -105,28 +103,28 @@ namespace Soomla.Store.Example {
 		/** Virtual Currency Packs **/
 		
 		public static VirtualCurrencyPack TEN_COIN_PACK = new VirtualCurrencyPack(
-			"10 Coins",                                   // name
+			"1000 Coins",                                   // name
 			"Test refund of an item",                       // description
 			"muffins_10",                                   // item id
-			10,												// number of currencies in the pack
+			1000,												// number of currencies in the pack
 			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
 			new PurchaseWithMarket(TENMUFF_PACK_PRODUCT_ID, 0.99)
 			);
 		
 		public static VirtualCurrencyPack FIFTY_COIN_PACK = new VirtualCurrencyPack(
-			"50 Coins",                                   // name
+			"10000 Coins",                                   // name
 			"Test cancellation of an item",                 // description
 			"muffins_50",                                   // item id
-			50,                                             // number of currencies in the pack
+			10000,                                             // number of currencies in the pack
 			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
 			new PurchaseWithMarket(FIFTYMUFF_PACK_PRODUCT_ID, 1.99)
 			);
 		
 		public static VirtualCurrencyPack FIVEHUND_COIN_PACK = new VirtualCurrencyPack(
-			"500 Coins",              	 		            // name
+			"50000 Coins",              	 		            // name
 			"Test purchase of an item",                 	// description
 			"muffins_400",                                  // item id
-			500,                                            // number of currencies in the pack
+			50000,                                            // number of currencies in the pack
 			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
 			new PurchaseWithMarket(FOURHUNDMUFF_PACK_PRODUCT_ID, 4.99)
 			);
@@ -144,21 +142,13 @@ namespace Soomla.Store.Example {
 		/// <summary>
 		/// An equipable weapon that can be purchased for 7 coins.
 		/// </summary>
-		public static VirtualGood Sword = new EquippableVG(
-			EquippableVG.EquippingModel.LOCAL,  // Equipping Model
-			"Sword",                            // Name
-			"Slash your enemies!",              // Description
-			"sword",                            // Item ID
-			new PurchaseWithVirtualItem(        // Purchase type
-		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            7));                            // Payment amount
 
 		public static VirtualGood WEAPON_SPREAD = new EquippableVG(
 			EquippableVG.EquippingModel.CATEGORY,
 			"Spreading Weapon", 														// name
 			"A more powerful weapon to fend off aliens",				 	// description
 			Constants.SPREAD_WEAPON_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 1000));
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 15000));
 
 		public static VirtualGood WEAPON_BLASTER = new EquippableVG(
 			EquippableVG.EquippingModel.CATEGORY,
@@ -220,15 +210,15 @@ namespace Soomla.Store.Example {
 
 
 		public static VirtualGood ShieldUpgrade1 = new UpgradeVG(
-			Constants.SHIELD_ITEM_ID,
-			null, //Constants.SHIELD_UPGRADE_2,
-			Constants.SHIELD_ITEM_ID,
-			"Shield Upgrade",
-			"Shield takes two hits",
-			Constants.SHIELD_UPGRADE_1,
+			Constants.SHIELD_ITEM_ID,	// Item ID of the associated good that is being upgraded
+			null,						// Item ID of the next upgrade good
+			null,						// Item ID of the previous upgrade good
+			"Shield Upgrade",			// Name
+			"Shield takes two hits",	// Description
+			Constants.SHIELD_UPGRADE_1,	// Item ID
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            500));
+		                            8000));
 
 
 //		public static VirtualGood ShieldUpgrade2 = new UpgradeVG(
@@ -270,7 +260,7 @@ namespace Soomla.Store.Example {
 		/** Virtual Categories **/
 		// The muffin rush theme doesn't support categories, so we just put everything under a general category.
 		public static VirtualCategory GENERAL_CATEGORY = new VirtualCategory(
-			"General", new List<string>(new string[] {PAVLOVA_ITEM_ID, CHOCLATECAKE_ITEM_ID, CREAMCUP_ITEM_ID })
+			"General", new List<string>(new string[] {CHOCLATECAKE_ITEM_ID, CREAMCUP_ITEM_ID })
 			);
 
 		public static VirtualCategory WEAPON_CATEGORY = new VirtualCategory(

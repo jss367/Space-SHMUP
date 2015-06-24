@@ -70,6 +70,7 @@ public class Hero : MonoBehaviour {
 	}
 
 	void Start() {
+		shieldUpgradeOwned = false;
 		//		spreadOwned = true; // comment out for builds
 //		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
 
@@ -125,15 +126,6 @@ public class Hero : MonoBehaviour {
 		
 		Vector3 desiredVelocity = offset.normalized * speed * dampening; // commented to try touchpad
 
-		//Trying touchpad below
-//		Vector2 direction = touchPad.GetDirection ();
-//		Debug.Log ("The direction in Hero is " + direction);
-//		Debug.Log ("The x direction in Hero is " + direction.x);
-//		Vector3 movement = new Vector3 (direction.x, direction.y, 0.0f);
-//		Debug.Log ("The movement in Hero is " + movement);
-//		GetComponent<Rigidbody>().velocity = movement * speed / 30;
-		//Trying touchpad above
-
 //		Debug.Log ("The velocity is " + GetComponent<Rigidbody> ().velocity);
 
 
@@ -181,38 +173,43 @@ public class Hero : MonoBehaviour {
 	
 	void CheckInventory(){
 
-//		string testString;
 //		Debug.Log ("Checking inventory");
-//		int shieldUpgrade = Soomla.Store.StoreInventory.GetItemBalance (Constants.SHIELD_ITEM_ID);
-////		Debug.Log ("Shield upgrade: " + shieldUpgrade);
-//		if ((shieldUpgrade >= 1))	{
-			shieldUpgradeOwned = true;
-//			Debug.Log("Player owns shield upgrade");
-//		}
-//
-//		String.format testString;
-//		string.Format testString;
-//		System.String.Format testString;
+
 		try
 		{
 
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
 					Debug.Log("Blaster is equipped");
-
 				}
+
+
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 			Debug.Log("Spread is equipped");
 
 			spreadOwned = true;
 		}
+
 		}
 		catch (System.Exception e)
 		{
 			Debug.Log("Caught error: " + e);
 		}
 
-//		}
-//		spreadOwned = true;
+		try{
+
+			Debug.Log("Shield upgrade is " + Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SHIELD_ITEM_ID));
+			if(Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SHIELD_ITEM_ID) == "shield_1")
+			{
+				Debug.Log("Player has shield upgrade");
+				shieldUpgradeOwned = true;
+			}
+		}
+
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+		}
+
 	}
 
 	//This variable holds a reference to the last triggering GameObject
