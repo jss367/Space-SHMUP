@@ -24,8 +24,8 @@ public class LevelManager : MonoBehaviour {
 
 		switch (currentLevel) {
 		case "Level 1":
-			Level1Start ();
-			InvokeRepeating("Level1Update", startRepeating, repeatFreq);
+//			Level1Start ();
+//			InvokeRepeating("Level1Update", startRepeating, repeatFreq);
 			break;
 		case "Level 2":
 			Level2Start ();

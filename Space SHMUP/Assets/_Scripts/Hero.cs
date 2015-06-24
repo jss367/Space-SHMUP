@@ -193,7 +193,8 @@ public class Hero : MonoBehaviour {
 //		String.format testString;
 //		string.Format testString;
 //		System.String.Format testString;
-
+		try
+		{
 
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
 					Debug.Log("Blaster is equipped");
@@ -204,7 +205,11 @@ public class Hero : MonoBehaviour {
 
 			spreadOwned = true;
 		}
-
+		}
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+		}
 
 //		}
 //		spreadOwned = true;

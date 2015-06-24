@@ -149,6 +149,76 @@ SpriteRenderer:
 GameObject:
   m_PrefabParentObject: {fileID: 188048, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
   m_PrefabInternal: {fileID: 1656032695}
+--- !u!1 &84206853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 84206854}
+  - 222: {fileID: 84206856}
+  - 114: {fileID: 84206855}
+  m_Layer: 9
+  m_Name: Step5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &84206854
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 84206853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2108253590}
+  m_RootOrder: 5
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &84206855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 84206853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: .0896551609, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2f8b50ebe974f4f3381c461a4fff317a, type: 3}
+    m_FontSize: 44
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'Nice!
+
+    You got a powerup
+
+    Collect it to '
+--- !u!222 &84206856
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 84206853}
 --- !u!1 &98049451
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +355,80 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
+--- !u!1 &187058722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 187058723}
+  - 222: {fileID: 187058725}
+  - 114: {fileID: 187058724}
+  m_Layer: 9
+  m_Name: Step6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &187058723
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187058722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2108253590}
+  m_RootOrder: 6
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &187058724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187058722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: .0896551609, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2f8b50ebe974f4f3381c461a4fff317a, type: 3}
+    m_FontSize: 44
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'That''s all there is!
+
+    The more points you make the more you can purchase in the store
+
+    Store upgrades will help you become more powerful
+
+    You''ll need these upgrades as you progress further
+
+    Good luck and happy flying!'
+--- !u!222 &187058725
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 187058722}
 --- !u!114 &212716556 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20,
@@ -720,6 +864,87 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1303776319}
   m_Script: {fileID: 11500000, guid: 8c1ee253300ca944b8980fcbad0d5ea0, type: 3}
+--- !u!1001 &528640745
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 674458975}
+    m_Modifications:
+    - target: {fileID: 439020, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 439020, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 439020, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439020, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439020, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439020, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439020, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 439020, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 162894, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+      propertyPath: m_Name
+      value: Asteroid
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11428684, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &528640746 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 439020, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+  m_PrefabInternal: {fileID: 528640745}
+--- !u!1 &528640747 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 162894, guid: cf06e8e77ab53604098ad687678e47d6, type: 2}
+  m_PrefabInternal: {fileID: 528640745}
+--- !u!114 &528640748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 528640747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c95d59cecdc57446b8e1a871e2b6737, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  score: 10
+  showDamageForFrames: 0
+  powerUpDropChance: 0
+  originalColors: []
+  materials: []
+  remainingDamageFrames: 0
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  boundsCenterOffset: {x: 0, y: 0, z: 0}
+  explosion: {fileID: 165916, guid: 19208d7d959287a4aab57a49479cca26, type: 2}
+  rotationSpeed: 200
+  rotationalAxis: {x: 0, y: 1, z: 0}
+  lastTriggerGo: {fileID: 0}
 --- !u!1 &547625009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1047,6 +1272,8 @@ Transform:
   - {fileID: 1283360247}
   - {fileID: 2108253590}
   - {fileID: 788986972}
+  - {fileID: 1347036887}
+  - {fileID: 528640746}
   m_Father: {fileID: 0}
   m_RootOrder: 12
 --- !u!114 &674458976
@@ -1060,17 +1287,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50315566f9b1d1d448801b6a6d737486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  S: {fileID: 0}
   Sphere: {fileID: 2075330331}
   Joystick: {fileID: 1838322966}
   FirePad: {fileID: 1894540694}
   NextButton: {fileID: 1165863931}
+  Asteroid: {fileID: 528640747}
+  Enemy: {fileID: 1347036888}
   Intro: {fileID: 1135540906}
   Step1: {fileID: 2035881956}
   Step2: {fileID: 1789479582}
-  Step3: {fileID: 0}
-  Step4: {fileID: 0}
-  Step5: {fileID: 0}
+  Step3: {fileID: 723319855}
+  Step4: {fileID: 1215228708}
+  Step5: {fileID: 84206855}
+  Step6: {fileID: 187058724}
+--- !u!1 &723319854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 723319857}
+  - 222: {fileID: 723319856}
+  - 114: {fileID: 723319855}
+  m_Layer: 9
+  m_Name: Step3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &723319855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723319854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: .0896551609, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2f8b50ebe974f4f3381c461a4fff317a, type: 3}
+    m_FontSize: 44
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'Great!
+
+    Your mission is to destroy asteroids and aliens ships
+
+    Hit "Next" to test your skills'
+--- !u!222 &723319856
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723319854}
+--- !u!224 &723319857
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723319854}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2108253590}
+  m_RootOrder: 3
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: .5, y: .5}
 --- !u!4 &728624474 stripped
 Transform:
   m_PrefabParentObject: {fileID: 468872, guid: 1dd47a0d984fce54eb4f1cc854854c20, type: 2}
@@ -1594,7 +1893,7 @@ RectTransform:
   m_Children:
   - {fileID: 547625012}
   m_Father: {fileID: 2108253590}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_AnchorMin: {x: 1, y: .5}
   m_AnchorMax: {x: 1, y: .5}
   m_AnchoredPosition: {x: -21.9666748, y: 0}
@@ -1796,6 +2095,76 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1215228706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1215228707}
+  - 222: {fileID: 1215228709}
+  - 114: {fileID: 1215228708}
+  m_Layer: 9
+  m_Name: Step4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1215228707
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1215228706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2108253590}
+  m_RootOrder: 4
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1215228708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1215228706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 1, b: .0896551609, a: 1}
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 2f8b50ebe974f4f3381c461a4fff317a, type: 3}
+    m_FontSize: 44
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: 'On the left is an alien ship and on the right is an asteroid
+
+    Later on they''ll be moving, but for now we''ll hold them in place
+
+    See if you can make them explode'
+--- !u!222 &1215228709
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1215228706}
 --- !u!1 &1225849019 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 127410, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
@@ -2104,6 +2473,88 @@ AudioSource:
   m_PrefabParentObject: {fileID: 8200002, guid: 2e38ecc4faf7b48bfad67afcc796160f,
     type: 2}
   m_PrefabInternal: {fileID: 582128107}
+--- !u!1001 &1347036886
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 674458975}
+    m_Modifications:
+    - target: {fileID: 462072, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 462072, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 462072, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462072, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462072, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462072, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462072, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 462072, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 151784, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+      propertyPath: m_Name
+      value: Enemy_1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11492534, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+    - {fileID: 11436956, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &1347036887 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 462072, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+  m_PrefabInternal: {fileID: 1347036886}
+--- !u!1 &1347036888 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 151784, guid: 91b72a39f20461d4b8d71f2cae33b50d, type: 2}
+  m_PrefabInternal: {fileID: 1347036886}
+--- !u!114 &1347036889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1347036888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1366189039b1d254e84335664dcc0895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  health: 4
+  showDamageForFrames: 2
+  powerUpDropChance: 1
+  _________________: 0
+  comboTime: 1
+  impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
+  originalColors: []
+  materials: []
+  remainingDamageFrames: 0
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  boundsCenterOffset: {x: 0, y: 0, z: 0}
+  enemyExplosion: {fileID: 172662, guid: 0b461f2f00c26474db70e48f1893c723, type: 2}
 --- !u!1 &1350260318
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,8 +3924,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e743ead5bce9d419eafed3ebca7a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 0}
-  FinalScoreText: {fileID: 0}
 --- !u!1 &1772288346 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 187346, guid: ec581efae09f66146b731dcb468d811f, type: 2}
@@ -3546,7 +3995,9 @@ MonoBehaviour:
 
     On the bottom right is the firing pad
 
-    Try tapping it to fire'
+    Try tapping it to fire
+
+    See if you can hit the yellow ball'
 --- !u!222 &1789479583
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4093,6 +4544,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Step1: {fileID: 2035881956}
   Step2: {fileID: 1789479582}
+  Step3: {fileID: 723319855}
+  NextButton: {fileID: 1165863931}
   FirePad: {fileID: 1894540694}
 --- !u!1 &2087747234
 GameObject:
@@ -4193,6 +4646,10 @@ RectTransform:
   - {fileID: 1135540905}
   - {fileID: 2035881958}
   - {fileID: 1789479581}
+  - {fileID: 723319857}
+  - {fileID: 1215228707}
+  - {fileID: 84206854}
+  - {fileID: 187058723}
   - {fileID: 1165863932}
   m_Father: {fileID: 674458975}
   m_RootOrder: 2
