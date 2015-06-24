@@ -9,6 +9,7 @@ public class TutorialManager : MonoBehaviour {
 	public GameObject Joystick;
 	public GameObject FirePad;
 	public GameObject NextButton;
+	public GameObject PlayButton;
 	public GameObject Asteroid;
 	public GameObject Enemy;
 	public Text Intro;
@@ -33,6 +34,7 @@ public class TutorialManager : MonoBehaviour {
 		FirePad.SetActive (false);
 		Asteroid.SetActive (false);
 		Enemy.SetActive (false);
+		PlayButton.SetActive (false);
 //		onStep1 = false;
 		Intro.enabled = true;
 		Step1.enabled = false;
@@ -76,15 +78,17 @@ public class TutorialManager : MonoBehaviour {
 				NextButton.SetActive(false);
 				InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 			}
-			else{
-				Application.LoadLevel("LevelManager");
+			else {
+				Step5.enabled = false;
+				Step6.enabled = true;
+				PlayButton.SetActive(true);
+				NextButton.SetActive(false);
 			}
+			}
+		if (str.Equals ("LevelSelect")) {
+			Application.LoadLevel("LevelManager");
 		}
-
-
-
-		
-	}
+			}
 
 	public void WaitUntilLevelEmpties(){
 		
@@ -97,6 +101,7 @@ public class TutorialManager : MonoBehaviour {
 			Step5.enabled = true;
 			Step4.enabled = false;
 			NextButton.SetActive(true);
+			CancelInvoke("WaitUntilLevelEmpties");
 		}
 		
 	}

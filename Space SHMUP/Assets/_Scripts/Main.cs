@@ -137,19 +137,26 @@ public class Main : MonoBehaviour {
 		}
 
 	void CheckInventory(){
-		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
-//			Debug.Log("Blaster is equipped");
-			//			spreadOwned = false;
+		
+		//		Debug.Log ("Checking inventory");
+		try
+		{
+			
+			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
+				Debug.Log("Blaster is equipped");
+				
+			}
+			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
+				Debug.Log("Spread is equipped");
+				
+				spreadOwned = true;
+			}
 		}
-		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
-//			Debug.Log("Spread is equipped");
-			spreadOwned = true;
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
 		}
-//
-//		spreadOwned = true;
-//		spreadOwned = SoomlaHelper.S.spreadOwned;
-	
-
+		
 	}
 
 	void SetWeaponry() {
