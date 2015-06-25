@@ -80,7 +80,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 488164}
   - 54: {fileID: 5488156}
-  - 114: {fileID: 11488156}
+  - 114: {fileID: 11453062}
   - 114: {fileID: 11471644}
   m_Layer: 9
   m_Name: Enemy_5
@@ -360,7 +360,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0203203, y: 12.1113005, z: 3.6242218}
   m_Center: {x: -.091607675, y: 6.05565214, z: -1.38761067}
---- !u!114 &11471644
+--- !u!114 &11453062
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -368,22 +368,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 188164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b690331aa78145641b1e2faad8b729b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
-  shotSpawn: {fileID: 473920}
-  fireRate: 2.5
-  delay: .200000003
---- !u!114 &11488156
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53bb61224b527f04bb7fd959f3d9b6da, type: 3}
+  m_Script: {fileID: 11500000, guid: 28e8234d71dab8147adfeb59db15011e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
@@ -391,7 +376,7 @@ MonoBehaviour:
   health: 10
   score: 100
   showDamageForFrames: 2
-  powerUpDropChance: .200000003
+  powerUpDropChance: 1
   _________________: 0
   comboTime: 1
   impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
@@ -408,30 +393,22 @@ MonoBehaviour:
   points: []
   timeStart: 0
   duration: 4
-  parts:
-  - name: Body
-    health: 5
-    protectedBy:
-    - Left
-    - Middle
-    - Right
-    go: {fileID: 0}
-    mat: {fileID: 0}
-  - name: Left
-    health: 3
-    protectedBy: []
-    go: {fileID: 0}
-    mat: {fileID: 0}
-  - name: Middle
-    health: 3
-    protectedBy: []
-    go: {fileID: 0}
-    mat: {fileID: 0}
-  - name: Right
-    health: 3
-    protectedBy: []
-    go: {fileID: 0}
-    mat: {fileID: 0}
+  parts: []
+--- !u!114 &11471644
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 188164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b690331aa78145641b1e2faad8b729b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
+  shotSpawn: {fileID: 473920}
+  fireRate: 2.5
+  delay: .200000003
 --- !u!135 &13588158
 SphereCollider:
   m_ObjectHideFlags: 1
