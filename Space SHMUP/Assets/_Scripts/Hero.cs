@@ -248,12 +248,12 @@ public class Hero : MonoBehaviour {
 				AbsorbPowerUp(go);
 			}else{
 			//Announce it
-			print ("Triggered: " + go.name);
+//			print ("Triggered: " + go.name);
 			//Make sure it's not the same triggering go as last time
 			}
 		}else {
 			//Otherwise announce the original gameObject
-			print ("Triggered: " + other.gameObject.name);
+//			print ("Triggered: " + other.gameObject.name);
 		}
 	}
 	public float shieldLevel {

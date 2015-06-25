@@ -13,7 +13,7 @@ public class SphereTutorial : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 //		TutorialManager.S.SphereTrigger ();
-		Debug.Log (other);
+//		Debug.Log (other);
 		if (other.ToString() == "Shield (UnityEngine.SphereCollider)") {
 			Step1.enabled = false;
 			Step2.enabled = true;

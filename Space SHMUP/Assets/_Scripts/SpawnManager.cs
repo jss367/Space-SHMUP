@@ -31,15 +31,18 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject EnemySpawn1d3;
 	public GameObject EnemySpawn2d1;
 	public GameObject EnemySpawn2d2;
+	public GameObject EnemySpawn2d3;
 	public GameObject EnemySpawn3d1;
 	public GameObject EnemySpawn3d2;
+	public GameObject EnemySpawn3d3;
+	public GameObject EnemySpawn4d1;
 	public GameObject EnemySpawn4d3;
 	public GameObject EnemySpawn5d1;
 	public GameObject EnemySpawn10d1;
-	public GameObject Mid1;
-	public GameObject Mid2;
-	public GameObject Bass1;
-	public GameObject High1;
+//	public GameObject Mid1;
+//	public GameObject Mid2;
+//	public GameObject Bass1;
+//	public GameObject High1;
 
 	void Awake()
 	{
@@ -65,10 +68,10 @@ public class SpawnManager : MonoBehaviour {
 //		EnemySpawn4d3 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn4-3");
 //		EnemySpawn5d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn5-1");
 //		EnemySpawn10d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn10-1");
-		Mid1 = GameObject.Find ("LevelManager/FireworksManager/Mid1");
-		Mid2 = GameObject.Find ("LevelManager/FireworksManager/Mid2");
-		High1 = GameObject.Find ("LevelManager/FireworksManager/High1");
-		Bass1 = GameObject.Find ("LevelManager/FireworksManager/Bass1");
+//		Mid1 = GameObject.Find ("LevelManager/FireworksManager/Mid1");
+//		Mid2 = GameObject.Find ("LevelManager/FireworksManager/Mid2");
+//		High1 = GameObject.Find ("LevelManager/FireworksManager/High1");
+//		Bass1 = GameObject.Find ("LevelManager/FireworksManager/Bass1");
 
 	}
 

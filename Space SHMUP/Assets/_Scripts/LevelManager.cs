@@ -68,16 +68,13 @@ public class LevelManager : MonoBehaviour {
 
 	}
 
-
-
-
-	void Level1Start(){
-		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-	}
+//	void Level1Start(){
+//		
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//	}
 	
 	void Level2Start(){
 		
@@ -155,7 +152,7 @@ public class LevelManager : MonoBehaviour {
 	void SpawnManageLevel1(){
 //		yield return new WaitForSeconds (delay);
 //		Debug.Log ("Looking at level");
-
+		Debug.Log ("Is anyone even using this function?");
 
 
 		if (timer < firstBreak) {
@@ -274,44 +271,45 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Level1Update () {
-		if (!Main.S.stopSpawning) {
-
-//		Debug.Log ("level is " + level);
-//		Debug.Log ("timer is " + timer);
-//		Debug.Log ("first break is at " + firstBreak);
-			timer = Time.timeSinceLevelLoad;
-			if (timer < firstBreak) {
-				level = 1;
-				//	Debug.Log("The time alive is " + main.timeAlive);
-				//	Debug.Log("The first break is " + firstBreak);
-				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
-				//			AsteroidSpawn0.SetActive(true);
-				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
-				SpawnManager.instance.EnemySpawn1d3.SetActive (true);
-			
-			} else if (timer >= firstBreak && timer < secondBreak) {
-				level = 2;
-				//			AsteroidSpawn2.SetActive(false);
-				SpawnManager.instance.AsteroidSpawn5.SetActive (true);
-				SpawnManager.instance.EnemySpawn1d3.SetActive (false);
-				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
-				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
-			} else if (timer >= secondBreak && timer < thirdBreak) {
-				level = 3;
-				SpawnManager.instance.AsteroidSpawn2.SetActive (false);
-				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
-				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
-				//			SpawnManager.instance.EnemySpawn4d3.SetActive(true);
-			} else {
-				level = 4;
-				//			SpawnManager.instance.AsteroidSpawn8.SetActive(true);
-				//			SpawnManager.instance.EnemySpawn4d3.SetActive(false);
-				//			SpawnManager.instance.EnemySpawn5d1.SetActive(true);
-			}
-			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
-		}
-	}
+//	void Level1Update () {
+//		if (!Main.S.stopSpawning) {
+//
+////		Debug.Log ("level is " + level);
+////		Debug.Log ("timer is " + timer);
+////		Debug.Log ("first break is at " + firstBreak);
+//			timer = Time.timeSinceLevelLoad;
+//			if (timer < firstBreak) {
+//				level = 1;
+//				//	Debug.Log("The time alive is " + main.timeAlive);
+//				//	Debug.Log("The first break is " + firstBreak);
+//				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
+//				//			AsteroidSpawn0.SetActive(true);
+//				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
+//				SpawnManager.instance.EnemySpawn1d3.SetActive (true);
+//			
+//			} else if (timer >= firstBreak && timer < secondBreak) {
+//				level = 2;
+//				//			AsteroidSpawn2.SetActive(false);
+//				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+//				SpawnManager.instance.EnemySpawn1d3.SetActive (false);
+//				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
+//				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
+//			} else if (timer >= secondBreak && timer < thirdBreak) {
+//				level = 3;
+//				SpawnManager.instance.AsteroidSpawn2.SetActive (false);
+//				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+//				SpawnManager.instance.AsteroidSpawn6.SetActive (true);
+//				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
+//				//			SpawnManager.instance.EnemySpawn4d3.SetActive(true);
+//			} else {
+//				level = 4;
+//				//			SpawnManager.instance.AsteroidSpawn8.SetActive(true);
+//				//			SpawnManager.instance.EnemySpawn4d3.SetActive(false);
+//				//			SpawnManager.instance.EnemySpawn5d1.SetActive(true);
+//			}
+//			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
+//		}
+//	}
 	
 	void Level2Update () {
 		if (!Main.S.stopSpawning) {
@@ -323,26 +321,25 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 				//			AsteroidSpawn0.SetActive(true);
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
-				SpawnManager.instance.EnemySpawn1d3.SetActive (true);
+				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
 			
 			} else if (timer >= firstBreak && timer < secondBreak) {
 				level = 2;
 				//			AsteroidSpawn2.SetActive(false);
 				SpawnManager.instance.AsteroidSpawn5.SetActive (true);
-				SpawnManager.instance.EnemySpawn1d3.SetActive (false);
+				SpawnManager.instance.EnemySpawn1d2.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
-				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
 			} else if (timer >= secondBreak && timer < thirdBreak) {
 				level = 3;
 				SpawnManager.instance.AsteroidSpawn2.SetActive (false);
 				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
+				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
 			} else {
 				level = 4;
 				SpawnManager.instance.AsteroidSpawn8.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (false);
-				SpawnManager.instance.EnemySpawn5d1.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn3.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn7.SetActive (false);
 			}
 			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
 		}
@@ -372,12 +369,12 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn2.SetActive (false);
 				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
+				SpawnManager.instance.EnemySpawn2d3.SetActive (true);
 			} else {
 				level = 4;
 				SpawnManager.instance.AsteroidSpawn8.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (false);
-				SpawnManager.instance.EnemySpawn5d1.SetActive (true);
+				SpawnManager.instance.EnemySpawn2d3.SetActive (false);
+				SpawnManager.instance.EnemySpawn3d3.SetActive (true);
 			}
 			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
 		}

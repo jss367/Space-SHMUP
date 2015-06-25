@@ -71,13 +71,13 @@ public class AudioManager : MonoBehaviour {
 
 		switch (currentLevel) {
 		case "Level 1":
-			audioClip [0] = Resources.Load ("Music/1Mix_48") as AudioClip;
+//			audioClip [0] = Resources.Load ("Music/") as AudioClip;
 			break;
 		case "Level 2":
-			audioClip [0] = Resources.Load ("Music/2_90-12Remix_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/1Mix_48") as AudioClip;
 			break;
 		case "Level 3":
-			audioClip [0] = Resources.Load ("Music/10Cresc_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/2_90-12Remix_48") as AudioClip;
 			break;
 		case "Level 4":
 			audioClip [0] = Resources.Load ("Music/5Ectoplasm_48") as AudioClip;
@@ -98,6 +98,9 @@ public class AudioManager : MonoBehaviour {
 			audioClip [0] = Resources.Load ("Music/6Thumpette_48") as AudioClip;
 			break;
 		case "Level 10":
+			audioClip [0] = Resources.Load ("Music/10Cresc_48") as AudioClip;
+			break;
+		case "Level 11":
 			audioClip [0] = Resources.Load ("Music/3ChecksForFree_48") as AudioClip;
 			break;
 		}

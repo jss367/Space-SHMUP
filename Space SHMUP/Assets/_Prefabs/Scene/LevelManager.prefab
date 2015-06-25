@@ -1,5 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100250
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 499850}
+  - 114: {fileID: 11426444}
+  - 114: {fileID: 11447120}
+  - 114: {fileID: 11434524}
+  m_Layer: 0
+  m_Name: EnemySpawn3-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &104484
 GameObject:
   m_ObjectHideFlags: 1
@@ -130,7 +148,7 @@ GameObject:
   - 114: {fileID: 11441072}
   - 114: {fileID: 11482796}
   m_Layer: 0
-  m_Name: EnemySpawn2-1
+  m_Name: EnemySpawn2-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,7 +166,7 @@ GameObject:
   - 114: {fileID: 11418390}
   - 114: {fileID: 11429098}
   m_Layer: 0
-  m_Name: EnemySpawn3-2
+  m_Name: EnemySpawn3-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,7 +310,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &154502
 GameObject:
   m_ObjectHideFlags: 1
@@ -311,6 +329,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &157172
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 443698}
+  - 114: {fileID: 11409758}
+  - 114: {fileID: 11473622}
+  - 114: {fileID: 11499672}
+  m_Layer: 0
+  m_Name: EnemySpawn2-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &163440
 GameObject:
   m_ObjectHideFlags: 1
@@ -324,6 +360,24 @@ GameObject:
   - 114: {fileID: 11408666}
   m_Layer: 0
   m_Name: EnemySpawn1-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!1 &165148
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 423480}
+  - 114: {fileID: 11435900}
+  - 114: {fileID: 11458472}
+  - 114: {fileID: 11483264}
+  m_Layer: 0
+  m_Name: EnemySpawn2-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,7 +518,7 @@ GameObject:
   - 4: {fileID: 415938}
   - 114: {fileID: 11433556}
   m_Layer: 0
-  m_Name: Base1
+  m_Name: Bass1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -520,9 +574,12 @@ Transform:
   - {fileID: 485596}
   - {fileID: 410910}
   - {fileID: 490558}
+  - {fileID: 443698}
+  - {fileID: 423480}
   - {fileID: 498490}
   - {fileID: 458772}
   - {fileID: 451624}
+  - {fileID: 499850}
   - {fileID: 491032}
   - {fileID: 473584}
   - {fileID: 448608}
@@ -604,6 +661,18 @@ Transform:
   - {fileID: 408012}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &423480
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 408012}
+  m_RootOrder: 5
 --- !u!4 &432710
 Transform:
   m_ObjectHideFlags: 1
@@ -628,6 +697,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 475202}
   m_RootOrder: 0
+--- !u!4 &443698
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 408012}
+  m_RootOrder: 4
 --- !u!4 &446460
 Transform:
   m_ObjectHideFlags: 1
@@ -651,7 +732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408012}
-  m_RootOrder: 9
+  m_RootOrder: 12
 --- !u!4 &451624
 Transform:
   m_ObjectHideFlags: 1
@@ -663,7 +744,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408012}
-  m_RootOrder: 6
+  m_RootOrder: 8
 --- !u!4 &454194
 Transform:
   m_ObjectHideFlags: 1
@@ -675,7 +756,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408012}
-  m_RootOrder: 10
+  m_RootOrder: 13
 --- !u!4 &454320
 Transform:
   m_ObjectHideFlags: 1
@@ -711,7 +792,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408012}
-  m_RootOrder: 5
+  m_RootOrder: 7
 --- !u!4 &463312
 Transform:
   m_ObjectHideFlags: 1
@@ -757,7 +838,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408012}
-  m_RootOrder: 8
+  m_RootOrder: 11
 --- !u!4 &474166
 Transform:
   m_ObjectHideFlags: 1
@@ -777,7 +858,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 153002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -27.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 439556}
@@ -869,7 +950,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408012}
-  m_RootOrder: 7
+  m_RootOrder: 10
 --- !u!4 &498490
 Transform:
   m_ObjectHideFlags: 1
@@ -881,7 +962,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 408012}
-  m_RootOrder: 4
+  m_RootOrder: 6
+--- !u!4 &499850
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100250}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 408012}
+  m_RootOrder: 9
 --- !u!114 &11400928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -943,7 +1036,7 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .150000006
-  triggerReactivateDelay: .100000001
+  triggerReactivateDelay: .300000012
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
@@ -1009,10 +1102,10 @@ MonoBehaviour:
   m_szLastControllerName: Bass
   triggerType: 2
   triggerThreshold: .100000001
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .200000003
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11405972
 MonoBehaviour:
@@ -1056,7 +1149,7 @@ MonoBehaviour:
   triggerReactivateDelay: 1
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11408666
 MonoBehaviour:
@@ -1078,7 +1171,7 @@ MonoBehaviour:
   triggerReactivateDelay: 2
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11409074
 MonoBehaviour:
@@ -1101,6 +1194,28 @@ MonoBehaviour:
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 1321e4e575bbc59468921a5e14be7167, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &11409758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 0}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: .600000024
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11410856
 MonoBehaviour:
@@ -1207,10 +1322,10 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .400000006
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .300000012
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11418540
 MonoBehaviour:
@@ -1229,10 +1344,10 @@ MonoBehaviour:
   m_szLastControllerName: High
   triggerType: 2
   triggerThreshold: .400000006
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: 1
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11419208
 MonoBehaviour:
@@ -1320,7 +1435,7 @@ MonoBehaviour:
   triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11424128
 MonoBehaviour:
@@ -1344,6 +1459,28 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 0e6a8aaf08efb7d4c87fa7b0127ae518, type: 2}
   randomOffset: {x: 40, y: 20, z: 0}
+--- !u!114 &11426444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 0}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .349999994
+  triggerReactivateDelay: .5
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11428308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1383,10 +1520,10 @@ MonoBehaviour:
   m_szLastControllerName: Bass
   triggerType: 2
   triggerThreshold: .300000012
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .300000012
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11429476
 MonoBehaviour:
@@ -1408,7 +1545,7 @@ MonoBehaviour:
   triggerReactivateDelay: 2
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
+  prefab: {fileID: 197116, guid: 1b350c77568ad2f47abdb6437ea5f1e4, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11432178
 MonoBehaviour:
@@ -1452,7 +1589,7 @@ MonoBehaviour:
   triggerReactivateDelay: 1
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11432836
 MonoBehaviour:
@@ -1474,7 +1611,7 @@ MonoBehaviour:
   triggerReactivateDelay: 1
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11433556
 MonoBehaviour:
@@ -1520,6 +1657,50 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 1321e4e575bbc59468921a5e14be7167, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &11434524
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 0}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .300000012
+  triggerReactivateDelay: 1
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &11435900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 0}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .340000004
+  triggerReactivateDelay: .5
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11439878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1540,7 +1721,7 @@ MonoBehaviour:
   triggerReactivateDelay: .100000001
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  prefab: {fileID: 100000, guid: eca46db2981c38648ab499b5cb1bb4dd, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11441072
 MonoBehaviour:
@@ -1558,11 +1739,11 @@ MonoBehaviour:
   controller: {fileID: 0}
   m_szLastControllerName: Mid
   triggerType: 2
-  triggerThreshold: .150000006
-  triggerReactivateDelay: .699999988
+  triggerThreshold: .300000012
+  triggerReactivateDelay: .400000006
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11443476
 MonoBehaviour:
@@ -1606,7 +1787,7 @@ MonoBehaviour:
   triggerReactivateDelay: .699999988
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11445112
 MonoBehaviour:
@@ -1630,6 +1811,28 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: eca46db2981c38648ab499b5cb1bb4dd, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &11447120
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 0}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: 1
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11447494
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1650,7 +1853,7 @@ MonoBehaviour:
   triggerReactivateDelay: .699999988
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11447958
 MonoBehaviour:
@@ -1668,11 +1871,11 @@ MonoBehaviour:
   controller: {fileID: 0}
   m_szLastControllerName: High
   triggerType: 2
-  triggerThreshold: .400000006
+  triggerThreshold: .300000012
   triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11449420
 MonoBehaviour:
@@ -1694,7 +1897,7 @@ MonoBehaviour:
   triggerReactivateDelay: 3
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
+  prefab: {fileID: 197116, guid: 1b350c77568ad2f47abdb6437ea5f1e4, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11450574
 MonoBehaviour:
@@ -1760,7 +1963,7 @@ MonoBehaviour:
   triggerReactivateDelay: .400000006
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  prefab: {fileID: 100000, guid: 9d907913246f2be4fbdfae99a69c39cb, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11452726
 MonoBehaviour:
@@ -1784,6 +1987,28 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &11458472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 0}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .349999994
+  triggerReactivateDelay: .400000006
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11462868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1804,7 +2029,7 @@ MonoBehaviour:
   triggerReactivateDelay: 1
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11463396
 MonoBehaviour:
@@ -1847,7 +2072,7 @@ MonoBehaviour:
   triggerReactivateDelay: 2
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 197116, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
+  prefab: {fileID: 197116, guid: 1b350c77568ad2f47abdb6437ea5f1e4, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11467970
 MonoBehaviour:
@@ -1991,7 +2216,7 @@ MonoBehaviour:
   triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11471912
 MonoBehaviour:
@@ -2021,16 +2246,38 @@ MonoBehaviour:
   EnemySpawn1d1: {fileID: 138296}
   EnemySpawn1d2: {fileID: 163440}
   EnemySpawn1d3: {fileID: 111978}
-  EnemySpawn2d1: {fileID: 126000}
+  EnemySpawn2d1: {fileID: 157172}
+  EnemySpawn2d2: {fileID: 165148}
+  EnemySpawn2d3: {fileID: 126000}
   EnemySpawn3d1: {fileID: 195414}
-  EnemySpawn3d2: {fileID: 128780}
+  EnemySpawn3d2: {fileID: 100250}
+  EnemySpawn3d3: {fileID: 128780}
+  EnemySpawn4d1: {fileID: 0}
   EnemySpawn4d3: {fileID: 129422}
   EnemySpawn5d1: {fileID: 178852}
   EnemySpawn10d1: {fileID: 107880}
-  Mid1: {fileID: 154502}
-  Mid2: {fileID: 166526}
-  Bass1: {fileID: 185460}
-  High1: {fileID: 137248}
+--- !u!114 &11473622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 0}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: .699999988
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11475556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2048,10 +2295,10 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .100000001
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .300000012
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11476064
 MonoBehaviour:
@@ -2073,7 +2320,7 @@ MonoBehaviour:
   triggerReactivateDelay: 1
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11477376
 MonoBehaviour:
@@ -2090,9 +2337,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 0}
   m_szLastControllerName: Mid
-  triggerType: 1
+  triggerType: 2
   triggerThreshold: .349999994
-  triggerReactivateDelay: 2.0999999
+  triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
@@ -2157,11 +2404,11 @@ MonoBehaviour:
   controller: {fileID: 0}
   m_szLastControllerName: Mid
   triggerType: 2
-  triggerThreshold: .300000012
-  triggerReactivateDelay: 2
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .800000012
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 104484, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11483196
 MonoBehaviour:
@@ -2184,6 +2431,28 @@ MonoBehaviour:
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &11483264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 0}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .200000003
+  triggerReactivateDelay: 2
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11485194
 MonoBehaviour:
@@ -2224,10 +2493,10 @@ MonoBehaviour:
   m_szLastControllerName: High
   triggerType: 2
   triggerThreshold: .349999994
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .300000012
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 131218, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11486482
 MonoBehaviour:
@@ -2244,9 +2513,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 0}
   m_szLastControllerName: High
-  triggerType: 1
+  triggerType: 2
   triggerThreshold: .400000006
-  triggerReactivateDelay: 3.5
+  triggerReactivateDelay: .400000006
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
@@ -2271,7 +2540,7 @@ MonoBehaviour:
   triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11488360
 MonoBehaviour:
@@ -2293,7 +2562,7 @@ MonoBehaviour:
   triggerReactivateDelay: .699999988
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 0}
+  prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
 --- !u!114 &11492052
 MonoBehaviour:
@@ -2449,6 +2718,28 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
   randomOffset: {x: 40, y: 0, z: 0}
+--- !u!114 &11499672
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 157172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 0}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 0}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: 2
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
