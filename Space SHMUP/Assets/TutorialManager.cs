@@ -19,7 +19,7 @@ public class TutorialManager : MonoBehaviour {
 	public Text Step4;
 	public Text Step5;
 	public Text Step6;
-	private bool onStep1;
+//	private bool onStep1;
 
 //	void Awake(){
 //		
@@ -62,7 +62,7 @@ public class TutorialManager : MonoBehaviour {
 			Debug.Log ("Next button");
 			if (Intro.enabled == true) {
 //				onStep1 = true;
-				Debug.Log (onStep1);
+//				Debug.Log (onStep1);
 				Intro.enabled = false;
 				Step1.enabled = true;
 				Sphere.SetActive(true);

@@ -7,7 +7,7 @@ public class BackgroundManager : MonoBehaviour {
 //	public static BackgroundManager instance { get; private set; }
 
 	public string currentLevel;
-	public GameObject Level1Background;
+
 	public GameObject Level2Background;
 	public GameObject Level3Background;
 	public GameObject Level4Background;
@@ -17,6 +17,7 @@ public class BackgroundManager : MonoBehaviour {
 	public GameObject Level8Background;
 	public GameObject Level9Background;
 	public GameObject Level10Background;
+	public GameObject Level11Background;
 
 	void Awake(){
 //		instance = this;
@@ -61,6 +62,9 @@ public class BackgroundManager : MonoBehaviour {
 			break;
 		case "Level 10":
 			Level10Background.SetActive (true);
+			break;
+		case "Level 11":
+			Level11Background.SetActive (true);
 			break;
 			
 		}

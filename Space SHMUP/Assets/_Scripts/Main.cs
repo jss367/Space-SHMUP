@@ -481,7 +481,7 @@ public class Main : MonoBehaviour {
 	
 	void ResetScore ()
 	{
-		Debug.Log ("Score has been updated");
+//		Debug.Log ("Score has been updated");
 		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
 
