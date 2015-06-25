@@ -140,6 +140,9 @@ public class Enemy_5 : Enemy {
 				Main.S.EnemyDestroyed(this, false);
 				// Destroy this Enemy
 				Destroy (this.gameObject);
+				Instantiate(enemyExplosion, transform.position, transform.rotation);
+
+
 			}
 				Destroy(other);	// Destroy the ProjectileHero
 				break;
