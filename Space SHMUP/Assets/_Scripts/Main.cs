@@ -204,9 +204,11 @@ public class Main : MonoBehaviour {
 //		Debug.Log ("Enemies remaining: " + EnemiesRemaining.Length);
 			if ((EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) || (Time.time - timeOfDeath > 5.0f)) {
 //			Debug.Log("gameHasEnded: " + gameHasEnded);
+//			Debug.Log("Time.time: " + Time.time);
+//			Debug.Log("timeOfDeath: " + timeOfDeath);
 				if (playerDead && !gameHasEnded) {
 					GameOver ();
-				} else if (!playerWins && !playerDead) {
+			} else if (!playerWins && !playerDead && EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) {
 					PlayerWon ();
 
 			}
@@ -255,14 +257,14 @@ public class Main : MonoBehaviour {
 	{
 		playerDead = true;
 		timeOfDeath = Time.time;
-		Debug.Log("Player lost the level!");
+//		Debug.Log("Player lost the level!");
 //		GameOver ();
 		InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 	}
 	
 	public void PlayerWon()
 	{
-		Debug.Log("Player beat the level!");
+//		Debug.Log("Player beat the level!");
 		victoryText.enabled = true;
 		playerWins = true;
 //		GiveStars ();
@@ -272,9 +274,18 @@ public class Main : MonoBehaviour {
 
 	public void GameOver() {
 		gameHasEnded = true;
-		Debug.Log("Game has ended");
+//		Debug.Log("Game has ended");
 //		scoreText.enabled = false;
-		prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
+		try
+		{
+			prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
+		}
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+			prevBalance = 0;
+		}
+
 		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";
 		prevBalanceText.enabled = true;
 		restartButton.SetActive(true);
@@ -296,7 +307,14 @@ public class Main : MonoBehaviour {
 		if (!pointsGiven) {
 //			Debug.Log("pointsGiven is " + pointsGiven);
 //			Debug.Log("Rewarding points");
-			Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
+			try
+			{
+				Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
+			}
+			catch (System.Exception e)
+			{
+				Debug.Log("Caught error: " + e);
+			}
 			pointsGiven = true;
 		}
 		currentAccountText.text = "New Balance: " + (prevBalance + score) + " Coins";
@@ -422,8 +440,6 @@ public class Main : MonoBehaviour {
 //		Application.LoadLevel ("LevelManager");
 		MadLevel.LoadLevelByName ("Level Select");
 	}
-
-
 
 	public void AsteroidDestroyed(Asteroid a) {
 		AddScore (a.score);

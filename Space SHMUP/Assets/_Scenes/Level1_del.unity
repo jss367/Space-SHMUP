@@ -443,7 +443,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 308293535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.88163853, y: -2.5, z: 0}
+  m_LocalPosition: {x: -6.7647953, y: -2.5, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 396900309}
@@ -1175,6 +1175,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
   m_IsPrefabParent: 0
@@ -1271,7 +1275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &674458975
 Transform:
   m_ObjectHideFlags: 0
@@ -4156,8 +4160,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50e743ead5bce9d419eafed3ebca7a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 538530828}
-  FinalScoreText: {fileID: 399248327}
 --- !u!1 &1772288346 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 187346, guid: ec581efae09f66146b731dcb468d811f, type: 2}
@@ -4834,11 +4836,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50315566f9b1d1d448801b6a6d737486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Sphere: {fileID: 0}
+  Joystick: {fileID: 0}
+  FirePad: {fileID: 0}
+  NextButton: {fileID: 0}
+  PlayButton: {fileID: 0}
+  Asteroid: {fileID: 0}
+  Enemy: {fileID: 0}
+  Intro: {fileID: 0}
   Step1: {fileID: 0}
   Step2: {fileID: 0}
   Step3: {fileID: 0}
   Step4: {fileID: 0}
   Step5: {fileID: 0}
+  Step6: {fileID: 0}
 --- !u!1 &2087747234
 GameObject:
   m_ObjectHideFlags: 0
