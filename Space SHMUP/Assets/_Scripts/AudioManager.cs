@@ -132,6 +132,7 @@ public class AudioManager : MonoBehaviour {
 		if (playOnAwake) { 
 			Play ();
 //			Debug.Log("AudioManager.cs is starting the audioClip");
+
 		}
 		timeLimit = audioClip [0].length;
 //		Debug.Log ("The song length is " + timeLimit);
@@ -452,4 +453,31 @@ public class AudioManager : MonoBehaviour {
 		source.clip = clip;
 		source.Play();
 	}
+
+	private bool isPaused = false;
+
+	void Update () {
+		if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			if( isPaused ) {
+				OnUnPause();
+			} else {
+				OnPause();
+			}
+		}
+		
+	}
+
+	public void OnUnPause() {
+		Debug.Log ("PauseManager.OnUnPause");	
+		isPaused = false;
+		audio1.UnPause ();
+
+	}
+	
+	public void OnPause() {
+		Debug.Log ("PauseManager.OnPause");
+		isPaused = true;
+		audio1.Pause ();
+		}
 }
