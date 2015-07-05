@@ -456,17 +456,17 @@ public class AudioManager : MonoBehaviour {
 
 	private bool isPaused = false;
 
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			if( isPaused ) {
-				OnUnPause();
-			} else {
-				OnPause();
-			}
-		}
-		
-	}
+//	void Update () {
+//		if (Input.GetKeyDown(KeyCode.Escape))
+//		{
+//			if( isPaused ) {
+//				OnUnPause();
+//			} else {
+//				OnPause();
+//			}
+//		}
+//		
+//	}
 
 	public void OnUnPause() {
 		Debug.Log ("PauseManager.OnUnPause");	

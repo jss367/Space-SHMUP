@@ -118,11 +118,19 @@ public class StoreController : BaseController
 	{
 //		Debug.Log ("Soomla has been initialized");
 		IsStatusOK = true;
-		
-		UpdateCoinBalanceLabel();
-		
-		InitStoreItems();
-		
+
+		try
+		{
+			UpdateCoinBalanceLabel();
+			
+			InitStoreItems();
+
+		}
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+		}
+
 		//        GiveStarterItems();
 	}
 	
