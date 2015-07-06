@@ -163,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -9.84000015, z: 0}
+  m_LocalPosition: {x: 10.4799995, y: 17.2099991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 488156}
@@ -381,7 +381,8 @@ MonoBehaviour:
   comboTime: 1
   impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
   originalColors: []
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 224830402d8a82544b57e0d79d8c5d66, type: 2}
   remainingDamageFrames: 0
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -393,7 +394,30 @@ MonoBehaviour:
   points: []
   timeStart: 0
   duration: 4
-  parts: []
+  parts:
+  - name: Body
+    health: 6
+    protectedBy:
+    - Left
+    - Middle
+    - Right
+    go: {fileID: 188162}
+    mat: {fileID: 2100000, guid: 5d9388f47637ddf429e08d95e6e88227, type: 2}
+  - name: Left
+    health: 4
+    protectedBy: []
+    go: {fileID: 188156}
+    mat: {fileID: 2100000, guid: 6f9b9da04b487bf48b5a701d0ab9fa27, type: 2}
+  - name: Middle
+    health: 4
+    protectedBy: []
+    go: {fileID: 188160}
+    mat: {fileID: 2100000, guid: 52bc318e0bc140840b611b877a822b16, type: 2}
+  - name: Right
+    health: 4
+    protectedBy: []
+    go: {fileID: 188172}
+    mat: {fileID: 2100000, guid: 2b21364bb71d4eb4dbce6894c82cd119, type: 2}
 --- !u!114 &11471644
 MonoBehaviour:
   m_ObjectHideFlags: 1
