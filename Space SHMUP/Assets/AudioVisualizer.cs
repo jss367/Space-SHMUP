@@ -19,6 +19,8 @@ public class AudioVisualizer : MonoBehaviour
 	private Transform[] cubesTransform;
 	//The velocity that the cubes will drop
 	private Vector3 gravity = new Vector3(0.0f,0.25f,0.0f);
+//	//The scale of the game object
+	private Vector3 cubeScale;
 	
 	void Awake ()
 	{
@@ -29,6 +31,8 @@ public class AudioVisualizer : MonoBehaviour
 		this.lRenderer = GetComponent<LineRenderer>();
 		//Transform
 		this.goTransform = GetComponent<Transform>();
+//		//Scale
+//		this.go
 	}
 	
 	void Start()
@@ -66,17 +70,22 @@ public class AudioVisualizer : MonoBehaviour
 			/*Set the cubePos Vector3 to the same value as the position of the corresponding
 			 * cube. However, set it's Y element according to the current sample.*/
 			cubePos.Set(cubesTransform[i].position.x, Mathf.Clamp(samples[i]*(50+i*i),0,50), cubesTransform[i].position.z);
-			
+//			Set the cube Scale
+			cubeScale.Set (1.0f,Mathf.Clamp(samples[i]*(50+i*i),0,50),1.0f);
+			//Set the new scale
+			cubesTransform[i].localScale = cubeScale;
+
 			//If the new cubePos.y is greater than the current cube position
 			if(cubePos.y >= cubesTransform[i].position.y)
 			{
 				//Set the cube to the new Y position
-				cubesTransform[i].position = cubePos;
+//				cubesTransform[i].position = cubePos;
+
 			}
 			else
 			{
 				//The spectrum line is below the cube, make it fall
-				cubesTransform[i].position -= gravity;
+//				cubesTransform[i].position -= gravity;
 			}
 			
 			/*Set the position of each vertex of the line based on the cube position.
