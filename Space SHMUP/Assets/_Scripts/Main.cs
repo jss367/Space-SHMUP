@@ -25,6 +25,7 @@ public class Main : MonoBehaviour {
 	public GameObject	earthReward;
 	public GameObject 	restartButton;
 	public GameObject 	mainMenuButton;
+	public GameObject	pauseButton;
 	public Text			scoreText;
 	public Text 		highScoreText;
 	public Text			newHighScoreText;
@@ -274,6 +275,7 @@ public class Main : MonoBehaviour {
 
 	public void GameOver() {
 		gameHasEnded = true;
+		pauseButton.SetActive (false);
 //		Debug.Log("Game has ended");
 //		scoreText.enabled = false;
 		try

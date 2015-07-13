@@ -44,7 +44,7 @@ public class AudioVisualizer : MonoBehaviour
 		//The cubesTransform array should be initialized with the same length as the samples array
 		cubesTransform = new Transform[samples.Length];
 		//Center the audio visualization line at the X axis, according to the samples array length
-		goTransform.position = new Vector3(-samples.Length/2,goTransform.position.y,goTransform.position.z);
+		goTransform.position = new Vector3(-samples.Length/2 - 9,goTransform.position.y,goTransform.position.z);
 //		goTransform.rotation = rotation;
 
 //		goTransform.rotation.eulerAngles

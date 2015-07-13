@@ -333,7 +333,6 @@ GameObject:
   - 20: {fileID: 133006795}
   - 92: {fileID: 133006794}
   - 124: {fileID: 133006793}
-  - 114: {fileID: 133006792}
   - 114: {fileID: 133006791}
   m_Layer: 0
   m_Name: Hero Camera
@@ -360,7 +359,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133006789}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5f7c2249c750b24b84d0320a50611a0, type: 3}
   m_Name: 
@@ -371,79 +370,6 @@ MonoBehaviour:
   - {fileID: 44902673}
   scrollSpeed: -30
   motionMult: .25
---- !u!114 &133006792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 133006789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15097d9e30c0a9e4c92a7e020176405d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabEnemies: []
-  enemySpawnPerSecond: .5
-  enemySpawnPadding: 1.5
-  weaponDefinitions:
-  - type: 1
-    letter: B
-    color: {r: .889705896, g: .889705896, b: .889705896, a: 1}
-    projectilePrefab: {fileID: 102180, guid: 45961147d3315c34fb868a414bf32755, type: 2}
-    projectileColor: {r: 1, g: 1, b: 1, a: 1}
-    damageOnHit: 1
-    continuousDamage: 0
-    delayBetweenShots: .200000003
-    velocity: 50
-  - type: 2
-    letter: S
-    color: {r: 0, g: .607843161, b: 1, a: 1}
-    projectilePrefab: {fileID: 102180, guid: 45961147d3315c34fb868a414bf32755, type: 2}
-    projectileColor: {r: 0, g: .607843161, b: 1, a: 1}
-    damageOnHit: 1
-    continuousDamage: 0
-    delayBetweenShots: .400000006
-    velocity: 50
-  - type: 6
-    letter: O
-    color: {r: 0, g: 1, b: 0, a: 1}
-    projectilePrefab: {fileID: 0}
-    projectileColor: {r: 1, g: 1, b: 1, a: 1}
-    damageOnHit: 0
-    continuousDamage: 0
-    delayBetweenShots: 0
-    velocity: 0
-  prefabPowerUp: {fileID: 194146, guid: be4cd12336d948f49914c26cde4c2bf0, type: 2}
-  powerUpFrequency: 01000000020000000200000006000000
-  earthReward: {fileID: 100000, guid: 8addb9b9f5f7348a4b04d27d952efd21, type: 2}
-  restartButton: {fileID: 1665153584}
-  mainMenuButton: {fileID: 873712458}
-  scoreText: {fileID: 538530828}
-  highScoreText: {fileID: 1522393922}
-  newHighScoreText: {fileID: 1925373196}
-  victoryText: {fileID: 1717561307}
-  currentAccountText: {fileID: 1279128667}
-  victoryBonusText: {fileID: 747386741}
-  finalScoreText: {fileID: 399248327}
-  prevBalanceText: {fileID: 437795089}
-  popText: {fileID: 1615321328}
-  ______________: 0
-  spreadOwned: 0
-  weaponrySet: 0
-  pointsGiven: 0
-  activeWeaponTypes: 
-  enemySpawnRate: 0
-  timeAlive: 0
-  timeLimit: 0
-  account: 0
-  coinsGained: 0
-  stopSpawning: 0
-  gameHasEnded: 0
-  playerWins: 0
-  playerDead: 0
-  currentLevel: 
-  victoryBonus: 0
-  endGameDelay: .200000003
 --- !u!124 &133006793
 Behaviour:
   m_ObjectHideFlags: 0
@@ -2230,7 +2156,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 158442, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 465714, guid: 55cad4e13692aac448439655bfb4548c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3903,6 +3829,7 @@ MonoBehaviour:
   earthReward: {fileID: 100000, guid: 8addb9b9f5f7348a4b04d27d952efd21, type: 2}
   restartButton: {fileID: 1665153584}
   mainMenuButton: {fileID: 873712458}
+  pauseButton: {fileID: 1874173043}
   scoreText: {fileID: 538530828}
   highScoreText: {fileID: 1522393922}
   newHighScoreText: {fileID: 1925373196}
