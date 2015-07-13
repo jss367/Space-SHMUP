@@ -20,7 +20,8 @@ public class Enemy_Boss : MonoBehaviour {
 	// Enemy_4 will start offscreen and then pick a random point on screen to move to. Once it has arrived, it will pick another
 	// random point and continue until that player has shot it down.
 
-	public float		speed = 20f; //The speed in m/s
+	public float				duration = 0.5f; // Duration of the time between points
+//	public float		speed = 20f; //The speed in m/s
 	public float		fireRate = 0.3f; // Seconds per shot (Unused)
 	public float		health = 10;
 	public int			score = 100; //Points earned for destroying this
@@ -46,7 +47,7 @@ public class Enemy_Boss : MonoBehaviour {
 	
 	public Vector3[]			points; // Stores the p0 and p1 for interpolation
 	public float				timeStart; // Birth time for this Enemy_4
-	public float				duration = 0.5f; // Duration of the 
+
 	
 	public Part[]				parts;		// The array of ship Parts
 
@@ -146,22 +147,24 @@ public class Enemy_Boss : MonoBehaviour {
 		}
 	}
 
-	
-	// This will override the OnCollisionEnter that is part of Enemy.cs
-	// Because of the way that MonoBehaviour declares cemmon Unity functions like OnCollisionENter()...
-	// The overridce keyword is not necessary
-	void OnCollisionEnter( Collision coll) {
+	void OnTriggerEnter( Collider coll) {
+		Debug.Log ("Enemy boss trigger");
 		GameObject other = coll.gameObject;
-		switch(other.tag) {
+		switch (other.tag) {
 		case "ProjectileHero":
-			Projectile p = other.GetComponent<Projectile>();
+			Debug.Log ("Hero projectile hit enemy boss");
+			Projectile p = other.GetComponent<Projectile> ();
 			// Enemies don't take damage unless they're onscreen
 			bounds.center = transform.position + boundsCenterOffset;
-			if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck( bounds, BoundsTest.offScreen) != Vector3.zero)
-			{
-				Destroy(other);
+			if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen) != Vector3.zero) {
+				Destroy (other);
 				break;
 			}
+			break;
+//		case default:
+//			Debug.Log("EnemyBoss has been hit");
+		}
+	}
 			
 			// Hurt this Enemy
 			// Find the GameObject that was hit
@@ -169,79 +172,148 @@ public class Enemy_Boss : MonoBehaviour {
 			// Because there was a collision, we're guaranteed that there is at least a contacts[0],
 			// and ContactPoints have a reference to thisCollider, which will be the collider for the part
 			// of the Enemy_4 that was hit.
-			GameObject goHit = coll.contacts[0].thisCollider.gameObject;
-			Part prtHit = FindPart(goHit);
-			if (prtHit == null) { // If prtHit wasn't found
+//			GameObject goHit = coll.contacts[0].thisCollider.gameObject;
+//			Part prtHit = FindPart(goHit);
+//			if (prtHit == null) { // If prtHit wasn't found
 				// then it's usually because thisCollider on contacts[0] will be the ProjectileHero instead of the ship part
 				// If so, just look for otherCollider instead
-				goHit = coll.contacts[0].otherCollider.gameObject;
-				prtHit = FindPart(goHit);
-			}
+//				goHit = coll.contacts[0].otherCollider.gameObject;
+//				prtHit = FindPart(goHit);
+			
 			// Check whether this part is still protected
-			if (prtHit.protectedBy != null) {
-				//Debug.Log ("The part hit was " + prtHit);
-				foreach(string s in prtHit.protectedBy) {
-					// If one of the protecting parts hasn't been destroyed...
-					if (!Destroyed(s)) {
-						// ...then don't damage this part yet
-						Destroy(other);	// Destroy the ProjectileHero
-						return; // return before causing damage
-					}
-				}
-			}
+//			if (prtHit.protectedBy != null) {
+//				//Debug.Log ("The part hit was " + prtHit);
+//				foreach(string s in prtHit.protectedBy) {
+//					// If one of the protecting parts hasn't been destroyed...
+//					if (!Destroyed(s)) {
+//						// ...then don't damage this part yet
+//						Destroy(other);	// Destroy the ProjectileHero
+//						return; // return before causing damage
+//					}
+//				}
+//			}
 			// It's not protected, so make it take damage
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
-			prtHit.health -= Main.W_DEFS[p.type].damageOnHit;
+//			prtHit.health -= Main.W_DEFS[p.type].damageOnHit;
 			// Show damage on the part
-//			ShowLocalizedDamage(prtHit.mat);
-			if (prtHit.health <= 0) {
-				// Instead of Destroying this enemy, disable the damaged part
-				prtHit.go.SetActive(false);
-			}
+			//			ShowLocalizedDamage(prtHit.mat);
+//			if (prtHit.health <= 0) {
+//				// Instead of Destroying this enemy, disable the damaged part
+//				prtHit.go.SetActive(false);
+//			}
 			// Check to see if the whole ship is destroyed
-			bool allDestroyed = true; // Assume it is destroyed
-			foreach (Part prt in parts) {
-				if (!Destroyed(prt)) { // If a part still exists
-					allDestroyed = false;	//...change allDestroyed to false
-					break;		// and break out of the foreach loop
-				}
-			}
-			if (allDestroyed) {	// If it IS completely destroyed
-				// Tell the Main singleton that this ship has been destroyed
-//				Main.S.EnemyDestroyed(this);
-				// Destroy this Enemy
-				Destroy (this.gameObject);
-			}
-			Destroy(other);	// Destroy the ProjectileHero
-			break;
-		}
-	}
+//			bool allDestroyed = true; // Assume it is destroyed
+//			foreach (Part prt in parts) {
+////				if (!Destroyed(prt)) { // If a part still exists
+////					allDestroyed = false;	//...change allDestroyed to false
+////					break;		// and break out of the foreach loop
+////				}
+//			}
+//			if (allDestroyed) {	// If it IS completely destroyed
+//				// Tell the Main singleton that this ship has been destroyed
+//				//				Main.S.EnemyDestroyed(this);
+//				// Destroy this Enemy
+//				Destroy (this.gameObject);
+//			}
+//			Destroy(other);	// Destroy the ProjectileHero
+//			break;
+
+//	}
+	
+//	void OnCollisionEnter( Collision coll) {
+//		Debug.Log ("Enemy boss collision");
+//		GameObject other = coll.gameObject;
+//		switch(other.tag) {
+//		case "ProjectileHero":
+//			Debug.Log("Hero projectile hit enemy boss");
+//			Projectile p = other.GetComponent<Projectile>();
+//			// Enemies don't take damage unless they're onscreen
+//			bounds.center = transform.position + boundsCenterOffset;
+//			if (bounds.extents == Vector3.zero || Utils.ScreenBoundsCheck( bounds, BoundsTest.offScreen) != Vector3.zero)
+//			{
+//				Destroy(other);
+//				break;
+//			}
+//			
+//			// Hurt this Enemy
+//			// Find the GameObject that was hit
+//			// The Collision coll has contacts[], an array of ContactPoints
+//			// Because there was a collision, we're guaranteed that there is at least a contacts[0],
+//			// and ContactPoints have a reference to thisCollider, which will be the collider for the part
+//			// of the Enemy_4 that was hit.
+//			GameObject goHit = coll.contacts[0].thisCollider.gameObject;
+//			Part prtHit = FindPart(goHit);
+//			if (prtHit == null) { // If prtHit wasn't found
+//				// then it's usually because thisCollider on contacts[0] will be the ProjectileHero instead of the ship part
+//				// If so, just look for otherCollider instead
+//				goHit = coll.contacts[0].otherCollider.gameObject;
+//				prtHit = FindPart(goHit);
+//			}
+//			// Check whether this part is still protected
+//			if (prtHit.protectedBy != null) {
+//				//Debug.Log ("The part hit was " + prtHit);
+//				foreach(string s in prtHit.protectedBy) {
+//					// If one of the protecting parts hasn't been destroyed...
+//					if (!Destroyed(s)) {
+//						// ...then don't damage this part yet
+//						Destroy(other);	// Destroy the ProjectileHero
+//						return; // return before causing damage
+//					}
+//				}
+//			}
+//			// It's not protected, so make it take damage
+//			// Get the damage amount from the Projectile.type & Main.W_DEFS
+//			prtHit.health -= Main.W_DEFS[p.type].damageOnHit;
+//			// Show damage on the part
+////			ShowLocalizedDamage(prtHit.mat);
+//			if (prtHit.health <= 0) {
+//				// Instead of Destroying this enemy, disable the damaged part
+//				prtHit.go.SetActive(false);
+//			}
+//			// Check to see if the whole ship is destroyed
+//			bool allDestroyed = true; // Assume it is destroyed
+//			foreach (Part prt in parts) {
+//				if (!Destroyed(prt)) { // If a part still exists
+//					allDestroyed = false;	//...change allDestroyed to false
+//					break;		// and break out of the foreach loop
+//				}
+//			}
+//			if (allDestroyed) {	// If it IS completely destroyed
+//				// Tell the Main singleton that this ship has been destroyed
+////				Main.S.EnemyDestroyed(this);
+//				// Destroy this Enemy
+//				Destroy (this.gameObject);
+//			}
+//			Destroy(other);	// Destroy the ProjectileHero
+//			break;
+//		}
+//	}
 	
 	// These two functions find a Part in this.parts by name or GameObject
-	Part FindPart(string n) {
-		foreach( Part prt in parts) {
-			if (prt.name == n) {
-				return(prt);
-			}
-		}
-		return(null);
-	}
-	Part FindPart(GameObject go) {
-		foreach( Part prt in parts) {
-			if (prt.go == go) {
-				return (prt);
-			}
-		}
-		return (null);
-	}
+//	Part FindPart(string n) {
+//		foreach( Part prt in parts) {
+//			if (prt.name == n) {
+//				return(prt);
+//			}
+//		}
+//		return(null);
+//	}
+//	Part FindPart(GameObject go) {
+//		foreach( Part prt in parts) {
+//			if (prt.go == go) {
+//				return (prt);
+//			}
+//		}
+//		return (null);
+//	}
 	
 	// These functions return true if the Part has been destroyed
-	bool Destroyed(GameObject go) {
-		return(Destroyed(FindPart(go)));
-	}
-	bool Destroyed (string n) {
-		return (Destroyed(FindPart(n)));
-	}
+//	bool Destroyed(GameObject go) {
+//		return(Destroyed(FindPart(go)));
+//	}
+//	bool Destroyed (string n) {
+//		return (Destroyed(FindPart(n)));
+//	}
 	
 	bool Destroyed(Part prt) {
 		if (prt == null) { // If no real Part was passed in
