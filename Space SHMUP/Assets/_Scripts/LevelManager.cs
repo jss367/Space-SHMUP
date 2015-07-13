@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿/// <summary>
+/// Level manager.
+/// </summary>
+
+
+using UnityEngine;
 using System.Collections;
 using MadLevelManager;
 
@@ -19,6 +24,7 @@ public class LevelManager : MonoBehaviour {
 	//
 	void Start(){
 
+		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		currentLevel = MadLevel.currentLevelName;
 		InvokeRepeating ("StopSpawn", startRepeating, 2.0f);
 
@@ -81,7 +87,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Level2Start(){
 		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		firstBreak = timeLimit / 4;
 		secondBreak = timeLimit / 2;
 		thirdBreak = 3 * timeLimit / 4;
@@ -89,7 +95,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Level3Start(){
 		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		firstBreak = timeLimit / 4;
 		secondBreak = timeLimit / 2;
 		thirdBreak = 3 * timeLimit / 4;
@@ -97,7 +103,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Level4Start(){
 		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		firstBreak = timeLimit / 4;
 		secondBreak = timeLimit / 2;
 		thirdBreak = 3 * timeLimit / 4;
@@ -105,7 +111,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Level5Start(){
 		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		firstBreak = timeLimit / 4;
 		secondBreak = timeLimit / 2;
 		thirdBreak = 3 * timeLimit / 4;
@@ -113,7 +119,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Level6Start(){
 		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		firstBreak = timeLimit / 4;
 		secondBreak = timeLimit / 2;
 		thirdBreak = 3 * timeLimit / 4;
@@ -121,7 +127,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Level7Start(){
 		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		firstBreak = timeLimit / 4;
 		secondBreak = timeLimit / 2;
 		thirdBreak = 3 * timeLimit / 4;
@@ -129,7 +135,7 @@ public class LevelManager : MonoBehaviour {
 	}
 	void Level8Start(){
 		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		firstBreak = timeLimit / 4;
 		secondBreak = timeLimit / 2;
 		thirdBreak = 3 * timeLimit / 4;
@@ -137,7 +143,7 @@ public class LevelManager : MonoBehaviour {
 	}
 	void Level9Start(){
 		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		firstBreak = timeLimit / 4;
 		secondBreak = timeLimit / 2;
 		thirdBreak = 3 * timeLimit / 4;
@@ -145,7 +151,7 @@ public class LevelManager : MonoBehaviour {
 	}
 	void Level10Start(){
 		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		firstBreak = timeLimit / 4;
 		secondBreak = timeLimit / 2;
 		thirdBreak = 3 * timeLimit / 4;
@@ -154,7 +160,7 @@ public class LevelManager : MonoBehaviour {
 
 	void Level11Start(){
 		
-		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		firstBreak = timeLimit / 4;
 		secondBreak = timeLimit / 2;
 		thirdBreak = 3 * timeLimit / 4;
@@ -198,7 +204,9 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-
+	void Update(){
+		timer = Time.timeSinceLevelLoad;
+	}
 
 //	void Update()
 //	{
@@ -270,7 +278,8 @@ public class LevelManager : MonoBehaviour {
 		SpawnManager.instance.EnemySpawn1d2.SetActive (false);
 		SpawnManager.instance.EnemySpawn1d3.SetActive (false);
 		SpawnManager.instance.EnemySpawn2d1.SetActive (false);
-		SpawnManager.instance.EnemySpawn2d1.SetActive (false);
+		SpawnManager.instance.EnemySpawn2d2.SetActive (false);
+			SpawnManager.instance.EnemySpawn2d2.SetActive (false);
 		SpawnManager.instance.EnemySpawn3d1.SetActive (false);
 		SpawnManager.instance.EnemySpawn3d2.SetActive (false);
 		SpawnManager.instance.EnemySpawn4d3.SetActive (false);
@@ -325,9 +334,10 @@ public class LevelManager : MonoBehaviour {
 //	}
 	
 	void Level2Update () {
+		//This is for 2Mix_48
 		if (!Main.S.stopSpawning) {
-			timer = Time.timeSinceLevelLoad;
-			if (timer < firstBreak) {
+//			timer = Time.timeSinceLevelLoad;
+			if (timer < 8.5) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
 				//	Debug.Log("The first break is " + firstBreak);
@@ -336,32 +346,25 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
 			
-			} else if (timer >= firstBreak && timer < secondBreak) {
+			} else if (timer < 17.7) {
 				level = 2;
 				//			AsteroidSpawn2.SetActive(false);
 				SpawnManager.instance.AsteroidSpawn5.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d2.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d2.SetActive (true);
-			} else if (timer >= secondBreak && timer < thirdBreak) {
-				level = 3;
-				SpawnManager.instance.AsteroidSpawn2.SetActive (false);
-				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
-				SpawnManager.instance.EnemySpawn2d2.SetActive (false);
-				SpawnManager.instance.EnemySpawn3d2.SetActive (true);
-			} else {
-				level = 4;
-				SpawnManager.instance.AsteroidSpawn8.SetActive (true);
-				SpawnManager.instance.AsteroidSpawn3.SetActive (true);
-				SpawnManager.instance.AsteroidSpawn7.SetActive (false);
+			}
+			else {
+				SpawnManager.instance.AsteroidSpawn6.SetActive (true);
 			}
 			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
 		}
 	}
 
 	void Level3Update () {
+		//
 		if (!Main.S.stopSpawning) {
-			timer = Time.timeSinceLevelLoad;
-			if (timer < firstBreak) {
+//			timer = Time.timeSinceLevelLoad;
+			if (timer < 16) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
 				//	Debug.Log("The first break is " + firstBreak);
@@ -370,33 +373,28 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d1.SetActive (true);
 			
-			} else if (timer >= firstBreak && timer < secondBreak) {
+			} else if (timer < 27) {
 				level = 2;
 				//			AsteroidSpawn2.SetActive(false);
 				SpawnManager.instance.AsteroidSpawn5.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d3.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
 				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
-			} else if (timer >= secondBreak && timer < thirdBreak) {
+			} else{
 				level = 3;
 				SpawnManager.instance.AsteroidSpawn2.SetActive (false);
 				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d3.SetActive (true);
-			} else {
-				level = 4;
-				SpawnManager.instance.AsteroidSpawn8.SetActive (true);
-				SpawnManager.instance.EnemySpawn2d3.SetActive (false);
-				SpawnManager.instance.EnemySpawn3d3.SetActive (true);
-			}
+			} 
 			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
 		}
 	}
 
 	void Level4Update () {
 		if (!Main.S.stopSpawning) {
-			timer = Time.timeSinceLevelLoad;
-			if (timer < firstBreak) {
+//			timer = Time.timeSinceLevelLoad;
+			if (timer < 15) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
 				//	Debug.Log("The first break is " + firstBreak);
@@ -405,14 +403,14 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d3.SetActive (true);
 			
-			} else if (timer >= firstBreak && timer < secondBreak) {
+			} else if (timer < 31) {
 				level = 2;
 				//			AsteroidSpawn2.SetActive(false);
 				SpawnManager.instance.AsteroidSpawn5.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d3.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
 				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
-			} else if (timer >= secondBreak && timer < thirdBreak) {
+			} else if (timer < 44) {
 				level = 3;
 				SpawnManager.instance.AsteroidSpawn2.SetActive (false);
 				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
@@ -430,34 +428,54 @@ public class LevelManager : MonoBehaviour {
 
 	void Level5Update () {
 		if (!Main.S.stopSpawning) {
-			timer = Time.timeSinceLevelLoad;
-			if (timer < firstBreak) {
+//			timer = Time.timeSinceLevelLoad;
+			if (timer < 8) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
 				//	Debug.Log("The first break is " + firstBreak);
 				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
-				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
-				
-			} else if (timer >= firstBreak && timer < secondBreak) {
+			} else if (timer < 16) {
 				level = 2;
 				//			AsteroidSpawn2.SetActive(false);
 				SpawnManager.instance.AsteroidSpawn5.SetActive (true);
-				SpawnManager.instance.EnemySpawn1d3.SetActive (false);
-				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
-				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
-			} else if (timer >= secondBreak && timer < thirdBreak) {
+				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
+			} else if (timer < 31) {
 				level = 3;
-				SpawnManager.instance.AsteroidSpawn2.SetActive (false);
+				SpawnManager.instance.AsteroidSpawn5.SetActive (false);
 				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
-				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
+				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
 				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
-			} else {
+			} else if (timer < 59) {
 				level = 4;
-				SpawnManager.instance.AsteroidSpawn8.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn6.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn7.SetActive (false);
+				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
 				SpawnManager.instance.EnemySpawn4d3.SetActive (false);
+			} else if (timer < 130) {
+				level = 5;
+				SpawnManager.instance.AsteroidSpawn8.SetActive (true);
+				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
+				SpawnManager.instance.EnemySpawn4d2.SetActive (true);
+			} else if (timer < 156) {
+				level = 6;
+				SpawnManager.instance.AsteroidSpawn8.SetActive (false);
+				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
+				SpawnManager.instance.EnemySpawn4d2.SetActive (false);
+				SpawnManager.instance.EnemySpawn2d3.SetActive (true);
+			} else if (timer < 230) {
+				level = 7;
+				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
+				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
+				SpawnManager.instance.EnemySpawn3d2.SetActive(true);
+			} else {
+				SpawnManager.instance.AsteroidSpawn9.SetActive (false);
+				SpawnManager.instance.AsteroidSpawn7.SetActive (false);
+				SpawnManager.instance.EnemySpawn4d3.SetActive (false);
+				SpawnManager.instance.EnemySpawn2d3.SetActive (true);
+				SpawnManager.instance.EnemySpawn3d2.SetActive(false);
 				SpawnManager.instance.EnemySpawn10d1.SetActive (true);
-			}
+				}
 			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
 		}
 
@@ -465,7 +483,7 @@ public class LevelManager : MonoBehaviour {
 
 	void Level6Update () {
 		if (!Main.S.stopSpawning) {
-			timer = Time.timeSinceLevelLoad;
+//			timer = Time.timeSinceLevelLoad;
 			if (timer < firstBreak) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
@@ -502,7 +520,7 @@ public class LevelManager : MonoBehaviour {
 	void Level7Update () {
 		//		float timer = Time.timeSinceLevelLoad;
 		if (!Main.S.stopSpawning) {
-			timer = Time.timeSinceLevelLoad;
+//			timer = Time.timeSinceLevelLoad;
 			if (timer < firstBreak) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
@@ -539,7 +557,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Level8Update () {
 		if (!Main.S.stopSpawning) {
-			timer = Time.timeSinceLevelLoad;
+//			timer = Time.timeSinceLevelLoad;
 			if (timer < firstBreak) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
@@ -575,7 +593,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Level9Update () {
 		if (!Main.S.stopSpawning) {
-			timer = Time.timeSinceLevelLoad;
+//			timer = Time.timeSinceLevelLoad;
 			if (timer < firstBreak) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
@@ -611,7 +629,7 @@ public class LevelManager : MonoBehaviour {
 	
 	void Level10Update () {
 		if (!Main.S.stopSpawning) {
-			timer = Time.timeSinceLevelLoad;
+//			timer = Time.timeSinceLevelLoad;
 			if (timer < firstBreak) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
@@ -646,7 +664,7 @@ public class LevelManager : MonoBehaviour {
 
 	void Level11Update () {
 		if (!Main.S.stopSpawning) {
-			timer = Time.timeSinceLevelLoad;
+//			timer = Time.timeSinceLevelLoad;
 			if (timer < firstBreak) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
