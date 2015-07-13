@@ -4,11 +4,11 @@ using System.Collections;
 public class AudioVisualizer : MonoBehaviour
 {
 	//An AudioSource object so the music can be played
-	private AudioSource aSource;
+	public AudioSource aSource;
 	//A float array that stores the audio samples
 	public float[] samples = new float[64];
 	//A renderer that will draw a line at the screen
-	private LineRenderer lRenderer;
+//	private LineRenderer lRenderer;
 	//A reference to the cube prefab
 	public GameObject cube;
 	//The transform attached to this game object
@@ -18,17 +18,19 @@ public class AudioVisualizer : MonoBehaviour
 	//An array that stores the Transforms of all instantiated cubes
 	private Transform[] cubesTransform;
 	//The velocity that the cubes will drop
-	private Vector3 gravity = new Vector3(0.0f,0.25f,0.0f);
+//	private Vector3 gravity = new Vector3(0.0f,0.25f,0.0f);
 //	//The scale of the game object
 	private Vector3 cubeScale;
-	
+	//Angle of rotation for visualizer
+	private Quaternion rotation = Quaternion.Euler(300,5,0);
+
 	void Awake ()
 	{
 		//Get and store a reference to the following attached components:
 		//AudioSource
-		this.aSource = GetComponent<AudioSource>();
+//		this.aSource = GetComponent<AudioSource>();
 		//LineRenderer
-		this.lRenderer = GetComponent<LineRenderer>();
+//		this.lRenderer = GetComponent<LineRenderer>();
 		//Transform
 		this.goTransform = GetComponent<Transform>();
 //		//Scale
@@ -38,12 +40,17 @@ public class AudioVisualizer : MonoBehaviour
 	void Start()
 	{
 		//The line should have the same number of points as the number of samples
-		lRenderer.SetVertexCount(samples.Length);
+//		lRenderer.SetVertexCount(samples.Length);
 		//The cubesTransform array should be initialized with the same length as the samples array
 		cubesTransform = new Transform[samples.Length];
 		//Center the audio visualization line at the X axis, according to the samples array length
 		goTransform.position = new Vector3(-samples.Length/2,goTransform.position.y,goTransform.position.z);
-		
+//		goTransform.rotation = rotation;
+
+//		goTransform.rotation.eulerAngles
+		//Turn off the original cube
+
+
 		//Create a temporary GameObject, that will serve as a reference to the most recent cloned cube
 		GameObject tempCube;
 		
@@ -51,14 +58,16 @@ public class AudioVisualizer : MonoBehaviour
 		for(int i=0; i<samples.Length;i++)
 		{
 			//Instantiate a cube placing it at the right side of the previous one
-			tempCube = (GameObject) Instantiate(cube, new Vector3(goTransform.position.x + i, goTransform.position.y, goTransform.position.z),Quaternion.identity);
+			tempCube = (GameObject) Instantiate(cube, new Vector3(goTransform.position.x + i*2.0f, goTransform.position.y, goTransform.position.z + 1),rotation);
 			//Get the recently instantiated cube Transform component
 			cubesTransform[i] = tempCube.GetComponent<Transform>();
 			//Make the cube a child of this game object
 			cubesTransform[i].parent = goTransform;
 		}
-	}
 	
+	cube.SetActive (false);
+	}
+
 	void Update ()
 	{
 		//Obtain the samples from the frequency bands of the attached AudioSource
@@ -67,31 +76,33 @@ public class AudioVisualizer : MonoBehaviour
 		//For each sample
 		for(int i=0; i<samples.Length;i++)
 		{
+			float expand = 5*Mathf.Clamp(Mathf.Pow(samples[i]*(50+i*i),.5f),0,50);
 			/*Set the cubePos Vector3 to the same value as the position of the corresponding
 			 * cube. However, set it's Y element according to the current sample.*/
-			cubePos.Set(cubesTransform[i].position.x, Mathf.Clamp(samples[i]*(50+i*i),0,50), cubesTransform[i].position.z);
+			cubePos.Set(cubesTransform[i].position.x, expand - 21, cubesTransform[i].position.z);
 //			Set the cube Scale
-			cubeScale.Set (1.0f,Mathf.Clamp(samples[i]*(50+i*i),0,50),1.0f);
+			cubeScale.Set (1.0f,expand,1.0f);
 			//Set the new scale
 			cubesTransform[i].localScale = cubeScale;
+			cubesTransform[i].position = cubePos;
 
-			//If the new cubePos.y is greater than the current cube position
-			if(cubePos.y >= cubesTransform[i].position.y)
-			{
-				//Set the cube to the new Y position
-//				cubesTransform[i].position = cubePos;
-
-			}
-			else
-			{
-				//The spectrum line is below the cube, make it fall
-//				cubesTransform[i].position -= gravity;
-			}
+//			//If the new cubePos.y is greater than the current cube position
+//			if(cubePos.y >= cubesTransform[i].position.y)
+//			{
+//				//Set the cube to the new Y position
+////				cubesTransform[i].position = cubePos;
+//
+//			}
+//			else
+//			{
+//				//The spectrum line is below the cube, make it fall
+////				cubesTransform[i].position -= gravity;
+//			}
 			
 			/*Set the position of each vertex of the line based on the cube position.
 			 * Since this method only takes absolute World space positions, it has
 			 * been subtracted by the current game object position.*/
-			lRenderer.SetPosition(i, cubePos - goTransform.position);
+//			lRenderer.SetPosition(i, cubePos - goTransform.position);
 		}
 	}
 }
