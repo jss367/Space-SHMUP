@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 431218}
   - 54: {fileID: 5431212}
-  - 114: {fileID: 11430330}
+  - 114: {fileID: 11405846}
   m_Layer: 9
   m_Name: Enemy_3
   m_TagString: Enemy
@@ -416,7 +416,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &11430330
+--- !u!114 &11405846
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -424,18 +424,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 131218}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08460be9837ad74409efbc6c54472025, type: 3}
+  m_Script: {fileID: 11500000, guid: 832bf22e9d8e4cd40ab4285a1b316ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 20
   fireRate: .300000012
   health: 10
   score: 100
   showDamageForFrames: 2
-  powerUpDropChance: .200000003
+  powerUpDropChance: 1
   _________________: 0
   comboTime: 1
-  impact: {fileID: 0}
+  impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
   originalColors: []
   materials: []
   remainingDamageFrames: 0

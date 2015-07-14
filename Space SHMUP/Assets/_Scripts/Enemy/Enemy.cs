@@ -144,7 +144,7 @@ public class Enemy : MonoBehaviour {
 					Instantiate(popText, transform.position, Quaternion.identity);
 				}
 				lastTimeDestroyed = Time.time;
-				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
+//				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
 				Instantiate(enemyExplosion, transform.position, transform.rotation);
 			
 			}

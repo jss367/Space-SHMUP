@@ -86,9 +86,6 @@ public class Main : MonoBehaviour {
 			W_DEFS [def.type] = def;
 		}
 
-//		PopText = GameObject.Find ("Canvas/PopText");
-//		popText = GetComponent<
-//		popText = gameObject.GetComponent<popText> ();
 
 		}
 
@@ -127,7 +124,6 @@ public class Main : MonoBehaviour {
 		ResetScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 //		Debug.Log ("The song length is " + timeLimit);
-//		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
 		gameHasEnded = false;
 
 		currentLevel = MadLevel.currentLevelName;

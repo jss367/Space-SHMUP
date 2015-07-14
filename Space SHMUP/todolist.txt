@@ -9,7 +9,8 @@ don't change enemy speed based on health
 enemy that aims at hero so you cant sit still
 make visualizer background drift around and make cool patterns
 level 3 - no enemies than way too many enemy 2s
-
+get rid of all weapon counting - use same number if weapon is changed
+is thumpette good for this game?
 
 After
 pause - count down to re-enter
@@ -22,7 +23,6 @@ show cutscreen going from one level to another after victory
 cool alien ships? - make more ships fire, make them cooler looking
 add rocket fire
 show stars being awarded at game end
-boss scene in level 10?
 add settings with volume
 using too many resources
 make hero shots cooler
@@ -44,7 +44,6 @@ make player blink when hit
 
 not yet:
 
-check boarders - check hero movement, camera visibility, asteroid.enemy spawning
 remove store scene
 
 
@@ -61,13 +60,10 @@ cd C:\Users\HMGSYS\Documents\GitHub\Unity\Space-SHMUP\Space SHMUP
 adb install -r GalacticBeats.apk
 
 build process:
-comment out store init in main and hero - just hero now?
-remove core and store events in levels
-//comment out spread owned in hero and main
+comment out spread owned in hero and main
 turn off invincible
-Level1Background.SetActive (true);
 disable reset button in soomla store
-uncheck soomla init from MainMenu/Soomla
+update all levels
 
 opengameart.org
 deviantart

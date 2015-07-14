@@ -72,8 +72,6 @@ public class Hero : MonoBehaviour {
 	void Start() {
 		shieldUpgradeOwned = false;
 		//		spreadOwned = true; // comment out for builds
-//		Soomla.Store.SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets()); // comment this out in builds
-
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
 		CheckInventory ();
@@ -365,20 +363,20 @@ public class Hero : MonoBehaviour {
 
 	void SaveWeaponCount(WeaponType wtype){
 
-			Debug.Log("Looking into your history of " + wtype);
+//			Debug.Log("Looking into your history of " + wtype);
 			for (int i = 0; i < weapons.Length; i++) {
 				if (weapons[i].type == WeaponType.none) {
-					Debug.Log("The previous weapon had " + i + " instance(s)");
-					Debug.Log("weapons[i].type is " + weapons[i].type);
+//					Debug.Log("The previous weapon had " + i + " instance(s)");
+//					Debug.Log("weapons[i].type is " + weapons[i].type);
 					switch(wtype.ToString()){
 					case("blaster"):
-						Debug.Log("The weapon was a blaster");
+//						Debug.Log("The weapon was a blaster");
 						blasterRecall = i;
-						Debug.Log("Save blasterRecall as " + blasterRecall);
+//						Debug.Log("Save blasterRecall as " + blasterRecall);
 						return;
 					case("spread"):
 						spreadRecall = i;
-						Debug.Log("Save spreadRecall as " + spreadRecall);
+//						Debug.Log("Save spreadRecall as " + spreadRecall);
 						return;
 					}
 
@@ -390,8 +388,8 @@ public class Hero : MonoBehaviour {
 		//Debug.Log("Looking into your history of " + wtype);
 		for (int i = 0; i < weapons.Length; i++) {
 			if (weapons[i].type == WeaponType.none) {
-				Debug.Log("The previous weapon had " + i + " instance(s)");
-				Debug.Log("weapons[i].type is " + weapons[i].type);
+//				Debug.Log("The previous weapon had " + i + " instance(s)");
+//				Debug.Log("weapons[i].type is " + weapons[i].type);
 			switch(wtype.ToString()){
 				case("blaster"):
 					//Debug.Log("The weapon was a blaster");

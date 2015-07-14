@@ -2536,7 +2536,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   shieldUpgradeOwned: 0
-  isInvincible: 1
+  isInvincible: 0
   target: {x: 0, y: 0, z: 0}
   tilt: 5
   velocityLag: .300000012
@@ -2773,230 +2773,54 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 11429476, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+    - target: {fileID: 11414368, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: m_oVisManager
       value: 
       objectReference: {fileID: 2032642639}
-    - target: {fileID: 11429476, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923471}
-    - target: {fileID: 11464230, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11464230, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
-    - target: {fileID: 11449420, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11449420, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+    - target: {fileID: 11414368, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: controller
       value: 
       objectReference: {fileID: 2032642640}
-    - target: {fileID: 11465588, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+    - target: {fileID: 11483196, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: m_oVisManager
       value: 
       objectReference: {fileID: 2032642639}
-    - target: {fileID: 11465588, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+    - target: {fileID: 11483196, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: controller
       value: 
       objectReference: {fileID: 1039923473}
-    - target: {fileID: 11479990, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+    - target: {fileID: 11470924, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: m_oVisManager
       value: 
       objectReference: {fileID: 2032642639}
-    - target: {fileID: 11479990, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
-    - target: {fileID: 11483272, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11483272, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+    - target: {fileID: 11470924, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: controller
       value: 
       objectReference: {fileID: 1039923471}
-    - target: {fileID: 11443702, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+    - target: {fileID: 11410196, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: m_oVisManager
       value: 
       objectReference: {fileID: 2032642639}
-    - target: {fileID: 11443702, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+    - target: {fileID: 11410196, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11427498, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11427498, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11466354, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11466354, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: controller
       value: 
       objectReference: {fileID: 2032642640}
-    - target: {fileID: 11488360, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11488360, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
-    - target: {fileID: 11487694, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11487694, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923471}
-    - target: {fileID: 11405814, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11405814, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 2032642640}
-    - target: {fileID: 11475556, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11475556, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
-    - target: {fileID: 11471520, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11471520, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923471}
-    - target: {fileID: 11451466, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11451466, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923471}
-    - target: {fileID: 11439878, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11439878, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
-    - target: {fileID: 11459524, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11459524, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 2032642640}
-    - target: {fileID: 11419616, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11419616, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
-    - target: {fileID: 11469366, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11469366, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923471}
-    - target: {fileID: 11445268, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11445268, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 2032642640}
-    - target: {fileID: 11429668, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11429668, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
-    - target: {fileID: 11464144, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11464144, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923471}
-    - target: {fileID: 11486482, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11486482, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923471}
-    - target: {fileID: 11477376, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11477376, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
-    - target: {fileID: 11429098, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11429098, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 2032642640}
-    - target: {fileID: 11418390, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11418390, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
-    - target: {fileID: 11485860, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11485860, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923471}
-    - target: {fileID: 11462868, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11462868, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 2032642640}
-    - target: {fileID: 11476064, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11476064, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
-    - target: {fileID: 11418540, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11418540, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923471}
     - target: {fileID: 11434524, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: m_oVisManager
       value: 
@@ -3045,6 +2869,190 @@ Prefab:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1039923471}
+    - target: {fileID: 11445268, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11445268, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2032642640}
+    - target: {fileID: 11429668, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11429668, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11464144, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11464144, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11417344, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11417344, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2032642640}
+    - target: {fileID: 11475356, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11475356, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11488144, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11488144, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11451466, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11451466, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11486482, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11486482, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11477376, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11477376, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11404470, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11404470, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11439878, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11439878, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11429476, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11429476, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11464230, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11464230, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11449420, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11449420, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2032642640}
+    - target: {fileID: 11485860, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11485860, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11418390, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11418390, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11429098, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11429098, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2032642640}
+    - target: {fileID: 11462868, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11462868, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2032642640}
+    - target: {fileID: 11476064, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11476064, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11418540, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11418540, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11471520, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11471520, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11475556, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11475556, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11405814, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11405814, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2032642640}
     - target: {fileID: 11432240, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: m_oVisManager
       value: 
@@ -3069,14 +3077,6 @@ Prefab:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1039923471}
-    - target: {fileID: 11404470, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: m_oVisManager
-      value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11404470, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 1039923473}
     - target: {fileID: 11408666, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: m_oVisManager
       value: 
@@ -3098,6 +3098,78 @@ Prefab:
       value: 
       objectReference: {fileID: 2032642639}
     - target: {fileID: 11407198, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11443702, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11443702, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2032642640}
+    - target: {fileID: 11488360, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11488360, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11487694, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11487694, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11465588, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11465588, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11479990, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11479990, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11483272, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11483272, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11459524, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11459524, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2032642640}
+    - target: {fileID: 11419616, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11419616, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11469366, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11469366, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: controller
       value: 
       objectReference: {fileID: 1039923471}
