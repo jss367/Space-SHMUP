@@ -2536,7 +2536,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   shieldUpgradeOwned: 0
-  isInvincible: 0
+  isInvincible: 1
   target: {x: 0, y: 0, z: 0}
   tilt: 5
   velocityLag: .300000012
@@ -2747,7 +2747,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417820, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 27.5
       objectReference: {fileID: 0}
     - target: {fileID: 417820, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3173,6 +3173,150 @@ Prefab:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1039923471}
+    - target: {fileID: 153002, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433556, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11433556, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2032642640}
+    - target: {fileID: 11433556, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerThreshold
+      value: .0700000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433556, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 475202, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -27.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 415938, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433556, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: randomOffset.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11433556, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerReactivateDelay
+      value: .00999999978
+      objectReference: {fileID: 0}
+    - target: {fileID: 415748, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 11410856, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11410856, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923471}
+    - target: {fileID: 11410856, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: randomOffset.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419208, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11419208, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11419208, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: randomOffset.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424128, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11424128, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11424128, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: randomOffset.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451332, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_oVisManager
+      value: 
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11451332, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 1039923473}
+    - target: {fileID: 11451332, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: randomOffset.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419208, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424128, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451332, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419208, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerThreshold
+      value: .159999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419208, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerReactivateDelay
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424128, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerThreshold
+      value: .159999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424128, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerReactivateDelay
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451332, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerThreshold
+      value: .159999996
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451332, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: triggerReactivateDelay
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11424128, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11451332, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11419208, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 137248, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 166526, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
   m_IsPrefabParent: 0
