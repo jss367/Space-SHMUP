@@ -42,10 +42,41 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject EnemySpawn5d2;
 	public GameObject EnemySpawn5d3;
 	public GameObject EnemySpawn10d1;
-//	public GameObject Mid1;
-//	public GameObject Mid2;
-//	public GameObject Bass1;
+	public GameObject Bass1;
+	public GameObject Bass2;
+	public GameObject Bass3;
+	public GameObject Bass4;
+	public GameObject Bass5;
+	public GameObject Bass6;
+	public GameObject Bass7;
+	public GameObject Bass8;
+	public GameObject Bass9;
+	public GameObject Bass10;
+	public GameObject Bass11;
+	public GameObject Mid1;
+	public GameObject Mid2;
+	public GameObject Mid3;
+	public GameObject Mid4;
+	public GameObject Mid5;
+	public GameObject Mid6;
+	public GameObject Mid7;
+	public GameObject Mid8;
+	public GameObject Mid9;
+	public GameObject Mid10;
+	public GameObject Mid11;
 //	public GameObject High1;
+//	public GameObject High2;
+//	public GameObject High3;
+//	public GameObject High4;
+//	public GameObject High5;
+//	public GameObject High6;
+//	public GameObject High7;
+//	public GameObject High8;
+//	public GameObject High9;
+//	public GameObject High10;
+//	public GameObject High11;
+	public GameObject Mid;
+	public GameObject Bass;
 
 	void Awake()
 	{

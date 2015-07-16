@@ -27,6 +27,13 @@ public class LevelManager : MonoBehaviour {
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		currentLevel = MadLevel.currentLevelName;
 		InvokeRepeating ("StopSpawn", startRepeating, 2.0f);
+		//Get the level number
+		string[] levelSplit = currentLevel.Split (' ');
+		//Concatentate level number to appropriate fireworks
+		SpawnManager.instance.Mid = GameObject.Find ("LevelManager/FireworksManager/Mid" + levelSplit [1]);
+		SpawnManager.instance.Mid.SetActive (true);
+		SpawnManager.instance.Bass = GameObject.Find ("LevelManager/FireworksManager/Bass" + levelSplit [1]);
+		SpawnManager.instance.Bass.SetActive (true);
 
 		switch (currentLevel) {
 		case "Level 1":
@@ -382,7 +389,8 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
 			} else{
 				level = 3;
-				SpawnManager.instance.AsteroidSpawn2.SetActive (false);
+				SpawnManager.instance.AsteroidSpawn5.SetActive (false);
+				SpawnManager.instance.AsteroidSpawn0.SetActive (false);
 				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d3.SetActive (true);
@@ -434,7 +442,7 @@ public class LevelManager : MonoBehaviour {
 				//	Debug.Log("The time alive is " + main.timeAlive);
 				//	Debug.Log("The first break is " + firstBreak);
 				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
-				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
+//				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 			} else if (timer < 16) {
 				level = 2;
 				//			AsteroidSpawn2.SetActive(false);
@@ -445,23 +453,23 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn5.SetActive (false);
 				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
+				SpawnManager.instance.EnemySpawn4d2.SetActive (true);
 			} else if (timer < 59) {
 				level = 4;
 				SpawnManager.instance.AsteroidSpawn6.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn7.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (false);
+				SpawnManager.instance.EnemySpawn4d2.SetActive (false);
 			} else if (timer < 90) {
 				level = 5;
 				SpawnManager.instance.AsteroidSpawn8.SetActive (true);
 				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d2.SetActive (true);
+				SpawnManager.instance.EnemySpawn4d1.SetActive (true);
 			} else if (timer < 116) {
 				level = 6;
 				SpawnManager.instance.AsteroidSpawn8.SetActive (false);
 				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d2.SetActive (false);
+				SpawnManager.instance.EnemySpawn4d1.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d3.SetActive (true);
 			} else if (timer < 150) {
 				level = 7;
@@ -723,7 +731,7 @@ public class LevelManager : MonoBehaviour {
 	void Level11Update () {
 		if (!Main.S.stopSpawning) {
 //			timer = Time.timeSinceLevelLoad;
-			if (timer < 30) {
+			if (timer < 29.5) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
 				//	Debug.Log("The first break is " + firstBreak);

@@ -212,6 +212,10 @@ public class AudioManager : MonoBehaviour {
 		if (audio2)
 			audio2.volume = internalVolume;
 	}
+
+	public void SliderVolume(float sliderVolume){
+//		audio1.volume = sliderVolume * playbackVolume * GlobalVolumeManager.Instance.musicVolume;
+	}
 	
 	
 	// returns the index of the next AudioClip
