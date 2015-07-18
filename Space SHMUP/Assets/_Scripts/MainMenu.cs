@@ -57,6 +57,11 @@ namespace FMG
 				*/
 			}
 
+			if(str.Equals("Tutorial"))
+			   {
+				Application.LoadLevel("TutorialScene");
+			}
+
 			if(str.Equals("LevelSelectBack"))
 			{
 				Constants.fadeInFadeOut(mainMenu,levelSelectMenu);
