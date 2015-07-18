@@ -26,6 +26,7 @@ public class Main : MonoBehaviour {
 	public GameObject 	restartButton;
 	public GameObject 	mainMenuButton;
 	public GameObject	pauseButton;
+	public GameObject	nextLevelButton;
 	public Text			scoreText;
 	public Text 		highScoreText;
 	public Text			newHighScoreText;
@@ -109,6 +110,7 @@ public class Main : MonoBehaviour {
 		for (int i = 0; i < weaponDefinitions.Length; i++) {
 			activeWeaponTypes [i] = weaponDefinitions [i].type;
 		}
+		nextLevelButton.SetActive (false);
 		restartButton.SetActive (false);
 		mainMenuButton.SetActive (false);
 		highScoreText.enabled = false;
@@ -288,6 +290,7 @@ public class Main : MonoBehaviour {
 		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";
 		prevBalanceText.enabled = true;
 		restartButton.SetActive(true);
+		nextLevelButton.SetActive (true);
 		mainMenuButton.SetActive (true);
 		GivePoints ();
 	}
@@ -301,7 +304,8 @@ public class Main : MonoBehaviour {
 			score += victoryBonus;
 			victoryBonusText.text = "Level Completion Bonus: " + victoryBonus;
 			}
-		finalScoreText.text = "Final Score: " + score;
+		StartCoroutine (CountScore());
+//		finalScoreText.text = "Final Score: " + score;
 		StoreHighScore (score);
 		if (!pointsGiven) {
 //			Debug.Log("pointsGiven is " + pointsGiven);
@@ -322,6 +326,14 @@ public class Main : MonoBehaviour {
 //			Debug.LogError ("SOOMLA/UNITY " + e.Message);
 //		}
 		finalScoreText.enabled = true;
+	}
+	IEnumerator CountScore(){
+		int displayScore = 0;
+		while (displayScore < score){
+			displayScore+= 10;
+			yield return new WaitForSeconds(.0001f);
+			finalScoreText.text = "Final Score: " + displayScore;
+				}
 	}
 
 	public void GiveVictoryBonus (){
@@ -438,6 +450,10 @@ public class Main : MonoBehaviour {
 	public void MainMenu() {
 //		Application.LoadLevel ("LevelManager");
 		MadLevel.LoadLevelByName ("Level Select");
+	}
+
+	public void NextLevel(){
+		MadLevel.LoadNext ();
 	}
 
 	public void AsteroidDestroyed(Asteroid a) {
