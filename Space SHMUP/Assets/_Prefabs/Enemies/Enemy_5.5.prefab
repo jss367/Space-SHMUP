@@ -164,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 188164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 488156}
   - {fileID: 488160}
@@ -371,9 +371,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28e8234d71dab8147adfeb59db15011e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 15
   fireRate: .300000012
-  health: 10
+  health: 5
   score: 100
   showDamageForFrames: 2
   powerUpDropChance: 1
@@ -424,11 +424,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 188164}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b690331aa78145641b1e2faad8b729b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hero: {fileID: 0}
   shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
   shotSpawn: {fileID: 473920}
   fireRate: 2.5

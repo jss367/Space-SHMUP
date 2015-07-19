@@ -338,7 +338,7 @@ public class Main : MonoBehaviour {
 	IEnumerator CountScore(){
 		int displayScore = 0;
 		while (displayScore < score){
-			displayScore+= 10;
+			displayScore+= 5;
 			yield return new WaitForSeconds(.01f);
 			finalScoreText.text = "Final Score: " + displayScore;
 			if (displayScore == earth1){

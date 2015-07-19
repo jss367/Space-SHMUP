@@ -43,12 +43,13 @@ public class PauseManager : MonoBehaviour {
 		
 	public void OnQuit() {
 		Debug.Log ("PauseManager.OnQuit");
-
-		foreach (var quittableComponent in quittableInterfaces) {		
-			IQuittable quittableInterface = (IQuittable)quittableComponent;
-			if( quittableInterface != null )
-				quittableInterface.OnQuit ();
-		}		
+//		Application.LoadLevel ("MainMenu");
+		MadLevelManager.MadLevel.LoadLevelByName ("MainMenu");
+//		foreach (var quittableComponent in quittableInterfaces) {		
+//			IQuittable quittableInterface = (IQuittable)quittableComponent;
+//			if( quittableInterface != null )
+//				quittableInterface.OnQuit ();
+//		}		
 	}
 	
 	public void OnUnPause() {
