@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour {
 
-//	public TutorialManager		S;
 	public GameObject Sphere;
 	public GameObject Joystick;
 	public GameObject FirePad;
@@ -23,13 +22,7 @@ public class TutorialManager : MonoBehaviour {
 	public Text Step7;
 	public Text Step8;
 	public Text Step9;
-//	private bool onStep1;
 
-//	void Awake(){
-//		
-//		S = this;
-//
-//	}
 
 	// Use this for initialization
 	void Start () {
@@ -52,11 +45,7 @@ public class TutorialManager : MonoBehaviour {
 		Step9.enabled = false;
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 
 	void OnTriggerEnter(Collider other){
 
@@ -66,7 +55,7 @@ public class TutorialManager : MonoBehaviour {
 	{
 		if(str.Equals("Next"))
 		{
-			Debug.Log ("Next button");
+//			Debug.Log ("Next button");
 			if (Intro.enabled == true) {
 //				onStep1 = true;
 //				Debug.Log (onStep1);
@@ -78,20 +67,34 @@ public class TutorialManager : MonoBehaviour {
 			}
 
 			else if (Step3.enabled == true) {
+//				Debug.Log ("leaving step 3");
 				Step3.enabled = false;
 				Step4.enabled = true;
+			}
+			else if (Step4.enabled == true) {
+				Step4.enabled = false;
+				Step5.enabled = true;
 				Asteroid.SetActive (true);
 				Enemy.SetActive (true);
 				NextButton.SetActive(false);
 				InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 			}
-			else {
-				Step5.enabled = false;
-				Step6.enabled = true;
+			else if (Step6.enabled == true) {
+				Step6.enabled = false;
+				Step7.enabled = true;
+				}
+			else if (Step7.enabled == true) {
+				Step7.enabled = false;
+				Step8.enabled = true;
+			}
+			else if (Step8.enabled == true) {
+				Step8.enabled = false;
+				Step9.enabled = true;
 				PlayButton.SetActive(true);
 				NextButton.SetActive(false);
 			}
-			}
+		}
+
 		if (str.Equals ("LevelSelect")) {
 			Application.LoadLevel("LevelManager");
 		}
@@ -101,6 +104,8 @@ public class TutorialManager : MonoBehaviour {
 		}
 			}
 
+
+	
 	public void WaitUntilLevelEmpties(){
 		
 
@@ -109,24 +114,12 @@ public class TutorialManager : MonoBehaviour {
 		GameObject[] EnemiesRemaining = GameObject.FindGameObjectsWithTag ("Enemy");
 		//		Debug.Log ("Enemies remaining: " + EnemiesRemaining.Length);
 		if (EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) {
-			Step5.enabled = true;
-			Step4.enabled = false;
+			Step6.enabled = true;
+			Step5.enabled = false;
 			NextButton.SetActive(true);
 			CancelInvoke("WaitUntilLevelEmpties");
 		}
 		
 	}
 
-//	public void SphereTrigger(){
-//
-//		Debug.Log (onStep1);
-//		// If other is hero
-//		//		if (onStep1) {
-//		Step1.enabled = false;
-//		Step2.enabled = true;
-//		//		FirePad.SetActive (true);	
-//		//		}
-//		// Is other is projectile
-//
-//	}
 }

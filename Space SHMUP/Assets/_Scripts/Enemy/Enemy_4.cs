@@ -1,56 +1,43 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-//#Enemy_4
-
-public class Enemy_4 : Enemy{
+// Enemy_2 extends the Enemy class
+public class Enemy_4 : Enemy {
+	// Because Enemy_2 extends Enemy, the _______ bool won't work the same way in the Inspector pane. Much sadness
 	
-	// Enemy_4 will move following a Bezier curve, which is a linear interpolation between more than two points
-	public Vector3[]		points;
-	public float			birthTime;
-	public float			lifeTime = 10;
+	//# seconds for a full sine wave
+	public float		waveFrequency = 2;
+	//sine wave width in meters
+	public float		waveWidth = 4;
+	public float		waveRotY = 45;
 	
-	// Again, Start works well ecause it is not used by Enemy
+	private float		x0 = -12345; // The initial x value of pos
+	private float		birthTime;
+	
 	void Start() {
-		points = new Vector3[3]; // Initialize points
-		// The start position has already been set by Main.SpawnEnemy()
-		points[0] = pos;
+		// Set x0 to the initial x position of Enemy_4
+		// This works fine because the position will have already been set by Main.SpawnEnemy() before Start() runs (though Awake() would have been too early).
+		// This is also good because there is no Start() method on Enemy
+		x0 = pos.x;
 		
-		// Set xMin and xMax the same way that Main.SpawnEnemy() does
-		float xMin = Utils.camBounds.min.x + Main.S.enemySpawnPadding;
-		float xMax = Utils.camBounds.max.x - Main.S.enemySpawnPadding;
-		
-		Vector3 v;
-		// Pick a random middle position in the bottom half of the screen
-		v = Vector3.zero;
-		v.x = Random.Range( xMin, xMax);
-		v.y = Random.Range(Utils.camBounds.min.y, 0);
-		points[1] = v;
-		
-		// Pick a random final position above the top of the screen
-		v = Vector3.zero;
-		v.y = pos.y;
-		v.x = Random.Range(xMin, xMax);
-		points[2] = v;
-		
-		// Set the birthTime to the current time
 		birthTime = Time.time;
 	}
 	
+	// Override the Move function on Enemy
 	public override void Move() {
-		// Bezier curves work based on a u value between 0 & 1
-		float u = (Time.time - birthTime) / lifeTime;
+		// Because pos is a property, you can't directly set pos.x so get the pos as an editable Vector3
+		Vector3 tempPos = pos;
+		// theta adjusts based on time
+		float age = Time.time - birthTime;
+		float theta = Mathf.PI * 2 * age / waveFrequency;
+		float sin = Mathf.Sin(theta);
+		tempPos.x = x0 + waveWidth * sin;
+		pos = tempPos;
 		
-		if (u > 1) {
-			// This Enemy_4 has finished its life
-			Destroy(this.gameObject);
-			return;
-		}
-		
-		// Interpolate the three Bezier curve points
-		Vector3 p01, p12;
-		p01 = (1-u) * points[0] + u*points[1];
-		p12 = (1-u) * points[1] + u*points[2];
-		pos = (1-u) * p01 + u*p12;
+		// rotate a bit about y
+		Vector3 rot = new Vector3(0, sin*waveRotY, 0);
+		this.transform.rotation = Quaternion.Euler(rot);
+		// base.Move() still handles the movement down in y
+		base.Move();
 	}
 }

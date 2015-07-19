@@ -1,20 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &169994
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 473920}
-  m_Layer: 9
-  m_Name: ShotSpawn
-  m_TagString: Enemy
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &188156
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,8 +65,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 488164}
   - 54: {fileID: 5488156}
-  - 114: {fileID: 11453062}
-  - 114: {fileID: 11471644}
+  - 114: {fileID: 11499018}
   m_Layer: 9
   m_Name: Enemy_2
   m_TagString: Enemy
@@ -108,18 +92,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &473920
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 169994}
-  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: -2, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 488164}
-  m_RootOrder: 4
 --- !u!4 &488156
 Transform:
   m_ObjectHideFlags: 1
@@ -170,7 +142,6 @@ Transform:
   - {fileID: 488160}
   - {fileID: 488172}
   - {fileID: 488162}
-  - {fileID: 473920}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &488172
@@ -360,7 +331,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0203203, y: 12.1113005, z: 3.6242218}
   m_Center: {x: -.091607675, y: 6.05565214, z: -1.38761067}
---- !u!114 &11453062
+--- !u!114 &11499018
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -368,12 +339,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 188164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28e8234d71dab8147adfeb59db15011e, type: 3}
+  m_Script: {fileID: 11500000, guid: 08460be9837ad74409efbc6c54472025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
   fireRate: .300000012
-  health: 5
+  health: 4
   score: 100
   showDamageForFrames: 2
   powerUpDropChance: 1
@@ -381,60 +352,18 @@ MonoBehaviour:
   comboTime: 1
   impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
   originalColors: []
-  materials:
-  - {fileID: 2100000, guid: 224830402d8a82544b57e0d79d8c5d66, type: 2}
+  materials: []
   remainingDamageFrames: 0
   bounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   boundsCenterOffset: {x: 0, y: 0, z: 0}
   enemyExplosion: {fileID: 172662, guid: 0b461f2f00c26474db70e48f1893c723, type: 2}
-  popText: {fileID: 198134, guid: 5a28c96cdd033754ca14be9a26ca6054, type: 2}
+  popText: {fileID: 108858, guid: 8251e117c41da3548a4a22029d7df382, type: 2}
   comboPopText: {fileID: 108858, guid: 65c2838b55bb4e145ab6fd6636edfcff, type: 2}
   points: []
-  timeStart: 0
-  duration: 4
-  parts:
-  - name: Body
-    health: 6
-    protectedBy:
-    - Left
-    - Middle
-    - Right
-    go: {fileID: 188162}
-    mat: {fileID: 2100000, guid: 5d9388f47637ddf429e08d95e6e88227, type: 2}
-  - name: Left
-    health: 4
-    protectedBy: []
-    go: {fileID: 188156}
-    mat: {fileID: 2100000, guid: 6f9b9da04b487bf48b5a701d0ab9fa27, type: 2}
-  - name: Middle
-    health: 4
-    protectedBy: []
-    go: {fileID: 188160}
-    mat: {fileID: 2100000, guid: 52bc318e0bc140840b611b877a822b16, type: 2}
-  - name: Right
-    health: 4
-    protectedBy: []
-    go: {fileID: 188172}
-    mat: {fileID: 2100000, guid: 2b21364bb71d4eb4dbce6894c82cd119, type: 2}
---- !u!114 &11471644
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 188164}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b690331aa78145641b1e2faad8b729b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hero: {fileID: 0}
-  shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
-  shotSpawn: {fileID: 473920}
-  fireRate: 2.5
-  delay: .200000003
-  isAiming: 0
+  birthTime: 0
+  lifeTime: 15
 --- !u!135 &13588158
 SphereCollider:
   m_ObjectHideFlags: 1

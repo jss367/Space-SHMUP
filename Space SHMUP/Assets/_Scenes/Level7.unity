@@ -2022,6 +2022,9 @@ MonoBehaviour:
   EnemySpawn5d1: {fileID: 1768970892}
   EnemySpawn5d2: {fileID: 1452506671}
   EnemySpawn5d3: {fileID: 1832828436}
+  EnemySpawn6d1: {fileID: 297429750}
+  EnemySpawn6d2: {fileID: 0}
+  EnemySpawn6d3: {fileID: 0}
   EnemySpawn10d1: {fileID: 446151028}
   Bass1: {fileID: 623526746}
   Bass2: {fileID: 1950236570}
@@ -8043,6 +8046,49 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 492724, guid: ec581efae09f66146b731dcb468d811f, type: 2}
   m_PrefabInternal: {fileID: 1174637424}
+--- !u!1001 &1790385097
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 488164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 488164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 488164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11471644, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &1792655418 stripped
 Transform:
   m_PrefabParentObject: {fileID: 489444, guid: c0f9fae67d4386542820897fa51c080e, type: 2}

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿	using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -12,7 +12,6 @@ public class SphereTutorial : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider other){
-//		TutorialManager.S.SphereTrigger ();
 //		Debug.Log (other);
 		if (other.ToString() == "Shield (UnityEngine.SphereCollider)") {
 			Step1.enabled = false;
