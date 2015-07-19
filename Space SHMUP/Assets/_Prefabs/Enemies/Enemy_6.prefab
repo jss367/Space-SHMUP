@@ -27,10 +27,9 @@ GameObject:
   - 114: {fileID: 11490430}
   - 33: {fileID: 3347136}
   - 23: {fileID: 2347136}
-  - 114: {fileID: 11403766}
   - 114: {fileID: 11492666}
   m_Layer: 9
-  m_Name: Enemy_x21
+  m_Name: Enemy_6
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147136}
   m_LocalRotation: {x: -1.15202326e-07, y: .707106709, z: -.707106829, w: -1.15202312e-07}
-  m_LocalPosition: {x: 16.9976635, y: -.0228166282, z: 0}
+  m_LocalPosition: {x: 19.9300003, y: -.0199999996, z: 0}
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children:
   - {fileID: 482978}
@@ -107,17 +106,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 72
   m_CollisionDetection: 0
---- !u!114 &11403766
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 147136}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1dff2414d8336a45883292c07dd8fdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11490430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   fireRate: .300000012
-  health: 10
+  health: 3
   score: 100
   showDamageForFrames: 2
   powerUpDropChance: 1
@@ -145,9 +133,9 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0, y: 0, z: 0}
   boundsCenterOffset: {x: 0, y: 0, z: 0}
-  enemyExplosion: {fileID: 0}
-  popText: {fileID: 0}
-  comboPopText: {fileID: 0}
+  enemyExplosion: {fileID: 172662, guid: 0b461f2f00c26474db70e48f1893c723, type: 2}
+  popText: {fileID: 198134, guid: 5a28c96cdd033754ca14be9a26ca6054, type: 2}
+  comboPopText: {fileID: 108858, guid: 65c2838b55bb4e145ab6fd6636edfcff, type: 2}
   points: []
   birthTime: 0
   lifeTime: 10

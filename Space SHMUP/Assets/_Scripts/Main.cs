@@ -75,9 +75,9 @@ public class Main : MonoBehaviour {
 	public int victoryBonus;
 	public float endGameDelay = .2f;
 
-	Vector3 pos1 = new Vector3(14, 1, 0);
-	Vector3 pos2 = new Vector3(22, 1, 0);
-	Vector3 pos3 = new Vector3(30, 1, 0);
+	Vector3 pos1 = new Vector3(14, 1, -10);
+	Vector3 pos2 = new Vector3(22, 1, -10);
+	Vector3 pos3 = new Vector3(30, 1, -10);
 
 	void Awake(){
 
@@ -358,10 +358,11 @@ public class Main : MonoBehaviour {
 
 	public void GiveVictoryBonus (){
 //		Debug.Log("You are currently on this level: " + currentLevel);
-
+//		Debug.Log(
 
 		switch (currentLevel) {
 		case "Level 1":
+			Debug.Log("on level one");
 			victoryBonus = 200;
 			earth1 = 100;
 			earth2 = 300;

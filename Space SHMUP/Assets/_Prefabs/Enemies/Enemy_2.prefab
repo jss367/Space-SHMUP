@@ -83,7 +83,7 @@ GameObject:
   - 114: {fileID: 11453062}
   - 114: {fileID: 11471644}
   m_Layer: 9
-  m_Name: Enemy_5.5
+  m_Name: Enemy_2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,6 +434,7 @@ MonoBehaviour:
   shotSpawn: {fileID: 473920}
   fireRate: 2.5
   delay: .200000003
+  isAiming: 0
 --- !u!135 &13588158
 SphereCollider:
   m_ObjectHideFlags: 1

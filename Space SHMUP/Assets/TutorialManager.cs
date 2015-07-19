@@ -10,6 +10,7 @@ public class TutorialManager : MonoBehaviour {
 	public GameObject FirePad;
 	public GameObject NextButton;
 	public GameObject PlayButton;
+	public GameObject ReturnButton;
 	public GameObject Asteroid;
 	public GameObject Enemy;
 	public Text Intro;
@@ -19,6 +20,9 @@ public class TutorialManager : MonoBehaviour {
 	public Text Step4;
 	public Text Step5;
 	public Text Step6;
+	public Text Step7;
+	public Text Step8;
+	public Text Step9;
 //	private bool onStep1;
 
 //	void Awake(){
@@ -43,6 +47,9 @@ public class TutorialManager : MonoBehaviour {
 		Step4.enabled = false;
 		Step5.enabled = false;
 		Step6.enabled = false;
+		Step7.enabled = false;
+		Step8.enabled = false;
+		Step9.enabled = false;
 
 	}
 	
@@ -87,6 +94,10 @@ public class TutorialManager : MonoBehaviour {
 			}
 		if (str.Equals ("LevelSelect")) {
 			Application.LoadLevel("LevelManager");
+		}
+
+		if (str.Equals ("MainMenu")) {
+			Application.LoadLevel("MainMenu");
 		}
 			}
 
