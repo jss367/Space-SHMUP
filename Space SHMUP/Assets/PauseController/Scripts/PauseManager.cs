@@ -42,8 +42,13 @@ public class PauseManager : MonoBehaviour {
 	}
 		
 	public void OnQuit() {
-		Debug.Log ("PauseManager.OnQuit");
+//		Debug.Log ("PauseManager.OnQuit");
 //		Application.LoadLevel ("MainMenu");
+		foreach (var pausableComponent in pausableInterfaces) {		
+			IPausable pausableInterface = (IPausable)pausableComponent;
+			if( pausableInterface != null )
+				pausableInterface.OnUnPause ();
+		}
 		MadLevelManager.MadLevel.LoadLevelByName ("MainMenu");
 //		foreach (var quittableComponent in quittableInterfaces) {		
 //			IQuittable quittableInterface = (IQuittable)quittableComponent;
@@ -53,7 +58,7 @@ public class PauseManager : MonoBehaviour {
 	}
 	
 	public void OnUnPause() {
-		Debug.Log ("PauseManager.OnUnPause");	
+//		Debug.Log ("PauseManager.OnUnPause");	
 		isPaused = false;
 
 		foreach (var pausableComponent in pausableInterfaces) {		
@@ -64,7 +69,7 @@ public class PauseManager : MonoBehaviour {
 	}
 
 	public void OnPause() {
-		Debug.Log ("PauseManager.OnPause");
+//		Debug.Log ("PauseManager.OnPause");
 		isPaused = true;
 
 		foreach (var pausableComponent in pausableInterfaces) {		

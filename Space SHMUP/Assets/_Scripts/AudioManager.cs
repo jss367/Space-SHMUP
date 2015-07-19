@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour {
 	public bool fadeOutOnlyOnce = false;			// time for the fade-out, this is done only once at the end of the first AudioClip
 	
 	public AudioSource audio1;                      // AudioManager needs two AudioSources for effects like cross-fade and overlaping
-	public AudioSource audio2;
+//	public AudioSource audio2;
 	private float audioVolume;
 	private float internalVolume;
 	private int clipIndex;
@@ -63,21 +63,21 @@ public class AudioManager : MonoBehaviour {
 			return;
 		}
 		audio1 = a[0];
-		audio2 = a[1];
+//		audio2 = a[1];
 		audio1.loop = false;
-		audio2.loop = false;
+//		audio2.loop = false;
 
 		currentLevel = MadLevel.currentLevelName;
 
 		switch (currentLevel) {
 		case "Level 1":
-			audioClip [0] = Resources.Load ("Music/Synthbass") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/1Mix_48") as AudioClip;
 			break;
 		case "Level 2":
-			audioClip [0] = Resources.Load ("Music/2Mix_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/2_90-12Remix_48") as AudioClip;
 			break;
 		case "Level 3":
-			audioClip [0] = Resources.Load ("Music/3_90-12Remix_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/3_90SecondsOfFunk_48") as AudioClip;
 			break;
 		case "Level 4":
 			audioClip [0] = Resources.Load ("Music/4ChecksForFree_48") as AudioClip;
@@ -119,7 +119,7 @@ public class AudioManager : MonoBehaviour {
 
 
 		// check of the settings
-		CheckSettings();
+//		CheckSettings();
 		
 		// from-to-positions for the random positons
 		if (randomPosition) {
@@ -154,40 +154,40 @@ public class AudioManager : MonoBehaviour {
 	/// Checks the settings.
 	/// </summary>
 	public void CheckSettings() {
-		if ((crossFadeTime > 0f) && (overlayPercentage > 0f)) {
-			Debug.LogWarning("AudioManager: OverlayPercentage not allowed in conjunction with CrossFadeTime! OverlayPercentage (" + overlayPercentage + ") is now zero.");
-			overlayPercentage = 0f;
-		}
-		if ((crossFadeTime > 0f) && ((intervalFrom > 0f) || (intervalTo > 0f))) {
-			Debug.LogWarning("AudioManager: Interval not allowed in conjunction with CrossFadeTime! IntervalFrom (" + intervalFrom + ") and IntervalTo (" + intervalTo + ") are now zero.");
-			intervalFrom = 0f;
-			intervalTo = 0f;
-		}
-		if (intervalTo < intervalFrom) {
-			Debug.LogWarning("AudioManager: IntervalTo (" + intervalTo + ") < IntervalFrom (" + intervalFrom + ")! IntervalTo is now equal to IntervalFrom.");
-			intervalTo = intervalFrom;
-		}
-		if ((crossFadeTime > 0f) && (fadeInTime > 0f) && (!fadeInOnlyOnce)) {
-			fadeInOnlyOnce = true;
-			Debug.LogWarning("AudioManager: FadeInTime in conjunction with CrossFadeTime is only allowed with FadeInOnlyOnce! FadeInOnlyOnce is now true.");
-		}
-		if ((crossFadeTime > 0f) && (fadeOutTime > 0f)) {
-			Debug.LogWarning("AudioManager: FadeOutTime not allowed in conjunction with CrossFadeTime! FadeOutTime is now zero.");
-			fadeOutTime = 0f;
-		}
-		if ((overlayPercentage > 0f) && ((intervalFrom > 0f) || (intervalTo > 0f))) {
-			Debug.LogWarning("AudioManager: Interval not allowed in conjunction with OverlayPercentage! IntervalFrom (" + intervalFrom + ") and IntervalTo (" + intervalTo + ") are now zero.");
-			intervalFrom = 0f;
-			intervalTo = 0f;
-		}
-		if ((overlayPercentage > 0f) && (fadeInTime > 0f) && (!fadeInOnlyOnce)) {
-			fadeInOnlyOnce = true;
-			Debug.LogWarning("AudioManager: FadeInTime in conjunction with OverlayPercentage is only allowed with FadeInOnlyOnce! FadeInOnlyOnce is now true.");
-		}
-		if ((overlayPercentage > 0f) && (fadeOutTime > 0f)) {
-			Debug.LogWarning("AudioManager: FadeOutTime not allowed in conjunction with OverlayPercentage! FadeOutTime is now zero.");
-			fadeOutTime = 0f;
-		}
+//		if ((crossFadeTime > 0f) && (overlayPercentage > 0f)) {
+//			Debug.LogWarning("AudioManager: OverlayPercentage not allowed in conjunction with CrossFadeTime! OverlayPercentage (" + overlayPercentage + ") is now zero.");
+//			overlayPercentage = 0f;
+//		}
+//		if ((crossFadeTime > 0f) && ((intervalFrom > 0f) || (intervalTo > 0f))) {
+//			Debug.LogWarning("AudioManager: Interval not allowed in conjunction with CrossFadeTime! IntervalFrom (" + intervalFrom + ") and IntervalTo (" + intervalTo + ") are now zero.");
+//			intervalFrom = 0f;
+//			intervalTo = 0f;
+//		}
+//		if (intervalTo < intervalFrom) {
+//			Debug.LogWarning("AudioManager: IntervalTo (" + intervalTo + ") < IntervalFrom (" + intervalFrom + ")! IntervalTo is now equal to IntervalFrom.");
+//			intervalTo = intervalFrom;
+//		}
+//		if ((crossFadeTime > 0f) && (fadeInTime > 0f) && (!fadeInOnlyOnce)) {
+//			fadeInOnlyOnce = true;
+//			Debug.LogWarning("AudioManager: FadeInTime in conjunction with CrossFadeTime is only allowed with FadeInOnlyOnce! FadeInOnlyOnce is now true.");
+//		}
+//		if ((crossFadeTime > 0f) && (fadeOutTime > 0f)) {
+//			Debug.LogWarning("AudioManager: FadeOutTime not allowed in conjunction with CrossFadeTime! FadeOutTime is now zero.");
+//			fadeOutTime = 0f;
+//		}
+//		if ((overlayPercentage > 0f) && ((intervalFrom > 0f) || (intervalTo > 0f))) {
+//			Debug.LogWarning("AudioManager: Interval not allowed in conjunction with OverlayPercentage! IntervalFrom (" + intervalFrom + ") and IntervalTo (" + intervalTo + ") are now zero.");
+//			intervalFrom = 0f;
+//			intervalTo = 0f;
+//		}
+//		if ((overlayPercentage > 0f) && (fadeInTime > 0f) && (!fadeInOnlyOnce)) {
+//			fadeInOnlyOnce = true;
+//			Debug.LogWarning("AudioManager: FadeInTime in conjunction with OverlayPercentage is only allowed with FadeInOnlyOnce! FadeInOnlyOnce is now true.");
+//		}
+//		if ((overlayPercentage > 0f) && (fadeOutTime > 0f)) {
+//			Debug.LogWarning("AudioManager: FadeOutTime not allowed in conjunction with OverlayPercentage! FadeOutTime is now zero.");
+//			fadeOutTime = 0f;
+//		}
 	}
 	
 	
@@ -209,12 +209,12 @@ public class AudioManager : MonoBehaviour {
 		internalVolume = audioVolume;
 		if (audio1)
 			audio1.volume = internalVolume;
-		if (audio2)
-			audio2.volume = internalVolume;
+//		if (audio2)
+//			audio2.volume = internalVolume;
 	}
 
 	public void SliderVolume(float sliderVolume){
-//		audio1.volume = sliderVolume * playbackVolume * GlobalVolumeManager.Instance.musicVolume;
+		audio1.volume = sliderVolume * playbackVolume * GlobalVolumeManager.Instance.musicVolume;
 	}
 	
 	
@@ -350,52 +350,52 @@ public class AudioManager : MonoBehaviour {
 			if (!loop)
 				break;
 			
-			// cross-fade to the 2. AudioClip
-			if (crossFadeTime > 0f) {
-				// fade-out the 1. AudioClip
-				StartCoroutine(FadeOut(audio1, crossFadeTime));
-				
-				// and fade-in the 2. AudioClips at the same time
-				if (randomPosition)
-					transform.position = new Vector3(Random.Range(fromPosition.x, toPosition.x), Random.Range(fromPosition.y, toPosition.y), Random.Range(fromPosition.z, toPosition.z));
-				audio2.volume = 0f;
-				audio2.clip = audioClip[GetNextClipIndex()];
-				audio2.Play();
-				yield return StartCoroutine(FadeIn(audio2, crossFadeTime));
-				if (stop) break;
-				
-				// wait until the 2. AudioClip has almost finished
-				timeToWait = audio2.clip.length - crossFadeTime - crossFadeTime - 1f;
-				if (timeToWait > 0f)
-					yield return new WaitForSeconds(timeToWait);
-				
-				// wait until the the fade-out of the 2. AudioClip should start
-				while ((audio2.isPlaying) && (audio2.time + crossFadeTime < audio2.clip.length))
-					yield return null;
-				if (stop) break;
-				
-				// fade-out the 2. AudioClip and fade-in the next AudioClip at the beginning of the while-loop
-				StartCoroutine(FadeOut(audio2, crossFadeTime));
-			}
+//			// cross-fade to the 2. AudioClip
+//			if (crossFadeTime > 0f) {
+//				// fade-out the 1. AudioClip
+//				StartCoroutine(FadeOut(audio1, crossFadeTime));
+//				
+//				// and fade-in the 2. AudioClips at the same time
+//				if (randomPosition)
+//					transform.position = new Vector3(Random.Range(fromPosition.x, toPosition.x), Random.Range(fromPosition.y, toPosition.y), Random.Range(fromPosition.z, toPosition.z));
+//				audio2.volume = 0f;
+//				audio2.clip = audioClip[GetNextClipIndex()];
+//				audio2.Play();
+//				yield return StartCoroutine(FadeIn(audio2, crossFadeTime));
+//				if (stop) break;
+//				
+//				// wait until the 2. AudioClip has almost finished
+//				timeToWait = audio2.clip.length - crossFadeTime - crossFadeTime - 1f;
+//				if (timeToWait > 0f)
+//					yield return new WaitForSeconds(timeToWait);
+//				
+//				// wait until the the fade-out of the 2. AudioClip should start
+//				while ((audio2.isPlaying) && (audio2.time + crossFadeTime < audio2.clip.length))
+//					yield return null;
+//				if (stop) break;
+//				
+//				// fade-out the 2. AudioClip and fade-in the next AudioClip at the beginning of the while-loop
+//				StartCoroutine(FadeOut(audio2, crossFadeTime));
+//			}
 			
 			// overlay the 2. AudioClip
-			if (overlayPercentage > 0f) {
-				if (randomPosition)
-					transform.position = new Vector3(Random.Range(fromPosition.x, toPosition.x), Random.Range(fromPosition.y, toPosition.y), Random.Range(fromPosition.z, toPosition.z));
-				audio2.volume = 0f;
-				audio2.clip = audioClip[GetNextClipIndex()];
-				audio2.Play();
-				
-				// wait until the 2. AudioClip has almost finished
-				overlayTime = audio2.clip.length * overlayPercentage;
-				timeToWait = audio2.clip.length - overlayTime - 1f;
-				if (timeToWait > 0f)
-					yield return new WaitForSeconds(timeToWait);
-				
-				// wait until the 2. AudioClip has finished and playback the next AudioClip at the beginning of the while-loop
-				while ((audio2.isPlaying) && (audio2.time + overlayTime < audio2.clip.length))
-					yield return null;
-			}
+//			if (overlayPercentage > 0f) {
+//				if (randomPosition)
+//					transform.position = new Vector3(Random.Range(fromPosition.x, toPosition.x), Random.Range(fromPosition.y, toPosition.y), Random.Range(fromPosition.z, toPosition.z));
+//				audio2.volume = 0f;
+//				audio2.clip = audioClip[GetNextClipIndex()];
+//				audio2.Play();
+//				
+//				// wait until the 2. AudioClip has almost finished
+//				overlayTime = audio2.clip.length * overlayPercentage;
+//				timeToWait = audio2.clip.length - overlayTime - 1f;
+//				if (timeToWait > 0f)
+//					yield return new WaitForSeconds(timeToWait);
+//				
+//				// wait until the 2. AudioClip has finished and playback the next AudioClip at the beginning of the while-loop
+//				while ((audio2.isPlaying) && (audio2.time + overlayTime < audio2.clip.length))
+//					yield return null;
+//			}
 		}
 	}
 	
@@ -422,8 +422,8 @@ public class AudioManager : MonoBehaviour {
 		stop = true;
 		if (audio1)
 			audio1.Stop();
-		if (audio2)
-			audio2.Stop();
+//		if (audio2)
+//			audio2.Stop();
 	}
 	
 	
@@ -434,7 +434,7 @@ public class AudioManager : MonoBehaviour {
 	/// <c>true</c> if is playing; otherwise, <c>false</c>.
 	/// </value>
 	public bool isPlaying {
-		get { return audio1.isPlaying || audio2.isPlaying; }
+		get { return audio1.isPlaying;}// || audio2.isPlaying; }
 	}
 	
 	

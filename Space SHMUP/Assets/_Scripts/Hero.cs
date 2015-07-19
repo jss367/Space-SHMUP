@@ -130,11 +130,13 @@ public class Hero : MonoBehaviour {
 		
 		//Change transform.position based on the axes
 		Vector3 pos = transform.position;
-		pos.x += GetComponent<Rigidbody>().velocity.x * speed * Time.deltaTime;
-		pos.y += GetComponent<Rigidbody>().velocity.y * speed * Time.deltaTime;
-		transform.position = pos;
+//		pos.x += GetComponent<Rigidbody>().velocity.x * speed * Time.deltaTime;
+//		pos.y += GetComponent<Rigidbody>().velocity.y * speed * Time.deltaTime;
+//		transform.position = pos;
 
 		//Rotate the ship to make it feel more dynamic
+		Debug.Log (GetComponent<Rigidbody> ().rotation);
+		Debug.Log (GetComponent<Rigidbody> ().velocity.x);
 		GetComponent<Rigidbody>().rotation = Quaternion.Euler(GetComponent<Rigidbody>().velocity.y * +tilt, GetComponent<Rigidbody>().velocity.x * -tilt, 0.0f );
 
 		bounds.center = transform.position;
