@@ -1,0 +1,207 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca0aa9835c2f8f4a9b2b5ff51784391, type: 3}
+  m_Name: GalacticConfiguration
+  m_EditorClassIdentifier: 
+  creationDate: 0
+  _active: 1
+  levels:
+  - _sceneObject: {fileID: 102900000, guid: fc2330cff3767854081984853d0e2305, type: 3}
+    _scenePath: Assets/_Scenes/SoomlaSplash.unity
+    _sceneName: SoomlaSplash
+    scene: 
+    parent: {fileID: 11400000}
+    order: 0
+    name: Splash
+    type: 0
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 25830a6b18044c64da0dfd1b83e1a742, type: 3}
+    _scenePath: Assets/_Scenes/MainMenu.unity
+    _sceneName: MainMenu
+    scene: 
+    parent: {fileID: 11400000}
+    order: 10
+    name: MainMenu
+    type: 0
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 1
+  - _sceneObject: {fileID: 102900000, guid: 3aca135e3fe36ca4b969b592250304ab, type: 3}
+    _scenePath: Assets/_Scenes/LevelManager.unity
+    _sceneName: LevelManager
+    scene: 
+    parent: {fileID: 11400000}
+    order: 20
+    name: Level Select
+    type: 0
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 1
+  - _sceneObject: {fileID: 102900000, guid: 955655c073bab054eaf5e82868d56262, type: 3}
+    _scenePath: Assets/_Scenes/TutorialScene.unity
+    _sceneName: TutorialScene
+    scene: 
+    parent: {fileID: 11400000}
+    order: 30
+    name: TutorialScene
+    type: 0
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 4a36c6e3bf60f0e40805a145a47bbb3f, type: 3}
+    _scenePath: Assets/_Scenes/Level1.unity
+    _sceneName: Level1
+    scene: 
+    parent: {fileID: 11400000}
+    order: 40
+    name: Level 1
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: b80376823dc048b439c10754cc151a56, type: 3}
+    _scenePath: Assets/_Scenes/Level2.unity
+    _sceneName: Level2
+    scene: 
+    parent: {fileID: 11400000}
+    order: 50
+    name: Level 2
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: d1730bc1034f744409cb0b54728a4a21, type: 3}
+    _scenePath: Assets/_Scenes/Level3.unity
+    _sceneName: Level3
+    scene: 
+    parent: {fileID: 11400000}
+    order: 60
+    name: Level 3
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: ca1c8dc2000225f4b96c9fab8ead23e5, type: 3}
+    _scenePath: Assets/_Scenes/Level4.unity
+    _sceneName: Level4
+    scene: 
+    parent: {fileID: 11400000}
+    order: 70
+    name: Level 4
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 68e6af33050043a4e89c02aa1784b335, type: 3}
+    _scenePath: Assets/_Scenes/Level5.unity
+    _sceneName: Level5
+    scene: 
+    parent: {fileID: 11400000}
+    order: 80
+    name: Level 5
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 0e998c45fce75fa4987b94c99afabe1f, type: 3}
+    _scenePath: Assets/_Scenes/Level6.unity
+    _sceneName: Level6
+    scene: 
+    parent: {fileID: 11400000}
+    order: 90
+    name: Level 6
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 01e062518567c0a41bf8776a67d03d6b, type: 3}
+    _scenePath: Assets/_Scenes/Level7.unity
+    _sceneName: Level7
+    scene: 
+    parent: {fileID: 11400000}
+    order: 100
+    name: Level 7
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: e5a6708f5ea13184b9b1657b4fe9f3b7, type: 3}
+    _scenePath: Assets/_Scenes/Level8.unity
+    _sceneName: Level8
+    scene: 
+    parent: {fileID: 11400000}
+    order: 110
+    name: Level 8
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 808ba7b6c8c737b448a6fa8705da224c, type: 3}
+    _scenePath: Assets/_Scenes/Level9.unity
+    _sceneName: Level9
+    scene: 
+    parent: {fileID: 11400000}
+    order: 120
+    name: Level 9
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 5dc65e24d6a0fea4581f7cc9afadba4e, type: 3}
+    _scenePath: Assets/_Scenes/Level10.unity
+    _sceneName: Level10
+    scene: 
+    parent: {fileID: 11400000}
+    order: 130
+    name: Level 10
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 9be9719f5dcbe1e44b146f6486f56917, type: 3}
+    _scenePath: Assets/_Scenes/Level11.unity
+    _sceneName: Level11
+    scene: 
+    parent: {fileID: 11400000}
+    order: 140
+    name: Level 11
+    type: 1
+    arguments: 
+    groupId: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 0
+  groups: []
+  extensions:
+  - name: Loading Screen
+    guid: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    scenesBefore:
+    - _sceneObject: {fileID: 102900000, guid: 52fabab80b8a7b843bd420f130abed5d, type: 3}
+      _scenePath: Assets/_Scenes/LoadingScene.unity
+      _sceneName: LoadingScene
+      scene: 
+    scenesAfter: []
+  version: 1

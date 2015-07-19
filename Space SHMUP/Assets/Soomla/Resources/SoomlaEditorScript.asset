@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4e0a197f1a5042dc8fb2cd6ad519b70, type: 3}
+  m_Name: SoomlaEditorScript
+  m_EditorClassIdentifier: 
+  SoomlaSettings:
+    values:
+    - name: SoomlaSecret
+      value: soomla
+    - name: HighwayGameKey
+      value: a5c8844d-9bf7-4ff5-ad3b-7f2e276bed72
+    - name: HighwayEnvKey
+      value: d9ae62cb-9823-4d98-ae2b-1b3d126c205b
+    - name: TwitterConsumerKey
+      value: nDy4CroqC3OYF3F5A1LJfl0yM
+    - name: TwitterConsumerSecret
+      value: ls3bJCr85CWdrwAKln2Ywx5pe3rUAxGzfccWWOIp5bJ1B05gUz
+    - name: GPClientId
+      value: 306497272614-5r5ktm6jvnn16bltvmveodmq0qfrll0f.apps.googleusercontent.com
+    - name: DebugUnityMessages
+      value: True
+    - name: GPlayBP
+      value: True
+    - name: AndroidPublicKey
+      value: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAhuXu1ZpbAmoFd9tJuFdf9dZTywPOyL6r7TKVewl0mevHldJExVVu9dd0SbhIvJERujuZoPKOOtmwk0Q8J6GFsBqtOGluthMMzx94u1U+vrBPHOCwET4ooyqZMbIVhG406fLJ7gvA3cEJfsbIDotB8BgYkj0e4/V2Iy+brQhIf26ogzrvSODaHXLE/m/frUV6XKnw+iiuYAtPYPFExPqLyOAdANWJiqDda4itZvqR/4hHsVKFe7SkvZ9rRmDKigP8cQnV2a8uVPWaFAHu4UmJePhjci1unzYhTHj03KOeVHFRSfjBlSYcicdfwSMowOoDhZj+2MHcC5eGiW2bLt2G+wIDAQAB
+    - name: DebugMessages
+      value: True
+    - name: SocialIntegration
+      value: twitter,1;google,1
+    - name: AndroidTestPurchases
+      value: True
