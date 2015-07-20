@@ -376,7 +376,7 @@ MonoBehaviour:
   health: 10
   score: 100
   showDamageForFrames: 2
-  powerUpDropChance: 1
+  powerUpDropChance: .200000003
   _________________: 0
   comboTime: 1
   impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
@@ -429,10 +429,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b690331aa78145641b1e2faad8b729b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hero: {fileID: 0}
   shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
   shotSpawn: {fileID: 473920}
   fireRate: 2.5
   delay: .200000003
+  isAiming: 0
 --- !u!135 &13588158
 SphereCollider:
   m_ObjectHideFlags: 1

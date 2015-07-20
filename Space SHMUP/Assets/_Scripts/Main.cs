@@ -298,8 +298,10 @@ public class Main : MonoBehaviour {
 		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";
 		prevBalanceText.enabled = true;
 		restartButton.SetActive(true);
-		nextLevelButton.SetActive (true);
 		mainMenuButton.SetActive (true);
+		if (!playerDead) {
+			nextLevelButton.SetActive (true);
+		}
 		GivePoints ();
 	}
 
@@ -337,8 +339,15 @@ public class Main : MonoBehaviour {
 	}
 	IEnumerator CountScore(){
 		int displayScore = 0;
+		int updateScore = 5;
+		if (score > 100000) {
+			updateScore = 25;
+		} else if (score > 1000) {
+			updateScore = 15;
+		}
+
 		while (displayScore < score){
-			displayScore+= 5;
+			displayScore+= updateScore;
 			yield return new WaitForSeconds(.01f);
 			finalScoreText.text = "Final Score: " + displayScore;
 			if (displayScore == earth1){
@@ -363,7 +372,7 @@ public class Main : MonoBehaviour {
 		switch (currentLevel) {
 		case "Level 1":
 			Debug.Log("on level one");
-			victoryBonus = 200;
+			victoryBonus = 50;
 			earth1 = 100;
 			earth2 = 300;
 			earth3 = 500;
@@ -397,54 +406,66 @@ public class Main : MonoBehaviour {
 			break;
 		case "Level 3":
 			victoryBonus = 600;
-			if (score > 10000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-			}
-			if (score > 15000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-			}
-			if (score > 20000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-			}
+			earth1 = 10000;
+			earth2 = 15000;
+			earth3 = 20000;
+			//			if (score > 10000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+//			}
+//			if (score > 15000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+//			}
+//			if (score > 20000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+//			}
 			break;
 		case "Level 4":
 			victoryBonus = 800;
-			if (score > 30000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-			}
-			if (score > 40000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-			}
-			if (score > 50000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-			}
+			earth1 = 30000;
+			earth2 = 40000;
+			earth3 = 50000;
+//			if (score > 30000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+//			}
+//			if (score > 40000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+//			}
+//			if (score > 50000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+//			}
 			break;
 		case "Level 8":
 			victoryBonus = 800;
-			if (score > 30000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-			}
-			if (score > 40000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-			}
-			if (score > 50000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-			}
+			earth1 = 30000;
+			earth2 = 40000;
+			earth3 = 50000;
+//			if (score > 30000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+//			}
+//			if (score > 40000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+//			}
+//			if (score > 50000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+//			}
 			break;
 		default:
 			victoryBonus = 1000;
-			if (score > 4000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-				Instantiate(earthReward, pos1, Quaternion.identity);
-			}
-			if (score > 7000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-				Instantiate(earthReward, pos2, Quaternion.identity);
-			}
-			if (score > 10000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-				Instantiate(earthReward, pos3, Quaternion.identity);
-			}
+			earth1 = 30000;
+			earth2 = 40000;
+			earth3 = 50000;
+//			if (score > 4000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+//				Instantiate(earthReward, pos1, Quaternion.identity);
+//			}
+//			if (score > 7000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+//				Instantiate(earthReward, pos2, Quaternion.identity);
+//			}
+//			if (score > 10000){
+//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+//				Instantiate(earthReward, pos3, Quaternion.identity);
+//			}
 			break;
 
 		}

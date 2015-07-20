@@ -7,12 +7,12 @@ public class TimePause : MonoBehaviour, IPausable {
 	private float timeScale;
 
 	public void OnUnPause() {
-		Debug.Log ("TestPause.OnUnPause");
+//		Debug.Log ("TestPause.OnUnPause");
 		Time.timeScale = timeScale;
 	}
 	
 	public void OnPause() {
-		Debug.Log ("TestPause.OnPause");
+//		Debug.Log ("TestPause.OnPause");
 		timeScale = Time.timeScale;
 		Invoke ("StopTime", pauseDelay ); 
 	}

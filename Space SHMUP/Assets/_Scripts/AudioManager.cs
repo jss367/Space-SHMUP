@@ -145,7 +145,6 @@ public class AudioManager : MonoBehaviour {
 			Gizmos.color = gizmoColor;
 			Gizmos.DrawWireCube(transform.position, transform.localScale);
 		}
-
 	}
 
 	
@@ -214,7 +213,10 @@ public class AudioManager : MonoBehaviour {
 	}
 
 	public void SliderVolume(float sliderVolume){
-		audio1.volume = sliderVolume * playbackVolume * GlobalVolumeManager.Instance.musicVolume;
+//		audio1.volume = sliderVolume * playbackVolume * GlobalVolumeManager.Instance.musicVolume;
+		playbackVolume = sliderVolume;
+		SetVolume ();
+		Debug.Log (playbackVolume);
 	}
 	
 	
@@ -461,26 +463,19 @@ public class AudioManager : MonoBehaviour {
 	private bool isPaused = false;
 
 //	void Update () {
-//		if (Input.GetKeyDown(KeyCode.Escape))
-//		{
-//			if( isPaused ) {
-//				OnUnPause();
-//			} else {
-//				OnPause();
-//			}
-//		}
-//		
+////		Debug.Log (playbackVolume);
+////		Debug.Log ();
 //	}
 
 	public void OnUnPause() {
-		Debug.Log ("PauseManager.OnUnPause");	
+//		Debug.Log ("PauseManager.OnUnPause");	
 		isPaused = false;
 		audio1.UnPause ();
 
 	}
 	
 	public void OnPause() {
-		Debug.Log ("PauseManager.OnPause");
+//		Debug.Log ("PauseManager.OnPause");
 		isPaused = true;
 		audio1.Pause ();
 		}

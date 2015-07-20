@@ -94,7 +94,7 @@ namespace Soomla.Store.Example {
 		/** Virtual Currencies **/
 		
 		public static VirtualCurrency GALACTIC_CURRENCY = new VirtualCurrency(
-			"Cosmic Coin",										// name
+			"Coin",										// name
 			"Currency in the Cosmos",						// description
 			Constants.GALACTIC_CURRENCY_ITEM_ID							// item id
 			);
