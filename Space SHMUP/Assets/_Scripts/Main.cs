@@ -340,10 +340,12 @@ public class Main : MonoBehaviour {
 	IEnumerator CountScore(){
 		int displayScore = 0;
 		int updateScore = 5;
-		if (score > 100000) {
-			updateScore = 25;
-		} else if (score > 1000) {
-			updateScore = 15;
+		if (score - updateScore > 10000) {
+			updateScore = 1000;
+		} else if (score - updateScore > 1000) {
+			updateScore = 100;
+		} else if (score - updateScore > 100) {
+			updateScore = 10;
 		}
 
 		while (displayScore < score){

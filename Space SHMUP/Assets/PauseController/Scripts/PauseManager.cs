@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 using System.Collections;
 
 public class PauseManager : MonoBehaviour {
@@ -10,6 +11,9 @@ public class PauseManager : MonoBehaviour {
 	private Animator anim;
 	private Component[] pausableInterfaces;
 	private Component[] quittableInterfaces;
+
+	public AudioMixerSnapshot paused;
+	public AudioMixerSnapshot unPaused;
 
 	void Start() 
 	{

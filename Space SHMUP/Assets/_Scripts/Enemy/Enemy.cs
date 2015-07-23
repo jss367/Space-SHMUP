@@ -31,11 +31,11 @@ public class Enemy : MonoBehaviour {
 	public GameObject comboPopText;
 	
 	void Awake() {
-		materials = Utils.GetAllMaterials (gameObject);
-		originalColors = new Color[materials.Length];
-		for (int i = 0; i < materials.Length; i++) {
-			originalColors [i] = materials [i].color;
-		}
+//		materials = Utils.GetAllMaterials (gameObject);
+//		originalColors = new Color[materials.Length];
+//		for (int i = 0; i < materials.Length; i++) {
+//			originalColors [i] = materials [i].color;
+//		}
 		InvokeRepeating ("CheckOffscreen", 0f, 2f);
 	}
 
@@ -96,10 +96,12 @@ public class Enemy : MonoBehaviour {
 			boundsCenterOffset = bounds.center - transform.position;
 		}
 		
-		//Every time, update the counds to the current position
+		//Every time, update the bounds to the current position
 		bounds.center = transform.position + boundsCenterOffset;
+//		Debug.Log ("bounds.center is " + bounds.center);
 		//Check to see whether the bounds are completely offscreen
 		Vector3 off = Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen);
+//		Debug.Log ("off is " + off);
 		if (off != Vector3.zero) {
 			//If this enemy has gone off the bottom edge of the screen
 			if (off.y < 0) {

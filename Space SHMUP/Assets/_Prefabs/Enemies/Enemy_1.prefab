@@ -126,10 +126,10 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127916}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ae65dc47d5a02534b96fbaa60b34eddb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -153,7 +153,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4b04f7f86d0fbcb4fb003922b152e35a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -237,10 +237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b690331aa78145641b1e2faad8b729b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hero: {fileID: 0}
   shot: {fileID: 100000, guid: 11e27c26ac87b40f0a62ec40d7261989, type: 2}
   shotSpawn: {fileID: 477458}
   fireRate: 1.5
   delay: .5
+  isAiming: 0
 --- !u!135 &13561270
 SphereCollider:
   m_ObjectHideFlags: 1
