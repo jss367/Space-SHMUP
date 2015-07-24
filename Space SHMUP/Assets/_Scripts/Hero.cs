@@ -77,9 +77,10 @@ public class Hero : MonoBehaviour {
 		CheckInventory ();
 
 		if (spreadOwned == true) {
+			Debug.Log("Spread is owned");
 			weapons [0].SetType (WeaponType.spread);
 		} else {
-
+			Debug.Log("Spread is not owned");
 			weapons [0].SetType (WeaponType.blaster);
 		}
 			}
@@ -172,23 +173,18 @@ public class Hero : MonoBehaviour {
 
 	
 	void CheckInventory(){
-
 //		Debug.Log ("Checking inventory");
-
 		try
 		{
-
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
 					Debug.Log("Blaster is equipped");
 				}
-
 
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 			Debug.Log("Spread is equipped");
 
 			spreadOwned = true;
 		}
-
 		}
 		catch (System.Exception e)
 		{
@@ -303,6 +299,7 @@ public class Hero : MonoBehaviour {
 //	}
 
 		public void AbsorbPowerUp(GameObject go) {
+		Main.S.AddScore (10);
 			PowerUp pu = go.GetComponent<PowerUp>();
 			switch (pu.type) {
 			case WeaponType.shield: // If it's the shield

@@ -202,27 +202,17 @@ public class Main : MonoBehaviour {
 					}
 	}
 
-	public void WaitUntilLevelEmpties(){
-	
-//			Debug.Log ("Waiting until level empties");
-			stopSpawning = true;
-			GameObject[] AsteroidsRemaining = GameObject.FindGameObjectsWithTag ("Asteroid");
-//		Debug.Log ("Asteroids remaining: " + AsteroidsRemaining.Length);
-			GameObject[] EnemiesRemaining = GameObject.FindGameObjectsWithTag ("Enemy");
-//		Debug.Log ("Enemies remaining: " + EnemiesRemaining.Length);
-			if ((EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) || (Time.time - timeOfDeath > 5.0f)) {
-//			Debug.Log("gameHasEnded: " + gameHasEnded);
-//			Debug.Log("Time.time: " + Time.time);
-//			Debug.Log("timeOfDeath: " + timeOfDeath);
-				if (playerDead && !gameHasEnded) {
-					GameOver ();
-			} else if (!playerWins && !playerDead && EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) {
-					PlayerWon ();
-
-			}
+	public void AddScore (int newScoreValue)
+	{
+		StartCoroutine(PopText(newScoreValue.ToString(), 0.2f));
+		//		Debug.Log ("Score has been updated");
+		if (!gameHasEnded) {
+			score += newScoreValue;
 		}
-
+		
+		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
+
 
 	public void EnemyDestroyed( Enemy e, bool combo) {
 		// Potentially generate a PowerUp
@@ -251,6 +241,31 @@ public class Main : MonoBehaviour {
 		} else {
 			AddScore (e.score);
 		}
+	}
+
+	
+	public void WaitUntilLevelEmpties(){
+		
+		//			Debug.Log ("Waiting until level empties");
+		stopSpawning = true;
+		GameObject[] AsteroidsRemaining = GameObject.FindGameObjectsWithTag ("Asteroid");
+		//		Debug.Log ("Asteroids remaining: " + AsteroidsRemaining.Length);
+		GameObject[] EnemiesRemaining = GameObject.FindGameObjectsWithTag ("Enemy");
+		//		Debug.Log ("Enemies remaining: " + EnemiesRemaining.Length);
+		if ((EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) || (Time.time - timeOfDeath > 5.0f)) {
+			//			Debug.Log("gameHasEnded: " + gameHasEnded);
+			//			Debug.Log("Time.time: " + Time.time);
+			//			Debug.Log("timeOfDeath: " + timeOfDeath);
+			if (playerDead && !gameHasEnded) {
+				GameOver ();
+				CancelInvoke();
+			} else if (!playerWins && !playerDead && EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) {
+				PlayerWon ();
+				CancelInvoke();
+				
+			}
+		}
+		
 	}
 
 
@@ -373,101 +388,47 @@ public class Main : MonoBehaviour {
 
 		switch (currentLevel) {
 		case "Level 1":
-			Debug.Log("on level one");
+//			Debug.Log("on level one");
 			victoryBonus = 50;
 			earth1 = 100;
 			earth2 = 300;
 			earth3 = 500;
-//			if (score = 100){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//				Instantiate(earthReward, pos1, Quaternion.identity);
-//			}
-//			if (score = 300){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//				Instantiate(earthReward, pos2, Quaternion.identity);
-//			}
-//			if (score = 500){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//				Instantiate(earthReward, pos3, Quaternion.identity);
-//			}
+
 			break;
 		case "Level 2":
 			victoryBonus = 100;
 			earth1 = 150;
 			earth2 = 200;
 			earth3 = 400;
-//			if (score > 1000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//			}
-//			if (score > 1500){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//			}
-//			if (score > 2500){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//			}
+
 			break;
 		case "Level 3":
 			victoryBonus = 600;
 			earth1 = 10000;
 			earth2 = 15000;
 			earth3 = 20000;
-			//			if (score > 10000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//			}
-//			if (score > 15000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//			}
-//			if (score > 20000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//			}
+
 			break;
 		case "Level 4":
 			victoryBonus = 800;
 			earth1 = 30000;
 			earth2 = 40000;
 			earth3 = 50000;
-//			if (score > 30000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//			}
-//			if (score > 40000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//			}
-//			if (score > 50000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//			}
+
 			break;
 		case "Level 8":
 			victoryBonus = 800;
 			earth1 = 30000;
 			earth2 = 40000;
 			earth3 = 50000;
-//			if (score > 30000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//			}
-//			if (score > 40000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//			}
-//			if (score > 50000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//			}
+
 			break;
 		default:
 			victoryBonus = 1000;
 			earth1 = 30000;
 			earth2 = 40000;
 			earth3 = 50000;
-//			if (score > 4000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//				Instantiate(earthReward, pos1, Quaternion.identity);
-//			}
-//			if (score > 7000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//				Instantiate(earthReward, pos2, Quaternion.identity);
-//			}
-//			if (score > 10000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//				Instantiate(earthReward, pos3, Quaternion.identity);
-//			}
+
 			break;
 
 		}
@@ -522,16 +483,7 @@ public class Main : MonoBehaviour {
 		highScoreText.enabled = true;
 	}
 
-	public void AddScore (int newScoreValue)
-	{
-		StartCoroutine(PopText(newScoreValue.ToString(), 0.2f));
-//		Debug.Log ("Score has been updated");
-		if (!gameHasEnded) {
-			score += newScoreValue;
-		}
 
-		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
-	}
 
 	IEnumerator PopText(string message, float time){
 			popText.text = "+ " + message;
