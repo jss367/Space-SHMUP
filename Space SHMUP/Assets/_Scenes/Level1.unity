@@ -4737,10 +4737,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1800589821}
   m_HandleRect: {fileID: 1398540481}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: -10
+  m_MinValue: -60
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: -10
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4845,10 +4845,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1607604956}
   m_HandleRect: {fileID: 1016565974}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: -10
+  m_MinValue: -60
+  m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: -10
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -7469,7 +7469,7 @@ Transform:
   - {fileID: 1507825032}
   - {fileID: 133006790}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &1601000347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8440,7 +8440,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &1717561305
 GameObject:
   m_ObjectHideFlags: 0
@@ -9191,7 +9191,7 @@ Transform:
   m_Children:
   - {fileID: 308293537}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!20 &1838322968
 Camera:
   m_ObjectHideFlags: 0
