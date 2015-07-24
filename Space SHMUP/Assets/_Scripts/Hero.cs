@@ -405,9 +405,6 @@ public class Hero : MonoBehaviour {
 		return(0);
 	}
 
-
-
-
 	void DestroyHero(){
 		Destroy (this.gameObject);
 //		Debug.Log ("Hero has been destroyed");

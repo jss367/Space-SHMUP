@@ -216,7 +216,7 @@ public class AudioManager : MonoBehaviour {
 //		audio1.volume = sliderVolume * playbackVolume * GlobalVolumeManager.Instance.musicVolume;
 		playbackVolume = sliderVolume;
 		SetVolume ();
-		Debug.Log (playbackVolume);
+//		Debug.Log (playbackVolume);
 	}
 	
 	

@@ -34,145 +34,147 @@ public class LevelManager : MonoBehaviour {
 		SpawnManager.instance.Mid.SetActive (true);
 		SpawnManager.instance.Bass = GameObject.Find ("LevelManager/FireworksManager/Bass" + levelSplit [1]);
 		SpawnManager.instance.Bass.SetActive (true);
+//		Debug.Log ("On level: Level" + levelSplit [1] + "Update");
+		InvokeRepeating ("Level" + levelSplit [1] + "Update", startRepeating, repeatFreq);
 
-		switch (currentLevel) {
-		case "Level 1":
-			Level1Start ();
-			InvokeRepeating("Level1Update", startRepeating, repeatFreq);
-			break;
-		case "Level 2":
-			Level2Start ();
-			InvokeRepeating("Level2Update", startRepeating, repeatFreq);
-			break;
-		case "Level 3":
-			Level3Start ();
-			InvokeRepeating("Level3Update", startRepeating, repeatFreq);
-			break;
-		case "Level 4":
-			Level4Start ();
-			InvokeRepeating("Level4Update", startRepeating, repeatFreq);
-			break;
-		case "Level 5":
-			Level5Start ();
-			InvokeRepeating("Level5Update", startRepeating, repeatFreq);
-			break;
-		case "Level 6":
-			Level6Start ();
-			InvokeRepeating("Level6Update", startRepeating, repeatFreq);
-			break;
-		case "Level 7":
-			Level7Start ();
-			InvokeRepeating("Level7Update", startRepeating, repeatFreq);
-			break;
-		case "Level 8":
-			Level8Start ();
-			InvokeRepeating("Level8Update", startRepeating, repeatFreq);
-			break;	
-		case "Level 9":
-			Level9Start ();
-			InvokeRepeating("Level9Update", startRepeating, repeatFreq);
-			break;
-		case "Level 10":
-			Level10Start ();
-			InvokeRepeating("Level10Update", startRepeating, repeatFreq);
-			break;
-		case "Level 11":
-			Level11Start ();
-			InvokeRepeating("Level11Update", startRepeating, repeatFreq);
-			break;
-		}
-
-	}
-
-	void Level1Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-	}
-	
-	void Level2Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-	}
-	
-	void Level3Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-	}
-	
-	void Level4Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-	}
-	
-	void Level5Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-	}
-	
-	void Level6Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-	}
-	
-	void Level7Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
+//		switch (currentLevel) {
+//		case "Level 1":
+////			Level1Start ();
+//			InvokeRepeating("Level1Update", startRepeating, repeatFreq);
+//			break;
+//		case "Level 2":
+////			Level2Start ();
+//			InvokeRepeating("Level2Update", startRepeating, repeatFreq);
+//			break;
+//		case "Level 3":
+////			Level3Start ();
+//			InvokeRepeating("Level3Update", startRepeating, repeatFreq);
+//			break;
+//		case "Level 4":
+////			Level4Start ();
+//			InvokeRepeating("Level4Update", startRepeating, repeatFreq);
+//			break;
+//		case "Level 5":
+////			Level5Start ();
+//			InvokeRepeating("Level5Update", startRepeating, repeatFreq);
+//			break;
+//		case "Level 6":
+////			Level6Start ();
+//			InvokeRepeating("Level6Update", startRepeating, repeatFreq);
+//			break;
+//		case "Level 7":
+////			Level7Start ();
+//			InvokeRepeating("Level7Update", startRepeating, repeatFreq);
+//			break;
+//		case "Level 8":
+////			Level8Start ();
+//			InvokeRepeating("Level8Update", startRepeating, repeatFreq);
+//			break;	
+//		case "Level 9":
+////			Level9Start ();
+//			InvokeRepeating("Level9Update", startRepeating, repeatFreq);
+//			break;
+//		case "Level 10":
+////			Level10Start ();
+//			InvokeRepeating("Level10Update", startRepeating, repeatFreq);
+//			break;
+//		case "Level 11":
+////			Level11Start ();
+//			InvokeRepeating("Level11Update", startRepeating, repeatFreq);
+//			break;
+//		}
 
 	}
-	void Level8Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-		
-	}
-	void Level9Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-		
-	}
-	void Level10Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-		
-	}
 
-	void Level11Start(){
-		
-//		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		firstBreak = timeLimit / 4;
-		secondBreak = timeLimit / 2;
-		thirdBreak = 3 * timeLimit / 4;
-		
-	}
+//	void Level1Start(){
+//		
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//	}
+//	
+//	void Level2Start(){
+//		
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//	}
+//	
+//	void Level3Start(){
+//
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//	}
+//	
+//	void Level4Start(){
+//		
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//	}
+//	
+//	void Level5Start(){
+//		
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//	}
+//	
+//	void Level6Start(){
+//		
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//	}
+//	
+//	void Level7Start(){
+//		
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//
+//	}
+//	void Level8Start(){
+//		
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//		
+//	}
+//	void Level9Start(){
+//		
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//		
+//	}
+//	void Level10Start(){
+//		
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//		
+//	}
+//
+//	void Level11Start(){
+//		
+////		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+//		firstBreak = timeLimit / 4;
+//		secondBreak = timeLimit / 2;
+//		thirdBreak = 3 * timeLimit / 4;
+//		
+//	}
 	
 
 //	void SpawnManageLevel1(){
@@ -269,7 +271,6 @@ public class LevelManager : MonoBehaviour {
 				//			AsteroidSpawn0.SetActive(true);
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
-				SpawnManager.instance.EnemySpawn6d2.SetActive(true);
 			} else if (timer < 17.7) {
 				level = 2;
 				//			AsteroidSpawn2.SetActive(false);
