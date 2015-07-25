@@ -204,9 +204,9 @@ public class Main : MonoBehaviour {
 
 	public void AddScore (int newScoreValue)
 	{
-		StartCoroutine(PopText(newScoreValue.ToString(), 0.2f));
-		//		Debug.Log ("Score has been updated");
-		if (!gameHasEnded) {
+		if (!gameHasEnded && !playerDead) {
+			StartCoroutine(PopText(newScoreValue.ToString(), 0.2f));
+			//		Debug.Log ("Score has been updated");
 			score += newScoreValue;
 		}
 		

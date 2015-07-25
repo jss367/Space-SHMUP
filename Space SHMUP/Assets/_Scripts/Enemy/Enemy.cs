@@ -205,12 +205,7 @@ public class Enemy : MonoBehaviour {
 	}
 	}
 
-//	void PopText(){
-//		Vector3 pos = Camera.main.WorldToScreenPoint (transform.position);
-//		pos.x = pos.x;
-//		pos.y = pos.y;
-//		Instantiate(popText, pos, Quaternion.identity);
-//	}
+
 
 	void ShowDamage() {
 		foreach (Material m in materials) {

@@ -8,9 +8,12 @@ public class Enemy_2 : Enemy{
 	public Vector3[]		points;
 	public float			birthTime;
 	public float			lifeTime = 10;
+	public GameObject hero;
 	
 	// Again, Start works well ecause it is not used by Enemy
 	void Start() {
+
+		hero = (GameObject)GameObject.FindWithTag ("Hero");
 		points = new Vector3[3]; // Initialize points
 		// The start position has already been set by Main.SpawnEnemy()
 		points[0] = pos;
@@ -20,15 +23,16 @@ public class Enemy_2 : Enemy{
 		float xMax = Utils.camBounds.max.x - Main.S.enemySpawnPadding;
 		
 		Vector3 v;
-		// Pick a random middle position in the bottom half of the screen
-		v = Vector3.zero;
-		v.x = Random.Range( xMin, xMax);
-		v.y = Random.Range(Utils.camBounds.min.y, 0);
+//		// Pick a random middle position in the bottom half of the screen
+//		v = Vector3.zero;
+//		v.x = Random.Range( xMin, xMax);
+//		v.y = Random.Range(Utils.camBounds.min.y, 0);
+		v = hero.transform.position;
 		points[1] = v;
 		
-		// Pick a random final position above the top of the screen
+		// Pick a random final position in the bottom half of the screen
 		v = Vector3.zero;
-		v.y = pos.y;
+		v.y = Random.Range(Utils.camBounds.min.y, 0);
 		v.x = Random.Range(xMin, xMax);
 		points[2] = v;
 		

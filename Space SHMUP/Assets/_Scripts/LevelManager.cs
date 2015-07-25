@@ -268,13 +268,11 @@ public class LevelManager : MonoBehaviour {
 				//	Debug.Log("The time alive is " + main.timeAlive);
 				//	Debug.Log("The first break is " + firstBreak);
 				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
-				//			AsteroidSpawn0.SetActive(true);
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
-				SpawnManager.instance.EnemySpawn6d1.SetActive (true);
+//				SpawnManager.instance.EnemySpawn6d1.SetActive (true);
 			} else if (timer < 17.7) {
 				level = 2;
-				//			AsteroidSpawn2.SetActive(false);
 				SpawnManager.instance.AsteroidSpawn5.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d2.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d2.SetActive (true);
