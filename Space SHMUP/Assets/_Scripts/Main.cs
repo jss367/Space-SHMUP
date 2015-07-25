@@ -355,15 +355,15 @@ public class Main : MonoBehaviour {
 	IEnumerator CountScore(){
 		int displayScore = 0;
 		int updateScore = 5;
-		if (score - updateScore > 10000) {
-			updateScore = 1000;
-		} else if (score - updateScore > 1000) {
-			updateScore = 100;
-		} else if (score - updateScore > 100) {
-			updateScore = 10;
-		}
 
 		while (displayScore < score){
+			if (score - updateScore > 10000) {
+				updateScore = 1000;
+			} else if (score - updateScore > 1000) {
+				updateScore = 100;
+			} else if (score - updateScore > 100) {
+				updateScore = 10;
+			}
 			displayScore+= updateScore;
 			yield return new WaitForSeconds(.01f);
 			finalScoreText.text = "Final Score: " + displayScore;

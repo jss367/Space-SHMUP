@@ -44,7 +44,7 @@ namespace Soomla.Store.Example {
 		public VirtualGood[] GetGoods() {
 //			return new  VirtualGood[] {WEAPON_SPREAD, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, 
 //				ShieldUpgrade1, ShieldUpgrade2, Shield, Sword};
-			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, Shield, ShieldUpgrade1};//, NO_ADS_LTVG};
+			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, Shield, ShieldUpgrade1, BaseSpeed, SpeedUpgrade1};//, NO_ADS_LTVG};
 		}
 		
 		/// <summary>
@@ -169,17 +169,17 @@ namespace Soomla.Store.Example {
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            7));                           // Payment amount
 		
-		/// <summary>
-		/// An equipable weapon that can be purchased for 7 coins.
-		/// </summary>
-		public static VirtualGood SoomlaBotSidekick = new EquippableVG(
-			EquippableVG.EquippingModel.LOCAL,  // Equipping Model
-			"SoomlaBot Sidekick",               // Name
-			"The best sidekick EVER!",          // Description
-			"soomlabot_sidekick",               // Item ID
-			new PurchaseWithVirtualItem(        // Purchase type
-		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            7));                           // Payment amount
+//		/// <summary>
+//		/// An equipable weapon that can be purchased for 7 coins.
+//		/// </summary>
+//		public static VirtualGood SoomlaBotSidekick = new EquippableVG(
+//			EquippableVG.EquippingModel.LOCAL,  // Equipping Model
+//			"SoomlaBot Sidekick",               // Name
+//			"The best sidekick EVER!",          // Description
+//			"soomlabot_sidekick",               // Item ID
+//			new PurchaseWithVirtualItem(        // Purchase type
+//		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+//		                            7));                           // Payment amount
 
 		/// <summary>
 		/// A playable character that can be purchased for 27 coins.
@@ -221,7 +221,18 @@ namespace Soomla.Store.Example {
 		                            8000));
 
 
-//		public static VirtualGood ShieldUpgrade2 = new UpgradeVG(
+		public static VirtualGood SpeedUpgrade1 = new UpgradeVG(
+			Constants.SPEED_ITEM_ID,	// Item ID of the associated good that is being upgraded
+			null,						// Item ID of the next upgrade good
+			null,						// Item ID of the previous upgrade good
+			"Speed Upgrade",			// Name
+			"Makes ship faster",	// Description
+			Constants.SPEED_UPGRADE_1,	// Item ID
+			new PurchaseWithVirtualItem(        // Purchase type
+		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+		                            8000));
+		
+		//		public static VirtualGood ShieldUpgrade2 = new UpgradeVG(
 //			Constants.SHIELD_ITEM_ID,
 //			null,
 //			Constants.SHIELD_UPGRADE_1,
@@ -286,6 +297,15 @@ namespace Soomla.Store.Example {
 			"Shield",                           // Name
 			"Shields you from aliens and asteroids",        // Description
 			Constants.SHIELD_ITEM_ID,                  // Item ID
+			new PurchaseWithVirtualItem(        // Purchase type
+		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+		                            0)                            // Payment amount
+			);
+
+		public static VirtualGood BaseSpeed = new LifetimeVG(
+			"Speed",                           // Name
+			"Keeps you moving fast",        // Description
+			Constants.SPEED_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            0)                            // Payment amount

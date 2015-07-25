@@ -2218,12 +2218,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 446151028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6c0613de7c68f248b7f48303e431342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyBoss: {fileID: 100008, guid: 6df519f47d09d7847b252086d10ccd6c, type: 2}
+  EnemyBoss: {fileID: 112388, guid: e50b3da802723d444aa520ea4165c63d, type: 2}
 --- !u!1 &447367158
 GameObject:
   m_ObjectHideFlags: 0
@@ -6468,6 +6468,7 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   shieldUpgradeOwned: 0
   isInvincible: 0
+  popText: {fileID: 186940, guid: 5abd7a417a1184b4a909c373dd4eae43, type: 2}
   target: {x: 0, y: 0, z: 0}
   tilt: 5
   velocityLag: .300000012

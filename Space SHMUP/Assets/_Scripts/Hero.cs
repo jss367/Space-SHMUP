@@ -42,9 +42,10 @@ public class Hero : MonoBehaviour {
 
 	private bool				shieldCounter = true;
 	public bool					shieldUpgradeOwned = false;
-//	public const string SHIELD_UPGRADE_1 = "shield_1";
+	public bool					speedUpgradeOwned = false;
 	public bool isInvincible;
 
+	public GameObject popText;
 	
 	//Declare a new delegate type WeaponFireDelegate
 	public delegate void WeaponFireDelegate();
@@ -70,21 +71,24 @@ public class Hero : MonoBehaviour {
 	}
 
 	void Start() {
-		shieldUpgradeOwned = false;
+//		shieldUpgradeOwned = false;
 		//		spreadOwned = true; // comment out for builds
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
 		CheckInventory ();
 
 		if (spreadOwned == true) {
-			Debug.Log("Spread is owned");
+			Debug.Log ("Spread is owned");
 			weapons [0].SetType (WeaponType.spread);
 		} else {
-			Debug.Log("Spread is not owned");
+			Debug.Log ("Spread is not owned");
 			weapons [0].SetType (WeaponType.blaster);
 		}
-			}
 
+		if (speedUpgradeOwned == true) {
+			speed = 40;
+		}
+	}
 	
 
 	// Update is called once per frame
@@ -193,7 +197,7 @@ public class Hero : MonoBehaviour {
 
 		try{
 
-			Debug.Log("Shield upgrade is " + Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SHIELD_ITEM_ID));
+			Debug.Log("Shield upgrade is " + Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SHIELD_ITEM_ID)); // shouldn't this be for SHIELD_UPGRADE_1??????????????
 			if(Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SHIELD_ITEM_ID) == "shield_1")
 			{
 				Debug.Log("Player has shield upgrade");
@@ -206,6 +210,20 @@ public class Hero : MonoBehaviour {
 			Debug.Log("Caught error: " + e);
 		}
 
+		try{
+			
+			Debug.Log("Speed upgrade is " + Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SPEED_ITEM_ID));
+			if(Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SPEED_ITEM_ID) == Constants.SPEED_UPGRADE_1)   // This should be a switch with all the different upgrade levels
+			{
+				Debug.Log("Player has speed upgrade");
+				speedUpgradeOwned = true;
+			}
+		}
+		
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+		}
 	}
 
 	//This variable holds a reference to the last triggering GameObject
@@ -300,6 +318,7 @@ public class Hero : MonoBehaviour {
 
 		public void AbsorbPowerUp(GameObject go) {
 		Main.S.AddScore (10);
+		Instantiate(popText, transform.position, Quaternion.identity);
 			PowerUp pu = go.GetComponent<PowerUp>();
 			switch (pu.type) {
 			case WeaponType.shield: // If it's the shield
