@@ -12,4 +12,5 @@ public static class Constants {
 	public const string SHIELD_UPGRADE_2 = "shield_2";
 	public const string SPEED_ITEM_ID = "speed";
 	public const string SPEED_UPGRADE_1 = "speed_1";
+	public const string SPEED_UPGRADE_2 = "speed_2";
 }

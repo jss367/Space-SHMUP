@@ -20,19 +20,12 @@ public class BackgroundManager : MonoBehaviour {
 	public GameObject Level10Background;
 	public GameObject Level11Background;
 
-	void Awake(){
-//		instance = this;
-//		Level1Background = GameObject.Find("BackgroundManager/Level1Background");	
-//		Level1Background = GameObject.Find("Level1Background");
-//		Level3Background = GameObject.Find("Level3Background");
-	}
 
 	void Start(){
 //		Debug.Log ("Level1Background is " + Level1Background);
 
 		currentLevel = MadLevel.currentLevelName;
 
-		
 		switch (currentLevel) {
 		case "Level 1":
 			Level1Background.SetActive (true);
