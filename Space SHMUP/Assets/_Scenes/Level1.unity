@@ -1391,7 +1391,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 308293535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.89833069, y: -2.5, z: 0}
+  m_LocalPosition: {x: -6.93195724, y: -2.5, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 396900309}
@@ -6468,7 +6468,7 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   shieldUpgradeOwned: 0
   speedUpgradeOwned: 0
-  isInvincible: 1
+  isInvincible: 0
   popText: {fileID: 186940, guid: 5abd7a417a1184b4a909c373dd4eae43, type: 2}
   target: {x: 0, y: 0, z: 0}
   tilt: 5
@@ -6477,6 +6477,7 @@ MonoBehaviour:
   fireButton: {fileID: 1894540696}
   explosion: {fileID: 101830, guid: 636d59c9aae3df748bf707e341f61d09, type: 2}
   enemyExplosion: {fileID: 172662, guid: 0b461f2f00c26474db70e48f1893c723, type: 2}
+  missile: {fileID: 149784, guid: 19db1ab78f4b46b43836e41c873f2d5b, type: 2}
   lastTriggerGo: {fileID: 0}
 --- !u!114 &1321484649
 MonoBehaviour:
@@ -10009,6 +10010,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874c57cf76f82144da081d0733517ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minSwipeDistY: 5
+  minSwipeDistX: 5
 --- !u!114 &1894540697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11385,6 +11388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationsPerSecond: .100000001
+  shieldUpgradeOwned: 0
   _________: 0
   levelShown: 0
 --- !u!135 &2132833387

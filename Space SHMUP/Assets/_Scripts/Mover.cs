@@ -3,8 +3,8 @@ using System.Collections;
 
 public class Mover : MonoBehaviour {
 
-	public GameObject hero;
-	public bool isAimed = false;
+//	public GameObject hero;
+//	public bool isAimed = false;
 	public float speed;
 
 	void Awake(){
@@ -14,7 +14,7 @@ public class Mover : MonoBehaviour {
 		
 		void Start ()
 		{
-		hero = (GameObject)GameObject.FindWithTag ("Hero");
+//		hero = (GameObject)GameObject.FindWithTag ("Hero");
 			GetComponent<Rigidbody> ().velocity = transform.forward * speed;
 	}
 

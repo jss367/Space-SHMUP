@@ -44,7 +44,7 @@ namespace Soomla.Store.Example {
 		public VirtualGood[] GetGoods() {
 //			return new  VirtualGood[] {WEAPON_SPREAD, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, 
 //				ShieldUpgrade1, ShieldUpgrade2, Shield, Sword};
-			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, BaseSpeed, SpeedUpgrade1};//, Shield, ShieldUpgrade1, BaseSpeed, SpeedUpgrade1};//, NO_ADS_LTVG};
+			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, BaseSpeed, BaseShield};//, SpeedUpgrade1};//, Shield, ShieldUpgrade1, BaseSpeed, SpeedUpgrade1};//, NO_ADS_LTVG};
 		}
 		
 		/// <summary>
@@ -209,27 +209,45 @@ namespace Soomla.Store.Example {
 		#region Upgrades
 
 
-		public static VirtualGood ShieldUpgrade1 = new UpgradeVG(
-			Constants.SHIELD_ITEM_ID,	// Item ID of the associated good that is being upgraded
-			null,						// Item ID of the next upgrade good
-			null,						// Item ID of the previous upgrade good
-			"Shield Upgrade",			// Name
-			"Shield takes two hits",	// Description
-			Constants.SHIELD_UPGRADE_1,	// Item ID
-			new PurchaseWithVirtualItem(        // Purchase type
-		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            8000));
+//		public static VirtualGood ShieldUpgrade1 = new UpgradeVG(
+//			Constants.SHIELD_ITEM_ID,	// Item ID of the associated good that is being upgraded
+//			null,						// Item ID of the next upgrade good
+//			null,						// Item ID of the previous upgrade good
+//			"Shield Upgrade",			// Name
+//			"Shield takes two hits",	// Description
+//			Constants.SHIELD_UPGRADE_1,	// Item ID
+//			new PurchaseWithVirtualItem(        // Purchase type
+//		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+//		                            8000));
 
 		public static VirtualGood BaseSpeed = new LifetimeVG(
 			"Speed",                           // Name
-			"Keeps you moving fast",        // Description
+			"Makes you move faster",        // Description
 			Constants.SPEED_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            0)                            // Payment amount
 			);
 
-
+		public static VirtualGood BaseShield = new LifetimeVG(
+			"Shield Upgrade",                           // Name
+			"Doubles the health of your shield",        // Description
+			Constants.BASESHIELD_ITEM_ID,                  // Item ID
+			new PurchaseWithVirtualItem(        // Purchase type
+		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+		                            0)                            // Payment amount
+			);
+		
+//		public static VirtualGood Shield = new LifetimeVG(
+//			"Shield",                           // Name
+//			"Shields you from aliens and asteroids",        // Description
+//			Constants.SHIELD_ITEM_ID,                  // Item ID
+//			new PurchaseWithVirtualItem(        // Purchase type
+//		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+//		                            0)                            // Payment amount
+//			);
+		
+		
 		public static VirtualGood SpeedUpgrade1 = new UpgradeVG(
 			Constants.SPEED_ITEM_ID,	// Item ID of the associated good that is being upgraded
 			Constants.SPEED_UPGRADE_2,	// Item ID of the next upgrade good
@@ -302,14 +320,7 @@ namespace Soomla.Store.Example {
 		//			SPREAD_WEAPON_ITEM_ID,											// item id
 //			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 100));	// the way this virtual good is purchased
 
-		public static VirtualGood Shield = new LifetimeVG(
-			"Shield",                           // Name
-			"Shields you from aliens and asteroids",        // Description
-			Constants.SHIELD_ITEM_ID,                  // Item ID
-			new PurchaseWithVirtualItem(        // Purchase type
-		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            10)                            // Payment amount
-			);
+
 
 
 		

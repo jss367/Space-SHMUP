@@ -44,6 +44,7 @@ public class Hero : MonoBehaviour {
 	public bool					shieldUpgradeOwned = false;
 	public bool					speedUpgradeOwned = false;
 	public bool isInvincible;
+	private bool launch1;
 
 	public GameObject popText;
 	
@@ -64,6 +65,7 @@ public class Hero : MonoBehaviour {
 
 	public GameObject explosion;
 	public GameObject enemyExplosion;
+	public GameObject missile;
 
 	void Awake(){
 		S = this; //Set the singleton
@@ -81,7 +83,7 @@ public class Hero : MonoBehaviour {
 			Debug.Log ("Spread is owned");
 			weapons [0].SetType (WeaponType.spread);
 		} else {
-			Debug.Log ("Spread is not owned");
+			Debug.Log ("Spread is not equipped");
 			weapons [0].SetType (WeaponType.blaster);
 		}
 
@@ -99,35 +101,35 @@ public class Hero : MonoBehaviour {
 
 		Vector3? touchPos = null;
 
-		if (Input.mousePresent && Input.GetMouseButton (0)) 
-		{
-			touchPos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0.0f);
-		} 
-		else if (Input.touchCount > 0)  //should i add an if to see if the phase is stationary?
-		{
-			touchPos = new Vector3 (Input.touches [0].position.x, Input.touches [0].position.y, 0.0f);
-		}
+//		if (Input.mousePresent && Input.GetMouseButton (0)) 
+//		{
+//			touchPos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0.0f);
+//		} 
+//		else if (Input.touchCount > 0)  //should i add an if to see if the phase is stationary?
+//		{
+//			touchPos = new Vector3 (Input.touches [0].position.x, Input.touches [0].position.y, 0.0f);
+//		}
 //		Debug.Log ("The touchPos is " + touchPos);
 
-		if (touchPos != null)
-		{
-			target = Camera.main.ScreenToWorldPoint(touchPos.Value);
-			target.z = GetComponent<Rigidbody>().position.z;
-		}
+//		if (touchPos != null)
+//		{
+//			target = Camera.main.ScreenToWorldPoint(touchPos.Value);
+//			target.z = GetComponent<Rigidbody>().position.z;
+//		}
 		
-		Vector3 offset = target - GetComponent<Rigidbody>().position;
-
-//		Debug.Log ("The offset is " + offset);
-
-
-		float magnitude = offset.magnitude;
-		if(magnitude > dampingRadius)
-		{
-			magnitude = dampingRadius;
-		}
-		float dampening = magnitude / dampingRadius;
-		
-		Vector3 desiredVelocity = offset.normalized * speed * dampening; // commented to try touchpad
+//		Vector3 offset = target - GetComponent<Rigidbody>().position;
+//
+////		Debug.Log ("The offset is " + offset);
+//
+//
+//		float magnitude = offset.magnitude;
+//		if(magnitude > dampingRadius)
+//		{
+//			magnitude = dampingRadius;
+//		}
+//		float dampening = magnitude / dampingRadius;
+//		
+//		Vector3 desiredVelocity = offset.normalized * speed * dampening; // commented to try touchpad
 
 //		Debug.Log ("The velocity is " + GetComponent<Rigidbody> ().velocity);
 
@@ -164,6 +166,12 @@ public class Hero : MonoBehaviour {
 			fireDelegate ();
 //			Debug.Log("fireDelegate has been called");
 		}
+
+		if (fireButton.CanLaunch() && !launch1) {
+			Instantiate(missile, transform.position, transform.rotation);
+			launch1 = true;
+			//			Debug.Log("fireDelegate has been called");
+		}
 	
 //		if (remainingDamageFrames > 0) {
 //			remainingDamageFrames--;
@@ -197,8 +205,9 @@ public class Hero : MonoBehaviour {
 
 		try{
 
-			Debug.Log("Shield upgrade is " + Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SHIELD_ITEM_ID)); // shouldn't this be for SHIELD_UPGRADE_1??????????????
-			if(Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SHIELD_ITEM_ID) == "shield_1")
+			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.BASESHIELD_ITEM_ID);
+			Debug.Log("Shield upgrade balance is " + balance);
+			if(balance > 0)  
 			{
 				Debug.Log("Player has shield upgrade");
 				shieldUpgradeOwned = true;
@@ -211,12 +220,13 @@ public class Hero : MonoBehaviour {
 		}
 
 		try{
-			
-			Debug.Log("Speed upgrade is " + Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SPEED_ITEM_ID));
-			if(Soomla.Store.StoreInventory.GetGoodCurrentUpgrade(Constants.SPEED_ITEM_ID) == Constants.SPEED_UPGRADE_1)   // This should be a switch with all the different upgrade levels
+			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.SPEED_ITEM_ID);
+			Debug.Log("Speed upgrade balance is " + balance);
+			if(balance > 0)   // This should be a switch with all the different upgrade levels
 			{
 				Debug.Log("Player has speed upgrade");
 				speedUpgradeOwned = true;
+				speed = 45;
 			}
 		}
 		
