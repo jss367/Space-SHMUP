@@ -24,8 +24,6 @@ public class Hero : MonoBehaviour {
 
 	public bool _____________;
 //
-//	public const string BLASTER_WEAPON_ITEM_ID = "weapon_blaster";
-//	public const string SPREAD_WEAPON_ITEM_ID = "weapon_spread";
 
 		public bool spreadOwned = false;
 

@@ -27,7 +27,13 @@ public class Enemy_2 : Enemy{
 //		v = Vector3.zero;
 //		v.x = Random.Range( xMin, xMax);
 //		v.y = Random.Range(Utils.camBounds.min.y, 0);
-		v = hero.transform.position;
+		Debug.Log (hero);
+		if (hero != null) {
+			v = hero.transform.position;
+		}
+		else {
+			v = Vector3.zero;
+		}
 		points[1] = v;
 		
 		// Pick a random final position in the bottom half of the screen

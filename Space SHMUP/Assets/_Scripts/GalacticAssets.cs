@@ -145,15 +145,15 @@ namespace Soomla.Store.Example {
 
 		public static VirtualGood WEAPON_SPREAD = new EquippableVG(
 			EquippableVG.EquippingModel.CATEGORY,
-			"Spreading Weapon", 														// name
-			"A more powerful weapon to fend off aliens",				 	// description
+			"Spread Weapon", 														// name
+			"Shoots three spreading bullets",						 	// description
 			Constants.SPREAD_WEAPON_ITEM_ID,											// item id
 			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 15000));
 
 		public static VirtualGood WEAPON_BLASTER = new EquippableVG(
 			EquippableVG.EquippingModel.CATEGORY,
-			"First Weapon", 														// name
-			"The basic weapon",				 	// description
+			"Basic Weapon", 														// name
+			"The weapon you start with",				 	// description
 			Constants.BLASTER_WEAPON_ITEM_ID,											// item id
 			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 0));
 
