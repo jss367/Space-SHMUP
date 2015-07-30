@@ -80,10 +80,10 @@ public class Hero : MonoBehaviour {
 		CheckInventory ();
 
 		if (spreadOwned == true) {
-			Debug.Log ("Spread is owned");
+//			Debug.Log ("Spread is owned");
 			weapons [0].SetType (WeaponType.spread);
 		} else {
-			Debug.Log ("Spread is not equipped");
+//			Debug.Log ("Spread is not equipped");
 			weapons [0].SetType (WeaponType.blaster);
 		}
 
@@ -96,8 +96,8 @@ public class Hero : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Pull in information from the Input class
-		float xAxis = Input.GetAxis ("Horizontal");
-		float yAxis = Input.GetAxis ("Vertical");
+//		float xAxis = Input.GetAxis ("Horizontal");
+//		float yAxis = Input.GetAxis ("Vertical");
 
 		Vector3? touchPos = null;
 
@@ -189,11 +189,11 @@ public class Hero : MonoBehaviour {
 		try
 		{
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
-					Debug.Log("Blaster is equipped");
+//					Debug.Log("Blaster is equipped");
 				}
 
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
-			Debug.Log("Spread is equipped");
+//			Debug.Log("Spread is equipped");
 
 			spreadOwned = true;
 		}
@@ -206,10 +206,10 @@ public class Hero : MonoBehaviour {
 		try{
 
 			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.BASESHIELD_ITEM_ID);
-			Debug.Log("Shield upgrade balance is " + balance);
+//			Debug.Log("Shield upgrade balance is " + balance);
 			if(balance > 0)  
 			{
-				Debug.Log("Player has shield upgrade");
+//				Debug.Log("Player has shield upgrade");
 				shieldUpgradeOwned = true;
 			}
 		}
@@ -221,12 +221,11 @@ public class Hero : MonoBehaviour {
 
 		try{
 			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.SPEED_ITEM_ID);
-			Debug.Log("Speed upgrade balance is " + balance);
+//			Debug.Log("Speed upgrade balance is " + balance);
 			if(balance > 0)   // This should be a switch with all the different upgrade levels
 			{
-				Debug.Log("Player has speed upgrade");
+//				Debug.Log("Player has speed upgrade");
 				speedUpgradeOwned = true;
-				speed = 45;
 			}
 		}
 		

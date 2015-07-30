@@ -87,7 +87,7 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 			startPos = data.position;
 //			Touch touch = Input.touches[0];
 //			startPos = touch.position;
-			Debug.Log(startPos);
+//			Debug.Log(startPos);
 		}
 	}
 	

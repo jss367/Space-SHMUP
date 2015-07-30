@@ -15,8 +15,10 @@ public class EnemyWeapon : MonoBehaviour
 	{
 		InvokeRepeating ("Fire", delay, fireRate);
 		hero = (GameObject)GameObject.FindWithTag ("Hero");
-		rotation = Quaternion.Euler (90, 180, 0);
-		this.transform.rotation = rotation;
+		if (isAiming) {
+			rotation = Quaternion.Euler (90, 180, 0);
+			this.transform.rotation = rotation;
+		}
 	}
 
 	void Update(){

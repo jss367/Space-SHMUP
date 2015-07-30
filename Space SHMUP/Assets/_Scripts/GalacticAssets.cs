@@ -28,7 +28,7 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public int GetVersion() {
-			return 0;
+			return 1;
 		}
 		
 		/// <summary>

@@ -138,6 +138,32 @@ public abstract class CNAbstractController : MonoBehaviour
     [HideInInspector]
     private Vector2 _margins = new Vector2(3f, 3f);
 
+
+	void Start(){
+		CheckInventory ();
+	}
+
+	private bool speedUpgradeOwned = false;
+	private float speedMultiplier = 1.0f;
+
+	void CheckInventory() {
+		try{
+			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.SPEED_ITEM_ID);
+//			Debug.Log("Speed upgrade balance is " + balance);
+			if(balance > 0)   // This should be a switch with all the different upgrade levels
+			{
+//				Debug.Log("Joystick confirms that player has speed upgrade");
+				speedUpgradeOwned = true;
+				speedMultiplier = 1.4f;
+			}
+		}
+		
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+		}
+	}
+
     /// <summary>
     /// Common method for getting CurrentAxisValues
     /// </summary>
@@ -152,10 +178,10 @@ public abstract class CNAbstractController : MonoBehaviour
         }
 
         if (axisName == AxisNameX)
-            return CurrentAxisValues.x;
+            return CurrentAxisValues.x * speedMultiplier;
 
         if (axisName == AxisNameY)
-            return CurrentAxisValues.y;
+			return CurrentAxisValues.y * speedMultiplier;
 
         throw new UnityException("Input Axis " + axisName + " is not setup");
     }
