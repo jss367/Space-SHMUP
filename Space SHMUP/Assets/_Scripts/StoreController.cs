@@ -4,7 +4,7 @@ using Soomla.Store;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StoreController : BaseController
+public class StoreController : MonoBehaviour//BaseController
 {
     #region Editor Properties
     public Text BalanceLabel;
@@ -12,41 +12,41 @@ public class StoreController : BaseController
     public RectTransform GoodsContainer;
     #endregion
 
-    #region Override Properties
-    protected override string StatusName
-    {
-        get { return "IsStoreInitialized"; }
-    }
-    #endregion
+//    #region Override Properties
+//    protected override string StatusName
+//    {
+//        get { return "IsStoreInitialized"; }
+//    }
+//    #endregion
 
-    #region Override Functions
-    protected override void Init()
-    {
-        MenuView.SetLoadingOverlayVisiblity(true);
+//    #region Override Functions
+//    protected override void Init()
+//    {
+//        MenuView.SetLoadingOverlayVisiblity(true);
+//
+////		SoomlaStore.Initialize(new ExampleAssets());
+////		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
+//    }
 
-//		SoomlaStore.Initialize(new ExampleAssets());
-//		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
-    }
-
-    protected override void RegisterEvents()
-    {
-        StoreEvents.OnItemPurchaseStarted += item => MenuView.SetLoadingOverlayVisiblity(true);
-        StoreEvents.OnItemPurchased += (item, payload) => MenuView.SetLoadingOverlayVisiblity(false);
-        StoreEvents.OnMarketItemsRefreshStarted += () => MenuView.SetLoadingOverlayVisiblity(true);
-        StoreEvents.OnMarketItemsRefreshFinished += OnMarketItemsRefreshFinished;
-        StoreEvents.OnRestoreTransactionsStarted += () => MenuView.SetLoadingOverlayVisiblity(true);
-        StoreEvents.OnMarketPurchaseStarted += item => MenuView.SetLoadingOverlayVisiblity(true);
-        StoreEvents.OnMarketPurchaseCancelled += item => MenuView.SetLoadingOverlayVisiblity(false);
-        StoreEvents.OnMarketPurchase += (item, payload, extra) => MenuView.SetLoadingOverlayVisiblity(false);
-        StoreEvents.OnCurrencyBalanceChanged += (currency, newBalance, amountAdded) => UpdateCoinBalanceLabel(currency, newBalance);
-        StoreEvents.OnUnexpectedErrorInStore += OnUnexpectedErrorInStore;
-        StoreEvents.OnGoodBalanceChanged += (item, newBalance, amountAdded) => UpdateItemView(item);
-//        StoreEvents.OnSoomlaStoreInitialized += OnSoomlaStoreInitialized;
-        StoreEvents.OnGoodEquipped += UpdateItemView;
-        StoreEvents.OnGoodUnEquipped += UpdateItemView;
-        StoreEvents.OnGoodUpgrade += (item, upgrade) => UpdateItemView(item);
-    }
-    #endregion
+//    protected override void RegisterEvents()
+//    {
+//        StoreEvents.OnItemPurchaseStarted += item => MenuView.SetLoadingOverlayVisiblity(true);
+//        StoreEvents.OnItemPurchased += (item, payload) => MenuView.SetLoadingOverlayVisiblity(false);
+//        StoreEvents.OnMarketItemsRefreshStarted += () => MenuView.SetLoadingOverlayVisiblity(true);
+//        StoreEvents.OnMarketItemsRefreshFinished += OnMarketItemsRefreshFinished;
+//        StoreEvents.OnRestoreTransactionsStarted += () => MenuView.SetLoadingOverlayVisiblity(true);
+//        StoreEvents.OnMarketPurchaseStarted += item => MenuView.SetLoadingOverlayVisiblity(true);
+//        StoreEvents.OnMarketPurchaseCancelled += item => MenuView.SetLoadingOverlayVisiblity(false);
+//        StoreEvents.OnMarketPurchase += (item, payload, extra) => MenuView.SetLoadingOverlayVisiblity(false);
+//        StoreEvents.OnCurrencyBalanceChanged += (currency, newBalance, amountAdded) => UpdateCoinBalanceLabel(currency, newBalance);
+//        StoreEvents.OnUnexpectedErrorInStore += OnUnexpectedErrorInStore;
+//        StoreEvents.OnGoodBalanceChanged += (item, newBalance, amountAdded) => UpdateItemView(item);
+////        StoreEvents.OnSoomlaStoreInitialized += OnSoomlaStoreInitialized;
+//        StoreEvents.OnGoodEquipped += UpdateItemView;
+//        StoreEvents.OnGoodUnEquipped += UpdateItemView;
+//        StoreEvents.OnGoodUpgrade += (item, upgrade) => UpdateItemView(item);
+//    }
+//    #endregion
 
     #region Private Functions
     private void OnMarketItemsRefreshFinished(List<MarketItem> updatedMarketItems)
@@ -117,7 +117,7 @@ public class StoreController : BaseController
 	private void Start()
 	{
 //		Debug.Log ("Soomla has been initialized");
-		IsStatusOK = true;
+//		IsStatusOK = true;
 
 		try
 		{

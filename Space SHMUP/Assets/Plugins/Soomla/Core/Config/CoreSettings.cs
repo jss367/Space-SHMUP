@@ -13,6 +13,7 @@
 /// limitations under the License.
 
 using UnityEngine;
+using System.IO;
 using System;
 
 #if UNITY_EDITOR
@@ -56,7 +57,7 @@ namespace Soomla
 
 		public void OnInfoGUI() {
 			EditorGUILayout.HelpBox("SOOMLA Framework Info", MessageType.None);
-			SoomlaEditorScript.SelectableLabelField(frameworkVersion, "1.0.6");
+			SoomlaEditorScript.SelectableLabelField(frameworkVersion, "1.0.8");
 			SoomlaEditorScript.SelectableLabelField(buildVersion, "1");
 			EditorGUILayout.Space();
 		}
@@ -66,21 +67,20 @@ namespace Soomla
 		GUIContent debugUnityMsgsLabel = new GUIContent("Debug Unity [?]:", "Check if you want to show debug messages from Unity code in the log (Editor, iOS and Android).");
 
 		public void OnSoomlaGUI() {
-		    var logoTexture = Resources.Load<Texture2D>("soom_logo");
+			FileStream fs = new FileStream(Application.dataPath + @"/Soomla/Resources/soom_logo.png", FileMode.Open, FileAccess.Read);
+			byte[] imageData = new byte[fs.Length];
+			fs.Read(imageData, 0, (int)fs.Length);
+			Texture2D logoTexture = new Texture2D(300, 92);
+			logoTexture.LoadImage(imageData);
 
-            EditorGUILayout.BeginHorizontal();
+			EditorGUILayout.BeginHorizontal();
 			GUIContent logoImgLabel = new GUIContent (logoTexture);
-			EditorGUILayout.LabelField(logoImgLabel, GUILayout.Height(70), GUILayout.ExpandWidth(true));
-            EditorGUILayout.EndHorizontal();
+			EditorGUILayout.LabelField(logoImgLabel, GUILayout.MaxHeight(70), GUILayout.ExpandWidth(true));
+			EditorGUILayout.EndHorizontal();
 
-            if (GUILayout.Button("Sign up or Login"))
-		    {
-                Application.OpenURL("https://doorman.soom.la/oauth/authorize?response_type=code&redirect_uri=http%3A%2F%2Fdashboard.soom.la%2Fauth%2Fdoorman%2Fcallback&scope=own&client_id=growDashboard&referrer=Spartonix");
-            }
+			GameObject.DestroyImmediate(logoTexture);
 
-            EditorGUILayout.Space();
-
-            EditorGUILayout.HelpBox("Make sure you fill out all the information below", MessageType.None);
+			EditorGUILayout.HelpBox("Make sure you fill out all the information below", MessageType.None);
 
 			EditorGUILayout.BeginHorizontal();
 			EditorGUILayout.LabelField(soomlaSecLabel, SoomlaEditorScript.FieldWidth, SoomlaEditorScript.FieldHeight);
