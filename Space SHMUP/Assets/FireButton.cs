@@ -13,7 +13,7 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 	private bool canDropMine;
 
 	public float minSwipeDistY = 100;
-	public float minSwipeDistX;
+	public float minSwipeDistX = 100;
 	private Vector2 startPos;
 	private Vector2 endPos;
 
@@ -32,6 +32,7 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 //			Touch touch = Input.touches[0];
 //			startPos = touch.position;
 //			Debug.Log(startPos);
+			canDropMine = true;
 		}
 	}
 	
@@ -47,12 +48,12 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 				canLaunch = true;
 			}
 
-			if (endPos.y - startPos.y > minSwipeDistY)
+			if (endPos.x - startPos.x > minSwipeDistX)
 			{
 				canEnergy = true;
 			}
 
-			canDropMine = true;
+			canDropMine = false;
 		}
 	}
 	

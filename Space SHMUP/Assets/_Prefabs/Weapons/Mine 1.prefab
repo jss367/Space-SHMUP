@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 435796}
   - 33: {fileID: 3391008}
   - 23: {fileID: 2384414}
+  - 114: {fileID: 11401144}
+  - 135: {fileID: 13596710}
   m_Layer: 0
   m_Name: Mine 1
   m_TagString: Untagged
@@ -61,6 +63,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120254}
   m_Mesh: {fileID: 4300000, guid: 8329acd25ffd119489ecb4acc0b7fda4, type: 3}
+--- !u!114 &11401144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96669d66572c25f48b614e78c21e3c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineExplosion: {fileID: 172662, guid: 98d46432a2c2dbd41b7130cb5ba8c381, type: 2}
+--- !u!135 &13596710
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 120254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .183892056
+  m_Center: {x: -1.16980692e-09, y: .00121376046, z: -.0109569905}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

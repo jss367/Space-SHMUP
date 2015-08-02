@@ -69,6 +69,8 @@ public class Hero : MonoBehaviour {
 	public GameObject missileLaunchLocation;
 	public GameObject mine;
 	public GameObject mineDropLocation;
+	private float lastMineTime;
+	public float mineDelay = 4;
 
 	public GameObject Bazooka;
 	public GameObject MissileLauncher;
@@ -99,6 +101,8 @@ public class Hero : MonoBehaviour {
 		if (speedUpgradeOwned == true) {
 			speed = 40;
 		}
+
+		lastMineTime = -mineDelay;
 	}
 	
 
@@ -191,8 +195,11 @@ public class Hero : MonoBehaviour {
 		}
 
 		if (fireButton.CanDropMine()) {
+			if (Time.time - lastMineTime < mineDelay) {
+				return;
+			}
 			Instantiate(mine, mineDropLocation.transform.position, mineDropLocation.transform.rotation);
-
+			lastMineTime = Time.time;
 			//			Debug.Log("fireDelegate has been called");
 		}
 	
