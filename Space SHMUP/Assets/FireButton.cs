@@ -10,6 +10,7 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 	private bool canFire; 
 	private bool canLaunch; 
 	private bool canEnergy;
+	private bool canDropMine;
 
 	public float minSwipeDistY = 100;
 	public float minSwipeDistX;
@@ -50,6 +51,8 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 			{
 				canEnergy = true;
 			}
+
+			canDropMine = true;
 		}
 	}
 	
@@ -59,6 +62,10 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 
 	public bool CanLaunch () {
 		return canLaunch;
+	}
+
+	public bool CanDropMine () {
+		return canDropMine;
 	}
 
 }

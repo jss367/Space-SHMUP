@@ -67,6 +67,8 @@ public class Hero : MonoBehaviour {
 	public GameObject missile;
 	public GameObject missileArt;
 	public GameObject missileLaunchLocation;
+	public GameObject mine;
+	public GameObject mineDropLocation;
 
 	public GameObject Bazooka;
 	public GameObject MissileLauncher;
@@ -188,11 +190,11 @@ public class Hero : MonoBehaviour {
 			//			Debug.Log("fireDelegate has been called");
 		}
 
-//		if (fireButton.CanLaunch() && !launch1) {
-//			Instantiate(missile, transform.position, transform.rotation);
-//			launch1 = true;
-//			//			Debug.Log("fireDelegate has been called");
-//		}
+		if (fireButton.CanDropMine()) {
+			Instantiate(mine, mineDropLocation.transform.position, mineDropLocation.transform.rotation);
+
+			//			Debug.Log("fireDelegate has been called");
+		}
 	
 //		if (remainingDamageFrames > 0) {
 //			remainingDamageFrames--;
