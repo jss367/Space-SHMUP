@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour {
 
@@ -80,6 +81,7 @@ public class SpawnManager : MonoBehaviour {
 //	public GameObject High11;
 	public GameObject Mid;
 	public GameObject Bass;
+	public Text WaveText;
 
 	void Awake()
 	{

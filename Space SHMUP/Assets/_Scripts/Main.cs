@@ -36,11 +36,6 @@ public class Main : MonoBehaviour {
 	public Text			finalScoreText;
 	public Text			prevBalanceText;
 	public Text			popText;
-//	public GameObject	spawnManager;
-//	public GameObject	fireworks;
-//	public const string BLASTER_WEAPON_ITEM_ID = "weapon_blaster";
-//	public const string SPREAD_WEAPON_ITEM_ID = "weapon_spread";
-
 
 	public bool ______________;
 
@@ -54,8 +49,6 @@ public class Main : MonoBehaviour {
 	
 	private int		score;
 	public float	timeAlive;
-//	public float	timeMultiplier;
-//	private float 	timeLastReset;
 	public float	timeLimit;
 
 	public float account;
@@ -210,7 +203,7 @@ public class Main : MonoBehaviour {
 			score += newScoreValue;
 		}
 		
-		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
+		scoreText.text = "Score : " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
 
 
@@ -270,10 +263,10 @@ public class Main : MonoBehaviour {
 
 
 
-	public void DelayedRestart(float delay) {
-		//Invoke the Restart() method in delay seconds
-		Invoke ("Restart", delay);
-	}
+//	public void DelayedRestart(float delay) {
+//		//Invoke the Restart() method in delay seconds
+//		Invoke ("Restart", delay);
+//	}
 
 
 	public void PlayerLoss()
@@ -310,7 +303,7 @@ public class Main : MonoBehaviour {
 			prevBalance = 0;
 		}
 
-		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";
+		prevBalanceText.text = "Previous Balance : " + prevBalance + " Coins";
 		prevBalanceText.enabled = true;
 		restartButton.SetActive(true);
 		mainMenuButton.SetActive (true);
@@ -327,7 +320,7 @@ public class Main : MonoBehaviour {
 //			GiveStars();
 			GiveVictoryBonus();
 			score += victoryBonus;
-			victoryBonusText.text = "Level Completion Bonus: " + victoryBonus;
+			victoryBonusText.text = "Level Completion Bonus : " + victoryBonus;
 			}
 		StartCoroutine (CountScore());
 //		finalScoreText.text = "Final Score: " + score;
@@ -345,7 +338,7 @@ public class Main : MonoBehaviour {
 			}
 			pointsGiven = true;
 		}
-		currentAccountText.text = "New Balance: " + (prevBalance + score) + " Coins";
+		currentAccountText.text = "New Balance : " + (prevBalance + score) + " Coins";
 		currentAccountText.enabled = true;
 //		} catch (Exception e) {
 //			Debug.LogError ("SOOMLA/UNITY " + e.Message);
@@ -384,7 +377,6 @@ public class Main : MonoBehaviour {
 
 	public void GiveVictoryBonus (){
 //		Debug.Log("You are currently on this level: " + currentLevel);
-//		Debug.Log(
 
 		switch (currentLevel) {
 		case "Level 1":
@@ -435,26 +427,6 @@ public class Main : MonoBehaviour {
 		MadLevelProfile.Save ();
 	}
 
-//	public void GiveStars(){
-//		//				MadLevelProfile.SetCompleted (currentLevel, true);
-//		//		MadLevelProfile.SetPropertyEnabled (currentLevel, "star", true);
-//		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//		MadLevelProfile.Save ();
-//	}
-
-//	public VirtualCurrencyPack[] GetCurrencyPacks() {
-////		return new VirtualCurrencyPack[] {TENMUFF_PACK, FIFTYMUFF_PACK, FOURHUNDMUFF_PACK, THOUSANDMUFF_PACK};
-//	}
-//
-//	public static VirtualCurrencyPack THOUSANDMUFF_PACK = new VirtualCurrencyPack(
-//		"1000 Muffins",                                 // name
-//		"Test item unavailable",                 		// description
-//		"muffins_1000",                                 // item id
-//		1000,                                           // number of currencies in the pack
-//		GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
-//		new PurchaseWithMarket(THOUSANDMUFF_PACK_PRODUCT_ID, 8.99)
-//		);
 
 	public void MainMenu() {
 //		Application.LoadLevel ("LevelManager");
@@ -497,7 +469,7 @@ public class Main : MonoBehaviour {
 	void ResetScore ()
 	{
 //		Debug.Log ("Score has been updated");
-		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
+		scoreText.text = "Score : " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
 
 

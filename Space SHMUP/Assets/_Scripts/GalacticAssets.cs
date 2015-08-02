@@ -237,6 +237,15 @@ namespace Soomla.Store.Example {
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            0)                            // Payment amount
 			);
+
+		public static VirtualGood QuickFire = new LifetimeVG(
+			"Faster",                           // Name
+			"Doubles the health of your shield",        // Description
+			Constants.BASESHIELD_ITEM_ID,                  // Item ID
+			new PurchaseWithVirtualItem(        // Purchase type
+		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+		                            0)                            // Payment amount
+			);
 		
 //		public static VirtualGood Shield = new LifetimeVG(
 //			"Shield",                           // Name

@@ -1,4 +1,4 @@
-﻿/// <summary>
+﻿ 	/// <summary>
 /// Level manager.
 /// </summary>
 
@@ -19,6 +19,7 @@ public class LevelManager : MonoBehaviour {
 	public bool spawningStoppedToggle = false;
 	public float startRepeating = 0.0f;
 	public float repeatFreq = 4.0f;
+	private int numWaves = 1;
 
 	
 	//
@@ -34,10 +35,44 @@ public class LevelManager : MonoBehaviour {
 		SpawnManager.instance.Mid.SetActive (true);
 		SpawnManager.instance.Bass = GameObject.Find ("LevelManager/FireworksManager/Bass" + levelSplit [1]);
 		SpawnManager.instance.Bass.SetActive (true);
+		SpawnManager.instance.WaveText.enabled = false;
 //		Debug.Log ("On level: Level" + levelSplit [1] + "Update");
 		InvokeRepeating ("Level" + levelSplit [1] + "Update", startRepeating, repeatFreq);
-
-
+		switch (currentLevel) {
+		case "Level 1":
+			numWaves = 1;
+			break;
+		case "Level 2":
+			numWaves = 1;
+			break;
+		case "Level 3":
+			numWaves = 1;
+			break;
+		case "Level 4":
+			numWaves = 1;
+			break;
+		case "Level 5":
+			numWaves = 1;
+			break;
+		case "Level 6":
+			numWaves = 1;
+			break;
+		case "Level 7":
+			numWaves = 1;
+			break;
+		case "Level 8":
+			numWaves = 1;
+			break;
+		case "Level 9":
+			numWaves = 1;
+			break;
+		case "Level 10":
+			numWaves = 1;
+			break;
+		default:
+			numWaves = 1;
+			break;
+		}
 
 	}
 
@@ -46,7 +81,22 @@ public class LevelManager : MonoBehaviour {
 		timer = Time.timeSinceLevelLoad;
 	}
 
+//	void Wave(int level){
+//		Debug.Log ("Wave has been called");
+//			SpawnManager.instance.WaveText.text = "Wave " + level + " of " + numWaves;
+//			SpawnManager.instance.WaveText.enabled = true;
+//
+////			yield return new WaitForSeconds(1);
+//			SpawnManager.instance.WaveText.enabled = false;
+//	}
 
+	IEnumerator Wave(int level){
+		Debug.Log ("Wave has been called");
+		SpawnManager.instance.WaveText.text = "Wave " + level + " of " + numWaves;
+		SpawnManager.instance.WaveText.enabled = true;
+		yield return new WaitForSeconds(2);
+		SpawnManager.instance.WaveText.enabled = false;
+	}
 
 	void StopSpawn(){
 //		Debug.Log ("Main.S.playerDead " + Main.S.playerDead);
@@ -74,7 +124,7 @@ public class LevelManager : MonoBehaviour {
 		SpawnManager.instance.EnemySpawn1d3.SetActive (false);
 		SpawnManager.instance.EnemySpawn2d1.SetActive (false);
 		SpawnManager.instance.EnemySpawn2d2.SetActive (false);
-			SpawnManager.instance.EnemySpawn2d2.SetActive (false);
+		SpawnManager.instance.EnemySpawn2d3.SetActive (false);
 		SpawnManager.instance.EnemySpawn3d1.SetActive (false);
 		SpawnManager.instance.EnemySpawn3d2.SetActive (false);
 		SpawnManager.instance.EnemySpawn4d3.SetActive (false);
@@ -92,7 +142,11 @@ public class LevelManager : MonoBehaviour {
 		//This is for Mix_48
 		if (!Main.S.stopSpawning) {
 //			timer = Time.timeSinceLevelLoad;
-			if (timer < 8.5) {
+			if (timer < 3) {
+
+			} else if (timer < 7.5){
+					StartCoroutine (Wave(1));
+			} else if (timer < 8.5) {
 				level = 1;
 				//	Debug.Log("The time alive is " + main.timeAlive);
 				//	Debug.Log("The first break is " + firstBreak);

@@ -122,6 +122,13 @@ public class Weapon : MonoBehaviour {
 			p = MakeProjectile ();
 			p.GetComponent<Rigidbody>().velocity = new Vector3 (.2f, 0.9f, 0) * def.velocity;
 			break;
+
+		case WeaponType.laser:
+			p = MakeProjectile ();
+			p.GetComponent<Rigidbody>().velocity = new Vector3 (-.2f, 0.9f, 0) * def.velocity;
+			p = MakeProjectile ();
+			p.GetComponent<Rigidbody>().velocity = new Vector3 (.2f, 0.9f, 0) * def.velocity;
+			break;
 		}
 	}
 	public Projectile MakeProjectile() {

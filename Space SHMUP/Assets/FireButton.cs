@@ -9,6 +9,7 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 	private int pointerID;
 	private bool canFire; 
 	private bool canLaunch; 
+	private bool canEnergy;
 
 	public float minSwipeDistY = 100;
 	public float minSwipeDistX;
@@ -18,64 +19,6 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 	void Awake () {
 		touched = false;
 	}
-
-
-		
-//		void Update()
-//		{
-//			if (Input.touchCount > 0) 
-//			{	
-//			Debug.Log("Been touched");
-//			canFire = true;
-//				Touch touch = Input.touches[0];
-//
-//				switch (touch.phase) 
-//					
-//				{
-//				case TouchPhase.Began:
-////					startPos = touch.position;
-//					break;
-//				case TouchPhase.Ended:
-//					
-////					float swipeDistVertical = (new Vector3(0, touch.position.y, 0) - new Vector3(0, startPos.y, 0)).magnitude;
-//					
-////					if (swipeDistVertical > minSwipeDistY) 
-//						
-//					{
-//						
-////						float swipeValue = Mathf.Sign(touch.position.y - startPos.y);
-//						
-////						if (swipeValue > 0)//up swipe
-//					{
-//						Debug.Log("Swipe up");//Jump ();
-//					}		
-////							else if (swipeValue < 0)//down swipe
-//					{	
-//						Debug.Log("Swipe down");//Shrink ();
-//					}			
-//					}
-//					
-////					float swipeDistHorizontal = (new Vector3(touch.position.x,0, 0) - new Vector3(startPos.x, 0, 0)).magnitude;
-//					
-////					if (swipeDistHorizontal > minSwipeDistX) 
-//						
-//					{
-//						
-////						float swipeValue = Mathf.Sign(touch.position.x - startPos.x);
-//						
-//						if (swipeValue > 0)//right swipe
-//					{
-//							MoveRight ();
-//					}		
-//							else if (swipeValue < 0)//left swipe
-//					{			
-								//MoveLeft ();
-//					}			
-//					}
-////					break;
-//				}
-//			}
-//		}
 
 
 	public void OnPointerDown (PointerEventData data) {
@@ -101,6 +44,11 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 			if (endPos.y - startPos.y > minSwipeDistY)
 			{
 				canLaunch = true;
+			}
+
+			if (endPos.y - startPos.y > minSwipeDistY)
+			{
+				canEnergy = true;
 			}
 		}
 	}

@@ -7,10 +7,15 @@ public class Missile : MonoBehaviour {
 	public GameObject missileExplosion;
 	private GameObject[] enemies;
 	private GameObject[] asteroids;
+	public bool onFire = false;
 
+
+//	void Awake(){
+//		Missile = this;
+//	}
 
 	// Use this for initialization
-	void Start () {
+	public void Start () {
 		GetComponent<Rigidbody> ().velocity = transform.up * speed;
 	}
 	

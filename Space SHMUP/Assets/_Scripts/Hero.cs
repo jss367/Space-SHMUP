@@ -8,7 +8,7 @@ public class Hero : MonoBehaviour {
 
 	static public Hero S; //S for singleton
 	
-	public float gameRestartDelay = 2f;
+//	public float gameRestartDelay = 2f;
 	
 	//These fields control the movement of the ship
 	public float				speed = 30;
@@ -21,6 +21,7 @@ public class Hero : MonoBehaviour {
 
 	// Weapon fields
 	public Weapon[]				weapons;
+	public float missileSpeed = 10;
 
 	public bool _____________;
 //
@@ -64,6 +65,14 @@ public class Hero : MonoBehaviour {
 	public GameObject explosion;
 	public GameObject enemyExplosion;
 	public GameObject missile;
+	public GameObject missileArt;
+	public GameObject missileLaunchLocation;
+
+	public GameObject Bazooka;
+	public GameObject MissileLauncher;
+	public GameObject MineDropper;
+	private GameObject Mine;
+	public GameObject Laser;
 
 	void Awake(){
 		S = this; //Set the singleton
@@ -160,16 +169,30 @@ public class Hero : MonoBehaviour {
 		//First, make sure the Axis("Jump") button is pressed
 		//Then ensure that fireDelegate isn't null to avoid an error
 //		Debug.Log ("CanFire is set to " + fireButton.CanFire ());
-		if (fireButton.CanFire() && fireDelegate != null ) {
+//		if (fireButton.CanFire() && fireDelegate != null ) {
+//			fireDelegate ();
+////			Debug.Log("fireDelegate has been called");
+//		}
+
+		if (fireDelegate != null ) {
 			fireDelegate ();
-//			Debug.Log("fireDelegate has been called");
+			//			Debug.Log("fireDelegate has been called");
 		}
 
 		if (fireButton.CanLaunch() && !launch1) {
-			Instantiate(missile, transform.position, transform.rotation);
+			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
 			launch1 = true;
+//			Missile..SendMessage("Fire");
+			missileArt.SetActive(false);
+
 			//			Debug.Log("fireDelegate has been called");
 		}
+
+//		if (fireButton.CanLaunch() && !launch1) {
+//			Instantiate(missile, transform.position, transform.rotation);
+//			launch1 = true;
+//			//			Debug.Log("fireDelegate has been called");
+//		}
 	
 //		if (remainingDamageFrames > 0) {
 //			remainingDamageFrames--;
