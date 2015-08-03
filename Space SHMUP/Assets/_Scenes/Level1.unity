@@ -501,6 +501,33 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170897956}
+--- !u!1 &185075279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 185075280}
+  m_Layer: 8
+  m_Name: BulletLocation2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &185075280
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 185075279}
+  m_LocalRotation: {x: -1.15202326e-07, y: .707106709, z: -.707106829, w: -1.15202312e-07}
+  m_LocalPosition: {x: 0, y: -0, z: -.536000013}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 673546016}
+  m_RootOrder: 0
 --- !u!1 &202516615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,7 +1769,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 141812, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
       propertyPath: m_Name
-      value: Bazooka_0
+      value: Bazooka_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
@@ -1815,7 +1842,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 365583861}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 0, y: .69599998, z: 0}
+  m_LocalPosition: {x: 0, y: 1.20000005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1836599512}
@@ -1870,6 +1897,10 @@ Prefab:
     - target: {fileID: 435796, guid: 01327cfbc86d0d24185774283523edf2, type: 2}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 120254, guid: 01327cfbc86d0d24185774283523edf2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01327cfbc86d0d24185774283523edf2, type: 2}
@@ -3396,7 +3427,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 141812, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
       propertyPath: m_Name
-      value: Bazooka_1
+      value: Bazooka_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
@@ -4047,7 +4078,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   missileExplosion: {fileID: 101830, guid: 809f21d3935cd4946bab63cc2e3e6744, type: 2}
-  onFire: 1
 --- !u!1 &873712458
 GameObject:
   m_ObjectHideFlags: 0
@@ -5611,6 +5641,33 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 409436, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
   m_PrefabInternal: {fileID: 1213125452}
+--- !u!1 &1165501045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1165501046}
+  m_Layer: 8
+  m_Name: BulletLocation1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1165501046
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1165501045}
+  m_LocalRotation: {x: -1.15202326e-07, y: .707106709, z: -.707106829, w: -1.15202312e-07}
+  m_LocalPosition: {x: 0, y: -0, z: -.799000025}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1167538885}
+  m_RootOrder: 0
 --- !u!1 &1167538884 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 141812, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
@@ -6925,6 +6982,9 @@ MonoBehaviour:
   missileLaunchLocation: {fileID: 870846879}
   mine: {fileID: 120254, guid: 01327cfbc86d0d24185774283523edf2, type: 2}
   mineDropLocation: {fileID: 365583861}
+  bazookaBullet: {fileID: 100000, guid: 4d4930bcb1eb64156a12d3b6308d4056, type: 2}
+  bazookaBulletLocation1: {fileID: 1165501045}
+  bazookaBulletLocation2: {fileID: 185075279}
   mineDelay: 4
   Bazooka: {fileID: 1167538884}
   MissileLauncher: {fileID: 902711720}
@@ -8429,7 +8489,7 @@ MonoBehaviour:
     projectileColor: {r: 1, g: 1, b: 1, a: 1}
     damageOnHit: 1
     continuousDamage: 0
-    delayBetweenShots: .25
+    delayBetweenShots: .349999994
     velocity: 50
   - type: 2
     letter: S
@@ -10009,7 +10069,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 991564944e0915648b7ecf0f9cbb13f5, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 991564944e0915648b7ecf0f9cbb13f5, type: 2}
       propertyPath: audioSource

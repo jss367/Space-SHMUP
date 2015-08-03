@@ -27,7 +27,7 @@ public class Enemy_2 : Enemy{
 //		v = Vector3.zero;
 //		v.x = Random.Range( xMin, xMax);
 //		v.y = Random.Range(Utils.camBounds.min.y, 0);
-		Debug.Log (hero);
+//		Debug.Log (hero);
 		if (hero != null) {
 			v = hero.transform.position;
 		}

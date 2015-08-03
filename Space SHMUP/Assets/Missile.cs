@@ -7,7 +7,7 @@ public class Missile : MonoBehaviour {
 	public GameObject missileExplosion;
 	private GameObject[] enemies;
 	private GameObject[] asteroids;
-	public bool onFire = false;
+//	public bool onFire = false;
 
 
 //	void Awake(){

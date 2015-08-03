@@ -41,7 +41,7 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 			canFire = false;
 			touched = false;
 			endPos = data.position;
-			Debug.Log(endPos);
+//			Debug.Log(endPos);
 
 			if (endPos.y - startPos.y > minSwipeDistY)
 			{
@@ -53,7 +53,9 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 				canEnergy = true;
 			}
 
-			canDropMine = false;
+//			if (!canLaunch && !canEnergy){
+				canDropMine = false;
+//			}
 		}
 	}
 	

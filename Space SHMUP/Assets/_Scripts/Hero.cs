@@ -69,6 +69,9 @@ public class Hero : MonoBehaviour {
 	public GameObject missileLaunchLocation;
 	public GameObject mine;
 	public GameObject mineDropLocation;
+	public GameObject bazookaBullet;
+	public GameObject bazookaBulletLocation1;
+	public GameObject bazookaBulletLocation2;
 	private float lastMineTime;
 	public float mineDelay = 4;
 
@@ -186,7 +189,9 @@ public class Hero : MonoBehaviour {
 		}
 
 		if (fireButton.CanLaunch() && !launch1) {
-			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
+//			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
+			Instantiate(bazookaBullet, bazookaBulletLocation1.transform.position, bazookaBulletLocation1.transform.rotation);
+			Instantiate(bazookaBullet, bazookaBulletLocation2.transform.position, bazookaBulletLocation2.transform.rotation);
 			launch1 = true;
 //			Missile..SendMessage("Fire");
 			missileArt.SetActive(false);
@@ -209,7 +214,6 @@ public class Hero : MonoBehaviour {
 //				UnShowDamage ();
 //			}
 //		}
-
 		}
 
 
@@ -224,7 +228,6 @@ public class Hero : MonoBehaviour {
 
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 //			Debug.Log("Spread is equipped");
-
 			spreadOwned = true;
 		}
 		}
@@ -232,9 +235,7 @@ public class Hero : MonoBehaviour {
 		{
 			Debug.Log("Caught error: " + e);
 		}
-
 		try{
-
 			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.BASESHIELD_ITEM_ID);
 //			Debug.Log("Shield upgrade balance is " + balance);
 			if(balance > 0)  
