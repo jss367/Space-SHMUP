@@ -62,6 +62,8 @@ public class Hero : MonoBehaviour {
 //	public SimpleTouchPad touchPad;
 	public FireButton fireButton;
 
+	public CNAbstractController cNABstractController;
+
 	public GameObject explosion;
 	public GameObject enemyExplosion;
 	public GameObject missile;
@@ -74,7 +76,9 @@ public class Hero : MonoBehaviour {
 	public GameObject bazookaBulletLocation2;
 	private float lastMineTime;
 	public float mineDelay = 4;
+	public float bazookaDelay = 5;
 
+	private float lastBazooka;
 	public GameObject Bazooka;
 	public GameObject MissileLauncher;
 	public GameObject MineDropper;
@@ -183,15 +187,13 @@ public class Hero : MonoBehaviour {
 ////			Debug.Log("fireDelegate has been called");
 //		}
 
-		if (fireDelegate != null ) {
+		if (cNABstractController.CanFire() && fireDelegate != null ) {
 			fireDelegate ();
 			//			Debug.Log("fireDelegate has been called");
 		}
 
 		if (fireButton.CanLaunch() && !launch1) {
 //			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
-			Instantiate(bazookaBullet, bazookaBulletLocation1.transform.position, bazookaBulletLocation1.transform.rotation);
-			Instantiate(bazookaBullet, bazookaBulletLocation2.transform.position, bazookaBulletLocation2.transform.rotation);
 			launch1 = true;
 //			Missile..SendMessage("Fire");
 			missileArt.SetActive(false);
@@ -199,14 +201,25 @@ public class Hero : MonoBehaviour {
 			//			Debug.Log("fireDelegate has been called");
 		}
 
-		if (fireButton.CanDropMine()) {
-			if (Time.time - lastMineTime < mineDelay) {
-				return;
-			}
-			Instantiate(mine, mineDropLocation.transform.position, mineDropLocation.transform.rotation);
-			lastMineTime = Time.time;
+		if (fireButton.CanLaunch() && Time.time > lastBazooka + bazookaDelay) {
+			//			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
+			Instantiate(bazookaBullet, bazookaBulletLocation1.transform.position, bazookaBulletLocation1.transform.rotation);
+			Instantiate(bazookaBullet, bazookaBulletLocation2.transform.position, bazookaBulletLocation2.transform.rotation);
+			lastBazooka = Time.time;
+			//			Missile..SendMessage("Fire");
+			missileArt.SetActive(false);
+			
 			//			Debug.Log("fireDelegate has been called");
 		}
+
+//		if (fireButton.CanDropMine()) {
+//			if (Time.time - lastMineTime < mineDelay) {
+//				return;
+//			}
+//			Instantiate(mine, mineDropLocation.transform.position, mineDropLocation.transform.rotation);
+//			lastMineTime = Time.time;
+//			//			Debug.Log("fireDelegate has been called");
+//		}
 	
 //		if (remainingDamageFrames > 0) {
 //			remainingDamageFrames--;

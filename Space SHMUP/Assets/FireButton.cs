@@ -8,12 +8,15 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 	private bool touched;
 	private int pointerID;
 	private bool canFire; 
+//	private bool canLaunchMissile; 
 	private bool canLaunch; 
 	private bool canEnergy;
-	private bool canDropMine;
+//	private bool canDropMine;
 
 	public float minSwipeDistY = 100;
 	public float minSwipeDistX = 100;
+	public float tinySwipeDistY = 10;
+	public float tinySwipeDistX = 10;
 	private Vector2 startPos;
 	private Vector2 endPos;
 
@@ -32,7 +35,7 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 //			Touch touch = Input.touches[0];
 //			startPos = touch.position;
 //			Debug.Log(startPos);
-			canDropMine = true;
+//			canDropMine = true;
 		}
 	}
 	
@@ -48,13 +51,13 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 				canLaunch = true;
 			}
 
-			if (endPos.x - startPos.x > minSwipeDistX)
+			if (endPos.x - startPos.x < tinySwipeDistX &&  endPos.y - startPos.y < tinySwipeDistY)
 			{
 				canEnergy = true;
 			}
 
 //			if (!canLaunch && !canEnergy){
-				canDropMine = false;
+//				canDropMine = false;
 //			}
 		}
 	}
@@ -63,12 +66,16 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 		return canFire;
 	}
 
+//	public bool CanLaunchMissile () {
+//		return canLaunchMissile;
+//	}
+
 	public bool CanLaunch () {
 		return canLaunch;
 	}
 
-	public bool CanDropMine () {
-		return canDropMine;
-	}
+//	public bool CanDropMine () {
+//		return canDropMine;
+//	}
 
 }
