@@ -78,6 +78,7 @@ public class Hero : MonoBehaviour {
 	public float mineDelay = 4;
 	public float bazookaDelay = 5;
 
+	public GameObject bazookaArt;
 	private float lastBazooka;
 	public GameObject Bazooka;
 	public GameObject MissileLauncher;
@@ -207,7 +208,7 @@ public class Hero : MonoBehaviour {
 			Instantiate(bazookaBullet, bazookaBulletLocation2.transform.position, bazookaBulletLocation2.transform.rotation);
 			lastBazooka = Time.time;
 			//			Missile..SendMessage("Fire");
-			missileArt.SetActive(false);
+			bazookaArt.SetActive(false);
 			
 			//			Debug.Log("fireDelegate has been called");
 		}

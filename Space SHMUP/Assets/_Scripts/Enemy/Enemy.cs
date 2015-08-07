@@ -111,6 +111,11 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+	public void ReceiveDamage(float damage){
+		Debug.Log ("Enemy has received damage");
+	}
+
+
 	void OnCollisionEnter (Collision coll) {
 		GameObject other = coll.gameObject;
 //		Debug.Log ("Enemy hit a " + other.tag);

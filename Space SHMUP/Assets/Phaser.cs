@@ -34,10 +34,14 @@ public class Phaser : MonoBehaviour {
 		
 		for (int i = 0; i < enemies.Length; i++) {
 			if (Vector3.Distance(
-				Camera.main.gameObject.transform.position, 
+				//Camera.main.gameObject.transform.position, 
+				enemies [i].transform.position,
 				enemies [i].transform.position) < 
-			    Vector3.Distance(Camera.main.gameObject.transform.position, 
-			                 closestObject.transform.position)){
+			    Vector3.Distance(
+				//Camera.main.gameObject.transform.position, 
+				enemies [i].transform.position,
+				enemies [i].transform.position)){
+			     //            closestObject.transform.position)){
 				closestObject = enemies[i];
 			}
 			// might compare old value of closest body!

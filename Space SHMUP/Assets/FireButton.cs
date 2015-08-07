@@ -20,6 +20,8 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 	private Vector2 startPos;
 	private Vector2 endPos;
 
+//	public GameObject bazookaArt;
+
 	void Awake () {
 		touched = false;
 	}
@@ -49,6 +51,7 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 			if (endPos.y - startPos.y > minSwipeDistY)
 			{
 				canLaunch = true;
+				StartCoroutine("LaunchTimer");
 			}
 
 			if (endPos.x - startPos.x < tinySwipeDistX &&  endPos.y - startPos.y < tinySwipeDistY)
@@ -61,6 +64,14 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 //			}
 		}
 	}
+
+		IEnumerator LaunchTimer(){
+					yield return new WaitForSeconds (1);
+					canLaunch = false;
+	}
+
+
+
 	
 	public bool CanFire () {
 		return canFire;

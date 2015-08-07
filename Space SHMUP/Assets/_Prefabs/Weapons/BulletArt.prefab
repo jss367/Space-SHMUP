@@ -12,7 +12,7 @@ GameObject:
   - 136: {fileID: 13669540}
   - 114: {fileID: 11423582}
   m_Layer: 10
-  m_Name: Bullet
+  m_Name: BulletArt
   m_TagString: ProjectileHero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
     type: 2}
   speed: 20
   damageRadius: 10
+  damage: 10
 --- !u!136 &13669540
 CapsuleCollider:
   m_ObjectHideFlags: 1
