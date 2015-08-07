@@ -501,33 +501,10 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170897956}
---- !u!1 &185075279
+--- !u!1 &173267781 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 185075280}
-  m_Layer: 8
-  m_Name: BulletLocation2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &185075280
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 185075279}
-  m_LocalRotation: {x: -1.15202326e-07, y: .707106709, z: -.707106829, w: -1.15202312e-07}
-  m_LocalPosition: {x: 0, y: -0, z: -.850000024}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 673546016}
-  m_RootOrder: 0
+  m_PrefabParentObject: {fileID: 155694, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
+  m_PrefabInternal: {fileID: 673546015}
 --- !u!1 &202516615
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,11 +3412,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433306, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 470580, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
@@ -7070,10 +7047,11 @@ MonoBehaviour:
   mineDropLocation: {fileID: 365583861}
   bazookaBullet: {fileID: 100000, guid: 4d4930bcb1eb64156a12d3b6308d4056, type: 2}
   bazookaBulletLocation1: {fileID: 1165501045}
-  bazookaBulletLocation2: {fileID: 185075279}
+  bazookaBulletLocation2: {fileID: 173267781}
   mineDelay: 4
   bazookaDelay: 5
-  bazookaArt: {fileID: 360001645}
+  bazookaArt1: {fileID: 360001645}
+  bazookaArt2: {fileID: 1621926640}
   Bazooka: {fileID: 1167538884}
   MissileLauncher: {fileID: 902711720}
   MineDropper: {fileID: 650019404}
@@ -8910,6 +8888,10 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!1 &1621926640 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 115126, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
+  m_PrefabInternal: {fileID: 673546015}
 --- !u!1 &1626616308
 GameObject:
   m_ObjectHideFlags: 0

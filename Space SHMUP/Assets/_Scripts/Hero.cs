@@ -78,7 +78,8 @@ public class Hero : MonoBehaviour {
 	public float mineDelay = 4;
 	public float bazookaDelay = 5;
 
-	public GameObject bazookaArt;
+	public GameObject bazookaArt1;
+	public GameObject bazookaArt2;
 	private float lastBazooka;
 	public GameObject Bazooka;
 	public GameObject MissileLauncher;
@@ -208,8 +209,9 @@ public class Hero : MonoBehaviour {
 			Instantiate(bazookaBullet, bazookaBulletLocation2.transform.position, bazookaBulletLocation2.transform.rotation);
 			lastBazooka = Time.time;
 			//			Missile..SendMessage("Fire");
-			bazookaArt.SetActive(false);
-			
+			bazookaArt1.SetActive(false);
+			bazookaArt2.SetActive(false);
+			StartCoroutine("ReturnBazookaArt");
 			//			Debug.Log("fireDelegate has been called");
 		}
 
@@ -230,6 +232,11 @@ public class Hero : MonoBehaviour {
 //		}
 		}
 
+	IEnumerator ReturnBazookaArt(){
+		yield return new WaitForSeconds (bazookaDelay);
+		bazookaArt1.SetActive(true);
+		bazookaArt2.SetActive(true);
+	}
 
 	
 	void CheckInventory(){
