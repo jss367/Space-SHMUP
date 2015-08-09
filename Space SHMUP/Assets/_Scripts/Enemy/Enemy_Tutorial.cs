@@ -24,7 +24,7 @@ public class Enemy_Tutorial : MonoBehaviour {
 //	private Main main;
 	public GameObject			prefabPowerUp;
 	public GameObject enemyExplosion;
-	private bool			spreadOwned = false;
+	private bool			spreadEquipped = false;
 
 	
 	void Awake() {
@@ -51,7 +51,7 @@ public class Enemy_Tutorial : MonoBehaviour {
 			}
 			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 				Debug.Log("Spread is equipped");
-				spreadOwned = true;
+				spreadEquipped = true;
 			}
 		}
 		catch (System.Exception e)
@@ -109,7 +109,7 @@ public class Enemy_Tutorial : MonoBehaviour {
 				GameObject go = Instantiate(prefabPowerUp) as GameObject;
 				PowerUp pu = go.GetComponent<PowerUp>();
 				// Set it to the proper WeaponTYpe
-				if (spreadOwned){
+				if (spreadEquipped){
 					pu.SetType(WeaponType.spread);
 				}
 				else{
@@ -147,7 +147,7 @@ public class Enemy_Tutorial : MonoBehaviour {
 			GameObject go = Instantiate(prefabPowerUp) as GameObject;
 			PowerUp pu = go.GetComponent<PowerUp>();
 			// Set it to the proper WeaponTYpe
-			if (spreadOwned){
+			if (spreadEquipped){
 				pu.SetType(WeaponType.spread);
 			}
 			else{

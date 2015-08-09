@@ -39,7 +39,7 @@ public class Main : MonoBehaviour {
 
 	public bool ______________;
 
-	public bool spreadOwned = false;
+	public bool spreadEquipped = false;
 	public bool weaponrySet = false;
 	public bool pointsGiven = false;
 	private float timeOfDeath;
@@ -59,6 +59,8 @@ public class Main : MonoBehaviour {
 	public bool playerWins = false;
 	public bool playerDead = false;
 	private int prevBalance;
+
+	public bool hasLaser = false;
 
 	private int earth1;
 	private int earth2;
@@ -106,7 +108,7 @@ public class Main : MonoBehaviour {
 
 
 	void Start() {
-//		spreadOwned = true; // comment out for builds
+		//		spreadEquipped = true; // comment out for builds
 		activeWeaponTypes = new WeaponType[weaponDefinitions.Length];
 		for (int i = 0; i < weaponDefinitions.Length; i++) {
 			activeWeaponTypes [i] = weaponDefinitions [i].type;
@@ -149,25 +151,26 @@ public class Main : MonoBehaviour {
 			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 				Debug.Log("Spread is equipped");
 				
-				spreadOwned = true;
+				spreadEquipped = true;
 			}
 		}
 		catch (System.Exception e)
 		{
 			Debug.Log("Caught error: " + e);
 		}
-		
+		hasLaser = true;	
 	}
 
 	void SetWeaponry() {
-		//		Debug.Log ("At SetWeaponry, spreadOwned is " + spreadOwned);
-		if (spreadOwned) {
+		//		Debug.Log ("At SetWeaponry, spreadEquipped is " + spreadEquipped);
+		if (spreadEquipped) {
 //			Debug.Log("Setting weapon to spread");
 			powerUpFrequency = new WeaponType[] {
 //			WeaponType.spread,
 //			WeaponType.spread,
 			WeaponType.spread,
-			WeaponType.shield
+			WeaponType.shield,
+//			WeaponType.laser
 		};
 		} else {
 //			Debug.Log("Setting weapon to white");
@@ -180,6 +183,10 @@ public class Main : MonoBehaviour {
 
 			};
 	}
+		powerUpFrequency = new WeaponType[] {
+			WeaponType.laser
+		};
+
 		weaponrySet = true;
 	}
 	void Update() {

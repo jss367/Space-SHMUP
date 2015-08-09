@@ -26,7 +26,7 @@ public class Hero : MonoBehaviour {
 	public bool _____________;
 //
 
-		public bool spreadOwned = false;
+	public bool spreadEquipped = false;
 
 	public Bounds				bounds;
 	private int					weaponCount;
@@ -94,12 +94,12 @@ public class Hero : MonoBehaviour {
 
 	void Start() {
 //		shieldUpgradeOwned = false;
-		//		spreadOwned = true; // comment out for builds
+		//		spreadEquipped = true; // comment out for builds
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
 		CheckInventory ();
 
-		if (spreadOwned == true) {
+		if (spreadEquipped == true) {
 //			Debug.Log ("Spread is owned");
 			weapons [0].SetType (WeaponType.spread);
 		} else {
@@ -112,6 +112,8 @@ public class Hero : MonoBehaviour {
 		}
 
 		lastMineTime = -mineDelay;
+
+		weapons [0].SetType (WeaponType.laser);
 	}
 	
 
@@ -249,7 +251,7 @@ public class Hero : MonoBehaviour {
 
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 //			Debug.Log("Spread is equipped");
-			spreadOwned = true;
+				spreadEquipped = true;
 		}
 		}
 		catch (System.Exception e)
