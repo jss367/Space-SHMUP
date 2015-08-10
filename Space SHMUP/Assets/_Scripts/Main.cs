@@ -61,7 +61,9 @@ public class Main : MonoBehaviour {
 	private int prevBalance;
 
 	public bool laserEquipped = false;
-
+//	public bool bazookaEquipped;
+//	public bool missileEquipped;
+	
 	private int earth1;
 	private int earth2;
 	private int earth3;
@@ -158,7 +160,7 @@ public class Main : MonoBehaviour {
 		{
 			Debug.Log("Caught error: " + e);
 		}
-		laserEquipped = true;	
+//		laserEquipped = true;	
 	}
 
 	void SetWeaponry() {

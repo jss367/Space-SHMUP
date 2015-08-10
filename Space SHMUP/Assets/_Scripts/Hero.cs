@@ -63,6 +63,8 @@ public class Hero : MonoBehaviour {
 	public FireButton fireButton;
 
 	public bool laserEquipped;
+	public bool bazookaEquipped;
+	public bool missileEquipped;
 
 	public CNAbstractController cNABstractController;
 
@@ -83,11 +85,14 @@ public class Hero : MonoBehaviour {
 	public GameObject bazookaArt1;
 	public GameObject bazookaArt2;
 	private float lastBazooka;
-	public GameObject Bazooka;
+	public GameObject Bazooka1;
+	public GameObject Bazooka2;
 	public GameObject MissileLauncher;
 	public GameObject MineDropper;
 	private GameObject Mine;
 //	public GameObject Laser;
+
+	public bool weaponOff;
 
 	void Awake(){
 		S = this; //Set the singleton
@@ -119,7 +124,22 @@ public class Hero : MonoBehaviour {
 
 		lastMineTime = -mineDelay;
 
-	
+		bazookaArt1.SetActive(false);
+		bazookaArt2.SetActive(false);
+		if (bazookaEquipped) {
+			StartCoroutine ("ReturnBazookaArt");
+		} else {
+			//Hide to bazooka launchers
+			Bazooka1.SetActive (false);
+			Bazooka2.SetActive (false);
+		}
+
+		if (!missileEquipped) {
+			missile.SetActive(false);
+			missileArt.SetActive(false);
+			missileLaunchLocation.SetActive(false);
+		    MissileLauncher.SetActive(false);
+		}
 	}
 	
 
@@ -197,26 +217,26 @@ public class Hero : MonoBehaviour {
 ////			Debug.Log("fireDelegate has been called");
 //		}
 
-		if (cNABstractController.CanFire() && fireDelegate != null ) {
+		if (cNABstractController.CanFire() && fireDelegate != null && !weaponOff) {
 			fireDelegate ();
 			//			Debug.Log("fireDelegate has been called");
 		}
 
-		if (fireButton.CanLaunch() && !launch1) {
-//			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
+		if (missileEquipped && fireButton.CanLaunch() && !launch1) {
+			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
 			launch1 = true;
-//			Missile..SendMessage("Fire");
+//			Missile.SendMessage("Fire");
 			missileArt.SetActive(false);
 
 			//			Debug.Log("fireDelegate has been called");
 		}
 
-		if (fireButton.CanLaunch() && Time.time > lastBazooka + bazookaDelay) {
-			//			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
+		if (bazookaEquipped && fireButton.CanLaunch() && Time.time > lastBazooka + bazookaDelay) {
+
 			Instantiate(bazookaBullet, bazookaBulletLocation1.transform.position, bazookaBulletLocation1.transform.rotation);
 			Instantiate(bazookaBullet, bazookaBulletLocation2.transform.position, bazookaBulletLocation2.transform.rotation);
 			lastBazooka = Time.time;
-			//			Missile..SendMessage("Fire");
+
 			bazookaArt1.SetActive(false);
 			bazookaArt2.SetActive(false);
 			StartCoroutine("ReturnBazookaArt");
@@ -294,7 +314,22 @@ public class Hero : MonoBehaviour {
 			Debug.Log("Caught error: " + e);
 		}
 
-		laserEquipped = true;
+		try
+		{
+			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.MISSILE_LAUNCHER_ITEM_ID)){
+				missileEquipped = true;
+			}
+			
+			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BAZOOKA_LAUNCHER_ITEM_ID)){
+				bazookaEquipped = true;
+			}
+		}
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+		}
+
+//		laserEquipped = true;
 	}
 
 	//This variable holds a reference to the last triggering GameObject

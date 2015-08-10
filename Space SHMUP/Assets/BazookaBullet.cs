@@ -27,11 +27,13 @@ public class BazookaBullet : MonoBehaviour {
 		Collider[] hitColliders = Physics.OverlapSphere(center, radius);
 		int i = 0;
 		while (i < hitColliders.Length) {
-			Enemy recipient = hitColliders[i].GetComponent<Enemy> ();
+			Debug.Log("Explosion found this hitCollider: " + hitColliders[i]);
+			GameObject go = Utils.FindTaggedParent(hitColliders[i].gameObject);
+			Enemy recipient = go.GetComponent<Enemy> (); // this might hit enemies with many body parts more than those with only one
 			if (recipient != null) {
 				recipient.ReceiveDamage(damage);
 			}
-			Asteroid asteroidRecipient = hitColliders[i].GetComponent<Asteroid>();
+			Asteroid asteroidRecipient = go.GetComponent<Asteroid>();
 			//also do for angle asteroid!!!
 			if (asteroidRecipient != null) {
 				Debug.Log("Hit an asteroid");
@@ -41,3 +43,4 @@ public class BazookaBullet : MonoBehaviour {
 		}
 	}
 }
+

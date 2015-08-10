@@ -15,4 +15,6 @@ public static class Constants {
 	public const string SPEED_UPGRADE_1 = "speed_1";
 	public const string SPEED_UPGRADE_2 = "speed_2";
 	public const string QUICK_FIRE_ITEM_ID = "quick_fire";
+	public const string MISSILE_LAUNCHER_ITEM_ID = "missile_launcher";
+	public const string BAZOOKA_LAUNCHER_ITEM_ID = "bazooka_launcher";
 }

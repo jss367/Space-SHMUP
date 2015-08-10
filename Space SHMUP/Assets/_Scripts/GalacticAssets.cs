@@ -42,9 +42,7 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualGood[] GetGoods() {
-//			return new  VirtualGood[] {WEAPON_SPREAD, PAVLOVA_GOOD,CHOCLATECAKE_GOOD, CREAMCUP_GOOD, NO_ADS_LTVG, 
-//				ShieldUpgrade1, ShieldUpgrade2, Shield, Sword};
-			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, BaseSpeed, BaseShield};//, SpeedUpgrade1};//, Shield, ShieldUpgrade1, BaseSpeed, SpeedUpgrade1};//, NO_ADS_LTVG};
+			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, BaseSpeed, BaseShield, BAZOOKA_LAUNCHER, MISSILE_LAUNCHER};//, SpeedUpgrade1};//, Shield, ShieldUpgrade1, BaseSpeed, SpeedUpgrade1};//, NO_ADS_LTVG};
 		}
 		
 		/// <summary>
@@ -58,7 +56,7 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualCategory[] GetCategories() {
-			return new VirtualCategory[]{GENERAL_CATEGORY, WEAPON_CATEGORY};
+			return new VirtualCategory[]{GENERAL_CATEGORY, WEAPON_CATEGORY, LAUNCHER_CATEGORY};
 		}
 
 
@@ -157,6 +155,22 @@ namespace Soomla.Store.Example {
 			Constants.BLASTER_WEAPON_ITEM_ID,											// item id
 			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 0));
 
+		public static VirtualGood MISSILE_LAUNCHER = new EquippableVG(
+			EquippableVG.EquippingModel.CATEGORY,
+			"Missile Launcher",                           // Name
+			"Launch devastating missiles",        // Description
+			Constants.MISSILE_LAUNCHER_ITEM_ID,                  // Item ID
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 10));
+
+
+		public static VirtualGood BAZOOKA_LAUNCHER = new EquippableVG(
+			EquippableVG.EquippingModel.CATEGORY,
+			"Bazooka Launcher", 														// name
+			"Shoots two bazookas",				 	// description
+			Constants.BAZOOKA_LAUNCHER_ITEM_ID,											// item id
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 10));
+
+
 		/// <summary>
 		/// An equipable weapon that can be purchased for 7 coins.
 		/// </summary>
@@ -238,6 +252,8 @@ namespace Soomla.Store.Example {
 		                            0)                            // Payment amount
 			);
 
+
+
 		public static VirtualGood QuickFire = new LifetimeVG(
 			"Faster",                           // Name
 			"Doubles the health of your shield",        // Description
@@ -313,6 +329,10 @@ namespace Soomla.Store.Example {
 		public static VirtualCategory WEAPON_CATEGORY = new VirtualCategory(
 			"Weapons", new List<string>(new string[] {Constants.BLASTER_WEAPON_ITEM_ID, Constants.SPREAD_WEAPON_ITEM_ID })
 			);
+
+		public static VirtualCategory LAUNCHER_CATEGORY = new VirtualCategory(
+			"Launchers", new List<string>(new string[] {Constants.MISSILE_LAUNCHER_ITEM_ID, Constants.BAZOOKA_LAUNCHER_ITEM_ID })
+			);
 		
 		
 		/** LifeTimeVGs **/
@@ -323,13 +343,6 @@ namespace Soomla.Store.Example {
 			"no_ads",														// item id
 			new PurchaseWithMarket(NO_ADS_LIFETIME_PRODUCT_ID, 0.99));	// the way this virtual good is purchased
 		
-//		public static VirtualGood WEAPON_SPREAD = new LifetimeVG(
-//			"Spreading Weapon", 														// name
-//			"A more powerful weapon to fend off aliens",				 	// description
-		//			SPREAD_WEAPON_ITEM_ID,											// item id
-//			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 100));	// the way this virtual good is purchased
-
-
 
 
 		

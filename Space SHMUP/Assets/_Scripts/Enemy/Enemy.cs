@@ -113,6 +113,26 @@ public class Enemy : MonoBehaviour {
 
 	public void ReceiveDamage(float damage){
 		Debug.Log ("Enemy has received damage");
+		health -= damage;
+		if (health <= 0) {
+			// Destroy this Enemy
+			Destroy (this.gameObject);
+			if (Time.time - lastTimeDestroyed < comboTime)
+			{
+				// Tell the Main singleton that this ship has been destroyed
+				Main.S.EnemyDestroyed(this, true);
+				Instantiate(comboPopText, transform.position, Quaternion.identity);
+			}
+			else {
+				// Tell the Main singleton that this ship has been destroyed
+				Main.S.EnemyDestroyed(this, false);
+				Instantiate(popText, transform.position, Quaternion.identity);
+			}
+			lastTimeDestroyed = Time.time;
+			//				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
+			Instantiate(enemyExplosion, transform.position, transform.rotation);
+			
+		}
 	}
 
 
@@ -135,26 +155,27 @@ public class Enemy : MonoBehaviour {
 			ShowDamage();
 			Instantiate(impact, transform.position, transform.rotation);
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
-			health -= Main.W_DEFS [p.type].damageOnHit;
-			if (health <= 0) {
-				// Destroy this Enemy
-				Destroy (this.gameObject);
-				if (Time.time - lastTimeDestroyed < comboTime)
-				{
-					// Tell the Main singleton that this ship has been destroyed
-					Main.S.EnemyDestroyed(this, true);
-					Instantiate(comboPopText, transform.position, Quaternion.identity);
-				}
-				else {
-					// Tell the Main singleton that this ship has been destroyed
-					Main.S.EnemyDestroyed(this, false);
-					Instantiate(popText, transform.position, Quaternion.identity);
-				}
-				lastTimeDestroyed = Time.time;
-//				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
-				Instantiate(enemyExplosion, transform.position, transform.rotation);
-			
-			}
+			ReceiveDamage(Main.W_DEFS [p.type].damageOnHit);
+//			health -= Main.W_DEFS [p.type].damageOnHit;
+//			if (health <= 0) {
+//				// Destroy this Enemy
+//				Destroy (this.gameObject);
+//				if (Time.time - lastTimeDestroyed < comboTime)
+//				{
+//					// Tell the Main singleton that this ship has been destroyed
+//					Main.S.EnemyDestroyed(this, true);
+//					Instantiate(comboPopText, transform.position, Quaternion.identity);
+//				}
+//				else {
+//					// Tell the Main singleton that this ship has been destroyed
+//					Main.S.EnemyDestroyed(this, false);
+//					Instantiate(popText, transform.position, Quaternion.identity);
+//				}
+//				lastTimeDestroyed = Time.time;
+////				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
+//				Instantiate(enemyExplosion, transform.position, transform.rotation);
+//			
+//			}
 			Destroy (other);
 			break;
 		case "Asteroid":
