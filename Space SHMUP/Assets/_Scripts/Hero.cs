@@ -62,6 +62,8 @@ public class Hero : MonoBehaviour {
 //	public SimpleTouchPad touchPad;
 	public FireButton fireButton;
 
+	public bool laserEquipped;
+
 	public CNAbstractController cNABstractController;
 
 	public GameObject explosion;
@@ -85,7 +87,7 @@ public class Hero : MonoBehaviour {
 	public GameObject MissileLauncher;
 	public GameObject MineDropper;
 	private GameObject Mine;
-	public GameObject Laser;
+//	public GameObject Laser;
 
 	void Awake(){
 		S = this; //Set the singleton
@@ -102,6 +104,10 @@ public class Hero : MonoBehaviour {
 		if (spreadEquipped == true) {
 //			Debug.Log ("Spread is owned");
 			weapons [0].SetType (WeaponType.spread);
+		} else if (laserEquipped) {
+			weapons [0].SetType (WeaponType.laser);
+
+
 		} else {
 //			Debug.Log ("Spread is not equipped");
 			weapons [0].SetType (WeaponType.blaster);
@@ -113,7 +119,7 @@ public class Hero : MonoBehaviour {
 
 		lastMineTime = -mineDelay;
 
-		weapons [0].SetType (WeaponType.laser);
+	
 	}
 	
 
@@ -287,6 +293,8 @@ public class Hero : MonoBehaviour {
 		{
 			Debug.Log("Caught error: " + e);
 		}
+
+		laserEquipped = true;
 	}
 
 	//This variable holds a reference to the last triggering GameObject

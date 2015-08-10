@@ -60,7 +60,7 @@ public class Main : MonoBehaviour {
 	public bool playerDead = false;
 	private int prevBalance;
 
-	public bool hasLaser = false;
+	public bool laserEquipped = false;
 
 	private int earth1;
 	private int earth2;
@@ -158,7 +158,7 @@ public class Main : MonoBehaviour {
 		{
 			Debug.Log("Caught error: " + e);
 		}
-		hasLaser = true;	
+		laserEquipped = true;	
 	}
 
 	void SetWeaponry() {
@@ -172,7 +172,12 @@ public class Main : MonoBehaviour {
 			WeaponType.shield,
 //			WeaponType.laser
 		};
-		} else {
+		} else if (laserEquipped) {
+			powerUpFrequency = new WeaponType[] {
+				WeaponType.laser
+			};
+
+		} else	{
 //			Debug.Log("Setting weapon to white");
 			powerUpFrequency = new WeaponType[] {
 				//			WeaponType.spread,
@@ -183,9 +188,7 @@ public class Main : MonoBehaviour {
 
 			};
 	}
-		powerUpFrequency = new WeaponType[] {
-			WeaponType.laser
-		};
+
 
 		weaponrySet = true;
 	}
