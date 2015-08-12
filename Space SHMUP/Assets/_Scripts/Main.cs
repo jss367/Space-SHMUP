@@ -21,7 +21,7 @@ public class Main : MonoBehaviour {
 		WeaponType.spread,
 		WeaponType.shield
 	};
-
+	
 	public GameObject	earthReward;
 	public GameObject 	restartButton;
 	public GameObject 	mainMenuButton;
@@ -36,15 +36,10 @@ public class Main : MonoBehaviour {
 	public Text			finalScoreText;
 	public Text			prevBalanceText;
 	public Text			popText;
-//	public GameObject	spawnManager;
-//	public GameObject	fireworks;
-//	public const string BLASTER_WEAPON_ITEM_ID = "weapon_blaster";
-//	public const string SPREAD_WEAPON_ITEM_ID = "weapon_spread";
-
-
+	
 	public bool ______________;
-
-	public bool spreadOwned = false;
+	
+	public bool spreadEquipped = false;
 	public bool weaponrySet = false;
 	public bool pointsGiven = false;
 	private float timeOfDeath;
@@ -54,50 +49,52 @@ public class Main : MonoBehaviour {
 	
 	private int		score;
 	public float	timeAlive;
-//	public float	timeMultiplier;
-//	private float 	timeLastReset;
 	public float	timeLimit;
-
+	
 	public float account;
 	public float coinsGained;
-
+	
 	public bool stopSpawning = false;
 	public bool gameHasEnded = false;
 	public bool playerWins = false;
 	public bool playerDead = false;
 	private int prevBalance;
-
+	
+	public bool laserEquipped = false;
+	//	public bool bazookaEquipped;
+	//	public bool missileEquipped;
+	
 	private int earth1;
 	private int earth2;
 	private int earth3;
-
+	
 	public string currentLevel;
 	public int victoryBonus;
 	public float endGameDelay = .2f;
-
+	
 	Vector3 pos1 = new Vector3(14, 1, -10);
 	Vector3 pos2 = new Vector3(22, 1, -10);
 	Vector3 pos3 = new Vector3(30, 1, -10);
-
+	
 	void Awake(){
-
+		
 		S = this;
 		//Set Utils.camBounds
 		Utils.SetCameraBounds (this.GetComponent<Camera>());
 		//  0.5 enemies/second = enemySpawnRate of 2
 		enemySpawnRate = 1f / enemySpawnPerSecond;
 		//Invoke call SpawnEnemy() once after a 2 second delay
-//		Invoke ("SpawnEnemy", enemySpawnRate);
+		//		Invoke ("SpawnEnemy", enemySpawnRate);
 		
 		//A generic Dictionary with WeaponType as the key
 		W_DEFS = new Dictionary<WeaponType, WeaponDefinition> ();
 		foreach (WeaponDefinition def in weaponDefinitions) {
 			W_DEFS [def.type] = def;
 		}
-
-
-		}
-
+		
+		
+	}
+	
 	static public WeaponDefinition GetWeaponDefinition (WeaponType wt) {
 		//Check to make sure that the key exists in the Dictionary
 		//Attempting to retrieve a key that didn't exist would throw an error
@@ -108,12 +105,12 @@ public class Main : MonoBehaviour {
 		//This will return a definition for WeaponType.none, which
 		// means it has failed to find the WeaponDefinition
 		return(new WeaponDefinition ());
-	
+		
 	}
-
-
+	
+	
 	void Start() {
-//		spreadOwned = true; // comment out for builds
+		//		spreadEquipped = true; // comment out for builds
 		activeWeaponTypes = new WeaponType[weaponDefinitions.Length];
 		for (int i = 0; i < weaponDefinitions.Length; i++) {
 			activeWeaponTypes [i] = weaponDefinitions [i].type;
@@ -129,20 +126,20 @@ public class Main : MonoBehaviour {
 		victoryText.enabled = false;
 		popText.enabled = false;
 		newHighScoreText.enabled = false;
-
+		
 		score = 0;
 		ResetScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-//		Debug.Log ("The song length is " + timeLimit);
+		//		Debug.Log ("The song length is " + timeLimit);
 		gameHasEnded = false;
-
+		
 		currentLevel = MadLevel.currentLevelName;
-
-
+		
+		
 		CheckInventory ();
-
-		}
-
+		
+	}
+	
 	void CheckInventory(){
 		
 		//		Debug.Log ("Checking inventory");
@@ -156,52 +153,60 @@ public class Main : MonoBehaviour {
 			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 				Debug.Log("Spread is equipped");
 				
-				spreadOwned = true;
+				spreadEquipped = true;
 			}
 		}
 		catch (System.Exception e)
 		{
 			Debug.Log("Caught error: " + e);
 		}
-		
+		//		laserEquipped = true;	
 	}
-
+	
 	void SetWeaponry() {
-		//		Debug.Log ("At SetWeaponry, spreadOwned is " + spreadOwned);
-		if (spreadOwned) {
-//			Debug.Log("Setting weapon to spread");
-			powerUpFrequency = new WeaponType[] {
-//			WeaponType.spread,
-//			WeaponType.spread,
-			WeaponType.spread,
-			WeaponType.shield
-		};
-		} else {
-//			Debug.Log("Setting weapon to white");
+		//		Debug.Log ("At SetWeaponry, spreadEquipped is " + spreadEquipped);
+		if (spreadEquipped) {
+			//			Debug.Log("Setting weapon to spread");
 			powerUpFrequency = new WeaponType[] {
 				//			WeaponType.spread,
 				//			WeaponType.spread,
-
+				WeaponType.spread,
+				WeaponType.shield,
+				//			WeaponType.laser
+			};
+		} else if (laserEquipped) {
+			powerUpFrequency = new WeaponType[] {
+				WeaponType.laser
+			};
+			
+		} else	{
+			//			Debug.Log("Setting weapon to white");
+			powerUpFrequency = new WeaponType[] {
+				//			WeaponType.spread,
+				//			WeaponType.spread,
+				
 				WeaponType.blaster,
 				WeaponType.shield
-
+				
 			};
-	}
+		}
+		
+		
 		weaponrySet = true;
 	}
 	void Update() {
 		float timer = Time.timeSinceLevelLoad;
-//		Debug.Log (timer);
-//		Debug.Log (playerWins);
+		//		Debug.Log (timer);
+		//		Debug.Log (playerWins);
 		if (!playerDead && !gameHasEnded && (timer > timeLimit + endGameDelay)){
 			InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 		}
-
+		
 		if (!weaponrySet) {
 			SetWeaponry ();
-					}
+		}
 	}
-
+	
 	public void AddScore (int newScoreValue)
 	{
 		if (!gameHasEnded && !playerDead) {
@@ -210,10 +215,10 @@ public class Main : MonoBehaviour {
 			score += newScoreValue;
 		}
 		
-		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
+		scoreText.text = "Score : " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
-
-
+	
+	
 	public void EnemyDestroyed( Enemy e, bool combo) {
 		// Potentially generate a PowerUp
 		if (Random.value <= e.powerUpDropChance) {
@@ -235,14 +240,14 @@ public class Main : MonoBehaviour {
 			// Set it to the position of the destroyed ship
 			pu.transform.position = e.transform.position;
 		}
-
+		
 		if (combo) {
 			AddScore (e.score * 2);
 		} else {
 			AddScore (e.score);
 		}
 	}
-
+	
 	
 	public void WaitUntilLevelEmpties(){
 		
@@ -267,39 +272,39 @@ public class Main : MonoBehaviour {
 		}
 		
 	}
-
-
-
-	public void DelayedRestart(float delay) {
-		//Invoke the Restart() method in delay seconds
-		Invoke ("Restart", delay);
-	}
-
-
+	
+	
+	
+	//	public void DelayedRestart(float delay) {
+	//		//Invoke the Restart() method in delay seconds
+	//		Invoke ("Restart", delay);
+	//	}
+	
+	
 	public void PlayerLoss()
 	{
 		playerDead = true;
 		timeOfDeath = Time.time;
-//		Debug.Log("Player lost the level!");
-//		GameOver ();
+		//		Debug.Log("Player lost the level!");
+		//		GameOver ();
 		InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 	}
 	
 	public void PlayerWon()
 	{
-//		Debug.Log("Player beat the level!");
+		//		Debug.Log("Player beat the level!");
 		victoryText.enabled = true;
 		playerWins = true;
-//		GiveStars ();
+		//		GiveStars ();
 		victoryBonusText.enabled = true;
 		GameOver ();
 	}
-
+	
 	public void GameOver() {
 		gameHasEnded = true;
 		pauseButton.SetActive (false);
-//		Debug.Log("Game has ended");
-//		scoreText.enabled = false;
+		//		Debug.Log("Game has ended");
+		//		scoreText.enabled = false;
 		try
 		{
 			prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
@@ -309,8 +314,8 @@ public class Main : MonoBehaviour {
 			Debug.Log("Caught error: " + e);
 			prevBalance = 0;
 		}
-
-		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";
+		
+		prevBalanceText.text = "Previous Balance : " + prevBalance + " Coins";
 		prevBalanceText.enabled = true;
 		restartButton.SetActive(true);
 		mainMenuButton.SetActive (true);
@@ -319,22 +324,22 @@ public class Main : MonoBehaviour {
 		}
 		GivePoints ();
 	}
-
+	
 	public void GivePoints(){
-//		try {
-
+		//		try {
+		
 		if (playerWins) {
-//			GiveStars();
+			//			GiveStars();
 			GiveVictoryBonus();
 			score += victoryBonus;
-			victoryBonusText.text = "Level Completion Bonus: " + victoryBonus;
-			}
+			victoryBonusText.text = "Level Completion Bonus : " + victoryBonus;
+		}
 		StartCoroutine (CountScore());
-//		finalScoreText.text = "Final Score: " + score;
+		//		finalScoreText.text = "Final Score: " + score;
 		StoreHighScore (score);
 		if (!pointsGiven) {
-//			Debug.Log("pointsGiven is " + pointsGiven);
-//			Debug.Log("Rewarding points");
+			//			Debug.Log("pointsGiven is " + pointsGiven);
+			//			Debug.Log("Rewarding points");
 			try
 			{
 				Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
@@ -345,17 +350,17 @@ public class Main : MonoBehaviour {
 			}
 			pointsGiven = true;
 		}
-		currentAccountText.text = "New Balance: " + (prevBalance + score) + " Coins";
+		currentAccountText.text = "New Balance : " + (prevBalance + score) + " Coins";
 		currentAccountText.enabled = true;
-//		} catch (Exception e) {
-//			Debug.LogError ("SOOMLA/UNITY " + e.Message);
-//		}
+		//		} catch (Exception e) {
+		//			Debug.LogError ("SOOMLA/UNITY " + e.Message);
+		//		}
 		finalScoreText.enabled = true;
 	}
 	IEnumerator CountScore(){
 		int displayScore = 0;
 		int updateScore = 5;
-
+		
 		while (displayScore < score){
 			if (score - updateScore > 10000) {
 				updateScore = 1000;
@@ -379,99 +384,78 @@ public class Main : MonoBehaviour {
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
 				Instantiate(earthReward, pos3, Quaternion.identity);
 			}
-				}
+		}
 	}
-
+	
 	public void GiveVictoryBonus (){
-//		Debug.Log("You are currently on this level: " + currentLevel);
-//		Debug.Log(
-
+		//		Debug.Log("You are currently on this level: " + currentLevel);
+		
 		switch (currentLevel) {
 		case "Level 1":
-//			Debug.Log("on level one");
+			//			Debug.Log("on level one");
 			victoryBonus = 50;
 			earth1 = 100;
 			earth2 = 300;
 			earth3 = 500;
-
+			
 			break;
 		case "Level 2":
 			victoryBonus = 100;
 			earth1 = 150;
 			earth2 = 200;
 			earth3 = 400;
-
+			
 			break;
 		case "Level 3":
 			victoryBonus = 600;
 			earth1 = 10000;
 			earth2 = 15000;
 			earth3 = 20000;
-
+			
 			break;
 		case "Level 4":
 			victoryBonus = 800;
 			earth1 = 30000;
 			earth2 = 40000;
 			earth3 = 50000;
-
+			
 			break;
 		case "Level 8":
 			victoryBonus = 800;
 			earth1 = 30000;
 			earth2 = 40000;
 			earth3 = 50000;
-
+			
 			break;
 		default:
 			victoryBonus = 1000;
 			earth1 = 30000;
 			earth2 = 40000;
 			earth3 = 50000;
-
+			
 			break;
-
+			
 		}
 		MadLevelProfile.Save ();
 	}
-
-//	public void GiveStars(){
-//		//				MadLevelProfile.SetCompleted (currentLevel, true);
-//		//		MadLevelProfile.SetPropertyEnabled (currentLevel, "star", true);
-//		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//		MadLevelProfile.Save ();
-//	}
-
-//	public VirtualCurrencyPack[] GetCurrencyPacks() {
-////		return new VirtualCurrencyPack[] {TENMUFF_PACK, FIFTYMUFF_PACK, FOURHUNDMUFF_PACK, THOUSANDMUFF_PACK};
-//	}
-//
-//	public static VirtualCurrencyPack THOUSANDMUFF_PACK = new VirtualCurrencyPack(
-//		"1000 Muffins",                                 // name
-//		"Test item unavailable",                 		// description
-//		"muffins_1000",                                 // item id
-//		1000,                                           // number of currencies in the pack
-//		GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
-//		new PurchaseWithMarket(THOUSANDMUFF_PACK_PRODUCT_ID, 8.99)
-//		);
-
+	
+	
 	public void MainMenu() {
-//		Application.LoadLevel ("LevelManager");
+		//		Application.LoadLevel ("LevelManager");
 		MadLevel.LoadLevelByName ("Level Select");
 	}
-
+	
 	public void NextLevel(){
 		MadLevel.LoadNext ();
 	}
-
+	
 	public void AsteroidDestroyed(Asteroid a) {
 		AddScore (a.score);
 	}
-
-	void StoreHighScore(int newHighScore){
-//		Debug.Log ("StoreHighScore has been called");
 	
+	void StoreHighScore(int newHighScore){
+		//		Debug.Log ("StoreHighScore has been called");
+		
 		//		Debug.Log ("The score is " + score);
 		// Update the high score if PlayerPrefs if necessary
 		if (score > PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0)) {
@@ -482,31 +466,31 @@ public class Main : MonoBehaviour {
 		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0);
 		highScoreText.enabled = true;
 	}
-
-
-
+	
+	
+	
 	IEnumerator PopText(string message, float time){
-			popText.text = "+ " + message;
-			popText.enabled = true;
-			yield return new WaitForSeconds (time);
-			popText.enabled = false;
-//			Vector3 scre
-//		popText.transform.position
+		popText.text = "+ " + message;
+		popText.enabled = true;
+		yield return new WaitForSeconds (time);
+		popText.enabled = false;
+		//			Vector3 scre
+		//		popText.transform.position
 	}
 	
 	void ResetScore ()
 	{
-//		Debug.Log ("Score has been updated");
-		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
+		//		Debug.Log ("Score has been updated");
+		scoreText.text = "Score : " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
-
-
+	
+	
 	public void RestartLevel()
 	{
 		//		Application.LoadLevel (Application.loadedLevel);
 		MadLevel.LoadLevelByName (currentLevel);
 	}
-
+	
 }
 
 
