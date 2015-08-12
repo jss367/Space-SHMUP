@@ -217,7 +217,7 @@ public class Hero : MonoBehaviour {
 ////			Debug.Log("fireDelegate has been called");
 //		}
 
-		if (cNABstractController.CanFire() && fireDelegate != null && !weaponOff) {
+		if ((fireButton.CanFire() || cNABstractController.CanFire()) && fireDelegate != null && !weaponOff) {
 			fireDelegate ();
 			//			Debug.Log("fireDelegate has been called");
 		}
