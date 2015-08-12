@@ -41,7 +41,7 @@ namespace Soomla.Store
 		public PurchaseWithMarket (string productId, double price) :
 			base()
 		{
-			this.MarketItem = new MarketItem(productId, price);
+			this.MarketItem = new MarketItem(productId, MarketItem.Consumable.CONSUMABLE, price);
 		}
 		
 		/// <summary>
@@ -82,11 +82,6 @@ namespace Soomla.Store
 			// for market purchases, always assume it can be afforded
 			return true;
 		}
-
-        public override string GetPrice()
-        {
-            return MarketItem.Price.ToString();
-        }
 	}
 }
 

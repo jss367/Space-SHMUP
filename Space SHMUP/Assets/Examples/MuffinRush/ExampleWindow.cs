@@ -17,6 +17,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using Soomla;
+using Soomla.Store;
+using Soomla.Levelup;
+using Soomla.Profile;
 
 namespace Soomla.Store.Example {
 
@@ -32,8 +35,7 @@ namespace Soomla.Store.Example {
 		private Vector2 productScrollPosition = Vector2.zero;
 		private bool isDragging = false;
 		private Vector2 startTouch = Vector2.zero;
-
-		private bool checkAffordable = false;
+		private static ExampleEventHandler handler;
 
 		public string fontSuffix = "";
 
@@ -77,18 +79,24 @@ namespace Soomla.Store.Example {
 		private Texture2D tGetMore;
 		private Font tTitle;
 		private Dictionary<string, Texture2D> itemsTextures;
-		private Dictionary<string, bool> itemsAffordability;
 
-        private Reward firstLaunchReward;
 
 		/// <summary>
 		/// Starts this instance.
 		/// Use this for initialization.
 		/// </summary>
 		void Start () {
-			StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;
-			StoreEvents.OnCurrencyBalanceChanged += onCurrencyBalanceChanged;
-			StoreEvents.OnUnexpectedStoreError += onUnexpectedStoreError;
+
+			handler = new ExampleEventHandler();
+
+			SoomlaStore.Initialize(new MuffinRushAssets());
+
+			SoomlaProfile.Initialize ();
+
+			//levelup
+			World mainWorld = WorldGenerator.GenerateCustomWorld ();
+			SoomlaLevelUp.Initialize (mainWorld);
+//			WorldGenerator.Play (mainWorld);
 
 			tImgDirect = (Texture2D)Resources.Load("SoomlaStore/images/img_direct");
 			fgoodDog = (Font)Resources.Load("SoomlaStore/GoodDog" + fontSuffix);
@@ -103,38 +111,10 @@ namespace Soomla.Store.Example {
 			tBack = (Texture2D)Resources.Load("SoomlaStore/images/back");
 			tGetMore = (Texture2D)Resources.Load("SoomlaStore/images/GetMore");
 			tTitle = (Font)Resources.Load("SoomlaStore/Title" + fontSuffix);
-
-            firstLaunchReward = new VirtualItemReward("first-launch", "Give Money at first launch", MuffinRushAssets.MUFFIN_CURRENCY_ITEM_ID, 4000);
-			SoomlaStore.Initialize(new MuffinRushAssets());
 		}
 
-		public void onUnexpectedStoreError(int errorCode) {
-			SoomlaUtils.LogError ("ExampleEventHandler", "error with code: " + errorCode);
-		}
-
-		public void onSoomlaStoreInitialized() {
-
-			// some usage examples for add/remove currency
-			// some examples
-			if (StoreInfo.Currencies.Count>0) {
-				try {
-					//First launch reward
-                    if(!firstLaunchReward.Owned)
-                    {
-                        firstLaunchReward.Give();
-                    }
-
-                    //How to give currency
-                    //StoreInventory.GiveItem(StoreInfo.Currencies[0].ItemId,4000);
-					SoomlaUtils.LogDebug("SOOMLA ExampleEventHandler", "Currency balance:" + StoreInventory.GetItemBalance(StoreInfo.Currencies[0].ItemId));
-				} catch (VirtualItemNotFoundException ex){
-					SoomlaUtils.LogError("SOOMLA ExampleWindow", ex.Message);
-				}
-			}
-
-			setupItemsTextures();
-
-			setupItemsAffordability ();
+		public static ExampleWindow GetInstance() {
+			return instance;
 		}
 
 		public void setupItemsTextures() {
@@ -145,23 +125,6 @@ namespace Soomla.Store.Example {
 			}
 			foreach(VirtualCurrencyPack vcp in StoreInfo.CurrencyPacks){
 				itemsTextures[vcp.ItemId] = (Texture2D)Resources.Load("SoomlaStore/images/" + vcp.Name);
-			}
-		}
-
-		public void setupItemsAffordability() {
-			itemsAffordability = new Dictionary<string, bool> ();
-
-			foreach (VirtualGood vg in StoreInfo.Goods) {
-				itemsAffordability.Add(vg.ID, StoreInventory.CanAfford(vg.ID));
-			}
-		}
-
-		public void onCurrencyBalanceChanged(VirtualCurrency virtualCurrency, int balance, int amountAdded) {
-			if (itemsAffordability != null)
-			{
-				List<string> keys = new List<string> (itemsAffordability.Keys);
-				foreach(string key in keys)
-					itemsAffordability[key] = StoreInventory.CanAfford(key);
 			}
 		}
 
@@ -288,13 +251,14 @@ namespace Soomla.Store.Example {
 			GUI.Label(new Rect(10,10,Screen.width-10,Screen.height-10),"SOOMLA Example Store");
 			GUI.color = Color.black;
 			GUI.skin.label.alignment = TextAnchor.UpperRight;
-			string cItemId = StoreInfo.Currencies[0].ItemId;
-			GUI.Label(new Rect(10,10,Screen.width-40,20),""+ StoreInventory.GetItemBalance(cItemId));
-			checkAffordable = GUI.Toggle(new Rect(10,30,Screen.width-40,20), checkAffordable, "Check Affordability");
-
+			GUI.Label(new Rect(10,10,Screen.width-40,Screen.height),""+ StoreInventory.GetItemBalance(StoreInfo.Currencies[0].ItemId));
 			GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 			GUI.skin.label.font = fTitle;
 			GUI.Label(new Rect(0,Screen.height/8f,Screen.width,Screen.height/8f),"Virtual Goods");
+
+			if(GUI.Button(new Rect(10,30,Screen.width-40,20), "Login")){
+				SoomlaProfile.Login(Provider.GOOGLE, "", null);
+			}
 
 			GUI.color = backupColor;
 			GUI.DrawTexture(new Rect(Screen.width-30,10,30,30), tMuffins);
@@ -307,22 +271,12 @@ namespace Soomla.Store.Example {
 			float y = 0;
 			foreach(VirtualGood vg in StoreInfo.Goods){
 				GUI.color = backupColor;
-
-				bool isAffordable = true;
-				if (checkAffordable){
-					bool affordable;
-					if (itemsAffordability.TryGetValue(vg.ID, out affordable))
-						isAffordable = affordable;
-				}
-
-				GUI.enabled = isAffordable;
-
 				if(GUI.Button(new Rect(0,y,Screen.width,productSize),"") && !isDragging){
 					Debug.Log("SOOMLA/UNITY wants to buy: " + vg.Name);
 					try {
 						StoreInventory.BuyItem(vg.ItemId);
 					} catch (Exception e) {
-						Debug.LogError ("SOOMLA/UNITY " + e.Message);
+						Debug.Log ("SOOMLA/UNITY " + e.Message);
 					}
 				}
 				GUI.DrawTexture(new Rect(0,y,Screen.width,productSize),tWhitePixel);
@@ -339,28 +293,17 @@ namespace Soomla.Store.Example {
 				GUI.skin.label.font = fDesc;
 				GUI.Label(new Rect(productSize + 10f,y+productSize/3f,Screen.width-productSize-15f,productSize/3f),vg.Description);
 				//set price
-				if (vg.PurchaseType is PurchaseWithVirtualItem) {
+				if (vg.PurchaseType is PurchaseWithVirtualItem)
 					GUI.Label(new Rect(Screen.width/2f,y+productSize*2/3f,Screen.width,productSize/3f),"price:" + ((PurchaseWithVirtualItem)vg.PurchaseType).Amount);
-				}
-				else {
-					string price = ((PurchaseWithMarket)vg.PurchaseType).MarketItem.MarketPriceAndCurrency;
-					if (string.IsNullOrEmpty(price)) {
-						price = ((PurchaseWithMarket)vg.PurchaseType).MarketItem.Price.ToString("0.00");
-					}
-					GUI.Label(new Rect(Screen.width/2f,y+productSize*2/3f,Screen.width,productSize/3f),"price: " + price);
-				}
+				else
+					GUI.Label(new Rect(Screen.width/2f,y+productSize*2/3f,Screen.width,productSize/3f),"price:$ " + ((PurchaseWithMarket)vg.PurchaseType).MarketItem.Price.ToString("0.00"));
 				GUI.Label(new Rect(Screen.width*3/4f,y+productSize*2/3f,Screen.width,productSize/3f), "Balance:" + StoreInventory.GetItemBalance(vg.ItemId));
-
 				GUI.skin.label.alignment = TextAnchor.UpperRight;
 				GUI.skin.label.font = fBuy;
-				if (GUI.enabled)
-					GUI.Label(new Rect(0,y,Screen.width-10,productSize),"Click to buy");
-				else
-					GUI.Label(new Rect(0,y,Screen.width-10,productSize),"Cannot afford");
+				GUI.Label(new Rect(0,y,Screen.width-10,productSize),"Click to buy");
 				GUI.color = Color.grey;
 				GUI.DrawTexture(new Rect(0,y+productSize-1,Screen.width,1),tWhitePixel);
 				y+= productSize;
-				GUI.enabled = true;
 			}
 			GUI.EndScrollView();
 			//We have just ended the scroll view this means that all the positions are relative top-left corner again.
@@ -402,8 +345,7 @@ namespace Soomla.Store.Example {
 			GUI.Label(new Rect(10,10,Screen.width-10,Screen.height-10),"SOOMLA Example Store");
 			GUI.color = Color.black;
 			GUI.skin.label.alignment = TextAnchor.UpperRight;
-			string cItemId = StoreInfo.Currencies[0].ItemId;
-			GUI.Label(new Rect(10,10,Screen.width-40,Screen.height),""+ StoreInventory.GetItemBalance(cItemId));
+			GUI.Label(new Rect(10,10,Screen.width-40,Screen.height),""+StoreInventory.GetItemBalance(StoreInfo.Currencies[0].ItemId));
 			GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 			GUI.skin.label.font = tTitle;
 			GUI.Label(new Rect(0,Screen.height/8f,Screen.width,Screen.height/8f),"Virtual Currency Packs");
@@ -438,11 +380,7 @@ namespace Soomla.Store.Example {
 				GUI.Label(new Rect(productSize,y,Screen.width,productSize/3f),cp.Name);
 				GUI.skin.label.font = fDesc;
 				GUI.Label(new Rect(productSize + 10f,y+productSize/3f,Screen.width-productSize-15f,productSize/3f),cp.Description);
-				string price = ((PurchaseWithMarket)cp.PurchaseType).MarketItem.MarketPriceAndCurrency;
-				if (string.IsNullOrEmpty(price)) {
-					price = ((PurchaseWithMarket)cp.PurchaseType).MarketItem.Price.ToString("0.00");
-				}
-				GUI.Label(new Rect(Screen.width*3/4f,y+productSize*2/3f,Screen.width,productSize/3f),"price:" + price);
+				GUI.Label(new Rect(Screen.width*3/4f,y+productSize*2/3f,Screen.width,productSize/3f),"price:" + ((PurchaseWithMarket)cp.PurchaseType).MarketItem.Price.ToString("0.00"));
 				GUI.skin.label.alignment = TextAnchor.UpperRight;
 				GUI.skin.label.font = fBuy;
 				GUI.Label(new Rect(0,y,Screen.width-10,productSize),"Click to buy");
