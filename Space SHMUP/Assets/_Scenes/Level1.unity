@@ -5970,7 +5970,7 @@ Transform:
   m_Children:
   - {fileID: 617561653}
   m_Father: {fileID: 1321484645}
-  m_RootOrder: 12
+  m_RootOrder: 9
 --- !u!1 &1190735221 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 141812, guid: 6a41a030baf6e114689c24b213f1b1ae, type: 2}
@@ -6985,10 +6985,10 @@ Transform:
   - {fileID: 728624474}
   - {fileID: 2087747235}
   - {fileID: 1059944477}
+  - {fileID: 1190502642}
   - {fileID: 1167538885}
   - {fileID: 1836599512}
   - {fileID: 673546016}
-  - {fileID: 1190502642}
   m_Father: {fileID: 0}
   m_RootOrder: 5
 --- !u!114 &1321484646
@@ -7058,6 +7058,7 @@ MonoBehaviour:
   shieldUpgradeOwned: 0
   speedUpgradeOwned: 0
   isInvincible: 0
+  launch1: 0
   popText: {fileID: 186940, guid: 5abd7a417a1184b4a909c373dd4eae43, type: 2}
   target: {x: 0, y: 0, z: 0}
   tilt: 5
@@ -8594,6 +8595,8 @@ MonoBehaviour:
   finalScoreText: {fileID: 399248327}
   prevBalanceText: {fileID: 437795089}
   popText: {fileID: 1615321328}
+  missileEquipped: 0
+  missilePowerUp: {fileID: 110130, guid: 961c0c66ec4d86c40b7734e829e00abc, type: 2}
   ______________: 0
   spreadEquipped: 0
   weaponrySet: 0
@@ -10139,7 +10142,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 991564944e0915648b7ecf0f9cbb13f5, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 991564944e0915648b7ecf0f9cbb13f5, type: 2}
       propertyPath: audioSource

@@ -43,7 +43,7 @@ public class Hero : MonoBehaviour {
 	public bool					shieldUpgradeOwned = false;
 	public bool					speedUpgradeOwned = false;
 	public bool isInvincible;
-	private bool launch1;
+	public bool launch1;
 
 	public GameObject popText;
 	
@@ -224,9 +224,8 @@ public class Hero : MonoBehaviour {
 
 		if (missileEquipped && fireButton.CanLaunch() && !launch1) {
 			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
-			launch1 = true;
-//			Missile.SendMessage("Fire");
-			missileArt.SetActive(false);
+			TakeMissile();
+
 
 			//			Debug.Log("fireDelegate has been called");
 		}
@@ -330,6 +329,7 @@ public class Hero : MonoBehaviour {
 		}
 
 //		laserEquipped = true;
+		missileEquipped = true;
 	}
 
 	//This variable holds a reference to the last triggering GameObject
@@ -397,7 +397,7 @@ public class Hero : MonoBehaviour {
 //		Debug.Log ("The shield level is " + shieldLevel);
 		if (shieldUpgradeOwned) {
 			if ((shieldCounter == true) && (shieldLevel != 0)) {
-//			Debug.Log("Shield absorped the hit");
+//			Debug.Log("Shield absorbed the hit");
 				shieldCounter = false;
 //			Debug.Log("The shield counter is now " + shieldCounter);
 			} else {
@@ -426,13 +426,20 @@ public class Hero : MonoBehaviour {
 		Main.S.AddScore (10);
 		Instantiate(popText, transform.position, Quaternion.identity);
 			PowerUp pu = go.GetComponent<PowerUp>();
-			switch (pu.type) {
+		Debug.Log("pu.type is " + pu.type);
+		switch (pu.type) {
+
 			case WeaponType.shield: // If it's the shield
 				shieldLevel++;
 				break;
 
 			case WeaponType.speed:
 			speed += 5;
+			break;
+
+			case WeaponType.missile:
+			Debug.Log("Hero absorbed a missile");
+			GiveMissile();
 			break;
 
 			default: // If it's any Weapon PowerUp
@@ -465,7 +472,18 @@ public class Hero : MonoBehaviour {
 			}
 			pu.AbsorbedBy(this.gameObject);
 		}
-		
+
+	public void GiveMissile(){
+		launch1 = false;
+		missileArt.SetActive(true);
+	}
+
+
+	public void TakeMissile(){
+		launch1 = true;
+		missileArt.SetActive(false);
+	}
+	
 		Weapon GetEmptyWeaponSlot() {
 			for (int i = 0; i < weapons.Length; i++) {
 				if (weapons[i].type == WeaponType.none) {

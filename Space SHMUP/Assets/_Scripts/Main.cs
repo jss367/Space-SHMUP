@@ -36,6 +36,8 @@ public class Main : MonoBehaviour {
 	public Text			finalScoreText;
 	public Text			prevBalanceText;
 	public Text			popText;
+	public bool missileEquipped;
+	public GameObject missilePowerUp;
 
 	public bool ______________;
 
@@ -160,6 +162,20 @@ public class Main : MonoBehaviour {
 		{
 			Debug.Log("Caught error: " + e);
 		}
+
+		try
+		{
+			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.MISSILE_LAUNCHER_ITEM_ID)){
+				missileEquipped = true;
+			}
+			
+		}
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+		}
+
+		missileEquipped = true;
 //		laserEquipped = true;	
 	}
 
@@ -241,6 +257,13 @@ public class Main : MonoBehaviour {
 			pu.transform.position = e.transform.position;
 		}
 
+		// change to Hero.S.missileEquipped
+		Debug.Log (missileEquipped);
+		Debug.Log (Hero.S.launch1);
+		if (missileEquipped && Hero.S.launch1 && Random.value <= e.missileDropChance) {
+			Debug.Log("Dropping missile power up");
+			Instantiate(missilePowerUp, e.transform.position, e.transform.rotation);
+		}
 		if (combo) {
 			AddScore (e.score * 2);
 		} else {
