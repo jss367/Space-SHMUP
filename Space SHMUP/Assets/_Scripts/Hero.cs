@@ -329,7 +329,7 @@ public class Hero : MonoBehaviour {
 		}
 
 //		laserEquipped = true;
-		missileEquipped = true;
+//		missileEquipped = true;
 	}
 
 	//This variable holds a reference to the last triggering GameObject

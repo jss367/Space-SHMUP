@@ -175,7 +175,7 @@ public class Main : MonoBehaviour {
 			Debug.Log("Caught error: " + e);
 		}
 
-		missileEquipped = true;
+//		missileEquipped = true;
 //		laserEquipped = true;	
 	}
 
@@ -295,13 +295,6 @@ public class Main : MonoBehaviour {
 		}
 		
 	}
-
-
-
-//	public void DelayedRestart(float delay) {
-//		//Invoke the Restart() method in delay seconds
-//		Invoke ("Restart", delay);
-//	}
 
 
 	public void PlayerLoss()
@@ -510,7 +503,6 @@ public class Main : MonoBehaviour {
 
 	public void RestartLevel()
 	{
-		//		Application.LoadLevel (Application.loadedLevel);
 		MadLevel.LoadLevelByName (currentLevel);
 	}
 

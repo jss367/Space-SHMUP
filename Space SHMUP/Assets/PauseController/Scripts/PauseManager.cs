@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Audio;
 using System.Collections;
+using MadLevelManager;
 
 public class PauseManager : MonoBehaviour {
 	public GameObject pausable;
@@ -81,5 +82,8 @@ public class PauseManager : MonoBehaviour {
 			if( pausableInterface != null )
 				pausableInterface.OnPause ();
 		}
+	}
+	public void OnRestart(){
+		MadLevel.LoadLevelByName (MadLevel.currentLevelName);
 	}
 }
