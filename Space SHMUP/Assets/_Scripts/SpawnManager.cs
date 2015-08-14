@@ -27,10 +27,13 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject AsteroidSpawn8;
 	public GameObject AsteroidSpawn9;
 	public GameObject EnemySpawn0d1;
+	public GameObject EnemySpawn0d15;
 	public GameObject EnemySpawn1d1;
+	public GameObject EnemySpawn1d15;
 	public GameObject EnemySpawn1d2;
 	public GameObject EnemySpawn1d3;
 	public GameObject EnemySpawn2d1;
+	public GameObject EnemySpawn2d15;
 	public GameObject EnemySpawn2d2;
 	public GameObject EnemySpawn2d3;
 	public GameObject EnemySpawn3d1;
