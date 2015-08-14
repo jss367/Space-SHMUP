@@ -135,7 +135,7 @@ public class Hero : MonoBehaviour {
 		}
 
 		if (!missileEquipped) {
-			missile.SetActive(false);
+//			missile.SetActive(false);
 			missileArt.SetActive(false);
 			missileLaunchLocation.SetActive(false);
 		    MissileLauncher.SetActive(false);
