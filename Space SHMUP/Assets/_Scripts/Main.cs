@@ -351,7 +351,6 @@ public class Main : MonoBehaviour {
 			victoryBonusText.text = "Level Completion Bonus : " + victoryBonus;
 			}
 		StartCoroutine (CountScore());
-//		finalScoreText.text = "Final Score: " + score;
 		StoreHighScore (score);
 		if (!pointsGiven) {
 //			Debug.Log("pointsGiven is " + pointsGiven);
@@ -366,28 +365,31 @@ public class Main : MonoBehaviour {
 			}
 			pointsGiven = true;
 		}
-		currentAccountText.text = "New Balance : " + (prevBalance + score) + " Coins";
-		currentAccountText.enabled = true;
-//		} catch (Exception e) {
-//			Debug.LogError ("SOOMLA/UNITY " + e.Message);
-//		}
-		finalScoreText.enabled = true;
+
+
 	}
 	IEnumerator CountScore(){
 		int displayScore = 0;
 		int updateScore = 5;
 
-		while (displayScore < score){
-			if (score - updateScore > 10000) {
+		while (displayScore <= score){
+//			Debug.Log(score - displayScore);
+			if (score - displayScore > 10000) {
 				updateScore = 1000;
-			} else if (score - updateScore > 1000) {
+//				Debug.Log(updateScore);
+			} else if (score - displayScore > 1000) {
 				updateScore = 100;
-			} else if (score - updateScore > 100) {
+//				Debug.Log(updateScore);
+			} else if (score - displayScore > 100) {
 				updateScore = 10;
+//				Debug.Log(updateScore);
+			} else if (score - displayScore > 10) {
+				displayScore = score;
+				updateScore = 0;
 			}
 			displayScore+= updateScore;
 			yield return new WaitForSeconds(.01f);
-			finalScoreText.text = "Final Score: " + displayScore;
+
 			if (displayScore == earth1){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
 				Instantiate(earthReward, pos1, Quaternion.identity);
@@ -401,6 +403,10 @@ public class Main : MonoBehaviour {
 				Instantiate(earthReward, pos3, Quaternion.identity);
 			}
 				}
+		finalScoreText.text = "Final Score: " + displayScore;
+		finalScoreText.enabled = true;
+		currentAccountText.text = "New Balance : " + (prevBalance + score) + " Coins";
+		currentAccountText.enabled = true;
 	}
 
 	public void GiveVictoryBonus (){

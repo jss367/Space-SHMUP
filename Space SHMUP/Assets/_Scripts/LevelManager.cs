@@ -91,7 +91,7 @@ public class LevelManager : MonoBehaviour {
 //	}
 
 	IEnumerator Wave(int level){
-		Debug.Log ("Wave has been called");
+//		Debug.Log ("Wave has been called");
 		SpawnManager.instance.WaveText.text = "Wave " + level + " of " + numWaves;
 		SpawnManager.instance.WaveText.enabled = true;
 		yield return new WaitForSeconds(2);
@@ -269,7 +269,7 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
 				
-			} else if (timer < 33.5) {
+			} else if (timer < 34) {
 							
 				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
 
@@ -312,7 +312,7 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
 
 			} else if (timer < 103) {
-				StartCoroutine (Wave(4));
+				StartCoroutine (Wave(5));
 				SpawnManager.instance.EnemySpawn1d1.SetActive (false);
 				SpawnManager.instance.EnemySpawn4d2.SetActive (false);
 				SpawnManager.instance.AsteroidSpawn7.SetActive (false);

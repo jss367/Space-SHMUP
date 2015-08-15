@@ -20,6 +20,7 @@ public class Missile : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter (Collider coll){
+//		Debug.Log ("This missile hit "+ coll);
 		enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		for (int i = 0; i < enemies.Length; i++) {
 			Destroy(enemies[i]);

@@ -82,7 +82,7 @@ PlayerSettings:
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   productGUID: 7deddccf7f23ed747b3293f34b6b7cab
-  AndroidBundleVersionCode: 43
+  AndroidBundleVersionCode: 44
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 0
   aotOptions: 
@@ -260,10 +260,15 @@ PlayerSettings:
   psmSplashimage: {fileID: 0}
   spritePackerPolicy: 
   scriptingDefineSymbols:
-    1: 
-    2: 
-    4: 
-    7: 
+    1: CROSS_PLATFORM_INPUT
+    2: CROSS_PLATFORM_INPUT
+    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    14: MOBILE_INPUT
+    15: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    16: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    17: MOBILE_INPUT
+    20: MOBILE_INPUT
   metroPackageName: soomla-template
   metroPackageLogo: 
   metroPackageLogo140: 

@@ -915,6 +915,10 @@ Prefab:
       propertyPath: m_Name
       value: '!MixBackground'
       objectReference: {fileID: 0}
+    - target: {fileID: 11471384, guid: 86c0c5e01e5c7b94d8db3336fc6b2d99, type: 2}
+      propertyPath: topOfObject
+      value: 
+      objectReference: {fileID: 854476943}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86c0c5e01e5c7b94d8db3336fc6b2d99, type: 2}
   m_IsPrefabParent: 0
@@ -1150,7 +1154,7 @@ MonoBehaviour:
   Level1Background: {fileID: 1260927805}
   Level2Background: {fileID: 436054646}
   Level3Background: {fileID: 548019161}
-  Level4Background: {fileID: 296084977}
+  Level4Background: {fileID: 1160757984}
   Level5Background: {fileID: 1160757984}
   Level6Background: {fileID: 2058778672}
   Level7Background: {fileID: 1629793665}
@@ -1181,10 +1185,6 @@ Transform:
   - {fileID: 1225849020}
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!1 &296084977 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 191100, guid: 26ff48e04ad9bb64ba2ffb56739cdf70, type: 2}
-  m_PrefabInternal: {fileID: 79249022}
 --- !u!4 &296084978 stripped
 Transform:
   m_PrefabParentObject: {fileID: 495522, guid: 26ff48e04ad9bb64ba2ffb56739cdf70, type: 2}
@@ -2459,6 +2459,10 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 617561652}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &617702149 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 427596, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+  m_PrefabInternal: {fileID: 1213125452}
 --- !u!1 &623526746
 GameObject:
   m_ObjectHideFlags: 0
@@ -3426,6 +3430,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 747386739}
+--- !u!4 &757553409 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 414304, guid: 86c0c5e01e5c7b94d8db3336fc6b2d99, type: 2}
+  m_PrefabInternal: {fileID: 250964878}
 --- !u!115 &787962525
 MonoScript:
   m_ObjectHideFlags: 0
@@ -3661,6 +3669,33 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 118438, guid: 9b1593601b6495e43a1448e574bcb312, type: 2}
   randomOffset: {x: 40, y: 10, z: 0}
+--- !u!1 &854476943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 854476944}
+  m_Layer: 14
+  m_Name: TopOfPlanet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &854476944
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 854476943}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.89999962, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 757553409}
+  m_RootOrder: 2
 --- !u!115 &867557817
 MonoScript:
   m_ObjectHideFlags: 0
@@ -4600,6 +4635,7 @@ MonoBehaviour:
   planetRotation: {x: -5, y: -5, z: 0}
   isTimer: 1
   velocity: {x: 0, y: 0}
+  topOfObject: {fileID: 0}
 --- !u!114 &1039923471 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400014, guid: 991564944e0915648b7ecf0f9cbb13f5,
@@ -5545,7 +5581,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 168828, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 427596, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
       propertyPath: m_LocalScale.x
@@ -5583,6 +5619,10 @@ Prefab:
       propertyPath: m_Name
       value: HighTension5Background
       objectReference: {fileID: 0}
+    - target: {fileID: 11479830, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
+      propertyPath: topOfObject
+      value: 
+      objectReference: {fileID: 1764371005}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
   m_IsPrefabParent: 0
@@ -8630,6 +8670,33 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
+--- !u!1 &1764371005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1764371006}
+  m_Layer: 14
+  m_Name: TopOfStar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1764371006
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1764371005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: -12.1300001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 617702149}
+  m_RootOrder: 7
 --- !u!1 &1767835997
 GameObject:
   m_ObjectHideFlags: 0
@@ -9918,7 +9985,7 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
-  triggerThreshold: .400000006
+  triggerThreshold: .5
   triggerReactivateDelay: 2
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -9941,8 +10008,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 2
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .699999988
+  triggerThreshold: .449999988
+  triggerReactivateDelay: 1
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -9965,7 +10032,7 @@ MonoBehaviour:
   m_szLastControllerName: High
   triggerType: 2
   triggerThreshold: .400000006
-  triggerReactivateDelay: .600000024
+  triggerReactivateDelay: 1
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}

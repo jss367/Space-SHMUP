@@ -91,6 +91,7 @@ public class Hero : MonoBehaviour {
 	public GameObject MineDropper;
 	private GameObject Mine;
 //	public GameObject Laser;
+	public int autoShootOn = 1;
 
 	public bool weaponOff;
 
@@ -105,7 +106,8 @@ public class Hero : MonoBehaviour {
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
 		CheckInventory ();
-
+		autoShootOn = PlayerPrefs.GetInt ("AutoShoot");
+		Debug.Log ("autoShootOn is " + autoShootOn);
 		if (spreadEquipped == true) {
 //			Debug.Log ("Spread is owned");
 			weapons [0].SetType (WeaponType.spread);
@@ -217,9 +219,19 @@ public class Hero : MonoBehaviour {
 ////			Debug.Log("fireDelegate has been called");
 //		}
 
-		if ((fireButton.CanFire() || cNABstractController.CanFire()) && fireDelegate != null && !weaponOff) {
-			fireDelegate ();
-			//			Debug.Log("fireDelegate has been called");
+
+		if (autoShootOn == 0) {
+			if (fireButton.CanFire () && fireDelegate != null && !weaponOff) {
+				fireDelegate ();
+				//			Debug.Log("fireDelegate has been called");
+			}
+
+		} else {
+			if ((fireButton.CanFire () || cNABstractController.CanFire ()) && fireDelegate != null && !weaponOff) {
+				fireDelegate ();
+				//			Debug.Log("fireDelegate has been called");
+			}
+
 		}
 
 		if (missileEquipped && fireButton.CanLaunch() && !launch1) {
