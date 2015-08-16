@@ -258,8 +258,8 @@ public class Main : MonoBehaviour {
 		}
 
 		// change to Hero.S.missileEquipped
-		Debug.Log (missileEquipped);
-		Debug.Log (Hero.S.launch1);
+//		Debug.Log (missileEquipped);
+//		Debug.Log (Hero.S.launch1);
 		if (missileEquipped && Hero.S.launch1 && Random.value <= e.missileDropChance) {
 			Debug.Log("Dropping missile power up");
 			Instantiate(missilePowerUp, e.transform.position, e.transform.rotation);
@@ -369,27 +369,28 @@ public class Main : MonoBehaviour {
 
 	}
 	IEnumerator CountScore(){
+		Debug.Log ("Counting the score");
 		int displayScore = 0;
-		int updateScore = 5;
+		int updateAmount = 0;
 
-		while (displayScore <= score){
-//			Debug.Log(score - displayScore);
+		while (displayScore < score){
+			Debug.Log(score - displayScore);
 			if (score - displayScore > 10000) {
-				updateScore = 1000;
-//				Debug.Log(updateScore);
+				updateAmount = 1000;
+				//				Debug.Log(updateAmount);
 			} else if (score - displayScore > 1000) {
-				updateScore = 100;
-//				Debug.Log(updateScore);
+				updateAmount = 100;
+				//				Debug.Log(updateAmount);
 			} else if (score - displayScore > 100) {
-				updateScore = 10;
-//				Debug.Log(updateScore);
-			} else if (score - displayScore > 10) {
+				updateAmount = 10;
+				//				Debug.Log(updateAmount);
+			} else {
 				displayScore = score;
-				updateScore = 0;
+				updateAmount = 0;
 			}
-			displayScore+= updateScore;
-			yield return new WaitForSeconds(.01f);
 
+			displayScore+= updateAmount;
+		
 			if (displayScore == earth1){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
 				Instantiate(earthReward, pos1, Quaternion.identity);
@@ -402,9 +403,12 @@ public class Main : MonoBehaviour {
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
 				Instantiate(earthReward, pos3, Quaternion.identity);
 			}
+			finalScoreText.text = "Final Score: " + displayScore;
+			finalScoreText.enabled = true;
+			yield return new WaitForSeconds(.01f);
 				}
-		finalScoreText.text = "Final Score: " + displayScore;
-		finalScoreText.enabled = true;
+		Debug.Log ("Displaying final score");
+
 		currentAccountText.text = "New Balance : " + (prevBalance + score) + " Coins";
 		currentAccountText.enabled = true;
 	}

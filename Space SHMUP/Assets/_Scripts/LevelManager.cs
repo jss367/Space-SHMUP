@@ -206,7 +206,57 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+
 	void Level3Update () {
+		// This is for 6Ectoplasm2_125_48
+		if (!Main.S.stopSpawning) {
+			
+			if (timer < 1.5){
+				StartCoroutine (Wave(1));
+			} else if (timer < 5) {
+				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
+				
+			} else if (timer < 37.1) {
+				
+
+				//			AsteroidSpawn0.SetActive(true);
+//				SpawnManager.instance.AsteroidSpawn.SetActive (true);
+				SpawnManager.instance.EnemySpawn1d05.SetActive (true);
+				
+			} else if (timer < 39) {
+				StartCoroutine (Wave(2));
+				SpawnManager.instance.AsteroidSpawn0.SetActive (false);
+				SpawnManager.instance.EnemySpawn1d05.SetActive (false);
+				
+			} else if (timer < 41) {
+				
+				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+
+			} else if (timer < 55.5) {
+				SpawnManager.instance.EnemySpawn1d05.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
+
+
+			} else if (timer < 57) {
+				StartCoroutine (Wave(3));
+				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
+				SpawnManager.instance.AsteroidSpawn0.SetActive (false);
+				SpawnManager.instance.AsteroidSpawn2.SetActive (false);
+			} else {
+	;
+				
+				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
+				SpawnManager.instance.EnemySpawn1d05.SetActive(true);
+				
+			}
+			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
+		}
+	}
+
+
+
+	void Level13Update () {
 		// This is for 90 seconds of funk
 		if (!Main.S.stopSpawning) {
 

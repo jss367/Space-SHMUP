@@ -77,7 +77,7 @@ public class AudioManager : MonoBehaviour {
 			audioClip [0] = Resources.Load ("Music/2_90-12Remix_48") as AudioClip;
 			break;
 		case "Level 3":
-			audioClip [0] = Resources.Load ("Music/3_90SecondsOfFunk_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/6Ectoplasm2_125_48") as AudioClip;
 			break;
 		case "Level 4":
 			audioClip [0] = Resources.Load ("Music/4HighTension_48") as AudioClip;

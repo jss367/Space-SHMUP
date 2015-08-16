@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 475432}
   - 33: {fileID: 3375250}
-  - 136: {fileID: 13640638}
+  - 65: {fileID: 6548698}
   - 23: {fileID: 2340856}
   - 54: {fileID: 5484266}
   - 114: {fileID: 11488460}
@@ -78,6 +78,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &6548698
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 198596}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .0700000003, y: .5, z: .5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11488460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,19 +102,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 0
---- !u!136 &13640638
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 198596}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .0299999993
-  m_Height: .5
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

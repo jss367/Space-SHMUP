@@ -438,7 +438,7 @@ public class Hero : MonoBehaviour {
 		Main.S.AddScore (10);
 		Instantiate(popText, transform.position, Quaternion.identity);
 			PowerUp pu = go.GetComponent<PowerUp>();
-		Debug.Log("pu.type is " + pu.type);
+//		Debug.Log("pu.type is " + pu.type);
 		switch (pu.type) {
 
 			case WeaponType.shield: // If it's the shield
@@ -450,7 +450,7 @@ public class Hero : MonoBehaviour {
 			break;
 
 			case WeaponType.missile:
-			Debug.Log("Hero absorbed a missile");
+//			Debug.Log("Hero absorbed a missile");
 			GiveMissile();
 			break;
 
