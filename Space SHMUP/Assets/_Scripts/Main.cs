@@ -379,8 +379,10 @@ public class Main : MonoBehaviour {
 				updateAmount = 1000;
 				//				Debug.Log(updateAmount);
 			} else if (score - displayScore > 1000) {
-				updateAmount = 100;
+				updateAmount = 250;
 				//				Debug.Log(updateAmount);
+			} else if (score - displayScore > 250) {
+				updateAmount = 50;
 			} else if (score - displayScore > 100) {
 				updateAmount = 10;
 				//				Debug.Log(updateAmount);

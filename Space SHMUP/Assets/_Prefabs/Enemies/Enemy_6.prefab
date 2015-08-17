@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 447136}
   - 54: {fileID: 5427838}
-  - 114: {fileID: 11490430}
+  - 114: {fileID: 11467778}
   - 33: {fileID: 3347136}
   - 23: {fileID: 2347136}
   - 114: {fileID: 11492666}
@@ -120,7 +120,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 25.9400005, y: 8.30000019, z: 5.90999985}
   m_Center: {x: 7.92665036e-15, y: .24344483, z: -6.40999985}
---- !u!114 &11490430
+--- !u!114 &11467778
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 147136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 832bf22e9d8e4cd40ab4285a1b316ce1, type: 3}
+  m_Script: {fileID: 11500000, guid: fac6666f0e3e992479489af0590b58fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
@@ -137,6 +137,7 @@ MonoBehaviour:
   score: 100
   showDamageForFrames: 2
   powerUpDropChance: .200000003
+  missileDropChance: .100000001
   _________________: 0
   comboTime: 1
   impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}

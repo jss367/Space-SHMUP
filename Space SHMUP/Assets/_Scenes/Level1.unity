@@ -251,6 +251,33 @@ SpriteRenderer:
 GameObject:
   m_PrefabParentObject: {fileID: 188048, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
   m_PrefabInternal: {fileID: 1656032695}
+--- !u!1 &58780044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 58780045}
+  m_Layer: 20
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &58780045
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 58780044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.10999966, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 208938830}
+  m_RootOrder: 0
 --- !u!1 &73301904 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 127410, guid: 81513f08e7605ee4f822606311a1e187, type: 2}
@@ -486,11 +513,11 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .25
+  triggerThreshold: .319999993
   triggerReactivateDelay: 0
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 8ed8b77a857d773459d126f269fa37b7, type: 2}
+  prefab: {fileID: 100000, guid: 85f5b8a8a76d38e4b9343fa517806b3f, type: 2}
   randomOffset: {x: 40, y: 10, z: 0}
 --- !u!114 &202516618
 MonoBehaviour:
@@ -509,11 +536,11 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .25
+  triggerThreshold: .330000013
   triggerReactivateDelay: 0
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: e3c14f07105472e4dabada80d9c0fe83, type: 2}
+  prefab: {fileID: 118438, guid: e03542d716aa9494a8fd8fbf82a9ff4c, type: 2}
   randomOffset: {x: 40, y: 10, z: 0}
 --- !u!1 &202882572
 GameObject:
@@ -528,7 +555,7 @@ GameObject:
   - 114: {fileID: 202882574}
   m_Layer: 0
   m_Name: EnemySpawn3-2
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -544,7 +571,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 12
+  m_RootOrder: 15
 --- !u!114 &202882574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +641,10 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
+--- !u!4 &208938830 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 415176, guid: 05b803fe58306454cb0ad8a50c5d67da, type: 2}
+  m_PrefabInternal: {fileID: 408562034}
 --- !u!1 &209653317
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,7 +801,7 @@ GameObject:
   - 114: {fileID: 226734156}
   m_Layer: 0
   m_Name: EnemySpawn1-1
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -873,7 +904,7 @@ GameObject:
   - 114: {fileID: 273271073}
   m_Layer: 0
   m_Name: AsteroidSpawn6
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -902,9 +933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 2
   triggerThreshold: .300000012
@@ -925,9 +956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
   triggerThreshold: .349999994
@@ -948,9 +979,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .400000006
@@ -972,7 +1003,7 @@ GameObject:
   - 114: {fileID: 293651017}
   m_Layer: 0
   m_Name: AsteroidSpawn2
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1087,10 +1118,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level1Background: {fileID: 1260927805}
   Level2Background: {fileID: 436054646}
-  Level3Background: {fileID: 2058778672}
-  Level4Background: {fileID: 1160757984}
-  Level5Background: {fileID: 1160757984}
-  Level6Background: {fileID: 2058778672}
+  Level3Background: {fileID: 1629793665}
+  Level4Background: {fileID: 2058778672}
+  Level5Background: {fileID: 1772288346}
+  Level6Background: {fileID: 1160757984}
   Level7Background: {fileID: 1629793665}
   Level8Background: {fileID: 2104386883}
   Level9Background: {fileID: 1772288346}
@@ -1118,7 +1149,7 @@ Transform:
   - {fileID: 2050972925}
   - {fileID: 1225849020}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
 --- !u!4 &296084978 stripped
 Transform:
   m_PrefabParentObject: {fileID: 495522, guid: 26ff48e04ad9bb64ba2ffb56739cdf70, type: 2}
@@ -1136,7 +1167,7 @@ GameObject:
   - 114: {fileID: 297429752}
   m_Layer: 0
   m_Name: EnemySpawn6-1
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1152,7 +1183,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 20
+  m_RootOrder: 23
 --- !u!114 &297429752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1653,8 +1684,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 194564, guid: 05b803fe58306454cb0ad8a50c5d67da, type: 2}
       propertyPath: m_Name
-      value: Level3Background
+      value: EctoplasmBackground
       objectReference: {fileID: 0}
+    - target: {fileID: 415176, guid: 05b803fe58306454cb0ad8a50c5d67da, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 494778, guid: 05b803fe58306454cb0ad8a50c5d67da, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428098, guid: 05b803fe58306454cb0ad8a50c5d67da, type: 2}
+      propertyPath: topOfObject
+      value: 
+      objectReference: {fileID: 58780044}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05b803fe58306454cb0ad8a50c5d67da, type: 2}
   m_IsPrefabParent: 0
@@ -1900,7 +1943,7 @@ GameObject:
   - 114: {fileID: 446151030}
   m_Layer: 0
   m_Name: EnemySpawn10-1
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1916,7 +1959,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 23
+  m_RootOrder: 26
 --- !u!114 &446151030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1961,7 +2004,7 @@ Transform:
   - {fileID: 575814566}
   - {fileID: 1279671435}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!114 &447367160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,6 +2036,9 @@ MonoBehaviour:
   EnemySpawn1d15: {fileID: 695935630}
   EnemySpawn1d2: {fileID: 829951261}
   EnemySpawn1d3: {fileID: 1444122489}
+  EnemySpawn15d1: {fileID: 1964562502}
+  EnemySpawn15d2: {fileID: 1706965114}
+  EnemySpawn15d3: {fileID: 596721840}
   EnemySpawn2d1: {fileID: 2001424116}
   EnemySpawn2d15: {fileID: 1447581452}
   EnemySpawn2d2: {fileID: 1752397855}
@@ -2011,28 +2057,6 @@ MonoBehaviour:
   EnemySpawn6d2: {fileID: 2129766639}
   EnemySpawn6d3: {fileID: 1225814382}
   EnemySpawn10d1: {fileID: 446151028}
-  Bass1: {fileID: 623526746}
-  Bass2: {fileID: 1950236570}
-  Bass3: {fileID: 1500794686}
-  Bass4: {fileID: 489052934}
-  Bass5: {fileID: 12840131}
-  Bass6: {fileID: 1803503337}
-  Bass7: {fileID: 1245158766}
-  Bass8: {fileID: 946850856}
-  Bass9: {fileID: 7064669}
-  Bass10: {fileID: 1266634887}
-  Bass11: {fileID: 1981375872}
-  Mid1: {fileID: 1462871984}
-  Mid2: {fileID: 853817553}
-  Mid3: {fileID: 202516615}
-  Mid4: {fileID: 1751042246}
-  Mid5: {fileID: 746093899}
-  Mid6: {fileID: 906621822}
-  Mid7: {fileID: 631541170}
-  Mid8: {fileID: 209653317}
-  Mid9: {fileID: 2011464954}
-  Mid10: {fileID: 1970911352}
-  Mid11: {fileID: 1041152285}
   Mid: {fileID: 0}
   Bass: {fileID: 0}
   WaveText: {fileID: 1391264869}
@@ -2048,15 +2072,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fc0c76fb4e0c34d92488d64cc77a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstBreak: 0
-  secondBreak: 0
-  thirdBreak: 0
-  timeLimit: 0
-  currentLevel: 
-  timer: 0
   spawningStoppedToggle: 0
   startRepeating: 0
   repeatFreq: .100000001
+  timeBetweenWaves: 5
+  waveOne: 2
+  waveTwo: 999
+  waveThree: 999
+  waveFour: 999
+  waveFive: 999
+  waveSix: 999
+  waveSeven: 999
+  waveEight: 999
+  waveNotReady: 0
 --- !u!114 &461689622 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20,
@@ -2114,12 +2142,113 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 5fd02c4bd69bb92419e8afcd1317a5ff, type: 2}
   randomOffset: {x: 40, y: 5, z: 0}
+--- !u!1 &503724011 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 124802, guid: 05b803fe58306454cb0ad8a50c5d67da, type: 2}
+  m_PrefabInternal: {fileID: 408562034}
+--- !u!4 &503724012 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 416342, guid: 05b803fe58306454cb0ad8a50c5d67da, type: 2}
+  m_PrefabInternal: {fileID: 408562034}
+--- !u!114 &503724013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 503724011}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d131df8a888ca48b6f2efb19568bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetRotation: {x: -5, y: -5, z: 0}
+  isTimer: 1
+  velocity: {x: 0, y: 0}
+  topOfObject: {fileID: 1512234472}
 --- !u!114 &510294838 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11468868, guid: 1dd47a0d984fce54eb4f1cc854854c20,
     type: 2}
   m_PrefabInternal: {fileID: 1303776319}
   m_Script: {fileID: 11500000, guid: 8c1ee253300ca944b8980fcbad0d5ea0, type: 3}
+--- !u!1 &521826860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 185242, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 521826861}
+  - 33: {fileID: 521826864}
+  - 23: {fileID: 521826863}
+  - 111: {fileID: 521826862}
+  m_Layer: 14
+  m_Name: RedNebula
+  m_TagString: SpaceScene_Nebula
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!4 &521826861
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 412670, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 521826860}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -50.4000015, y: -246.699997, z: -897.037292}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1160757985}
+  m_RootOrder: 1
+--- !u!111 &521826862
+Animation:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11123728, guid: 6cc42fbb02a6e274c86d161d7c6a641f,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 521826860}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!23 &521826863
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2352216, guid: 6cc42fbb02a6e274c86d161d7c6a641f,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 521826860}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 881417f7869cf0a4eb6efbe0ca7770e1, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &521826864
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 3300736, guid: 6cc42fbb02a6e274c86d161d7c6a641f,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 521826860}
+  m_Mesh: {fileID: 4300000, guid: 810181cad882d5c41b65f7f7a815125e, type: 3}
 --- !u!1 &538530826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2301,6 +2430,105 @@ Transform:
   - {fileID: 1041152286}
   m_Father: {fileID: 447367159}
   m_RootOrder: 1
+--- !u!1 &596721840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138296, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 596721841}
+  - 114: {fileID: 596721844}
+  - 114: {fileID: 596721843}
+  - 114: {fileID: 596721842}
+  m_Layer: 0
+  m_Name: EnemySpawn15-3
+  m_TagString: EnemyManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &596721841
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 485596, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596721840}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1279671435}
+  m_RootOrder: 8
+--- !u!114 &596721842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11443702, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596721840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: 1.20000005
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &596721843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11488360, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596721840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1039923473}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .449999988
+  triggerReactivateDelay: 1
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &596721844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11487694, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 596721840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1039923471}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: 1.5
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &617561652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2554,7 +2782,7 @@ GameObject:
   - 114: {fileID: 648639707}
   m_Layer: 0
   m_Name: AsteroidSpawn0
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2634,7 +2862,7 @@ GameObject:
   - 114: {fileID: 652432368}
   m_Layer: 0
   m_Name: AsteroidSpawn7
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2663,9 +2891,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 2
   triggerThreshold: .5
@@ -2686,9 +2914,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
   triggerThreshold: .409999996
@@ -2709,9 +2937,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .300000012
@@ -2791,7 +3019,7 @@ GameObject:
   - 114: {fileID: 685569752}
   m_Layer: 0
   m_Name: EnemySpawn4-3
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2807,7 +3035,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 16
+  m_RootOrder: 19
 --- !u!114 &685569752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2890,7 +3118,7 @@ GameObject:
   - 114: {fileID: 695935632}
   m_Layer: 0
   m_Name: EnemySpawn1-15
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3017,7 +3245,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 447532, guid: f28f266b515c6284db31db05413bfd54, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11447532, guid: f28f266b515c6284db31db05413bfd54, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -3094,6 +3322,54 @@ Prefab:
     - target: {fileID: 22447532, guid: f28f266b515c6284db31db05413bfd54, type: 2}
       propertyPath: m_AnchoredPosition.x
       value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490682, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490682, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11492560, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11492560, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 44
+      objectReference: {fileID: 0}
+    - target: {fileID: 11492560, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_FontData.m_RichText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490682, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_FontData.m_RichText
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22448272, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -250
+      objectReference: {fileID: 0}
+    - target: {fileID: 22448272, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 248
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490682, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490682, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11492560, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_FontData.m_Alignment
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11492560, guid: f28f266b515c6284db31db05413bfd54, type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f28f266b515c6284db31db05413bfd54, type: 2}
@@ -3388,7 +3664,7 @@ GameObject:
   - 114: {fileID: 829951263}
   m_Layer: 0
   m_Name: EnemySpawn1-2
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3975,6 +4251,52 @@ RectTransform:
   m_AnchoredPosition: {x: -3.5, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
+--- !u!1001 &933110222
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 294710934}
+    m_Modifications:
+    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 148046, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
+      propertyPath: m_Name
+      value: ChecksForFreeBackground
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &934008863
 GameObject:
   m_ObjectHideFlags: 0
@@ -5106,7 +5428,7 @@ GameObject:
   - 114: {fileID: 938143992}
   m_Layer: 0
   m_Name: EnemySpawn1-05
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5474,7 +5796,7 @@ GameObject:
   - 114: {fileID: 1009311333}
   m_Layer: 0
   m_Name: EnemySpawn3-1
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5490,7 +5812,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 10
+  m_RootOrder: 13
 --- !u!114 &1009311333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5638,6 +5960,10 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 184904, guid: 05b803fe58306454cb0ad8a50c5d67da, type: 2}
   m_PrefabInternal: {fileID: 408562034}
+--- !u!4 &1023922971 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 407582, guid: 05b803fe58306454cb0ad8a50c5d67da, type: 2}
+  m_PrefabInternal: {fileID: 408562034}
 --- !u!114 &1023922974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5652,7 +5978,7 @@ MonoBehaviour:
   planetRotation: {x: -5, y: -5, z: 0}
   isTimer: 1
   velocity: {x: 0, y: 0}
-  topOfObject: {fileID: 0}
+  topOfObject: {fileID: 1874061986}
 --- !u!114 &1039923471 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11400014, guid: 991564944e0915648b7ecf0f9cbb13f5,
@@ -5754,7 +6080,7 @@ GameObject:
   - 114: {fileID: 1058072201}
   m_Layer: 0
   m_Name: AsteroidSpawn9
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5783,12 +6109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
-  triggerThreshold: .400000006
+  triggerThreshold: .300000012
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -5806,12 +6132,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 2
-  triggerThreshold: .5
+  triggerThreshold: .25
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -5829,12 +6155,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
-  triggerThreshold: .400000006
+  triggerThreshold: .300000012
   triggerReactivateDelay: .25
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -5852,12 +6178,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 2
-  triggerThreshold: .449999988
+  triggerThreshold: .300000012
   triggerReactivateDelay: .100000001
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -5904,7 +6230,7 @@ GameObject:
   - 114: {fileID: 1140070269}
   m_Layer: 0
   m_Name: EnemySpawn3-15
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5920,7 +6246,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 11
+  m_RootOrder: 14
 --- !u!114 &1140070269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6065,7 +6391,7 @@ GameObject:
   - 114: {fileID: 1147616928}
   m_Layer: 0
   m_Name: AsteroidSpawn3
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6094,9 +6420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .5
@@ -6117,9 +6443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
   triggerThreshold: .200000003
@@ -6211,57 +6537,11 @@ Prefab:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 187346, guid: ec581efae09f66146b731dcb468d811f, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Name
+      value: SciFiBackground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ec581efae09f66146b731dcb468d811f, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1176389366
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 86cb00a0afec94f8b937f58d0f51f4d0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 6.77777815
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 86cb00a0afec94f8b937f58d0f51f4d0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -5.04554796
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 86cb00a0afec94f8b937f58d0f51f4d0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -12.9780874
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 86cb00a0afec94f8b937f58d0f51f4d0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -.707106829
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 86cb00a0afec94f8b937f58d0f51f4d0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 86cb00a0afec94f8b937f58d0f51f4d0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 86cb00a0afec94f8b937f58d0f51f4d0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: .707106709
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 86cb00a0afec94f8b937f58d0f51f4d0, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800000, guid: 86cb00a0afec94f8b937f58d0f51f4d0, type: 2}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 86cb00a0afec94f8b937f58d0f51f4d0, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1190260516
 GameObject:
@@ -6276,7 +6556,7 @@ GameObject:
   - 114: {fileID: 1190260518}
   m_Layer: 0
   m_Name: AsteroidSpawn5
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6305,9 +6585,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 2
   triggerThreshold: .300000012
@@ -6328,9 +6608,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
   triggerThreshold: .300000012
@@ -6351,9 +6631,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .300000012
@@ -6407,7 +6687,7 @@ GameObject:
   - 114: {fileID: 1191172631}
   m_Layer: 0
   m_Name: EnemySpawn4-1
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6423,7 +6703,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 14
+  m_RootOrder: 17
 --- !u!114 &1191172631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6680,7 +6960,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 168828, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
       propertyPath: m_Name
-      value: HighTension5Background
+      value: HighTensionBackground
       objectReference: {fileID: 0}
     - target: {fileID: 11479830, guid: 537e36c26cfc8104e851aef2974f3375, type: 2}
       propertyPath: topOfObject
@@ -6702,7 +6982,7 @@ GameObject:
   - 114: {fileID: 1225814384}
   m_Layer: 0
   m_Name: EnemySpawn6-3
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6718,7 +6998,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 22
+  m_RootOrder: 25
 --- !u!114 &1225814384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6999,6 +7279,9 @@ Transform:
   - {fileID: 695935631}
   - {fileID: 829951262}
   - {fileID: 1444122490}
+  - {fileID: 1964562503}
+  - {fileID: 1706965115}
+  - {fileID: 596721841}
   - {fileID: 2001424117}
   - {fileID: 1447581453}
   - {fileID: 1752397856}
@@ -7032,7 +7315,7 @@ GameObject:
   - 114: {fileID: 1287800356}
   m_Layer: 0
   m_Name: EnemySpawn3-3
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7048,7 +7331,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 13
+  m_RootOrder: 16
 --- !u!114 &1287800356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7215,7 +7498,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1321484644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -11.7200003, z: 0}
+  m_LocalPosition: {x: 0, y: -18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 573083516}
@@ -7233,7 +7516,7 @@ Transform:
   - {fileID: 673546016}
   - {fileID: 934008864}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!114 &1321484646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7901,7 +8184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &1444122489
 GameObject:
   m_ObjectHideFlags: 0
@@ -7915,7 +8198,7 @@ GameObject:
   - 114: {fileID: 1444122491}
   m_Layer: 0
   m_Name: EnemySpawn1-3
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8014,7 +8297,7 @@ GameObject:
   - 114: {fileID: 1447581454}
   m_Layer: 0
   m_Name: EnemySpawn2-15
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8030,7 +8313,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 7
+  m_RootOrder: 10
 --- !u!114 &1447581454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8113,7 +8396,7 @@ GameObject:
   - 114: {fileID: 1452506672}
   m_Layer: 0
   m_Name: EnemySpawn5-2
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8198,7 +8481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 18
+  m_RootOrder: 21
 --- !u!1 &1462871984
 GameObject:
   m_ObjectHideFlags: 0
@@ -8426,6 +8709,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1500794687}
   - 114: {fileID: 1500794688}
+  - 114: {fileID: 1500794689}
   m_Layer: 0
   m_Name: Bass3
   m_TagString: Untagged
@@ -8462,16 +8746,65 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .0700000003
+  triggerThreshold: .100000001
   triggerReactivateDelay: .00999999978
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5fd02c4bd69bb92419e8afcd1317a5ff, type: 2}
+  prefab: {fileID: 100000, guid: 6b9f82b498c5271439b50989a215324b, type: 2}
+  randomOffset: {x: 40, y: 5, z: 0}
+--- !u!114 &1500794689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1500794686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 4
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .00999999978
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 100000, guid: 6b9f82b498c5271439b50989a215324b, type: 2}
   randomOffset: {x: 40, y: 5, z: 0}
 --- !u!4 &1507825032 stripped
 Transform:
   m_PrefabParentObject: {fileID: 484516, guid: c0f9fae67d4386542820897fa51c080e, type: 2}
   m_PrefabInternal: {fileID: 1631020340}
+--- !u!1 &1512234472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1512234473}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1512234473
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1512234472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.80000019, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 503724012}
+  m_RootOrder: 0
 --- !u!1 &1522393920
 GameObject:
   m_ObjectHideFlags: 0
@@ -8550,7 +8883,7 @@ GameObject:
   - 114: {fileID: 1585786577}
   m_Layer: 0
   m_Name: AsteroidSpawn1
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8682,7 +9015,7 @@ Transform:
   - {fileID: 1507825032}
   - {fileID: 133006790}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!114 &1601000347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8727,7 +9060,7 @@ MonoBehaviour:
   - type: 2
     letter: S
     color: {r: 0, g: .607843161, b: 1, a: 1}
-    projectilePrefab: {fileID: 198596, guid: 14e436cfe7b78be49b1ffc2761007590, type: 2}
+    projectilePrefab: {fileID: 148628, guid: ae55236f267e83b4a972b73f0477f8f1, type: 2}
     projectileColor: {r: 0, g: .607843161, b: 1, a: 1}
     damageOnHit: 1
     continuousDamage: 0
@@ -8999,7 +9332,7 @@ GameObject:
   - 114: {fileID: 1626616310}
   m_Layer: 0
   m_Name: AsteroidSpawn4
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9028,9 +9361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 2
   triggerThreshold: .5
@@ -9051,9 +9384,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
   triggerThreshold: .409999996
@@ -9548,7 +9881,106 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
+--- !u!1 &1706965114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138296, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1706965115}
+  - 114: {fileID: 1706965118}
+  - 114: {fileID: 1706965117}
+  - 114: {fileID: 1706965116}
+  m_Layer: 0
+  m_Name: EnemySpawn15-2
+  m_TagString: EnemyManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1706965115
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 485596, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706965114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1279671435}
+  m_RootOrder: 7
+--- !u!114 &1706965116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11443702, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706965114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: 1.20000005
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1706965117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11488360, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706965114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1039923473}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .449999988
+  triggerReactivateDelay: 1
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1706965118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11487694, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706965114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1039923471}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .400000006
+  triggerReactivateDelay: 1.5
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &1717561305
 GameObject:
   m_ObjectHideFlags: 0
@@ -9703,7 +10135,7 @@ GameObject:
   - 114: {fileID: 1752397857}
   m_Layer: 0
   m_Name: EnemySpawn2-2
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9719,7 +10151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 8
+  m_RootOrder: 11
 --- !u!114 &1752397857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9861,7 +10293,7 @@ RectTransform:
   - {fileID: 1874173044}
   - {fileID: 947484485}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -9934,7 +10366,7 @@ GameObject:
   - 114: {fileID: 1768970894}
   m_Layer: 0
   m_Name: EnemySpawn5-1
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9950,7 +10382,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 17
+  m_RootOrder: 20
 --- !u!114 &1768970894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10120,7 +10552,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 991564944e0915648b7ecf0f9cbb13f5, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 991564944e0915648b7ecf0f9cbb13f5, type: 2}
       propertyPath: audioSource
@@ -10146,7 +10578,7 @@ GameObject:
   - 114: {fileID: 1832828438}
   m_Layer: 0
   m_Name: EnemySpawn5-3
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10162,7 +10594,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 19
+  m_RootOrder: 22
 --- !u!114 &1832828438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10332,7 +10764,7 @@ Transform:
   m_Children:
   - {fileID: 308293537}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
 --- !u!20 &1838322968
 Camera:
   m_ObjectHideFlags: 0
@@ -10384,7 +10816,7 @@ GameObject:
   - 114: {fileID: 1856894445}
   m_Layer: 0
   m_Name: EnemySpawn0-1
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10470,6 +10902,33 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: 583f548b93411384daf006147bc8fbb8, type: 2}
   randomOffset: {x: 40, y: 0, z: 0}
+--- !u!1 &1874061986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1874061987}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1874061987
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1874061986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 9.89999962, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1023922971}
+  m_RootOrder: 0
 --- !u!1 &1874173043
 GameObject:
   m_ObjectHideFlags: 0
@@ -10816,6 +11275,105 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: c2a904bb00e23c148a2ffe14ab95a0e1, type: 2}
   randomOffset: {x: 40, y: 5, z: 0}
+--- !u!1 &1964562502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138296, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1964562503}
+  - 114: {fileID: 1964562506}
+  - 114: {fileID: 1964562505}
+  - 114: {fileID: 1964562504}
+  m_Layer: 0
+  m_Name: EnemySpawn15-1
+  m_TagString: EnemyManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1964562503
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 485596, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1964562502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1279671435}
+  m_RootOrder: 6
+--- !u!114 &1964562504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11443702, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1964562502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 2
+  triggerThreshold: .5
+  triggerReactivateDelay: 1.20000005
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1964562505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11488360, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1964562502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1039923473}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .5
+  triggerReactivateDelay: 1
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1964562506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11487694, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1964562502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1039923471}
+  m_szLastControllerName: High
+  triggerType: 2
+  triggerThreshold: .449999988
+  triggerReactivateDelay: 1.5
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &1970911352
 GameObject:
   m_ObjectHideFlags: 0
@@ -11070,7 +11628,7 @@ GameObject:
   - 114: {fileID: 2001424118}
   m_Layer: 0
   m_Name: EnemySpawn2-1
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11086,7 +11644,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 6
+  m_RootOrder: 9
 --- !u!114 &2001424118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11156,60 +11714,6 @@ MonoBehaviour:
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
   randomOffset: {x: 30, y: 0, z: 0}
---- !u!1001 &2004859882
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 294710934}
-    m_Modifications:
-    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 148046, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 439548, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 19.9500008
-      objectReference: {fileID: 0}
-    - target: {fileID: 148046, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_Name
-      value: EctoplasmBackground
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &2011464954
 GameObject:
   m_ObjectHideFlags: 0
@@ -11487,11 +11991,11 @@ Transform:
 --- !u!1 &2058778672 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 148046, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-  m_PrefabInternal: {fileID: 2004859882}
+  m_PrefabInternal: {fileID: 933110222}
 --- !u!4 &2058778673 stripped
 Transform:
   m_PrefabParentObject: {fileID: 434624, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-  m_PrefabInternal: {fileID: 2004859882}
+  m_PrefabInternal: {fileID: 933110222}
 --- !u!1 &2087747234
 GameObject:
   m_ObjectHideFlags: 0
@@ -11565,7 +12069,7 @@ GameObject:
   - 114: {fileID: 2096131177}
   m_Layer: 0
   m_Name: AsteroidSpawn8
-  m_TagString: Untagged
+  m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11594,9 +12098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
   triggerThreshold: .449999988
@@ -11617,9 +12121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 2
   triggerThreshold: .5
@@ -11640,9 +12144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
   triggerThreshold: .5
@@ -11664,7 +12168,7 @@ GameObject:
   - 114: {fileID: 2097672904}
   m_Layer: 0
   m_Name: EnemySpawn4-2
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11680,7 +12184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 15
+  m_RootOrder: 18
 --- !u!114 &2097672904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11763,7 +12267,7 @@ GameObject:
   - 114: {fileID: 2099460913}
   m_Layer: 0
   m_Name: EnemySpawn2-3
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11779,7 +12283,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 9
+  m_RootOrder: 12
 --- !u!114 &2099460913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11870,7 +12374,7 @@ GameObject:
   - 114: {fileID: 2129766641}
   m_Layer: 0
   m_Name: EnemySpawn6-2
-  m_TagString: Untagged
+  m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11886,7 +12390,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 21
+  m_RootOrder: 24
 --- !u!114 &2129766641
 MonoBehaviour:
   m_ObjectHideFlags: 0

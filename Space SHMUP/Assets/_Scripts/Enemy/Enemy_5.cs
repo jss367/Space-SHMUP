@@ -53,7 +53,8 @@ public class Enemy_5 : Enemy {
 		float esp = Main.S.enemySpawnPadding;
 		Bounds cBounds = Utils.camBounds;
 		p1.x = Random.Range (cBounds.min.x + esp, cBounds.max.x - esp);
-		p1.y = Random.Range (cBounds.min.y + esp, cBounds.max.y - esp);
+		//Add 5 to the minimum to keep off the bottom
+		p1.y = Random.Range (cBounds.min.y + esp + 5, cBounds.max.y - esp);
 
 		points [0] = points [1];	// Shift points[1] to points[0]
 		points [1] = p1;			// Add p1 as points[1]
