@@ -89,10 +89,10 @@ public class AudioManager : MonoBehaviour {
 			audioClip [0] = Resources.Load ("Music/4HighTension210_48") as AudioClip;
 			break;
 		case "Level 7":
-			audioClip [0] = Resources.Load ("Music/7Thumpette_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/9Sarabande230_48") as AudioClip;
 			break;
 		case "Level 8":
-			audioClip [0] = Resources.Load ("Music/8FunkyJunky_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/3_90SecondsOfFunk130_48") as AudioClip;
 			break;
 		case "Level 9":
 			audioClip [0] = Resources.Load ("Music/9Sarabande_48") as AudioClip;
@@ -103,7 +103,8 @@ public class AudioManager : MonoBehaviour {
 		case "Level 11":
 			audioClip [0] = Resources.Load ("Music/11Cresc_48") as AudioClip;
 			break;
-		}
+		}//7Thumpette_48
+		//funky junky
 
 		
 		// check, the clips are assigned

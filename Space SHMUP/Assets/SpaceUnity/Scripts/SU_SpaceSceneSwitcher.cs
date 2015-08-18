@@ -1,4 +1,4 @@
-// Space Scene Switcher C# Script (version: 1.03)
+// Space Scene Switcher C# Script (version: 1.05)
 // SPACE UNITY - Space Scene Construction Kit
 // http://www.spaceunity.com
 // (c) 2013 Stefan Persson
@@ -20,6 +20,7 @@
 //	sceneIndexLoadFirst The index number of the element/prefab in the array you wish to activate once initiated, default is 0
 
 // Version History
+// 1.05 - Removed compiler specific code, only Unity 5.x supported.
 // 1.03 - Fixed deprecated code (changed Camera.mainCamera to Camera.main)
 // 1.02 - Prefixed with SU_SpaceSceneSwitcher to avoid naming conflicts.
 //        Fixed warning message in Unity 4.0 by verifying compiler version to
@@ -167,11 +168,6 @@ public class SU_SpaceSceneSwitcher : MonoBehaviour {
 	// Since SetActiveRecursively has been deprecated this function performs game object 
 	// activation correctly based regardless of Unity version.
 	public static void SetActive (GameObject _gameObject, bool _bool) {
-		#if UNITY_3_5
-		if (_gameObject != null) _gameObject.SetActiveRecursively(_bool);
-		#endif
-		#if UNITY_4_0
 		if (_gameObject != null) _gameObject.SetActive(_bool);
-		#endif
 	}
 }

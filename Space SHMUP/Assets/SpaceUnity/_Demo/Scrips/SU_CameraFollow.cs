@@ -1,4 +1,4 @@
-// Camera Follow C# Script (version: 1.02)
+// Camera Follow C# Script (version: 1.05)
 // SPACE UNITY - Space Scene Construction Kit
 // http://www.spaceunity.com
 // (c) 2013 Stefan Persson
@@ -20,6 +20,7 @@
 //   freezeKey		(freeze camera movement while this key is pressed)
 
 // Version History
+// 1.05 - Changed update mode to LATE_UPDATE and added rigidbody interpolation to spaceship for smoother performance
 // 1.02 - Renamed to SU_CameraFollow to avoid naming conflicts.
 // 1.01 - Initial Release.
 
@@ -34,7 +35,7 @@ public class SU_CameraFollow : MonoBehaviour {
 	// updated in the FixedUpdate() function.
 	
 	public enum UpdateMode { FIXED_UPDATE, UPDATE, LATE_UPDATE }
-	public UpdateMode updateMode = UpdateMode.FIXED_UPDATE;
+	public UpdateMode updateMode = UpdateMode.LATE_UPDATE;
 	
 	// Select the chase mode (chase behind target or moving spectator)
 	// CHASE = smooth chase behind target at distance and height
