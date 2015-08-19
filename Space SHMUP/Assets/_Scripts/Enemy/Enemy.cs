@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public void ReceiveDamage(float damage){
-//		Debug.Log ("Enemy has received damage");
+		Debug.Log ("Enemy has received damage");
 		health -= damage;
 		if (health <= 0) {
 			// Destroy this Enemy

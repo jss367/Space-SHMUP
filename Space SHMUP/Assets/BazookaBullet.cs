@@ -36,7 +36,7 @@ public class BazookaBullet : MonoBehaviour {
 				if (hitColliders[i].ToString() == "Left (UnityEngine.BoxCollider)" ||
 				    hitColliders[i].ToString() == "Right (UnityEngine.BoxCollider)" ||
 				    hitColliders[i].ToString() == "Middle (UnityEngine.BoxCollider)"){
-					continue;
+					break;
 				}
 				recipient.ReceiveDamage(damage);
 			}

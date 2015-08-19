@@ -144,7 +144,7 @@ public class LevelManager : MonoBehaviour {
 
 
 	void StopSpawn(){
-		Debug.Log ("Spawning has stopped");
+//		Debug.Log ("Spawning has stopped");
 //		Debug.Log ("Main.S.playerDead " + Main.S.playerDead);
 //		Debug.Log ("Main.S.playerWins " + Main.S.playerWins);
 //		Debug.Log ("spawningStoppedToggle " + spawningStoppedToggle);

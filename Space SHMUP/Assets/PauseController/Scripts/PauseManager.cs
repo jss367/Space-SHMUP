@@ -45,6 +45,19 @@ public class PauseManager : MonoBehaviour {
 		pauseCanvas.enabled = isPaused;
 		anim.SetBool( "IsPaused", isPaused );
 	}
+
+
+	/// <summary>
+	/// TESTING THE BELOW	/// </summary>
+	
+	void OnApplicationPause(bool pauseStatus){
+		OnPause ();
+			
+	}
+	
+	///TESTING ABOVE
+	///
+
 		
 	public void OnQuit() {
 //		Debug.Log ("PauseManager.OnQuit");
