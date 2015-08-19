@@ -340,6 +340,7 @@ public class Hero : MonoBehaviour {
 			Debug.Log("Caught error: " + e);
 		}
 
+		bazookaEquipped = true;
 //		laserEquipped = true;
 //		missileEquipped = true;
 	}

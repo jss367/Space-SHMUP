@@ -177,6 +177,7 @@ public class Main : MonoBehaviour {
 
 //		missileEquipped = true;
 //		laserEquipped = true;	
+
 	}
 
 	void SetWeaponry() {
@@ -227,7 +228,7 @@ public class Main : MonoBehaviour {
 	{
 		if (!gameHasEnded && !playerDead) {
 			StartCoroutine(PopText(newScoreValue.ToString(), 0.2f));
-			//		Debug.Log ("Score has been updated");
+					Debug.Log ("Score has been updated");
 			score += newScoreValue;
 		}
 		

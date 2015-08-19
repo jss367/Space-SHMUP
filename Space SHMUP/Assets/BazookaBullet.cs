@@ -30,7 +30,14 @@ public class BazookaBullet : MonoBehaviour {
 			Debug.Log("Explosion found this hitCollider: " + hitColliders[i]);
 			GameObject go = Utils.FindTaggedParent(hitColliders[i].gameObject);
 			Enemy recipient = go.GetComponent<Enemy> (); // this might hit enemies with many body parts more than those with only one
+			Debug.Log(recipient);
 			if (recipient != null) {
+				Debug.Log("You're looking for " + hitColliders[i].ToString());
+				if (hitColliders[i].ToString() == "Left (UnityEngine.BoxCollider)" ||
+				    hitColliders[i].ToString() == "Right (UnityEngine.BoxCollider)" ||
+				    hitColliders[i].ToString() == "Middle (UnityEngine.BoxCollider)"){
+					continue;
+				}
 				recipient.ReceiveDamage(damage);
 			}
 			Asteroid asteroidRecipient = go.GetComponent<Asteroid>();

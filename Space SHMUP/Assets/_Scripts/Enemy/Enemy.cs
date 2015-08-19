@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour {
 		if (remainingDamageFrames > 0) {
 			remainingDamageFrames--;
 			if (remainingDamageFrames == 0) {
-				UnShowDamage ();
+//				UnShowDamage ();
 			}
 		}
 	}
@@ -150,7 +150,7 @@ public class Enemy : MonoBehaviour {
 				break;
 			}
 			// Hurt this Enemy
-			ShowDamage();
+//			ShowDamage();
 			Instantiate(impact, transform.position, transform.rotation);
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
 			ReceiveDamage(Main.W_DEFS [p.type].damageOnHit);
@@ -167,7 +167,7 @@ public class Enemy : MonoBehaviour {
 				break;
 			}
 			// Hurt this Enemy
-			ShowDamage();
+//			ShowDamage();
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
 			health -= 1; // Asteroids do 1 worth of damage
 			if (health <= 0) {
@@ -212,16 +212,16 @@ public class Enemy : MonoBehaviour {
 
 
 
-	void ShowDamage() {
-		foreach (Material m in materials) {
-			m.color = Color.red;
-		}
-		remainingDamageFrames = showDamageForFrames;
-	}
-	void UnShowDamage() {
-		for (int i = 0; i < materials.Length; i++) {
-			materials[i].color = originalColors[i];
-		}
-	}
+//	void ShowDamage() {
+//		foreach (Material m in materials) {
+//			m.color = Color.red;
+//		}
+//		remainingDamageFrames = showDamageForFrames;
+//	}
+//	void UnShowDamage() {
+//		for (int i = 0; i < materials.Length; i++) {
+//			materials[i].color = originalColors[i];
+//		}
+//	}
 
 }
