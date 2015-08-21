@@ -42,7 +42,7 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualGood[] GetGoods() {
-			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, BaseSpeed, BaseShield, BAZOOKA_LAUNCHER, MISSILE_LAUNCHER};//, SpeedUpgrade1};//, Shield, ShieldUpgrade1, BaseSpeed, SpeedUpgrade1};//, NO_ADS_LTVG};
+			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, BaseSpeed, BaseShield, MISSILE_LAUNCHER, BAZOOKA_LAUNCHER};//, SpeedUpgrade1};//, Shield, ShieldUpgrade1, BaseSpeed, SpeedUpgrade1};//, NO_ADS_LTVG};
 		}
 		
 		/// <summary>
