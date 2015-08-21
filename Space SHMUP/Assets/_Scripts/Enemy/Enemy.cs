@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour {
 	public float		missileDropChance = .1f; // Chance to drop a missile if possible
 	public bool _________________;
 	private float lastTimeDestroyed = 0.0f;
-	public float comboTime = 1.0f;
+//	public float comboTime = 1.0f;
 
 	public GameObject	impact;
 
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour {
 
 	public GameObject enemyExplosion;
 	public GameObject popText;
-	public GameObject comboPopText;
+//	public GameObject comboPopText;
 	
 	void Awake() {
 //		materials = Utils.GetAllMaterials (gameObject);
@@ -115,17 +115,17 @@ public class Enemy : MonoBehaviour {
 		if (health <= 0) {
 			// Destroy this Enemy
 			Destroy (this.gameObject);
-			if (Time.time - lastTimeDestroyed < comboTime)
-			{
-				// Tell the Main singleton that this ship has been destroyed
-				Main.S.EnemyDestroyed(this, true);
-				Instantiate(comboPopText, transform.position, Quaternion.identity);
-			}
-			else {
+//			if (Time.time - lastTimeDestroyed < comboTime)
+//			{
+//				// Tell the Main singleton that this ship has been destroyed
+//				Main.S.EnemyDestroyed(this, true);
+//				Instantiate(comboPopText, transform.position, Quaternion.identity);
+//			}
+//			else {
 				// Tell the Main singleton that this ship has been destroyed
 				Main.S.EnemyDestroyed(this, false);
 				Instantiate(popText, transform.position, Quaternion.identity);
-			}
+//			}
 			lastTimeDestroyed = Time.time;
 			//				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
 			Instantiate(enemyExplosion, transform.position, transform.rotation);

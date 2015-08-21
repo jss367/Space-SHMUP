@@ -266,11 +266,11 @@ public class Main : MonoBehaviour {
 			Debug.Log("Dropping missile power up");
 			Instantiate(missilePowerUp, e.transform.position, e.transform.rotation);
 		}
-		if (combo) {
-			AddScore (e.score * 2);
-		} else {
+//		if (combo) {
+//			AddScore (e.score * 2);
+//		} else {
 			AddScore (e.score);
-		}
+//		}
 	}
 
 	

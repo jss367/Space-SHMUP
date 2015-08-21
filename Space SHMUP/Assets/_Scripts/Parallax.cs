@@ -13,9 +13,10 @@ public class Parallax : MonoBehaviour {
 	private float depth; //Depth of panels (that is, pos.z)
 	
 	
-	
-	// Use this for initialization
 	void Start () {
+
+		panels = GameObject.FindGameObjectsWithTag ("Starfield");
+
 		panelHt = panels [0].transform.localScale.y;
 		depth = panels [0].transform.position.z;
 		
@@ -24,7 +25,6 @@ public class Parallax : MonoBehaviour {
 		panels [1].transform.position = new Vector3 (0, panelHt, depth);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		float tY, tX = 0;
 		tY = Time.time * scrollSpeed % panelHt + (panelHt * 0.5f);
