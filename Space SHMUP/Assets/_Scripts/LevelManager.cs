@@ -39,7 +39,7 @@ public class LevelManager : MonoBehaviour {
 
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
 		currentLevel = MadLevel.currentLevelName;
-		InvokeRepeating ("StopSpawn", startRepeating, 2.0f);
+//		InvokeRepeating ("StopSpawn", startRepeating, 2.0f);	
 		//Get the level number
 		string[] levelSplit = currentLevel.Split (' ');
 		//Concatentate level number to appropriate fireworks
@@ -130,6 +130,10 @@ public class LevelManager : MonoBehaviour {
 		timer = Time.timeSinceLevelLoad;
 //		Debug.Log (timer);
 //		Debug.Log (deadPeriod);
+//		Debug.Log (Main.S.stopSpawning);
+		if (Main.S.stopSpawning) {
+			StopSpawn();
+		}
 	}
 
 //	void Wave(int level){
@@ -144,7 +148,7 @@ public class LevelManager : MonoBehaviour {
 
 
 	void StopSpawn(){
-//		Debug.Log ("Spawning has stopped");
+		Debug.Log ("Spawning has stopped");
 //		Debug.Log ("Main.S.playerDead " + Main.S.playerDead);
 //		Debug.Log ("Main.S.playerWins " + Main.S.playerWins);
 //		Debug.Log ("spawningStoppedToggle " + spawningStoppedToggle);
@@ -191,25 +195,20 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	void Level1Update () {
+//		Debug.Log("Level1Update");
 		//This is for Mix_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
 
 			if (timer < waveOne) {
 				CheckForNextWave(waveOne, 1);
-			} else if (timer < 6.5){
-				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
-			} else if (timer < 8) {
+			} else if (timer < 18){
 
-				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn1.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d1.SetActive (true);
-			} else if (timer < 17.7) {
-				SpawnManager.instance.AsteroidSpawn3.SetActive (true);
-				SpawnManager.instance.AsteroidSpawn0.SetActive (false);
-//				SpawnManager.instance.EnemySpawn1d2.SetActive (false);
-				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
-			}
-			else {
-				SpawnManager.instance.AsteroidSpawn0.SetActive (false);
+			} 	else {
+				Debug.Log(Main.S.stopSpawning);
+				SpawnManager.instance.AsteroidSpawn1.SetActive (false);
+				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 			}
 			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
 		}

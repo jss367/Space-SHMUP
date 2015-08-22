@@ -229,7 +229,7 @@ public class Main : MonoBehaviour {
 	{
 		if (!gameHasEnded && !playerDead) {
 			StartCoroutine(PopText(newScoreValue.ToString(), 0.2f));
-					Debug.Log ("Score has been updated");
+//					Debug.Log ("Score has been updated");
 			score += newScoreValue;
 		}
 		
@@ -276,7 +276,7 @@ public class Main : MonoBehaviour {
 	
 	public void WaitUntilLevelEmpties(){
 		
-		//			Debug.Log ("Waiting until level empties");
+					Debug.Log ("Waiting until level empties");
 		stopSpawning = true;
 		GameObject[] AsteroidsRemaining = GameObject.FindGameObjectsWithTag ("Asteroid");
 		//		Debug.Log ("Asteroids remaining: " + AsteroidsRemaining.Length);
@@ -376,7 +376,7 @@ public class Main : MonoBehaviour {
 		int updateAmount = 0;
 
 		while (displayScore < score){
-			Debug.Log(score - displayScore);
+//			Debug.Log(score - displayScore);
 			if (score - displayScore > 10000) {
 				updateAmount = 1000;
 				//				Debug.Log(updateAmount);

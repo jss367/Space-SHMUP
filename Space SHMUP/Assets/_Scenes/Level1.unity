@@ -948,7 +948,7 @@ GameObject:
   - 114: {fileID: 226734157}
   - 114: {fileID: 226734156}
   m_Layer: 0
-  m_Name: EnemySpawn1-1
+  m_Name: EnemySpawn1-1_1
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -984,7 +984,7 @@ MonoBehaviour:
   m_szLastControllerName: Bass
   triggerType: 4
   triggerThreshold: .150000006
-  triggerReactivateDelay: 0
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
@@ -1006,8 +1006,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .150000006
-  triggerReactivateDelay: 0
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: f08b9eaf67ca38847a23f61d8b3e29b1, type: 2}
@@ -1029,8 +1029,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .150000006
-  triggerReactivateDelay: 0
+  triggerThreshold: .0299999993
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: c50a981290084db45a608d06db745592, type: 2}
@@ -1203,9 +1203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 2
   triggerThreshold: .340000004
@@ -1226,9 +1226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_oVisManager: {fileID: 0}
+  m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 0}
+  controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 2
   triggerThreshold: .300000012
@@ -1444,7 +1444,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 308293535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.809021, y: -2.5, z: 0}
+  m_LocalPosition: {x: -4.40019226, y: -2.5, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 396900309}
@@ -9563,8 +9563,9 @@ GameObject:
   - 4: {fileID: 1585786576}
   - 114: {fileID: 1585786578}
   - 114: {fileID: 1585786577}
+  - 114: {fileID: 1585786579}
   m_Layer: 0
-  m_Name: AsteroidSpawn1
+  m_Name: AsteroidSpawn1_1
   m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9598,9 +9599,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .400000006
+  triggerType: 4
+  triggerThreshold: .0799999982
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
@@ -9621,9 +9622,31 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .349999994
-  triggerReactivateDelay: .5
+  triggerType: 4
+  triggerThreshold: .0799999982
+  triggerReactivateDelay: .0199999996
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1585786579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1585786575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 4
+  triggerThreshold: .0799999982
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
@@ -10200,7 +10223,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 143480, guid: 86c0c5e01e5c7b94d8db3336fc6b2d99, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10860320, guid: 86c0c5e01e5c7b94d8db3336fc6b2d99, type: 2}
+      propertyPath: m_Intensity
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86c0c5e01e5c7b94d8db3336fc6b2d99, type: 2}
