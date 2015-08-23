@@ -180,8 +180,9 @@ public class LevelManager : MonoBehaviour {
 			yield return new WaitForSeconds (timeBetweenWaves - 1);
 			SpawnManager.instance.WaveText.text = "Wave " + level + " of " + numWaves;
 			SpawnManager.instance.WaveText.enabled = true;
-			deadPeriod = false;
-			yield return new WaitForSeconds (2f);
+		yield return new WaitForSeconds (1f);	
+		deadPeriod = false;
+			yield return new WaitForSeconds (1f);
 			SpawnManager.instance.WaveText.enabled = false;
 		waveNotReady = false;
 	}
@@ -222,20 +223,26 @@ public class LevelManager : MonoBehaviour {
 
 			if (timer < waveOne){
 				CheckForNextWave(waveOne, 1);
-				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
+
 
 			} else if (timer < waveTwo){
-				CheckForNextWave(waveTwo, 2);
-				
-				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
-				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
+			
+//				Debug.Log(waveTwo - timer);
+//				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
+//				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d15.SetActive (true);
-			} else {
+				CheckForNextWave(waveTwo, 2);
+			} else if (timer < 60) {
 
-				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
-				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
-				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+//				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
+		
+				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
+				SpawnManager.instance.EnemySpawn15d2.SetActive (true);
+
+			}else {
+
+//				SpawnManager.instance.EnemySpawn1d15.SetActive (true);
 			}
 
 		}

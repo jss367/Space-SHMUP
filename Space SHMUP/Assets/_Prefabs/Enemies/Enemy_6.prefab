@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147136}
   m_LocalRotation: {x: -1.15202326e-07, y: .707106709, z: -.707106829, w: -1.15202312e-07}
-  m_LocalPosition: {x: 19.9300003, y: -.0199999996, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children:
   - {fileID: 482978}
@@ -139,7 +139,6 @@ MonoBehaviour:
   powerUpDropChance: .200000003
   missileDropChance: .100000001
   _________________: 0
-  comboTime: 1
   impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
   originalColors: []
   materials: []
@@ -150,7 +149,6 @@ MonoBehaviour:
   boundsCenterOffset: {x: 0, y: 0, z: 0}
   enemyExplosion: {fileID: 172662, guid: 0b461f2f00c26474db70e48f1893c723, type: 2}
   popText: {fileID: 198134, guid: 5a28c96cdd033754ca14be9a26ca6054, type: 2}
-  comboPopText: {fileID: 108858, guid: 65c2838b55bb4e145ab6fd6636edfcff, type: 2}
   points: []
   birthTime: 0
   lifeTime: 10
