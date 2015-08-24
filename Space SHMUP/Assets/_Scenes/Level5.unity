@@ -224,6 +224,8 @@ GameObject:
   - 4: {fileID: 12840132}
   - 114: {fileID: 12840133}
   - 114: {fileID: 12840134}
+  - 114: {fileID: 12840136}
+  - 114: {fileID: 12840135}
   m_Layer: 0
   m_Name: Bass5
   m_TagString: Untagged
@@ -260,11 +262,11 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .0700000003
-  triggerReactivateDelay: .00999999978
+  triggerThreshold: .0299999993
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 5fd02c4bd69bb92419e8afcd1317a5ff, type: 2}
+  prefab: {fileID: 100000, guid: d0103cd538e6f28488e555c752479b0f, type: 2}
   randomOffset: {x: 40, y: 5, z: 0}
 --- !u!114 &12840134
 MonoBehaviour:
@@ -282,8 +284,52 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .0700000003
-  triggerReactivateDelay: .00999999978
+  triggerThreshold: .0299999993
+  triggerReactivateDelay: .0199999996
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 100000, guid: d0103cd538e6f28488e555c752479b0f, type: 2}
+  randomOffset: {x: 40, y: 5, z: 0}
+--- !u!114 &12840135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12840131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 4
+  triggerThreshold: .0199999996
+  triggerReactivateDelay: .0199999996
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 100000, guid: 5fd02c4bd69bb92419e8afcd1317a5ff, type: 2}
+  randomOffset: {x: 40, y: 5, z: 0}
+--- !u!114 &12840136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12840131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
+  triggerType: 4
+  triggerThreshold: .0199999996
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 5fd02c4bd69bb92419e8afcd1317a5ff, type: 2}
@@ -445,82 +491,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 98049451}
   m_Enabled: 1
---- !u!1 &123690185
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 120858, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 123690186}
-  - 33: {fileID: 123690189}
-  - 64: {fileID: 123690188}
-  - 23: {fileID: 123690187}
-  m_Layer: 14
-  m_Name: StarfieldBG_9
-  m_TagString: Starfield
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &123690186
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 428932, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 123690185}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 800.896484}
-  m_LocalScale: {x: 160, y: 160, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2058778673}
-  m_RootOrder: 6
---- !u!23 &123690187
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2376210, guid: 6cc42fbb02a6e274c86d161d7c6a641f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 123690185}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 44b9af28c6ee75c45ac5a2e4c37dceae, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!64 &123690188
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6487792, guid: 6cc42fbb02a6e274c86d161d7c6a641f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 123690185}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &123690189
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3303180, guid: 6cc42fbb02a6e274c86d161d7c6a641f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 123690185}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &133006789
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,9 +710,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .300000012
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -763,9 +733,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .400000006
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -786,9 +756,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .349999994
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -1150,7 +1120,7 @@ GameObject:
   - 114: {fileID: 293651018}
   - 114: {fileID: 293651017}
   m_Layer: 0
-  m_Name: AsteroidSpawn2
+  m_Name: AsteroidSpawn2_2
   m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1184,9 +1154,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .25
-  triggerReactivateDelay: .400000006
+  triggerType: 4
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .0500000007
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 9d907913246f2be4fbdfae99a69c39cb, type: 2}
@@ -1207,9 +1177,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .340000004
-  triggerReactivateDelay: .5
+  triggerType: 4
+  triggerThreshold: .180000007
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
@@ -1230,9 +1200,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .300000012
-  triggerReactivateDelay: .400000006
+  triggerType: 4
+  triggerThreshold: .180000007
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 5b77250c2e506ae44aa0a22e5d82e686, type: 2}
@@ -1349,9 +1319,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
@@ -1372,9 +1342,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .400000006
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
@@ -1395,9 +1365,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .300000012
-  triggerReactivateDelay: 1.5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
@@ -1444,7 +1414,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 308293535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.809021, y: -2.5, z: 0}
+  m_LocalPosition: {x: -3.85124779, y: -2.5, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 396900309}
@@ -2515,82 +2485,6 @@ Transform:
   - {fileID: 1041152286}
   m_Father: {fileID: 447367159}
   m_RootOrder: 1
---- !u!1 &585208395
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 136668, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 585208396}
-  - 33: {fileID: 585208399}
-  - 64: {fileID: 585208398}
-  - 23: {fileID: 585208397}
-  m_Layer: 14
-  m_Name: StarfieldBG_8
-  m_TagString: Starfield
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &585208396
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 483414, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 585208395}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -136.277298}
-  m_LocalScale: {x: 160, y: 160, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2058778673}
-  m_RootOrder: 5
---- !u!23 &585208397
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2342412, guid: 6cc42fbb02a6e274c86d161d7c6a641f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 585208395}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 44b9af28c6ee75c45ac5a2e4c37dceae, type: 2}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!64 &585208398
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6465764, guid: 6cc42fbb02a6e274c86d161d7c6a641f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 585208395}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &585208399
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3306170, guid: 6cc42fbb02a6e274c86d161d7c6a641f,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 585208395}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &596721840
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,8 +2532,8 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .5
+  triggerThreshold: .300000012
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -2661,8 +2555,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .449999988
-  triggerReactivateDelay: .5
+  triggerThreshold: .25
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -2684,8 +2578,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .5
+  triggerThreshold: .300000012
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -3068,7 +2962,7 @@ GameObject:
   - 114: {fileID: 652432369}
   - 114: {fileID: 652432368}
   m_Layer: 0
-  m_Name: AsteroidSpawn7
+  m_Name: AsteroidSpawn7_5
   m_TagString: AsteroidManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3102,9 +2996,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .5
-  triggerReactivateDelay: .25
+  triggerType: 4
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 1321e4e575bbc59468921a5e14be7167, type: 2}
@@ -3125,9 +3019,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .409999996
-  triggerReactivateDelay: .25
+  triggerType: 4
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: ca7dfded6c6c4de4890747790f072c4f, type: 2}
@@ -3148,9 +3042,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .300000012
-  triggerReactivateDelay: .100000001
+  triggerType: 4
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: eca46db2981c38648ab499b5cb1bb4dd, type: 2}
@@ -3271,7 +3165,7 @@ GameObject:
   - 114: {fileID: 685569753}
   - 114: {fileID: 685569752}
   m_Layer: 0
-  m_Name: EnemySpawn4-3
+  m_Name: EnemySpawn4-3_4
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3305,9 +3199,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: 3
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
@@ -3328,9 +3222,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: 2
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
@@ -3351,9 +3245,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: 2
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
@@ -3370,7 +3264,7 @@ GameObject:
   - 114: {fileID: 695935633}
   - 114: {fileID: 695935632}
   m_Layer: 0
-  m_Name: EnemySpawn1-15
+  m_Name: EnemySpawn1-15_2
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3406,7 +3300,7 @@ MonoBehaviour:
   m_szLastControllerName: Bass
   triggerType: 4
   triggerThreshold: .150000006
-  triggerReactivateDelay: 0
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
@@ -3428,8 +3322,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .100000001
-  triggerReactivateDelay: 0
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: f08b9eaf67ca38847a23f61d8b3e29b1, type: 2}
@@ -3451,8 +3345,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .100000001
-  triggerReactivateDelay: 0
+  triggerThreshold: .109999999
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: c50a981290084db45a608d06db745592, type: 2}
@@ -3785,7 +3679,7 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 4
   triggerThreshold: .159999996
-  triggerReactivateDelay: .100000001
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 8573911c03412f840ac06077f36f838e, type: 2}
@@ -3808,7 +3702,7 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 4
   triggerThreshold: .159999996
-  triggerReactivateDelay: .100000001
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 80fa296dcc73ac14badfa5229ac5087d, type: 2}
@@ -3842,7 +3736,7 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: .100000001
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 85f5b8a8a76d38e4b9343fa517806b3f, type: 2}
@@ -3864,7 +3758,7 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: .100000001
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 8573911c03412f840ac06077f36f838e, type: 2}
@@ -4074,7 +3968,7 @@ MonoBehaviour:
   m_szLastControllerName: Bass
   triggerType: 4
   triggerThreshold: .349999994
-  triggerReactivateDelay: 0
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
@@ -4097,7 +3991,7 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 4
   triggerThreshold: .25
-  triggerReactivateDelay: 0
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: f08b9eaf67ca38847a23f61d8b3e29b1, type: 2}
@@ -4120,7 +4014,7 @@ MonoBehaviour:
   m_szLastControllerName: High
   triggerType: 4
   triggerThreshold: .449999988
-  triggerReactivateDelay: 0
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: c50a981290084db45a608d06db745592, type: 2}
@@ -5868,7 +5762,7 @@ MonoBehaviour:
   m_szLastControllerName: Bass
   triggerType: 4
   triggerThreshold: .5
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
@@ -5891,7 +5785,7 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 4
   triggerThreshold: .550000012
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: f08b9eaf67ca38847a23f61d8b3e29b1, type: 2}
@@ -5914,7 +5808,7 @@ MonoBehaviour:
   m_szLastControllerName: High
   triggerType: 4
   triggerThreshold: .600000024
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: c50a981290084db45a608d06db745592, type: 2}
@@ -6235,8 +6129,8 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .600000024
-  triggerReactivateDelay: .300000012
+  triggerThreshold: .449999988
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -6258,8 +6152,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .600000024
-  triggerReactivateDelay: .5
+  triggerThreshold: .449999988
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -6282,7 +6176,7 @@ MonoBehaviour:
   m_szLastControllerName: High
   triggerType: 4
   triggerThreshold: .5
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -6747,9 +6641,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .349999994
-  triggerReactivateDelay: 2
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -6770,9 +6664,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .300000012
-  triggerReactivateDelay: 1.5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -6793,9 +6687,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .300000012
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -7004,10 +6898,6 @@ Prefab:
       propertyPath: m_Name
       value: ChecksForFreeBackground
       objectReference: {fileID: 0}
-    - target: {fileID: 148046, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 24d4e1749c27648448f91efa7f10d7b7, type: 2}
   m_IsPrefabParent: 0
@@ -7183,9 +7073,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .300000012
-  triggerReactivateDelay: .25
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 162572dc07fb89342ab415798d5b98ac, type: 2}
@@ -7206,9 +7096,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .300000012
-  triggerReactivateDelay: .25
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: eca46db2981c38648ab499b5cb1bb4dd, type: 2}
@@ -7229,9 +7119,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .300000012
-  triggerReactivateDelay: .100000001
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 100000, guid: 9d907913246f2be4fbdfae99a69c39cb, type: 2}
@@ -7280,7 +7170,7 @@ GameObject:
   - 114: {fileID: 1191172632}
   - 114: {fileID: 1191172631}
   m_Layer: 0
-  m_Name: EnemySpawn4-1
+  m_Name: EnemySpawn4-1_5
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7314,9 +7204,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .200000003
-  triggerReactivateDelay: 3
+  triggerType: 4
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
@@ -7337,9 +7227,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .200000003
-  triggerReactivateDelay: 2
+  triggerType: 4
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
@@ -7360,9 +7250,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .200000003
-  triggerReactivateDelay: 2
+  triggerType: 4
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
@@ -7609,9 +7499,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
@@ -7632,9 +7522,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .25
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
@@ -7655,9 +7545,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: 1.5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
@@ -8023,7 +7913,7 @@ GameObject:
   - 114: {fileID: 1287800357}
   - 114: {fileID: 1287800356}
   m_Layer: 0
-  m_Name: EnemySpawn3-3
+  m_Name: EnemySpawn3-3_5
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8057,9 +7947,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .300000012
-  triggerReactivateDelay: .300000012
+  triggerType: 4
+  triggerThreshold: .0599999987
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -8080,9 +7970,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .300000012
+  triggerType: 4
+  triggerThreshold: .0599999987
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -8103,9 +7993,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .349999994
-  triggerReactivateDelay: .300000012
+  triggerType: 4
+  triggerThreshold: .0599999987
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 131218, guid: 4ce50622c9ae2ac41963fe46b7b5bd43, type: 2}
@@ -8292,7 +8182,7 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   shieldUpgradeOwned: 0
   speedUpgradeOwned: 0
-  isInvincible: 0
+  isInvincible: 1
   launch1: 0
   popText: {fileID: 186940, guid: 5abd7a417a1184b4a909c373dd4eae43, type: 2}
   target: {x: 0, y: 0, z: 0}
@@ -8906,7 +8796,7 @@ GameObject:
   - 114: {fileID: 1444122492}
   - 114: {fileID: 1444122491}
   m_Layer: 0
-  m_Name: EnemySpawn1-3
+  m_Name: EnemySpawn1-3_4
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8941,8 +8831,8 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .200000003
-  triggerReactivateDelay: .300000012
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: e5cc0e79b7b77604c8d1153afa7d807a, type: 2}
@@ -8964,8 +8854,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .200000003
-  triggerReactivateDelay: .300000012
+  triggerThreshold: .25
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: f08b9eaf67ca38847a23f61d8b3e29b1, type: 2}
@@ -8988,7 +8878,7 @@ MonoBehaviour:
   m_szLastControllerName: High
   triggerType: 4
   triggerThreshold: .150000006
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: c50a981290084db45a608d06db745592, type: 2}
@@ -9005,7 +8895,7 @@ GameObject:
   - 114: {fileID: 1447581455}
   - 114: {fileID: 1447581454}
   m_Layer: 0
-  m_Name: EnemySpawn2-15
+  m_Name: EnemySpawn2-15_3
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9030,7 +8920,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1447581452}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
@@ -9040,8 +8930,8 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .5
-  triggerReactivateDelay: .5
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -9063,8 +8953,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .449999988
-  triggerReactivateDelay: .5
+  triggerThreshold: .330000013
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -9086,8 +8976,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .300000012
-  triggerReactivateDelay: .600000024
+  triggerThreshold: .230000004
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -9126,9 +9016,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .400000006
-  triggerReactivateDelay: 3
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
@@ -9149,9 +9039,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .300000012
-  triggerReactivateDelay: 2
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
@@ -9172,9 +9062,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .300000012
-  triggerReactivateDelay: 2
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
@@ -9481,7 +9371,7 @@ MonoBehaviour:
   triggerReactivateDelay: .00999999978
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
-  prefab: {fileID: 100000, guid: 6b9f82b498c5271439b50989a215324b, type: 2}
+  prefab: {fileID: 100000, guid: 06ef2517bb6e24d43aa1dc183123ec09, type: 2}
   randomOffset: {x: 40, y: 5, z: 0}
 --- !u!4 &1507825032 stripped
 Transform:
@@ -10593,7 +10483,7 @@ GameObject:
   - 114: {fileID: 1706965117}
   - 114: {fileID: 1706965116}
   m_Layer: 0
-  m_Name: EnemySpawn15-2
+  m_Name: EnemySpawn15-2_2
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10628,8 +10518,8 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .5
-  triggerReactivateDelay: .400000006
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -10651,8 +10541,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .449999988
-  triggerReactivateDelay: .349999994
+  triggerThreshold: .219999999
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -10674,8 +10564,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .5
-  triggerReactivateDelay: .5
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -10879,7 +10769,7 @@ GameObject:
   - 114: {fileID: 1752397858}
   - 114: {fileID: 1752397857}
   m_Layer: 0
-  m_Name: EnemySpawn2-2
+  m_Name: EnemySpawn2-2_5
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10911,11 +10801,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_oVisManager: {fileID: 2032642639}
   m_szLastVisManagerName: VisualizerManager
-  controller: {fileID: 1039923473}
-  m_szLastControllerName: Mid
+  controller: {fileID: 2032642640}
+  m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .600000024
-  triggerReactivateDelay: .400000006
+  triggerThreshold: .0199999996
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -10927,7 +10817,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1752397855}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
@@ -10937,8 +10827,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .600000024
-  triggerReactivateDelay: .400000006
+  triggerThreshold: .400000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -10950,7 +10840,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1752397855}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
@@ -10960,8 +10850,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .600000024
-  triggerReactivateDelay: .5
+  triggerThreshold: .400000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -11144,9 +11034,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .449999988
-  triggerReactivateDelay: 3
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
@@ -11167,9 +11057,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .5
-  triggerReactivateDelay: 2
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
@@ -11190,9 +11080,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .449999988
-  triggerReactivateDelay: 2
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
@@ -11356,9 +11246,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
@@ -11379,9 +11269,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .400000006
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
@@ -11402,9 +11292,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: 1.5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: d80e9b6fb7da68846a2880748f0416da, type: 2}
@@ -12127,7 +12017,7 @@ GameObject:
   - 114: {fileID: 1964562505}
   - 114: {fileID: 1964562504}
   m_Layer: 0
-  m_Name: EnemySpawn15-1
+  m_Name: EnemySpawn15-1_3
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12152,7 +12042,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1964562502}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
@@ -12162,8 +12052,8 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .550000012
-  triggerReactivateDelay: .400000006
+  triggerThreshold: .119999997
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -12185,8 +12075,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .5
-  triggerReactivateDelay: .5
+  triggerThreshold: .349999994
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -12208,8 +12098,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .600000024
-  triggerReactivateDelay: .400000006
+  triggerThreshold: .25
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -12475,7 +12365,7 @@ GameObject:
   - 114: {fileID: 2001424119}
   - 114: {fileID: 2001424118}
   m_Layer: 0
-  m_Name: EnemySpawn2-1
+  m_Name: EnemySpawn2-1_5
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12510,8 +12400,8 @@ MonoBehaviour:
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
   triggerType: 4
-  triggerThreshold: .600000024
-  triggerReactivateDelay: .5
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -12533,8 +12423,8 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 4
-  triggerThreshold: .5
-  triggerReactivateDelay: .5
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -12556,8 +12446,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .600000024
-  triggerReactivateDelay: .300000012
+  triggerThreshold: .100000001
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -12977,9 +12867,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
-  triggerThreshold: .200000003
-  triggerReactivateDelay: 3
+  triggerType: 4
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
@@ -13000,9 +12890,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
-  triggerThreshold: .200000003
-  triggerReactivateDelay: 2
+  triggerType: 4
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
@@ -13023,9 +12913,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
-  triggerThreshold: .200000003
-  triggerReactivateDelay: 2
+  triggerType: 4
+  triggerThreshold: .150000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 104484, guid: 624457d1460554c4eaa362eb0a9db5be, type: 2}
@@ -13042,7 +12932,7 @@ GameObject:
   - 114: {fileID: 2099460914}
   - 114: {fileID: 2099460913}
   m_Layer: 0
-  m_Name: EnemySpawn2-3
+  m_Name: EnemySpawn2-3_4
   m_TagString: EnemyManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13078,7 +12968,7 @@ MonoBehaviour:
   m_szLastControllerName: Bass
   triggerType: 4
   triggerThreshold: .200000003
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -13101,7 +12991,7 @@ MonoBehaviour:
   m_szLastControllerName: Mid
   triggerType: 4
   triggerThreshold: .25
-  triggerReactivateDelay: .400000006
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -13124,7 +13014,7 @@ MonoBehaviour:
   m_szLastControllerName: High
   triggerType: 4
   triggerThreshold: .170000002
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -13183,9 +13073,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 2032642640}
   m_szLastControllerName: Bass
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .400000006
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
@@ -13206,9 +13096,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .349999994
-  triggerReactivateDelay: .5
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
@@ -13229,9 +13119,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
-  triggerType: 2
+  triggerType: 4
   triggerThreshold: .400000006
-  triggerReactivateDelay: 1
+  triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 147136, guid: f5f90a270fc61fa47a5e1002b474200a, type: 2}
