@@ -32,7 +32,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &138950
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,11 +46,11 @@ GameObject:
   - 23: {fileID: 2326460}
   m_Layer: 14
   m_Name: StarfieldBG_0
-  m_TagString: Untagged
+  m_TagString: Starfield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &165874
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,11 +98,26 @@ GameObject:
   - 23: {fileID: 2379634}
   m_Layer: 14
   m_Name: StarfieldBG_1
+  m_TagString: Starfield
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &190982
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 418298}
+  m_Layer: 14
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &414534
 Transform:
   m_ObjectHideFlags: 1
@@ -115,6 +130,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 439190}
   m_RootOrder: 3
+--- !u!4 &418298
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 190982}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 424072}
+  m_RootOrder: 0
 --- !u!4 &424072
 Transform:
   m_ObjectHideFlags: 1
@@ -124,7 +151,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.78999996, y: 30, z: 17.2299995}
   m_LocalScale: {x: .5, y: .5, z: .5}
-  m_Children: []
+  m_Children:
+  - {fileID: 418298}
   m_Father: {fileID: 439190}
   m_RootOrder: 0
 --- !u!4 &431222
@@ -337,7 +365,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: .863942266, g: .296820968, b: .897058845, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -388,7 +416,7 @@ MonoBehaviour:
   planetRotation: {x: 10, y: 0, z: 0}
   isTimer: 1
   velocity: {x: 0, y: 0}
-  topOfObject: {fileID: 0}
+  topOfObject: {fileID: 190982}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -101,7 +101,7 @@ public class AudioManager : MonoBehaviour {
 			audioClip [0] = Resources.Load ("Music/11Cresc230_48") as AudioClip;
 			break;
 		case "Level 11":
-			audioClip [0] = Resources.Load ("Music/11Cresc_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/First_Level5a") as AudioClip;
 			break;
 		}//7Thumpette_48
 		//funky junky
