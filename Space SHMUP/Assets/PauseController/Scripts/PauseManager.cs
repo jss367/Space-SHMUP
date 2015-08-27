@@ -50,10 +50,10 @@ public class PauseManager : MonoBehaviour {
 	/// <summary>
 	/// TESTING THE BELOW	/// </summary>
 	
-	void OnApplicationPause(bool pauseStatus){
-		OnPause ();
-			
-	}
+//	void OnApplicationPause(bool pauseStatus){
+//		OnPause ();
+//			
+//	}
 	
 	///TESTING ABOVE
 	///
@@ -87,14 +87,14 @@ public class PauseManager : MonoBehaviour {
 	}
 
 	public void OnPause() {
-////		Debug.Log ("PauseManager.OnPause");
-//		isPaused = true;
-//
-//		foreach (var pausableComponent in pausableInterfaces) {		
-//			IPausable pausableInterface = (IPausable)pausableComponent;
-//			if( pausableInterface != null )
-//				pausableInterface.OnPause ();
-//		}
+//		Debug.Log ("PauseManager.OnPause");
+		isPaused = true;
+
+		foreach (var pausableComponent in pausableInterfaces) {		
+			IPausable pausableInterface = (IPausable)pausableComponent;
+			if( pausableInterface != null )
+				pausableInterface.OnPause ();
+		}
 	}
 	public void OnRestart(){
 		MadLevel.LoadLevelByName (MadLevel.currentLevelName);
