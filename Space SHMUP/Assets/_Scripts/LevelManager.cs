@@ -495,8 +495,8 @@ public class LevelManager : MonoBehaviour {
 				
 				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
 
-				SpawnManager.instance.EnemySpawn2d15.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
+				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
+				SpawnManager.instance.EnemySpawn4u8.SetActive (true);
 			} else if (timer < waveThree) {
 		
 				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
@@ -508,7 +508,6 @@ public class LevelManager : MonoBehaviour {
 				
 			} else {
 				SpawnManager.instance.AsteroidSpawn8.SetActive(true);
-//				SpawnManager.instance.AsteroidSpawn9.SetActive(true);
 				SpawnManager.instance.EnemySpawn5d2.SetActive(true);
 				SpawnManager.instance.EnemySpawn1d3.SetActive (true);
 			}
@@ -534,21 +533,18 @@ public class LevelManager : MonoBehaviour {
 			} else if (timer < 22) {
 				//				level = 2;
 				//			AsteroidSpawn2.SetActive(false);
+				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
-				SpawnManager.instance.AsteroidSpawn1.SetActive (false);
-				SpawnManager.instance.AsteroidSpawn3.SetActive (true);
-				SpawnManager.instance.EnemySpawn1d1.SetActive (false);
-				SpawnManager.instance.EnemySpawn1d3.SetActive (true);
+				SpawnManager.instance.EnemySpawn4d2.SetActive (true);
+				SpawnManager.instance.EnemySpawn5d2.SetActive (true);
 			} else if (timer < 34) {
 				//				level = 3;
-				SpawnManager.instance.AsteroidSpawn3.SetActive (false);
+
 				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
-				SpawnManager.instance.EnemySpawn1d3.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d1.SetActive (true);
 			} else if (timer < 39) {
 				//				level = 3;
 				SpawnManager.instance.AsteroidSpawn1.SetActive (true);
-				SpawnManager.instance.EnemySpawn2d1.SetActive (false);
 				SpawnManager.instance.EnemySpawn2d2.SetActive (true);
 	
 			} else if (timer < waveTwo) {
@@ -558,7 +554,6 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
 				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
 				CheckForNextWave(waveTwo, 2);
-			} else if (timer < 70) {
 
 			} else {
 				//				level = 4;
@@ -592,7 +587,7 @@ public class LevelManager : MonoBehaviour {
 			} else if (timer < waveThree) {
 		
 
-				SpawnManager.instance.AsteroidSpawn3.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 
 				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
 				CheckForNextWave(waveThree, 3);
@@ -602,7 +597,7 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.EnemySpawn5d1.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d2.SetActive (true);
 
-				
+				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 			} else if (timer < 85) {
 				//				level = 3;
 
@@ -615,11 +610,8 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.EnemySpawn3d2.SetActive (true);
 				SpawnManager.instance.EnemySpawn6d2.SetActive (true);
 			} else if (timer < waveFour) {
-	
 
 				SpawnManager.instance.AsteroidSpawn5.SetActive (true);
-
-				//				level = 3;
 				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d2.SetActive (true);
 				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
@@ -627,18 +619,19 @@ public class LevelManager : MonoBehaviour {
 				CheckForNextWave(waveFour, 4);
 			} else if (timer < waveFive) {
 
-				SpawnManager.instance.AsteroidSpawn8.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn10.SetActive (true);
 				SpawnManager.instance.EnemySpawn5d1.SetActive (true);
 				SpawnManager.instance.EnemySpawn15d3.SetActive(true);
 				CheckForNextWave(waveFive, 5);
 				//				level = 4;
 			} else {
+				SpawnManager.instance.AsteroidSpawn10.SetActive (true);
+
 				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d2.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
-				SpawnManager.instance.EnemySpawn6d2.SetActive (true);
+				SpawnManager.instance.EnemySpawn4d2.SetActive (true);
+				SpawnManager.instance.EnemySpawn6d1.SetActive (true);
 			}
-			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
 		}
 	}
 

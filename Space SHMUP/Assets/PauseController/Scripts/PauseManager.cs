@@ -33,14 +33,6 @@ public class PauseManager : MonoBehaviour {
 	}
 	
 	void Update () {
-//		if (Input.GetKeyDown(KeyCode.Escape))
-//		{
-//			if( isPaused ) {
-//				OnUnPause();
-//			} else {
-//				OnPause();
-//			}
-//		}
 
 		pauseCanvas.enabled = isPaused;
 		anim.SetBool( "IsPaused", isPaused );

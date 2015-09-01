@@ -1,20 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &115718
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 443920}
-  m_Layer: 14
-  m_Name: TopOfPlanet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &120060
 GameObject:
   m_ObjectHideFlags: 1
@@ -235,8 +220,8 @@ Transform:
   - {fileID: 412670}
   - {fileID: 460676}
   - {fileID: 473502}
-  - {fileID: 483414}
   - {fileID: 428932}
+  - {fileID: 483414}
   - {fileID: 488692}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -249,8 +234,7 @@ Transform:
   m_LocalRotation: {x: -.550024569, y: -.405687124, z: .705963194, w: -.185760587}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 443920}
+  m_Children: []
   m_Father: {fileID: 473502}
   m_RootOrder: 0
 --- !u!4 &410282
@@ -296,11 +280,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.4519691, y: 19.4610004, z: 937.173767}
+  m_LocalPosition: {x: 48.4519691, y: 19.4610004, z: 1000}
   m_LocalScale: {x: 160, y: 160, z: 1}
   m_Children: []
   m_Father: {fileID: 402812}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!4 &439234
 Transform:
   m_ObjectHideFlags: 1
@@ -313,18 +297,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 460676}
   m_RootOrder: 2
---- !u!4 &443920
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 115718}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.77999997, y: -5.82000017, z: -7.51999998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 409292}
-  m_RootOrder: 0
 --- !u!4 &460676
 Transform:
   m_ObjectHideFlags: 1
@@ -377,7 +349,7 @@ Transform:
   m_LocalScale: {x: 160, y: 160, z: 1}
   m_Children: []
   m_Father: {fileID: 402812}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!4 &488692
 Transform:
   m_ObjectHideFlags: 1
@@ -641,7 +613,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: .977941155, g: .604022443, b: .604022443, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.29999995
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -733,7 +705,7 @@ MonoBehaviour:
   planetRotation: {x: 0, y: 0, z: -10}
   isTimer: 0
   velocity: {x: 0, y: 0}
-  topOfObject: {fileID: 0}
+  speedAdjustment: 0
 --- !u!114 &11477176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -761,7 +733,7 @@ MonoBehaviour:
   planetRotation: {x: 10, y: 0, z: 0}
   isTimer: 0
   velocity: {x: 0, y: 0}
-  topOfObject: {fileID: 0}
+  speedAdjustment: 0
 --- !u!114 &11497020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -776,7 +748,7 @@ MonoBehaviour:
   planetRotation: {x: 0, y: 0, z: 0}
   isTimer: 1
   velocity: {x: 0, y: 0}
-  topOfObject: {fileID: 115718}
+  speedAdjustment: 0
 --- !u!135 &13537952
 SphereCollider:
   m_ObjectHideFlags: 1

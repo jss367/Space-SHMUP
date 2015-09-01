@@ -92,21 +92,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &161006
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 411606}
-  m_Layer: 20
-  m_Name: TopOfPlanet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &175152
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,18 +165,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 420716}
   m_RootOrder: 1
---- !u!4 &411606
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 161006}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.68000031, y: -.170000002, z: 2.23000002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 496942}
-  m_RootOrder: 0
 --- !u!4 &420716
 Transform:
   m_ObjectHideFlags: 1
@@ -268,8 +241,7 @@ Transform:
   m_LocalRotation: {x: .661687672, y: -.692653239, z: -.26584208, w: .10830012}
   m_LocalPosition: {x: 17.6000004, y: 28.1499996, z: 66.6200027}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 411606}
+  m_Children: []
   m_Father: {fileID: 420716}
   m_RootOrder: 3
 --- !u!23 &2325046
@@ -581,10 +553,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d131df8a888ca48b6f2efb19568bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetRotation: {x: 0, y: 0, z: -10}
+  planetRotation: {x: 0, y: 0, z: -50}
   isTimer: 1
   velocity: {x: 0, y: 0}
-  topOfObject: {fileID: 161006}
+  speedAdjustment: 0
 --- !u!135 &13538842
 SphereCollider:
   m_ObjectHideFlags: 1
