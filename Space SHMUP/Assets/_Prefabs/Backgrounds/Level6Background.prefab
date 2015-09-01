@@ -84,21 +84,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &134146
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 473394}
-  m_Layer: 14
-  m_Name: TopOfPlanet
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &145588
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +323,6 @@ Transform:
   m_Children:
   - {fileID: 419846}
   - {fileID: 451184}
-  - {fileID: 473394}
   m_Father: {fileID: 434624}
   m_RootOrder: 3
 --- !u!4 &443344
@@ -391,18 +375,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 451184}
   m_RootOrder: 0
---- !u!4 &473394
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 134146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.19999981, y: -8.26000023, z: -4.05000019}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 439548}
-  m_RootOrder: 2
 --- !u!4 &484830
 Transform:
   m_ObjectHideFlags: 1
@@ -740,7 +712,7 @@ MonoBehaviour:
   planetRotation: {x: 0, y: 0, z: 0}
   isTimer: 1
   velocity: {x: 0, y: 0}
-  topOfObject: {fileID: 134146}
+  speedAdjustment: -.150000006
 --- !u!198 &19882590
 ParticleSystem:
   m_ObjectHideFlags: 1

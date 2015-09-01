@@ -31,7 +31,8 @@ public class Planet : MonoBehaviour {
 	private float timeLimit;
 	private float speed;
 	public Vector2 velocity;
-	public GameObject topOfObject;
+//	public GameObject topOfObject;
+	public float speedAdjustment = 0.0f;
 	
 	void Start () {
 		// Cache reference to transform to improve performance
@@ -39,10 +40,10 @@ public class Planet : MonoBehaviour {
 
 		if (isTimer) {
 			timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-			Vector3 pos = topOfObject.transform.position;
+			Vector3 pos = transform.position;
 			pos.y = 30.0f;
 			transform.position = pos;
-			speed = 65.0f/timeLimit;
+			speed = 65.0f/timeLimit + speedAdjustment;
 		}
 	}
 	
