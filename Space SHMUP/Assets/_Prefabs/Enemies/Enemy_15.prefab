@@ -107,10 +107,9 @@ MonoBehaviour:
   health: 3
   score: 100
   showDamageForFrames: 2
-  powerUpDropChance: 1
+  powerUpDropChance: .200000003
   missileDropChance: .100000001
   _________________: 0
-  comboTime: 1
   impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
   originalColors: []
   materials: []
@@ -121,7 +120,6 @@ MonoBehaviour:
   boundsCenterOffset: {x: 0, y: 0, z: 0}
   enemyExplosion: {fileID: 172662, guid: 0b461f2f00c26474db70e48f1893c723, type: 2}
   popText: {fileID: 108858, guid: 8251e117c41da3548a4a22029d7df382, type: 2}
-  comboPopText: {fileID: 108858, guid: 65c2838b55bb4e145ab6fd6636edfcff, type: 2}
   waveFrequency: 2
   waveWidth: 2
   waveRotY: 45

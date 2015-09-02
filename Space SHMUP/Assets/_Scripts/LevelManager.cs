@@ -128,7 +128,7 @@ public class LevelManager : MonoBehaviour {
 
 	void Update(){
 		timer = Time.timeSinceLevelLoad;
-//		Debug.Log (timer);
+		Debug.Log (timer);
 //		Debug.Log (deadPeriod);
 //		Debug.Log (Main.S.stopSpawning);
 		if (Main.S.stopSpawning) {
@@ -259,21 +259,32 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 
 			} else if (timer < waveTwo){
-				SpawnManager.instance.EnemySpawn2d15.SetActive (true);
+
 				SpawnManager.instance.AsteroidSpawn3.SetActive (true);
 //				SpawnManager.instance.EnemySpawn1dtest.SetActive (true);
 				SpawnManager.instance.EnemySpawn15d1.SetActive (true);
-				SpawnManager.instance.AsteroidSpawn0.SetActive (false);
+				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 				CheckForNextWave(waveTwo, 2);
 
 			} else if (timer < waveThree){
-				SpawnManager.instance.AsteroidSpawn3.SetActive (true);
-				SpawnManager.instance.EnemySpawn1d15.SetActive(true);
-				CheckForNextWave(waveThree, 3);
-			} else {
+				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d15.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn3.SetActive (true);
+//				SpawnManager.instance.EnemySpawn1d15.SetActive(true);
+//				SpawnManager.instance.EnemySpawn1dtest.SetActive (true);
+
+				CheckForNextWave(waveThree, 3);
+			} else if (timer < 65) {
+				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
+				SpawnManager.instance.EnemySpawn2d15.SetActive (true);
+				SpawnManager.instance.EnemySpawn15d1.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn3.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn31.SetActive (true);
+			} else {
+				SpawnManager.instance.EnemySpawn2d15.SetActive (false);
+				SpawnManager.instance.EnemySpawn15d1.SetActive (false);
+				SpawnManager.instance.EnemySpawn2u3.SetActive (true);
+				SpawnManager.instance.EnemySpawn15u3.SetActive (true);
 			}
 			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());
 		}

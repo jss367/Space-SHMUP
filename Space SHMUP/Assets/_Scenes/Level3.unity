@@ -116,7 +116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 28
+  m_RootOrder: 30
 --- !u!114 &4457816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,7 +689,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 23
+  m_RootOrder: 25
 --- !u!114 &174917694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,7 +909,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 21
+  m_RootOrder: 23
 --- !u!114 &202882574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,7 +1732,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 32
+  m_RootOrder: 34
 --- !u!114 &297429752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1894,7 +1894,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 308293535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.70345497, y: -2.5, z: 0}
+  m_LocalPosition: {x: -5.79722977, y: -2.5, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 396900309}
@@ -2472,7 +2472,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 35
+  m_RootOrder: 37
 --- !u!114 &446151030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2560,11 +2560,13 @@ MonoBehaviour:
   EnemySpawn15d1: {fileID: 1964562502}
   EnemySpawn15d2: {fileID: 1706965114}
   EnemySpawn15d3: {fileID: 596721840}
+  EnemySpawn15u3: {fileID: 2040409871}
   EnemySpawn15u4: {fileID: 2099460911}
   EnemySpawn2d1: {fileID: 2001424116}
   EnemySpawn2d15: {fileID: 1447581452}
   EnemySpawn2d2: {fileID: 1752397855}
   EnemySpawn2d3: {fileID: 541644471}
+  EnemySpawn2u3: {fileID: 1265502655}
   EnemySpawn2u6: {fileID: 603245881}
   EnemySpawn3d1: {fileID: 1009311331}
   EnemySpawn3d15: {fileID: 1140070267}
@@ -2839,7 +2841,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 17
+  m_RootOrder: 19
 --- !u!114 &541644473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3053,7 +3055,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 12
+  m_RootOrder: 13
 --- !u!114 &596721842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3152,7 +3154,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 18
+  m_RootOrder: 20
 --- !u!114 &603245883
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3597,7 +3599,7 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 1
-  triggerThreshold: .150000006
+  triggerThreshold: .5
   triggerReactivateDelay: 3.5
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -3620,7 +3622,7 @@ MonoBehaviour:
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
   triggerType: 1
-  triggerThreshold: .150000006
+  triggerThreshold: .5
   triggerReactivateDelay: 2.0999999
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -3816,7 +3818,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 26
+  m_RootOrder: 28
 --- !u!114 &685569752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4129,8 +4131,8 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .25
+  triggerType: 2
+  triggerThreshold: .550000012
   triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -4153,7 +4155,7 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .150000006
+  triggerThreshold: .119999997
   triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -4909,7 +4911,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 863498090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
   m_Name: 
@@ -4941,9 +4943,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .0799999982
-  triggerReactivateDelay: .0199999996
+  triggerType: 2
+  triggerThreshold: .469999999
+  triggerReactivateDelay: .200000003
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: f08b9eaf67ca38847a23f61d8b3e29b1, type: 2}
@@ -4965,8 +4967,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .0799999982
-  triggerReactivateDelay: .0199999996
+  triggerThreshold: .0900000036
+  triggerReactivateDelay: .200000003
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 127914, guid: c50a981290084db45a608d06db745592, type: 2}
@@ -7110,7 +7112,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 19
+  m_RootOrder: 21
 --- !u!114 &1009311333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7596,7 +7598,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 20
+  m_RootOrder: 22
 --- !u!114 &1140070269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7774,8 +7776,8 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .300000012
+  triggerType: 2
+  triggerThreshold: .5
   triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -7821,7 +7823,7 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .150000006
+  triggerThreshold: .109999999
   triggerReactivateDelay: .0199999996
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
@@ -8030,7 +8032,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 24
+  m_RootOrder: 26
 --- !u!114 &1191172631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8196,7 +8198,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 34
+  m_RootOrder: 36
 --- !u!114 &1225814384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8443,6 +8445,81 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 479394, guid: 86c0c5e01e5c7b94d8db3336fc6b2d99, type: 2}
   m_PrefabInternal: {fileID: 1723790351}
+--- !u!1 &1265502655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 157172, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1265502656}
+  - 114: {fileID: 1265502658}
+  - 114: {fileID: 1265502657}
+  m_Layer: 0
+  m_Name: EnemySpawn2_3
+  m_TagString: EnemyManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1265502656
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 443698, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265502655}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1279671435}
+  m_RootOrder: 17
+--- !u!114 &1265502657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11473622, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265502655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1039923473}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .649999976
+  triggerReactivateDelay: .200000003
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &1265502658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11409758, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1265502655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1039923471}
+  m_szLastControllerName: High
+  triggerType: 4
+  triggerThreshold: .200000003
+  triggerReactivateDelay: .200000003
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!1 &1266634887
 GameObject:
   m_ObjectHideFlags: 0
@@ -8665,11 +8742,13 @@ Transform:
   - {fileID: 693706715}
   - {fileID: 96302667}
   - {fileID: 1964562503}
+  - {fileID: 2040409872}
   - {fileID: 1706965115}
   - {fileID: 596721841}
   - {fileID: 2099460912}
   - {fileID: 2001424117}
   - {fileID: 1447581453}
+  - {fileID: 1265502656}
   - {fileID: 1752397856}
   - {fileID: 541644472}
   - {fileID: 603245882}
@@ -8721,7 +8800,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 22
+  m_RootOrder: 24
 --- !u!114 &1287800356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8973,7 +9052,7 @@ MonoBehaviour:
     m_Extent: {x: 0, y: 0, z: 0}
   shieldUpgradeOwned: 0
   speedUpgradeOwned: 0
-  isInvincible: 0
+  isInvincible: 1
   launch1: 0
   popText: {fileID: 186940, guid: 5abd7a417a1184b4a909c373dd4eae43, type: 2}
   target: {x: 0, y: 0, z: 0}
@@ -9700,7 +9779,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 15
+  m_RootOrder: 16
 --- !u!114 &1447581455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9717,9 +9796,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .400000006
-  triggerReactivateDelay: .0199999996
+  triggerType: 2
+  triggerThreshold: .5
+  triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -9741,8 +9820,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .25
-  triggerReactivateDelay: .0199999996
+  triggerThreshold: .129999995
+  triggerReactivateDelay: .5
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 188164, guid: 6a2e2b5b1c64d2045a709a837697a503, type: 2}
@@ -9845,7 +9924,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 30
+  m_RootOrder: 32
 --- !u!1 &1462871984
 GameObject:
   m_ObjectHideFlags: 0
@@ -11181,7 +11260,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 11
+  m_RootOrder: 12
 --- !u!114 &1706965116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11669,7 +11748,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 16
+  m_RootOrder: 18
 --- !u!114 &1752397857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11996,7 +12075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 29
+  m_RootOrder: 31
 --- !u!114 &1768970894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12331,7 +12410,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 31
+  m_RootOrder: 33
 --- !u!114 &1832828438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13250,7 +13329,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 27
+  m_RootOrder: 29
 --- !u!114 &1931945730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13581,9 +13660,9 @@ MonoBehaviour:
   m_szLastVisManagerName: VisualizerManager
   controller: {fileID: 1039923473}
   m_szLastControllerName: Mid
-  triggerType: 4
-  triggerThreshold: .349999994
-  triggerReactivateDelay: .0199999996
+  triggerType: 2
+  triggerThreshold: .5
+  triggerReactivateDelay: .200000003
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -13605,8 +13684,8 @@ MonoBehaviour:
   controller: {fileID: 1039923471}
   m_szLastControllerName: High
   triggerType: 4
-  triggerThreshold: .200000003
-  triggerReactivateDelay: .0199999996
+  triggerThreshold: .109999999
+  triggerReactivateDelay: .200000003
   triggerRandomReactivateDelay: 0
   spawnPadding: 1.5
   prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
@@ -13814,7 +13893,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 14
+  m_RootOrder: 15
 --- !u!114 &2001424118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13961,6 +14040,81 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2033023887}
+--- !u!1 &2040409871
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138296, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2040409872}
+  - 114: {fileID: 2040409874}
+  - 114: {fileID: 2040409873}
+  m_Layer: 0
+  m_Name: EnemySpawn15_3
+  m_TagString: EnemyManager
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2040409872
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 485596, guid: 7304a65bf53c8434ead9c582d69d8143, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2040409871}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1279671435}
+  m_RootOrder: 11
+--- !u!114 &2040409873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11488360, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2040409871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1039923473}
+  m_szLastControllerName: Mid
+  triggerType: 2
+  triggerThreshold: .800000012
+  triggerReactivateDelay: .5
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
+--- !u!114 &2040409874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11487694, guid: 7304a65bf53c8434ead9c582d69d8143,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2040409871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 434976db1e655fd4eaace89374b4925f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_oVisManager: {fileID: 2032642639}
+  m_szLastVisManagerName: VisualizerManager
+  controller: {fileID: 1039923471}
+  m_szLastControllerName: High
+  triggerType: 4
+  triggerThreshold: .25
+  triggerReactivateDelay: .5
+  triggerRandomReactivateDelay: 0
+  spawnPadding: 1.5
+  prefab: {fileID: 145306, guid: 76d95c88993407846a26dca6bba84528, type: 2}
+  randomOffset: {x: 30, y: 0, z: 0}
 --- !u!4 &2050972925 stripped
 Transform:
   m_PrefabParentObject: {fileID: 402812, guid: 6cc42fbb02a6e274c86d161d7c6a641f, type: 2}
@@ -14161,7 +14315,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 25
+  m_RootOrder: 27
 --- !u!114 &2097672904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14260,7 +14414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 13
+  m_RootOrder: 14
 --- !u!114 &2099460913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14367,7 +14521,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1279671435}
-  m_RootOrder: 33
+  m_RootOrder: 35
 --- !u!114 &2129766641
 MonoBehaviour:
   m_ObjectHideFlags: 0
