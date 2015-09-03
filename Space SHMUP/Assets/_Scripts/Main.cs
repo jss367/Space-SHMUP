@@ -231,11 +231,10 @@ public class Main : MonoBehaviour {
 			StartCoroutine(PopText(newScoreValue.ToString(), 0.2f));
 //					Debug.Log ("Score has been updated");
 			score += newScoreValue;
-		}
-		
+
 		scoreText.text = "Score : " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
-
+	}
 
 	public void EnemyDestroyed( Enemy e, bool combo) {
 		// Potentially generate a PowerUp
@@ -424,16 +423,16 @@ public class Main : MonoBehaviour {
 		case "Level 1":
 //			Debug.Log("on level one");
 			victoryBonus = 50;
-			earth1 = 100;
-			earth2 = 300;
-			earth3 = 500;
+			earth1 = 150;
+			earth2 = 250;
+			earth3 = 400;
 
 			break;
 		case "Level 2":
 			victoryBonus = 100;
-			earth1 = 150;
-			earth2 = 200;
-			earth3 = 400;
+			earth1 = 1500;
+			earth2 = 2000;
+			earth3 = 2750;
 
 			break;
 		case "Level 3":

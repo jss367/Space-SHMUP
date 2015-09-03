@@ -24,6 +24,7 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject AsteroidSpawn4;
 	public GameObject AsteroidSpawn5;
 	public GameObject AsteroidSpawn51;
+	public GameObject AsteroidSpawn515;
 	public GameObject AsteroidSpawn6;
 	public GameObject AsteroidSpawn61;
 	public GameObject AsteroidSpawn7;
