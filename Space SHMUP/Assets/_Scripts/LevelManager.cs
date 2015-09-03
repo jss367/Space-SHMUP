@@ -228,28 +228,19 @@ public class LevelManager : MonoBehaviour {
 
 			} else if (timer < waveTwo){
 			
-//				Debug.Log(waveTwo - timer);
-//				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
-//				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d15.SetActive (true);
 				//CheckForNextWave must go below the spawn manager
 				CheckForNextWave(waveTwo, 2);
-			} else if (timer < 60) {
+			} else {
 
-//				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
-		
 				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
 				SpawnManager.instance.EnemySpawn15d2.SetActive (true);
 
-			}else {
-
-//				SpawnManager.instance.EnemySpawn1d15.SetActive (true);
 			}
 
 		}
 	}
-
 
 	void Level3Update () {
 		// This is for 6Ectoplasm2_125_48
