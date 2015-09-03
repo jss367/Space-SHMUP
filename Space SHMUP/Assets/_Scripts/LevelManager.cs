@@ -78,7 +78,7 @@ public class LevelManager : MonoBehaviour {
 			waveTwo = 32;
 			waveThree = 59;
 			waveFour = 90;
-			waveFive = 115.8f;
+			waveFive = 115.5f;
 			break;
 		case "Level 6":
 			numWaves = 5;
@@ -293,7 +293,7 @@ public class LevelManager : MonoBehaviour {
 				CheckForNextWave(waveOne, 1);
 
 			} else if (timer < waveTwo) {
-
+				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d3.SetActive (true);
 //				SpawnManager.instance.EnemySpawn1dtest.SetActive (true);
@@ -551,8 +551,8 @@ public class LevelManager : MonoBehaviour {
 			
 	
 				SpawnManager.instance.AsteroidSpawn7.SetActive (true);
-				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
+				SpawnManager.instance.EnemySpawn3u9.SetActive (true);
+				SpawnManager.instance.EnemySpawn4u9.SetActive (true);
 				CheckForNextWave(waveTwo, 2);
 
 			} else {
@@ -560,7 +560,7 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn9.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn6.SetActive (true);
 				SpawnManager.instance.EnemySpawn5d2.SetActive (true);
-				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
+				SpawnManager.instance.EnemySpawn1d1.SetActive (true);
 			}
 			
 			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());

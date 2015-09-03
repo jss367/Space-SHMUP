@@ -436,17 +436,17 @@ public class Main : MonoBehaviour {
 
 			break;
 		case "Level 3":
-			victoryBonus = 600;
-			earth1 = 10000;
-			earth2 = 15000;
-			earth3 = 20000;
+			victoryBonus = 150;
+			earth1 = 2500;
+			earth2 = 3000;
+			earth3 = 3700;
 
 			break;
 		case "Level 4":
-			victoryBonus = 800;
-			earth1 = 30000;
-			earth2 = 40000;
-			earth3 = 50000;
+			victoryBonus = 200;
+			earth1 = 1000;
+			earth2 = 1200;
+			earth3 = 1500;
 
 			break;
 		case "Level 8":
