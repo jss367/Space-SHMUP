@@ -72,17 +72,7 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject EnemySpawn6d3;
 	public GameObject EnemySpawn10d1;
 	public GameObject EnemySpawn11d1;
-//	public GameObject High1;
-//	public GameObject High2;
-//	public GameObject High3;
-//	public GameObject High4;
-//	public GameObject High5;
-//	public GameObject High6;
-//	public GameObject High7;
-//	public GameObject High8;
-//	public GameObject High9;
-//	public GameObject High10;
-//	public GameObject High11;
+
 	public GameObject Mid;
 	public GameObject Bass;
 	public Text WaveText;
@@ -90,31 +80,6 @@ public class SpawnManager : MonoBehaviour {
 	void Awake()
 	{
 		instance = this;
-//		LevelManager = GameObject.Find ("LevelManager");
-//		AsteroidSpawn0 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn0");
-//		AsteroidSpawn1 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn1");
-//		AsteroidSpawn2 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn2");
-//		AsteroidSpawn3 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn3");
-//		AsteroidSpawn4 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn4");
-//		AsteroidSpawn5 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn5");
-//		AsteroidSpawn6 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn6");
-//		AsteroidSpawn7 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn7");
-//		AsteroidSpawn8 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn8");
-//		AsteroidSpawn9 = GameObject.Find ("LevelManager/AsteroidManager/AsteroidSpawn9");
-//		EnemySpawn0d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn0-1");
-//		EnemySpawn1d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn1-1");
-//		EnemySpawn1d2 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn1-2");
-//		EnemySpawn1d3 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn1-3");
-//		EnemySpawn2d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn2-1");
-//		EnemySpawn3d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn3-1");
-//		EnemySpawn3d2 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn3-2");
-//		EnemySpawn4d3 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn4-3");
-//		EnemySpawn5d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn5-1");
-//		EnemySpawn10d1 = GameObject.Find ("LevelManager/EnemyManager/EnemySpawn10-1");
-//		Mid1 = GameObject.Find ("LevelManager/FireworksManager/Mid1");
-//		Mid2 = GameObject.Find ("LevelManager/FireworksManager/Mid2");
-//		High1 = GameObject.Find ("LevelManager/FireworksManager/High1");
-//		Bass1 = GameObject.Find ("LevelManager/FireworksManager/Bass1");
 
 	}
 

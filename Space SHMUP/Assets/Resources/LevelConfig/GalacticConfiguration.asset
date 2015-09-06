@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: GalacticConfiguration
   m_EditorClassIdentifier: 
   creationDate: 0
-  _active: 0
+  _active: 1
   levels:
   - _sceneObject: {fileID: 102900000, guid: fc2330cff3767854081984853d0e2305, type: 3}
     _scenePath: Assets/_Scenes/SoomlaSplash.unity
@@ -62,9 +62,9 @@ MonoBehaviour:
     groupId: 0
     extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
     lockedByDefault: 0
-  - _sceneObject: {fileID: 102900000, guid: 729fed8b1fe8e814cb623880eba131c0, type: 3}
-    _scenePath: Assets/_Scenes/Group Loader Scene.unity
-    _sceneName: Group Loader Scene
+  - _sceneObject: {fileID: 102900000, guid: 84fc6d18638c2d343bf274af51a48df6, type: 3}
+    _scenePath: Assets/_Scenes/Level1.unity
+    _sceneName: Level1
     scene: 
     parent: {fileID: 11400000}
     order: 40
@@ -74,25 +74,25 @@ MonoBehaviour:
     groupId: 0
     extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
     lockedByDefault: 0
-  - _sceneObject: {fileID: 102900000, guid: ad59c25e534d74247bbe42f820fe4c44, type: 3}
-    _scenePath: Assets/_Scenes/Group Select.unity
-    _sceneName: Group Select
+  - _sceneObject: {fileID: 102900000, guid: 84fc6d18638c2d343bf274af51a48df6, type: 3}
+    _scenePath: Assets/_Scenes/Level1.unity
+    _sceneName: Level1
     scene: 
     parent: {fileID: 11400000}
     order: 50
-    name: Group Select
-    type: 0
+    name: Level 2
+    type: 1
     arguments: 
     groupId: 0
-    extensionGUID: 
-    lockedByDefault: 0
+    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
+    lockedByDefault: 1
   - _sceneObject: {fileID: 102900000, guid: 84fc6d18638c2d343bf274af51a48df6, type: 3}
     _scenePath: Assets/_Scenes/Level1.unity
     _sceneName: Level1
     scene: 
     parent: {fileID: 11400000}
     order: 60
-    name: Level 5
+    name: Level 3
     type: 1
     arguments: 
     groupId: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
     scene: 
     parent: {fileID: 11400000}
     order: 70
-    name: Level 6
+    name: Level 4
     type: 1
     arguments: 
     groupId: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
     scene: 
     parent: {fileID: 11400000}
     order: 80
-    name: Level 7
+    name: Level 5
     type: 1
     arguments: 
     groupId: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
     scene: 
     parent: {fileID: 11400000}
     order: 90
-    name: Level 8
+    name: Level 6
     type: 1
     arguments: 
     groupId: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
     scene: 
     parent: {fileID: 11400000}
     order: 100
-    name: Level 9
+    name: Level 7
     type: 1
     arguments: 
     groupId: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
     scene: 
     parent: {fileID: 11400000}
     order: 110
-    name: Level 10
+    name: Level 8
     type: 1
     arguments: 
     groupId: 0
@@ -164,10 +164,10 @@ MonoBehaviour:
     scene: 
     parent: {fileID: 11400000}
     order: 120
-    name: Level 4
+    name: Level 9
     type: 1
     arguments: 
-    groupId: 1
+    groupId: 0
     extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
     lockedByDefault: 1
   - _sceneObject: {fileID: 102900000, guid: 84fc6d18638c2d343bf274af51a48df6, type: 3}
@@ -176,28 +176,13 @@ MonoBehaviour:
     scene: 
     parent: {fileID: 11400000}
     order: 130
-    name: Level 3
+    name: Level 10
     type: 1
     arguments: 
-    groupId: 1
+    groupId: 0
     extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
     lockedByDefault: 1
-  - _sceneObject: {fileID: 102900000, guid: 84fc6d18638c2d343bf274af51a48df6, type: 3}
-    _scenePath: Assets/_Scenes/Level1.unity
-    _sceneName: Level1
-    scene: 
-    parent: {fileID: 11400000}
-    order: 140
-    name: Level 2
-    type: 1
-    arguments: 
-    groupId: 1
-    extensionGUID: d519f297-d418-4f8c-9e91-b3be7d6dd0c0
-    lockedByDefault: 1
-  groups:
-  - name: Group2
-    _id: 1
-    parent: {fileID: 11400000}
+  groups: []
   extensions:
   - name: Loading Screen
     guid: d519f297-d418-4f8c-9e91-b3be7d6dd0c0

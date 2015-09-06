@@ -401,6 +401,7 @@ public class Main : MonoBehaviour {
 			if (displayScore == earth2){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
 				Instantiate(earthReward, pos2, Quaternion.identity);
+//				StarsUtil.DestroyObject
 			}
 			if (displayScore == earth3){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
@@ -423,7 +424,7 @@ public class Main : MonoBehaviour {
 		case "Level 1":
 //			Debug.Log("on level one");
 			victoryBonus = 50;
-			earth1 = 150;
+			earth1 = 100;
 			earth2 = 250;
 			earth3 = 400;
 

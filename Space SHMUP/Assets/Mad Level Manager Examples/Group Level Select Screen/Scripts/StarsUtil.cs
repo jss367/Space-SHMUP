@@ -21,9 +21,9 @@ public class StarsUtil : MonoBehaviour {
         var levels = MadLevel.GetAllLevelNames(MadLevel.Type.Level, groupName);
         int collectedStars = 0;
         for (int i = 0; i < levels.Length; ++i) {
-            if (MadLevelProfile.GetLevelBoolean(levels[i], "star_1")) collectedStars++;
-            if (MadLevelProfile.GetLevelBoolean(levels[i], "star_2")) collectedStars++;
-            if (MadLevelProfile.GetLevelBoolean(levels[i], "star_3")) collectedStars++;
+            if (MadLevelProfile.GetLevelBoolean(levels[i], "earth_1")) collectedStars++;
+			if (MadLevelProfile.GetLevelBoolean(levels[i], "earth_2")) collectedStars++;
+			if (MadLevelProfile.GetLevelBoolean(levels[i], "earth_3")) collectedStars++;
         }
 
         return collectedStars;

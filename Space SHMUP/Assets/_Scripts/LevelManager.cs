@@ -128,22 +128,13 @@ public class LevelManager : MonoBehaviour {
 
 	void Update(){
 		timer = Time.timeSinceLevelLoad;
-		Debug.Log (timer);
+//		Debug.Log (timer);
 //		Debug.Log (deadPeriod);
 //		Debug.Log (Main.S.stopSpawning);
 		if (Main.S.stopSpawning) {
 			StopSpawn();
 		}
 	}
-
-//	void Wave(int level){
-//		Debug.Log ("Wave has been called");
-//			SpawnManager.instance.WaveText.text = "Wave " + level + " of " + numWaves;
-//			SpawnManager.instance.WaveText.enabled = true;
-//
-////			yield return new WaitForSeconds(1);
-//			SpawnManager.instance.WaveText.enabled = false;
-//	}
 
 
 
