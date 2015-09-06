@@ -70,7 +70,7 @@ public class AudioManager : MonoBehaviour {
 		currentLevel = MadLevel.currentLevelName;
 
 		switch (currentLevel) {
-		case "Level 1":
+		case "Group 1 Level One":
 			audioClip [0] = Resources.Load ("Music/1Mix21_48") as AudioClip;
 			break;
 		case "Level 2":

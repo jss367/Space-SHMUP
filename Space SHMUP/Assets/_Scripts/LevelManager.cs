@@ -266,7 +266,7 @@ public class LevelManager : MonoBehaviour {
 //				SpawnManager.instance.EnemySpawn1dtest.SetActive (true);
 
 				CheckForNextWave(waveThree, 3);
-			} else if (timer < 65) {
+			} else if (timer < 66) {
 				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d15.SetActive (true);
 				SpawnManager.instance.EnemySpawn15d1.SetActive (true);
@@ -357,7 +357,7 @@ public class LevelManager : MonoBehaviour {
 				SpawnManager.instance.AsteroidSpawn51.SetActive (true);
 				SpawnManager.instance.EnemySpawn3d3.SetActive (true);
 				SpawnManager.instance.EnemySpawn2d3.SetActive (true);
-	
+				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
 
 				}
 			//		Debug.Log ("The player is on level " + SpawnManager.instance.level.ToString());

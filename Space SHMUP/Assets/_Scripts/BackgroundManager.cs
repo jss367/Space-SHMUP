@@ -27,7 +27,7 @@ public class BackgroundManager : MonoBehaviour {
 		currentLevel = MadLevel.currentLevelName;
 
 		switch (currentLevel) {
-		case "Level 1":
+		case "Group 1 Level One":
 			Level1Background.SetActive (true);
 			break;
 		case "Level 2":

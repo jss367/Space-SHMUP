@@ -430,9 +430,9 @@ public class Main : MonoBehaviour {
 			break;
 		case "Level 2":
 			victoryBonus = 100;
-			earth1 = 1500;
-			earth2 = 2000;
-			earth3 = 2750;
+			earth1 = 2000;
+			earth2 = 3000;
+			earth3 = 4000;
 
 			break;
 		case "Level 3":
@@ -445,16 +445,51 @@ public class Main : MonoBehaviour {
 		case "Level 4":
 			victoryBonus = 200;
 			earth1 = 1000;
-			earth2 = 1200;
-			earth3 = 1500;
+			earth2 = 1500;
+			earth3 = 2000;
 
 			break;
+		case "Level 5":
+			victoryBonus = 300;
+			earth1 = 2500;
+			earth2 = 3000;
+			earth3 = 3700;
+			
+			break;
+		case "Level 6":
+			victoryBonus = 400;
+			earth1 = 2500;
+			earth2 = 3250;
+			earth3 = 4000;
+			
+			break;
+		case "Level 7":
+			victoryBonus = 500;
+			earth1 = 4000;
+			earth2 = 5500;
+			earth3 = 7500;
+			
+			break;
 		case "Level 8":
-			victoryBonus = 800;
-			earth1 = 30000;
-			earth2 = 40000;
-			earth3 = 50000;
+			victoryBonus = 700;
+			earth1 = 4000;
+			earth2 = 7500;
+			earth3 = 9000;
+			
+			break;
+		case "Level 9":
+			victoryBonus = 900;
+			earth1 = 5000;
+			earth2 = 8000;
+			earth3 = 10000;
 
+			break;
+		case "Level 10":
+			victoryBonus = 1200;
+			earth1 = 7500;
+			earth2 = 10000;
+			earth3 = 12000;
+			
 			break;
 		default:
 			victoryBonus = 1000;

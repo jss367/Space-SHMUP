@@ -1,0 +1,159 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ca0aa9835c2f8f4a9b2b5ff51784391, type: 3}
+  m_Name: GroupLevelSelectScreenConfig
+  m_EditorClassIdentifier: 
+  creationDate: 1439448874
+  _active: 0
+  levels:
+  - _sceneObject: {fileID: 102900000, guid: ad59c25e534d74247bbe42f820fe4c44, type: 3}
+    _scenePath: Assets/_Scenes/Group Select.unity
+    _sceneName: Group Select
+    scene: 
+    parent: {fileID: 11400000}
+    order: 0
+    name: Group Select Screen
+    type: 0
+    arguments: 
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 1
+  - _sceneObject: {fileID: 102900000, guid: 729fed8b1fe8e814cb623880eba131c0, type: 3}
+    _scenePath: Assets/_Scenes/Group Loader Scene.unity
+    _sceneName: Group Loader Scene
+    scene: 
+    parent: {fileID: 11400000}
+    order: 10
+    name: level group 1
+    type: 1
+    arguments: Group 1 Level Select
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 729fed8b1fe8e814cb623880eba131c0, type: 3}
+    _scenePath: Assets/_Scenes/Group Loader Scene.unity
+    _sceneName: Group Loader Scene
+    scene: 
+    parent: {fileID: 11400000}
+    order: 20
+    name: level group 2
+    type: 1
+    arguments: Group 2 Level Select
+    groupId: 0
+    extensionGUID: 
+    lockedByDefault: 1
+  - _sceneObject: {fileID: 102900000, guid: 51665d93a4ad2b04c97302a500459775, type: 3}
+    _scenePath: Assets/Mad Level Manager Examples/Group Level Select Screen/Scenes/Group
+      1 Level Select.unity
+    _sceneName: Group 1 Level Select
+    scene: 
+    parent: {fileID: 11400000}
+    order: 30
+    name: Group 1 Level Select
+    type: 0
+    arguments: 
+    groupId: 1
+    extensionGUID: 
+    lockedByDefault: 1
+  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
+    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
+    _sceneName: MadLevelTester
+    scene: 
+    parent: {fileID: 11400000}
+    order: 40
+    name: Group 1 Level One
+    type: 1
+    arguments: 
+    groupId: 1
+    extensionGUID: 
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
+    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
+    _sceneName: MadLevelTester
+    scene: 
+    parent: {fileID: 11400000}
+    order: 50
+    name: Group 1 Level Two
+    type: 1
+    arguments: 
+    groupId: 1
+    extensionGUID: 
+    lockedByDefault: 1
+  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
+    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
+    _sceneName: MadLevelTester
+    scene: 
+    parent: {fileID: 11400000}
+    order: 60
+    name: Group 1 Level Three
+    type: 1
+    arguments: 
+    groupId: 1
+    extensionGUID: 
+    lockedByDefault: 1
+  - _sceneObject: {fileID: 102900000, guid: 6d5e5627e03ee784a8d231c2b97727f5, type: 3}
+    _scenePath: Assets/Mad Level Manager Examples/Group Level Select Screen/Scenes/Group
+      2 Level Select.unity
+    _sceneName: Group 2 Level Select
+    scene: 
+    parent: {fileID: 11400000}
+    order: 70
+    name: Group 2 Level Select
+    type: 0
+    arguments: 
+    groupId: 2
+    extensionGUID: 
+    lockedByDefault: 1
+  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
+    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
+    _sceneName: MadLevelTester
+    scene: 
+    parent: {fileID: 11400000}
+    order: 80
+    name: Group 2 Level One
+    type: 1
+    arguments: 
+    groupId: 2
+    extensionGUID: 
+    lockedByDefault: 0
+  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
+    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
+    _sceneName: MadLevelTester
+    scene: 
+    parent: {fileID: 11400000}
+    order: 90
+    name: Group 2 Level Two
+    type: 1
+    arguments: 
+    groupId: 2
+    extensionGUID: 
+    lockedByDefault: 1
+  - _sceneObject: {fileID: 102900000, guid: 9b62e148e5db7844a84bcf6a71d260ea, type: 3}
+    _scenePath: Assets/Mad Level Manager/Examples/Scenes/MadLevelTester.unity
+    _sceneName: MadLevelTester
+    scene: 
+    parent: {fileID: 11400000}
+    order: 100
+    name: Group 2 Level Three
+    type: 1
+    arguments: 
+    groupId: 2
+    extensionGUID: 
+    lockedByDefault: 1
+  groups:
+  - name: level group 1
+    _id: 1
+    parent: {fileID: 11400000}
+  - name: level group 2
+    _id: 2
+    parent: {fileID: 11400000}
+  extensions: []
+  version: 1
