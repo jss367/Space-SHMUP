@@ -139,7 +139,7 @@ public class LevelManager : MonoBehaviour {
 
 
 	void StopSpawn(){
-		Debug.Log ("Spawning has stopped");
+//		Debug.Log ("Spawning has stopped");
 //		Debug.Log ("Main.S.playerDead " + Main.S.playerDead);
 //		Debug.Log ("Main.S.playerWins " + Main.S.playerWins);
 //		Debug.Log ("spawningStoppedToggle " + spawningStoppedToggle);
@@ -163,7 +163,7 @@ public class LevelManager : MonoBehaviour {
 
 	IEnumerator Wave(int level){
 		waveNotReady = true;
-			Debug.Log ("Started Coroutine");
+//			Debug.Log ("Started Coroutine");
 			deadPeriod = true;
 //	delthis	//Wait .2 seconds after deadPeriod has been declared to finished all activations
 //		yield return new WaitForSeconds (.2f);

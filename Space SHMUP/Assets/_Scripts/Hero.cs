@@ -107,7 +107,7 @@ public class Hero : MonoBehaviour {
 		ClearWeapons ();
 		CheckInventory ();
 		autoShootOn = PlayerPrefs.GetInt ("AutoShoot");
-		Debug.Log ("autoShootOn is " + autoShootOn);
+//		Debug.Log ("autoShootOn is " + autoShootOn);
 		if (spreadEquipped == true) {
 //			Debug.Log ("Spread is owned");
 			weapons [0].SetType (WeaponType.spread);

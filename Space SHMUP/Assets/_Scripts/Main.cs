@@ -425,22 +425,22 @@ public class Main : MonoBehaviour {
 //			Debug.Log("on level one");
 			victoryBonus = 50;
 			earth1 = 100;
-			earth2 = 250;
-			earth3 = 400;
+			earth2 = 175;
+			earth3 = 250;
 
 			break;
 		case "Level 2":
 			victoryBonus = 100;
-			earth1 = 2000;
-			earth2 = 3000;
-			earth3 = 4000;
+			earth1 = 1500;
+			earth2 = 1800;
+			earth3 = 2300;
 
 			break;
 		case "Level 3":
 			victoryBonus = 150;
-			earth1 = 2500;
-			earth2 = 3000;
-			earth3 = 3700;
+			earth1 = 1000;
+			earth2 = 1400;
+			earth3 = 1750;
 
 			break;
 		case "Level 4":
