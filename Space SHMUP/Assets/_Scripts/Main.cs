@@ -393,19 +393,23 @@ public class Main : MonoBehaviour {
 			}
 
 			displayScore+= updateAmount;
-		
-			if (displayScore == earth1){
+			bool earth1Toggle = false;
+			if (displayScore >= earth1 && !earth1Toggle){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
 				Instantiate(earthReward, pos1, Quaternion.identity);
+				earth1Toggle = true;
 			}
-			if (displayScore == earth2){
+			bool earth2Toggle = false;
+			if (displayScore >= earth2 && !earth2Toggle){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
 				Instantiate(earthReward, pos2, Quaternion.identity);
-//				StarsUtil.DestroyObject
+				earth2Toggle = true;
 			}
-			if (displayScore == earth3){
+			bool earth3Toggle = false;
+			if (displayScore >= earth3 && !earth3Toggle){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
 				Instantiate(earthReward, pos3, Quaternion.identity);
+				earth3Toggle = true;
 			}
 			finalScoreText.text = "Final Score: " + displayScore;
 			finalScoreText.enabled = true;

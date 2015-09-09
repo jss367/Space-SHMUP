@@ -49,7 +49,7 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualCurrencyPack[] GetCurrencyPacks() {
-			return new VirtualCurrencyPack[] {TEN_COIN_PACK, FIFTY_COIN_PACK, FIVEHUND_COIN_PACK};
+			return new VirtualCurrencyPack[] {THOUSAND_COIN_PACK, TEN_THOUSAND_COIN_PACK, HUNDRED_THOUSAND_COIN_PACK};
 		}
 		
 		/// <summary>
@@ -100,31 +100,31 @@ namespace Soomla.Store.Example {
 		
 		/** Virtual Currency Packs **/
 		
-		public static VirtualCurrencyPack TEN_COIN_PACK = new VirtualCurrencyPack(
+		public static VirtualCurrencyPack THOUSAND_COIN_PACK = new VirtualCurrencyPack(
 			"1000 Coins",                                   // name
-			"Test refund of an item",                       // description
-			"muffins_10",                                   // item id
+			"Coins for use in store",                       // description
+			Constants.THOUSAND_COIN_PACK_ITEM_ID,                                   // item id
 			1000,												// number of currencies in the pack
 			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
-			new PurchaseWithMarket(TENMUFF_PACK_PRODUCT_ID, 0.99)
+			new PurchaseWithMarket(Constants.THOUSAND_COIN_PACK_ITEM_ID, 0.99)
 			);
 		
-		public static VirtualCurrencyPack FIFTY_COIN_PACK = new VirtualCurrencyPack(
+		public static VirtualCurrencyPack TEN_THOUSAND_COIN_PACK = new VirtualCurrencyPack(
 			"10000 Coins",                                   // name
-			"Test cancellation of an item",                 // description
-			"muffins_50",                                   // item id
+			"Coins for use in store",                 // description
+			Constants.TEN_THOUSAND_COIN_PACK_ITEM_ID,                                   // item id
 			10000,                                             // number of currencies in the pack
 			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
-			new PurchaseWithMarket(FIFTYMUFF_PACK_PRODUCT_ID, 1.99)
+			new PurchaseWithMarket(Constants.TEN_THOUSAND_COIN_PACK_ITEM_ID, 1.99)
 			);
 		
-		public static VirtualCurrencyPack FIVEHUND_COIN_PACK = new VirtualCurrencyPack(
-			"50000 Coins",              	 		            // name
-			"Test purchase of an item",                 	// description
-			"muffins_400",                                  // item id
-			50000,                                            // number of currencies in the pack
+		public static VirtualCurrencyPack HUNDRED_THOUSAND_COIN_PACK = new VirtualCurrencyPack(
+			"100000 Coins",              	 		            // name
+			"Coins for use in store",                 	// description
+			Constants.TEN_THOUSAND_COIN_PACK_ITEM_ID,                                  // item id
+			100000,                                            // number of currencies in the pack
 			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
-			new PurchaseWithMarket(FOURHUNDMUFF_PACK_PRODUCT_ID, 4.99)
+			new PurchaseWithMarket(Constants.HUNDRED_THOUSAND_COIN_PACK_ITEM_ID, 2.50)
 			);
 
 		public static VirtualCurrencyPack COCONUT = new VirtualCurrencyPack(
@@ -146,7 +146,7 @@ namespace Soomla.Store.Example {
 			"Spread Weapon", 														// name
 			"Shoots three spreading bullets",						 	// description
 			Constants.SPREAD_WEAPON_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 15000));
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 50000));
 
 		public static VirtualGood WEAPON_BLASTER = new EquippableVG(
 			EquippableVG.EquippingModel.CATEGORY,
@@ -160,7 +160,7 @@ namespace Soomla.Store.Example {
 			"Missile Launcher",                           // Name
 			"Launch devastating missiles",        // Description
 			Constants.MISSILE_LAUNCHER_ITEM_ID,                  // Item ID
-			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 10));
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 15000));
 
 
 		public static VirtualGood BAZOOKA_LAUNCHER = new EquippableVG(
@@ -168,7 +168,7 @@ namespace Soomla.Store.Example {
 			"Bazooka Launcher", 														// name
 			"Shoots two bazookas",				 	// description
 			Constants.BAZOOKA_LAUNCHER_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 10));
+			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 25000));
 
 
 		/// <summary>
@@ -240,7 +240,7 @@ namespace Soomla.Store.Example {
 			Constants.SPEED_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            0)                            // Payment amount
+		                            5000)                            // Payment amount
 			);
 
 		public static VirtualGood BaseShield = new LifetimeVG(
@@ -249,7 +249,7 @@ namespace Soomla.Store.Example {
 			Constants.BASESHIELD_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            0)                            // Payment amount
+		                            10000)                            // Payment amount
 			);
 
 

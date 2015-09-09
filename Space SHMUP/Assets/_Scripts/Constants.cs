@@ -17,4 +17,7 @@ public static class Constants {
 	public const string QUICK_FIRE_ITEM_ID = "quick_fire";
 	public const string MISSILE_LAUNCHER_ITEM_ID = "missile_launcher";
 	public const string BAZOOKA_LAUNCHER_ITEM_ID = "bazooka_launcher";
+	public const string THOUSAND_COIN_PACK_ITEM_ID = "thousand_coins";
+	public const string TEN_THOUSAND_COIN_PACK_ITEM_ID = "ten_thousand_coins";
+	public const string HUNDRED_THOUSAND_COIN_PACK_ITEM_ID = "hundred_thousand_coins";
 }
