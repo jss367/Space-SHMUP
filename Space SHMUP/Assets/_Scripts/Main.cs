@@ -45,6 +45,9 @@ public class Main : MonoBehaviour {
 	public bool weaponrySet = false;
 	public bool pointsGiven = false;
 	private float timeOfDeath;
+	bool earth1Toggle = false;
+	bool earth2Toggle = false;
+	bool earth3Toggle = false;
 	
 	public WeaponType[]			activeWeaponTypes;
 	public float				enemySpawnRate; //Display between enemy spawns
@@ -393,19 +396,20 @@ public class Main : MonoBehaviour {
 			}
 
 			displayScore+= updateAmount;
-			bool earth1Toggle = false;
+//			bool earth1Toggle = false;
 			if (displayScore >= earth1 && !earth1Toggle){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
 				Instantiate(earthReward, pos1, Quaternion.identity);
+				Debug.Log(earth1Toggle);
 				earth1Toggle = true;
 			}
-			bool earth2Toggle = false;
+//			bool earth2Toggle = false;
 			if (displayScore >= earth2 && !earth2Toggle){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
 				Instantiate(earthReward, pos2, Quaternion.identity);
 				earth2Toggle = true;
 			}
-			bool earth3Toggle = false;
+//			bool earth3Toggle = false;
 			if (displayScore >= earth3 && !earth3Toggle){
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
 				Instantiate(earthReward, pos3, Quaternion.identity);
@@ -428,9 +432,9 @@ public class Main : MonoBehaviour {
 		case "Level 1":
 //			Debug.Log("on level one");
 			victoryBonus = 50;
-			earth1 = 100;
-			earth2 = 175;
-			earth3 = 250;
+			earth1 = 80;
+			earth2 = 150;
+			earth3 = 220;
 
 			break;
 		case "Level 2":

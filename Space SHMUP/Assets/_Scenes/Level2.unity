@@ -1007,66 +1007,6 @@ RectTransform:
   m_AnchoredPosition: {x: -3.5, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
---- !u!1 &938472621
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 938472622}
-  - 108: {fileID: 938472623}
-  m_Layer: 8
-  m_Name: Directional light 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &938472622
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 938472621}
-  m_LocalRotation: {x: .296276987, y: -.0819678083, z: .0255301315, w: .951235771}
-  m_LocalPosition: {x: -6.21999979, y: 16.75, z: -9.47999954}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1321484645}
-  m_RootOrder: 14
---- !u!108 &938472623
-Light:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 938472621}
-  m_Enabled: 1
-  serializedVersion: 6
-  m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
-    m_Strength: 1
-    m_Bias: .0500000007
-    m_NormalBias: .400000006
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_Lightmapping: 4
-  m_BounceIntensity: 1
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
-  m_AreaSize: {x: 1, y: 1}
 --- !u!1 &947484484
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,6 +3194,30 @@ Prefab:
       propertyPath: controller
       value: 
       objectReference: {fileID: 1039923471}
+    - target: {fileID: 11464936, guid: 38eb820d143334f458044b03fa2af256, type: 2}
+      propertyPath: triggerThreshold
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11465834, guid: 38eb820d143334f458044b03fa2af256, type: 2}
+      propertyPath: triggerThreshold
+      value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11450312, guid: 38eb820d143334f458044b03fa2af256, type: 2}
+      propertyPath: triggerThreshold
+      value: .0799999982
+      objectReference: {fileID: 0}
+    - target: {fileID: 11488348, guid: 38eb820d143334f458044b03fa2af256, type: 2}
+      propertyPath: triggerThreshold
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11481964, guid: 38eb820d143334f458044b03fa2af256, type: 2}
+      propertyPath: triggerThreshold
+      value: .150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11499114, guid: 38eb820d143334f458044b03fa2af256, type: 2}
+      propertyPath: triggerThreshold
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 38eb820d143334f458044b03fa2af256, type: 2}
   m_IsPrefabParent: 0
@@ -3392,10 +3356,6 @@ CanvasRenderer:
 --- !u!1 &1321484644 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 159810, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
-  m_PrefabInternal: {fileID: 1894371964}
---- !u!4 &1321484645 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 408742, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
   m_PrefabInternal: {fileID: 1894371964}
 --- !u!82 &1330483907 stripped
 AudioSource:
@@ -3726,14 +3686,6 @@ Prefab:
     - target: {fileID: 114922, guid: 1afa068e82327324e892209b7572a83d, type: 2}
       propertyPath: m_Name
       value: BackgroundManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 167744, guid: 1afa068e82327324e892209b7572a83d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 184728, guid: 1afa068e82327324e892209b7572a83d, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1afa068e82327324e892209b7572a83d, type: 2}
@@ -4686,26 +4638,6 @@ Prefab:
       propertyPath: MovementJoystick
       value: 
       objectReference: {fileID: 308293536}
-    - target: {fileID: 109450, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 133344, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 108256, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 193582, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 169646, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
   m_IsPrefabParent: 0
