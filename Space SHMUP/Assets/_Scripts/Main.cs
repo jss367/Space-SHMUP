@@ -153,11 +153,11 @@ public class Main : MonoBehaviour {
 		{
 			
 			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
-				Debug.Log("Blaster is equipped");
+//				Debug.Log("Blaster is equipped");
 				
 			}
 			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
-				Debug.Log("Spread is equipped");
+//				Debug.Log("Spread is equipped");
 				
 				spreadEquipped = true;
 			}
