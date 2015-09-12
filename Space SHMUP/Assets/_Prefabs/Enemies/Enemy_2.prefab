@@ -347,6 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 100
   rotationalAxis: {x: 0, y: 1, z: 0}
+  makeRandom: 0
 --- !u!114 &11434524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -360,6 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 100
   rotationalAxis: {x: 0, y: 1, z: 0}
+  makeRandom: 0
 --- !u!114 &11440552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -373,6 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 100
   rotationalAxis: {x: 0, y: 1, z: 0}
+  makeRandom: 0
 --- !u!114 &11499018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -390,6 +393,7 @@ MonoBehaviour:
   score: 100
   showDamageForFrames: 2
   powerUpDropChance: .200000003
+  missileDropChance: .100000001
   _________________: 0
   comboTime: 1
   impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
@@ -406,6 +410,7 @@ MonoBehaviour:
   points: []
   birthTime: 0
   lifeTime: 15
+  hero: {fileID: 0}
 --- !u!135 &13588158
 SphereCollider:
   m_ObjectHideFlags: 1

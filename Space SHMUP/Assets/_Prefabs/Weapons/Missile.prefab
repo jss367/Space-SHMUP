@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 448444}
   - 33: {fileID: 3387294}
   - 23: {fileID: 2337822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: missile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 114: {fileID: 11403362}
   - 54: {fileID: 5475658}
   - 65: {fileID: 6583910}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Missile
   m_TagString: ProjectileHero
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.27999997, y: 6.32999992, z: 1}
+  m_Size: {x: 1.27999997, y: 6.32999992, z: 8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11403362
 MonoBehaviour:

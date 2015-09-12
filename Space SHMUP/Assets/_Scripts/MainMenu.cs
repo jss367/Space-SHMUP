@@ -30,7 +30,7 @@ namespace FMG
 		{
 			if(str.Equals("Start"))
 			{
-				Debug.Log ("Start");
+//				Debug.Log ("Start");
 //				Constants.fadeInFadeOut(storeMenu,mainMenu);
 				Application.LoadLevel("LevelManager");
 				/*

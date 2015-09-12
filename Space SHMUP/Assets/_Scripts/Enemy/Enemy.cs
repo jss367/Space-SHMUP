@@ -9,10 +9,11 @@ public class Enemy : MonoBehaviour {
 	public int			score = 100; //Points earned for destroying this
 
 	public int			showDamageForFrames = 2; // # of frames to show damage
-	public float		powerUpDropChance = 1f; // Chance to drop a power-up
+	public float		powerUpDropChance = .2f; // Chance to drop a power-up
+	public float		missileDropChance = .1f; // Chance to drop a missile if possible
 	public bool _________________;
 	private float lastTimeDestroyed = 0.0f;
-	public float comboTime = 1.0f;
+//	public float comboTime = 1.0f;
 
 	public GameObject	impact;
 
@@ -28,7 +29,7 @@ public class Enemy : MonoBehaviour {
 
 	public GameObject enemyExplosion;
 	public GameObject popText;
-	public GameObject comboPopText;
+//	public GameObject comboPopText;
 	
 	void Awake() {
 //		materials = Utils.GetAllMaterials (gameObject);
@@ -40,12 +41,10 @@ public class Enemy : MonoBehaviour {
 	}
 
 	void Start() {
-//		GameObject gameControllerObject = GameObject.Find("GameController");
 		GameObject mainObject = GameObject.FindWithTag("MainCamera");
 		if (mainObject != null) {
 			main = mainObject.GetComponent<Main> ();
 		}
-
 	}
 
 	//Update is called once per frame
@@ -53,7 +52,6 @@ public class Enemy : MonoBehaviour {
 
 		if (main != null) {
 			//	Debug.Log("gameController does exist");
-//			tMultiplier = main.timeMultiplier;
 			//Debug.Log (tMultiplier);
 		}
 		if (main == null) {
@@ -64,7 +62,7 @@ public class Enemy : MonoBehaviour {
 		if (remainingDamageFrames > 0) {
 			remainingDamageFrames--;
 			if (remainingDamageFrames == 0) {
-				UnShowDamage ();
+//				UnShowDamage ();
 			}
 		}
 	}
@@ -111,6 +109,31 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+	public void ReceiveDamage(float damage){
+//		Debug.Log ("Enemy has received damage");
+		health -= damage;
+		if (health <= 0) {
+			// Destroy this Enemy
+			Destroy (this.gameObject);
+//			if (Time.time - lastTimeDestroyed < comboTime)
+//			{
+//				// Tell the Main singleton that this ship has been destroyed
+//				Main.S.EnemyDestroyed(this, true);
+//				Instantiate(comboPopText, transform.position, Quaternion.identity);
+//			}
+//			else {
+				// Tell the Main singleton that this ship has been destroyed
+				Main.S.EnemyDestroyed(this, false);
+				Instantiate(popText, transform.position, Quaternion.identity);
+//			}
+			lastTimeDestroyed = Time.time;
+			//				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
+			Instantiate(enemyExplosion, transform.position, transform.rotation);
+			
+		}
+	}
+
+
 	void OnCollisionEnter (Collision coll) {
 		GameObject other = coll.gameObject;
 //		Debug.Log ("Enemy hit a " + other.tag);
@@ -127,29 +150,11 @@ public class Enemy : MonoBehaviour {
 				break;
 			}
 			// Hurt this Enemy
-			ShowDamage();
+//			ShowDamage();
 			Instantiate(impact, transform.position, transform.rotation);
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
-			health -= Main.W_DEFS [p.type].damageOnHit;
-			if (health <= 0) {
-				// Destroy this Enemy
-				Destroy (this.gameObject);
-				if (Time.time - lastTimeDestroyed < comboTime)
-				{
-					// Tell the Main singleton that this ship has been destroyed
-					Main.S.EnemyDestroyed(this, true);
-					Instantiate(comboPopText, transform.position, Quaternion.identity);
-				}
-				else {
-					// Tell the Main singleton that this ship has been destroyed
-					Main.S.EnemyDestroyed(this, false);
-					Instantiate(popText, transform.position, Quaternion.identity);
-				}
-				lastTimeDestroyed = Time.time;
-//				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
-				Instantiate(enemyExplosion, transform.position, transform.rotation);
-			
-			}
+			ReceiveDamage(Main.W_DEFS [p.type].damageOnHit);
+
 			Destroy (other);
 			break;
 		case "Asteroid":
@@ -162,9 +167,9 @@ public class Enemy : MonoBehaviour {
 				break;
 			}
 			// Hurt this Enemy
-			ShowDamage();
+//			ShowDamage();
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
-			health -= 1; // Asteroids do 10 worth of damage
+			health -= 1; // Asteroids do 1 worth of damage
 			if (health <= 0) {
 				// Tell the Main singleton that this ship has been destroyed
 				//	Main.S.EnemyDestroyed(this);
@@ -207,16 +212,16 @@ public class Enemy : MonoBehaviour {
 
 
 
-	void ShowDamage() {
-		foreach (Material m in materials) {
-			m.color = Color.red;
-		}
-		remainingDamageFrames = showDamageForFrames;
-	}
-	void UnShowDamage() {
-		for (int i = 0; i < materials.Length; i++) {
-			materials[i].color = originalColors[i];
-		}
-	}
+//	void ShowDamage() {
+//		foreach (Material m in materials) {
+//			m.color = Color.red;
+//		}
+//		remainingDamageFrames = showDamageForFrames;
+//	}
+//	void UnShowDamage() {
+//		for (int i = 0; i < materials.Length; i++) {
+//			materials[i].color = originalColors[i];
+//		}
+//	}
 
 }

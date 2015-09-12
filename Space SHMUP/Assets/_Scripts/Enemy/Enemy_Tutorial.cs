@@ -20,19 +20,19 @@ public class Enemy_Tutorial : MonoBehaviour {
 
 	public Bounds bounds; //The Bounds of this and its children
 	public Vector3 boundsCenterOffset; //Distance of bounds.center from position
-
+	public GameObject popText;
 //	private Main main;
 	public GameObject			prefabPowerUp;
 	public GameObject enemyExplosion;
-	private bool			spreadOwned = false;
+	private bool			spreadEquipped = false;
 
 	
 	void Awake() {
 		materials = Utils.GetAllMaterials (gameObject);
 		originalColors = new Color[materials.Length];
-		for (int i = 0; i < materials.Length; i++) {
-			originalColors [i] = materials [i].color;
-		}
+//		for (int i = 0; i < materials.Length; i++) {
+//			originalColors [i] = materials [i].color;
+//		}
 	}
 
 	void Start() {
@@ -51,7 +51,7 @@ public class Enemy_Tutorial : MonoBehaviour {
 			}
 			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 				Debug.Log("Spread is equipped");
-				spreadOwned = true;
+				spreadEquipped = true;
 			}
 		}
 		catch (System.Exception e)
@@ -92,35 +92,36 @@ public class Enemy_Tutorial : MonoBehaviour {
 		switch (other.tag) {
 		case "ProjectileHero":
 //			Debug.Log ("Projectile has hit enemy");
-			Projectile p = other.GetComponent<Projectile> ();
+			Projectile_Tutorial p = other.GetComponent<Projectile_Tutorial> ();
 			// Hurt this Enemy
 			ShowDamage();
 			Instantiate(impact, transform.position, transform.rotation);
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
-			health -= Main.W_DEFS [p.type].damageOnHit;
+			health -= Main_Tutorial.W_DEFS [p.type].damageOnHit;
 //			Debug.Log("Remaining health is " + health);
 			if (health <= 0) {
 				// Destroy this Enemy
 				Destroy (this.gameObject);
+			
 //				int ndx = Random.Range(0, powerUpFrequency.Length);
 //				WeaponType puType = powerUpFrequency[ndx];
 				
 				// Spawn a PowerUp
 				GameObject go = Instantiate(prefabPowerUp) as GameObject;
-				PowerUp pu = go.GetComponent<PowerUp>();
+				PowerUp_Tutorial pu = go.GetComponent<PowerUp_Tutorial>();
 				// Set it to the proper WeaponTYpe
-				if (spreadOwned){
-					pu.SetType(WeaponType.spread);
+				if (spreadEquipped){
+					pu.SetType(WeaponType_Tutorial.spread);
 				}
 				else{
-				pu.SetType(WeaponType.blaster);
+					pu.SetType(WeaponType_Tutorial.blaster);
 				}
 				// Set it to the position of the destroyed ship
 				pu.transform.position = this.transform.position;
 
 //				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
 				Instantiate(enemyExplosion, transform.position, transform.rotation);
-			
+				Instantiate(popText, transform.position, Quaternion.identity);
 			}
 			Destroy (other);
 			break;
@@ -145,13 +146,13 @@ public class Enemy_Tutorial : MonoBehaviour {
 			Destroy(this.gameObject);
 			// Spawn a PowerUp
 			GameObject go = Instantiate(prefabPowerUp) as GameObject;
-			PowerUp pu = go.GetComponent<PowerUp>();
+			PowerUp_Tutorial pu = go.GetComponent<PowerUp_Tutorial>();
 			// Set it to the proper WeaponTYpe
-			if (spreadOwned){
-				pu.SetType(WeaponType.spread);
+			if (spreadEquipped){
+				pu.SetType(WeaponType_Tutorial.spread);
 			}
 			else{
-				pu.SetType(WeaponType.blaster);
+				pu.SetType(WeaponType_Tutorial.blaster);
 			}
 			// Set it to the position of the destroyed ship
 			pu.transform.position = this.transform.position;

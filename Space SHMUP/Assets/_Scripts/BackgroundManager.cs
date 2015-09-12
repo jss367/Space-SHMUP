@@ -6,7 +6,7 @@ public class BackgroundManager : MonoBehaviour {
 
 //	public static BackgroundManager instance { get; private set; }
 
-	public string currentLevel;
+	private string currentLevel;
 
 	public GameObject Level1Background;
 	public GameObject Level2Background;
@@ -21,7 +21,7 @@ public class BackgroundManager : MonoBehaviour {
 	public GameObject Level11Background;
 
 
-	void Start(){
+	void Awake(){
 //		Debug.Log ("Level1Background is " + Level1Background);
 
 		currentLevel = MadLevel.currentLevelName;

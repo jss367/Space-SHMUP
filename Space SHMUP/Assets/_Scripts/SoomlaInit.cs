@@ -22,6 +22,8 @@ public class SoomlaInit : MonoBehaviour {
 
 	void Start () {
 
+
+
 		StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;	
 		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
 //		SoomlaStore.Initialize (new Soomla.Store.Example.MuffinRushAssets ());
@@ -54,6 +56,8 @@ public class SoomlaInit : MonoBehaviour {
 		MadLevel.LoadLevelByName ("MainMenu");
 ////		Application.LoadLevel ("MainMenu");
 ////		Debug.Log ("Loaded the main menu");
+	 
+	
 //
 	}
 

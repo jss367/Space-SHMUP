@@ -255,7 +255,15 @@ public abstract class CNAbstractController : MonoBehaviour
 
         // If there's no Touch with the specified fingerId, return null
         return null;
+
     }
+
+	private bool canFire; 
+
+	public bool CanFire () {
+		return canFire;
+	}
+
 
     /// <summary>
     /// Event "callback".
@@ -267,6 +275,8 @@ public abstract class CNAbstractController : MonoBehaviour
     {
         if (ControllerMovedEvent != null)
             ControllerMovedEvent(input, this);
+//		Debug.Log ("The controller is being touched");
+		canFire = true;
     }
 
     /// <summary>
@@ -388,6 +398,8 @@ public abstract class CNAbstractController : MonoBehaviour
     /// <returns>Whether any touch was captured</returns>
     protected virtual bool IsTouchCaptured(out Touch capturedTouch)
     {
+//		Debug.Log ("The controller is not being touched");
+		canFire = false;
         // Some optimization things
         int touchCount = Input.touchCount;
 
@@ -442,6 +454,7 @@ public abstract class CNAbstractController : MonoBehaviour
     private bool IsTouchInZone(Vector2 touchPosition)
     {
         return CalculatedTouchZone.Contains(ParentCamera.ScreenToWorldPoint(touchPosition), false);
+		Debug.Log ("The controller is being touched");
     }
 
     /// <summary>

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GalaxyManager : MonoBehaviour {
 
-	public float rotSpeed = 50;
+	public float rotSpeed = 5;
 
 	// Use this for initialization
 	void Start () {

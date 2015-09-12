@@ -13,7 +13,9 @@ public enum WeaponType {
 	laser, //Damage over time [NI]
 	shield, //Raise sheidLevel
 	ball,
+	plasma,
 	speed
+
 }
 
 //The WeaponDefinition class allows you to set the properties
@@ -121,6 +123,18 @@ public class Weapon : MonoBehaviour {
 			p.GetComponent<Rigidbody>().velocity = new Vector3 (-.2f, 0.9f, 0) * def.velocity;
 			p = MakeProjectile ();
 			p.GetComponent<Rigidbody>().velocity = new Vector3 (.2f, 0.9f, 0) * def.velocity;
+			break;
+
+		case WeaponType.laser:
+			p = MakeProjectile ();
+			p.GetComponent<Rigidbody>().velocity = new Vector3 (-.2f, 0.9f, 0) * def.velocity;
+			p = MakeProjectile ();
+			p.GetComponent<Rigidbody>().velocity = new Vector3 (.2f, 0.9f, 0) * def.velocity;
+			break;
+
+		case WeaponType.plasma:
+			p = MakeProjectile ();
+			p.GetComponent<Rigidbody>().velocity = Vector3.up * def.velocity;
 			break;
 		}
 	}

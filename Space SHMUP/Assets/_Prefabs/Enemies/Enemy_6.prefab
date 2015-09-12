@@ -24,7 +24,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 447136}
   - 54: {fileID: 5427838}
-  - 114: {fileID: 11490430}
+  - 114: {fileID: 11467778}
   - 33: {fileID: 3347136}
   - 23: {fileID: 2347136}
   - 114: {fileID: 11492666}
@@ -44,7 +44,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147136}
   m_LocalRotation: {x: -1.15202326e-07, y: .707106709, z: -.707106829, w: -1.15202312e-07}
-  m_LocalPosition: {x: 19.9300003, y: -.0199999996, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children:
   - {fileID: 482978}
@@ -120,7 +120,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 25.9400005, y: 8.30000019, z: 5.90999985}
   m_Center: {x: 7.92665036e-15, y: .24344483, z: -6.40999985}
---- !u!114 &11490430
+--- !u!114 &11467778
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 147136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 832bf22e9d8e4cd40ab4285a1b316ce1, type: 3}
+  m_Script: {fileID: 11500000, guid: fac6666f0e3e992479489af0590b58fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
@@ -137,8 +137,8 @@ MonoBehaviour:
   score: 100
   showDamageForFrames: 2
   powerUpDropChance: .200000003
+  missileDropChance: .100000001
   _________________: 0
-  comboTime: 1
   impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
   originalColors: []
   materials: []
@@ -149,7 +149,6 @@ MonoBehaviour:
   boundsCenterOffset: {x: 0, y: 0, z: 0}
   enemyExplosion: {fileID: 172662, guid: 0b461f2f00c26474db70e48f1893c723, type: 2}
   popText: {fileID: 198134, guid: 5a28c96cdd033754ca14be9a26ca6054, type: 2}
-  comboPopText: {fileID: 108858, guid: 65c2838b55bb4e145ab6fd6636edfcff, type: 2}
   points: []
   birthTime: 0
   lifeTime: 10

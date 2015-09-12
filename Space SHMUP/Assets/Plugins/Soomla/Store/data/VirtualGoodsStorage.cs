@@ -41,10 +41,8 @@ namespace Soomla.Store
 					_instance = new VirtualGoodsStorageAndroid();
 					#elif UNITY_IOS && !UNITY_EDITOR
 					_instance = new VirtualGoodsStorageIOS();
-                    #elif UNITY_WP8 && !UNITY_EDITOR
-					_instance = new VirtualGoodsStorageWP();
-                    #else
-                    _instance = new VirtualGoodsStorage();
+					#else
+					_instance = new VirtualGoodsStorage();
 					#endif
 				}
 				return _instance;
@@ -294,7 +292,7 @@ namespace Soomla.Store
 			
 			if (string.IsNullOrEmpty(upItemId)) {
 				SoomlaUtils.LogDebug(TAG, "You tried to fetch the current upgrade of " + good.ItemId
-				                     + " but there's no upgrade for it.");
+				                     + " but there's not upgrade to it.");
 				return null;
 			}
 			

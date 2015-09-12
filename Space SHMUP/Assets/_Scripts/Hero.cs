@@ -8,7 +8,7 @@ public class Hero : MonoBehaviour {
 
 	static public Hero S; //S for singleton
 	
-	public float gameRestartDelay = 2f;
+//	public float gameRestartDelay = 2f;
 	
 	//These fields control the movement of the ship
 	public float				speed = 30;
@@ -21,11 +21,12 @@ public class Hero : MonoBehaviour {
 
 	// Weapon fields
 	public Weapon[]				weapons;
+	public float missileSpeed = 10;
 
 	public bool _____________;
 //
 
-		public bool spreadOwned = false;
+	public bool spreadEquipped = false;
 
 	public Bounds				bounds;
 	private int					weaponCount;
@@ -42,7 +43,7 @@ public class Hero : MonoBehaviour {
 	public bool					shieldUpgradeOwned = false;
 	public bool					speedUpgradeOwned = false;
 	public bool isInvincible;
-	private bool launch1;
+	public bool launch1;
 
 	public GameObject popText;
 	
@@ -61,9 +62,38 @@ public class Hero : MonoBehaviour {
 //	public SimpleTouchPad touchPad;
 	public FireButton fireButton;
 
+	public bool laserEquipped;
+	public bool bazookaEquipped;
+	public bool missileEquipped;
+
+	public CNAbstractController cNABstractController;
+
 	public GameObject explosion;
 	public GameObject enemyExplosion;
 	public GameObject missile;
+	public GameObject missileArt;
+	public GameObject missileLaunchLocation;
+	public GameObject mine;
+	public GameObject mineDropLocation;
+	public GameObject bazookaBullet;
+	public GameObject bazookaBulletLocation1;
+	public GameObject bazookaBulletLocation2;
+	private float lastMineTime;
+	public float mineDelay = 4;
+	public float bazookaDelay = 5;
+
+	public GameObject bazookaArt1;
+	public GameObject bazookaArt2;
+	private float lastBazooka;
+	public GameObject Bazooka1;
+	public GameObject Bazooka2;
+	public GameObject MissileLauncher;
+	public GameObject MineDropper;
+	private GameObject Mine;
+//	public GameObject Laser;
+	public int autoShootOn = 1;
+
+	public bool weaponOff;
 
 	void Awake(){
 		S = this; //Set the singleton
@@ -72,14 +102,19 @@ public class Hero : MonoBehaviour {
 
 	void Start() {
 //		shieldUpgradeOwned = false;
-		//		spreadOwned = true; // comment out for builds
+		//		spreadEquipped = true; // comment out for builds
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
 		CheckInventory ();
-
-		if (spreadOwned == true) {
+		autoShootOn = PlayerPrefs.GetInt ("AutoShoot");
+//		Debug.Log ("autoShootOn is " + autoShootOn);
+		if (spreadEquipped == true) {
 //			Debug.Log ("Spread is owned");
 			weapons [0].SetType (WeaponType.spread);
+		} else if (laserEquipped) {
+			weapons [0].SetType (WeaponType.laser);
+
+
 		} else {
 //			Debug.Log ("Spread is not equipped");
 			weapons [0].SetType (WeaponType.blaster);
@@ -87,6 +122,25 @@ public class Hero : MonoBehaviour {
 
 		if (speedUpgradeOwned == true) {
 			speed = 40;
+		}
+
+		lastMineTime = -mineDelay;
+
+		bazookaArt1.SetActive(false);
+		bazookaArt2.SetActive(false);
+		if (bazookaEquipped) {
+			StartCoroutine ("ReturnBazookaArt");
+		} else {
+			//Hide to bazooka launchers
+			Bazooka1.SetActive (false);
+			Bazooka2.SetActive (false);
+		}
+
+		if (!missileEquipped) {
+//			missile.SetActive(false);
+			missileArt.SetActive(false);
+			missileLaunchLocation.SetActive(false);
+		    MissileLauncher.SetActive(false);
 		}
 	}
 	
@@ -160,16 +214,54 @@ public class Hero : MonoBehaviour {
 		//First, make sure the Axis("Jump") button is pressed
 		//Then ensure that fireDelegate isn't null to avoid an error
 //		Debug.Log ("CanFire is set to " + fireButton.CanFire ());
-		if (fireButton.CanFire() && fireDelegate != null ) {
-			fireDelegate ();
-//			Debug.Log("fireDelegate has been called");
+//		if (fireButton.CanFire() && fireDelegate != null ) {
+//			fireDelegate ();
+////			Debug.Log("fireDelegate has been called");
+//		}
+
+
+		if (autoShootOn == 0) {
+			if (fireButton.CanFire () && fireDelegate != null && !weaponOff) {
+				fireDelegate ();
+				//			Debug.Log("fireDelegate has been called");
+			}
+
+		} else {
+			if ((fireButton.CanFire () || cNABstractController.CanFire ()) && fireDelegate != null && !weaponOff) {
+				fireDelegate ();
+				//			Debug.Log("fireDelegate has been called");
+			}
+
 		}
 
-		if (fireButton.CanLaunch() && !launch1) {
-			Instantiate(missile, transform.position, transform.rotation);
-			launch1 = true;
+		if (missileEquipped && fireButton.CanLaunch() && !launch1) {
+			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
+			TakeMissile();
+
+
 			//			Debug.Log("fireDelegate has been called");
 		}
+
+		if (bazookaEquipped && fireButton.CanLaunch() && Time.time > lastBazooka + bazookaDelay) {
+
+			Instantiate(bazookaBullet, bazookaBulletLocation1.transform.position, bazookaBulletLocation1.transform.rotation);
+			Instantiate(bazookaBullet, bazookaBulletLocation2.transform.position, bazookaBulletLocation2.transform.rotation);
+			lastBazooka = Time.time;
+
+			bazookaArt1.SetActive(false);
+			bazookaArt2.SetActive(false);
+			StartCoroutine("ReturnBazookaArt");
+			//			Debug.Log("fireDelegate has been called");
+		}
+
+//		if (fireButton.CanDropMine()) {
+//			if (Time.time - lastMineTime < mineDelay) {
+//				return;
+//			}
+//			Instantiate(mine, mineDropLocation.transform.position, mineDropLocation.transform.rotation);
+//			lastMineTime = Time.time;
+//			//			Debug.Log("fireDelegate has been called");
+//		}
 	
 //		if (remainingDamageFrames > 0) {
 //			remainingDamageFrames--;
@@ -177,9 +269,13 @@ public class Hero : MonoBehaviour {
 //				UnShowDamage ();
 //			}
 //		}
-
 		}
 
+	IEnumerator ReturnBazookaArt(){
+		yield return new WaitForSeconds (bazookaDelay);
+		bazookaArt1.SetActive(true);
+		bazookaArt2.SetActive(true);
+	}
 
 	
 	void CheckInventory(){
@@ -192,17 +288,14 @@ public class Hero : MonoBehaviour {
 
 		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 //			Debug.Log("Spread is equipped");
-
-			spreadOwned = true;
+				spreadEquipped = true;
 		}
 		}
 		catch (System.Exception e)
 		{
 			Debug.Log("Caught error: " + e);
 		}
-
 		try{
-
 			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.BASESHIELD_ITEM_ID);
 //			Debug.Log("Shield upgrade balance is " + balance);
 			if(balance > 0)  
@@ -231,6 +324,25 @@ public class Hero : MonoBehaviour {
 		{
 			Debug.Log("Caught error: " + e);
 		}
+
+		try
+		{
+			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.MISSILE_LAUNCHER_ITEM_ID)){
+				missileEquipped = true;
+			}
+			
+			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BAZOOKA_LAUNCHER_ITEM_ID)){
+				bazookaEquipped = true;
+			}
+		}
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+		}
+
+//		bazookaEquipped = true;
+//		laserEquipped = true;
+//		missileEquipped = true;
 	}
 
 	//This variable holds a reference to the last triggering GameObject
@@ -298,7 +410,7 @@ public class Hero : MonoBehaviour {
 //		Debug.Log ("The shield level is " + shieldLevel);
 		if (shieldUpgradeOwned) {
 			if ((shieldCounter == true) && (shieldLevel != 0)) {
-//			Debug.Log("Shield absorped the hit");
+//			Debug.Log("Shield absorbed the hit");
 				shieldCounter = false;
 //			Debug.Log("The shield counter is now " + shieldCounter);
 			} else {
@@ -327,13 +439,20 @@ public class Hero : MonoBehaviour {
 		Main.S.AddScore (10);
 		Instantiate(popText, transform.position, Quaternion.identity);
 			PowerUp pu = go.GetComponent<PowerUp>();
-			switch (pu.type) {
+//		Debug.Log("pu.type is " + pu.type);
+		switch (pu.type) {
+
 			case WeaponType.shield: // If it's the shield
 				shieldLevel++;
 				break;
 
 			case WeaponType.speed:
 			speed += 5;
+			break;
+
+			case WeaponType.missile:
+//			Debug.Log("Hero absorbed a missile");
+			GiveMissile();
 			break;
 
 			default: // If it's any Weapon PowerUp
@@ -366,7 +485,18 @@ public class Hero : MonoBehaviour {
 			}
 			pu.AbsorbedBy(this.gameObject);
 		}
-		
+
+	public void GiveMissile(){
+		launch1 = false;
+		missileArt.SetActive(true);
+	}
+
+
+	public void TakeMissile(){
+		launch1 = true;
+		missileArt.SetActive(false);
+	}
+	
 		Weapon GetEmptyWeaponSlot() {
 			for (int i = 0; i < weapons.Length; i++) {
 				if (weapons[i].type == WeaponType.none) {
