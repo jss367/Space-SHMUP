@@ -347,10 +347,10 @@ public class Main : MonoBehaviour {
 
 	public void GivePoints(){
 //		try {
-
+		SetLevelValues();
 		if (playerWins) {
 //			GiveStars();
-			GiveVictoryBonus();
+		
 			score += victoryBonus;
 			victoryBonusText.text = "Level Completion Bonus : " + victoryBonus;
 			}
@@ -398,6 +398,8 @@ public class Main : MonoBehaviour {
 			displayScore+= updateAmount;
 //			bool earth1Toggle = false;
 			if (displayScore >= earth1 && !earth1Toggle){
+				Debug.Log(earth1);
+				Debug.Log(displayScore);
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
 				Instantiate(earthReward, pos1, Quaternion.identity);
 				Debug.Log(earth1Toggle);
@@ -425,7 +427,7 @@ public class Main : MonoBehaviour {
 		currentAccountText.enabled = true;
 	}
 
-	public void GiveVictoryBonus (){
+	public void SetLevelValues (){
 //		Debug.Log("You are currently on this level: " + currentLevel);
 
 		switch (currentLevel) {
