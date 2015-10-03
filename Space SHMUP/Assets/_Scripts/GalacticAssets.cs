@@ -121,7 +121,7 @@ namespace Soomla.Store.Example {
 		public static VirtualCurrencyPack HUNDRED_THOUSAND_COIN_PACK = new VirtualCurrencyPack(
 			"100000 Coins",              	 		            // name
 			"Coins for use in store",                 	// description
-			Constants.TEN_THOUSAND_COIN_PACK_ITEM_ID,                                  // item id
+			Constants.HUNDRED_THOUSAND_COIN_PACK_ITEM_ID,                                  // item id
 			100000,                                            // number of currencies in the pack
 			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
 			new PurchaseWithMarket(Constants.HUNDRED_THOUSAND_COIN_PACK_ITEM_ID, 2.50)

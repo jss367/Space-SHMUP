@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour {
 	public GameObject	impact;
 
 	public Color[]		originalColors;
-	public Material[]	materials; //All the Materials of this & its children
+//	public Material[]	materials; //All the Materials of this & its children
 	public int			remainingDamageFrames = 0; // Damage frames left
 
 	public Bounds bounds; //The Bounds of this and its children
@@ -32,11 +32,7 @@ public class Enemy : MonoBehaviour {
 //	public GameObject comboPopText;
 	
 	void Awake() {
-//		materials = Utils.GetAllMaterials (gameObject);
-//		originalColors = new Color[materials.Length];
-//		for (int i = 0; i < materials.Length; i++) {
-//			originalColors [i] = materials [i].color;
-//		}
+
 		InvokeRepeating ("CheckOffscreen", 0f, 2f);
 	}
 
@@ -211,17 +207,5 @@ public class Enemy : MonoBehaviour {
 	}
 
 
-
-//	void ShowDamage() {
-//		foreach (Material m in materials) {
-//			m.color = Color.red;
-//		}
-//		remainingDamageFrames = showDamageForFrames;
-//	}
-//	void UnShowDamage() {
-//		for (int i = 0; i < materials.Length; i++) {
-//			materials[i].color = originalColors[i];
-//		}
-//	}
 
 }
