@@ -70,51 +70,6 @@ public class GroupUnlocker : MonoBehaviour {
 			}
 
 
-
-
-//		if (starsOwned >= 0) {
-//			if (MadLevelProfile.IsLocked("Level 3")) {
-//				MadLevelProfile.SetLocked("Level 2", false);
-////				MadLevel.ReloadCurrent();
-//				
-//			}	
-//		}
-
-
-//        for (int i = 1; i < groups.Length; ++i) {
-//            string prevGroup = groups[i - 1];
-//            string group = groups[i];
-//
-//            int acquired = StarsUtil.CountAcquiredStars(prevGroup);
-//			Debug.Log("You have this many stars: " + acquired);
-//
-//			if (acquired >= 0) {
-//				if (MadLevelProfile.IsLocked("Level 5")) {
-//					MadLevelProfile.SetLocked("Level 5", false);
-//					MadLevel.ReloadCurrent();
-//					
-//				}	
-//				}
-//
-//			if (acquired >= levelTwoStars) {
-//				if (MadLevelProfile.IsLocked("Level 5")) {
-//					MadLevelProfile.SetLocked("Level 5", false);
-//					MadLevel.ReloadCurrent();
-//					
-//				}	
-//			}
-//
-//            if (acquired >= 6) {
-//                if (MadLevelProfile.IsLocked(group)) {
-//                    MadLevelProfile.SetLocked(group, false);
-//                    MadLevel.ReloadCurrent();
-//
-//
-//                }
-//            }
-//        }
-
-
 //		MadLevel.ReloadCurrent();
     }
 
