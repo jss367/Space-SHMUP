@@ -14,7 +14,8 @@ public class LevelManager : MonoBehaviour {
 //	public float secondBreak;
 //	public float thirdBreak;
 	private float timeLimit;
-	private string currentLevel;
+//	private string currentLevel;
+	private string musicLevel;
 	private float timer;
 	public bool spawningStoppedToggle = false;
 	public float startRepeating = 0.0f;
@@ -38,41 +39,50 @@ public class LevelManager : MonoBehaviour {
 	void Start(){
 
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
-		currentLevel = MadLevel.currentLevelName;
+		musicLevel = GameObject.Find ("Beat").GetComponent<AudioSource> ().clip.ToString ();
+		string[] levelSplit = musicLevel.Split (' ');
+		musicLevel = levelSplit [0];
+//		currentLevel = MadLevel.currentLevelName;
 //		InvokeRepeating ("StopSpawn", startRepeating, 2.0f);	
 		//Get the level number
-		string[] levelSplit = currentLevel.Split (' ');
+//		string[] currLevelSplit = currentLevel.Split (' ');
 		//Concatentate level number to appropriate fireworks
-		SpawnManager.instance.Mid = GameObject.Find ("LevelManager/FireworksManager/Mid" + levelSplit [1]);
+		SpawnManager.instance.Mid = GameObject.Find ("LevelManager/FireworksManager/Mid" + musicLevel);
 		SpawnManager.instance.Mid.SetActive (true);
-		SpawnManager.instance.Bass = GameObject.Find ("LevelManager/FireworksManager/Bass" + levelSplit [1]);
+		SpawnManager.instance.Bass = GameObject.Find ("LevelManager/FireworksManager/Bass" + musicLevel);
 		SpawnManager.instance.Bass.SetActive (true);
 		SpawnManager.instance.WaveText.enabled = false;
 //		Debug.Log ("On level: Level" + levelSplit [1] + "Update");
-		InvokeRepeating ("Level" + levelSplit [1] + "Update", startRepeating, repeatFreq);
-		switch (currentLevel) {
-		case "Level 1":
+		InvokeRepeating (musicLevel, startRepeating, repeatFreq);
+		switch (musicLevel) {
+		case "Mix21":
 			waveOne = 2;
 			numWaves = 1;
 			break;
-		case "Level 2":
+		case "Ninety12Remix55":
 			numWaves = 2;
 			waveOne = 2;
 			waveTwo = 32;
 			break;
-		case "Level 3":
+		case "JazzyFrenchy145":
+			numWaves = 3;
+			waveOne = 2;
+			waveTwo = 35;
+			waveThree = 67;
+			break;
+		case "Ectoplasm2_125":
 			//Ectoplasm
 			numWaves = 3;
 			waveOne = 2;
 			waveTwo = 39;
 			waveThree = 57;
 			break;
-		case "Level 4":
+		case "ChecksForFree100":
 			numWaves = 2;
 			waveOne = 2;
 			waveTwo = 31;
 			break;
-		case "Level 5":
+		case "SciFi230":
 			numWaves = 5;
 			waveOne = 15.5f;
 			waveTwo = 32;
@@ -80,7 +90,7 @@ public class LevelManager : MonoBehaviour {
 			waveFour = 90;
 			waveFive = 115.5f;
 			break;
-		case "Level 6":
+		case "HighTension210":
 			numWaves = 5;
 			waveOne = 2;
 			waveTwo = 35.5f;
@@ -88,27 +98,27 @@ public class LevelManager : MonoBehaviour {
 			waveFour = 85;
 			waveFive = 103;
 			break;
-		case "Level 7":
+		case "Sarabande230":
 			//Sarabande
 			numWaves = 3;
 			waveOne = 2;
 			waveTwo = 39;
 			waveThree = 110;
 			break;
-		case "Level 8":
+		case "NinetySecondsOfFunk130":
 			// 90 seconds of funk
 			numWaves = 3;
 			waveOne = 2;
 			waveTwo = 34;
 			waveThree = 66;
 			break;
-		case "Level 9":
+		case "ThumpetteMini125":
 			// Thumpette, at least for now
 			numWaves = 2;
 			waveOne = 2;
 			waveTwo = 43;
 			break;
-		case "Level 10":
+		case "Cresc230":
 			numWaves = 5;
 			waveOne = 2;
 			waveTwo = 30;
@@ -186,7 +196,7 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	void Level1Update () {
+	void Mix21 () {
 
 		//This is for Mix_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
@@ -208,7 +218,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 
-	void Level2Update () {
+	void Ninety12Remix55 () {
 //		InvokeRepeating ("CheckForNextWave", 0, .5f);
 		//This is for 2_90-12Remix_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
@@ -233,7 +243,36 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	void Level3Update () {
+	void JazzyFrenchy145 () {
+		//		InvokeRepeating ("CheckForNextWave", 0, .5f);
+		//This is for 2_90-12Remix_48
+		if (!Main.S.stopSpawning && !deadPeriod) {
+			
+			if (timer < waveOne){
+				CheckForNextWave(waveOne, 1);
+				
+				
+			} else if (timer < waveTwo){
+				
+				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
+				SpawnManager.instance.EnemySpawn1d15.SetActive (true);
+				//CheckForNextWave must go below the spawn manager
+				CheckForNextWave(waveTwo, 2);
+			} else  if (timer < waveThree){
+				
+				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
+				SpawnManager.instance.EnemySpawn15d2.SetActive (true);
+				
+			} else {
+				SpawnManager.instance.AsteroidSpawn2.SetActive (true);
+				SpawnManager.instance.EnemySpawn1d15.SetActive (true);
+				SpawnManager.instance.EnemySpawn15d2.SetActive (true);
+			}
+			
+		}
+	}
+
+	void Ectoplasm2_125 () {
 		// This is for 6Ectoplasm2_125_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
 			
@@ -277,7 +316,7 @@ public class LevelManager : MonoBehaviour {
 
 
 	
-	void Level4Update () {
+	void ChecksForFree100 () {
 		// This is for ChecksForFree_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
 			if (timer < waveOne){
@@ -304,7 +343,7 @@ public class LevelManager : MonoBehaviour {
 
 
 
-	void Level5Update () {
+	void SciFi230 () {
 		// This is for 5Sci-Fi_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
 			if (timer < waveOne) {
@@ -358,7 +397,7 @@ public class LevelManager : MonoBehaviour {
 
 
 	
-	void Level6Update () {
+	void HighTension210 () {
 		// This is for 4HighTension_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
 			if (timer < waveOne){
@@ -417,7 +456,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 
-	void Level7Update () {
+	void Sarabande230 () {
 		//			This is for 9Sarabande_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
 			
@@ -466,7 +505,7 @@ public class LevelManager : MonoBehaviour {
 
 	
 	
-	void Level8Update () {
+	void NinetySecondsOfFunk130 () {
 		// This is for 90 seconds of funk
 		if (!Main.S.stopSpawning && !deadPeriod) {
 			
@@ -507,7 +546,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	
-	void Level9Update () {
+	void ThumpetteMini125 () {
 		//		This is for 7Thumpette_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
 			//			timer = Time.timeSinceLevelLoad;
@@ -558,7 +597,7 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	void Level10Update () {
+	void Cresc230 () {
 		// This is for Cresc_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
 
@@ -720,7 +759,7 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	void Level18Update () {
+	void Dubstep200 () {
 		// This is for 8FunkyJunky_48
 		if (!Main.S.stopSpawning && !deadPeriod) {
 			//			timer = Time.timeSinceLevelLoad;

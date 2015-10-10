@@ -16,8 +16,8 @@ public class Parallax : MonoBehaviour {
 	void Start () {
 
 		panels = GameObject.FindGameObjectsWithTag ("Starfield");
-		Debug.Log (panels);
-		Debug.Log (panels.Length);
+//		Debug.Log (panels);
+//		Debug.Log (panels.Length);
 		if (panels.Length != 0){
 		panelHt = panels [0].transform.localScale.y;
 		depth = panels [0].transform.position.z;

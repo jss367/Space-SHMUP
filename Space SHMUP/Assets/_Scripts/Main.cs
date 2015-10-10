@@ -5,7 +5,6 @@ using System.Collections.Generic; //Required to use Lists or Dictionaries
 using Soomla;
 using MadLevelManager;
 
-//namespace Soomla.Store.Example {
 
 public class Main : MonoBehaviour {
 	static public Main			S;
@@ -55,6 +54,7 @@ public class Main : MonoBehaviour {
 	private int		score;
 	public float	timeAlive;
 	public float	timeLimit;
+	public string	musicLevel;
 
 	public float account;
 	public float coinsGained;
@@ -136,6 +136,11 @@ public class Main : MonoBehaviour {
 		score = 0;
 		ResetScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+		musicLevel = GameObject.Find ("Beat").GetComponent<AudioSource> ().clip.ToString ();
+		string[] levelSplit = musicLevel.Split (' ');
+		musicLevel = levelSplit [0];
+//		Debug.Log (levelSplit [0]);
+//		Debug.Log (musicLevel);
 //		Debug.Log ("The song length is " + timeLimit);
 		gameHasEnded = false;
 
@@ -278,7 +283,7 @@ public class Main : MonoBehaviour {
 	
 	public void WaitUntilLevelEmpties(){
 		
-					Debug.Log ("Waiting until level empties");
+//					Debug.Log ("Waiting until level empties");
 		stopSpawning = true;
 		GameObject[] AsteroidsRemaining = GameObject.FindGameObjectsWithTag ("Asteroid");
 		//		Debug.Log ("Asteroids remaining: " + AsteroidsRemaining.Length);
@@ -373,7 +378,7 @@ public class Main : MonoBehaviour {
 
 	}
 	IEnumerator CountScore(){
-		Debug.Log ("Counting the score");
+//		Debug.Log ("Counting the score");
 		int displayScore = 0;
 		int updateAmount = 0;
 
@@ -397,12 +402,13 @@ public class Main : MonoBehaviour {
 
 			displayScore+= updateAmount;
 //			bool earth1Toggle = false;
+			if (playerWins){
 			if (displayScore >= earth1 && !earth1Toggle){
-				Debug.Log(earth1);
-				Debug.Log(displayScore);
+//				Debug.Log(earth1);
+//				Debug.Log(displayScore);
 				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
 				Instantiate(earthReward, pos1, Quaternion.identity);
-				Debug.Log(earth1Toggle);
+//				Debug.Log(earth1Toggle);
 				earth1Toggle = true;
 			}
 //			bool earth2Toggle = false;
@@ -417,6 +423,7 @@ public class Main : MonoBehaviour {
 				Instantiate(earthReward, pos3, Quaternion.identity);
 				earth3Toggle = true;
 			}
+			}
 			finalScoreText.text = "Final Score: " + displayScore;
 			finalScoreText.enabled = true;
 			yield return new WaitForSeconds(.01f);
@@ -428,74 +435,81 @@ public class Main : MonoBehaviour {
 	}
 
 	public void SetLevelValues (){
-//		Debug.Log("You are currently on this level: " + currentLevel);
+		//		Debug.Log("You are currently on this level: " + musicLevel);
 
-		switch (currentLevel) {
-		case "Level 1":
-//			Debug.Log("on level one");
+		switch (musicLevel) {
+		case "Mix21":  // change these to the song names?
+			Debug.Log("On level one");
 			victoryBonus = 50;
 			earth1 = 80;
 			earth2 = 150;
 			earth3 = 220;
 
 			break;
-		case "Level 2":
+		case "Ninety12Remix55":
 			victoryBonus = 100;
-			earth1 = 1500;
-			earth2 = 1800;
-			earth3 = 2300;
+			earth1 = 500;
+			earth2 = 800;
+			earth3 = 1000;
 
 			break;
-		case "Level 3":
+		case "JazzyFrenchy145":
+			victoryBonus = 150;
+			earth1 = 1000;
+			earth2 = 1400;
+			earth3 = 1750;
+			
+			break;
+		case "Ectoplasm2_125":
 			victoryBonus = 150;
 			earth1 = 1000;
 			earth2 = 1400;
 			earth3 = 1750;
 
 			break;
-		case "Level 4":
+		case "ChecksForFree100":
 			victoryBonus = 200;
 			earth1 = 1000;
 			earth2 = 1500;
 			earth3 = 2000;
 
 			break;
-		case "Level 5":
+		case "SciFi230":
 			victoryBonus = 300;
-			earth1 = 2500;
-			earth2 = 3000;
-			earth3 = 3700;
+			earth1 = 3000;
+			earth2 = 4000;
+			earth3 = 5000;
 			
 			break;
-		case "Level 6":
+		case "HighTension210":
 			victoryBonus = 400;
 			earth1 = 2500;
 			earth2 = 3250;
 			earth3 = 4000;
 			
 			break;
-		case "Level 7":
+		case "Sarabande230":
 			victoryBonus = 500;
 			earth1 = 4000;
 			earth2 = 5500;
 			earth3 = 7500;
 			
 			break;
-		case "Level 8":
+		case "NinetySecondsOfFunk130":
 			victoryBonus = 700;
 			earth1 = 4000;
 			earth2 = 7500;
 			earth3 = 9000;
 			
 			break;
-		case "Level 9":
+		case "ThumpetteMini125":
 			victoryBonus = 900;
 			earth1 = 5000;
 			earth2 = 8000;
 			earth3 = 10000;
 
 			break;
-		case "Level 10":
+		case "Cresc230":
 			victoryBonus = 1200;
 			earth1 = 7500;
 			earth2 = 10000;
@@ -533,12 +547,12 @@ public class Main : MonoBehaviour {
 	
 		//		Debug.Log ("The score is " + score);
 		// Update the high score if PlayerPrefs if necessary
-		if (score > PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0)) {
-			Debug.Log("Setting new high score");
-			PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
+		if (score > PlayerPrefs.GetInt ("GalacticHighScore" + musicLevel, 0)) {
+//			Debug.Log("Setting new high score");
+			PlayerPrefs.SetInt ("GalacticHighScore" + musicLevel, score);
 			newHighScoreText.enabled = true;
 		}
-		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0);
+		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("GalacticHighScore" + musicLevel, 0);
 		highScoreText.enabled = true;
 	}
 
@@ -562,7 +576,7 @@ public class Main : MonoBehaviour {
 
 	public void RestartLevel()
 	{
-		MadLevel.LoadLevelByName (currentLevel);
+		MadLevel.LoadLevelByName (MadLevel.currentLevelName);
 	}
 
 }

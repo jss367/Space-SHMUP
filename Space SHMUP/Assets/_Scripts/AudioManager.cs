@@ -71,36 +71,42 @@ public class AudioManager : MonoBehaviour {
 
 		switch (currentLevel) {
 		case "Level 1":
-			audioClip [0] = Resources.Load ("Music/1Mix21_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/Mix21") as AudioClip;
 			break;
 		case "Level 2":
-			audioClip [0] = Resources.Load ("Music/2_90-12Remix55_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/Ninety12Remix55") as AudioClip;
 			break;
 		case "Level 3":
-			audioClip [0] = Resources.Load ("Music/3Ectoplasm2_125_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/JazzyFrenchy145") as AudioClip;
 			break;
 		case "Level 4":
-			audioClip [0] = Resources.Load ("Music/6ChecksForFree100_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/Ectoplasm2_125") as AudioClip;
 			break;
 		case "Level 5":
-			audioClip [0] = Resources.Load ("Music/5Sci-Fi230_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/ChecksForFree100") as AudioClip;
 			break;
 		case "Level 6":
-			audioClip [0] = Resources.Load ("Music/4HighTension210_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/SciFi230") as AudioClip;
 			break;
 		case "Level 7":
-			audioClip [0] = Resources.Load ("Music/9Sarabande230_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/HighTension210") as AudioClip;
 			break;
 		case "Level 8":
-			audioClip [0] = Resources.Load ("Music/3_90SecondsOfFunk130_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/Sarabande230") as AudioClip;
 			break;
 		case "Level 9":
-			audioClip [0] = Resources.Load ("Music/Thumpette_Mini_125_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/NinetySecondsOfFunk130") as AudioClip;
 			break;
 		case "Level 10":
-			audioClip [0] = Resources.Load ("Music/11Cresc230_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/ThumpetteMini125") as AudioClip;
 			break;
 		case "Level 11":
+			audioClip [0] = Resources.Load ("Music/Cresc230") as AudioClip;
+			break;
+		case "Level 12":
+			audioClip [0] = Resources.Load ("Music/Dubstep200") as AudioClip;
+			break;
+		case "Level 13":
 			audioClip [0] = Resources.Load ("Music/First_Level5a") as AudioClip;
 			break;
 		}//7Thumpette_48
@@ -463,10 +469,6 @@ public class AudioManager : MonoBehaviour {
 
 	private bool isPaused = false;
 
-//	void Update () {
-////		Debug.Log (playbackVolume);
-////		Debug.Log ();
-//	}
 
 	public void OnUnPause() {
 //		Debug.Log ("PauseManager.OnUnPause");	
