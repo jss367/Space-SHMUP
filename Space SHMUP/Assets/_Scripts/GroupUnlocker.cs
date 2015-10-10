@@ -25,7 +25,10 @@ public class GroupUnlocker : MonoBehaviour {
 		10, // level 7
 		13, // level 8
 		16, // level 9
-		20, // level 10
+		19, // level 10
+		22, // level 11
+		26, // level 12
+		30 // level 13
 	};
 
 

@@ -55,9 +55,13 @@ public class LevelManager : MonoBehaviour {
 //		Debug.Log ("On level: Level" + levelSplit [1] + "Update");
 		InvokeRepeating (musicLevel, startRepeating, repeatFreq);
 		switch (musicLevel) {
-		case "Mix21":
-			waveOne = 2;
+		case "First30":
 			numWaves = 1;
+			waveOne = 2;
+			break;
+		case "Mix21":
+			numWaves = 1;
+			waveOne = 2;
 			break;
 		case "Ninety12Remix55":
 			numWaves = 2;
@@ -112,6 +116,14 @@ public class LevelManager : MonoBehaviour {
 			waveTwo = 34;
 			waveThree = 66;
 			break;
+		case "Epic":
+			numWaves = 5;
+			waveOne = 2;
+			waveTwo = 35;
+			waveThree = 63;
+			waveFour = 109;
+			waveFive = 144;
+			break;
 		case "ThumpetteMini125":
 			// Thumpette, at least for now
 			numWaves = 2;
@@ -127,7 +139,7 @@ public class LevelManager : MonoBehaviour {
 			waveFive = 120;
 			break;
 		default:
-			numWaves = 4;
+			numWaves = 17;
 			waveOne = timeLimit / 4;
 			///etc.
 			break;
@@ -196,9 +208,30 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
+	void First30 () {
+		
+		//This is for First30
+		if (!Main.S.stopSpawning && !deadPeriod) {
+			
+			if (timer < waveOne) {
+				CheckForNextWave(waveOne, 1);
+			} else {//if (timer < 25){
+				
+				SpawnManager.instance.AsteroidSpawnFirst.SetActive (true);
+				SpawnManager.instance.EnemySpawn1dFirst.SetActive (true);
+//			} 	else {
+//				//				Debug.Log(Main.S.stopSpawning);
+//				SpawnManager.instance.AsteroidSpawn1.SetActive (false);
+//				SpawnManager.instance.EnemySpawn1d1.SetActive (false);
+//				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
+			}
+			
+		}
+	}
+
 	void Mix21 () {
 
-		//This is for Mix_48
+		//This is for Mix21
 		if (!Main.S.stopSpawning && !deadPeriod) {
 
 			if (timer < waveOne) {
@@ -773,7 +806,7 @@ public class LevelManager : MonoBehaviour {
 				//				level = 2;
 				SpawnManager.instance.AsteroidSpawn3.SetActive (true);
 				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
-				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
+//				SpawnManager.instance.EnemySpawn3d1.SetActive (true);
 			} else if (timer < 123) {
 				//				level = 3;
 				SpawnManager.instance.AsteroidSpawn3.SetActive (false);

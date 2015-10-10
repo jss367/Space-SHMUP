@@ -18,6 +18,7 @@ public class SpawnManager : MonoBehaviour {
 
 	public GameObject AsteroidSpawn0;
 	public GameObject AsteroidSpawn1;
+	public GameObject AsteroidSpawnFirst;
 	public GameObject AsteroidSpawn2;
 	public GameObject AsteroidSpawn3;
 	public GameObject AsteroidSpawn31;
@@ -35,6 +36,7 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject EnemySpawn1dtest;
 	public GameObject EnemySpawn1d05;
 	public GameObject EnemySpawn1d1;
+	public GameObject EnemySpawn1dFirst;
 	public GameObject EnemySpawn1u5;
 	public GameObject EnemySpawn1u6;
 	public GameObject EnemySpawn1d15;

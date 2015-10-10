@@ -438,7 +438,7 @@ public class Main : MonoBehaviour {
 		//		Debug.Log("You are currently on this level: " + musicLevel);
 
 		switch (musicLevel) {
-		case "Mix21":  // change these to the song names?
+		case "First30":  
 			Debug.Log("On level one");
 			victoryBonus = 50;
 			earth1 = 80;
