@@ -187,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 308293535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.79474926, y: -2.5, z: 0}
+  m_LocalPosition: {x: -5.80000019, y: -2.5, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 396900309}
@@ -507,6 +507,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 538530826}
+--- !u!1 &625261860 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 175054, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+  m_PrefabInternal: {fileID: 1894371964}
 --- !u!1001 &733146161
 Prefab:
   m_ObjectHideFlags: 0
@@ -3475,6 +3479,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1200917487}
+--- !u!1 &1237219878 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 160472, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+  m_PrefabInternal: {fileID: 1894371964}
 --- !u!1 &1279128665
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,6 +4059,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 426882, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4154,6 +4166,74 @@ Prefab:
     - target: {fileID: 8280778, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].type
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].letter
+      value: B
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].color.r
+      value: .760784388
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].color.g
+      value: .760784388
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].projectilePrefab
+      value: 
+      objectReference: {fileID: 198596, guid: 14e436cfe7b78be49b1ffc2761007590, type: 2}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].projectileColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].projectileColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].projectileColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].damageOnHit
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].velocity
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[0].color.r
+      value: .760784388
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[0].color.g
+      value: .760784388
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[0].color.b
+      value: .760784388
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].color.b
+      value: .760784388
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].projectileColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[5].delayBetweenShots
+      value: .349999994
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
@@ -4910,14 +4990,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 11463246, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
-      propertyPath: m_oVisManager
+    - target: {fileID: 11431720, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: MovementJoystick
       value: 
-      objectReference: {fileID: 2032642639}
-    - target: {fileID: 11463246, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
-      propertyPath: controller
-      value: 
-      objectReference: {fileID: 2032642640}
+      objectReference: {fileID: 308293536}
     - target: {fileID: 11484778, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
       propertyPath: fireButton
       value: 
@@ -4926,10 +5002,94 @@ Prefab:
       propertyPath: cNABstractController
       value: 
       objectReference: {fileID: 308293536}
-    - target: {fileID: 11431720, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
-      propertyPath: MovementJoystick
+    - target: {fileID: 11463246, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_oVisManager
       value: 
-      objectReference: {fileID: 308293536}
+      objectReference: {fileID: 2032642639}
+    - target: {fileID: 11463246, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 2032642640}
+    - target: {fileID: 107702, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Name
+      value: MineDropperLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 103496, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Name
+      value: MineDropperRight
+      objectReference: {fileID: 0}
+    - target: {fileID: 112678, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484778, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: mineDropLeft
+      value: 
+      objectReference: {fileID: 625261860}
+    - target: {fileID: 11484778, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: mineDropRight
+      value: 
+      objectReference: {fileID: 1237219878}
+    - target: {fileID: 112678, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 145800, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 104650, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 144154, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 107702, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 175054, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 124084, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 180068, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 154560, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 127084, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 103496, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 160472, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 103496, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 107702, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484778, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: isInvincible
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
   m_IsPrefabParent: 0

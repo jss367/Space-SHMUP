@@ -14,6 +14,7 @@ public enum WeaponType {
 	shield, //Raise sheidLevel
 	ball,
 	plasma,
+	doubleBlaster,
 	speed
 
 }
@@ -107,6 +108,11 @@ public class Weapon : MonoBehaviour {
 			p = MakeProjectile ();
 			p.GetComponent<Rigidbody>().velocity = Vector3.up * def.velocity;
 //			Debug.Log("Weapon was created with velocity " + def.velocity);
+			break;
+
+		case WeaponType.doubleBlaster:
+			p = MakeProjectile ();
+			p.GetComponent<Rigidbody>().velocity = Vector3.up * def.velocity;
 			break;
 			
 		case WeaponType.spread:

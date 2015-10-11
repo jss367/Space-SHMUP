@@ -65,6 +65,7 @@ public class Hero : MonoBehaviour {
 	public bool laserEquipped;
 	public bool bazookaEquipped;
 	public bool missileEquipped;
+	public bool doubleBlaster;
 
 	public CNAbstractController cNABstractController;
 
@@ -73,8 +74,11 @@ public class Hero : MonoBehaviour {
 	public GameObject missile;
 	public GameObject missileArt;
 	public GameObject missileLaunchLocation;
+//	public GameObject MineDropper;
+	private GameObject Mine;
 	public GameObject mine;
-	public GameObject mineDropLocation;
+	public GameObject mineDropLeft;
+	public GameObject mineDropRight;
 	public GameObject bazookaBullet;
 	public GameObject bazookaBulletLocation1;
 	public GameObject bazookaBulletLocation2;
@@ -88,8 +92,7 @@ public class Hero : MonoBehaviour {
 	public GameObject Bazooka1;
 	public GameObject Bazooka2;
 	public GameObject MissileLauncher;
-	public GameObject MineDropper;
-	private GameObject Mine;
+
 //	public GameObject Laser;
 	public int autoShootOn = 1;
 
@@ -113,10 +116,9 @@ public class Hero : MonoBehaviour {
 			weapons [0].SetType (WeaponType.spread);
 		} else if (laserEquipped) {
 			weapons [0].SetType (WeaponType.laser);
-
-
+		} else if (doubleBlaster) {
+			weapons[0].SetType(WeaponType.doubleBlaster);
 		} else {
-//			Debug.Log ("Spread is not equipped");
 			weapons [0].SetType (WeaponType.blaster);
 		}
 
@@ -254,21 +256,23 @@ public class Hero : MonoBehaviour {
 			//			Debug.Log("fireDelegate has been called");
 		}
 
-//		if (fireButton.CanDropMine()) {
-//			if (Time.time - lastMineTime < mineDelay) {
-//				return;
-//			}
-//			Instantiate(mine, mineDropLocation.transform.position, mineDropLocation.transform.rotation);
-//			lastMineTime = Time.time;
-//			//			Debug.Log("fireDelegate has been called");
-//		}
+		if (fireButton.CanMineLeft()) {
+			if (Time.time - lastMineTime < mineDelay) {
+				return;
+			}
+			Instantiate(mine, mineDropLeft.transform.position, mineDropLeft.transform.rotation);
+			lastMineTime = Time.time;
+						Debug.Log("Mining left");
+		}
 	
-//		if (remainingDamageFrames > 0) {
-//			remainingDamageFrames--;
-//			if (remainingDamageFrames == 0) {
-//				UnShowDamage ();
-//			}
-//		}
+		if (fireButton.CanMineRight()) {
+			if (Time.time - lastMineTime < mineDelay) {
+				return;
+			}
+			Instantiate(mine, mineDropRight.transform.position, mineDropRight.transform.rotation);
+			lastMineTime = Time.time;
+			Debug.Log("Mining right");
+		}
 		}
 
 	IEnumerator ReturnBazookaArt(){
@@ -304,12 +308,10 @@ public class Hero : MonoBehaviour {
 				shieldUpgradeOwned = true;
 			}
 		}
-
 		catch (System.Exception e)
 		{
 			Debug.Log("Caught error: " + e);
 		}
-
 		try{
 			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.SPEED_ITEM_ID);
 //			Debug.Log("Speed upgrade balance is " + balance);
@@ -319,12 +321,10 @@ public class Hero : MonoBehaviour {
 				speedUpgradeOwned = true;
 			}
 		}
-		
 		catch (System.Exception e)
 		{
 			Debug.Log("Caught error: " + e);
 		}
-
 		try
 		{
 			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.MISSILE_LAUNCHER_ITEM_ID)){
@@ -339,10 +339,17 @@ public class Hero : MonoBehaviour {
 		{
 			Debug.Log("Caught error: " + e);
 		}
-
-//		bazookaEquipped = true;
-//		laserEquipped = true;
-//		missileEquipped = true;
+		try{
+			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.DOUBLE_BLASTER_WEAPON_ITEM_ID);
+			if(balance > 0)  
+			{
+				doubleBlaster = true;
+			}
+		}
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+		}
 	}
 
 	//This variable holds a reference to the last triggering GameObject
@@ -381,12 +388,12 @@ public class Hero : MonoBehaviour {
 				AbsorbPowerUp(go);
 			}else{
 			//Announce it
-//			print ("Triggered: " + go.name);
+			print ("Triggered: " + go.name);
 			//Make sure it's not the same triggering go as last time
 			}
 		}else {
 			//Otherwise announce the original gameObject
-//			print ("Triggered: " + other.gameObject.name);
+			print ("Triggered: " + other.gameObject.name);
 		}
 	}
 	public float shieldLevel {

@@ -42,7 +42,7 @@ namespace Soomla.Store.Example {
 		/// see parent.
 		/// </summary>
 		public VirtualGood[] GetGoods() {
-			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, BaseSpeed, BaseShield, MISSILE_LAUNCHER, BAZOOKA_LAUNCHER};//, SpeedUpgrade1};//, Shield, ShieldUpgrade1, BaseSpeed, SpeedUpgrade1};//, NO_ADS_LTVG};
+			return new  VirtualGood[] {WEAPON_BLASTER, WEAPON_SPREAD, BaseSpeed, BaseShield, DoubleBlaster, MISSILE_LAUNCHER, BAZOOKA_LAUNCHER};//,Shield, ShieldUpgrade1, //, NO_ADS_LTVG};
 		}
 		
 		/// <summary>
@@ -150,7 +150,7 @@ namespace Soomla.Store.Example {
 
 		public static VirtualGood WEAPON_BLASTER = new EquippableVG(
 			EquippableVG.EquippingModel.CATEGORY,
-			"Basic Weapon", 														// name
+			"Blaster", 														// name
 			"The weapon you start with",				 	// description
 			Constants.BLASTER_WEAPON_ITEM_ID,											// item id
 			new PurchaseWithVirtualItem(GALACTIC_CURRENCY.ItemId, 0));
@@ -241,6 +241,15 @@ namespace Soomla.Store.Example {
 			new PurchaseWithVirtualItem(        // Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
 		                            5000)                            // Payment amount
+			);
+
+		public static VirtualGood DoubleBlaster = new LifetimeVG(
+			"Blaster Double Damage",                           // Name
+			"Doubles the amount of damage from the blaster",        // Description
+			Constants.DOUBLE_BLASTER_WEAPON_ITEM_ID,                  // Item ID
+			new PurchaseWithVirtualItem(        // Purchase type
+		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
+		                            15000)                            // Payment amount
 			);
 
 		public static VirtualGood BaseShield = new LifetimeVG(

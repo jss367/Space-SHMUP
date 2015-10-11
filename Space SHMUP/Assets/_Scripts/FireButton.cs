@@ -11,7 +11,8 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 //	private bool canLaunchMissile; 
 	private bool canLaunch; 
 	private bool canEnergy;
-//	private bool canDropMine;
+	private bool mineRight;
+	private bool mineLeft;
 
 	public float minSwipeDistY = 700;
 	public float minSwipeDistX = 700;
@@ -53,6 +54,16 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 				canLaunch = true;
 				StartCoroutine("LaunchTimer");
 			}
+			if (endPos.x - startPos.x > minSwipeDistX)
+			{
+				mineRight = true;
+				StartCoroutine("MineTimer");
+			}
+			if (startPos.x - endPos.x > minSwipeDistX)
+			{
+				mineLeft = true;
+				StartCoroutine("MineTimer");
+			}
 
 			if (endPos.x - startPos.x < tinySwipeDistX &&  endPos.y - startPos.y < tinySwipeDistY)
 			{
@@ -68,6 +79,11 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 		IEnumerator LaunchTimer(){
 					yield return new WaitForSeconds (1);
 					canLaunch = false;
+	}
+	IEnumerator MineTimer(){
+		yield return new WaitForSeconds (1);
+		mineLeft = false;
+		mineRight = false;
 	}
 
 
@@ -85,8 +101,12 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 		return canLaunch;
 	}
 
-//	public bool CanDropMine () {
-//		return canDropMine;
-//	}
+	public bool CanMineLeft () {
+		return mineLeft;
+	}
+
+	public bool CanMineRight () {
+		return mineRight;
+	}
 
 }

@@ -10,7 +10,7 @@ public class Main : MonoBehaviour {
 	static public Main			S;
 	static public Dictionary<WeaponType, WeaponDefinition> W_DEFS;
 	public GameObject[]			prefabEnemies;
-	public float				enemySpawnPerSecond = 0.5f;
+//	public float				enemySpawnPerSecond = 0.5f;
 	public float				enemySpawnPadding = 1.5f;
 	public WeaponDefinition[]	weaponDefinitions;
 	public GameObject			prefabPowerUp;
@@ -41,6 +41,7 @@ public class Main : MonoBehaviour {
 	public bool ______________;
 
 	public bool spreadEquipped = false;
+	public bool doubleBlaster = false;
 	public bool weaponrySet = false;
 	public bool pointsGiven = false;
 	private float timeOfDeath;
@@ -49,7 +50,7 @@ public class Main : MonoBehaviour {
 	bool earth3Toggle = false;
 	
 	public WeaponType[]			activeWeaponTypes;
-	public float				enemySpawnRate; //Display between enemy spawns
+//	public float				enemySpawnRate; //Display between enemy spawns
 	
 	private int		score;
 	public float	timeAlive;
@@ -87,7 +88,7 @@ public class Main : MonoBehaviour {
 		//Set Utils.camBounds
 		Utils.SetCameraBounds (this.GetComponent<Camera>());
 		//  0.5 enemies/second = enemySpawnRate of 2
-		enemySpawnRate = 1f / enemySpawnPerSecond;
+//		enemySpawnRate = 1f / enemySpawnPerSecond;
 		//Invoke call SpawnEnemy() once after a 2 second delay
 //		Invoke ("SpawnEnemy", enemySpawnRate);
 		
@@ -158,12 +159,10 @@ public class Main : MonoBehaviour {
 		{
 			
 			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
-//				Debug.Log("Blaster is equipped");
-				
+//				Debug.Log("Blaster is equipped");		
 			}
 			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
 //				Debug.Log("Spread is equipped");
-				
 				spreadEquipped = true;
 			}
 		}
@@ -171,22 +170,27 @@ public class Main : MonoBehaviour {
 		{
 			Debug.Log("Caught error: " + e);
 		}
-
 		try
 		{
 			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.MISSILE_LAUNCHER_ITEM_ID)){
 				missileEquipped = true;
-			}
-			
+			}			
 		}
 		catch (System.Exception e)
 		{
 			Debug.Log("Caught error: " + e);
 		}
-
-//		missileEquipped = true;
-//		laserEquipped = true;	
-
+		try{
+			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.DOUBLE_BLASTER_WEAPON_ITEM_ID);
+			if(balance > 0)  
+			{
+				doubleBlaster = true;
+			}
+		}
+		catch (System.Exception e)
+		{
+			Debug.Log("Caught error: " + e);
+		}
 	}
 
 	void SetWeaponry() {
@@ -194,30 +198,34 @@ public class Main : MonoBehaviour {
 		if (spreadEquipped) {
 //			Debug.Log("Setting weapon to spread");
 			powerUpFrequency = new WeaponType[] {
-//			WeaponType.spread,
-//			WeaponType.spread,
 			WeaponType.spread,
 			WeaponType.shield,
-//			WeaponType.laser
 		};
+		} else if (spreadEquipped) {
+				//			Debug.Log("Setting weapon to spread");
+				powerUpFrequency = new WeaponType[] {
+					WeaponType.spread,
+					WeaponType.shield,
+				};
 		} else if (laserEquipped) {
 			powerUpFrequency = new WeaponType[] {
 				WeaponType.laser
 			};
 
-		} else	{
+		} else	if (doubleBlaster) {
 //			Debug.Log("Setting weapon to white");
 			powerUpFrequency = new WeaponType[] {
-				//			WeaponType.spread,
-				//			WeaponType.spread,
-
-				WeaponType.blaster,
+				WeaponType.doubleBlaster,
 				WeaponType.shield
-
 			};
+	} else	{
+		//			Debug.Log("Setting weapon to white");
+		powerUpFrequency = new WeaponType[] {
+			WeaponType.blaster,
+			WeaponType.shield
+			
+		};
 	}
-
-
 		weaponrySet = true;
 	}
 	void Update() {
@@ -428,7 +436,7 @@ public class Main : MonoBehaviour {
 			finalScoreText.enabled = true;
 			yield return new WaitForSeconds(.01f);
 				}
-		Debug.Log ("Displaying final score");
+//		Debug.Log ("Displaying final score");
 
 		currentAccountText.text = "New Balance : " + (prevBalance + score) + " Coins";
 		currentAccountText.enabled = true;
@@ -439,7 +447,7 @@ public class Main : MonoBehaviour {
 
 		switch (musicLevel) {
 		case "First30":  
-			Debug.Log("On level one");
+//			Debug.Log("On level one");
 			victoryBonus = 50;
 			earth1 = 80;
 			earth2 = 150;
