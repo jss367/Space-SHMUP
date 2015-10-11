@@ -187,7 +187,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 308293535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.80000019, y: -2.5, z: 0}
+  m_LocalPosition: {x: -5.7973299, y: -2.5, z: 0}
   m_LocalScale: {x: 1.79999995, y: 1.79999995, z: 1}
   m_Children:
   - {fileID: 396900309}
@@ -4234,6 +4234,42 @@ Prefab:
     - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
       propertyPath: weaponDefinitions.Array.data[5].delayBetweenShots
       value: .349999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[3].damageOnHit
+      value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[3].projectilePrefab
+      value: 
+      objectReference: {fileID: 153182, guid: 476595813fc96fc4c9a7431d37a4ef59, type: 2}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[3].velocity
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[3].color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[3].color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[3].color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[3].projectileColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[3].projectileColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[3].projectileColor.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}

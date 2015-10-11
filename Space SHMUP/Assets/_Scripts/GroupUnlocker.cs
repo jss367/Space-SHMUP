@@ -2,7 +2,6 @@
 * Mad Level Manager by Mad Pixel Machine
 * http://www.madpixelmachine.com
 */
-
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,7 +10,8 @@ using UnityEngine.UI;
 using MadLevelManager;
 
 // this script should be placed in group select screen and will unlock group icons when needed
-public class GroupUnlocker : MonoBehaviour {
+public class GroupUnlocker : MonoBehaviour
+{
 
 	public Text remainingStars;
 	int starsToGo = 4;
@@ -31,50 +31,50 @@ public class GroupUnlocker : MonoBehaviour {
 		30 // level 13
 	};
 
-
-    void Start() {
+	void Start ()
+	{
 //		Debug.Log (MadLevel.currentGroupName);
-        string[] groups = MadLevel.GetAllLevelNames(MadLevel.Type.Level, MadLevel.defaultGroupName);
+		string[] groups = MadLevel.GetAllLevelNames (MadLevel.Type.Level, MadLevel.defaultGroupName);
 
-		int starsOwned = StarsUtil.CountAcquiredStars("(default)");
+		int starsOwned = StarsUtil.CountAcquiredStars ("(default)");
 
 		int currentLevel = 2;
-			foreach (int reqStars in requiredStars){
+		foreach (int reqStars in requiredStars) {
 //			Debug.Log(currentLevel);
 //			Debug.Log(starsOwned);
 //			Debug.Log(StarsUtil.CountAvailableStars("(default)"));
 			//See if you have enough stars to unlock the level
-				if (starsOwned >= reqStars){
-				MadLevelProfile.SetLocked("Level " + currentLevel, false);
+			if (starsOwned >= reqStars) {
+				MadLevelProfile.SetLocked ("Level " + currentLevel, false);
 			
 //				Debug.Log(currentLevel);
 				// If you don't have enough find out the minimum number to get to the next level
-				} else {
-				if (starsToGo > (reqStars-starsOwned)){
-					starsToGo = reqStars-starsOwned;
+			} else {
+				if (starsToGo > (reqStars - starsOwned)) {
+					starsToGo = reqStars - starsOwned;
 				}
 
 			}
 			//If you have enough stars turn off the text about more stars
-			if (starsOwned >= requiredStars[requiredStars.Length - 1]){
+			if (starsOwned >= requiredStars [requiredStars.Length - 1]) {
 				remainingStars.enabled = false;
 
 				// Print the number of stars needed to reach the next level
-			}	else {
-				if (starsToGo == 1){
+			} else {
+				if (starsToGo == 1) {
 					remainingStars.text = starsToGo + " more star to unlock next level!";
 				} else {
 
 
-				remainingStars.text = starsToGo + " more stars to unlock next level!";
+					remainingStars.text = starsToGo + " more stars to unlock next level!";
 				}
 			}
 			currentLevel++;
-			}
+		}
 
 
 //		MadLevel.ReloadCurrent();
-    }
+	}
 
 //    void Update() {
 //    }

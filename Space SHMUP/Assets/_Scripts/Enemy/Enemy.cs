@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour
+{
 	
 	public float		speed = 20f; //The speed in m/s
 	public float		fireRate = 0.3f; // Seconds per shot (Unused)
@@ -16,7 +17,6 @@ public class Enemy : MonoBehaviour {
 //	public float comboTime = 1.0f;
 
 	public GameObject	impact;
-
 	public Color[]		originalColors;
 //	public Material[]	materials; //All the Materials of this & its children
 	public int			remainingDamageFrames = 0; // Damage frames left
@@ -26,25 +26,27 @@ public class Enemy : MonoBehaviour {
 
 //	private float tMultiplier;
 	private Main main;
-
 	public GameObject enemyExplosion;
 	public GameObject popText;
 //	public GameObject comboPopText;
 	
-	void Awake() {
+	void Awake ()
+	{
 
 		InvokeRepeating ("CheckOffscreen", 0f, 2f);
 	}
 
-	void Start() {
-		GameObject mainObject = GameObject.FindWithTag("MainCamera");
+	void Start ()
+	{
+		GameObject mainObject = GameObject.FindWithTag ("MainCamera");
 		if (mainObject != null) {
 			main = mainObject.GetComponent<Main> ();
 		}
 	}
 
 	//Update is called once per frame
-	void Update(){
+	void Update ()
+	{
 
 		if (main != null) {
 			//	Debug.Log("gameController does exist");
@@ -54,7 +56,7 @@ public class Enemy : MonoBehaviour {
 			//Debug.Log ("Cannot find 'main'");
 		}
 
-		Move();
+		Move ();
 		if (remainingDamageFrames > 0) {
 			remainingDamageFrames--;
 			if (remainingDamageFrames == 0) {
@@ -62,18 +64,18 @@ public class Enemy : MonoBehaviour {
 			}
 		}
 	}
-
 	
-	public virtual void Move(){
+	public virtual void Move ()
+	{
 		Vector3 tempPos = pos;
 //		float mod = Mathf.Sqrt
-		tempPos.y -= (speed/5*2*Mathf.Sqrt(.5f+(float)health)) * Time.deltaTime;
+		tempPos.y -= (speed / 5 * 2 * Mathf.Sqrt (.5f + (float)health)) * Time.deltaTime;
 		pos = tempPos;
 	}
 	
 	//This is a Property: A method that acts like a field
-	public Vector3 pos{
-		get{
+	public Vector3 pos {
+		get {
 			return (this.transform.position);
 		}
 		set {
@@ -81,7 +83,8 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
-	void CheckOffscreen(){
+	void CheckOffscreen ()
+	{
 		//If bounds are still their default value...
 		if (bounds.size == Vector3.zero) {
 			//then set them
@@ -105,7 +108,8 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
-	public void ReceiveDamage(float damage){
+	public void ReceiveDamage (float damage)
+	{
 //		Debug.Log ("Enemy has received damage");
 		health -= damage;
 		if (health <= 0) {
@@ -118,19 +122,19 @@ public class Enemy : MonoBehaviour {
 //				Instantiate(comboPopText, transform.position, Quaternion.identity);
 //			}
 //			else {
-				// Tell the Main singleton that this ship has been destroyed
-				Main.S.EnemyDestroyed(this, false);
-				Instantiate(popText, transform.position, Quaternion.identity);
+			// Tell the Main singleton that this ship has been destroyed
+			Main.S.EnemyDestroyed (this, false);
+			Instantiate (popText, transform.position, Quaternion.identity);
 //			}
 			lastTimeDestroyed = Time.time;
 			//				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
-			Instantiate(enemyExplosion, transform.position, transform.rotation);
+			Instantiate (enemyExplosion, transform.position, transform.rotation);
 			
 		}
 	}
 
-
-	void OnCollisionEnter (Collision coll) {
+	void OnCollisionEnter (Collision coll)
+	{
 		GameObject other = coll.gameObject;
 //		Debug.Log ("Enemy hit a " + other.tag);
 		switch (other.tag) {
@@ -147,9 +151,9 @@ public class Enemy : MonoBehaviour {
 			}
 			// Hurt this Enemy
 //			ShowDamage();
-			Instantiate(impact, transform.position, transform.rotation);
+			Instantiate (impact, transform.position, transform.rotation);
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
-			ReceiveDamage(Main.W_DEFS [p.type].damageOnHit);
+			ReceiveDamage (Main.W_DEFS [p.type].damageOnHit);
 
 			Destroy (other);
 			break;
@@ -176,7 +180,7 @@ public class Enemy : MonoBehaviour {
 			break;
 
 		case "Hero":
-			Instantiate(enemyExplosion, transform.position, transform.rotation);
+			Instantiate (enemyExplosion, transform.position, transform.rotation);
 			//Destroyed in the hero script
 			break;
 
@@ -184,7 +188,8 @@ public class Enemy : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter (Collider coll){
+	void OnTriggerEnter (Collider coll)
+	{
 		GameObject other = coll.gameObject;
 //		Debug.Log ("Enemy hit a " + other.tag);
 		switch (other.tag) {
@@ -199,11 +204,11 @@ public class Enemy : MonoBehaviour {
 				break;
 			}
 			// Destroy this Enemy
-			Destroy(this.gameObject);
+			Destroy (this.gameObject);
 			
-			Instantiate(enemyExplosion, transform.position, transform.rotation);
+			Instantiate (enemyExplosion, transform.position, transform.rotation);
 			break;
-	}
+		}
 	}
 
 

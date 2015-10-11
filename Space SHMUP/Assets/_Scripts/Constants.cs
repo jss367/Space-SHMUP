@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public static class Constants {
-
-
+public static class Constants
+{
 	public const string BLASTER_WEAPON_ITEM_ID = "weapon_blaster";
 	public const string DOUBLE_BLASTER_WEAPON_ITEM_ID = "weapon_doubleBlaster";
 	public const string SPREAD_WEAPON_ITEM_ID = "weapon_spread";

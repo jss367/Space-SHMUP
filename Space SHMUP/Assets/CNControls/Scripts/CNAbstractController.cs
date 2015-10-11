@@ -16,207 +16,204 @@ using System.Reflection;
 [Serializable]
 public abstract class CNAbstractController : MonoBehaviour
 {
-    // Constants for optimization. We don't need separate strings for every control object
-    private const string AxisNameHorizontal = "Horizontal";
-    private const string AxisNameVertical = "Vertical";
+	// Constants for optimization. We don't need separate strings for every control object
+	private const string AxisNameHorizontal = "Horizontal";
+	private const string AxisNameVertical = "Vertical";
 
-    // Some neat bitwise enums
-    [Flags]
-    protected enum AnchorsBase
-    {
-        Left = 1,
-        Right = 2,
-        Top = 4,
-        Bottom = 8,
-    }
+	// Some neat bitwise enums
+	[Flags]
+	protected enum AnchorsBase
+	{
+		Left = 1,
+		Right = 2,
+		Top = 4,
+		Bottom = 8,
+	}
 
-    // Combined enums
-    public enum Anchors
-    {
-        LeftTop = AnchorsBase.Left | AnchorsBase.Top,
-        LeftBottom = AnchorsBase.Left | AnchorsBase.Bottom,
-        RightTop = AnchorsBase.Right | AnchorsBase.Top,
-        RightBottom = AnchorsBase.Right | AnchorsBase.Bottom
-    }
+	// Combined enums
+	public enum Anchors
+	{
+		LeftTop = AnchorsBase.Left | AnchorsBase.Top,
+		LeftBottom = AnchorsBase.Left | AnchorsBase.Bottom,
+		RightTop = AnchorsBase.Right | AnchorsBase.Top,
+		RightBottom = AnchorsBase.Right | AnchorsBase.Bottom
+	}
 
-    // --------------------------------
-    // Editor visible public properties
-    // --------------------------------
+	// --------------------------------
+	// Editor visible public properties
+	// --------------------------------
 
-    /// <summary>
-    /// Anchor is a place where the controls snap
-    /// </summary>
-    public Anchors Anchor { get { return _anchor; } set { _anchor = value; } }
-    /// <summary>
-    /// Axis name which is used with the GetAxis(..) method. It's just like Input.GetAxis(..)
-    /// </summary>
-    public string AxisNameX { get { return _axisNameX; } set { _axisNameX = value; } }
-    /// <summary>
-    /// Axis name which is used with the GetAxis(..) method. It's just like Input.GetAxis(..)
-    /// </summary>
-    public string AxisNameY { get { return _axisNameY; } set { _axisNameY = value; } }
-    /// <summary>
-    /// Margins set the distance to the screen borders in units. Resolution-independent
-    /// </summary>
-    public Vector2 Margins { get { return _margins; } set { _margins = value; } }
+	/// <summary>
+	/// Anchor is a place where the controls snap
+	/// </summary>
+	public Anchors Anchor { get { return _anchor; } set { _anchor = value; } }
+	/// <summary>
+	/// Axis name which is used with the GetAxis(..) method. It's just like Input.GetAxis(..)
+	/// </summary>
+	public string AxisNameX { get { return _axisNameX; } set { _axisNameX = value; } }
+	/// <summary>
+	/// Axis name which is used with the GetAxis(..) method. It's just like Input.GetAxis(..)
+	/// </summary>
+	public string AxisNameY { get { return _axisNameY; } set { _axisNameY = value; } }
+	/// <summary>
+	/// Margins set the distance to the screen borders in units. Resolution-independent
+	/// </summary>
+	public Vector2 Margins { get { return _margins; } set { _margins = value; } }
     
-    // TODO: check whether different touch zones intersect (it can be avoided manually, but little things matter)
-    /// <summary>
-    ///  Touch zone size indicates how big is the sensitive area of the control
-    /// </summary>
-    public Vector2 TouchZoneSize { get { return _touchZoneSize; } set { _touchZoneSize = value; } }
+	// TODO: check whether different touch zones intersect (it can be avoided manually, but little things matter)
+	/// <summary>
+	///  Touch zone size indicates how big is the sensitive area of the control
+	/// </summary>
+	public Vector2 TouchZoneSize { get { return _touchZoneSize; } set { _touchZoneSize = value; } }
 
-    // -------------------
-    // Event based control
-    // -------------------
+	// -------------------
+	// Event based control
+	// -------------------
 
-    /// <summary>
-    /// Fires when the user tweaks the control
-    /// </summary>
-    public event Action<Vector3, CNAbstractController> ControllerMovedEvent;
-    /// <summary>
-    /// Fires when the user has just touched the control (the control became active)
-    /// </summary>
-    public event Action<CNAbstractController> FingerTouchedEvent;
-    /// <summary>
-    /// Fires when the user has just abandoned the control (the control became inactive)
-    /// </summary>
-    public event Action<CNAbstractController> FingerLiftedEvent;
+	/// <summary>
+	/// Fires when the user tweaks the control
+	/// </summary>
+	public event Action<Vector3, CNAbstractController> ControllerMovedEvent;
+	/// <summary>
+	/// Fires when the user has just touched the control (the control became active)
+	/// </summary>
+	public event Action<CNAbstractController> FingerTouchedEvent;
+	/// <summary>
+	/// Fires when the user has just abandoned the control (the control became inactive)
+	/// </summary>
+	public event Action<CNAbstractController> FingerLiftedEvent;
 
-    /// <summary>
-    /// Simple Transform property, used in runtime, it's more fast than getting the .transform property
-    /// </summary>
-    protected Transform TransformCache { get; set; }
-    /// <summary>
-    /// Parent camera is an Orthographical camera where all CNControls are stored 
-    /// </summary>
-    protected Camera ParentCamera { get; set; }
-    /// <summary>
-    /// Runtime calculated Rect, used for touch position checks
-    /// </summary>
-    protected Rect CalculatedTouchZone { get; set; }
-    /// <summary>
-    /// Pretty self-explanatory
-    /// </summary>
-    protected Vector2 CurrentAxisValues { get; set; }
-    /// <summary>
-    /// Current captured finger ID
-    /// </summary>
-    protected int CurrentFingerId { get; set; }
-    /// <summary>
-    /// Nullable Vector3 for optimization. We can check if we've already found it
-    /// </summary>
-    protected Vector3? CalculatedPosition { get; set; }
-    /// <summary>
-    /// Whether the control is currently being tweaked
-    /// </summary>
-    protected bool IsCurrentlyTweaking { get; set; }
+	/// <summary>
+	/// Simple Transform property, used in runtime, it's more fast than getting the .transform property
+	/// </summary>
+	protected Transform TransformCache { get; set; }
+	/// <summary>
+	/// Parent camera is an Orthographical camera where all CNControls are stored 
+	/// </summary>
+	protected Camera ParentCamera { get; set; }
+	/// <summary>
+	/// Runtime calculated Rect, used for touch position checks
+	/// </summary>
+	protected Rect CalculatedTouchZone { get; set; }
+	/// <summary>
+	/// Pretty self-explanatory
+	/// </summary>
+	protected Vector2 CurrentAxisValues { get; set; }
+	/// <summary>
+	/// Current captured finger ID
+	/// </summary>
+	protected int CurrentFingerId { get; set; }
+	/// <summary>
+	/// Nullable Vector3 for optimization. We can check if we've already found it
+	/// </summary>
+	protected Vector3? CalculatedPosition { get; set; }
+	/// <summary>
+	/// Whether the control is currently being tweaked
+	/// </summary>
+	protected bool IsCurrentlyTweaking { get; set; }
 
-    // --------------
-    // Private fields
-    // We serialize them and hide them in the inspector
-    // so it won't show automatically (we use custom inspectors for the CN Controls)
-    // --------------
+	// --------------
+	// Private fields
+	// We serialize them and hide them in the inspector
+	// so it won't show automatically (we use custom inspectors for the CN Controls)
+	// --------------
 
-    [SerializeField]
-    [HideInInspector]
-    private Anchors _anchor = Anchors.LeftBottom;
+	[SerializeField]
+	[HideInInspector]
+	private Anchors
+		_anchor = Anchors.LeftBottom;
+	[SerializeField]
+	[HideInInspector]
+	private string
+		_axisNameX = AxisNameHorizontal;
+	[SerializeField]
+	[HideInInspector]
+	private string
+		_axisNameY = AxisNameVertical;
+	[SerializeField]
+	[HideInInspector]
+	private Vector2
+		_touchZoneSize = new Vector2 (6f, 6f);
+	[SerializeField]
+	[HideInInspector]
+	private Vector2
+		_margins = new Vector2 (3f, 3f);
 
-    [SerializeField]
-    [HideInInspector]
-    private string _axisNameX = AxisNameHorizontal;
-
-    [SerializeField]
-    [HideInInspector]
-    private string _axisNameY = AxisNameVertical;
-
-    [SerializeField]
-    [HideInInspector]
-    private Vector2 _touchZoneSize = new Vector2(6f, 6f);
-
-    [SerializeField]
-    [HideInInspector]
-    private Vector2 _margins = new Vector2(3f, 3f);
-
-
-	void Start(){
+	void Start ()
+	{
 		CheckInventory ();
 	}
 
 	private bool speedUpgradeOwned = false;
 	private float speedMultiplier = 1.0f;
 
-	void CheckInventory() {
-		try{
-			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.SPEED_ITEM_ID);
+	void CheckInventory ()
+	{
+		try {
+			int balance = Soomla.Store.StoreInventory.GetItemBalance (Constants.SPEED_ITEM_ID);
 //			Debug.Log("Speed upgrade balance is " + balance);
-			if(balance > 0)   // This should be a switch with all the different upgrade levels
-			{
+			if (balance > 0) {   // This should be a switch with all the different upgrade levels
 //				Debug.Log("Joystick confirms that player has speed upgrade");
 				speedUpgradeOwned = true;
 				speedMultiplier = 1.4f;
 			}
-		}
-		
-		catch (System.Exception e)
-		{
-			Debug.Log("Caught error: " + e);
+		} catch (System.Exception e) {
+			Debug.Log ("Caught error: " + e);
 		}
 	}
 
-    /// <summary>
-    /// Common method for getting CurrentAxisValues
-    /// </summary>
-    /// <param name="axisName">Name of the axis</param>
-    /// <returns>Float value of a given Axis</returns>
-    public virtual float GetAxis(string axisName)
-    {
-        // If we somehow leave axis names 
-        if (AxisNameX == null || AxisNameY == null || AxisNameX == String.Empty || AxisNameY == String.Empty)
-        {
-            throw new UnityException("Input Axis " + axisName + " is not setup");
-        }
+	/// <summary>
+	/// Common method for getting CurrentAxisValues
+	/// </summary>
+	/// <param name="axisName">Name of the axis</param>
+	/// <returns>Float value of a given Axis</returns>
+	public virtual float GetAxis (string axisName)
+	{
+		// If we somehow leave axis names 
+		if (AxisNameX == null || AxisNameY == null || AxisNameX == String.Empty || AxisNameY == String.Empty) {
+			throw new UnityException ("Input Axis " + axisName + " is not setup");
+		}
 
-        if (axisName == AxisNameX)
-            return CurrentAxisValues.x * speedMultiplier;
+		if (axisName == AxisNameX)
+			return CurrentAxisValues.x * speedMultiplier;
 
-        if (axisName == AxisNameY)
+		if (axisName == AxisNameY)
 			return CurrentAxisValues.y * speedMultiplier;
 
-        throw new UnityException("Input Axis " + axisName + " is not setup");
-    }
+		throw new UnityException ("Input Axis " + axisName + " is not setup");
+	}
 
-    /// <summary>
-    /// Call this method to temporarily disable the control
-    /// It will also hide any control objects
-    /// Override to change the behaviour
-    /// </summary>
-    public virtual void Disable()
-    {
-        CurrentAxisValues = Vector2.zero;
+	/// <summary>
+	/// Call this method to temporarily disable the control
+	/// It will also hide any control objects
+	/// Override to change the behaviour
+	/// </summary>
+	public virtual void Disable ()
+	{
+		CurrentAxisValues = Vector2.zero;
 
-        gameObject.SetActive(false);
-        // Unity defined MonoBehaviour property
-        enabled = false;
-    }
+		gameObject.SetActive (false);
+		// Unity defined MonoBehaviour property
+		enabled = false;
+	}
 
-    /// <summary>
-    /// Call this method to enable the control back
-    /// It will then respond to Unity callbacks
-    /// </summary>
-    public virtual void Enable()
-    {
-        gameObject.SetActive(true);
-        // Unity defined MonoBehaviour property
-        enabled = true;
-    }
+	/// <summary>
+	/// Call this method to enable the control back
+	/// It will then respond to Unity callbacks
+	/// </summary>
+	public virtual void Enable ()
+	{
+		gameObject.SetActive (true);
+		// Unity defined MonoBehaviour property
+		enabled = true;
+	}
 
-    /// <summary>
-    /// Neat initialization method
-    /// </summary>
-    public virtual void OnEnable()
-    {
-        TransformCache = GetComponent<Transform>();
+	/// <summary>
+	/// Neat initialization method
+	/// </summary>
+	public virtual void OnEnable ()
+	{
+		TransformCache = GetComponent<Transform> ();
 
 #if UNITY_EDITOR
         // If we've instantiated the prefab but haven't parented it to a camera
@@ -224,18 +221,18 @@ public abstract class CNAbstractController : MonoBehaviour
         if (TransformCache.parent == null) return;
 #endif
 
-        ParentCamera = TransformCache.parent.GetComponent<Camera>();
+		ParentCamera = TransformCache.parent.GetComponent<Camera> ();
 
-        TransformCache.localPosition = InitializePosition();
-    }
+		TransformCache.localPosition = InitializePosition ();
+	}
 
-    /// <summary>
-    /// Utility method, finds the touch by it's fingerID, which is often different from it's index in .touches
-    /// </summary>
-    /// <param name="fingerId">The fingerId to find touch for</param>
-    /// <returns>null if no touch found, returns a Touch if it's found</returns>
-    protected virtual Touch? GetTouchByFingerId(int fingerId)
-    {
+	/// <summary>
+	/// Utility method, finds the touch by it's fingerID, which is often different from it's index in .touches
+	/// </summary>
+	/// <param name="fingerId">The fingerId to find touch for</param>
+	/// <returns>null if no touch found, returns a Touch if it's found</returns>
+	protected virtual Touch? GetTouchByFingerId (int fingerId)
+	{
 #if UNITY_EDITOR
         // If we're in the editor, we also take our mouse as input
         // Let's say it's fingerId is 255;
@@ -245,72 +242,73 @@ public abstract class CNAbstractController : MonoBehaviour
         }
 #endif
 
-        int touchCount = Input.touchCount;
+		int touchCount = Input.touchCount;
 
-        for (int i = 0; i < touchCount; i++)
-        {
-            var touch = Input.GetTouch(i);
-            if (touch.fingerId == fingerId) return touch;
-        }
+		for (int i = 0; i < touchCount; i++) {
+			var touch = Input.GetTouch (i);
+			if (touch.fingerId == fingerId)
+				return touch;
+		}
 
-        // If there's no Touch with the specified fingerId, return null
-        return null;
+		// If there's no Touch with the specified fingerId, return null
+		return null;
 
-    }
+	}
 
-	private bool canFire; 
+	private bool canFire;
 
-	public bool CanFire () {
+	public bool CanFire ()
+	{
 		return canFire;
 	}
 
 
-    /// <summary>
-    /// Event "callback".
-    /// We can't use events in the derived classes 
-    /// So we should use this method instead
-    /// </summary>
-    /// <param name="input">Input to pass with an event</param>
-    protected virtual void OnControllerMoved(Vector2 input)
-    {
-        if (ControllerMovedEvent != null)
-            ControllerMovedEvent(input, this);
+	/// <summary>
+	/// Event "callback".
+	/// We can't use events in the derived classes 
+	/// So we should use this method instead
+	/// </summary>
+	/// <param name="input">Input to pass with an event</param>
+	protected virtual void OnControllerMoved (Vector2 input)
+	{
+		if (ControllerMovedEvent != null)
+			ControllerMovedEvent (input, this);
 //		Debug.Log ("The controller is being touched");
 		canFire = true;
-    }
+	}
 
-    /// <summary>
-    /// Event "callback".
-    /// We can't use events in the derived classes 
-    /// So we should use this method instead
-    /// </summary>
-    protected virtual void OnFingerTouched()
-    {
-        if (FingerTouchedEvent != null)
-            FingerTouchedEvent(this);
-    }
+	/// <summary>
+	/// Event "callback".
+	/// We can't use events in the derived classes 
+	/// So we should use this method instead
+	/// </summary>
+	protected virtual void OnFingerTouched ()
+	{
+		if (FingerTouchedEvent != null)
+			FingerTouchedEvent (this);
+	}
 
-    /// <summary>
-    /// Event "callback".
-    /// We can't use events in the derived classes 
-    /// So we should use this method instead
-    /// </summary>
-    protected virtual void OnFingerLifted()
-    {
-        if (FingerLiftedEvent != null)
-            FingerLiftedEvent(this);
-    }
+	/// <summary>
+	/// Event "callback".
+	/// We can't use events in the derived classes 
+	/// So we should use this method instead
+	/// </summary>
+	protected virtual void OnFingerLifted ()
+	{
+		if (FingerLiftedEvent != null)
+			FingerLiftedEvent (this);
+	}
 
-    /// <summary>
-    /// Calculates local position based on margins and anchor
-    /// </summary>
-    /// <returns>Calculated position</returns>
-    protected Vector3 InitializePosition()
-    {
+	/// <summary>
+	/// Calculates local position based on margins and anchor
+	/// </summary>
+	/// <returns>Calculated position</returns>
+	protected Vector3 InitializePosition ()
+	{
 #if !UNITY_EDITOR
-        // If we're not in the editor, we don't need to recalculate it every time we call this method
-        if (CalculatedPosition != null)
-            return CalculatedPosition.Value;
+		// If we're not in the editor, we don't need to recalculate it every time we call this method
+		if (CalculatedPosition != null)
+			return CalculatedPosition.Value;
 #endif
 
 #if UNITY_EDITOR
@@ -320,88 +318,86 @@ public abstract class CNAbstractController : MonoBehaviour
         if (ParentCamera == null)
             OnEnable();
 #endif
-        // Camera based calculations (different aspect ratios)
-        float halfHeight = ParentCamera.orthographicSize;
-        float halfWidth = halfHeight * ParentCamera.aspect;
+		// Camera based calculations (different aspect ratios)
+		float halfHeight = ParentCamera.orthographicSize;
+		float halfWidth = halfHeight * ParentCamera.aspect;
 
-        var newPosition = new Vector3(0f, 0f, 0f);
+		var newPosition = new Vector3 (0f, 0f, 0f);
 
-        // Bitwise checks
-        // Used to simplify the if - else branching
-        if (((int)Anchor & (int)AnchorsBase.Left) != 0)
-            newPosition.x = -halfWidth + Margins.x;
-        else
-            newPosition.x = halfWidth - Margins.x;
+		// Bitwise checks
+		// Used to simplify the if - else branching
+		if (((int)Anchor & (int)AnchorsBase.Left) != 0)
+			newPosition.x = -halfWidth + Margins.x;
+		else
+			newPosition.x = halfWidth - Margins.x;
 
-        if (((int)Anchor & (int)AnchorsBase.Top) != 0)
-            newPosition.y = halfHeight - Margins.y;
-        else
-            newPosition.y = -halfHeight + Margins.y;
+		if (((int)Anchor & (int)AnchorsBase.Top) != 0)
+			newPosition.y = halfHeight - Margins.y;
+		else
+			newPosition.y = -halfHeight + Margins.y;
 
-        // Now we can calculate the TouchZone position
-        // It's visualizes as green gizmo in the scene view
-        CalculatedTouchZone = new Rect(
+		// Now we can calculate the TouchZone position
+		// It's visualizes as green gizmo in the scene view
+		CalculatedTouchZone = new Rect (
             TransformCache.position.x - TouchZoneSize.x / 2f,
             TransformCache.position.y - TouchZoneSize.y / 2f,
             TouchZoneSize.x,
             TouchZoneSize.y);
 
-        return newPosition;
-    }
+		return newPosition;
+	}
 
-    /// <summary>
-    /// Common method of resetting the control state and position
-    /// It means that we've just lifted our finger
-    /// </summary>
-    protected virtual void ResetControlState()
-    {
-        // It's no longer tweaking
-        IsCurrentlyTweaking = false;
-        // Setting our inner axis values back to zero
-        CurrentAxisValues = Vector2.zero;
-        // Fire our FingerLiftedEvents
-        OnFingerLifted();
-    }
+	/// <summary>
+	/// Common method of resetting the control state and position
+	/// It means that we've just lifted our finger
+	/// </summary>
+	protected virtual void ResetControlState ()
+	{
+		// It's no longer tweaking
+		IsCurrentlyTweaking = false;
+		// Setting our inner axis values back to zero
+		CurrentAxisValues = Vector2.zero;
+		// Fire our FingerLiftedEvents
+		OnFingerLifted ();
+	}
 
-    /// <summary>
-    /// Common tweak method
-    /// Used to provide more encapsulation in the derived classes
-    /// Automatically calls the TweakControl method
-    /// </summary>
-    /// <returns>Whether the Tweak has happend</returns>
-    protected virtual bool TweakIfNeeded()
-    {
-        // Check for touches
-        if (IsCurrentlyTweaking)
-        {
-            // Check this method, it also returns a mouse input if we're in the editor
-            Touch? touch = GetTouchByFingerId(CurrentFingerId);
-            if (touch == null || touch.Value.phase == TouchPhase.Ended)
-            {
-                ResetControlState();
-                return false;
-            }
-            TweakControl(touch.Value.position);
-            return true;
-        }
-        return false;
-    }
+	/// <summary>
+	/// Common tweak method
+	/// Used to provide more encapsulation in the derived classes
+	/// Automatically calls the TweakControl method
+	/// </summary>
+	/// <returns>Whether the Tweak has happend</returns>
+	protected virtual bool TweakIfNeeded ()
+	{
+		// Check for touches
+		if (IsCurrentlyTweaking) {
+			// Check this method, it also returns a mouse input if we're in the editor
+			Touch? touch = GetTouchByFingerId (CurrentFingerId);
+			if (touch == null || touch.Value.phase == TouchPhase.Ended) {
+				ResetControlState ();
+				return false;
+			}
+			TweakControl (touch.Value.position);
+			return true;
+		}
+		return false;
+	}
 
-    /// <summary>
-    /// If the control is not being tweaked, we need to check
-    /// if there's any touch that want's to use this control
-    /// </summary>
-    /// <param name="capturedTouch">Captured touch. 
-    /// If no touch has been captured, this param has no sence
-    /// Check for return value to see whether it was captured
-    /// </param>
-    /// <returns>Whether any touch was captured</returns>
-    protected virtual bool IsTouchCaptured(out Touch capturedTouch)
-    {
+	/// <summary>
+	/// If the control is not being tweaked, we need to check
+	/// if there's any touch that want's to use this control
+	/// </summary>
+	/// <param name="capturedTouch">Captured touch. 
+	/// If no touch has been captured, this param has no sence
+	/// Check for return value to see whether it was captured
+	/// </param>
+	/// <returns>Whether any touch was captured</returns>
+	protected virtual bool IsTouchCaptured (out Touch capturedTouch)
+	{
 //		Debug.Log ("The controller is not being touched");
 		canFire = false;
-        // Some optimization things
-        int touchCount = Input.touchCount;
+		// Some optimization things
+		int touchCount = Input.touchCount;
 
 #if UNITY_EDITOR
         // If we're in the editor, we add another touch to the list - the mouse cursor
@@ -409,63 +405,61 @@ public abstract class CNAbstractController : MonoBehaviour
         touchCount++;
 #endif
 
-        // For every touch out there
-        for (int i = 0; i < touchCount; i++)
-        {
+		// For every touch out there
+		for (int i = 0; i < touchCount; i++) {
 #if UNITY_EDITOR
             // If we got all touches from Input.GetTouch, we need to feed a new touch based on mouse input
             // Check ConstructTouchFromMouseInput() method for more info
             Touch currentTouch = i >= actualTouchCount ? ConstructTouchFromMouseInput() : Input.GetTouch(i);
 #else
-            // God bless local variables of value types
-            Touch currentTouch = Input.GetTouch(i);
+			// God bless local variables of value types
+			Touch currentTouch = Input.GetTouch (i);
 #endif
-            // Check if we're interested in this touch
-            if (currentTouch.phase == TouchPhase.Began && IsTouchInZone(currentTouch.position))
-            {
-                // If we are, capture the touch and make it ours
-                IsCurrentlyTweaking = true;
-                // Store it's finger ID so we can find it later
-                CurrentFingerId = currentTouch.fingerId;
-                // Fire our FingerTouchedEvent
-                OnFingerTouched();
+			// Check if we're interested in this touch
+			if (currentTouch.phase == TouchPhase.Began && IsTouchInZone (currentTouch.position)) {
+				// If we are, capture the touch and make it ours
+				IsCurrentlyTweaking = true;
+				// Store it's finger ID so we can find it later
+				CurrentFingerId = currentTouch.fingerId;
+				// Fire our FingerTouchedEvent
+				OnFingerTouched ();
 
-                // Initializing OUT param
-                capturedTouch = currentTouch;
-                // We don't need to check other touches
-                // We also captured our touch, so yes, we return true
-                return true;
-            }
-        }
+				// Initializing OUT param
+				capturedTouch = currentTouch;
+				// We don't need to check other touches
+				// We also captured our touch, so yes, we return true
+				return true;
+			}
+		}
 
-        // To satisfy the compiler. It shouldn't be used
-        capturedTouch = new Touch();
-        // We didn't capture any touch
-        return false;
-    }
+		// To satisfy the compiler. It shouldn't be used
+		capturedTouch = new Touch ();
+		// We didn't capture any touch
+		return false;
+	}
 
-    /// <summary>
-    /// Utility method, chechks whether the touch is inside the touch zone (green rect)
-    /// </summary>
-    /// <param name="touchPosition">Current touch position in screen pixels
-    /// It converts these pixels to units, so it's totally resolution-independent
-    /// </param>
-    /// <returns>Whether it's inside of the touch zone</returns>
-    private bool IsTouchInZone(Vector2 touchPosition)
-    {
-        return CalculatedTouchZone.Contains(ParentCamera.ScreenToWorldPoint(touchPosition), false);
+	/// <summary>
+	/// Utility method, chechks whether the touch is inside the touch zone (green rect)
+	/// </summary>
+	/// <param name="touchPosition">Current touch position in screen pixels
+	/// It converts these pixels to units, so it's totally resolution-independent
+	/// </param>
+	/// <returns>Whether it's inside of the touch zone</returns>
+	private bool IsTouchInZone (Vector2 touchPosition)
+	{
+		return CalculatedTouchZone.Contains (ParentCamera.ScreenToWorldPoint (touchPosition), false);
 		Debug.Log ("The controller is being touched");
-    }
+	}
 
-    /// <summary>
-    /// Custom Tweaking method
-    /// Implement it to achieve custom tweaking behaviour
-    /// </summary>
-    /// <param name="touchPosition">Current touch position in screen pixels
-    /// It should convert these pixels to units, it should be totally resolution-independent</param>
-    protected abstract void TweakControl(Vector2 touchPosition);
+	/// <summary>
+	/// Custom Tweaking method
+	/// Implement it to achieve custom tweaking behaviour
+	/// </summary>
+	/// <param name="touchPosition">Current touch position in screen pixels
+	/// It should convert these pixels to units, it should be totally resolution-independent</param>
+	protected abstract void TweakControl (Vector2 touchPosition);
 
-    // Some editor-only stuff. It won't compile to any of the builds
+	// Some editor-only stuff. It won't compile to any of the builds
 #if UNITY_EDITOR
     /// <summary>
     /// Your old DrawGizmosSelected method

@@ -2,12 +2,13 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class SpawnManager : MonoBehaviour {
+public class SpawnManager : MonoBehaviour
+{
 
 	public static SpawnManager instance { get; private set; }
+
 	public float		spawnPadding = 1.5f;
 	public GameObject	LevelManager;
-
 	private Main main;
 
 //	public int level;
@@ -15,7 +16,6 @@ public class SpawnManager : MonoBehaviour {
 //	public float secondBreak;
 //	public float thirdBreak;
 	public float timeLimit;
-
 	public GameObject AsteroidSpawn0;
 	public GameObject AsteroidSpawn1;
 	public GameObject AsteroidSpawnFirst;
@@ -74,20 +74,20 @@ public class SpawnManager : MonoBehaviour {
 	public GameObject EnemySpawn6d3;
 	public GameObject EnemySpawn10d1;
 	public GameObject EnemySpawn11d1;
-
 	public GameObject Mid;
 	public GameObject Bass;
 	public Text WaveText;
 
-	void Awake()
+	void Awake ()
 	{
 		instance = this;
 
 	}
 
 	// Use this for initialization
-	void Start () {
-		GameObject mainObject = GameObject.FindWithTag("MainCamera");
+	void Start ()
+	{
+		GameObject mainObject = GameObject.FindWithTag ("MainCamera");
 		if (mainObject != null) {
 			main = mainObject.GetComponent<Main> ();
 		}

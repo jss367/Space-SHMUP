@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+
 //using System.Strin
 using System.Collections;
 using Soomla;
 
-public class Hero : MonoBehaviour {
+public class Hero : MonoBehaviour
+{
 
 	static public Hero S; //S for singleton
 	
@@ -17,17 +19,16 @@ public class Hero : MonoBehaviour {
 	
 	//Ship status information
 	[SerializeField]
-	private float 				_shieldLevel = 1;
+	private float
+		_shieldLevel = 1;
 
 	// Weapon fields
 	public Weapon[]				weapons;
 	public float missileSpeed = 10;
-
 	public bool _____________;
 //
 
 	public bool spreadEquipped = false;
-
 	public Bounds				bounds;
 	private int					weaponCount;
 //	public int			showDamageForFrames = 2; // # of frames to show damage
@@ -38,17 +39,15 @@ public class Hero : MonoBehaviour {
 	private int					blasterRecall;
 	private int					spreadRecall;
 	private int					ballRecall;
-
 	private bool				shieldCounter = true;
 	public bool					shieldUpgradeOwned = false;
 	public bool					speedUpgradeOwned = false;
 	public bool isInvincible;
 	public bool launch1;
-
 	public GameObject popText;
 	
 	//Declare a new delegate type WeaponFireDelegate
-	public delegate void WeaponFireDelegate();
+	public delegate void WeaponFireDelegate ();
 	// Create a WeaponFireDelegate field named fireDelegate.
 	public WeaponFireDelegate fireDelegate;
 
@@ -61,14 +60,11 @@ public class Hero : MonoBehaviour {
 
 //	public SimpleTouchPad touchPad;
 	public FireButton fireButton;
-
 	public bool laserEquipped;
 	public bool bazookaEquipped;
 	public bool missileEquipped;
 	public bool doubleBlaster;
-
 	public CNAbstractController cNABstractController;
-
 	public GameObject explosion;
 	public GameObject enemyExplosion;
 	public GameObject missile;
@@ -85,7 +81,6 @@ public class Hero : MonoBehaviour {
 	private float lastMineTime;
 	public float mineDelay = 4;
 	public float bazookaDelay = 5;
-
 	public GameObject bazookaArt1;
 	public GameObject bazookaArt2;
 	private float lastBazooka;
@@ -95,15 +90,16 @@ public class Hero : MonoBehaviour {
 
 //	public GameObject Laser;
 	public int autoShootOn = 1;
-
 	public bool weaponOff;
 
-	void Awake(){
+	void Awake ()
+	{
 		S = this; //Set the singleton
 		bounds = Utils.CombineBoundsOfChildren (this.gameObject);
 	}
 
-	void Start() {
+	void Start ()
+	{
 //		shieldUpgradeOwned = false;
 		//		spreadEquipped = true; // comment out for builds
 		// Reset the weapons to start _Hero with 1 blaster
@@ -117,7 +113,7 @@ public class Hero : MonoBehaviour {
 		} else if (laserEquipped) {
 			weapons [0].SetType (WeaponType.laser);
 		} else if (doubleBlaster) {
-			weapons[0].SetType(WeaponType.doubleBlaster);
+			weapons [0].SetType (WeaponType.doubleBlaster);
 		} else {
 			weapons [0].SetType (WeaponType.blaster);
 		}
@@ -128,8 +124,8 @@ public class Hero : MonoBehaviour {
 
 		lastMineTime = -mineDelay;
 
-		bazookaArt1.SetActive(false);
-		bazookaArt2.SetActive(false);
+		bazookaArt1.SetActive (false);
+		bazookaArt2.SetActive (false);
 		if (bazookaEquipped) {
 			StartCoroutine ("ReturnBazookaArt");
 		} else {
@@ -140,15 +136,19 @@ public class Hero : MonoBehaviour {
 
 		if (!missileEquipped) {
 //			missile.SetActive(false);
-			missileArt.SetActive(false);
-			missileLaunchLocation.SetActive(false);
-		    MissileLauncher.SetActive(false);
+			missileArt.SetActive (false);
+			missileLaunchLocation.SetActive (false);
+			MissileLauncher.SetActive (false);
 		}
+		//testing
+		weapons [0].SetType (WeaponType.laser);
+		//testing
 	}
 	
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		//Pull in information from the Input class
 //		float xAxis = Input.GetAxis ("Horizontal");
 //		float yAxis = Input.GetAxis ("Vertical");
@@ -198,7 +198,7 @@ public class Hero : MonoBehaviour {
 		//Rotate the ship to make it feel more dynamic
 //		Debug.Log (GetComponent<Rigidbody> ().rotation);
 //		Debug.Log (GetComponent<Rigidbody> ().velocity.x);
-		GetComponent<Rigidbody>().rotation = Quaternion.Euler(GetComponent<Rigidbody>().velocity.y * +tilt, GetComponent<Rigidbody>().velocity.x * -tilt, 0.0f );
+		GetComponent<Rigidbody> ().rotation = Quaternion.Euler (GetComponent<Rigidbody> ().velocity.y * +tilt, GetComponent<Rigidbody> ().velocity.x * -tilt, 0.0f);
 
 		bounds.center = transform.position;
 
@@ -236,166 +236,154 @@ public class Hero : MonoBehaviour {
 
 		}
 
-		if (missileEquipped && fireButton.CanLaunch() && !launch1) {
-			Instantiate(missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
-			TakeMissile();
+		if (missileEquipped && fireButton.CanLaunch () && !launch1) {
+			Instantiate (missile, missileLaunchLocation.transform.position, missileLaunchLocation.transform.rotation);
+			TakeMissile ();
 
 
 			//			Debug.Log("fireDelegate has been called");
 		}
 
-		if (bazookaEquipped && fireButton.CanLaunch() && Time.time > lastBazooka + bazookaDelay) {
+		if (bazookaEquipped && fireButton.CanLaunch () && Time.time > lastBazooka + bazookaDelay) {
 
-			Instantiate(bazookaBullet, bazookaBulletLocation1.transform.position, bazookaBulletLocation1.transform.rotation);
-			Instantiate(bazookaBullet, bazookaBulletLocation2.transform.position, bazookaBulletLocation2.transform.rotation);
+			Instantiate (bazookaBullet, bazookaBulletLocation1.transform.position, bazookaBulletLocation1.transform.rotation);
+			Instantiate (bazookaBullet, bazookaBulletLocation2.transform.position, bazookaBulletLocation2.transform.rotation);
 			lastBazooka = Time.time;
 
-			bazookaArt1.SetActive(false);
-			bazookaArt2.SetActive(false);
-			StartCoroutine("ReturnBazookaArt");
+			bazookaArt1.SetActive (false);
+			bazookaArt2.SetActive (false);
+			StartCoroutine ("ReturnBazookaArt");
 			//			Debug.Log("fireDelegate has been called");
 		}
 
-		if (fireButton.CanMineLeft()) {
+		if (fireButton.CanMineLeft ()) {
 			if (Time.time - lastMineTime < mineDelay) {
 				return;
 			}
-			Instantiate(mine, mineDropLeft.transform.position, mineDropLeft.transform.rotation);
+			Instantiate (mine, mineDropLeft.transform.position, mineDropLeft.transform.rotation);
 			lastMineTime = Time.time;
-						Debug.Log("Mining left");
+			Debug.Log ("Mining left");
 		}
 	
-		if (fireButton.CanMineRight()) {
+		if (fireButton.CanMineRight ()) {
 			if (Time.time - lastMineTime < mineDelay) {
 				return;
 			}
-			Instantiate(mine, mineDropRight.transform.position, mineDropRight.transform.rotation);
+			Instantiate (mine, mineDropRight.transform.position, mineDropRight.transform.rotation);
 			lastMineTime = Time.time;
-			Debug.Log("Mining right");
+			Debug.Log ("Mining right");
 		}
-		}
-
-	IEnumerator ReturnBazookaArt(){
-		yield return new WaitForSeconds (bazookaDelay);
-		bazookaArt1.SetActive(true);
-		bazookaArt2.SetActive(true);
 	}
 
+	IEnumerator ReturnBazookaArt ()
+	{
+		yield return new WaitForSeconds (bazookaDelay);
+		bazookaArt1.SetActive (true);
+		bazookaArt2.SetActive (true);
+	}
 	
-	void CheckInventory(){
+	void CheckInventory ()
+	{
 //		Debug.Log ("Checking inventory");
-		try
-		{
-		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
+		try {
+			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)) {
 //					Debug.Log("Blaster is equipped");
-				}
+			}
 
-		if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
+			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)) {
 //			Debug.Log("Spread is equipped");
 				spreadEquipped = true;
+			}
+		} catch (System.Exception e) {
+			Debug.Log ("Caught error: " + e);
 		}
-		}
-		catch (System.Exception e)
-		{
-			Debug.Log("Caught error: " + e);
-		}
-		try{
-			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.BASESHIELD_ITEM_ID);
+		try {
+			int balance = Soomla.Store.StoreInventory.GetItemBalance (Constants.BASESHIELD_ITEM_ID);
 //			Debug.Log("Shield upgrade balance is " + balance);
-			if(balance > 0)  
-			{
+			if (balance > 0) {
 //				Debug.Log("Player has shield upgrade");
 				shieldUpgradeOwned = true;
 			}
+		} catch (System.Exception e) {
+			Debug.Log ("Caught error: " + e);
 		}
-		catch (System.Exception e)
-		{
-			Debug.Log("Caught error: " + e);
-		}
-		try{
-			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.SPEED_ITEM_ID);
+		try {
+			int balance = Soomla.Store.StoreInventory.GetItemBalance (Constants.SPEED_ITEM_ID);
 //			Debug.Log("Speed upgrade balance is " + balance);
-			if(balance > 0)   // This should be a switch with all the different upgrade levels
-			{
+			if (balance > 0) {   // This should be a switch with all the different upgrade levels
 //				Debug.Log("Player has speed upgrade");
 				speedUpgradeOwned = true;
 			}
+		} catch (System.Exception e) {
+			Debug.Log ("Caught error: " + e);
 		}
-		catch (System.Exception e)
-		{
-			Debug.Log("Caught error: " + e);
-		}
-		try
-		{
-			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.MISSILE_LAUNCHER_ITEM_ID)){
+		try {
+			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.MISSILE_LAUNCHER_ITEM_ID)) {
 				missileEquipped = true;
 			}
 			
-			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BAZOOKA_LAUNCHER_ITEM_ID)){
+			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BAZOOKA_LAUNCHER_ITEM_ID)) {
 				bazookaEquipped = true;
 			}
+		} catch (System.Exception e) {
+			Debug.Log ("Caught error: " + e);
 		}
-		catch (System.Exception e)
-		{
-			Debug.Log("Caught error: " + e);
-		}
-		try{
-			int balance = Soomla.Store.StoreInventory.GetItemBalance(Constants.DOUBLE_BLASTER_WEAPON_ITEM_ID);
-			if(balance > 0)  
-			{
+		try {
+			int balance = Soomla.Store.StoreInventory.GetItemBalance (Constants.DOUBLE_BLASTER_WEAPON_ITEM_ID);
+			if (balance > 0) {
 				doubleBlaster = true;
 			}
-		}
-		catch (System.Exception e)
-		{
-			Debug.Log("Caught error: " + e);
+		} catch (System.Exception e) {
+			Debug.Log ("Caught error: " + e);
 		}
 	}
 
 	//This variable holds a reference to the last triggering GameObject
 	public GameObject lastTriggerGo = null;
 
-	void OnTriggerEnter(Collider other){
+	void OnTriggerEnter (Collider other)
+	{
 		//Find the tag of other.gameObject or its parent GameObjects
 		GameObject go = Utils.FindTaggedParent (other.gameObject);
 		//If there is a parent with a tag
 		if (go != null) {
 			//Make sure it's not the same triggering go as last time
-			if (go ==lastTriggerGo){
+			if (go == lastTriggerGo) {
 				return;
 			}
 			lastTriggerGo = go;
 			
-			if(go.tag == "Enemy"){
+			if (go.tag == "Enemy") {
 				//If the shield was triggered by an enemy decrease the level of the shield by 1
-				ReduceShield();
+				ReduceShield ();
 				//Destroy the enemy
 //				Destroy(go);
 //				Instantiate(enemyExplosion, transform.position, transform.rotation);
 //				Enemy will do its own explosion
-			}else if (go.tag == "Asteroid") {
+			} else if (go.tag == "Asteroid") {
 				//If the shield was triggered by an asteroid decrease the level of the shield by 1
-				ReduceShield();
+				ReduceShield ();
 				//Destroy the asteroid
-				Destroy(go);
-			}else if (go.tag == "ProjectileEnemy") {
+				Destroy (go);
+			} else if (go.tag == "ProjectileEnemy") {
 				//If the shield was triggered by an enemy projectile decrease the level of the shield by 1
-				ReduceShield();
+				ReduceShield ();
 				//Destroy the enemy projectile
-				Destroy(go);
-			}else if (go.tag == "PowerUp") {
+				Destroy (go);
+			} else if (go.tag == "PowerUp") {
 				// If the sheild was triggered by a PowerUp
-				AbsorbPowerUp(go);
-			}else{
-			//Announce it
-			print ("Triggered: " + go.name);
-			//Make sure it's not the same triggering go as last time
+				AbsorbPowerUp (go);
+			} else {
+				//Announce it
+				print ("Triggered: " + go.name);
+				//Make sure it's not the same triggering go as last time
 			}
-		}else {
+		} else {
 			//Otherwise announce the original gameObject
 			print ("Triggered: " + other.gameObject.name);
 		}
 	}
+
 	public float shieldLevel {
 		get {
 			return(_shieldLevel);
@@ -404,12 +392,13 @@ public class Hero : MonoBehaviour {
 			_shieldLevel = Mathf.Min (value, 4);
 			//If the shield is going to be set to less than zero
 			if (!isInvincible && value < 0) {
-				DestroyHero();
+				DestroyHero ();
 			}
 		}
 	}
 
-	public void ReduceShield(){
+	public void ReduceShield ()
+	{
 //		foreach (Material m in materials) {
 //			m.color = Color.red;
 //		}
@@ -442,117 +431,122 @@ public class Hero : MonoBehaviour {
 //		}
 //	}
 
-		public void AbsorbPowerUp(GameObject go) {
+	public void AbsorbPowerUp (GameObject go)
+	{
 		Main.S.AddScore (10);
-		Instantiate(popText, transform.position, Quaternion.identity);
-			PowerUp pu = go.GetComponent<PowerUp>();
+		Instantiate (popText, transform.position, Quaternion.identity);
+		PowerUp pu = go.GetComponent<PowerUp> ();
 //		Debug.Log("pu.type is " + pu.type);
 		switch (pu.type) {
 
-			case WeaponType.shield: // If it's the shield
-				shieldLevel++;
-				break;
+		case WeaponType.shield: // If it's the shield
+			shieldLevel++;
+			break;
 
-			case WeaponType.speed:
+		case WeaponType.speed:
 			speed += 5;
 			break;
 
-			case WeaponType.missile:
+		case WeaponType.missile:
 //			Debug.Log("Hero absorbed a missile");
-			GiveMissile();
+			GiveMissile ();
 			break;
 
-			default: // If it's any Weapon PowerUp
+		default: // If it's any Weapon PowerUp
 				// Check the current weapon type
-				if (pu.type == weapons[0].type) {
-					// then increase the number of weapons of this type
-					Weapon w = GetEmptyWeaponSlot(); // Find an available weapon
-					if (w != null) {
-						// Set it to pu.type
-						w.SetType(pu.type);
-					}
-				SaveWeaponCount(pu.type);
-				} else {
-					// If this is a different weapon
-				int recall = RecallWeaponCount(pu.type);
-				GetEmptyWeaponSlot();
-					ClearWeapons();
-					weapons[0].SetType(pu.type);
+			if (pu.type == weapons [0].type) {
+				// then increase the number of weapons of this type
+				Weapon w = GetEmptyWeaponSlot (); // Find an available weapon
+				if (w != null) {
+					// Set it to pu.type
+					w.SetType (pu.type);
+				}
+				SaveWeaponCount (pu.type);
+			} else {
+				// If this is a different weapon
+				int recall = RecallWeaponCount (pu.type);
+				GetEmptyWeaponSlot ();
+				ClearWeapons ();
+				weapons [0].SetType (pu.type);
 				// Fill up slots for all the old power ups you had
 				for (int i = 0; i < recall; i++) {
-					Weapon w = GetEmptyWeaponSlot(); // Find an available weapon
+					Weapon w = GetEmptyWeaponSlot (); // Find an available weapon
 					if (w != null) {
 						// Set it to pu.type
-						w.SetType(pu.type);
+						w.SetType (pu.type);
 					}
 				}
 				//SaveWeaponCount(pu.type);
-				}
-				break;
 			}
-			pu.AbsorbedBy(this.gameObject);
+			break;
 		}
-
-	public void GiveMissile(){
-		launch1 = false;
-		missileArt.SetActive(true);
+		pu.AbsorbedBy (this.gameObject);
 	}
 
+	public void GiveMissile ()
+	{
+		launch1 = false;
+		missileArt.SetActive (true);
+	}
 
-	public void TakeMissile(){
+	public void TakeMissile ()
+	{
 		launch1 = true;
-		missileArt.SetActive(false);
+		missileArt.SetActive (false);
 	}
 	
-		Weapon GetEmptyWeaponSlot() {
-			for (int i = 0; i < weapons.Length; i++) {
-				if (weapons[i].type == WeaponType.none) {
+	Weapon GetEmptyWeaponSlot ()
+	{
+		for (int i = 0; i < weapons.Length; i++) {
+			if (weapons [i].type == WeaponType.none) {
 				//Debug.Log(i);
-					return(weapons[i]);
-				}
+				return(weapons [i]);
 			}
-			return(null);
 		}
+		return(null);
+	}
 		
-		void ClearWeapons() {
-			foreach (Weapon w in weapons) {
+	void ClearWeapons ()
+	{
+		foreach (Weapon w in weapons) {
 			weaponCount++;
 
-				w.SetType(WeaponType.none);
-			}
+			w.SetType (WeaponType.none);
 		}
-
-
-	void SaveWeaponCount(WeaponType wtype){
-
-//			Debug.Log("Looking into your history of " + wtype);
-			for (int i = 0; i < weapons.Length; i++) {
-				if (weapons[i].type == WeaponType.none) {
-//					Debug.Log("The previous weapon had " + i + " instance(s)");
-//					Debug.Log("weapons[i].type is " + weapons[i].type);
-					switch(wtype.ToString()){
-					case("blaster"):
-//						Debug.Log("The weapon was a blaster");
-						blasterRecall = i;
-//						Debug.Log("Save blasterRecall as " + blasterRecall);
-						return;
-					case("spread"):
-						spreadRecall = i;
-//						Debug.Log("Save spreadRecall as " + spreadRecall);
-						return;
-					}
-
-				}
-			}
 	}
 
-		int RecallWeaponCount(WeaponType wtype){
+	void SaveWeaponCount (WeaponType wtype)
+	{
+
+//			Debug.Log("Looking into your history of " + wtype);
+		for (int i = 0; i < weapons.Length; i++) {
+			if (weapons [i].type == WeaponType.none) {
+//					Debug.Log("The previous weapon had " + i + " instance(s)");
+//					Debug.Log("weapons[i].type is " + weapons[i].type);
+				switch (wtype.ToString ()) {
+				case("blaster"):
+//						Debug.Log("The weapon was a blaster");
+					blasterRecall = i;
+//						Debug.Log("Save blasterRecall as " + blasterRecall);
+					return;
+				case("spread"):
+					spreadRecall = i;
+//						Debug.Log("Save spreadRecall as " + spreadRecall);
+					return;
+				}
+
+			}
+		}
+	}
+
+	int RecallWeaponCount (WeaponType wtype)
+	{
 		//Debug.Log("Looking into your history of " + wtype);
 		for (int i = 0; i < weapons.Length; i++) {
-			if (weapons[i].type == WeaponType.none) {
+			if (weapons [i].type == WeaponType.none) {
 //				Debug.Log("The previous weapon had " + i + " instance(s)");
 //				Debug.Log("weapons[i].type is " + weapons[i].type);
-			switch(wtype.ToString()){
+				switch (wtype.ToString ()) {
 				case("blaster"):
 					//Debug.Log("The weapon was a blaster");
 					//Debug.Log("Recall blasterRecall as " + blasterRecall);
@@ -568,14 +562,15 @@ public class Hero : MonoBehaviour {
 		return(0);
 	}
 
-	void DestroyHero(){
+	void DestroyHero ()
+	{
 		Destroy (this.gameObject);
 //		Debug.Log ("Hero has been destroyed");
 		//Tell Main.S to restart the game after a delay
 //		Main.S.DelayedRestart (gameRestartDelay);
 		Main.S.PlayerLoss ();
 		//Create an explosion
-		Instantiate(explosion, transform.position, transform.rotation);
+		Instantiate (explosion, transform.position, transform.rotation);
 	}
 
 

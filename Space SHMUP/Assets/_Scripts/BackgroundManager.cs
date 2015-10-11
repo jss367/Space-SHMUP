@@ -2,12 +2,12 @@
 using System.Collections;
 using MadLevelManager;
 
-public class BackgroundManager : MonoBehaviour {
+public class BackgroundManager : MonoBehaviour
+{
 
 //	public static BackgroundManager instance { get; private set; }
 
 	private string currentLevel;
-
 	public GameObject Level1Background;
 	public GameObject Level2Background;
 	public GameObject Level3Background;
@@ -22,8 +22,8 @@ public class BackgroundManager : MonoBehaviour {
 	public GameObject Level12Background;
 	public GameObject Level13Background;
 
-
-	void Awake(){
+	void Awake ()
+	{
 //		Debug.Log ("Level1Background is " + Level1Background);
 
 		currentLevel = MadLevel.currentLevelName;
