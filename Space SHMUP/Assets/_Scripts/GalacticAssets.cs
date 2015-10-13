@@ -49,6 +49,7 @@ namespace Soomla.Store.Example
 			return new  VirtualGood[] {
 				WEAPON_BLASTER,
 				WEAPON_SPREAD,
+				WEAPON_LASER,
 				BaseSpeed,
 				BaseShield,
 				DoubleBlaster,
@@ -159,25 +160,35 @@ namespace Soomla.Store.Example
 			"Spread Weapon", 														// name
 			"Shoots three spreading bullets",						 	// description
 			Constants.SPREAD_WEAPON_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 50000));
+			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0)); //25000
 		public static VirtualGood WEAPON_BLASTER = new EquippableVG (
 			EquippableVG.EquippingModel.CATEGORY,
 			"Blaster", 														// name
 			"The weapon you start with",				 	// description
 			Constants.BLASTER_WEAPON_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0));
+			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0)); 
+
+		public static VirtualGood WEAPON_LASER = new EquippableVG (
+			EquippableVG.EquippingModel.CATEGORY,
+			"Laser", 														// name
+			"Constant stream of energy",				 	// description
+			Constants.LASER_WEAPON_ITEM_ID,											// item id
+			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0)); //40000
+
+
+
 		public static VirtualGood MISSILE_LAUNCHER = new EquippableVG (
 			EquippableVG.EquippingModel.CATEGORY,
 			"Missile Launcher",                           // Name
 			"Launch devastating missiles",        // Description
 			Constants.MISSILE_LAUNCHER_ITEM_ID,                  // Item ID
-			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 15000));
+			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0)); //15000
 		public static VirtualGood BAZOOKA_LAUNCHER = new EquippableVG (
 			EquippableVG.EquippingModel.CATEGORY,
 			"Bazooka Launcher", 														// name
 			"Shoots two bazookas",				 	// description
 			Constants.BAZOOKA_LAUNCHER_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 25000));
+			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0)); //25000
 
 
 		/// <summary>
@@ -249,7 +260,7 @@ namespace Soomla.Store.Example
 			Constants.SPEED_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem (// Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            5000)                            // Payment amount
+		                            0)     //5000                       // Payment amount
 		);
 		public static VirtualGood DoubleBlaster = new LifetimeVG (
 			"Blaster Double Damage",                           // Name
@@ -257,7 +268,7 @@ namespace Soomla.Store.Example
 			Constants.DOUBLE_BLASTER_WEAPON_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem (// Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            15000)                            // Payment amount
+		                            0)    //15000                        // Payment amount
 		);
 		public static VirtualGood BaseShield = new LifetimeVG (
 			"Shield Upgrade",                           // Name
@@ -265,7 +276,7 @@ namespace Soomla.Store.Example
 			Constants.BASESHIELD_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem (// Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            10000)                            // Payment amount
+		                            0)    //10000                        // Payment amount
 		);
 		public static VirtualGood QuickFire = new LifetimeVG (
 			"Faster",                           // Name
@@ -343,7 +354,8 @@ namespace Soomla.Store.Example
 		public static VirtualCategory WEAPON_CATEGORY = new VirtualCategory (
 			"Weapons", new List<string> (new string[] {
 			Constants.BLASTER_WEAPON_ITEM_ID,
-			Constants.SPREAD_WEAPON_ITEM_ID
+			Constants.SPREAD_WEAPON_ITEM_ID,
+			Constants.LASER_WEAPON_ITEM_ID
 		})
 		);
 		public static VirtualCategory LAUNCHER_CATEGORY = new VirtualCategory (

@@ -5,6 +5,7 @@ public static class Constants
 {
 	public const string BLASTER_WEAPON_ITEM_ID = "weapon_blaster";
 	public const string DOUBLE_BLASTER_WEAPON_ITEM_ID = "weapon_doubleBlaster";
+	public const string LASER_WEAPON_ITEM_ID = "weapon_laser";
 	public const string SPREAD_WEAPON_ITEM_ID = "weapon_spread";
 	public const string GALACTIC_CURRENCY_ITEM_ID = "galactic_currency";
 	public const string SHIELD_ITEM_ID = "shield";

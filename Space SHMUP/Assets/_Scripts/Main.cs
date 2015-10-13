@@ -18,8 +18,8 @@ public class Main : MonoBehaviour
 	public GameObject			prefabPowerUp;
 	public WeaponType[]			powerUpFrequency = new WeaponType[] {
 		WeaponType.blaster,
-		WeaponType.spread,
-		WeaponType.spread,
+//		WeaponType.spread,
+//		WeaponType.spread,
 		WeaponType.shield
 	};
 	public GameObject	earthReward;
@@ -159,6 +159,12 @@ public class Main : MonoBehaviour
 //				Debug.Log("Spread is equipped");
 				spreadEquipped = true;
 			}
+
+			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.LASER_WEAPON_ITEM_ID)) {
+				//				Debug.Log("Spread is equipped");
+				laserEquipped = true;
+			}
+
 		} catch (System.Exception e) {
 			Debug.Log ("Caught error: " + e);
 		}

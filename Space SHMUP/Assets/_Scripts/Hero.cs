@@ -28,7 +28,7 @@ public class Hero : MonoBehaviour
 	public bool _____________;
 //
 
-	public bool spreadEquipped = false;
+
 	public Bounds				bounds;
 	private int					weaponCount;
 //	public int			showDamageForFrames = 2; // # of frames to show damage
@@ -36,8 +36,8 @@ public class Hero : MonoBehaviour
 //	public Color[]		originalColors;
 //	public Material[]	materials; //All the Materials of this & its children
 	//private int					recall;
-	private int					blasterRecall;
-	private int					spreadRecall;
+//	private int					blasterRecall;
+//	private int					spreadRecall;
 	private int					ballRecall;
 	private bool				shieldCounter = true;
 	public bool					shieldUpgradeOwned = false;
@@ -60,10 +60,11 @@ public class Hero : MonoBehaviour
 
 //	public SimpleTouchPad touchPad;
 	public FireButton fireButton;
-	public bool laserEquipped;
-	public bool bazookaEquipped;
-	public bool missileEquipped;
-	public bool doubleBlaster;
+	private bool spreadEquipped = false;
+	private bool laserEquipped;
+	private bool bazookaEquipped;
+	private bool missileEquipped;
+	private bool doubleBlaster;
 	public CNAbstractController cNABstractController;
 	public GameObject explosion;
 	public GameObject enemyExplosion;
@@ -140,9 +141,7 @@ public class Hero : MonoBehaviour
 			missileLaunchLocation.SetActive (false);
 			MissileLauncher.SetActive (false);
 		}
-		//testing
-		weapons [0].SetType (WeaponType.laser);
-		//testing
+
 	}
 	
 
@@ -286,14 +285,21 @@ public class Hero : MonoBehaviour
 	{
 //		Debug.Log ("Checking inventory");
 		try {
-			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)) {
-//					Debug.Log("Blaster is equipped");
-			}
+//			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)) {
+////					Debug.Log("Blaster is equipped");
+//			}
 
 			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)) {
 //			Debug.Log("Spread is equipped");
 				spreadEquipped = true;
 			}
+
+			else if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.LASER_WEAPON_ITEM_ID)) {
+				//			Debug.Log("Spread is equipped");
+				laserEquipped = true;
+			}
+
+
 		} catch (System.Exception e) {
 			Debug.Log ("Caught error: " + e);
 		}
@@ -443,9 +449,9 @@ public class Hero : MonoBehaviour
 			shieldLevel++;
 			break;
 
-		case WeaponType.speed:
-			speed += 5;
-			break;
+//		case WeaponType.speed:
+//			speed += 5;
+//			break;
 
 		case WeaponType.missile:
 //			Debug.Log("Hero absorbed a missile");
@@ -461,21 +467,21 @@ public class Hero : MonoBehaviour
 					// Set it to pu.type
 					w.SetType (pu.type);
 				}
-				SaveWeaponCount (pu.type);
+//				SaveWeaponCount (pu.type);
 			} else {
 				// If this is a different weapon
-				int recall = RecallWeaponCount (pu.type);
-				GetEmptyWeaponSlot ();
-				ClearWeapons ();
-				weapons [0].SetType (pu.type);
-				// Fill up slots for all the old power ups you had
-				for (int i = 0; i < recall; i++) {
-					Weapon w = GetEmptyWeaponSlot (); // Find an available weapon
-					if (w != null) {
-						// Set it to pu.type
-						w.SetType (pu.type);
-					}
-				}
+//				int recall = RecallWeaponCount (pu.type);
+//				GetEmptyWeaponSlot ();
+//				ClearWeapons ();
+//				weapons [0].SetType (pu.type);
+//				// Fill up slots for all the old power ups you had
+//				for (int i = 0; i < recall; i++) {
+//					Weapon w = GetEmptyWeaponSlot (); // Find an available weapon
+//					if (w != null) {
+//						// Set it to pu.type
+//						w.SetType (pu.type);
+//					}
+//				}
 				//SaveWeaponCount(pu.type);
 			}
 			break;
@@ -515,52 +521,52 @@ public class Hero : MonoBehaviour
 		}
 	}
 
-	void SaveWeaponCount (WeaponType wtype)
-	{
+//	void SaveWeaponCount (WeaponType wtype)
+//	{
+//
+////			Debug.Log("Looking into your history of " + wtype);
+//		for (int i = 0; i < weapons.Length; i++) {
+//			if (weapons [i].type == WeaponType.none) {
+////					Debug.Log("The previous weapon had " + i + " instance(s)");
+////					Debug.Log("weapons[i].type is " + weapons[i].type);
+//				switch (wtype.ToString ()) {
+//				case("blaster"):
+////						Debug.Log("The weapon was a blaster");
+//					blasterRecall = i;
+////						Debug.Log("Save blasterRecall as " + blasterRecall);
+//					return;
+//				case("spread"):
+//					spreadRecall = i;
+////						Debug.Log("Save spreadRecall as " + spreadRecall);
+//					return;
+//				}
+//
+//			}
+//		}
+//	}
 
-//			Debug.Log("Looking into your history of " + wtype);
-		for (int i = 0; i < weapons.Length; i++) {
-			if (weapons [i].type == WeaponType.none) {
-//					Debug.Log("The previous weapon had " + i + " instance(s)");
-//					Debug.Log("weapons[i].type is " + weapons[i].type);
-				switch (wtype.ToString ()) {
-				case("blaster"):
-//						Debug.Log("The weapon was a blaster");
-					blasterRecall = i;
-//						Debug.Log("Save blasterRecall as " + blasterRecall);
-					return;
-				case("spread"):
-					spreadRecall = i;
-//						Debug.Log("Save spreadRecall as " + spreadRecall);
-					return;
-				}
-
-			}
-		}
-	}
-
-	int RecallWeaponCount (WeaponType wtype)
-	{
-		//Debug.Log("Looking into your history of " + wtype);
-		for (int i = 0; i < weapons.Length; i++) {
-			if (weapons [i].type == WeaponType.none) {
-//				Debug.Log("The previous weapon had " + i + " instance(s)");
-//				Debug.Log("weapons[i].type is " + weapons[i].type);
-				switch (wtype.ToString ()) {
-				case("blaster"):
-					//Debug.Log("The weapon was a blaster");
-					//Debug.Log("Recall blasterRecall as " + blasterRecall);
-					return(blasterRecall);
-				case("spread"):
-					//Debug.Log("Recall spreadRecall as " + spreadRecall);
-					return(spreadRecall);
-				}
-				return(i);
-
-			}
-		}
-		return(0);
-	}
+//	int RecallWeaponCount (WeaponType wtype)
+//	{
+//		//Debug.Log("Looking into your history of " + wtype);
+//		for (int i = 0; i < weapons.Length; i++) {
+//			if (weapons [i].type == WeaponType.none) {
+////				Debug.Log("The previous weapon had " + i + " instance(s)");
+////				Debug.Log("weapons[i].type is " + weapons[i].type);
+//				switch (wtype.ToString ()) {
+//				case("blaster"):
+//					//Debug.Log("The weapon was a blaster");
+//					//Debug.Log("Recall blasterRecall as " + blasterRecall);
+//					return(blasterRecall);
+//				case("spread"):
+//					//Debug.Log("Recall spreadRecall as " + spreadRecall);
+//					return(spreadRecall);
+//				}
+//				return(i);
+//
+//			}
+//		}
+//		return(0);
+//	}
 
 	void DestroyHero ()
 	{

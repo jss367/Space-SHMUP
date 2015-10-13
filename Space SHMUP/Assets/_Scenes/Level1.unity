@@ -4237,7 +4237,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
       propertyPath: weaponDefinitions.Array.data[3].damageOnHit
-      value: .100000001
+      value: .119999997
       objectReference: {fileID: 0}
     - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
       propertyPath: weaponDefinitions.Array.data[3].projectilePrefab
@@ -4270,6 +4270,10 @@ Prefab:
     - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
       propertyPath: weaponDefinitions.Array.data[3].projectileColor.b
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11420510, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
+      propertyPath: weaponDefinitions.Array.data[1].delayBetweenShots
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 216e5c18e2a5ac04c89ae035f3f40b7b, type: 2}
