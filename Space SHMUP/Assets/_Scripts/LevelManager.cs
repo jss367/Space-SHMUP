@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour
 //		string[] currLevelSplit = currentLevel.Split (' ');
 		//Concatentate level number to appropriate fireworks
 		SpawnManager.instance.Mid = GameObject.Find ("LevelManager/FireworksManager/Mid" + musicLevel);
+		//Debug.Log ("LevelManager/FireworksManager/Mid" + musicLevel);
 		SpawnManager.instance.Mid.SetActive (true);
 		SpawnManager.instance.Bass = GameObject.Find ("LevelManager/FireworksManager/Bass" + musicLevel);
 		SpawnManager.instance.Bass.SetActive (true);
@@ -81,6 +82,13 @@ public class LevelManager : MonoBehaviour
 			waveTwo = 39;
 			waveThree = 57;
 			break;
+		case "LoveYoursHands200":
+			numWaves = 4;
+			waveOne = 2;
+			waveTwo = 32;
+			waveThree = 67;
+			waveFour = 91;
+			break;
 		case "ChecksForFree100":
 			numWaves = 2;
 			waveOne = 2;
@@ -90,7 +98,7 @@ public class LevelManager : MonoBehaviour
 			numWaves = 5;
 			waveOne = 15.5f;
 			waveTwo = 32;
-			waveThree = 59;
+			waveThree = 60;
 			waveFour = 90;
 			waveFive = 115.5f;
 			break;
@@ -373,6 +381,51 @@ public class LevelManager : MonoBehaviour
 	
 
 			}
+		}
+	}
+
+
+	void LoveYourHands200()
+	{
+		// This is for ChecksForFree_48
+		if (!Main.S.stopSpawning && !deadPeriod) {
+			if (timer < waveOne) {
+				CheckForNextWave (waveOne, 1);
+				
+			} else if (timer < waveTwo) {
+				SpawnManager.instance.AsteroidSpawn0.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+				SpawnManager.instance.EnemySpawn1d3.SetActive (true);
+				//				SpawnManager.instance.EnemySpawn1dtest.SetActive (true);
+				CheckForNextWave (waveTwo, 2);
+			} else if (timer < waveThree) {
+				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+				
+				SpawnManager.instance.EnemySpawn15u4.SetActive (true);
+				//				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
+				
+				CheckForNextWave(waveThree, 3);
+			} else if (timer < waveFour) {
+
+				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+				
+				SpawnManager.instance.EnemySpawn15u4.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
+	
+				CheckForNextWave(waveFour, 4);
+
+			} else {
+
+				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+				
+				SpawnManager.instance.EnemySpawn15u4.SetActive (true);
+				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
+				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
+			}
+
 		}
 	}
 

@@ -83,32 +83,36 @@ public class AudioManager : MonoBehaviour
 			audioClip [0] = Resources.Load ("Music/Ectoplasm2_125") as AudioClip;
 			break;
 		case "Level 5":
-			audioClip [0] = Resources.Load ("Music/ChecksForFree100") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/LoveYourHands200") as AudioClip;
 			break;
 		case "Level 6":
-			audioClip [0] = Resources.Load ("Music/SciFi230") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/ChecksForFree100") as AudioClip;
 			break;
 		case "Level 7":
-			audioClip [0] = Resources.Load ("Music/HighTension210") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/SciFi230") as AudioClip;
 			break;
 		case "Level 8":
-			audioClip [0] = Resources.Load ("Music/Sarabande230") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/HighTension210") as AudioClip;
 			break;
 		case "Level 9":
-			audioClip [0] = Resources.Load ("Music/NinetySecondsOfFunk130") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/Sarabande230") as AudioClip;
 			break;
 		case "Level 10":
-			audioClip [0] = Resources.Load ("Music/ThumpetteMini125") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/NinetySecondsOfFunk130") as AudioClip;
 			break;
 		case "Level 11":
-			audioClip [0] = Resources.Load ("Music/Cresc230") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/ThumpetteMini125") as AudioClip;
 			break;
 		case "Level 12":
-			audioClip [0] = Resources.Load ("Music/Dubstep200") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/Cresc230") as AudioClip;
 			break;
 		case "Level 13":
+			audioClip [0] = Resources.Load ("Music/Dubstep200") as AudioClip;
+			break;
+		case "Level 14":
 			audioClip [0] = Resources.Load ("Music/Mix21") as AudioClip;
 			break;
+		
 		}//7Thumpette_48
 		//funky junky
 

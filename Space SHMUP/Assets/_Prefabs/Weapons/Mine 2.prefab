@@ -14,7 +14,7 @@ GameObject:
   - 135: {fileID: 13514762}
   m_Layer: 16
   m_Name: Mine 2
-  m_TagString: Untagged
+  m_TagString: Mine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,6 +75,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mineExplosion: {fileID: 172662, guid: 98d46432a2c2dbd41b7130cb5ba8c381, type: 2}
+  damageRadius: 10
+  damage: 10
 --- !u!135 &13514762
 SphereCollider:
   m_ObjectHideFlags: 1

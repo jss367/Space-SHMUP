@@ -10,10 +10,8 @@ public class Hero : MonoBehaviour
 
 	static public Hero S; //S for singleton
 	
-//	public float gameRestartDelay = 2f;
-	
 	//These fields control the movement of the ship
-	public float				speed = 30;
+//	public float				speed = 30;
 	public float				rollMult = -45;
 	public float				pitchMult = 30;
 	
@@ -31,17 +29,9 @@ public class Hero : MonoBehaviour
 
 	public Bounds				bounds;
 	private int					weaponCount;
-//	public int			showDamageForFrames = 2; // # of frames to show damage
-//	public int			remainingDamageFrames = 0; // Damage frames left
-//	public Color[]		originalColors;
-//	public Material[]	materials; //All the Materials of this & its children
-	//private int					recall;
-//	private int					blasterRecall;
-//	private int					spreadRecall;
 	private int					ballRecall;
 	private bool				shieldCounter = true;
 	public bool					shieldUpgradeOwned = false;
-	public bool					speedUpgradeOwned = false;
 	public bool isInvincible;
 	public bool launch1;
 	public GameObject popText;
@@ -54,15 +44,17 @@ public class Hero : MonoBehaviour
 	//Below is from Space Shooter
 	public Vector3 target;
 	public float tilt = 5;
-	public float velocityLag = .3f;
-	public float dampingRadius = 2.5f;
+//	public float velocityLag = .3f;
+//	public float dampingRadius = 2.5f;
 	//Above is from Space Shooter
 
-//	public SimpleTouchPad touchPad;
+	private Vector3 oldPos = new Vector3(0f,-18.0f,0f);
+
 	public FireButton fireButton;
 	private bool spreadEquipped = false;
 	private bool laserEquipped;
 	private bool bazookaEquipped;
+	private bool mineEquipped;
 	private bool missileEquipped;
 	private bool doubleBlaster;
 	public CNAbstractController cNABstractController;
@@ -76,6 +68,8 @@ public class Hero : MonoBehaviour
 	public GameObject mine;
 	public GameObject mineDropLeft;
 	public GameObject mineDropRight;
+	public GameObject mineArtLeft;
+	public GameObject mineArtRight;
 	public GameObject bazookaBullet;
 	public GameObject bazookaBulletLocation1;
 	public GameObject bazookaBulletLocation2;
@@ -88,6 +82,9 @@ public class Hero : MonoBehaviour
 	public GameObject Bazooka1;
 	public GameObject Bazooka2;
 	public GameObject MissileLauncher;
+	public float maxTilt = .3f;
+	public float rotationSpeed = 2.0f;
+	public float rotateToNormal = .2f;
 
 //	public GameObject Laser;
 	public int autoShootOn = 1;
@@ -101,8 +98,6 @@ public class Hero : MonoBehaviour
 
 	void Start ()
 	{
-//		shieldUpgradeOwned = false;
-		//		spreadEquipped = true; // comment out for builds
 		// Reset the weapons to start _Hero with 1 blaster
 		ClearWeapons ();
 		CheckInventory ();
@@ -119,10 +114,6 @@ public class Hero : MonoBehaviour
 			weapons [0].SetType (WeaponType.blaster);
 		}
 
-		if (speedUpgradeOwned == true) {
-			speed = 40;
-		}
-
 		lastMineTime = -mineDelay;
 
 		bazookaArt1.SetActive (false);
@@ -133,6 +124,11 @@ public class Hero : MonoBehaviour
 			//Hide to bazooka launchers
 			Bazooka1.SetActive (false);
 			Bazooka2.SetActive (false);
+		}
+
+		if (!mineEquipped) {
+			mineArtLeft.SetActive(false);
+			mineArtRight.SetActive(false);
 		}
 
 		if (!missileEquipped) {
@@ -148,56 +144,17 @@ public class Hero : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		//Pull in information from the Input class
-//		float xAxis = Input.GetAxis ("Horizontal");
-//		float yAxis = Input.GetAxis ("Vertical");
-
 		Vector3? touchPos = null;
-
-//		if (Input.mousePresent && Input.GetMouseButton (0)) 
-//		{
-//			touchPos = new Vector3 (Input.mousePosition.x, Input.mousePosition.y, 0.0f);
-//		} 
-//		else if (Input.touchCount > 0)  //should i add an if to see if the phase is stationary?
-//		{
-//			touchPos = new Vector3 (Input.touches [0].position.x, Input.touches [0].position.y, 0.0f);
-//		}
-//		Debug.Log ("The touchPos is " + touchPos);
-
-//		if (touchPos != null)
-//		{
-//			target = Camera.main.ScreenToWorldPoint(touchPos.Value);
-//			target.z = GetComponent<Rigidbody>().position.z;
-//		}
-		
-//		Vector3 offset = target - GetComponent<Rigidbody>().position;
-//
-////		Debug.Log ("The offset is " + offset);
-//
-//
-//		float magnitude = offset.magnitude;
-//		if(magnitude > dampingRadius)
-//		{
-//			magnitude = dampingRadius;
-//		}
-//		float dampening = magnitude / dampingRadius;
-//		
-//		Vector3 desiredVelocity = offset.normalized * speed * dampening; // commented to try touchpad
-
-//		Debug.Log ("The velocity is " + GetComponent<Rigidbody> ().velocity);
-
-
-		
 		//Change transform.position based on the axes
 		Vector3 pos = transform.position;
-//		pos.x += GetComponent<Rigidbody>().velocity.x * speed * Time.deltaTime;
-//		pos.y += GetComponent<Rigidbody>().velocity.y * speed * Time.deltaTime;
-//		transform.position = pos;
+		Vector3 movement = pos - oldPos;
+//		Debug.Log (oldPos);
 
-		//Rotate the ship to make it feel more dynamic
-//		Debug.Log (GetComponent<Rigidbody> ().rotation);
-//		Debug.Log (GetComponent<Rigidbody> ().velocity.x);
-		GetComponent<Rigidbody> ().rotation = Quaternion.Euler (GetComponent<Rigidbody> ().velocity.y * +tilt, GetComponent<Rigidbody> ().velocity.x * -tilt, 0.0f);
+//		GetComponent<Rigidbody> ().rotation = Quaternion.Euler (movement.y * +tilt, 100 * movement.x * -tilt, 0.0f);
+
+//				Debug.Log (GetComponent<Rigidbody> ().rotation);
+//				Debug.Log (GetComponent<Rigidbody> ().velocity.x);
+		//GetComponent<Rigidbody> ().rotation = Quaternion.Euler (GetComponent<Rigidbody> ().velocity.y * +tilt, GetComponent<Rigidbody> ().velocity.x * -tilt, 0.0f);
 
 		bounds.center = transform.position;
 
@@ -207,19 +164,6 @@ public class Hero : MonoBehaviour
 			pos -= off;
 			transform.position = pos;
 		}
-		
-		//Rotate the ship to make it feel more dynamic
-//		transform.rotation = Quaternion.Euler (yAxis * pitchMult, xAxis * rollMult, 0);
-
-		//Use the fireDelegate to fire Weapons
-		//First, make sure the Axis("Jump") button is pressed
-		//Then ensure that fireDelegate isn't null to avoid an error
-//		Debug.Log ("CanFire is set to " + fireButton.CanFire ());
-//		if (fireButton.CanFire() && fireDelegate != null ) {
-//			fireDelegate ();
-////			Debug.Log("fireDelegate has been called");
-//		}
-
 
 		if (autoShootOn == 0) {
 			if (fireButton.CanFire () && fireDelegate != null && !weaponOff) {
@@ -255,24 +199,79 @@ public class Hero : MonoBehaviour
 			//			Debug.Log("fireDelegate has been called");
 		}
 
-		if (fireButton.CanMineLeft ()) {
+		if (mineEquipped && fireButton.CanMineLeft ()) {
 			if (Time.time - lastMineTime < mineDelay) {
 				return;
 			}
 			Instantiate (mine, mineDropLeft.transform.position, mineDropLeft.transform.rotation);
 			lastMineTime = Time.time;
-			Debug.Log ("Mining left");
+//			Debug.Log ("Mining left");
 		}
 	
-		if (fireButton.CanMineRight ()) {
+		if (mineEquipped && fireButton.CanMineRight ()) {
 			if (Time.time - lastMineTime < mineDelay) {
 				return;
 			}
 			Instantiate (mine, mineDropRight.transform.position, mineDropRight.transform.rotation);
 			lastMineTime = Time.time;
-			Debug.Log ("Mining right");
+//			Debug.Log ("Mining right");
 		}
+		oldPos = pos;
+		float rot = transform.rotation.y;
+//		Debug.Log (transform.rotation);
+//		Debug.Log (movement);
+		//Do all the roll attitude effects
+		if (rot < maxTilt && rot > -maxTilt) {
+			transform.Rotate (0.0f, -movement.x * rotationSpeed, 0.0f);
+		} else if (rot < maxTilt && movement.x < 0) {  // If rot is less than neg .2 in practice, but using pos .2 just to be safe
+
+			transform.Rotate (0.0f, -movement.x * rotationSpeed, 0.0f);
+
+		} else if (rot > -maxTilt && movement.x > 0){
+			transform.Rotate (0.0f, -movement.x * rotationSpeed, 0.0f);
+
+		}
+//			Vector3 dest = new Vector3 (0.0f, -movement.x, 0.0f);
+//		RotateShip (dest);
+//		transform.rotation = Quaternion.Euler (yAxis * pitchMult, xAxis * rollMult, 0);
+
+		//slowly move it back if you are steering the ship
+		if (movement.x == 0 && rot < 0) {
+			transform.Rotate (0.0f, rotateToNormal * rotationSpeed, 0.0f);
+		}
+		else if (movement.x == 0 && rot > 0) {
+			transform.Rotate (0.0f, -rotateToNormal * rotationSpeed, 0.0f);
+		}
+
+		//Do all the pitch attitude effects
+		float rotz = transform.rotation.x;
+//		Debug.Log (rotz);
+		if (rotz < maxTilt && rotz > -maxTilt) {
+			transform.Rotate (movement.y * rotationSpeed, 0.0f, 0.0f);
+		} else if (rotz < maxTilt && movement.y > 0) {
+			transform.Rotate (movement.y * rotationSpeed, 0.0f, 0.0f);
+		
+		} else if (rotz > -maxTilt && movement.y < 0) {
+			transform.Rotate (movement.y * rotationSpeed, 0.0f, 0.0f);
+		}
+
+		//slowly move it back if you are steering the ship
+		if (movement.y == 0 && rotz < 0) {
+			transform.Rotate (rotateToNormal * rotationSpeed, 0.0f, 0.0f);
+		}
+		else if (movement.y == 0 && rotz > 0) {
+			transform.Rotate (-rotateToNormal * rotationSpeed, 0.0f, 0.0f);
+		}
+
+
+		//keep z from rotating
+		Quaternion rotx = transform.rotation;
+		rotx.z = 0.0f;
+		transform.rotation = rotx;
+
 	}
+
+
 
 	IEnumerator ReturnBazookaArt ()
 	{
@@ -285,9 +284,6 @@ public class Hero : MonoBehaviour
 	{
 //		Debug.Log ("Checking inventory");
 		try {
-//			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)) {
-////					Debug.Log("Blaster is equipped");
-//			}
 
 			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)) {
 //			Debug.Log("Spread is equipped");
@@ -313,16 +309,7 @@ public class Hero : MonoBehaviour
 		} catch (System.Exception e) {
 			Debug.Log ("Caught error: " + e);
 		}
-		try {
-			int balance = Soomla.Store.StoreInventory.GetItemBalance (Constants.SPEED_ITEM_ID);
-//			Debug.Log("Speed upgrade balance is " + balance);
-			if (balance > 0) {   // This should be a switch with all the different upgrade levels
-//				Debug.Log("Player has speed upgrade");
-				speedUpgradeOwned = true;
-			}
-		} catch (System.Exception e) {
-			Debug.Log ("Caught error: " + e);
-		}
+
 		try {
 			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.MISSILE_LAUNCHER_ITEM_ID)) {
 				missileEquipped = true;
@@ -330,6 +317,10 @@ public class Hero : MonoBehaviour
 			
 			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BAZOOKA_LAUNCHER_ITEM_ID)) {
 				bazookaEquipped = true;
+			}
+
+			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.MINE_LAUNCHER_ITEM_ID)) {
+				mineEquipped = true;
 			}
 		} catch (System.Exception e) {
 			Debug.Log ("Caught error: " + e);
@@ -381,12 +372,12 @@ public class Hero : MonoBehaviour
 				AbsorbPowerUp (go);
 			} else {
 				//Announce it
-				print ("Triggered: " + go.name);
+//				print ("Triggered: " + go.name);
 				//Make sure it's not the same triggering go as last time
 			}
 		} else {
 			//Otherwise announce the original gameObject
-			print ("Triggered: " + other.gameObject.name);
+//			print ("Triggered: " + other.gameObject.name);
 		}
 	}
 
@@ -425,18 +416,6 @@ public class Hero : MonoBehaviour
 		}
 	}
 
-//	void ShowDamage() {
-//		foreach (Material m in materials) {
-//			m.color = Color.red;
-//		}
-//		remainingDamageFrames = showDamageForFrames;
-//	}
-//	void UnShowDamage() {
-//		for (int i = 0; i < materials.Length; i++) {
-//			materials[i].color = originalColors[i];
-//		}
-//	}
-
 	public void AbsorbPowerUp (GameObject go)
 	{
 		Main.S.AddScore (10);
@@ -448,10 +427,6 @@ public class Hero : MonoBehaviour
 		case WeaponType.shield: // If it's the shield
 			shieldLevel++;
 			break;
-
-//		case WeaponType.speed:
-//			speed += 5;
-//			break;
 
 		case WeaponType.missile:
 //			Debug.Log("Hero absorbed a missile");
@@ -467,23 +442,7 @@ public class Hero : MonoBehaviour
 					// Set it to pu.type
 					w.SetType (pu.type);
 				}
-//				SaveWeaponCount (pu.type);
-			} else {
-				// If this is a different weapon
-//				int recall = RecallWeaponCount (pu.type);
-//				GetEmptyWeaponSlot ();
-//				ClearWeapons ();
-//				weapons [0].SetType (pu.type);
-//				// Fill up slots for all the old power ups you had
-//				for (int i = 0; i < recall; i++) {
-//					Weapon w = GetEmptyWeaponSlot (); // Find an available weapon
-//					if (w != null) {
-//						// Set it to pu.type
-//						w.SetType (pu.type);
-//					}
-//				}
-				//SaveWeaponCount(pu.type);
-			}
+			} 
 			break;
 		}
 		pu.AbsorbedBy (this.gameObject);
@@ -521,59 +480,12 @@ public class Hero : MonoBehaviour
 		}
 	}
 
-//	void SaveWeaponCount (WeaponType wtype)
-//	{
-//
-////			Debug.Log("Looking into your history of " + wtype);
-//		for (int i = 0; i < weapons.Length; i++) {
-//			if (weapons [i].type == WeaponType.none) {
-////					Debug.Log("The previous weapon had " + i + " instance(s)");
-////					Debug.Log("weapons[i].type is " + weapons[i].type);
-//				switch (wtype.ToString ()) {
-//				case("blaster"):
-////						Debug.Log("The weapon was a blaster");
-//					blasterRecall = i;
-////						Debug.Log("Save blasterRecall as " + blasterRecall);
-//					return;
-//				case("spread"):
-//					spreadRecall = i;
-////						Debug.Log("Save spreadRecall as " + spreadRecall);
-//					return;
-//				}
-//
-//			}
-//		}
-//	}
 
-//	int RecallWeaponCount (WeaponType wtype)
-//	{
-//		//Debug.Log("Looking into your history of " + wtype);
-//		for (int i = 0; i < weapons.Length; i++) {
-//			if (weapons [i].type == WeaponType.none) {
-////				Debug.Log("The previous weapon had " + i + " instance(s)");
-////				Debug.Log("weapons[i].type is " + weapons[i].type);
-//				switch (wtype.ToString ()) {
-//				case("blaster"):
-//					//Debug.Log("The weapon was a blaster");
-//					//Debug.Log("Recall blasterRecall as " + blasterRecall);
-//					return(blasterRecall);
-//				case("spread"):
-//					//Debug.Log("Recall spreadRecall as " + spreadRecall);
-//					return(spreadRecall);
-//				}
-//				return(i);
-//
-//			}
-//		}
-//		return(0);
-//	}
 
 	void DestroyHero ()
 	{
 		Destroy (this.gameObject);
 //		Debug.Log ("Hero has been destroyed");
-		//Tell Main.S to restart the game after a delay
-//		Main.S.DelayedRestart (gameRestartDelay);
 		Main.S.PlayerLoss ();
 		//Create an explosion
 		Instantiate (explosion, transform.position, transform.rotation);

@@ -150,7 +150,6 @@ public class Enemy : MonoBehaviour
 				break;
 			}
 			// Hurt this Enemy
-//			ShowDamage();
 			Instantiate (impact, transform.position, transform.rotation);
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
 			ReceiveDamage (Main.W_DEFS [p.type].damageOnHit);
@@ -167,7 +166,6 @@ public class Enemy : MonoBehaviour
 				break;
 			}
 			// Hurt this Enemy
-//			ShowDamage();
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
 			health -= 1; // Asteroids do 1 worth of damage
 			if (health <= 0) {

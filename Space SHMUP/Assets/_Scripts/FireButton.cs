@@ -14,8 +14,8 @@ public class FireButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler 
 	private bool mineRight;
 	private bool mineLeft;
 
-	public float minSwipeDistY = 700;
-	public float minSwipeDistX = 700;
+	public float minSwipeDistY = 1000;
+	public float minSwipeDistX = 1000;
 	public float tinySwipeDistY = 10;
 	public float tinySwipeDistX = 10;
 	private Vector2 startPos;

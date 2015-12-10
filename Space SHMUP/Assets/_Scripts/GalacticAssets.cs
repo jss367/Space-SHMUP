@@ -131,7 +131,8 @@ namespace Soomla.Store.Example
 			Constants.TEN_THOUSAND_COIN_PACK_ITEM_ID,                                   // item id
 			10000,                                             // number of currencies in the pack
 			GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
-			new PurchaseWithMarket (Constants.TEN_THOUSAND_COIN_PACK_ITEM_ID, 1.99)
+			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0)
+//			new PurchaseWithMarket (Constants.TEN_THOUSAND_COIN_PACK_ITEM_ID, 1.99)
 		);
 		public static VirtualCurrencyPack HUNDRED_THOUSAND_COIN_PACK = new VirtualCurrencyPack (
 			"100000 Coins",              	 		            // name
@@ -160,7 +161,7 @@ namespace Soomla.Store.Example
 			"Spread Weapon", 														// name
 			"Shoots three spreading bullets",						 	// description
 			Constants.SPREAD_WEAPON_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0)); //25000
+			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 25000)); //25000
 		public static VirtualGood WEAPON_BLASTER = new EquippableVG (
 			EquippableVG.EquippingModel.CATEGORY,
 			"Blaster", 														// name
@@ -173,7 +174,7 @@ namespace Soomla.Store.Example
 			"Laser", 														// name
 			"Constant stream of energy",				 	// description
 			Constants.LASER_WEAPON_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0)); //40000
+			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 30000)); //40000
 
 
 
@@ -182,13 +183,13 @@ namespace Soomla.Store.Example
 			"Missile Launcher",                           // Name
 			"Launch devastating missiles",        // Description
 			Constants.MISSILE_LAUNCHER_ITEM_ID,                  // Item ID
-			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0)); //15000
+			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 15000)); //15000
 		public static VirtualGood BAZOOKA_LAUNCHER = new EquippableVG (
 			EquippableVG.EquippingModel.CATEGORY,
 			"Bazooka Launcher", 														// name
 			"Shoots two bazookas",				 	// description
 			Constants.BAZOOKA_LAUNCHER_ITEM_ID,											// item id
-			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 0)); //25000
+			new PurchaseWithVirtualItem (GALACTIC_CURRENCY.ItemId, 25000)); //25000
 
 
 		/// <summary>
@@ -260,7 +261,7 @@ namespace Soomla.Store.Example
 			Constants.SPEED_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem (// Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            0)     //5000                       // Payment amount
+		                            5000)     //5000                       // Payment amount
 		);
 		public static VirtualGood DoubleBlaster = new LifetimeVG (
 			"Blaster Double Damage",                           // Name
@@ -268,7 +269,7 @@ namespace Soomla.Store.Example
 			Constants.DOUBLE_BLASTER_WEAPON_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem (// Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            0)    //15000                        // Payment amount
+		                            15000)    //15000                        // Payment amount
 		);
 		public static VirtualGood BaseShield = new LifetimeVG (
 			"Shield Upgrade",                           // Name
@@ -276,7 +277,7 @@ namespace Soomla.Store.Example
 			Constants.BASESHIELD_ITEM_ID,                  // Item ID
 			new PurchaseWithVirtualItem (// Purchase type
 		                            GALACTIC_CURRENCY.ItemId,                    // Virtual item to pay with
-		                            0)    //10000                        // Payment amount
+		                            10000)    //10000                        // Payment amount
 		);
 		public static VirtualGood QuickFire = new LifetimeVG (
 			"Faster",                           // Name

@@ -145,7 +145,7 @@ public abstract class CNAbstractController : MonoBehaviour
 	}
 
 	private bool speedUpgradeOwned = false;
-	private float speedMultiplier = 1.0f;
+	private float speedMultiplier = 1.4f;
 
 	void CheckInventory ()
 	{
@@ -155,7 +155,7 @@ public abstract class CNAbstractController : MonoBehaviour
 			if (balance > 0) {   // This should be a switch with all the different upgrade levels
 //				Debug.Log("Joystick confirms that player has speed upgrade");
 				speedUpgradeOwned = true;
-				speedMultiplier = 1.4f;
+				speedMultiplier = 1.8f;
 			}
 		} catch (System.Exception e) {
 			Debug.Log ("Caught error: " + e);
