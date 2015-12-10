@@ -82,7 +82,7 @@ public class LevelManager : MonoBehaviour
 			waveTwo = 39;
 			waveThree = 57;
 			break;
-		case "LoveYoursHands200":
+		case "LoveYourHands200":
 			numWaves = 4;
 			waveOne = 2;
 			waveTwo = 32;
@@ -98,7 +98,7 @@ public class LevelManager : MonoBehaviour
 			numWaves = 5;
 			waveOne = 15.5f;
 			waveTwo = 32;
-			waveThree = 60;
+			waveThree = 61.5f;
 			waveFour = 90;
 			waveFive = 115.5f;
 			break;
