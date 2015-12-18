@@ -448,9 +448,9 @@ public class Main : MonoBehaviour
 			break;
 		case "Ninety12Remix55":
 			victoryBonus = 100;
-			earth1 = 500;
-			earth2 = 800;
-			earth3 = 1000;
+			earth1 = 200;
+			earth2 = 400;
+			earth3 = 600;
 
 			break;
 		case "JazzyFrenchy145":

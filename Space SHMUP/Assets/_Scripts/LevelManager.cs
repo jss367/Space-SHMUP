@@ -404,8 +404,7 @@ public class LevelManager : MonoBehaviour
 				SpawnManager.instance.EnemySpawn15u4.SetActive (true);
 				//				SpawnManager.instance.EnemySpawn1d2.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
-				
+
 				CheckForNextWave(waveThree, 3);
 			} else if (timer < waveFour) {
 
@@ -413,7 +412,6 @@ public class LevelManager : MonoBehaviour
 				
 				SpawnManager.instance.EnemySpawn15u4.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
 	
 				CheckForNextWave(waveFour, 4);
 
@@ -423,7 +421,7 @@ public class LevelManager : MonoBehaviour
 				
 				SpawnManager.instance.EnemySpawn15u4.SetActive (true);
 				SpawnManager.instance.AsteroidSpawn4.SetActive (true);
-				SpawnManager.instance.EnemySpawn4d3.SetActive (true);
+				SpawnManager.instance.EnemySpawn3d3.SetActive (true);
 			}
 
 		}
