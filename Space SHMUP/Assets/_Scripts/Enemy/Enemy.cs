@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 	public int			score = 100; //Points earned for destroying this
 
 	public int			showDamageForFrames = 2; // # of frames to show damage
-	public float		powerUpDropChance = .2f; // Chance to drop a power-up
+	public float		powerUpDropChance = .25f; // Chance to drop a power-up
 	public float		missileDropChance = .1f; // Chance to drop a missile if possible
 	public bool _________________;
 	private float lastTimeDestroyed = 0.0f;

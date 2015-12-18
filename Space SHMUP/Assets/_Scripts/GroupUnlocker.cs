@@ -15,7 +15,7 @@ public class GroupUnlocker : MonoBehaviour
 
 	public Text remainingStars;
 	int starsToGo = 4;
-//	int finalLevel = 20;
+	int nextLevel = 2;
 	int[] requiredStars = new int[] {
 		1, // level 2
 		2, // level 3
@@ -33,6 +33,7 @@ public class GroupUnlocker : MonoBehaviour
 
 	void Start ()
 	{
+
 //		Debug.Log (MadLevel.currentGroupName);
 		string[] groups = MadLevel.GetAllLevelNames (MadLevel.Type.Level, MadLevel.defaultGroupName);
 
@@ -46,7 +47,7 @@ public class GroupUnlocker : MonoBehaviour
 			//See if you have enough stars to unlock the level
 			if (starsOwned >= reqStars) {
 				MadLevelProfile.SetLocked ("Level " + currentLevel, false);
-			
+				nextLevel = currentLevel + 1;
 //				Debug.Log(currentLevel);
 				// If you don't have enough find out the minimum number to get to the next level
 			} else {
@@ -62,11 +63,11 @@ public class GroupUnlocker : MonoBehaviour
 				// Print the number of stars needed to reach the next level
 			} else {
 				if (starsToGo == 1) {
-					remainingStars.text = starsToGo + " more star to unlock next level!";
+					remainingStars.text = starsToGo + " more star to unlock level " + nextLevel;
 				} else {
 
 
-					remainingStars.text = starsToGo + " more stars to unlock next level!";
+					remainingStars.text = starsToGo + " more stars to unlock level " + nextLevel;
 				}
 			}
 			currentLevel++;
@@ -76,7 +77,6 @@ public class GroupUnlocker : MonoBehaviour
 //		MadLevel.ReloadCurrent();
 	}
 
-//    void Update() {
-//    }
+
 
 }

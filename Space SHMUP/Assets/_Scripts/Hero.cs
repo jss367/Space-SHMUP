@@ -102,7 +102,6 @@ public class Hero : MonoBehaviour
 		ClearWeapons ();
 		CheckInventory ();
 		autoShootOn = PlayerPrefs.GetInt ("AutoShoot");
-		laserEquipped = true;
 //		Debug.Log ("autoShootOn is " + autoShootOn);
 		if (spreadEquipped == true) {
 //			Debug.Log ("Spread is owned");
