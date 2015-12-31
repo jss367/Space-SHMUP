@@ -29,8 +29,8 @@ public class SoomlaInit : MonoBehaviour {
 //		SoomlaStore.Initialize (new Soomla.Store.Example.MuffinRushAssets ());
 		Debug.Log ("Soomla has been initialized");
 
-//		MadLevel.LoadLevelByName ("MainMenu");
-//		Application.LoadLevel ("MainMenu");
+		MadLevel.LoadLevelByName ("MainMenu");
+		Application.LoadLevel ("MainMenu");
 	}
 
 	public void onSoomlaStoreInitialized() {
