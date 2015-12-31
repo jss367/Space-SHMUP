@@ -192,7 +192,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6980d80fb002a7b48bb795088293f5d8, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -216,7 +216,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6980d80fb002a7b48bb795088293f5d8, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -240,7 +240,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f034a817c75e5a349b4e68693ae578a8, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -264,7 +264,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6980d80fb002a7b48bb795088293f5d8, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
   health: 4
   score: 60
   showDamageForFrames: 2
-  powerUpDropChance: 1
+  powerUpDropChance: .200000003
   _________________: 0
   comboTime: 1
   impact: {fileID: 100000, guid: 45adca7b834650f48b43368319e04122, type: 2}
@@ -371,6 +371,7 @@ MonoBehaviour:
   fireRate: 1.5
   delay: .5
   isAiming: 0
+  rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!135 &13504480
 SphereCollider:
   m_ObjectHideFlags: 1

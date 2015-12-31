@@ -1,4 +1,4 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class PowerUp : MonoBehaviour {
@@ -58,15 +58,17 @@ public class PowerUp : MonoBehaviour {
 			Destroy(this.gameObject);
 			return;
 		}
-		// Use u to determine the alpha value of the Cube & Letter
-		if (u > 0) {
-			Color c = cube.GetComponent<Renderer>().material.color;
-			c.a = 1f - u;
-			cube.GetComponent<Renderer>().material.color = c;
-			// Fade the Letter too, just not as much
-			c = letter.color;
-			c.a = 1f - (u*0.5f);
-			letter.color = c;
+		if (letter != null) {
+			// Use u to determine the alpha value of the Cube & Letter
+			if (u > 0) {
+				Color c = cube.GetComponent<Renderer> ().material.color;
+				c.a = 1f - u;
+				cube.GetComponent<Renderer> ().material.color = c;
+				// Fade the Letter too, just not as much
+				c = letter.color;
+				c.a = 1f - (u * 0.5f);
+				letter.color = c;
+			}
 		}
 	}
 	

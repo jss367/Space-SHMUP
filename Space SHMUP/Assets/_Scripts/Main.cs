@@ -1,27 +1,27 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic; //Required to use Lists or Dictionaries
+using System.Collections.Generic;
+
+//Required to use Lists or Dictionaries
 using Soomla;
 using MadLevelManager;
 
-//namespace Soomla.Store.Example {
-
-public class Main : MonoBehaviour {
+public class Main : MonoBehaviour
+{
 	static public Main			S;
 	static public Dictionary<WeaponType, WeaponDefinition> W_DEFS;
 	public GameObject[]			prefabEnemies;
-	public float				enemySpawnPerSecond = 0.5f;
+//	public float				enemySpawnPerSecond = 0.5f;
 	public float				enemySpawnPadding = 1.5f;
 	public WeaponDefinition[]	weaponDefinitions;
 	public GameObject			prefabPowerUp;
 	public WeaponType[]			powerUpFrequency = new WeaponType[] {
 		WeaponType.blaster,
-		WeaponType.spread,
-		WeaponType.spread,
+//		WeaponType.spread,
+//		WeaponType.spread,
 		WeaponType.shield
 	};
-
 	public GameObject	earthReward;
 	public GameObject 	restartButton;
 	public GameObject 	mainMenuButton;
@@ -36,56 +36,53 @@ public class Main : MonoBehaviour {
 	public Text			finalScoreText;
 	public Text			prevBalanceText;
 	public Text			popText;
-//	public GameObject	spawnManager;
-//	public GameObject	fireworks;
-//	public const string BLASTER_WEAPON_ITEM_ID = "weapon_blaster";
-//	public const string SPREAD_WEAPON_ITEM_ID = "weapon_spread";
-
-
+	public bool missileEquipped;
+	public GameObject missilePowerUp;
 	public bool ______________;
-
-	public bool spreadOwned = false;
+	public bool spreadEquipped = false;
+	public bool doubleBlaster = false;
 	public bool weaponrySet = false;
 	public bool pointsGiven = false;
 	private float timeOfDeath;
-	
+	bool earth1Toggle = false;
+	bool earth2Toggle = false;
+	bool earth3Toggle = false;
 	public WeaponType[]			activeWeaponTypes;
-	public float				enemySpawnRate; //Display between enemy spawns
+//	public float				enemySpawnRate; //Display between enemy spawns
 	
 	private int		score;
 	public float	timeAlive;
-//	public float	timeMultiplier;
-//	private float 	timeLastReset;
 	public float	timeLimit;
-
+	public string	musicLevel;
 	public float account;
 	public float coinsGained;
-
 	public bool stopSpawning = false;
 	public bool gameHasEnded = false;
 	public bool playerWins = false;
 	public bool playerDead = false;
 	private int prevBalance;
-
+	public bool laserEquipped = false;
+//	public bool bazookaEquipped;
+//	public bool missileEquipped;
+	
 	private int earth1;
 	private int earth2;
 	private int earth3;
-
 	public string currentLevel;
 	public int victoryBonus;
 	public float endGameDelay = .2f;
+	Vector3 pos1 = new Vector3 (14, 1, -10);
+	Vector3 pos2 = new Vector3 (22, 1, -10);
+	Vector3 pos3 = new Vector3 (30, 1, -10);
 
-	Vector3 pos1 = new Vector3(14, 1, -10);
-	Vector3 pos2 = new Vector3(22, 1, -10);
-	Vector3 pos3 = new Vector3(30, 1, -10);
-
-	void Awake(){
+	void Awake ()
+	{
 
 		S = this;
 		//Set Utils.camBounds
-		Utils.SetCameraBounds (this.GetComponent<Camera>());
+		Utils.SetCameraBounds (this.GetComponent<Camera> ());
 		//  0.5 enemies/second = enemySpawnRate of 2
-		enemySpawnRate = 1f / enemySpawnPerSecond;
+//		enemySpawnRate = 1f / enemySpawnPerSecond;
 		//Invoke call SpawnEnemy() once after a 2 second delay
 //		Invoke ("SpawnEnemy", enemySpawnRate);
 		
@@ -96,9 +93,10 @@ public class Main : MonoBehaviour {
 		}
 
 
-		}
+	}
 
-	static public WeaponDefinition GetWeaponDefinition (WeaponType wt) {
+	static public WeaponDefinition GetWeaponDefinition (WeaponType wt)
+	{
 		//Check to make sure that the key exists in the Dictionary
 		//Attempting to retrieve a key that didn't exist would throw an error
 		//so use the following if statement first
@@ -111,9 +109,9 @@ public class Main : MonoBehaviour {
 	
 	}
 
-
-	void Start() {
-//		spreadOwned = true; // comment out for builds
+	void Start ()
+	{
+		//		spreadEquipped = true; // comment out for builds
 		activeWeaponTypes = new WeaponType[weaponDefinitions.Length];
 		for (int i = 0; i < weaponDefinitions.Length; i++) {
 			activeWeaponTypes [i] = weaponDefinitions [i].type;
@@ -133,6 +131,11 @@ public class Main : MonoBehaviour {
 		score = 0;
 		ResetScore ();
 		timeLimit = GameObject.Find ("Beat").GetComponent<AudioManager> ().timeLimit;
+		musicLevel = GameObject.Find ("Beat").GetComponent<AudioSource> ().clip.ToString ();
+		string[] levelSplit = musicLevel.Split (' ');
+		musicLevel = levelSplit [0];
+//		Debug.Log (levelSplit [0]);
+//		Debug.Log (musicLevel);
 //		Debug.Log ("The song length is " + timeLimit);
 		gameHasEnded = false;
 
@@ -141,90 +144,111 @@ public class Main : MonoBehaviour {
 
 		CheckInventory ();
 
-		}
+	}
 
-	void CheckInventory(){
+	void CheckInventory ()
+	{
 		
 		//		Debug.Log ("Checking inventory");
-		try
-		{
+		try {
 			
-			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)){
-				Debug.Log("Blaster is equipped");
-				
+			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.BLASTER_WEAPON_ITEM_ID)) {
+//				Debug.Log("Blaster is equipped");		
 			}
-			if(Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)){
-				Debug.Log("Spread is equipped");
-				
-				spreadOwned = true;
+			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.SPREAD_WEAPON_ITEM_ID)) {
+//				Debug.Log("Spread is equipped");
+				spreadEquipped = true;
 			}
+
+			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.LASER_WEAPON_ITEM_ID)) {
+				//				Debug.Log("Spread is equipped");
+				laserEquipped = true;
+			}
+
+		} catch (System.Exception e) {
+			Debug.Log ("Caught error: " + e);
 		}
-		catch (System.Exception e)
-		{
-			Debug.Log("Caught error: " + e);
+		try {
+			if (Soomla.Store.StoreInventory.IsVirtualGoodEquipped (Constants.MISSILE_LAUNCHER_ITEM_ID)) {
+				missileEquipped = true;
+			}			
+		} catch (System.Exception e) {
+			Debug.Log ("Caught error: " + e);
 		}
-		
+		try {
+			int balance = Soomla.Store.StoreInventory.GetItemBalance (Constants.DOUBLE_BLASTER_WEAPON_ITEM_ID);
+			if (balance > 0) {
+				doubleBlaster = true;
+			}
+		} catch (System.Exception e) {
+			Debug.Log ("Caught error: " + e);
+		}
 	}
 
-	void SetWeaponry() {
-		//		Debug.Log ("At SetWeaponry, spreadOwned is " + spreadOwned);
-		if (spreadOwned) {
+	void SetWeaponry ()
+	{
+		//		Debug.Log ("At SetWeaponry, spreadEquipped is " + spreadEquipped);
+		if (spreadEquipped) {
 //			Debug.Log("Setting weapon to spread");
 			powerUpFrequency = new WeaponType[] {
-//			WeaponType.spread,
-//			WeaponType.spread,
 			WeaponType.spread,
-			WeaponType.shield
+			WeaponType.shield,
 		};
-		} else {
+		} else if (spreadEquipped) {
+			//			Debug.Log("Setting weapon to spread");
+			powerUpFrequency = new WeaponType[] {
+					WeaponType.spread,
+					WeaponType.shield,
+				};
+		} else if (laserEquipped) {
+			powerUpFrequency = new WeaponType[] {
+				WeaponType.laser
+			};
+
+		} else	if (doubleBlaster) {
 //			Debug.Log("Setting weapon to white");
 			powerUpFrequency = new WeaponType[] {
-				//			WeaponType.spread,
-				//			WeaponType.spread,
-
-				WeaponType.blaster,
+				WeaponType.doubleBlaster,
 				WeaponType.shield
-
 			};
-	}
+		} else {
+			//			Debug.Log("Setting weapon to white");
+			powerUpFrequency = new WeaponType[] {
+			WeaponType.blaster,
+			WeaponType.shield
+			
+		};
+		}
 		weaponrySet = true;
 	}
-	void Update() {
+
+	void Update ()
+	{
 		float timer = Time.timeSinceLevelLoad;
 //		Debug.Log (timer);
 //		Debug.Log (playerWins);
-		if (!playerDead && !gameHasEnded && (timer > timeLimit + endGameDelay)){
+		if (!playerDead && !gameHasEnded && (timer > timeLimit + endGameDelay)) {
 			InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 		}
 
 		if (!weaponrySet) {
 			SetWeaponry ();
-					}
-	}
-
-	public void WaitUntilLevelEmpties(){
-	
-//			Debug.Log ("Waiting until level empties");
-			stopSpawning = true;
-			GameObject[] AsteroidsRemaining = GameObject.FindGameObjectsWithTag ("Asteroid");
-//		Debug.Log ("Asteroids remaining: " + AsteroidsRemaining.Length);
-			GameObject[] EnemiesRemaining = GameObject.FindGameObjectsWithTag ("Enemy");
-//		Debug.Log ("Enemies remaining: " + EnemiesRemaining.Length);
-			if ((EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) || (Time.time - timeOfDeath > 5.0f)) {
-//			Debug.Log("gameHasEnded: " + gameHasEnded);
-//			Debug.Log("Time.time: " + Time.time);
-//			Debug.Log("timeOfDeath: " + timeOfDeath);
-				if (playerDead && !gameHasEnded) {
-					GameOver ();
-			} else if (!playerWins && !playerDead && EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) {
-					PlayerWon ();
-
-			}
 		}
-
 	}
 
-	public void EnemyDestroyed( Enemy e, bool combo) {
+	public void AddScore (int newScoreValue)
+	{
+		if (!gameHasEnded && !playerDead) {
+			StartCoroutine (PopText (newScoreValue.ToString (), 0.2f));
+//					Debug.Log ("Score has been updated");
+			score += newScoreValue;
+
+			scoreText.text = "Score : " + score;  // ToString is called implicitly when + is used to concatenate to a string
+		}
+	}
+
+	public void EnemyDestroyed (Enemy e, bool combo)
+	{
 		// Potentially generate a PowerUp
 		if (Random.value <= e.powerUpDropChance) {
 			//Random.value generates a value between 0 & 1 (through never == 1)
@@ -233,35 +257,57 @@ public class Main : MonoBehaviour {
 			
 			//Choose which PowerUp to pick
 			// Pick one from the possibilities in powerUpFrequency
-			int ndx = Random.Range(0, powerUpFrequency.Length);
-			WeaponType puType = powerUpFrequency[ndx];
+			int ndx = Random.Range (0, powerUpFrequency.Length);
+			WeaponType puType = powerUpFrequency [ndx];
 			
 			// Spawn a PowerUp
-			GameObject go = Instantiate(prefabPowerUp) as GameObject;
-			PowerUp pu = go.GetComponent<PowerUp>();
+			GameObject go = Instantiate (prefabPowerUp) as GameObject;
+			PowerUp pu = go.GetComponent<PowerUp> ();
 			// Set it to the proper WeaponTYpe
-			pu.SetType(puType);
+			pu.SetType (puType);
 			
 			// Set it to the position of the destroyed ship
 			pu.transform.position = e.transform.position;
 		}
 
-		if (combo) {
-			AddScore (e.score * 2);
-		} else {
-			AddScore (e.score);
+		// change to Hero.S.missileEquipped
+//		Debug.Log (missileEquipped);
+//		Debug.Log (Hero.S.launch1);
+		if (missileEquipped && Hero.S.launch1 && Random.value <= e.missileDropChance) {
+			Debug.Log ("Dropping missile power up");
+			Instantiate (missilePowerUp, e.transform.position, e.transform.rotation);
 		}
+//		if (combo) {
+//			AddScore (e.score * 2);
+//		} else {
+		AddScore (e.score);
+//		}
+	}
+	
+	public void WaitUntilLevelEmpties ()
+	{
+		
+//					Debug.Log ("Waiting until level empties");
+		stopSpawning = true;
+		GameObject[] AsteroidsRemaining = GameObject.FindGameObjectsWithTag ("Asteroid");
+		//		Debug.Log ("Asteroids remaining: " + AsteroidsRemaining.Length);
+		GameObject[] EnemiesRemaining = GameObject.FindGameObjectsWithTag ("Enemy");
+		//		Debug.Log ("Enemies remaining: " + EnemiesRemaining.Length);
+		if ((EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) || (Time.time - timeOfDeath > 5.0f)) {
+			//			Debug.Log("gameHasEnded: " + gameHasEnded);
+			//			Debug.Log("Time.time: " + Time.time);
+			//			Debug.Log("timeOfDeath: " + timeOfDeath);
+			if (playerDead && !gameHasEnded) {
+				GameOver ();
+				CancelInvoke ();
+			} else if (!playerWins && !playerDead && EnemiesRemaining.Length == 0 && AsteroidsRemaining.Length == 0) {
+				PlayerWon ();
+				CancelInvoke ();		
+			}
+		}	
 	}
 
-
-
-	public void DelayedRestart(float delay) {
-		//Invoke the Restart() method in delay seconds
-		Invoke ("Restart", delay);
-	}
-
-
-	public void PlayerLoss()
+	public void PlayerLoss ()
 	{
 		playerDead = true;
 		timeOfDeath = Time.time;
@@ -270,7 +316,7 @@ public class Main : MonoBehaviour {
 		InvokeRepeating ("WaitUntilLevelEmpties", 0.0f, 0.5f);
 	}
 	
-	public void PlayerWon()
+	public void PlayerWon ()
 	{
 //		Debug.Log("Player beat the level!");
 		victoryText.enabled = true;
@@ -280,241 +326,245 @@ public class Main : MonoBehaviour {
 		GameOver ();
 	}
 
-	public void GameOver() {
+	public void GameOver ()
+	{
 		gameHasEnded = true;
 		pauseButton.SetActive (false);
 //		Debug.Log("Game has ended");
 //		scoreText.enabled = false;
-		try
-		{
+		try {
 			prevBalance = Soomla.Store.StoreInventory.GetItemBalance ("galactic_currency");
-		}
-		catch (System.Exception e)
-		{
-			Debug.Log("Caught error: " + e);
+		} catch (System.Exception e) {
+			Debug.Log ("Caught error: " + e);
 			prevBalance = 0;
 		}
 
-		prevBalanceText.text = "Previous Balance: " + prevBalance + " Coins";
+		prevBalanceText.text = "Previous Balance : " + prevBalance + " Coins";
 		prevBalanceText.enabled = true;
-		restartButton.SetActive(true);
-		nextLevelButton.SetActive (true);
+		restartButton.SetActive (true);
 		mainMenuButton.SetActive (true);
+		if (!playerDead) {
+			nextLevelButton.SetActive (true);
+		}
 		GivePoints ();
 	}
 
-	public void GivePoints(){
+	public void GivePoints ()
+	{
 //		try {
-
+		SetLevelValues ();
 		if (playerWins) {
 //			GiveStars();
-			GiveVictoryBonus();
+		
 			score += victoryBonus;
-			victoryBonusText.text = "Level Completion Bonus: " + victoryBonus;
-			}
-		StartCoroutine (CountScore());
-//		finalScoreText.text = "Final Score: " + score;
+			victoryBonusText.text = "Level Completion Bonus : " + victoryBonus;
+		}
+		StartCoroutine (CountScore ());
 		StoreHighScore (score);
 		if (!pointsGiven) {
 //			Debug.Log("pointsGiven is " + pointsGiven);
 //			Debug.Log("Rewarding points");
-			try
-			{
-				Soomla.Store.StoreInventory.GiveItem("galactic_currency", score);
-			}
-			catch (System.Exception e)
-			{
-				Debug.Log("Caught error: " + e);
+			try {
+				Soomla.Store.StoreInventory.GiveItem ("galactic_currency", score);
+			} catch (System.Exception e) {
+				Debug.Log ("Caught error: " + e);
 			}
 			pointsGiven = true;
 		}
-		currentAccountText.text = "New Balance: " + (prevBalance + score) + " Coins";
-		currentAccountText.enabled = true;
-//		} catch (Exception e) {
-//			Debug.LogError ("SOOMLA/UNITY " + e.Message);
-//		}
-		finalScoreText.enabled = true;
+
+
 	}
-	IEnumerator CountScore(){
+
+	IEnumerator CountScore ()
+	{
+//		Debug.Log ("Counting the score");
 		int displayScore = 0;
-		while (displayScore < score){
-			displayScore+= 5;
-			yield return new WaitForSeconds(.01f);
-			finalScoreText.text = "Final Score: " + displayScore;
-			if (displayScore == earth1){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-				Instantiate(earthReward, pos1, Quaternion.identity);
+		int updateAmount = 0;
+
+		while (displayScore < score) {
+//			Debug.Log(score - displayScore);
+			if (score - displayScore > 10000) {
+				updateAmount = 1000;
+				//				Debug.Log(updateAmount);
+			} else if (score - displayScore > 1000) {
+				updateAmount = 250;
+				//				Debug.Log(updateAmount);
+			} else if (score - displayScore > 250) {
+				updateAmount = 50;
+			} else if (score - displayScore > 100) {
+				updateAmount = 10;
+				//				Debug.Log(updateAmount);
+			} else {
+				displayScore = score;
+				updateAmount = 0;
 			}
-			if (displayScore == earth2){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-				Instantiate(earthReward, pos2, Quaternion.identity);
-			}
-			if (displayScore == earth3){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-				Instantiate(earthReward, pos3, Quaternion.identity);
-			}
+
+			displayScore += updateAmount;
+//			bool earth1Toggle = false;
+			if (playerWins) {
+				if (displayScore >= earth1 && !earth1Toggle) {
+//				Debug.Log(earth1);
+//				Debug.Log(displayScore);
+					MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
+					Instantiate (earthReward, pos1, Quaternion.identity);
+//				Debug.Log(earth1Toggle);
+					earth1Toggle = true;
 				}
+//			bool earth2Toggle = false;
+				if (displayScore >= earth2 && !earth2Toggle) {
+					MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
+					Instantiate (earthReward, pos2, Quaternion.identity);
+					earth2Toggle = true;
+				}
+//			bool earth3Toggle = false;
+				if (displayScore >= earth3 && !earth3Toggle) {
+					MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
+					Instantiate (earthReward, pos3, Quaternion.identity);
+					earth3Toggle = true;
+				}
+			}
+			finalScoreText.text = "Final Score: " + displayScore;
+			finalScoreText.enabled = true;
+			yield return new WaitForSeconds (.01f);
+		}
+//		Debug.Log ("Displaying final score");
+
+		currentAccountText.text = "New Balance : " + (prevBalance + score) + " Coins";
+		currentAccountText.enabled = true;
 	}
 
-	public void GiveVictoryBonus (){
-//		Debug.Log("You are currently on this level: " + currentLevel);
-//		Debug.Log(
+	public void SetLevelValues ()
+	{
+		//		Debug.Log("You are currently on this level: " + musicLevel);
 
-		switch (currentLevel) {
-		case "Level 1":
-			Debug.Log("on level one");
-			victoryBonus = 200;
-			earth1 = 100;
-			earth2 = 300;
-			earth3 = 500;
-//			if (score = 100){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//				Instantiate(earthReward, pos1, Quaternion.identity);
-//			}
-//			if (score = 300){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//				Instantiate(earthReward, pos2, Quaternion.identity);
-//			}
-//			if (score = 500){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//				Instantiate(earthReward, pos3, Quaternion.identity);
-//			}
+		switch (musicLevel) {
+		case "First30":  
+//			Debug.Log("On level one");
+			victoryBonus = 50;
+			earth1 = 80;
+			earth2 = 150;
+			earth3 = 220;
+
 			break;
-		case "Level 2":
+		case "Ninety12Remix55":
 			victoryBonus = 100;
-			earth1 = 150;
-			earth2 = 200;
-			earth3 = 400;
-//			if (score > 1000){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//			}
-//			if (score > 1500){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//			}
-//			if (score > 2500){
-//				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-//			}
+			earth1 = 200;
+			earth2 = 400;
+			earth3 = 600;
+
 			break;
-		case "Level 3":
-			victoryBonus = 600;
-			if (score > 10000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-			}
-			if (score > 15000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-			}
-			if (score > 20000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-			}
+		case "JazzyFrenchy145":
+			victoryBonus = 150;
+			earth1 = 1000;
+			earth2 = 1400;
+			earth3 = 1750;
+			
 			break;
-		case "Level 4":
-			victoryBonus = 800;
-			if (score > 30000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-			}
-			if (score > 40000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-			}
-			if (score > 50000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-			}
+		case "Ectoplasm2_125":
+			victoryBonus = 150;
+			earth1 = 1000;
+			earth2 = 1400;
+			earth3 = 1750;
+
 			break;
-		case "Level 8":
-			victoryBonus = 800;
-			if (score > 30000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-			}
-			if (score > 40000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-			}
-			if (score > 50000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-			}
+		case "ChecksForFree100":
+			victoryBonus = 200;
+			earth1 = 1000;
+			earth2 = 1500;
+			earth3 = 2000;
+
+			break;
+		case "SciFi230":
+			victoryBonus = 300;
+			earth1 = 3000;
+			earth2 = 4000;
+			earth3 = 5000;
+			
+			break;
+		case "HighTension210":
+			victoryBonus = 400;
+			earth1 = 2500;
+			earth2 = 3250;
+			earth3 = 4000;
+			
+			break;
+		case "Sarabande230":
+			victoryBonus = 500;
+			earth1 = 4000;
+			earth2 = 5500;
+			earth3 = 7500;
+			
+			break;
+		case "NinetySecondsOfFunk130":
+			victoryBonus = 700;
+			earth1 = 4000;
+			earth2 = 7500;
+			earth3 = 9000;
+			
+			break;
+		case "ThumpetteMini125":
+			victoryBonus = 900;
+			earth1 = 5000;
+			earth2 = 8000;
+			earth3 = 10000;
+
+			break;
+		case "Cresc230":
+			victoryBonus = 1200;
+			earth1 = 7500;
+			earth2 = 10000;
+			earth3 = 12000;
+			
 			break;
 		default:
 			victoryBonus = 1000;
-			if (score > 4000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-				Instantiate(earthReward, pos1, Quaternion.identity);
-			}
-			if (score > 7000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-				Instantiate(earthReward, pos2, Quaternion.identity);
-			}
-			if (score > 10000){
-				MadLevelProfile.SetLevelBoolean (currentLevel, "earth_3", true);
-				Instantiate(earthReward, pos3, Quaternion.identity);
-			}
+			earth1 = 30000;
+			earth2 = 40000;
+			earth3 = 50000;
+
 			break;
 
 		}
 		MadLevelProfile.Save ();
 	}
 
-//	public void GiveStars(){
-//		//				MadLevelProfile.SetCompleted (currentLevel, true);
-//		//		MadLevelProfile.SetPropertyEnabled (currentLevel, "star", true);
-//		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_1", true);
-//		MadLevelProfile.SetLevelBoolean (currentLevel, "earth_2", true);
-//		MadLevelProfile.Save ();
-//	}
-
-//	public VirtualCurrencyPack[] GetCurrencyPacks() {
-////		return new VirtualCurrencyPack[] {TENMUFF_PACK, FIFTYMUFF_PACK, FOURHUNDMUFF_PACK, THOUSANDMUFF_PACK};
-//	}
-//
-//	public static VirtualCurrencyPack THOUSANDMUFF_PACK = new VirtualCurrencyPack(
-//		"1000 Muffins",                                 // name
-//		"Test item unavailable",                 		// description
-//		"muffins_1000",                                 // item id
-//		1000,                                           // number of currencies in the pack
-//		GALACTIC_CURRENCY_ITEM_ID,                        // the currency associated with this pack
-//		new PurchaseWithMarket(THOUSANDMUFF_PACK_PRODUCT_ID, 8.99)
-//		);
-
-	public void MainMenu() {
+	public void MainMenu ()
+	{
 //		Application.LoadLevel ("LevelManager");
 		MadLevel.LoadLevelByName ("Level Select");
 	}
 
-	public void NextLevel(){
+	public void NextLevel ()
+	{
 		MadLevel.LoadNext ();
 	}
 
-	public void AsteroidDestroyed(Asteroid a) {
+	public void AsteroidDestroyed (Asteroid a)
+	{
 		AddScore (a.score);
 	}
 
-	void StoreHighScore(int newHighScore){
+	void StoreHighScore (int newHighScore)
+	{
 //		Debug.Log ("StoreHighScore has been called");
 	
 		//		Debug.Log ("The score is " + score);
 		// Update the high score if PlayerPrefs if necessary
-		if (score > PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0)) {
-			Debug.Log("Setting new high score");
-			PlayerPrefs.SetInt ("GalacticHighScore" + currentLevel, score);
+		if (score > PlayerPrefs.GetInt ("GalacticHighScore" + musicLevel, 0)) {
+//			Debug.Log("Setting new high score");
+			PlayerPrefs.SetInt ("GalacticHighScore" + musicLevel, score);
 			newHighScoreText.enabled = true;
 		}
-		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("GalacticHighScore" + currentLevel, 0);
+		highScoreText.text = "High Score: " + PlayerPrefs.GetInt ("GalacticHighScore" + musicLevel, 0);
 		highScoreText.enabled = true;
 	}
 
-	public void AddScore (int newScoreValue)
+	IEnumerator PopText (string message, float time)
 	{
-		StartCoroutine(PopText(newScoreValue.ToString(), 0.2f));
-//		Debug.Log ("Score has been updated");
-		if (!gameHasEnded) {
-			score += newScoreValue;
-		}
-
-		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
-	}
-
-	IEnumerator PopText(string message, float time){
-			popText.text = "+ " + message;
-			popText.enabled = true;
-			yield return new WaitForSeconds (time);
-			popText.enabled = false;
+		popText.text = "+ " + message;
+		popText.enabled = true;
+		yield return new WaitForSeconds (time);
+		popText.enabled = false;
 //			Vector3 scre
 //		popText.transform.position
 	}
@@ -522,14 +572,12 @@ public class Main : MonoBehaviour {
 	void ResetScore ()
 	{
 //		Debug.Log ("Score has been updated");
-		scoreText.text = "Score: " + score;  // ToString is called implicitly when + is used to concatenate to a string
+		scoreText.text = "Score : " + score;  // ToString is called implicitly when + is used to concatenate to a string
 	}
 
-
-	public void RestartLevel()
+	public void RestartLevel ()
 	{
-		//		Application.LoadLevel (Application.loadedLevel);
-		MadLevel.LoadLevelByName (currentLevel);
+		MadLevel.LoadLevelByName (MadLevel.currentLevelName);
 	}
 
 }

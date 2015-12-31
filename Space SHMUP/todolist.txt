@@ -1,55 +1,70 @@
-Before Deploy:
+FIX ASAP:
+CHANGE SOOMLA TO PRODUCTION
+turned off pause - pause is broken
+not automatically firing in beginning
+add mine to store
+add way to get money easily
+add laser, speed, double blaster pictures
+equip automatically
 
-add bouncing icon to tutorial
-no settings button? add settings with volume 
-volume control doesn't do anything?
-ComboPopText is wrong
+USE .name for everything - see asteroid.cs
+
+add distance from center into speed calculation
+
+change the sensitivy based on how many enemies have been creates
+
+FIX After ASAP:
+more pics on store;
+fade text out over longer period
+
+FIX Before Open Beta:
+
+FIX Before Launch
 fix permissions!
-global volume manager and beat volume manager - use global volume manager?
-get rid of all weapon counting - use same number if weapon is changed
-is thumpette good for this game?
-update when planet leaves
 
-After
-pause - count down to re-enter
-add cancel invokes
-enemies can pass through each other
-fix image on google play
-switches objects to prefabs so i don't have to reload all levels?
-using too many resources
-make hero shots cooler
-fire rate in enemy and enemy weapon
-enemy4 can't combo
-blackhole level - use atmosphere to make planet look like it's being destroyed
+FIX at Some Point:
+use anchors for fireworks, enemies, asteroids
+new enemy!
+Show multiple highest scores per level
+tell the user about the store
+combine redundant parts of hero and main
+ZAPPER!
+add bouncing icon to tutorial
+use time.timescale? to do countdown from pause
 ship stopped tilting
-privitize your variables
-long:
-
+privatize your variables
+get rid of all weapon counting - use same number if weapon is changed
 object pooling
-Multipliers for combos, do in different color
-make player blink when hit
+show hero ship on purchase screen?
+survival mode - infinite number of waves
+-shepard tone
+- maybe show movement somehow?
+add fire to back of ship; increase with speed upgrade
+add restart and level select buttons to game paused
 
-not yet:
-show cutscreen going from one level to another after victory
-don't change enemy speed based on health
 
-
-upgrade - stronger shields, require two hits to destroy
+UPGRADES - 
+magnet to pull in powerup
 new ship
-faster ship
 side shots
-more new weapons, rockets go to nearest enemy and make big explosion, weapon that doesn't move, like a mine, add rocket fire
+Missile that go out then home in
+more new weapons, rockets go to nearest enemy and make big explosion, add rocket fire
 -double tap for rocket
 faster shots, less delay between shots, more damage
 
+cd C:\Users\Julius\Documents\GitHub\Unity\Space-SHMUP\Space SHMUP
 cd C:\Users\HMGSYS\Documents\GitHub\Unity\Space-SHMUP\Space SHMUP
 adb install -r GalacticBeats.apk
 
 build process:
-comment out spread owned in hero and main
-turn off invincible
-disable reset button in soomla store
+turn off invincible, free weapons
 update all levels
 
 opengameart.org
 deviantart
+
+other ideas:
+small enemies attach to you like barnicles
+
+optimized levels:
+1,2,3,4?

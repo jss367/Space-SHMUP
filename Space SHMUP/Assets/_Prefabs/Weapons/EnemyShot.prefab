@@ -70,7 +70,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 63fe6ff9ab9e1433f8db4ebd940f2442, type: 2}
+  - {fileID: 2100000, guid: 342d1e874940d074ba04e9d086ca55ef, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8abdb74363985994698f0aa1b93930c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAimed: 1
-  speed: 60
+  speed: 45
+  direction: {x: 0, y: 0, z: 0}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

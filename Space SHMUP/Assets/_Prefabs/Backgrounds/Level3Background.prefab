@@ -11,7 +11,7 @@ GameObject:
   - 33: {fileID: 3330422}
   - 23: {fileID: 2353106}
   - 111: {fileID: 11184604}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: PlanetRingsWideLowPoly
   m_TagString: SpaceScene_PlanetRings
   m_Icon: {fileID: 0}
@@ -29,9 +29,9 @@ GameObject:
   - 33: {fileID: 3303180}
   - 64: {fileID: 6487792}
   - 23: {fileID: 2376210}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: StarfieldBG_0
-  m_TagString: Untagged
+  m_TagString: Starfield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,7 +49,7 @@ GameObject:
   - 111: {fileID: 11157716}
   - 114: {fileID: 11495734}
   - 135: {fileID: 13586174}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: PlanetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,13 +64,13 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 402812}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: Level3Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &133760
 GameObject:
   m_ObjectHideFlags: 1
@@ -81,7 +81,7 @@ GameObject:
   - 4: {fileID: 410282}
   - 33: {fileID: 3380014}
   - 23: {fileID: 2346424}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: MoonObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,8 +99,24 @@ GameObject:
   - 33: {fileID: 3306170}
   - 64: {fileID: 6465764}
   - 23: {fileID: 2342412}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: StarfieldBG_1
+  m_TagString: Starfield
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &153978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 488692}
+  - 108: {fileID: 10815994}
+  m_Layer: 14
+  m_Name: Directional light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,7 +135,7 @@ GameObject:
   - 111: {fileID: 11156748}
   - 114: {fileID: 11497020}
   - 135: {fileID: 13537952}
-  m_Layer: 20
+  m_Layer: 14
   m_Name: PlanetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,13 +151,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 469244}
   - 114: {fileID: 11477176}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: MoonLowPoly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &180324
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +166,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 473502}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PlanetLowPoly
   m_TagString: SpaceScene_Planet
   m_Icon: {fileID: 0}
@@ -165,7 +181,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 460676}
-  m_Layer: 0
+  - 114: {fileID: 11407398}
+  m_Layer: 14
   m_Name: PlanetLowPoly
   m_TagString: SpaceScene_Planet
   m_Icon: {fileID: 0}
@@ -183,8 +200,8 @@ GameObject:
   - 33: {fileID: 3300736}
   - 23: {fileID: 2352216}
   - 111: {fileID: 11123728}
-  m_Layer: 20
-  m_Name: Nebula
+  m_Layer: 14
+  m_Name: RedNebula
   m_TagString: SpaceScene_Nebula
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,8 +220,9 @@ Transform:
   - {fileID: 412670}
   - {fileID: 460676}
   - {fileID: 473502}
-  - {fileID: 483414}
   - {fileID: 428932}
+  - {fileID: 483414}
+  - {fileID: 488692}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &409292
@@ -262,11 +280,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 120858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.4519691, y: 19.4610004, z: 937.173767}
+  m_LocalPosition: {x: 48.4519691, y: 19.4610004, z: 1000}
   m_LocalScale: {x: 160, y: 160, z: 1}
   m_Children: []
   m_Father: {fileID: 402812}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!4 &439234
 Transform:
   m_ObjectHideFlags: 1
@@ -327,11 +345,23 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.4519691, y: 19.4610004, z: 937.173767}
+  m_LocalPosition: {x: 48.4519691, y: 19.4610004, z: 0}
   m_LocalScale: {x: 160, y: 160, z: 1}
   m_Children: []
   m_Father: {fileID: 402812}
-  m_RootOrder: 3
+  m_RootOrder: 4
+--- !u!4 &488692
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 402812}
+  m_RootOrder: 5
 --- !u!23 &2334048
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -573,6 +603,38 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!108 &10815994
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153978}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 1
+  m_Color: {r: .977941155, g: .604022443, b: .604022443, a: 1}
+  m_Intensity: 1.29999995
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_NormalBias: .400000006
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 2
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
 --- !u!111 &11123728
 Animation:
   m_ObjectHideFlags: 1
@@ -629,6 +691,21 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &11407398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 182862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d131df8a888ca48b6f2efb19568bf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planetRotation: {x: 0, y: 0, z: -10}
+  isTimer: 0
+  velocity: {x: 0, y: 0}
+  speedAdjustment: 0
 --- !u!114 &11477176
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -648,14 +725,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123722}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10d131df8a888ca48b6f2efb19568bf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planetRotation: {x: 0, y: 0, z: 0}
-  isTimer: 1
+  planetRotation: {x: 10, y: 0, z: 0}
+  isTimer: 0
   velocity: {x: 0, y: 0}
+  speedAdjustment: 0
 --- !u!114 &11497020
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -670,6 +748,7 @@ MonoBehaviour:
   planetRotation: {x: 0, y: 0, z: 0}
   isTimer: 1
   velocity: {x: 0, y: 0}
+  speedAdjustment: 0
 --- !u!135 &13537952
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -678,7 +757,7 @@ SphereCollider:
   m_GameObject: {fileID: 156452}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}
@@ -690,7 +769,7 @@ SphereCollider:
   m_GameObject: {fileID: 123722}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 10
   m_Center: {x: 0, y: 0, z: 0}

@@ -72,8 +72,11 @@ public class Asteroid : MonoBehaviour {
 	public GameObject lastTriggerGo = null;
 	
 	void OnTriggerEnter(Collider other){
+//		Debug.Log ("Asteroid has been triggered");
 		//Find the tag of other.gameObject or its parent GameObjects
 		GameObject go = Utils.FindTaggedParent (other.gameObject);
+//		Debug.Log ("Asteroid has hit name: " + go.name);
+//		Debug.Log ("Asteroid has hit: " + go);
 		//If there is a parent with a tag
 		if (go != null) {
 			//Make sure it's not the same triggering go as last time
@@ -104,9 +107,15 @@ public class Asteroid : MonoBehaviour {
 				Main.S.AsteroidDestroyed(this);
 				Instantiate(explosion, transform.position, transform.rotation);
 				Instantiate(popText, transform.position, Quaternion.identity);
+			}else if (go.tag == "Mine") {
+//				Destroy the asteroid
+				Destroy(this.gameObject);
+				Main.S.AsteroidDestroyed(this);
+				Instantiate(explosion, transform.position, transform.rotation);
+				Instantiate(popText, transform.position, Quaternion.identity);
 			}else{
 				//Announce it
-				//				print ("Triggered: " + go.name);
+								Debug.Log ("Asteroid has hit: " + go.name);
 				//Make sure it's not the same triggering go as last time
 			}
 		}else {

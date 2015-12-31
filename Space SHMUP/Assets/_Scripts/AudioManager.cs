@@ -7,9 +7,11 @@ using MadLevelManager;
 // by BitsAlive
 [AddComponentMenu("BitsAlive/Audio/AudioManager")]
 [RequireComponent(typeof(AudioSource))]
-public class AudioManager : MonoBehaviour {
+public class AudioManager : MonoBehaviour
+{
 	
-	public enum SoundType {
+	public enum SoundType
+	{
 		ambient,
 		music,
 		sound
@@ -33,7 +35,6 @@ public class AudioManager : MonoBehaviour {
 	public bool randomPosition = false;				// sets the GameObject to a random position (Scale of the GameObject is used for the boundaries)
 	private Vector3 fromPosition;
 	private Vector3 toPosition;
-	
 	public float crossFadeTime = 0f;				// time for fading between two AudioClips (the first clip is faded out while the second clip is faded in)
 	public float fadeInTime = 0f;					// time for the fade-in, this is done on every start of a AudioClip
 	public bool fadeInOnlyOnce = false;				// time for the fade-in, this is done only once at the start of the first AudioClip
@@ -48,21 +49,20 @@ public class AudioManager : MonoBehaviour {
 	private int lastIndex = -1;
 	private bool firstSound = true;
 	private bool stop = false;
-	private Color gizmoColor = new Color(0x75/255f, 0xa7/255f, 0xc3/255f);
-
+	private Color gizmoColor = new Color (0x75 / 255f, 0xa7 / 255f, 0xc3 / 255f);
 	public string currentLevel;
-
 	public float timeLimit;
 	
-	void Awake() {
+	void Awake ()
+	{
 //		Debug.Log ("AudioManager.cs has awakened");
 		// check, if there are two AudioSources
-		AudioSource[] a = gameObject.GetComponents<AudioSource>();
+		AudioSource[] a = gameObject.GetComponents<AudioSource> ();
 		if ((a == null) || (a.Length < 2)) {
-			Debug.LogError("AudioManager (" + gameObject.name + "): There should be two AudioSources on the AudioManager!");
+			Debug.LogError ("AudioManager (" + gameObject.name + "): There should be two AudioSources on the AudioManager!");
 			return;
 		}
-		audio1 = a[0];
+		audio1 = a [0];
 //		audio2 = a[1];
 		audio1.loop = false;
 //		audio2.loop = false;
@@ -71,51 +71,62 @@ public class AudioManager : MonoBehaviour {
 
 		switch (currentLevel) {
 		case "Level 1":
-			audioClip [0] = Resources.Load ("Music/1Mix_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/First30") as AudioClip;
 			break;
 		case "Level 2":
-			audioClip [0] = Resources.Load ("Music/2_90-12Remix_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/Ninety12Remix55") as AudioClip;
 			break;
 		case "Level 3":
-			audioClip [0] = Resources.Load ("Music/3_90SecondsOfFunk_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/JazzyFrenchy145") as AudioClip;
 			break;
 		case "Level 4":
-			audioClip [0] = Resources.Load ("Music/4ChecksForFree_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/Ectoplasm2_125") as AudioClip;
 			break;
 		case "Level 5":
-			audioClip [0] = Resources.Load ("Music/5Sci-Fi_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/LoveYourHands200") as AudioClip;
 			break;
 		case "Level 6":
-			audioClip [0] = Resources.Load ("Music/6Ectoplasm2_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/ChecksForFree100") as AudioClip;
 			break;
 		case "Level 7":
-			audioClip [0] = Resources.Load ("Music/7Thumpette_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/SciFi230") as AudioClip;
 			break;
 		case "Level 8":
-			audioClip [0] = Resources.Load ("Music/8FunkyJunky_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/HighTension210") as AudioClip;
 			break;
 		case "Level 9":
-			audioClip [0] = Resources.Load ("Music/9Sarabande_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/Sarabande230") as AudioClip;
 			break;
 		case "Level 10":
-			audioClip [0] = Resources.Load ("Music/10Roboskater_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/NinetySecondsOfFunk130") as AudioClip;
 			break;
 		case "Level 11":
-			audioClip [0] = Resources.Load ("Music/11Cresc_48") as AudioClip;
+			audioClip [0] = Resources.Load ("Music/ThumpetteMini125") as AudioClip;
 			break;
-		}
+		case "Level 12":
+			audioClip [0] = Resources.Load ("Music/Cresc230") as AudioClip;
+			break;
+		case "Level 13":
+			audioClip [0] = Resources.Load ("Music/Dubstep200") as AudioClip;
+			break;
+		case "Level 14":
+			audioClip [0] = Resources.Load ("Music/Mix21") as AudioClip;
+			break;
+		
+		}//7Thumpette_48
+		//funky junky
 
 		
 		// check, the clips are assigned
 		if ((audioClip != null) && (audioClip.Count == 0)) {
-			Debug.LogWarning("AudioManager (" + gameObject.name + "): There are no audioClips defined!");
+			Debug.LogWarning ("AudioManager (" + gameObject.name + "): There are no audioClips defined!");
 			return;
 		}
 		for (int i = 0; i < audioClip.Count; i++)
-		if (audioClip[i] == null) {
-			Debug.LogError("AudioManager (" + gameObject.name + "): audioClip[" + i + "] is not defined!");
-			return;
-		}
+			if (audioClip [i] == null) {
+				Debug.LogError ("AudioManager (" + gameObject.name + "): audioClip[" + i + "] is not defined!");
+				return;
+			}
 
 
 		// check of the settings
@@ -123,8 +134,8 @@ public class AudioManager : MonoBehaviour {
 		
 		// from-to-positions for the random positons
 		if (randomPosition) {
-			fromPosition = new Vector3(transform.position.x - transform.localScale.x * 0.5f, transform.position.y - transform.localScale.y * 0.5f, transform.position.z - transform.localScale.z * 0.5f);
-			toPosition = new Vector3(transform.position.x + transform.localScale.x * 0.5f, transform.position.y + transform.localScale.y * 0.5f, transform.position.z + transform.localScale.z * 0.5f);
+			fromPosition = new Vector3 (transform.position.x - transform.localScale.x * 0.5f, transform.position.y - transform.localScale.y * 0.5f, transform.position.z - transform.localScale.z * 0.5f);
+			toPosition = new Vector3 (transform.position.x + transform.localScale.x * 0.5f, transform.position.y + transform.localScale.y * 0.5f, transform.position.z + transform.localScale.z * 0.5f);
 		}
 		
 		// playback of the first AudioClip
@@ -138,14 +149,13 @@ public class AudioManager : MonoBehaviour {
 //		Debug.Log ("The song length is " + timeLimit);
 	}
 
-
-	void OnDrawGizmosSelected() {
+	void OnDrawGizmosSelected ()
+	{
 		// if the current GameObject is selected: display a blue gizmo for the range of the random positions (Scale of the GameObject)
 		if (randomPosition) {
 			Gizmos.color = gizmoColor;
-			Gizmos.DrawWireCube(transform.position, transform.localScale);
+			Gizmos.DrawWireCube (transform.position, transform.localScale);
 		}
-
 	}
 
 	
@@ -153,7 +163,8 @@ public class AudioManager : MonoBehaviour {
 	/// <summary>
 	/// Checks the settings.
 	/// </summary>
-	public void CheckSettings() {
+	public void CheckSettings ()
+	{
 //		if ((crossFadeTime > 0f) && (overlayPercentage > 0f)) {
 //			Debug.LogWarning("AudioManager: OverlayPercentage not allowed in conjunction with CrossFadeTime! OverlayPercentage (" + overlayPercentage + ") is now zero.");
 //			overlayPercentage = 0f;
@@ -194,7 +205,8 @@ public class AudioManager : MonoBehaviour {
 	/// <summary>
 	/// Sets the audio volume: a combination of playbackVolume and the volume from the GlobalVolumeManager.
 	/// </summary>
-	public void SetVolume() {
+	public void SetVolume ()
+	{
 		switch (soundType) {
 		case SoundType.ambient:
 			audioVolume = playbackVolume * GlobalVolumeManager.Instance.ambientVolume;
@@ -213,24 +225,27 @@ public class AudioManager : MonoBehaviour {
 //			audio2.volume = internalVolume;
 	}
 
-	public void SliderVolume(float sliderVolume){
-		audio1.volume = sliderVolume * playbackVolume * GlobalVolumeManager.Instance.musicVolume;
+	public void SliderVolume (float sliderVolume)
+	{
+//		audio1.volume = sliderVolume * playbackVolume * GlobalVolumeManager.Instance.musicVolume;
+		playbackVolume = sliderVolume;
+		SetVolume ();
+//		Debug.Log (playbackVolume);
 	}
 	
 	
 	// returns the index of the next AudioClip
-	private int GetNextClipIndex() {
+	private int GetNextClipIndex ()
+	{
 		if (randomOrder) {
 			if ((avoidRepetition) && (audioClip.Count > 1)) {
 				do {
-					clipIndex = Random.Range(0, audioClip.Count);
+					clipIndex = Random.Range (0, audioClip.Count);
 				} while (clipIndex == lastIndex);
 				lastIndex = clipIndex;
-			}
-			else
-				clipIndex = Random.Range(0, audioClip.Count);
-		}
-		else {
+			} else
+				clipIndex = Random.Range (0, audioClip.Count);
+		} else {
 			clipIndex++;
 			if (clipIndex >= audioClip.Count)
 				clipIndex = 0;
@@ -238,8 +253,8 @@ public class AudioManager : MonoBehaviour {
 		return clipIndex;
 	}
 	
-	
-	private IEnumerator FadeIn(AudioSource a, float timeToFade) {
+	private IEnumerator FadeIn (AudioSource a, float timeToFade)
+	{
 		float startTime = Time.time;
 		float elapsedTime = 0f;
 		do {
@@ -250,8 +265,8 @@ public class AudioManager : MonoBehaviour {
 		a.volume = internalVolume;
 	}
 	
-	
-	private IEnumerator FadeOut(AudioSource a, float timeToFade) {
+	private IEnumerator FadeOut (AudioSource a, float timeToFade)
+	{
 		float startTime = Time.time;
 		float elapsedTime = 0f;
 		do {
@@ -262,21 +277,23 @@ public class AudioManager : MonoBehaviour {
 		a.volume = 0f;
 	}
 	
-	
-	private IEnumerator PlaySound() {
+	private IEnumerator PlaySound ()
+	{
 		float timeToWait;
 		float overlayTime = 0f;
 		
 		while (!stop) {			
 			// wait before the next AudioClip is played
 			if (intervalTo > 0f) {
-				yield return new WaitForSeconds(Random.Range(intervalFrom, intervalTo));
-				if (stop) break;
+				yield return new WaitForSeconds (Random.Range (intervalFrom, intervalTo));
+				if (stop)
+					break;
 			}
 			
 			if ((clipStart > 0f) && (Time.time < clipStart)) {
-				yield return new WaitForSeconds(clipStart);
-				if (stop) break;
+				yield return new WaitForSeconds (clipStart);
+				if (stop)
+					break;
 			}
 			
 			if ((clipEnd > 0f) && (Time.time > clipEnd)) {
@@ -288,21 +305,22 @@ public class AudioManager : MonoBehaviour {
 			
 			// playback of the 1. AudioClip
 			if (randomPosition)
-				transform.position = new Vector3(Random.Range(fromPosition.x, toPosition.x), Random.Range(fromPosition.y, toPosition.y), Random.Range(fromPosition.z, toPosition.z));
+				transform.position = new Vector3 (Random.Range (fromPosition.x, toPosition.x), Random.Range (fromPosition.y, toPosition.y), Random.Range (fromPosition.z, toPosition.z));
 			audio1.volume = 0f;
-			audio1.clip = audioClip[GetNextClipIndex()];
-			audio1.Play();
+			audio1.clip = audioClip [GetNextClipIndex ()];
+			audio1.Play ();
 			
 			// fade-in of the 1. AudioClip
 			if ((fadeInTime > 0f) && ((!fadeInOnlyOnce) || (firstSound)))
-				yield return StartCoroutine(FadeIn(audio1, fadeInTime));
+				yield return StartCoroutine (FadeIn (audio1, fadeInTime));
 			else {
 				if ((crossFadeTime > 0f) && (!firstSound))  // cross-fade of the 1. AudioClips
-					yield return StartCoroutine(FadeIn(audio1, crossFadeTime));
+					yield return StartCoroutine (FadeIn (audio1, crossFadeTime));
 				else
 					audio1.volume = internalVolume;
 			}
-			if (stop) break;
+			if (stop)
+				break;
 			
 			// wait until the 1. AudioClip has almost finished
 			timeToWait = audio1.clip.length - fadeInTime - fadeOutTime - crossFadeTime - crossFadeTime - 1f;
@@ -311,38 +329,38 @@ public class AudioManager : MonoBehaviour {
 				timeToWait -= overlayTime;
 			}
 			if (timeToWait > 0f)
-				yield return new WaitForSeconds(timeToWait);
+				yield return new WaitForSeconds (timeToWait);
 			else
 				yield return null;
-			if (stop) break;
+			if (stop)
+				break;
 			
 			// fade-out of the 1. AudioClip
 			if ((fadeOutTime > 0f) && ((!fadeOutOnlyOnce) || (firstSound))) {
 				while ((audio1.isPlaying) && (audio1.time + fadeOutTime < audio1.clip.length))
 					yield return null;
-				if (stop) break;
-				yield return StartCoroutine(FadeOut(audio1, fadeOutTime));
-			}
-			else {
+				if (stop)
+					break;
+				yield return StartCoroutine (FadeOut (audio1, fadeOutTime));
+			} else {
 				if (crossFadeTime > 0f) {
 					while ((audio1.isPlaying) && (audio1.time + crossFadeTime < audio1.clip.length))
 						yield return null;
-				}
-				else if (overlayPercentage > 0f) {
+				} else if (overlayPercentage > 0f) {
 					while ((audio1.isPlaying) && (audio1.time + overlayTime < audio1.clip.length))
 						yield return null;
-				}
-				else {
+				} else {
 					while (audio1.isPlaying)
 						yield return null;
 				}
 			}
 			firstSound = false;
-			if (stop) break;
+			if (stop)
+				break;
 			
 			// destroy the GameObject and exit
 			if (destroyWhenFinished) {
-				Destroy(gameObject);
+				Destroy (gameObject);
 				break;
 			}
 			
@@ -406,22 +424,24 @@ public class AudioManager : MonoBehaviour {
 	/// <param name='clipIdx'>
 	/// Clip index.
 	/// </param>
-	public void Play(int clipIdx = -1) {
-		SetVolume();
+	public void Play (int clipIdx = -1)
+	{
+		SetVolume ();
 		stop = false;
 		if ((clipIdx >= 0) && (clipIdx < audioClip.Count))
 			clipIndex = clipIdx - 1;
-		StartCoroutine(PlaySound());
+		StartCoroutine (PlaySound ());
 	}
 	
 	
 	/// <summary>
 	/// Stops the playback.
 	/// </summary>
-	public void Stop() {
+	public void Stop ()
+	{
 		stop = true;
 		if (audio1)
-			audio1.Stop();
+			audio1.Stop ();
 //		if (audio2)
 //			audio2.Stop();
 	}
@@ -450,38 +470,29 @@ public class AudioManager : MonoBehaviour {
 	/// <param name='volume'>
 	/// Volume.
 	/// </param>
-	public void PlayClip(AudioSource source, AudioClip clip, float volume) {
+	public void PlayClip (AudioSource source, AudioClip clip, float volume)
+	{
 		playbackVolume = volume;
 		stop = false;
-		SetVolume();
+		SetVolume ();
 		source.clip = clip;
-		source.Play();
+		source.Play ();
 	}
 
 	private bool isPaused = false;
 
-//	void Update () {
-//		if (Input.GetKeyDown(KeyCode.Escape))
-//		{
-//			if( isPaused ) {
-//				OnUnPause();
-//			} else {
-//				OnPause();
-//			}
-//		}
-//		
-//	}
-
-	public void OnUnPause() {
-		Debug.Log ("PauseManager.OnUnPause");	
+	public void OnUnPause ()
+	{
+//		Debug.Log ("PauseManager.OnUnPause");	
 		isPaused = false;
 		audio1.UnPause ();
 
 	}
 	
-	public void OnPause() {
-		Debug.Log ("PauseManager.OnPause");
+	public void OnPause ()
+	{
+//		Debug.Log ("PauseManager.OnPause");
 		isPaused = true;
 		audio1.Pause ();
-		}
+	}
 }

@@ -9,16 +9,28 @@ public class EnemyWeapon : MonoBehaviour
 	public float fireRate;
 	public float delay;
 	public bool isAiming = false;
+	public Quaternion rotation = new Quaternion();//.Euler(-90, 180, 0);
 	
 	void Start ()
 	{
 		InvokeRepeating ("Fire", delay, fireRate);
 		hero = (GameObject)GameObject.FindWithTag ("Hero");
+		if (isAiming) {
+			rotation = Quaternion.Euler (90, 180, 0);
+			this.transform.rotation = rotation;
+		}
 	}
 
 	void Update(){
 		if (isAiming) {
+			try {
 			transform.LookAt (hero.transform.position, Vector3.forward);
+			}
+			catch (System.Exception e)
+			{
+				Debug.Log("Caught error: " + e);
+				this.transform.rotation = rotation;
+			}
 		}
 	}
 	

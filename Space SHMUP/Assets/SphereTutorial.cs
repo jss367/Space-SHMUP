@@ -12,14 +12,14 @@ public class SphereTutorial : MonoBehaviour {
 
 
 	void OnTriggerEnter(Collider other){
-//		Debug.Log (other);
+	//		Debug.Log (other);
 		if (other.ToString() == "Shield (UnityEngine.SphereCollider)") {
 			Step1.enabled = false;
 			Step2.enabled = true;
 			FirePad.SetActive (true);
 			Vector3 pos = new Vector3 (15.0f, 14.0f, 0.0f);
 			transform.position = pos;
-		} else if (other.ToString() == "ProjectileHero(Clone) (UnityEngine.BoxCollider)") {
+		} else if (other.ToString() == "ProjectileHero_Tutorial(Clone) (UnityEngine.BoxCollider)") {
 			Step2.enabled = false;
 			Step3.enabled = true;
 			NextButton.SetActive(true);

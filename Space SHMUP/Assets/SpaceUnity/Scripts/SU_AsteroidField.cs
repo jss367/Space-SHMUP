@@ -1,4 +1,4 @@
-// Asteroid Field C# Script (version: 1.03)
+// Asteroid Field C# Script (version: 1.05)
 // SPACE UNITY - Space Scene Construction Kit
 // http://www.spaceunity.com
 // (c) 2013 Stefan Persson
@@ -16,6 +16,7 @@
 //   driftSpeed		(drift/movement speed of the asteroid)
 
 // Version History
+// 1.05 - Removed compiler conditional code, only 5.x supported.
 // 1.03 - Added compiler conditional code for major versions 4.1, 4.2, 4.3
 //      - Changed transparent asteroid material to new shader SpaceUnity/AsteroidTransparent located
 //			in a Resources subfolder to ensure it is included during compile (before, transparent asteroids
@@ -145,12 +146,7 @@ public class SU_AsteroidField : MonoBehaviour {
 		// Check if there are any asteroid objects that was spawned prior to this script being disabled
 		// If there are asteroids in the list, activate the gameObject again.
 		for (int i = 0; i < _asteroids.Count; i++) {
-			#if UNITY_3_5
-				_asteroids[i].gameObject.active = true;		
-			#endif
-			#if UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3
 				_asteroids[i].gameObject.SetActive(true);
-			#endif
 		}
 		
 		// Spawn new asteroids in the entire sphere (not just at spawn range, hence the "false" parameter)
@@ -163,12 +159,7 @@ public class SU_AsteroidField : MonoBehaviour {
 			// If the transform of the asteroid exists (it won't be upon application exit for example)...			
 			if (_asteroids[i] != null) {
 				// deactivate the asteroid gameObject
-			#if UNITY_3_5
-				_asteroids[i].gameObject.active = false;		
-			#endif
-			#if UNITY_4_0 || UNITY_4_1 || UNITY_4_2 || UNITY_4_3
 				_asteroids[i].gameObject.SetActive(false);
-			#endif
 			}
 		}
 	}		

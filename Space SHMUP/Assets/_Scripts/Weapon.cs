@@ -4,7 +4,8 @@ using System.Collections;
 //This is an enum of the various possible weapon types
 //It also includes a "shield" type to allow a shield power-up
 //Items marked [NI] below are Not Implemented
-public enum WeaponType {
+public enum WeaponType
+{
 	none, //The default / no weapon
 	blaster, //A simple blaster
 	spread, //Two shots simultaneously
@@ -13,7 +14,10 @@ public enum WeaponType {
 	laser, //Damage over time [NI]
 	shield, //Raise sheidLevel
 	ball,
+	plasma,
+	doubleBlaster,
 	speed
+
 }
 
 //The WeaponDefinition class allows you to set the properties
@@ -23,7 +27,8 @@ public enum WeaponType {
 //in the Inspector pane. It doesn't work for everything, but it
 //will work for simple classes like this!
 [System.Serializable]
-public class WeaponDefinition {
+public class WeaponDefinition
+{
 	
 	public WeaponType type = WeaponType.none;
 	public string letter; //The letter to show on the power-up
@@ -41,23 +46,26 @@ public class WeaponDefinition {
 
 
 
-public class Weapon : MonoBehaviour {
+public class Weapon : MonoBehaviour
+{
 
 	static public Transform PROJECTILE_ANCHOR;
-	
 	public bool _______________;
 	[SerializeField]
-	private WeaponType _type = WeaponType.blaster;
+	private WeaponType
+		_type = WeaponType.blaster;
 	public WeaponDefinition def;
 	public GameObject collar;
 	public float lastShot; //Time last shot was fired
 
-	void Awake() {
+	void Awake ()
+	{
 		collar = transform.Find ("Collar").gameObject;
 //		projectilePrefab = GameObject.Find
 	}
 
-	void Start() {
+	void Start ()
+	{
 		//Call SetType() properly for the default _type
 		SetType (_type);
 		
@@ -77,7 +85,8 @@ public class Weapon : MonoBehaviour {
 		set { SetType (value); }
 	}
 	
-	public void SetType (WeaponType wt) {
+	public void SetType (WeaponType wt)
+	{
 		_type = wt;
 		if (type == WeaponType.none) {
 			this.gameObject.SetActive (false);
@@ -86,11 +95,12 @@ public class Weapon : MonoBehaviour {
 			this.gameObject.SetActive (true);
 		}
 		def = Main.GetWeaponDefinition (_type);
-		collar.GetComponent<Renderer>().material.color = def.color;
+		collar.GetComponent<Renderer> ().material.color = def.color;
 		lastShot = 0; //You can always fire immediately after _type is set
 	}
 	
-	public void Fire() {
+	public void Fire ()
+	{
 		// If this.gameObject is inactive, return
 		if (!gameObject.activeInHierarchy)
 			return;
@@ -101,30 +111,47 @@ public class Weapon : MonoBehaviour {
 		Projectile p;
 //		Debug.Log("Weapon is of type " + type);
 		switch (type) {
-			case WeaponType.blaster:
+		case WeaponType.blaster:
 			p = MakeProjectile ();
-			p.GetComponent<Rigidbody>().velocity = Vector3.up * def.velocity;
+			p.GetComponent<Rigidbody> ().velocity = Vector3.up * def.velocity;
 //			Debug.Log("Weapon was created with velocity " + def.velocity);
+			break;
+
+		case WeaponType.doubleBlaster:
+			p = MakeProjectile ();
+			p.GetComponent<Rigidbody> ().velocity = Vector3.up * def.velocity;
 			break;
 			
 		case WeaponType.spread:
 			p = MakeProjectile ();
-			p.GetComponent<Rigidbody>().velocity = Vector3.up * def.velocity;
+			p.GetComponent<Rigidbody> ().velocity = Vector3.up * def.velocity;
 			p = MakeProjectile ();
-			p.GetComponent<Rigidbody>().velocity = new Vector3 (-.2f, 0.9f, 0) * def.velocity;
+			p.GetComponent<Rigidbody> ().velocity = new Vector3 (-.2f, 0.9f, 0) * def.velocity;
 			p = MakeProjectile ();
-			p.GetComponent<Rigidbody>().velocity = new Vector3 (.2f, 0.9f, 0) * def.velocity;
+			p.GetComponent<Rigidbody> ().velocity = new Vector3 (.2f, 0.9f, 0) * def.velocity;
 			break;
 
 		case WeaponType.ball:
 			p = MakeProjectile ();
-			p.GetComponent<Rigidbody>().velocity = new Vector3 (-.2f, 0.9f, 0) * def.velocity;
+			p.GetComponent<Rigidbody> ().velocity = new Vector3 (-.2f, 0.9f, 0) * def.velocity;
 			p = MakeProjectile ();
-			p.GetComponent<Rigidbody>().velocity = new Vector3 (.2f, 0.9f, 0) * def.velocity;
+			p.GetComponent<Rigidbody> ().velocity = new Vector3 (.2f, 0.9f, 0) * def.velocity;
+			break;
+
+		case WeaponType.laser:
+			p = MakeProjectile ();
+			p.GetComponent<Rigidbody> ().velocity = Vector3.up * def.velocity;;
+			break;
+
+		case WeaponType.plasma:
+			p = MakeProjectile ();
+			p.GetComponent<Rigidbody> ().velocity = Vector3.up * def.velocity;
 			break;
 		}
 	}
-	public Projectile MakeProjectile() {
+
+	public Projectile MakeProjectile ()
+	{
 //		Debug.Log ("Making projectile for " + transform.parent.gameObject.tag);
 		GameObject go = Instantiate (def.projectilePrefab) as GameObject;
 		if (transform.parent.gameObject.tag == "Hero") {

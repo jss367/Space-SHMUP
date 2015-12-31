@@ -22,8 +22,11 @@ public class SoomlaInit : MonoBehaviour {
 
 	void Start () {
 
+
+
 		StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;	
 		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
+//		SoomlaStore.Initialize (new Soomla.Store.Example.MuffinRushAssets ());
 		Debug.Log ("Soomla has been initialized");
 
 //		MadLevel.LoadLevelByName ("MainMenu");
@@ -31,24 +34,31 @@ public class SoomlaInit : MonoBehaviour {
 	}
 
 	public void onSoomlaStoreInitialized() {
-		Debug.Log ("Confirmed that store is initialized");
-
-		int blasters = StoreInventory.GetItemBalance (Constants.BLASTER_WEAPON_ITEM_ID);
-		if (blasters == 0) {
-			try {
-			
-				StoreInventory.GiveItem (Constants.BLASTER_WEAPON_ITEM_ID, 1);
-				StoreInventory.GiveItem (Constants.GALACTIC_CURRENCY_ITEM_ID, 1000);
-				StoreInventory.GiveItem (Constants.SHIELD_ITEM_ID, 1);
-			} catch (VirtualItemNotFoundException ex) {
-				SoomlaUtils.LogError ("SOOMLA ExampleEventHandler", ex.Message);
-			}
-		}
-
+//		Debug.Log ("Confirmed that store is initialized");
+//		try {
+//		int blasters = StoreInventory.GetItemBalance (Constants.BLASTER_WEAPON_ITEM_ID);
+//		if (blasters == 0) {
+////			try {
+//			
+//				StoreInventory.GiveItem (Constants.BLASTER_WEAPON_ITEM_ID, 1);
+//				StoreInventory.GiveItem (Constants.GALACTIC_CURRENCY_ITEM_ID, 1000);
+//				StoreInventory.GiveItem (Constants.SHIELD_ITEM_ID, 1);
+//			}
+////			} catch (VirtualItemNotFoundException ex) {
+////				SoomlaUtils.LogError ("SOOMLA ExampleEventHandler", ex.Message);
+////		}
+//
+//		} catch (System.Exception e)
+//			{
+//				Debug.Log("Caught error: " + e);
+//			}
+//
 		MadLevel.LoadLevelByName ("MainMenu");
-//		Application.LoadLevel ("MainMenu");
-//		Debug.Log ("Loaded the main menu");
-
+////		Application.LoadLevel ("MainMenu");
+////		Debug.Log ("Loaded the main menu");
+	 
+	
+//
 	}
 
 }

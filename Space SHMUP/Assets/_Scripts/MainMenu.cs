@@ -8,7 +8,7 @@ namespace FMG
 	public class MainMenu : MonoBehaviour {
 		public GameObject mainMenu;
 		public GameObject levelSelectMenu;
-		public GameObject optionsMenu;
+		public GameObject settingsMenu;
 		public GameObject creditsMenu;
 		public GameObject storeMenu;
 
@@ -30,7 +30,7 @@ namespace FMG
 		{
 			if(str.Equals("Start"))
 			{
-				Debug.Log ("Start");
+//				Debug.Log ("Start");
 //				Constants.fadeInFadeOut(storeMenu,mainMenu);
 				Application.LoadLevel("LevelManager");
 				/*
@@ -88,14 +88,15 @@ namespace FMG
 				
 			}
 			
-			if(str.Equals("OptionsBack"))
+			if(str.Equals("SettingsBack"))
 			{
-				Constants.fadeInFadeOut(mainMenu,optionsMenu);
+				Constants.fadeInFadeOut(mainMenu,settingsMenu);
 
 			}
-			if(str.Equals("Options"))
+			if(str.Equals("Settings"))
 			{
-				Constants.fadeInFadeOut(optionsMenu,mainMenu);
+				Debug.Log("Bringing out settings panel");
+				Constants.fadeInFadeOut(settingsMenu,mainMenu);
 			}
 
 			if(str.Equals("MainMenu"))

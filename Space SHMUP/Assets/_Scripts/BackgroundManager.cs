@@ -2,12 +2,12 @@
 using System.Collections;
 using MadLevelManager;
 
-public class BackgroundManager : MonoBehaviour {
+public class BackgroundManager : MonoBehaviour
+{
 
 //	public static BackgroundManager instance { get; private set; }
 
-	public string currentLevel;
-
+	private string currentLevel;
 	public GameObject Level1Background;
 	public GameObject Level2Background;
 	public GameObject Level3Background;
@@ -19,20 +19,15 @@ public class BackgroundManager : MonoBehaviour {
 	public GameObject Level9Background;
 	public GameObject Level10Background;
 	public GameObject Level11Background;
+	public GameObject Level12Background;
+	public GameObject Level13Background;
 
-	void Awake(){
-//		instance = this;
-//		Level1Background = GameObject.Find("BackgroundManager/Level1Background");	
-//		Level1Background = GameObject.Find("Level1Background");
-//		Level3Background = GameObject.Find("Level3Background");
-	}
-
-	void Start(){
+	void Awake ()
+	{
 //		Debug.Log ("Level1Background is " + Level1Background);
 
 		currentLevel = MadLevel.currentLevelName;
 
-		
 		switch (currentLevel) {
 		case "Level 1":
 			Level1Background.SetActive (true);
@@ -67,7 +62,12 @@ public class BackgroundManager : MonoBehaviour {
 		case "Level 11":
 			Level11Background.SetActive (true);
 			break;
-			
+		case "Level 12":
+			Level12Background.SetActive (true);
+			break;
+		case "Level 13":
+			Level13Background.SetActive (true);
+			break;
 		}
 		
 	}

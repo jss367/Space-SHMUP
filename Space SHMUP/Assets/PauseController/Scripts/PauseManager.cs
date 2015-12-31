@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Audio;
 using System.Collections;
+using MadLevelManager;
 
 public class PauseManager : MonoBehaviour {
 	public GameObject pausable;
@@ -10,6 +12,9 @@ public class PauseManager : MonoBehaviour {
 	private Animator anim;
 	private Component[] pausableInterfaces;
 	private Component[] quittableInterfaces;
+
+	public AudioMixerSnapshot paused;
+	public AudioMixerSnapshot unPaused;
 
 	void Start() 
 	{
@@ -28,18 +33,23 @@ public class PauseManager : MonoBehaviour {
 	}
 	
 	void Update () {
-//		if (Input.GetKeyDown(KeyCode.Escape))
-//		{
-//			if( isPaused ) {
-//				OnUnPause();
-//			} else {
-//				OnPause();
-//			}
-//		}
 
 		pauseCanvas.enabled = isPaused;
 		anim.SetBool( "IsPaused", isPaused );
 	}
+
+
+	/// <summary>
+	/// TESTING THE BELOW	/// </summary>
+	
+//	void OnApplicationPause(bool pauseStatus){
+//		OnPause ();
+//			
+//	}
+	
+	///TESTING ABOVE
+	///
+
 		
 	public void OnQuit() {
 //		Debug.Log ("PauseManager.OnQuit");
@@ -77,5 +87,8 @@ public class PauseManager : MonoBehaviour {
 			if( pausableInterface != null )
 				pausableInterface.OnPause ();
 		}
+	}
+	public void OnRestart(){
+		MadLevel.LoadLevelByName (MadLevel.currentLevelName);
 	}
 }

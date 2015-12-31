@@ -13,9 +13,12 @@ public class Parallax : MonoBehaviour {
 	private float depth; //Depth of panels (that is, pos.z)
 	
 	
-	
-	// Use this for initialization
 	void Start () {
+
+		panels = GameObject.FindGameObjectsWithTag ("Starfield");
+//		Debug.Log (panels);
+//		Debug.Log (panels.Length);
+		if (panels.Length != 0){
 		panelHt = panels [0].transform.localScale.y;
 		depth = panels [0].transform.position.z;
 		
@@ -23,26 +26,30 @@ public class Parallax : MonoBehaviour {
 		panels [0].transform.position = new Vector3 (0, 0, depth);
 		panels [1].transform.position = new Vector3 (0, panelHt, depth);
 	}
-	
-	// Update is called once per frame
+}	
+
 	void Update () {
-		float tY, tX = 0;
-		tY = Time.time * scrollSpeed % panelHt + (panelHt * 0.5f);
+//		panels = GameObject.FindGameObjectsWithTag ("Starfield");
+//		Debug.Log (panels);
+//		Debug.Log (panels.Length);
+		if (panels.Length != 0){
+			float tY, tX = 0;
+			tY = Time.time * scrollSpeed % panelHt + (panelHt * 0.5f);
 		
-		if (poi != null) {
-			tX = -poi.transform.position.x * motionMult;
+			if (poi != null) {
+				tX = -poi.transform.position.x * motionMult;
+			}
+		
+			//Position panels[0]
+		
+			panels [0].transform.position = new Vector3 (tX, tY, depth);
+			//Then position panels[1] where needed to make a continuous starfield
+			if (tY >= 0) {
+				panels [1].transform.position = new Vector3 (tX, tY - panelHt, depth);
+			} else {
+				panels [1].transform.position = new Vector3 (tX, tY + panelHt, depth);
+			}
 		}
-		
-		//Position panels[0]
-		
-		panels [0].transform.position = new Vector3 (tX, tY, depth);
-		//Then position panels[1] where needed to make a continuous starfield
-		if (tY >= 0) {
-			panels [1].transform.position = new Vector3 (tX, tY - panelHt, depth);
-		} else {
-			panels [1].transform.position = new Vector3 (tX, tY + panelHt, depth);
-		}
-		
 		
 	}
 }

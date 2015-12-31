@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour
+{
 	
 	public float		speed = 20f; //The speed in m/s
 	public float		fireRate = 0.3f; // Seconds per shot (Unused)
@@ -9,15 +10,15 @@ public class Enemy : MonoBehaviour {
 	public int			score = 100; //Points earned for destroying this
 
 	public int			showDamageForFrames = 2; // # of frames to show damage
-	public float		powerUpDropChance = 1f; // Chance to drop a power-up
+	public float		powerUpDropChance = .25f; // Chance to drop a power-up
+	public float		missileDropChance = .1f; // Chance to drop a missile if possible
 	public bool _________________;
 	private float lastTimeDestroyed = 0.0f;
-	public float comboTime = 1.0f;
+//	public float comboTime = 1.0f;
 
 	public GameObject	impact;
-
 	public Color[]		originalColors;
-	public Material[]	materials; //All the Materials of this & its children
+//	public Material[]	materials; //All the Materials of this & its children
 	public int			remainingDamageFrames = 0; // Damage frames left
 
 	public Bounds bounds; //The Bounds of this and its children
@@ -25,61 +26,56 @@ public class Enemy : MonoBehaviour {
 
 //	private float tMultiplier;
 	private Main main;
-
 	public GameObject enemyExplosion;
 	public GameObject popText;
-	public GameObject comboPopText;
+//	public GameObject comboPopText;
 	
-	void Awake() {
-		materials = Utils.GetAllMaterials (gameObject);
-		originalColors = new Color[materials.Length];
-		for (int i = 0; i < materials.Length; i++) {
-			originalColors [i] = materials [i].color;
-		}
+	void Awake ()
+	{
+
 		InvokeRepeating ("CheckOffscreen", 0f, 2f);
 	}
 
-	void Start() {
-//		GameObject gameControllerObject = GameObject.Find("GameController");
-		GameObject mainObject = GameObject.FindWithTag("MainCamera");
+	void Start ()
+	{
+		GameObject mainObject = GameObject.FindWithTag ("MainCamera");
 		if (mainObject != null) {
 			main = mainObject.GetComponent<Main> ();
 		}
-
 	}
 
 	//Update is called once per frame
-	void Update(){
+	void Update ()
+	{
 
 		if (main != null) {
 			//	Debug.Log("gameController does exist");
-//			tMultiplier = main.timeMultiplier;
 			//Debug.Log (tMultiplier);
 		}
 		if (main == null) {
 			//Debug.Log ("Cannot find 'main'");
 		}
 
-		Move();
+		Move ();
 		if (remainingDamageFrames > 0) {
 			remainingDamageFrames--;
 			if (remainingDamageFrames == 0) {
-				UnShowDamage ();
+//				UnShowDamage ();
 			}
 		}
 	}
-
 	
-	public virtual void Move(){
+	public virtual void Move ()
+	{
 		Vector3 tempPos = pos;
 //		float mod = Mathf.Sqrt
-		tempPos.y -= (speed/5*2*Mathf.Sqrt(.5f+(float)health)) * Time.deltaTime;
+		tempPos.y -= (speed / 5 * 2 * Mathf.Sqrt (.5f + (float)health)) * Time.deltaTime;
 		pos = tempPos;
 	}
 	
 	//This is a Property: A method that acts like a field
-	public Vector3 pos{
-		get{
+	public Vector3 pos {
+		get {
 			return (this.transform.position);
 		}
 		set {
@@ -87,7 +83,8 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
-	void CheckOffscreen(){
+	void CheckOffscreen ()
+	{
 		//If bounds are still their default value...
 		if (bounds.size == Vector3.zero) {
 			//then set them
@@ -96,10 +93,12 @@ public class Enemy : MonoBehaviour {
 			boundsCenterOffset = bounds.center - transform.position;
 		}
 		
-		//Every time, update the counds to the current position
+		//Every time, update the bounds to the current position
 		bounds.center = transform.position + boundsCenterOffset;
+//		Debug.Log ("bounds.center is " + bounds.center);
 		//Check to see whether the bounds are completely offscreen
 		Vector3 off = Utils.ScreenBoundsCheck (bounds, BoundsTest.offScreen);
+//		Debug.Log ("off is " + off);
 		if (off != Vector3.zero) {
 			//If this enemy has gone off the bottom edge of the screen
 			if (off.y < 0) {
@@ -109,7 +108,33 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter (Collision coll) {
+	public void ReceiveDamage (float damage)
+	{
+//		Debug.Log ("Enemy has received damage");
+		health -= damage;
+		if (health <= 0) {
+			// Destroy this Enemy
+			Destroy (this.gameObject);
+//			if (Time.time - lastTimeDestroyed < comboTime)
+//			{
+//				// Tell the Main singleton that this ship has been destroyed
+//				Main.S.EnemyDestroyed(this, true);
+//				Instantiate(comboPopText, transform.position, Quaternion.identity);
+//			}
+//			else {
+			// Tell the Main singleton that this ship has been destroyed
+			Main.S.EnemyDestroyed (this, false);
+			Instantiate (popText, transform.position, Quaternion.identity);
+//			}
+			lastTimeDestroyed = Time.time;
+			//				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
+			Instantiate (enemyExplosion, transform.position, transform.rotation);
+			
+		}
+	}
+
+	void OnCollisionEnter (Collision coll)
+	{
 		GameObject other = coll.gameObject;
 //		Debug.Log ("Enemy hit a " + other.tag);
 		switch (other.tag) {
@@ -125,29 +150,10 @@ public class Enemy : MonoBehaviour {
 				break;
 			}
 			// Hurt this Enemy
-			ShowDamage();
-			Instantiate(impact, transform.position, transform.rotation);
+			Instantiate (impact, transform.position, transform.rotation);
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
-			health -= Main.W_DEFS [p.type].damageOnHit;
-			if (health <= 0) {
-				// Destroy this Enemy
-				Destroy (this.gameObject);
-				if (Time.time - lastTimeDestroyed < comboTime)
-				{
-					// Tell the Main singleton that this ship has been destroyed
-					Main.S.EnemyDestroyed(this, true);
-					Instantiate(comboPopText, transform.position, Quaternion.identity);
-				}
-				else {
-					// Tell the Main singleton that this ship has been destroyed
-					Main.S.EnemyDestroyed(this, false);
-					Instantiate(popText, transform.position, Quaternion.identity);
-				}
-				lastTimeDestroyed = Time.time;
-//				Debug.Log("lastTimeDestroyed is " + lastTimeDestroyed);
-				Instantiate(enemyExplosion, transform.position, transform.rotation);
-			
-			}
+			ReceiveDamage (Main.W_DEFS [p.type].damageOnHit);
+
 			Destroy (other);
 			break;
 		case "Asteroid":
@@ -160,9 +166,8 @@ public class Enemy : MonoBehaviour {
 				break;
 			}
 			// Hurt this Enemy
-			ShowDamage();
 			// Get the damage amount from the Projectile.type & Main.W_DEFS
-			health -= 1; // Asteroids do 10 worth of damage
+			health -= 1; // Asteroids do 1 worth of damage
 			if (health <= 0) {
 				// Tell the Main singleton that this ship has been destroyed
 				//	Main.S.EnemyDestroyed(this);
@@ -173,7 +178,7 @@ public class Enemy : MonoBehaviour {
 			break;
 
 		case "Hero":
-			Instantiate(enemyExplosion, transform.position, transform.rotation);
+			Instantiate (enemyExplosion, transform.position, transform.rotation);
 			//Destroyed in the hero script
 			break;
 
@@ -181,7 +186,8 @@ public class Enemy : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter (Collider coll){
+	void OnTriggerEnter (Collider coll)
+	{
 		GameObject other = coll.gameObject;
 //		Debug.Log ("Enemy hit a " + other.tag);
 		switch (other.tag) {
@@ -196,30 +202,13 @@ public class Enemy : MonoBehaviour {
 				break;
 			}
 			// Destroy this Enemy
-			Destroy(this.gameObject);
+			Destroy (this.gameObject);
 			
-			Instantiate(enemyExplosion, transform.position, transform.rotation);
+			Instantiate (enemyExplosion, transform.position, transform.rotation);
 			break;
-	}
-	}
-
-//	void PopText(){
-//		Vector3 pos = Camera.main.WorldToScreenPoint (transform.position);
-//		pos.x = pos.x;
-//		pos.y = pos.y;
-//		Instantiate(popText, pos, Quaternion.identity);
-//	}
-
-	void ShowDamage() {
-		foreach (Material m in materials) {
-			m.color = Color.red;
-		}
-		remainingDamageFrames = showDamageForFrames;
-	}
-	void UnShowDamage() {
-		for (int i = 0; i < materials.Length; i++) {
-			materials[i].color = originalColors[i];
 		}
 	}
+
+
 
 }
