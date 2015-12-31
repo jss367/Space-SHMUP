@@ -39,7 +39,7 @@ public class StoreController : BaseController
         StoreEvents.OnMarketPurchaseCancelled += item => MenuView.SetLoadingOverlayVisiblity(false);
         StoreEvents.OnMarketPurchase += (item, payload, extra) => MenuView.SetLoadingOverlayVisiblity(false);
         StoreEvents.OnCurrencyBalanceChanged += (currency, newBalance, amountAdded) => UpdateCoinBalanceLabel(currency, newBalance);
-        StoreEvents.OnUnexpectedErrorInStore += OnUnexpectedErrorInStore;
+        //StoreEvents.OnUnexpectedErrorInStore += OnUnexpectedErrorInStore;
         StoreEvents.OnGoodBalanceChanged += (item, newBalance, amountAdded) => UpdateItemView(item);
 //        StoreEvents.OnSoomlaStoreInitialized += OnSoomlaStoreInitialized;
         StoreEvents.OnGoodEquipped += UpdateItemView;
