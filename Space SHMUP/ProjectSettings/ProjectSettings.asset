@@ -435,6 +435,7 @@ PlayerSettings:
   - WebGL::exceptionSupport
   - WebGL::memorySize
   - iOS::Architecture
+  - iOS::EnableIncrementalBuildSupportForIl2cpp
   - iOS::ScriptingBackend
   Metro::ScriptingBackend: 2
   Standalone::ScriptingBackend: 0
@@ -443,7 +444,8 @@ PlayerSettings:
   WebGL::audioCompressionFormat: 4
   WebGL::exceptionSupport: 0
   WebGL::memorySize: 256
-  iOS::Architecture: 2
+  iOS::Architecture: 0
+  iOS::EnableIncrementalBuildSupportForIl2cpp: 1
   iOS::ScriptingBackend: 0
   boolPropertyNames:
   - WebGL::analyzeBuildSize
