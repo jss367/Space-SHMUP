@@ -1,6 +1,6 @@
 #define PRETTY		//Comment out when you no longer need to read JSON to disable pretty Print system-wide
-//Using doubles will cause errors in VectorTemplates.cs; Unity speaks floats
-#define USEFLOAT	//Use floats for numbers instead of doubles	(enable if you're getting too many significant digits in string output)
+//Using doubles will cause errors in VectorTemplates.cs; Unity speaks floats, though floats will only provide you 7 digits of precision when updating Soomla StoreInventory balances
+//#define USEFLOAT	//Use floats for numbers instead of doubles	(enable if you're getting too many significant digits in string output)
 //#define POOLING	//Currently using a build setting for this one (also it's experimental)
 
 using System.Diagnostics;
@@ -9,6 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Globalization;
 using Debug = UnityEngine.Debug;
 
 /*
@@ -207,7 +208,7 @@ public class JSONObject : NullCheckable {
 		obj.str = val;
 		return obj;
 	}
-
+	
 	public static string EncodeJsString(string s)
 	{
 		StringBuilder sb = new StringBuilder();
@@ -251,6 +252,16 @@ public class JSONObject : NullCheckable {
 		}
 		
 		return sb.ToString();
+	}
+
+	/// <summary>
+	/// Decodes the js string (represented as \uXXXX Unicode chars) to human-readable string
+	/// </summary>
+	/// <returns>Encoded human-readable string.</returns>
+	/// <param name="s">A string represented as sequence of \uXXXX Unicode chars.</param>
+	public static string DecodeJsString(string s) {
+		return (new Regex(@"\\[uU]([0-9A-F]{4})"))
+			.Replace(s, match => ((char) System.Int32.Parse(match.Value.Substring(2), NumberStyles.HexNumber)).ToString());
 	}
 
 	public static JSONObject CreateBakedObject(string val) {
@@ -307,13 +318,18 @@ public class JSONObject : NullCheckable {
 				}
 			}
 			if(str.Length > 0) {
-				if(string.Compare(str, "true", true) == 0) {
+                if (str.ToLower() == "true")
+                {
 					type = Type.BOOL;
 					b = true;
-				} else if(string.Compare(str, "false", true) == 0) {
+                }
+                else if (str.ToLower() == "false")
+                {
 					type = Type.BOOL;
 					b = false;
-				} else if(string.Compare(str, "null", true) == 0) {
+                }
+                else if (str.ToLower() == "null")
+                {
 					type = Type.NULL;
 					#if USEFLOAT
 				} else if(str == INFINITY) {
@@ -870,7 +886,7 @@ public class JSONObject : NullCheckable {
 					builder.Append(NaN);
 				#endif
 				else
-					builder.Append(n.ToString());
+                    builder.Append(n.ToString(CultureInfo.InvariantCulture));
 				break;
 			case Type.OBJECT:
 				builder.Append("{");
