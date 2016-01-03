@@ -22,9 +22,9 @@ public class SoomlaInit : MonoBehaviour {
 
 	void Start () {
 
+        Application.LoadLevel("MainMenu");
 
-
-		StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;	
+        StoreEvents.OnSoomlaStoreInitialized += onSoomlaStoreInitialized;	
 		SoomlaStore.Initialize(new Soomla.Store.Example.GalacticAssets());
 //		SoomlaStore.Initialize (new Soomla.Store.Example.MuffinRushAssets ());
 		Debug.Log ("Soomla has been initialized");
