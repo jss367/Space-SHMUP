@@ -442,28 +442,28 @@ public class Main : MonoBehaviour
 //			Debug.Log("On level one");
 			victoryBonus = 50;
 			earth1 = 80;
-			earth2 = 150;
-			earth3 = 220;
+			earth2 = 110;
+			earth3 = 150;
 
 			break;
 		case "Ninety12Remix55":
 			victoryBonus = 100;
-			earth1 = 200;
-			earth2 = 400;
-			earth3 = 600;
+			earth1 = 160;
+			earth2 = 300;
+			earth3 = 500;
 
 			break;
 		case "JazzyFrenchy145":
 			victoryBonus = 150;
-			earth1 = 1000;
-			earth2 = 1400;
+			earth1 = 800;
+			earth2 = 1200;
 			earth3 = 1750;
 			
 			break;
 		case "Ectoplasm2_125":
 			victoryBonus = 150;
-			earth1 = 1000;
-			earth2 = 1400;
+			earth1 = 800;
+			earth2 = 1200;
 			earth3 = 1750;
 
 			break;
