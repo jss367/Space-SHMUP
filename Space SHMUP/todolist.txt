@@ -55,6 +55,7 @@ faster shots, less delay between shots, more damage
 cd C:\Users\Julius\Documents\GitHub\Unity\Space-SHMUP\Space SHMUP
 cd C:\Users\HMGSYS\Documents\GitHub\Unity\Space-SHMUP\Space SHMUP
 adb install -r GalacticBeats.apk
+$ adb logcat -s Unity ActivityManager PackageManager dalvikvm DEBUG
 
 build process:
 turn off invincible, free weapons
