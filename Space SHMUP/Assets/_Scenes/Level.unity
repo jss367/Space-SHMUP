@@ -292,7 +292,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 308293535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.496055, y: -2.5, z: 0}
+  m_LocalPosition: {x: -5.8979454, y: -2.5, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_Children:
   - {fileID: 396900309}
@@ -5395,7 +5395,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11484778, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
       propertyPath: tilt
-      value: 11.0900002
+      value: 11.09
       objectReference: {fileID: 0}
     - target: {fileID: 5450482, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
       propertyPath: m_Constraints
@@ -5409,6 +5409,26 @@ Prefab:
       propertyPath: mineArtRight
       value: 
       objectReference: {fileID: 1032757375}
+    - target: {fileID: 11484778, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: rollMult
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484778, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: pitchMult
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484778, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: maxTilt
+      value: 0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484778, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: rotateToNormal
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11484778, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
+      propertyPath: rotationSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c45f0cb6cbc9b8741a30fb960b7f20d8, type: 2}
   m_IsPrefabParent: 0

@@ -10,10 +10,10 @@ public class Hero : MonoBehaviour
 
 	static public Hero S; //S for singleton
 	
-	//These fields control the movement of the ship
+	//These fields control the movement of the ship (probably not anymore)
 //	public float				speed = 30;
-	public float				rollMult = -45;
-	public float				pitchMult = 30;
+//	public float				rollMult = -5; //was -45
+//	public float				pitchMult = 10; //and 30
 	
 	//Ship status information
 	[SerializeField]
@@ -48,7 +48,7 @@ public class Hero : MonoBehaviour
 //	public float dampingRadius = 2.5f;
 	//Above is from Space Shooter
 
-	private Vector3 oldPos = new Vector3(0f,-18.0f,0f);
+	private Vector3 oldPos = new Vector3(0f,-10.0f,0f); //should be -18
 
 	public FireButton fireButton;
 	private bool spreadEquipped = false;
@@ -83,8 +83,8 @@ public class Hero : MonoBehaviour
 	public GameObject Bazooka2;
 	public GameObject MissileLauncher;
 	public float maxTilt = .3f;
-	public float rotationSpeed = 2.0f;
-	public float rotateToNormal = .2f;
+	public float rotationSpeed = 0.5f; // was 2.0f
+	public float rotateToNormal = .5f; //was .2
 
 //	public GameObject Laser;
 	public int autoShootOn = 1;
