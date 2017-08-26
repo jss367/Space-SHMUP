@@ -1,2 +1,1 @@
-# Space-SHMUP
-Second copy of game(redoing it)
+This contains the code for Galactic Beats.
