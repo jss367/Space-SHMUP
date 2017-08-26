@@ -46,7 +46,7 @@ public class MobileBuildHelper
             Process.Start(new ProcessStartInfo
             {
                 FileName = "adb",
-                Arguments = string.Format("shell am start -n \"{0}/{1}\"", PlayerSettings.bundleIdentifier, "com.unity3d.player.UnityPlayerNativeActivity")
+                Arguments = string.Format("shell am start -n \"{0}/{1}\"", PlayerSettings.applicationIdentifier, "com.unity3d.player.UnityPlayerNativeActivity")
             });
         }
         else
@@ -114,7 +114,7 @@ public class MobileBuildHelper
 #if UNITY_5
             EditorUserBuildSettings.activeBuildTarget != BuildTarget.iOS)
 #else
-            EditorUserBuildSettings.activeBuildTarget != BuildTarget.iPhone)
+            EditorUserBuildSettings.activeBuildTarget != BuildTarget.iOS)
 #endif
         {
             EditorUtility.DisplayDialog("Android + iOS Build Helper", "Only Android and iOS are supported, you're targeting: " + EditorUserBuildSettings.activeBuildTarget, "ok...");
@@ -327,7 +327,7 @@ public class MobileBuildHelper
 #if UNITY_5
                  BuildTarget.iOS
 #else
-                 BuildTarget.iPhone
+                 BuildTarget.iOS
 #endif
                   ? "IPA" : string.Empty;
         }

@@ -113,7 +113,7 @@ public class SoomlaView : MonoBehaviour
 	{
 		foreach (var menuState in Enum.GetNames(typeof(MenuState)))
 		{
-			var menuStateObject = transform.FindChild(menuState);
+			var menuStateObject = transform.Find(menuState);
 			
 			if (menuStateObject)
 			{
